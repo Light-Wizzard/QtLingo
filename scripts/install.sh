@@ -10,14 +10,14 @@ echo "install Unix"
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "Ubuntu" ]]; then
 #
     #wget -c -nv "https://download.qt.io/official_releases/qt-installer-framework/$MY_QT_IF_VERSION/QtInstallerFramework-linux-x64-$MY_QT_IF_VERSION.run" -O scripts/QtInstallerFramework-linux.run
-    curl -fsS -o scripts/QtInstallerFramework-linux.run "https://download.qt.io/official_releases/qt-installer-framework/$MY_QT_IF_VERSION/QtInstallerFramework-linux-x64-$MY_QT_IF_VERSION.run";
-    if [ -f scripts/QtInstallerFramework-linux.run ]; then
-        # make it executable
-        chmod +x scripts/QtInstallerFramework-linux.run;
-        ls -las scripts/;
-    else
-        echo -e "Error downloading QtInstallerFramework-linux";
-    fi
+#    curl -fsS -o scripts/QtInstallerFramework-linux.run "https://download.qt.io/official_releases/qt-installer-framework/$MY_QT_IF_VERSION/QtInstallerFramework-linux-x64-$MY_QT_IF_VERSION.run";
+#    if [ -f scripts/QtInstallerFramework-linux.run ]; then
+#        # make it executable
+#        chmod +x scripts/QtInstallerFramework-linux.run;
+#        ls -las scripts/;
+#    else
+#        echo -e "Error downloading QtInstallerFramework-linux";
+#    fi
     # Python
     sudo add-apt-repository ppa:deadsnakes/ppa -y;
     sudo apt-get update -qq && sudo apt-get install -qq;
@@ -34,7 +34,7 @@ fi
 #
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "macos" ]]; then
     #
-    wget -c -nv "https://download.qt.io/official_releases/qt-installer-framework/$MY_QT_IF_VERSION/QtInstallerFramework-macOS-x86_64-$MY_QT_IF_VERSION.dmg" -O scripts/QtInstallerFramework-macOS.dmg
-    # make it executable
-    chmod +x scripts/QtInstallerFramework-macOS.dmg;
+#    wget -c -nv "https://download.qt.io/official_releases/qt-installer-framework/$MY_QT_IF_VERSION/QtInstallerFramework-macOS-x86_64-$MY_QT_IF_VERSION.dmg" -O scripts/QtInstallerFramework-macOS.dmg
+#    # make it executable
+#    chmod +x scripts/QtInstallerFramework-macOS.dmg;
 fi

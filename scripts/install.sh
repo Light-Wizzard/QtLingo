@@ -32,9 +32,9 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "Ubuntu" ]]; then
     sudo apt-get install -qqy libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb-dev libxkbcommon-x11-0 libgtk2.0-dev;
 fi
 #
-if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "macos" ]]; then
-    #
+#if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "macos" ]]; then
+#    #
 #    wget -c -nv "https://download.qt.io/official_releases/qt-installer-framework/$MY_QT_IF_VERSION/QtInstallerFramework-macOS-x86_64-$MY_QT_IF_VERSION.dmg" -O scripts/QtInstallerFramework-macOS.dmg
 #    # make it executable
 #    chmod +x scripts/QtInstallerFramework-macOS.dmg;
-fi
+#fi

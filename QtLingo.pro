@@ -75,12 +75,20 @@ TRANSLATIONS += translations/QtLingo_en.ts \
 include(third-party/qonlinetranslator/qonlinetranslator.pri)
 #
 DISTFILES += README.md CMakeLists.txt \
+    .appveyor.yml \
     help/About-Author-en.html \
     help/About-en.html \
     help/Help-en.html \
     help/ReadMe.md \
     help/images/settings.png \
     help/images/sql.png \
+    scripts/build_script.cmd \
+    scripts/build_script.ps1 \
+    scripts/build_script.sh \
+    scripts/install.cmd \
+    scripts/install.ps1 \
+    scripts/install.sh \
+    scripts/upload.sh \
     src/third-party/docs/QExample.md \
     src/third-party/docs/QOnlineTranslator.md \
     src/third-party/docs/QOnlineTts.md \

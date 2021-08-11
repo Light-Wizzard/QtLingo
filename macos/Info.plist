@@ -9,7 +9,7 @@
         <key>CFBundleSignature</key>
         <string>????</string>
         <key>CFBundleExecutable</key>
-        <string>Galaxy-Calculator-2</string>
+        <string>QtLingo</string>
         <key>CFBundleIdentifier</key>
         <string>sd.${PRODUCT_NAME:rfc1034identifier}</string>
         <key>CFBundleDisplayName</key>

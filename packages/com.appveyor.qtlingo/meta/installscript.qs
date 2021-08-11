@@ -33,7 +33,7 @@ function Component()
 // createOperations
 Component.prototype.createOperations = function()
 {
-    // call default implementation to actually install QtAppVeyor.exe!
+    // call default implementation to actually install QtLingo.exe!
     component.createOperations();
     /* ************************************************************************
        productType: "windows", "opensuse", "osx"
@@ -41,7 +41,7 @@ Component.prototype.createOperations = function()
     */    
     if (systemInfo.productType === "windows") 
     {
-        component.addOperation("CreateShortcut", "@TargetDir@/QtAppVeyor.exe", "@StartMenuDir@/QtAppVeyor.lnk",
+        component.addOperation("CreateShortcut", "@TargetDir@/QtLingo.exe", "@StartMenuDir@/QtLingo.lnk",
             "workingDirectory=@TargetDir@", "iconPath=%SystemRoot%/system32/SHELL32.dll", "iconId=2", 
             "description=Qt AppVeyor by the Light Wizzard");
     }
@@ -53,14 +53,14 @@ Component.prototype.createOperations = function()
     if (systemInfo.kernelType === "linux")
     {
 	    component.addOperation( "InstallIcons", "@TargetDir@/icons" );
-        component.addOperation("CreateDesktopEntry", "@TargetDir@/QtAppVeyor.desktop", "Version=1.0\nType=Application\nTerminal=false\nExec=@TargetDir@/QtAppVeyor-x86_64.AppImage\nName=QtAppVeyor\nIcon=@TargetDir@/QtAppVeyor.svg\nName[en_US]=QtAppVeyor.desktop");
-        component.addElevatedOperation("Copy", "@TargetDir@/QtAppVeyor.desktop", "@HomeDir@/Desktop/QtAppVeyor.desktop");
+        component.addOperation("CreateDesktopEntry", "@TargetDir@/QtLingo.desktop", "Version=1.0\nType=Application\nTerminal=false\nExec=@TargetDir@/QtLingo-x86_64.AppImage\nName=QtLingo\nIcon=@TargetDir@/QtLingo.svg\nName[en_US]=QtLingo.desktop");
+        component.addElevatedOperation("Copy", "@TargetDir@/QtLingo.desktop", "@HomeDir@/Desktop/QtLingo.desktop");
     }
     if (systemInfo.kernelType === "darwin")
     {
 	    component.addOperation( "InstallIcons", "@TargetDir@/icons" );
-        component.addOperation("CreateDesktopEntry", "@TargetDir@/QtAppVeyor.desktop", "Version=1.0\nType=Application\nTerminal=false\nExec=@TargetDir@/QtAppVeyor-x86_64.AppImage\nName=QtAppVeyor\nIcon=@TargetDir@/QtAppVeyor.svg\nName[en_US]=QtAppVeyor.desktop");
-        component.addElevatedOperation("Copy", "@TargetDir@/QtAppVeyor.desktop", "@HomeDir@/Desktop/QtAppVeyor.desktop");
+        component.addOperation("CreateDesktopEntry", "@TargetDir@/QtLingo.desktop", "Version=1.0\nType=Application\nTerminal=false\nExec=@TargetDir@/QtLingo-x86_64.AppImage\nName=QtLingo\nIcon=@TargetDir@/QtLingo.svg\nName[en_US]=QtLingo.desktop");
+        component.addElevatedOperation("Copy", "@TargetDir@/QtLingo.desktop", "@HomeDir@/Desktop/QtLingo.desktop");
     }
 } // end createOperations
 // End of File

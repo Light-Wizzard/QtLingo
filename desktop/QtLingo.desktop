@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=QtLingo
+GenericName=QtLingo
+Comment=QtLingo by the Light Wizzard
+Icon=QtLingo
+Exec=QtLingo
+Terminal=false
+Categories=Education;
+Keywords=translation;
+Name[en_US]=QtLingo.desktop

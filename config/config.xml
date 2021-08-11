@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Installer>
-    <Name>QtAppVeyor</Name>
+    <Name>QtLingo</Name>
     <Version>1.0.0</Version>
-    <Title>QtAppVeyor by Light Wizzard</Title>
+    <Title>QtLingo by Light Wizzard</Title>
     <Publisher>Light-Wizzard</Publisher>
     <!-- Directory name is used in component.xml -->
-    <StartMenuDir>QtAppVeyor</StartMenuDir>
-    <TargetDir>@HomeDir@/QtAppVeyor</TargetDir>
+    <StartMenuDir>QtLingo</StartMenuDir>
+    <TargetDir>@HomeDir@/QtLingo</TargetDir>
 </Installer>

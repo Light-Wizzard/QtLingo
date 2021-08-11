@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package>
-    <DisplayName>Qt AppVeyor</DisplayName>
-    <Description>Qt AppVeyor by Light Wizzard</Description>
+    <DisplayName>QtLingo</DisplayName>
+    <Description>QtLingo by Light Wizzard</Description>
     <Version>1.0.0</Version>
-    <ReleaseDate>2021-07-21</ReleaseDate>
+    <ReleaseDate>2021-08-11</ReleaseDate>
     <Licenses>
         <License name="Unlicense Agreement" file="unlicense.txt" />
     </Licenses>
@@ -11,8 +11,6 @@
     <Script>installscript.qs</Script>
     <UserInterfaces>
         <UserInterface>MainWindow.ui</UserInterface>
-        <UserInterface>HelpDialog.ui</UserInterface>
-        <UserInterface>AboutDialog.ui</UserInterface>
     </UserInterfaces>
 </Package>
 

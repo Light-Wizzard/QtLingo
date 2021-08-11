@@ -1,0 +1,202 @@
+#
+version: '{branch}-{build}'
+
+branches:
+  only:
+    - master
+
+stack: python 3.9, python 3.8
+
+build: off
+
+configuration: Release
+
+platform:
+  - x64
+  - x86
+
+image:
+  - Ubuntu
+  - Visual Studio 2019
+
+for:
+-
+  matrix:
+    only:
+      - image: Ubuntu
+  environment:
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
+    MY_BIN_PRO_RES_NAME: QtLingo
+    MY_OS: Ubuntu
+    MY_COMPILER: "Qt"
+    MY_QT_VERSION: 5.15.2
+    MY_VS_VERSION: 2019
+    MY_QT_IF_VERSION: '4.1.1'
+    MY_QIF_PACKAGE_URI: 'packages/com.appveyor.qtlingo/data'
+    MY_PYTHON_VER: 3.9
+    MY_PYTHON_REQUIRED: false
+    MY_UPGRADE_OS: false # apt-get upgrade: true or false only
+  install:
+    # Create our AppVeyor version
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    - sh: bash -c "scripts/install.sh"
+  build_script:
+    - sh: bash -c "scripts/build_script.sh"
+  artifacts:
+    - path: '*.zip'
+      name: 'ZipInstaller'
+
+-
+  matrix:
+    only:
+      - image: Visual Studio 2019
+  environment:
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
+    MY_BIN_PRO_RES_NAME: QtLingo
+    MY_OS: Windows # No Spaces
+    MY_COMPILER: "Qt"
+    MY_QT_VERSION: 5.15.2
+    MY_VS_VERSION: 2019
+    MY_QT_MINGW32: mingw81_32
+    MY_QT_MINGW64: mingw81_64
+    MY_QT_TOOLS_MINGW32: mingw810_32
+    MY_QT_TOOLS_MINGW64: mingw810_32 # mingw810_64?
+    MY_QT_IF_VERSION: '4.1.1'
+    MY_QIF_PACKAGE_URI: 'packages\com.appveyor.qtlingo\data'
+    MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
+    MY_PYTHON_REQUIRED: false
+  install:
+    # Create our AppVeyor version
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    # Qt x64
+    - ps: |
+          If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
+             $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW64\bin"
+             $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin"
+             $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64"
+          }
+    #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Qt; then set PATH=C:\Qt\Tools\%MY_QT_MINGW64%\bin;C:\Qt\%MY_QT_VERSION%\%MY_QT_MINGW64%\bin;C:\Qt\%MY_QT_VERSION%\%MY_QT_MINGW64%\;%PATH% fi"
+    #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Qt; then call C:\Qt\%MY_QT_VERSION%\%MY_QT_MINGW64%\bin\qtenv2.bat fi"
+
+    # Vs x64
+    - ps: |
+          If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
+             $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW64\bin"
+             $env:Path += ";C:\Qt\$env:MY_QT_VERSION\msvc$($env:MY_VS_VERSION)_64\bin"
+          }
+    #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Vs; then set PATH=C:\Qt\Tools\%MY_QT_MINGW64%\bin;C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%_64\bin;%PATH% fi"
+    #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Vs; then call C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%_64\bin\qtenv2.bat" fi"
+    # Python x64
+    - cmd: if %platform%==x64 set PATH=C:\Python%MY_PYTHON_VER-x64%;%PATH%
+    - cmd: if %platform%==x64 call "C:\Program Files (x86)\Microsoft Visual Studio\%MY_VS_VERSION%\Community\VC\Auxiliary\Build\vcvars64.bat"
+    # Qt x86
+    - ps: |
+          If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
+             $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW32\bin"
+             $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin"
+             $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32"
+             cmd.exe /c C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin\qtenv2.bat
+          }
+    #- cmd: bash -lc "if %platform%==x86 && %MY_COMPILER%==Qt; then set PATH=C:\Qt\Tools\%MY_QT_MINGW32%\bin;C:\Qt\%MY_QT_VERSION%\bin;%PATH% fi"
+    #- cmd: bash -lc "if %platform%==x86 && %MY_COMPILER%==Qt; then call C:\Qt\%MY_QT_VERSION%\%MY_QT_MINGW32%\bin\qtenv2.bat" fi"
+    # Vs x86
+    - ps: |
+          If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
+             $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW32\bin"
+             $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin"
+             $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32"
+             cmd.exe /c C:\Qt\$env:MY_QT_VERSION\msvc$($env:MY_VS_VERSION)\bin\qtenv2.bat
+          }
+    #- cmd: bash -lc "if %platform%==x86 && %MY_COMPILER%==Vs; then set PATH=C:\Qt\Tools\%MY_QT_MINGW32%\bin;C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%\bin;%PATH% fi"
+    #- cmd: bash -lc "if %platform%==x86 && %MY_COMPILER%==Vs; then call C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%\bin\qtenv2.bat" fi"
+    # Python x86
+    - cmd: if %platform%==x86 set PATH=C:\Python%MY_PYTHON_VER%;%PATH%
+    - cmd: if %platform%==x86 call "C:\Program Files (x86)\Microsoft Visual Studio\%MY_VS_VERSION%\Community\VC\Auxiliary\Build\vcvars32.bat"
+    #
+    - cmd: set PATH=C:\MINGW\bin\;%PATH%
+    #
+    # C:\mingw-w64\ missing from 2019 matrix
+    #- cmd: scripts\install.cmd
+    #- ps: scripts\install.ps1
+  build_script:
+    #- cmd: scripts\build_script.cmd
+    #- ps: scripts\build_script.ps1
+    - cmd: echo "build_script Windows"
+    - cmd: cd %APPVEYOR_BUILD_FOLDER%
+    - cmd: mkdir build
+    - cmd: cd build
+    - cmd: mkdir AppDir
+    - cmd: set INSTALL_ROOT=AppDir
+    - cmd: set BUILD_ROOT=%APPVEYOR_BUILD_FOLDER%\build
+    - dir C:\Qt\5.15.2\mingw81_64\bin
+    # Qt
+    # DESTDIR=%cd%
+    - ps: |
+          If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
+            cmd.exe /c qmake -r -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$($env:MY_BIN_PRO_RES_NAME).pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
+            cmd.exe /c mingw32-make
+            cmd.exe /c mingw32-make install
+          }
+    - ps: |
+          If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
+            cmd.exe /c qmake -r $env:APPVEYOR_BUILD_FOLDER\$($env:MY_BIN_PRO_RES_NAME).pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
+            cmd.exe /c mingw32-make
+            cmd.exe /c mingw32-make install
+          }
+    #- cmd: bash -lc "if %PLATFORM%==x86 && %MY_COMPILER%==Qt; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir && mingw32-make && mingw32-make install fi"
+    #- cmd: bash -lc "if %PLATFORM%==x64 && %MY_COMPILER%==Qt; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir && mingw32-make && mingw32-make install fi"
+    # Vs
+    - ps: |
+          If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
+            cmd.exe /c qmake -r -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$($env:MY_BIN_PRO_RES_NAME).pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
+            cmd.exe /c mmake
+            cmd.exe /c mmake install
+          }
+    - ps: |
+          If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
+            cmd.exe /c qmake -r $env:APPVEYOR_BUILD_FOLDER%\$($env:MY_BIN_PRO_RES_NAME).pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
+            cmd.exe /c mmake
+            cmd.exe /c mmake install
+          }
+    #- cmd: bash -lc "if %PLATFORM%==x86 && %MY_COMPILER%==Vs; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir && mmake && mmake install fi"
+    #- cmd: bash -lc "if %PLATFORM%==x64 && %MY_COMPILER%==Vs; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir && mmake && mmake install fi"
+    #
+    - cmd: echo "after_build Windows"
+    - cmd: dir
+    - cmd: dir AppDir
+    #- cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%MY_BIN_PRO_RES_NAME%.exe" AppDir
+    - cmd: windeployqt "AppDir\%MY_BIN_PRO_RES_NAME%.exe" --verbose=2
+    - cmd: if %PLATFORM%==x64 set ARTIFACT_APPIMAGE="%MY_BIN_PRO_RES_NAME%-x64.exe"
+    - cmd: if %PLATFORM%==x86 set ARTIFACT_APPIMAGE="%MY_BIN_PRO_RES_NAME%-x86.exe"
+    - cmd: set ARTIFACT_QIF="%MY_BIN_PRO_RES_NAME%-Linux-Installer";
+    - cmd: 7z a -tzip "%MY_BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%PLATFORM%.zip" AppDir -r
+    - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%MY_BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%PLATFORM%.zip" "%APPVEYOR_BUILD_FOLDER%\
+    - cmd: echo "Running Qt Installer Framework";
+    - cmd: echo APPVEYOR_BUILD_FOLDER=%APPVEYOR_BUILD_FOLDER%
+    - cmd: echo C:\Qt\Tools\QtInstallerFramework\binarycreator.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%MY_BIN_PRO_RES_NAME%-Windows-Installer.exe"
+    - cmd: echo ..\QtInstallerFramework-windows-x86-%MY_QT_IF_VERSION%.exe --offline-only -c "%APPVEYOR_BUILD_FOLDER%\config\config.xml" -p "%APPVEYOR_BUILD_FOLDER%\packages" "%MY_BIN_PRO_RES_NAME%-Windows-Installer.exe"
+    - cmd: echo 7z a -tzip "%MY_BIN_PRO_RES_NAME%-Windows-Installer.zip" "%MY_BIN_PRO_RES_NAME%-Windows-Installer.exe"
+    - cmd: copy *.zip %APPVEYOR_BUILD_FOLDER%
+    - cmd: cd %APPVEYOR_BUILD_FOLDER%
+    - cmd: echo Current Path is %cd%
+    - cmd: dir
+    - cmd: echo -e "Completed-Build Windows"
+  artifacts:
+    - path: '*.zip'
+      name: 'ZipInstaller'
+
+deploy:
+  - provider: GitHub
+    release: continuous
+    artifact: 'ZipInstaller'
+    draft: false
+    prerelease: true
+    auth_token:
+      secure: 5Kb03ANp7s6KeJKren+ROsEnuCk2tXGby36aqYpG0WV8xfHBg26Td9B4C9jpI/O/
+############################################## End of File ####################

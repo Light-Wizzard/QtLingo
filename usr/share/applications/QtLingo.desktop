@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=QtLingo
+GenericName=QtLingo
+Comment=Qt Lingo by the Light Wizzard
+Icon=QtLingo
+Exec=bin/QtLingo
+Terminal=false
+Categories=Translation;
+Keywords=translator;
+Name[en_US]=QtLingo.desktop

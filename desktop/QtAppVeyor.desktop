@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=QtAppVeyor
+GenericName=QtAppVeyor
+Comment=Qt AppVeyor by the Light Wizzard
+Icon=QtAppVeyor
+Exec=QtAppVeyor
+Terminal=false
+Categories=Education;
+Keywords=appveyor;
+Name[en_US]=QtAppVeyor.desktop

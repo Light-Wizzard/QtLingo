@@ -329,8 +329,8 @@ class QOnlineTranslator : public QObject
         static void addSpaceBetweenParts(QString &text);                        //!< add Space Between Parts
 
         static const QMap<Language, QString> s_genericLanguageCodes;      //!< \c s_genericLanguageCodes \brief generic Language Codes
-        static const QMap<QString, QString> s_genericLanguageNameToCode;  //!< \c s_genericLanguageNameToCode \brief generic Language Name to Code
-        static const QMap<QString, QString> s_genericLanguageCodeToName;  //!< \c s_genericLanguageCodeToName \brief generic Language Code to Name
+        static const QMap<QString, QString>  s_genericLanguageNameToCode; //!< \c s_genericLanguageNameToCode \brief generic Language Name to Code
+        static const QMap<QString, QString>  s_genericLanguageCodeToName; //!< \c s_genericLanguageCodeToName \brief generic Language Code to Name
 
         // Engines have some language codes exceptions
         static const QMap<Language, QString> s_googleLanguageCodes; //!< \c s_googleLanguageCodes   \brief google Language Codes

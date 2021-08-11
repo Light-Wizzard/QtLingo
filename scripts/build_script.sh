@@ -104,14 +104,7 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
     echo "PATH=$PATH";
     # 
     # configure build files with qmake
-    echo "***********************************************************";
-    ls -las;
-    echo "***********************************************************";
-    ls -las ..;
-    echo "***********************************************************";
-    ls -las "${REPO_ROOT}";
-    echo "***********************************************************";
-    qmake -makefile "${REPO_ROOT}/${MY_BIN_PRO_RES_NAME}.pro" "${REPO_ROOT}";
+    qmake "${REPO_ROOT}";
     # 
     # build project and install files into AppDir
     make -j"$(nproc)";

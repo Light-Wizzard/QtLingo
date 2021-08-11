@@ -109,7 +109,7 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
     echo "***********************************************************";
     ls -las ..;
     echo "***********************************************************";
-    ls -las "${REPO_ROOT};
+    ls -las "${REPO_ROOT}";
     echo "***********************************************************";
     qmake -makefile "${REPO_ROOT}/${MY_BIN_PRO_RES_NAME}.pro" "${REPO_ROOT}";
     # 

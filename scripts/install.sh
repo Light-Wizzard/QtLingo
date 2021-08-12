@@ -24,7 +24,7 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "Ubuntu" ]]; then
     if [[ "$MY_UPGRADE_OS" = "true" ]]; then sudo apt-get upgrade -qqy; fi
     # Developer tools and libsqlite3
     sudo apt install -qqy build-essential cmake software-properties-common libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev;
-    sudo apt install -qqy libffi-dev mesa-common-dev libglu1-mesa-dev freeglut3-dev libegl1-Mesa-dev libmesa-dev pkg-config;
+    sudo apt install -qqy libffi-dev mesa-common-dev libglu1-mesa-dev freeglut3-dev libegl1-Mesa-dev libmesa-dev pkg-config libegl1-mesa;
     sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev flex bison checkinstall libsqlite3-dev;
     sudo apt install -qqy libreadline-dev libgl-dev libpulse-mainloop-glib0 libgles2-mesa-dev libglfw3-dev libgl1-mesa-dev;
     sudo apt install -qqy libfreetype6-dev libfontconfig1-dev libdbus-1-dev libxi-dev xnviewmp libgstreamer-plugins-base1.0-0;

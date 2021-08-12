@@ -33,8 +33,8 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "Ubuntu" ]]; then
     sudo apt install -qqy libswscale-dev libdc1394-22-dev libxine2-dev libv4l-dev libatlas-base-dev libfaac-dev libmp3lame-dev;
     sudo apt install -qqy libtheora-dev libvorbis-dev libxvidcore-dev libopencore-amrnb-dev libopencore-amrwb-dev libavresample-dev;
     sudo apt install -qqy x264 v4l-utils libprotobuf-dev protobuf-compiler libgoogle-glog-dev libgflags-dev libgphoto2-dev libeigen3-dev;
-    sudo apt install -qqy libhdf5-dev doxygen libssl1.0.0 libopenexr-dev libpcl-dev lmodern;
-    sudo apt install -qqy doxygen-latex texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-full;
+    sudo apt install -qqy libhdf5-dev doxygen doxygen-latex texlive-full libssl1.0.0 libopenexr-dev libpcl-dev lmodern;
+    #sudo apt install -qqy texlive-latex-base texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
     # Python
     if [[ "$MY_PYTHON_REQUIRED" = "true" ]]; then sudo apt-get install -qqy python3.9-dev python3-venv; fi
     # Required by LinuxDeploy

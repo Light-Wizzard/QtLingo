@@ -32,8 +32,8 @@ HEADERS += src/MainWindow.h \
     src/MySimpleCrypt.h \
     src/MySqlDbtModel.h \
     src/MyTranslationFiles.h \
-    third-party/ts_tool/efl_hash.h \
-    third-party/ts_tool/ts_model.h
+    src/third-party/ts_tool/efl_hash.h \
+    src/third-party/ts_tool/ts_model.h
 #
 #
 SOURCES += src/main.cpp src/MainWindow.cpp \
@@ -42,7 +42,7 @@ SOURCES += src/main.cpp src/MainWindow.cpp \
     src/MySimpleCrypt.cpp \
     src/MySqlDbtModel.cpp \
     src/MyTranslationFiles.cpp \
-    third-party/ts_tool/ts_model.cpp
+    src/third-party/ts_tool/ts_model.cpp
 #
 FORMS += src/MainWindow.ui
 #
@@ -72,7 +72,7 @@ TRANSLATIONS += translations/QtLingo_en.ts \
                 translations/QtLingo_ar.ts \
                 translations/QtLingo_zh-CN.ts
 #
-include(third-party/qonlinetranslator/qonlinetranslator.pri)
+include(src/third-party/qonlinetranslator/qonlinetranslator.pri)
 #
 DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \

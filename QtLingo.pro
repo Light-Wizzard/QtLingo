@@ -2,22 +2,23 @@
 # Specifies the name of the template to use when generating the project.
 # The allowed values are: app, lib, subdirs, aux, vcapp or vclib
 TEMPLATE = "app"
-QT      += core gui sql network multimedia concurrent widgets printsupport
+# This pro(ject) file is based on a pattern
+# Do not use Spaces in Target Name
+TARGET = "QtLingo"
 #
-#CONFIG         *= strict_c++
-#CONFIG         *= "c++11"
-#CONFIG         *= "c++14"
-#CONFIG         *= "c++1z"
-#CONFIG         *= "c++17"
-#CONFIG         *= "c++2a"
-CONFIG         *= "c++latest"
+QT += core gui sql network multimedia concurrent widgets printsupport
+#
+#CONFIG *= strict_c++
+#CONFIG *= "c++11"
+#CONFIG *= "c++14"
+#CONFIG *= "c++1z"
+ CONFIG *= "c++17"
+#CONFIG *= "c++2a"
+#CONFIG *= "c++latest"
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 # Specifies the name of the target file. Contains the base name of the project file by default.
-# Do not use Spaces in Target Name
-# This pro(ject) file is based on a pattern
-TARGET = "QtLingo"
 ##-------------------------------------------------------------------------------------
 INCLUDEPATH     += .
 INCLUDEPATH     += src

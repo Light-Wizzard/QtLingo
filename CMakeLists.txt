@@ -20,6 +20,12 @@ set(TARGET ${CMAKE_PROJECT_NAME})
 set(SOURCES
     src/main.cpp
     src/MainWindow.cpp
+    src/MyDatatables.cpp
+    src/MyOrgSettings.cpp
+    src/MySimpleCrypt.cpp
+    src/MySqlDbtModel.cpp
+    src/MyTranslationFiles.cpp
+    third-party/ts_tool/ts_model.cpp
 )
 # UI
 set(UI_SOURCES
@@ -31,15 +37,17 @@ add_subdirectory(src/third-party/qonlinetranslator)
 # https://github.com/pedrolcl/qt5-i18n
 # not sure if I need to add en since it is the default
 set(TS_FILES
-    QtLingo_es.ts
-    QtLingo_de.ts
-    QtLingo_fr.ts
-    QtLingo_it.ts
-    QtLingo_ja.ts
-    QtLingo_zh.ts
-    QtLingo_no.ts
-    QtLingo_ru.ts
-    QtLingo_ar.ts
+    translations/QtLingo_en.ts
+    translations/QtLingo_de.ts
+    translations/QtLingo_fr.ts
+    translations/QtLingo_it.ts
+    translations/QtLingo_ja.ts
+    translations/QtLingo_ko.ts
+    translations/QtLingo_no.ts
+    translations/QtLingo_ru.ts
+    translations/QtLingo_sv.ts
+    translations/QtLingo_ar.ts
+    translations/QtLingo_zh-CN.ts
 )
 
 if (QT_VERSION VERSION_LESS 5.15.0)

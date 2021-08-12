@@ -23,9 +23,9 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "Ubuntu" ]]; then
     sudo apt-get update -qq && sudo apt-get install -qq;
     if [[ "$MY_UPGRADE_OS" = "true" ]]; then sudo apt-get upgrade -qqy; fi
     # Developer tools and libsqlite3
-    sudo apt install -qqy build-essential cmake software-properties-common libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev;
-    sudo apt install -qqy libffi-dev mesa-common-dev libglu1-mesa-dev freeglut3-dev libegl1-Mesa-dev libmesa-dev libpulse-mainloop-glib0;
-    sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev flex bison checkinstall libsqlite3-dev;
+    sudo apt install -qqy build-essential cmake software-properties-common libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libgl-dev;
+    sudo apt install -qqy libffi-dev mesa-common-dev libglu1-mesa-dev freeglut3-dev libegl1-Mesa-dev libmesa-dev libpulse-mainloop-glib0 libgles2-mesa-dev;
+    sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev flex bison checkinstall libsqlite3-dev libglfw3-dev;
     # Python
     if [[ "$MY_PYTHON_REQUIRED" = "true" ]]; then sudo apt-get install -qqy python3.9-dev python3-venv; fi
     # Required by LinuxDeploy

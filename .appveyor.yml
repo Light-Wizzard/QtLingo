@@ -109,7 +109,7 @@ for:
              $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW32\bin"
              $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32\bin"
              $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW32"
-             cmd.exe /c C:\Qt\$env:MY_QT_VERSION\msvc$($env:MY_VS_VERSION)\bin\qtenv2.bat
+             cmd.exe /c C:\Qt\$env:MY_QT_VERSION\msvc$env:MY_VS_VERSION\bin\qtenv2.bat
           }
     #- cmd: bash -lc "if %platform%==x86 && %MY_COMPILER%==Vs; then set PATH=C:\Qt\Tools\%MY_QT_MINGW32%\bin;C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%\bin;%PATH% fi"
     #- cmd: bash -lc "if %platform%==x86 && %MY_COMPILER%==Vs; then call C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%\bin\qtenv2.bat" fi"
@@ -137,22 +137,23 @@ for:
     # DESTDIR=%cd%
     - ps: |
           If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
-            cmd.exe /c qmake -r -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$($env:MY_BIN_PRO_RES_NAME).pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
+            cmd.exe /c qmake -r -spec win32-g++ CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
             cmd.exe /c mingw32-make
             cmd.exe /c mingw32-make install
           }
     - ps: |
           If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
-            cmd.exe /c qmake -r $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
+            cmd.exe /c qmake -r CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
             cmd.exe /c mingw32-make
             cmd.exe /c mingw32-make install
           }
     #- cmd: bash -lc "if %PLATFORM%==x86 && %MY_COMPILER%==Qt; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir && mingw32-make && mingw32-make install fi"
     #- cmd: bash -lc "if %PLATFORM%==x64 && %MY_COMPILER%==Qt; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir && mingw32-make && mingw32-make install fi"
+    #  $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro
     # Vs
     - ps: |
           If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
-            cmd.exe /c qmake -r -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
+            cmd.exe /c qmake -r -spec win32-g++ CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
             cmd.exe /c mmake
             cmd.exe /c mmake install
           }

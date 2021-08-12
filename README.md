@@ -19,7 +19,10 @@ it is all done, nothing more to do.
  - :penguin: [Linux zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
  - :office: [Windows zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x86.zip)
  - :apple: Currenty unavalible [Apple zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
- 
+
+# Documentaion
+[](https://light-wizzard.github.io/QtLingo/)
+
 # GitHub Projects used
 I use to GitHub Applications for this,
 for Translations I use crow-translate at https://github.com/crow-translate/crow-translate,

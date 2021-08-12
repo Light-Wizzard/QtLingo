@@ -706,38 +706,38 @@ void MainWindow::setPrograms()
     QString theLupdatePath  = "/usr/bin/lupdate";
     QString theLreleasePath = "/usr/bin/lrelease";
 
-    #if Q_OS_MSDOS || defined(Q_OS_WIN32) || defined(Q_OS_WINCE)
-    // FIXME Qt Folder have not tested this code
-    QString theQtEnv;
-    theLupdatePath = mySqlDb->mySqlModel->runProcces("where", "lupdate.exe", true, 60);
-    if (theLupdatePath.isEmpty())
-    {
-        theQtEnv = mySqlDb->mySqlModel->mySetting->getEnvironmentVar("Qt");
-        if (theQtEnv.isEmpty())
-        {
-            theLupdatePath = QString("%1/lupdate.exe").arg(theQtEnv);
-        }
-        else
-        {
-            theLupdatePath = "c:/Qt/lupdate.exe";
-        }
-    }
-    theLreleasePath = mySqlDb->mySqlModel->runProcces("where", "lrelease.exe", true, 60);
-    if (theLreleasePath.isEmpty())
-    {
-        theQtEnv = mySqlDb->mySqlModel->mySetting->getEnvironmentVar("Qt");
-        if (theQtEnv.isEmpty())
-        {
-            theLreleasePath = QString("%1/lrelease.exe").arg(theQtEnv);
-        }
-        else
-        {
-            theLreleasePath = "c:/Qt/lrelease.exe";
-        }
-    }
-    ui->lineEditSettingsLupdate->setText(theLupdatePath);
-    ui->lineEditSettingsLrelease->setText(theLreleasePath);
-    #else
+//    #if Q_OS_MSDOS || defined(Q_OS_WIN32) || defined(Q_OS_WINCE)
+//    // FIXME Qt Folder have not tested this code
+//    QString theQtEnv;
+//    theLupdatePath = mySqlDb->mySqlModel->runProcces("where", "lupdate.exe", true, 60);
+//    if (theLupdatePath.isEmpty())
+//    {
+//        theQtEnv = mySqlDb->mySqlModel->mySetting->getEnvironmentVar("Qt");
+//        if (theQtEnv.isEmpty())
+//        {
+//            theLupdatePath = QString("%1/lupdate.exe").arg(theQtEnv);
+//        }
+//        else
+//        {
+//            theLupdatePath = "c:/Qt/lupdate.exe";
+//        }
+//    }
+//    theLreleasePath = mySqlDb->mySqlModel->runProcces("where", "lrelease.exe", true, 60);
+//    if (theLreleasePath.isEmpty())
+//    {
+//        theQtEnv = mySqlDb->mySqlModel->mySetting->getEnvironmentVar("Qt");
+//        if (theQtEnv.isEmpty())
+//        {
+//            theLreleasePath = QString("%1/lrelease.exe").arg(theQtEnv);
+//        }
+//        else
+//        {
+//            theLreleasePath = "c:/Qt/lrelease.exe";
+//        }
+//    }
+//    ui->lineEditSettingsLupdate->setText(theLupdatePath);
+//    ui->lineEditSettingsLrelease->setText(theLreleasePath);
+//    #else
     if (!mySqlDb->mySqlModel->mySetting->isFileExists(theLupdatePath))
     {
         theLupdatePath = mySqlDb->mySqlModel->runProcces("which", "lupdate", true, 60);
@@ -750,7 +750,7 @@ void MainWindow::setPrograms()
         if (theLreleasePath.isEmpty())
         { theLreleasePath = mySqlDb->mySqlModel->runProcces("type -P", "lrelease", true, 60); }
     }
-    #endif
+//    #endif
     ui->lineEditSettingsLupdate->setText(theLupdatePath);
     ui->lineEditSettingsLrelease->setText(theLreleasePath);
 }

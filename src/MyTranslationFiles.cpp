@@ -1,33 +1,33 @@
 #include "MyTranslationFiles.h"
 
-/*! ***************************************************************************
+/************************************************
    \class MyTranslationFiles
    \brief Translation Files Constructor
- *************************************************************************** */
+ ***********************************************/
 MyTranslationFiles::MyTranslationFiles(QObject *parent, MyDatatables *thisSqlDb) : QObject(parent), mySqlDb(thisSqlDb)
 {
 
 }
-/*! ***************************************************************************
+/************************************************
    \fn setDebugMessage
    \brief set Debug Message
- *************************************************************************** */
+ ***********************************************/
 void MyTranslationFiles::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getDebugMessage
    \brief get Debug Message
- *************************************************************************** */
+ ***********************************************/
 bool MyTranslationFiles::getDebugMessage()
 {
     return isDebugMessage;
 }
-/*! ***************************************************************************
+/************************************************
    \fn languageNameFromFile
    \brief language Name From File
- *************************************************************************** */
+ ***********************************************/
 QString MyTranslationFiles::languageNameFromFile(const QString &thisTranslationFile)
 {
     if (isDebugMessage) { qDebug() << "languageNameFromFile"; }
@@ -36,10 +36,10 @@ QString MyTranslationFiles::languageNameFromFile(const QString &thisTranslationF
     // FIXME
     return translator.translate("MainWindow", "English");
 }
-/*! ***************************************************************************
+/************************************************
    \fn languageMatch
    \brief language Match qmFile naming
- *************************************************************************** */
+ ***********************************************/
 QString MyTranslationFiles::getLocalizedCodeFromFile(const QString &thisPrefix, const QString &thisQmFile)
 {
     if (isDebugMessage) { qDebug() << "getLocalizedCodeFromFile"; }
@@ -48,18 +48,18 @@ QString MyTranslationFiles::getLocalizedCodeFromFile(const QString &thisPrefix, 
     QString theFileName = theFileInfo.baseName();
     return theFileName.remove(QString("%1_").arg(thisPrefix));
 }
-/*! ***************************************************************************
+/************************************************
    \fn removeArgs
    \brief "String %1"
- *************************************************************************** */
+ ***********************************************/
 void MyTranslationFiles::removeArgs(const QString &thisString, const QString &thisTransFile)
 {
     myRemoveTransArgs.append(QString("%1 |%2| in file %3").arg(tr("Remove Arguments that use Percent Sign x"), thisString, thisTransFile));
 } // end removeArgs
-/*! ***************************************************************************
+/************************************************
    \fn fileRemoveArgs
    \brief file Remove Args "String %1"
- *************************************************************************** */
+ ***********************************************/
 void MyTranslationFiles::fileRemoveArgs()
 {
     if (!myRemoveTransArgs.isEmpty())
@@ -69,10 +69,10 @@ void MyTranslationFiles::fileRemoveArgs()
         showMessageBox(QObject::tr("Remove Args file is created").toLocal8Bit(), QString("%1: %2 %3 %4").arg(tr("Remove Args"), myRemoveTransArgs, tr("File: "), theRemoveFileName).toLocal8Bit(), Warning);
     }
 } // end fileRemoveArgs
-/*! ***************************************************************************
+/************************************************
    \fn fixTranslationFile
    \brief fix Translation File; mostly Arabic gets the value before the ID on some fields
- *************************************************************************** */
+ ***********************************************/
 void MyTranslationFiles::fixTranslationFile(const QString &thisFile)
 {
     if (!isFileExists(thisFile)) { showMessageBox(tr("File not found").toLocal8Bit(), QString("%1: %2").arg(tr("File not found"), thisFile).toLocal8Bit(), Critical); return; }
@@ -98,10 +98,10 @@ void MyTranslationFiles::fixTranslationFile(const QString &thisFile)
         }
     }
 } // end fixTranslationFile
-/*! ***************************************************************************
+/************************************************
    \fn languageMatch
    \brief language Match qmFile naming
- *************************************************************************** */
+ ***********************************************/
 bool MyTranslationFiles::languageMatch(const QString &thisPrefix, const QString &thisLang, const QString &thisQmFile)
 {
     if (isDebugMessage) { qDebug() << "languageMatch"; }
@@ -109,10 +109,10 @@ bool MyTranslationFiles::languageMatch(const QString &thisPrefix, const QString 
     QString thisLocalizer = getLocalizedCodeFromFile(thisPrefix, thisQmFile);
     return thisLocalizer == thisLang;
 }
-/*! ***************************************************************************
+/************************************************
    \fn findQmFiles
    \brief find Qm Files
- *************************************************************************** */
+ ***********************************************/
 QStringList MyTranslationFiles::findQmFiles(const QString &thisFolder)
 {
     QDir dir(QString(":/%1").arg(thisFolder));
@@ -121,19 +121,19 @@ QStringList MyTranslationFiles::findQmFiles(const QString &thisFolder)
         { fileName = dir.filePath(fileName); }
     return fileNames;
 }
-/*! ***************************************************************************
+/************************************************
    \fn get Localizer Code
    \brief get Localizer Code
- *************************************************************************** */
+ ***********************************************/
 QString MyTranslationFiles::getLocalizerCode(const QString &thisPrefix, const QString &thisQmFile)
 {
     QString thisLocalizer = getLocalizedCodeFromFile(thisPrefix, thisQmFile);
     return myQOnlineTranslator.languageCodeToName(thisLocalizer);
 }
-/*! ***************************************************************************
+/************************************************
    \fn parse_ts_file
    \brief
- *************************************************************************** */
+ ***********************************************/
 base_node::base_node_ptr MyTranslationFiles::parse_ts_file(const QString &inputFile)
 {
     QFile iFile(inputFile);
@@ -229,10 +229,10 @@ base_node::base_node_ptr MyTranslationFiles::parse_ts_file(const QString &inputF
 
     return root;
 }
-/*! ***************************************************************************
+/************************************************
    \fn parse_txt_file
    \brief
- *************************************************************************** */
+ ***********************************************/
 bool MyTranslationFiles::parse_txt_file(const QString &inputFile, visitors::map_QStringQString &strings)
 {
     QFile iFile(inputFile);
@@ -265,10 +265,10 @@ bool MyTranslationFiles::parse_txt_file(const QString &inputFile, visitors::map_
 
     return true;
 }
-/*! ***************************************************************************
+/************************************************
    \fn toTXT
    \brief ts_tool --src \ProjectFolder\translations\ColorMagic_EN.ts --dst \ProjectFolder\translations_new --mode TXT
- *************************************************************************** */
+ ***********************************************/
 void MyTranslationFiles::toTXT(const QString &inputFile, const QString &outputDir, bool with_unfinished, bool with_vanished, bool unfinished_only)
 {
     using namespace visitors;
@@ -324,10 +324,10 @@ void MyTranslationFiles::toTXT(const QString &inputFile, const QString &outputDi
     document_dump ddv(xmlWriter);
     root->visit(ddv);
 }
-/*! ***************************************************************************
+/************************************************
    \fn toTS
    \brief ts_tool --src \inputFolder\ --dst \destination\translations\ProjectName_LangID.ts --mode TS
- *************************************************************************** */
+ ***********************************************/
 void MyTranslationFiles::toTS(const QString &inputDir, const QString &outputFile, const QString &langid)
 {
     using namespace visitors;
@@ -392,10 +392,10 @@ void MyTranslationFiles::toTS(const QString &inputDir, const QString &outputFile
     document_dump ddv(xmlWriter);
     root->visit(ddv);
 }
-/*! ***************************************************************************
+/************************************************
    \fn writeFile
    \brief write File
- *************************************************************************** */
+ ***********************************************/
 bool MyTranslationFiles::writeFile(const QString &thisFileName, const QString &thisContent)
 {
     if (isDebugMessage) { qDebug() << "writeFile"; }
@@ -413,10 +413,10 @@ bool MyTranslationFiles::writeFile(const QString &thisFileName, const QString &t
     theFile.close();
     return true;
 } // end writeFile
-/*! ***************************************************************************
+/************************************************
    \fn getAppDataLocation
    \brief get App Data Location
- *************************************************************************** */
+ ***********************************************/
 QString MyTranslationFiles::getAppDataLocation()
 {
    if (isDebugMessage) { qDebug() << "getAppDataLocation"; }
@@ -431,20 +431,20 @@ QString MyTranslationFiles::getAppDataLocation()
    }
    return theAppDataLocation;
 } // end getAppDataLocation
-/*! ***************************************************************************
+/************************************************
    \fn isFileExists
    \brief is File Exists
- *************************************************************************** */
+ ***********************************************/
 bool MyTranslationFiles::isFileExists(const QString &thisFile)
 {
     if (isDebugMessage) { qDebug() << "isFileExists"; }
     // check if file exists and if yes: Is it really a file and not directory?
     return QFileInfo::exists(thisFile) && QFileInfo(thisFile).isFile();
 } // end isFileExists
-/*! ***************************************************************************
+/************************************************
    \fn showMessageBox
    \brief information, question: 1 = true, 0 = false, warning, critical: theMessage.toLocal8Bit()
- *************************************************************************** */
+ ***********************************************/
 int MyTranslationFiles::showMessageBox(const QString &thisTitle, const QString &thisMessage, MyMessageTypes thisMessageType)
 {
     if (isDebugMessage) { qDebug() << "showMessageBox(" << thisTitle << ", " << thisMessage << ", " << thisMessageType << ")"; }
@@ -457,10 +457,10 @@ int MyTranslationFiles::showMessageBox(const QString &thisTitle, const QString &
     }
     return 0;
 } // end showMessageBox
-/*! ***************************************************************************
+/************************************************
    \fn questionYesNo
    \brief Titel and Question Yes No
- *************************************************************************** */
+ ***********************************************/
 bool MyTranslationFiles::questionYesNo(const char *thisTitle, const char *thisQuestion)
 {
     if (isDebugMessage) { qDebug() << "questionYesNo"; }

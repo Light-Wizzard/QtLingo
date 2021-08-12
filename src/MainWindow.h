@@ -23,10 +23,10 @@
 #include "qonlinetranslator.h"
 //
 namespace Ui { class MainWindow; }
-/*! ***************************************************************************
+/************************************************
    \class MyTranslationJobs
    \brief My Translation Jobs
- *************************************************************************** */
+ ***********************************************/
 class MyLingoJobs
 {
         QString myLanguageName, myLangName, myTsFile;
@@ -47,11 +47,11 @@ class MyLingoJobs
         void setSourceLang(QOnlineTranslator::Language s) { mySourceLang = s;   }
         void setLang(QOnlineTranslator::Language s)       { myLang = s;         }
 };
-/*! ***************************************************************************
+/************************************************
    \class MainWindow
    \fn MainWindow::MainWindow(QWidget *parent) : QDialog(parent), ui(new Ui::MainWindow)
    \brief Main Window Constructor.
- *************************************************************************** */
+ ***********************************************/
 class MainWindow : public QMainWindow
 {
         Q_OBJECT

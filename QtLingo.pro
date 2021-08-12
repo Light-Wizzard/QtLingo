@@ -76,6 +76,7 @@ include(src/third-party/qonlinetranslator/qonlinetranslator.pri)
 #
 DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \
+    Doxyfile \
     help/About-Author-en.html \
     help/About-en.html \
     help/Help-en.html \

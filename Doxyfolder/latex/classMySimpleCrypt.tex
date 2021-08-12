@@ -1,0 +1,344 @@
+\hypertarget{classMySimpleCrypt}{}\doxysection{My\+Simple\+Crypt Class Reference}
+\label{classMySimpleCrypt}\index{MySimpleCrypt@{MySimpleCrypt}}
+
+
+Simple encryption and decryption of strings and byte arrays.  
+
+
+
+
+{\ttfamily \#include $<$My\+Simple\+Crypt.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}{Compression\+Mode}} \{ \mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4}{Compression\+Auto}}
+, \mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daff742a272c2533f5313f69fbe26aee25}{Compression\+Always}}
+, \mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daa62bd9ae01d52e2cdd079e182740086f}{Compression\+Never}}
+ \}
+\item 
+enum \mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}{Integrity\+Protection\+Mode}} \{ \mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a2a1f690ba3828dea0f255a6759547385}{Protection\+None}}
+, \mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f}{Protection\+Checksum}}
+, \mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a0406ec5bfeff1a9361235e2916b7c77e}{Protection\+Hash}}
+ \}
+\item 
+enum \mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3e}{Error}} \{ \mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812}{Error\+No\+Error}}
+, \mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4}{Error\+No\+Key\+Set}}
+, \mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea5ee9b52c4247f8e136339ce8723b2cc3}{Error\+Unknown\+Version}}
+, \mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5}{Error\+Integrity\+Failed}}
+ \}
+\item 
+enum \mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6c}{Crypto\+Flag}} \{ \mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca3c9cdb733aa9fe66a728a9be11cf478d}{Crypto\+Flag\+None}} = 0
+, \mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4}{Crypto\+Flag\+Compression}} = 0x01
+, \mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2}{Crypto\+Flag\+Checksum}} = 0x02
+, \mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a}{Crypto\+Flag\+Hash}} = 0x04
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMySimpleCrypt_a91ad802aa5c315cbfcf35c2bee947269}{My\+Simple\+Crypt}} ()
+\item 
+\mbox{\hyperlink{classMySimpleCrypt_a67cfdf5fbf9daa6cf890932b7e5b1665}{My\+Simple\+Crypt}} (quint64 key)
+\item 
+void \mbox{\hyperlink{classMySimpleCrypt_a80ede524774928c10a28bbaac241dcbf}{set\+Key}} (quint64 key)
+\item 
+bool \mbox{\hyperlink{classMySimpleCrypt_a13df2a0d5d54c288bf92f776d9a1de91}{has\+Key}} () const
+\item 
+void \mbox{\hyperlink{classMySimpleCrypt_ab14a26ec8e577a288af6b66975b371f5}{set\+Compression\+Mode}} (\mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}{Compression\+Mode}} mode)
+\item 
+\mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}{Compression\+Mode}} \mbox{\hyperlink{classMySimpleCrypt_afe50354de0b0a7a9f88e9ff4e1919f9e}{compression\+Mode}} () const
+\item 
+void \mbox{\hyperlink{classMySimpleCrypt_a1162673cf4cb0cb932d5c5c47328e641}{set\+Integrity\+Protection\+Mode}} (\mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}{Integrity\+Protection\+Mode}} mode)
+\item 
+\mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}{Integrity\+Protection\+Mode}} \mbox{\hyperlink{classMySimpleCrypt_a7ceceb39829357c8883132c7d68ed243}{integrity\+Protection\+Mode}} () const
+\item 
+\mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3e}{Error}} \mbox{\hyperlink{classMySimpleCrypt_a30063532e2aa1577e3a57e8c4c16dce9}{last\+Error}} () const
+\item 
+QString \mbox{\hyperlink{classMySimpleCrypt_a93f7cda3877aac2fb9862988b9006ded}{encrypt\+To\+String}} (const QString \&plaintext)
+\item 
+QString \mbox{\hyperlink{classMySimpleCrypt_a9529ed89697639d53bc59651d2aa2b1e}{encrypt\+To\+String}} (const QByte\+Array \&plaintext)
+\item 
+QByte\+Array \mbox{\hyperlink{classMySimpleCrypt_a1fff242d3a0445472239e98e7c803636}{encrypt\+To\+Byte\+Array}} (const QString \&plaintext)
+\item 
+QByte\+Array \mbox{\hyperlink{classMySimpleCrypt_a998f45bc039d4cd65f2504c999871c2c}{encrypt\+To\+Byte\+Array}} (const QByte\+Array \&plaintext)
+\item 
+QString \mbox{\hyperlink{classMySimpleCrypt_abb25f7c05bae1f816a35480497204f2d}{decrypt\+To\+String}} (const QString \&cyphertext)
+\item 
+QByte\+Array \mbox{\hyperlink{classMySimpleCrypt_a321ac7368766792d96c5215fc783df87}{decrypt\+To\+Byte\+Array}} (const QString \&cyphertext)
+\item 
+QString \mbox{\hyperlink{classMySimpleCrypt_a7c530ffdf546a2472a99e7188743f582}{decrypt\+To\+String}} (const QByte\+Array \&cypher)
+\item 
+QByte\+Array \mbox{\hyperlink{classMySimpleCrypt_a0ee988ca7f7e87b7002d6b68baf19cbf}{decrypt\+To\+Byte\+Array}} (QByte\+Array cypher)
+\item 
+\mbox{\hyperlink{classMySimpleCrypt_a22e54154269c1b7caad4fa4f901be222}{Q\+\_\+\+DECLARE\+\_\+\+FLAGS}} (Crypto\+Flags, \mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6c}{Crypto\+Flag}})
+\item 
+void \mbox{\hyperlink{classMySimpleCrypt_a623c3586eaa8c46e68ac9efb0b9d61d9}{set\+Debug\+Message}} (bool this\+State)
+\begin{DoxyCompactList}\small\item\em set Debug Message \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMySimpleCrypt_a9382b0cbec096df5bd3bd268081bf59d}{get\+Debug\+Message}} ()
+\begin{DoxyCompactList}\small\item\em get Debug Message \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple encryption and decryption of strings and byte arrays. 
+
+This class provides a simple implementation of encryption and decryption of strings and byte arrays.
+
+\begin{DoxyWarning}{Warning}
+The encryption provided by this class is NOT strong encryption. It may help to shield things from curious eyes, but it will NOT stand up to someone determined to break the encryption. Don\textquotesingle{}t say you were not warned.
+\end{DoxyWarning}
+The class uses a 64 bit key. Simply create an instance of the class, set the key, and use the \mbox{\hyperlink{classMySimpleCrypt_a93f7cda3877aac2fb9862988b9006ded}{encrypt\+To\+String()}} method to calculate an encrypted version of the input string. To decrypt that string again, use an instance of \mbox{\hyperlink{classSimpleCrypt}{Simple\+Crypt}} initialized with the same key, and call the \mbox{\hyperlink{classMySimpleCrypt_abb25f7c05bae1f816a35480497204f2d}{decrypt\+To\+String()}} method with the encrypted string. If the key matches, the decrypted version of the string will be returned again.
+
+If you do not provide a key, or if something else is wrong, the encryption and decryption function will return an empty string or will return a string containing nonsense. \mbox{\hyperlink{classMySimpleCrypt_a30063532e2aa1577e3a57e8c4c16dce9}{last\+Error()}} will return a value indicating if the method was succesful, and if not, why not.
+
+\mbox{\hyperlink{classSimpleCrypt}{Simple\+Crypt}} is prepared for the case that the encryption and decryption algorithm is changed in a later version, by prepending a version identifier to the cypertext. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}\label{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!CompressionMode@{CompressionMode}}
+\index{CompressionMode@{CompressionMode}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{CompressionMode}{CompressionMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}{My\+Simple\+Crypt\+::\+Compression\+Mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CompressionAuto@{CompressionAuto}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!CompressionAuto@{CompressionAuto}}}\mbox{\Hypertarget{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4}\label{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4}} 
+Compression\+Auto&Only apply compression if that results in a shorter plaintext. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CompressionAlways@{CompressionAlways}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!CompressionAlways@{CompressionAlways}}}\mbox{\Hypertarget{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daff742a272c2533f5313f69fbe26aee25}\label{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daff742a272c2533f5313f69fbe26aee25}} 
+Compression\+Always&Always apply compression. Note that for short inputs, a compression may result in longer data \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CompressionNever@{CompressionNever}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!CompressionNever@{CompressionNever}}}\mbox{\Hypertarget{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daa62bd9ae01d52e2cdd079e182740086f}\label{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504daa62bd9ae01d52e2cdd079e182740086f}} 
+Compression\+Never&Never apply compression. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6c}\label{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6c}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!CryptoFlag@{CryptoFlag}}
+\index{CryptoFlag@{CryptoFlag}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{CryptoFlag}{CryptoFlag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6c}{My\+Simple\+Crypt\+::\+Crypto\+Flag}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CryptoFlagNone@{CryptoFlagNone}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!CryptoFlagNone@{CryptoFlagNone}}}\mbox{\Hypertarget{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca3c9cdb733aa9fe66a728a9be11cf478d}\label{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca3c9cdb733aa9fe66a728a9be11cf478d}} 
+Crypto\+Flag\+None&{\ttfamily Tab\+Settings} Crypto\+Flag\+None \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CryptoFlagCompression@{CryptoFlagCompression}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!CryptoFlagCompression@{CryptoFlagCompression}}}\mbox{\Hypertarget{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4}\label{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4}} 
+Crypto\+Flag\+Compression&{\ttfamily Tab\+Settings} Crypto\+Flag\+Compression \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CryptoFlagChecksum@{CryptoFlagChecksum}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!CryptoFlagChecksum@{CryptoFlagChecksum}}}\mbox{\Hypertarget{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2}\label{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2}} 
+Crypto\+Flag\+Checksum&{\ttfamily Tab\+Settings} Crypto\+Flag\+Checksum \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CryptoFlagHash@{CryptoFlagHash}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!CryptoFlagHash@{CryptoFlagHash}}}\mbox{\Hypertarget{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a}\label{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a}} 
+Crypto\+Flag\+Hash&{\ttfamily Tab\+Settings} Crypto\+Flag\+Hash \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3e}\label{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3e}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!Error@{Error}}
+\index{Error@{Error}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3e}{My\+Simple\+Crypt\+::\+Error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ErrorNoError@{ErrorNoError}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!ErrorNoError@{ErrorNoError}}}\mbox{\Hypertarget{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812}\label{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812}} 
+Error\+No\+Error&No error occurred. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ErrorNoKeySet@{ErrorNoKeySet}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!ErrorNoKeySet@{ErrorNoKeySet}}}\mbox{\Hypertarget{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4}\label{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4}} 
+Error\+No\+Key\+Set&No key was set. You can not encrypt or decrypt without a valid key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ErrorUnknownVersion@{ErrorUnknownVersion}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!ErrorUnknownVersion@{ErrorUnknownVersion}}}\mbox{\Hypertarget{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea5ee9b52c4247f8e136339ce8723b2cc3}\label{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea5ee9b52c4247f8e136339ce8723b2cc3}} 
+Error\+Unknown\+Version&The version of this data is unknown, or the data is otherwise not valid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ErrorIntegrityFailed@{ErrorIntegrityFailed}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!ErrorIntegrityFailed@{ErrorIntegrityFailed}}}\mbox{\Hypertarget{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5}\label{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5}} 
+Error\+Integrity\+Failed&The integrity check of the data failed. Perhaps the wrong key was used. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}\label{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!IntegrityProtectionMode@{IntegrityProtectionMode}}
+\index{IntegrityProtectionMode@{IntegrityProtectionMode}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{IntegrityProtectionMode}{IntegrityProtectionMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}{My\+Simple\+Crypt\+::\+Integrity\+Protection\+Mode}}}
+
+Integrity\+Protection\+Mode describes measures taken to make it possible to detect problems with the data or wrong decryption keys. Measures involve adding a checksum or a cryptograhpic hash to the data to be encrypted. This increases the length of the resulting cypertext, but makes it possible to check if the plaintext appears to be valid after decryption. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ProtectionNone@{ProtectionNone}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!ProtectionNone@{ProtectionNone}}}\mbox{\Hypertarget{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a2a1f690ba3828dea0f255a6759547385}\label{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a2a1f690ba3828dea0f255a6759547385}} 
+Protection\+None&The integerity of the encrypted data is not protected. It is not really possible to detect a wrong key, for instance. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ProtectionChecksum@{ProtectionChecksum}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!ProtectionChecksum@{ProtectionChecksum}}}\mbox{\Hypertarget{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f}\label{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f}} 
+Protection\+Checksum&A simple checksum is used to verify that the data is in order. If not, an empty string is returned. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ProtectionHash@{ProtectionHash}!MySimpleCrypt@{MySimpleCrypt}}\index{MySimpleCrypt@{MySimpleCrypt}!ProtectionHash@{ProtectionHash}}}\mbox{\Hypertarget{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a0406ec5bfeff1a9361235e2916b7c77e}\label{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11a0406ec5bfeff1a9361235e2916b7c77e}} 
+Protection\+Hash&A cryptographic hash is used to verify the integrity of the data. This method produces a much stronger, but longer check \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMySimpleCrypt_a91ad802aa5c315cbfcf35c2bee947269}\label{classMySimpleCrypt_a91ad802aa5c315cbfcf35c2bee947269}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!MySimpleCrypt@{MySimpleCrypt}}
+\index{MySimpleCrypt@{MySimpleCrypt}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{MySimpleCrypt()}{MySimpleCrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily My\+Simple\+Crypt\+::\+My\+Simple\+Crypt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. Constructs a \mbox{\hyperlink{classSimpleCrypt}{Simple\+Crypt}} instance without a valid key set on it. \mbox{\Hypertarget{classMySimpleCrypt_a67cfdf5fbf9daa6cf890932b7e5b1665}\label{classMySimpleCrypt_a67cfdf5fbf9daa6cf890932b7e5b1665}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!MySimpleCrypt@{MySimpleCrypt}}
+\index{MySimpleCrypt@{MySimpleCrypt}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{MySimpleCrypt()}{MySimpleCrypt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily My\+Simple\+Crypt\+::\+My\+Simple\+Crypt (\begin{DoxyParamCaption}\item[{quint64}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor. Constructs a \mbox{\hyperlink{classSimpleCrypt}{Simple\+Crypt}} instance and initializes it with the given \begin{DoxyItemize}
+\item key. \end{DoxyItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMySimpleCrypt_afe50354de0b0a7a9f88e9ff4e1919f9e}\label{classMySimpleCrypt_afe50354de0b0a7a9f88e9ff4e1919f9e}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!compressionMode@{compressionMode}}
+\index{compressionMode@{compressionMode}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{compressionMode()}{compressionMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}{Compression\+Mode}} My\+Simple\+Crypt\+::compression\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMySimpleCrypt_a321ac7368766792d96c5215fc783df87}\label{classMySimpleCrypt_a321ac7368766792d96c5215fc783df87}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!decryptToByteArray@{decryptToByteArray}}
+\index{decryptToByteArray@{decryptToByteArray}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{decryptToByteArray()}{decryptToByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QByte\+Array My\+Simple\+Crypt\+::decrypt\+To\+Byte\+Array (\begin{DoxyParamCaption}\item[{const QString \&}]{cyphertext }\end{DoxyParamCaption})}
+
+Decrypts a cyphertext string encrypted with this class with the set key back to the plain text version.
+
+If an error occured, such as non-\/matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. \mbox{\Hypertarget{classMySimpleCrypt_a0ee988ca7f7e87b7002d6b68baf19cbf}\label{classMySimpleCrypt_a0ee988ca7f7e87b7002d6b68baf19cbf}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!decryptToByteArray@{decryptToByteArray}}
+\index{decryptToByteArray@{decryptToByteArray}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{decryptToByteArray()}{decryptToByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QByte\+Array My\+Simple\+Crypt\+::decrypt\+To\+Byte\+Array (\begin{DoxyParamCaption}\item[{QByte\+Array}]{cypher }\end{DoxyParamCaption})}
+
+Decrypts a cyphertext binary encrypted with this class with the set key back to the plain text version.
+
+If an error occured, such as non-\/matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. \mbox{\Hypertarget{classMySimpleCrypt_a7c530ffdf546a2472a99e7188743f582}\label{classMySimpleCrypt_a7c530ffdf546a2472a99e7188743f582}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!decryptToString@{decryptToString}}
+\index{decryptToString@{decryptToString}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{decryptToString()}{decryptToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QString My\+Simple\+Crypt\+::decrypt\+To\+String (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{cypher }\end{DoxyParamCaption})}
+
+Decrypts a cyphertext binary encrypted with this class with the set key back to the plain text version. If an error occured, such as non-\/matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. \mbox{\Hypertarget{classMySimpleCrypt_abb25f7c05bae1f816a35480497204f2d}\label{classMySimpleCrypt_abb25f7c05bae1f816a35480497204f2d}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!decryptToString@{decryptToString}}
+\index{decryptToString@{decryptToString}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{decryptToString()}{decryptToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QString My\+Simple\+Crypt\+::decrypt\+To\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{cyphertext }\end{DoxyParamCaption})}
+
+Decrypts a cyphertext string encrypted with this class with the set key back to the plain text version.
+
+If an error occured, such as non-\/matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. \mbox{\Hypertarget{classMySimpleCrypt_a998f45bc039d4cd65f2504c999871c2c}\label{classMySimpleCrypt_a998f45bc039d4cd65f2504c999871c2c}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!encryptToByteArray@{encryptToByteArray}}
+\index{encryptToByteArray@{encryptToByteArray}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{encryptToByteArray()}{encryptToByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QByte\+Array My\+Simple\+Crypt\+::encrypt\+To\+Byte\+Array (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{plaintext }\end{DoxyParamCaption})}
+
+Encrypts the \begin{DoxyItemize}
+\item plaintext QByte\+Array with the key the class was initialized with, and returns a binary cyphertext in a QByte\+Array the result.\end{DoxyItemize}
+This method returns a byte array, that is useable for storing a binary format. If you need a string you can store in a text file, use \mbox{\hyperlink{classMySimpleCrypt_a93f7cda3877aac2fb9862988b9006ded}{encrypt\+To\+String()}} instead. \mbox{\Hypertarget{classMySimpleCrypt_a1fff242d3a0445472239e98e7c803636}\label{classMySimpleCrypt_a1fff242d3a0445472239e98e7c803636}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!encryptToByteArray@{encryptToByteArray}}
+\index{encryptToByteArray@{encryptToByteArray}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{encryptToByteArray()}{encryptToByteArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QByte\+Array My\+Simple\+Crypt\+::encrypt\+To\+Byte\+Array (\begin{DoxyParamCaption}\item[{const QString \&}]{plaintext }\end{DoxyParamCaption})}
+
+Encrypts the \begin{DoxyItemize}
+\item plaintext string with the key the class was initialized with, and returns a binary cyphertext in a QByte\+Array the result.\end{DoxyItemize}
+This method returns a byte array, that is useable for storing a binary format. If you need a string you can store in a text file, use \mbox{\hyperlink{classMySimpleCrypt_a93f7cda3877aac2fb9862988b9006ded}{encrypt\+To\+String()}} instead. \mbox{\Hypertarget{classMySimpleCrypt_a9529ed89697639d53bc59651d2aa2b1e}\label{classMySimpleCrypt_a9529ed89697639d53bc59651d2aa2b1e}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!encryptToString@{encryptToString}}
+\index{encryptToString@{encryptToString}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{encryptToString()}{encryptToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QString My\+Simple\+Crypt\+::encrypt\+To\+String (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{plaintext }\end{DoxyParamCaption})}
+
+Encrypts the \begin{DoxyItemize}
+\item plaintext QByte\+Array with the key the class was initialized with, and returns a cyphertext the result. The result is a base64 encoded version of the binary array that is the actual result of the encryption, so it can be stored easily in a text format. \end{DoxyItemize}
+\mbox{\Hypertarget{classMySimpleCrypt_a93f7cda3877aac2fb9862988b9006ded}\label{classMySimpleCrypt_a93f7cda3877aac2fb9862988b9006ded}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!encryptToString@{encryptToString}}
+\index{encryptToString@{encryptToString}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{encryptToString()}{encryptToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QString My\+Simple\+Crypt\+::encrypt\+To\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{plaintext }\end{DoxyParamCaption})}
+
+Encrypts the \begin{DoxyItemize}
+\item plaintext string with the key the class was initialized with, and returns a cyphertext the result. The result is a base64 encoded version of the binary array that is the actual result of the string, so it can be stored easily in a text format. \end{DoxyItemize}
+\mbox{\Hypertarget{classMySimpleCrypt_a9382b0cbec096df5bd3bd268081bf59d}\label{classMySimpleCrypt_a9382b0cbec096df5bd3bd268081bf59d}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!getDebugMessage@{getDebugMessage}}
+\index{getDebugMessage@{getDebugMessage}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{getDebugMessage()}{getDebugMessage()}}
+{\footnotesize\ttfamily bool My\+Simple\+Crypt\+::get\+Debug\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get Debug Message 
+
+\mbox{\Hypertarget{classMySimpleCrypt_a13df2a0d5d54c288bf92f776d9a1de91}\label{classMySimpleCrypt_a13df2a0d5d54c288bf92f776d9a1de91}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!hasKey@{hasKey}}
+\index{hasKey@{hasKey}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{hasKey()}{hasKey()}}
+{\footnotesize\ttfamily bool My\+Simple\+Crypt\+::has\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMySimpleCrypt_a7ceceb39829357c8883132c7d68ed243}\label{classMySimpleCrypt_a7ceceb39829357c8883132c7d68ed243}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!integrityProtectionMode@{integrityProtectionMode}}
+\index{integrityProtectionMode@{integrityProtectionMode}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{integrityProtectionMode()}{integrityProtectionMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}{Integrity\+Protection\+Mode}} My\+Simple\+Crypt\+::integrity\+Protection\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMySimpleCrypt_a30063532e2aa1577e3a57e8c4c16dce9}\label{classMySimpleCrypt_a30063532e2aa1577e3a57e8c4c16dce9}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!lastError@{lastError}}
+\index{lastError@{lastError}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{lastError()}{lastError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMySimpleCrypt_a054cd164e306ef180fe154bcdd8d8e3e}{Error}} My\+Simple\+Crypt\+::last\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMySimpleCrypt_a22e54154269c1b7caad4fa4f901be222}\label{classMySimpleCrypt_a22e54154269c1b7caad4fa4f901be222}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!Q\_DECLARE\_FLAGS@{Q\_DECLARE\_FLAGS}}
+\index{Q\_DECLARE\_FLAGS@{Q\_DECLARE\_FLAGS}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{Q\_DECLARE\_FLAGS()}{Q\_DECLARE\_FLAGS()}}
+{\footnotesize\ttfamily My\+Simple\+Crypt\+::\+Q\+\_\+\+DECLARE\+\_\+\+FLAGS (\begin{DoxyParamCaption}\item[{Crypto\+Flags}]{,  }\item[{\mbox{\hyperlink{classMySimpleCrypt_ae5ceb4e209370d4739a44e996ad83e6c}{Crypto\+Flag}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMySimpleCrypt_ab14a26ec8e577a288af6b66975b371f5}\label{classMySimpleCrypt_ab14a26ec8e577a288af6b66975b371f5}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!setCompressionMode@{setCompressionMode}}
+\index{setCompressionMode@{setCompressionMode}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{setCompressionMode()}{setCompressionMode()}}
+{\footnotesize\ttfamily void My\+Simple\+Crypt\+::set\+Compression\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMySimpleCrypt_a252c066edc873e5d2ed60699174b504d}{Compression\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the compression mode to use when encrypting data. The default mode is Auto.
+
+Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting. \mbox{\Hypertarget{classMySimpleCrypt_a623c3586eaa8c46e68ac9efb0b9d61d9}\label{classMySimpleCrypt_a623c3586eaa8c46e68ac9efb0b9d61d9}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!setDebugMessage@{setDebugMessage}}
+\index{setDebugMessage@{setDebugMessage}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{setDebugMessage()}{setDebugMessage()}}
+{\footnotesize\ttfamily void My\+Simple\+Crypt\+::set\+Debug\+Message (\begin{DoxyParamCaption}\item[{bool}]{this\+State }\end{DoxyParamCaption})}
+
+
+
+set Debug Message 
+
+\mbox{\Hypertarget{classMySimpleCrypt_a1162673cf4cb0cb932d5c5c47328e641}\label{classMySimpleCrypt_a1162673cf4cb0cb932d5c5c47328e641}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!setIntegrityProtectionMode@{setIntegrityProtectionMode}}
+\index{setIntegrityProtectionMode@{setIntegrityProtectionMode}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{setIntegrityProtectionMode()}{setIntegrityProtectionMode()}}
+{\footnotesize\ttfamily void My\+Simple\+Crypt\+::set\+Integrity\+Protection\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMySimpleCrypt_abfeda1932fcdaa04278de79459af7f11}{Integrity\+Protection\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the integrity mode to use when encrypting data. The default mode is Checksum.
+
+Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting. \mbox{\Hypertarget{classMySimpleCrypt_a80ede524774928c10a28bbaac241dcbf}\label{classMySimpleCrypt_a80ede524774928c10a28bbaac241dcbf}} 
+\index{MySimpleCrypt@{MySimpleCrypt}!setKey@{setKey}}
+\index{setKey@{setKey}!MySimpleCrypt@{MySimpleCrypt}}
+\doxysubsubsection{\texorpdfstring{setKey()}{setKey()}}
+{\footnotesize\ttfamily void My\+Simple\+Crypt\+::set\+Key (\begin{DoxyParamCaption}\item[{quint64}]{key }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{MySimpleCrypt_8h}{My\+Simple\+Crypt.\+h}}\item 
+src/\mbox{\hyperlink{MySimpleCrypt_8cpp}{My\+Simple\+Crypt.\+cpp}}\end{DoxyCompactItemize}

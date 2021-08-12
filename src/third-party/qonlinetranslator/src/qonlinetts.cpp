@@ -20,20 +20,20 @@
 
 #include "qonlinetts.h"
 
-/*! ***************************************************************************
+/************************************************
    \fn s_emotionCodes
    \brief s_emotionCodes
- *************************************************************************** */
+ ***********************************************/
 const QMap<QOnlineTts::Emotion, QString> QOnlineTts::s_emotionCodes =
 {
     {Neutral, QStringLiteral("neutral")},
     {Good, QStringLiteral("good")},
     {Evil, QStringLiteral("evil")}
 };
-/*! ***************************************************************************
+/************************************************
    \fn s_voiceCodes
    \brief s_voiceCodes
- *************************************************************************** */
+ ***********************************************/
 const QMap<QOnlineTts::Voice, QString> QOnlineTts::s_voiceCodes =
 {
     {Zahar, QStringLiteral("zahar")},
@@ -43,17 +43,17 @@ const QMap<QOnlineTts::Voice, QString> QOnlineTts::s_voiceCodes =
     {Alyss, QStringLiteral("alyss")},
     {Omazh, QStringLiteral("omazh")}
 };
-/*! ***************************************************************************
+/************************************************
    \fn QOnlineTts
    \brief QOnline Tts
- *************************************************************************** */
+ ***********************************************/
 QOnlineTts::QOnlineTts(QObject *parent) : QObject(parent)
 {
 }
-/*! ***************************************************************************
+/************************************************
    \fn generateUrls
    \brief generate Urls
- *************************************************************************** */
+ ***********************************************/
 void QOnlineTts::generateUrls(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language lang, Voice voice, Emotion emotion)
 {
     // Get speech
@@ -137,75 +137,75 @@ void QOnlineTts::generateUrls(const QString &text, QOnlineTranslator::Engine eng
             setError(UnsupportedEngine, QString("%1 %2").arg(QMetaEnum::fromType<QOnlineTranslator::Engine>().valueToKey(QOnlineTranslator::Bing), tr("engine does not support TTS")));
     }
 }
-/*! ***************************************************************************
+/************************************************
    \fn media
    \brief media
- *************************************************************************** */
+ ***********************************************/
 QList<QMediaContent> QOnlineTts::media() const
 {
     return m_media;
 }
-/*! ***************************************************************************
+/************************************************
    \fn errorString
    \brief error String
- *************************************************************************** */
+ ***********************************************/
 QString QOnlineTts::errorString() const
 {
     return m_errorString;
 }
-/*! ***************************************************************************
+/************************************************
    \fn error
    \brief error
- *************************************************************************** */
+ ***********************************************/
 QOnlineTts::TtsError QOnlineTts::error() const
 {
     return m_error;
 }
-/*! ***************************************************************************
+/************************************************
    \fn voiceCode
    \brief voice Code
- *************************************************************************** */
+ ***********************************************/
 QString QOnlineTts::voiceCode(Voice voice)
 {
     return s_voiceCodes.value(voice);
 }
-/*! ***************************************************************************
+/************************************************
    \fn emotionCode
    \brief emotion Code
- *************************************************************************** */
+ ***********************************************/
 QString QOnlineTts::emotionCode(Emotion emotion)
 {
     return s_emotionCodes.value(emotion);
 }
-/*! ***************************************************************************
+/************************************************
    \fn emotion
    \brief emotion
- *************************************************************************** */
+ ***********************************************/
 QOnlineTts::Emotion QOnlineTts::emotion(const QString &emotionCode)
 {
     return s_emotionCodes.key(emotionCode, NoEmotion);
 }
-/*! ***************************************************************************
+/************************************************
    \fn voice
    \brief voice
- *************************************************************************** */
+ ***********************************************/
 QOnlineTts::Voice QOnlineTts::voice(const QString &voiceCode)
 {
     return s_voiceCodes.key(voiceCode, NoVoice);
 }
-/*! ***************************************************************************
+/************************************************
    \fn setError
    \brief set Error
- *************************************************************************** */
+ ***********************************************/
 void QOnlineTts::setError(TtsError error, const QString &errorString)
 {
     m_error = error;
     m_errorString = errorString;
 }
-/*! ***************************************************************************
+/************************************************
    \fn languageApiCode
    \brief Returns engine-specific language code for tts
- *************************************************************************** */
+ ***********************************************/
 QString QOnlineTts::languageApiCode(QOnlineTranslator::Engine engine, QOnlineTranslator::Language lang)
 {
     switch (engine)
@@ -234,10 +234,10 @@ QString QOnlineTts::languageApiCode(QOnlineTranslator::Engine engine, QOnlineTra
     setError(UnsupportedLanguage, QString("%1 %2 %3").arg(tr("Selected language"), QMetaEnum::fromType<QOnlineTranslator::Language>().valueToKey(lang), QMetaEnum::fromType<QOnlineTranslator::Engine>().valueToKey(engine), tr("is not supported for")));
     return QString();
 }
-/*! ***************************************************************************
+/************************************************
    \fn voiceApiCode
    \brief voice Api Code
- *************************************************************************** */
+ ***********************************************/
 QString QOnlineTts::voiceApiCode(QOnlineTranslator::Engine engine, Voice voice)
 {
     if (engine == QOnlineTranslator::Yandex)
@@ -250,10 +250,10 @@ QString QOnlineTts::voiceApiCode(QOnlineTranslator::Engine engine, Voice voice)
     setError(UnsupportedVoice, QString(" %1 %2 %2").arg(tr("Selected voice"), QMetaEnum::fromType<Voice>().valueToKey(voice), QMetaEnum::fromType<QOnlineTranslator::Engine>().valueToKey(engine), tr("is not supported for")));
     return QString();
 }
-/*! ***************************************************************************
+/************************************************
    \fn emotionApiCode
    \brief emotion Api Code
- *************************************************************************** */
+ ***********************************************/
 QString QOnlineTts::emotionApiCode(QOnlineTranslator::Engine engine, Emotion emotion)
 {
     if (engine == QOnlineTranslator::Yandex)

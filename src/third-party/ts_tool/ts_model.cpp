@@ -5,34 +5,34 @@
 #include <assert.h>
 #include <algorithm>
 
-/*! ***************************************************************************
+/************************************************
    \class namespace visitors
    \brief
- *************************************************************************** */
+ ***********************************************/
 namespace visitors
 {
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(const document_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void document_dump::visit(const document_node *node) const
     {
         m_writer.writeStartDocument();
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
         m_writer.writeEndDocument();
     }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(const DTD_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void document_dump::visit(const DTD_node *node) const
     {
         m_writer.writeDTD(node->id());
     }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(const element_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void document_dump::visit(const element_node *node) const
     {
         m_writer.writeStartElement(node->name());
@@ -41,23 +41,23 @@ namespace visitors
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
         m_writer.writeEndElement();
     }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(const document_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void string_extractor_replacer::visit(const document_node *node)
     {
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
     }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(const DTD_node *)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void string_extractor_replacer::visit(const DTD_node * /*node*/) { }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(element_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void string_extractor_replacer::visit(element_node *node)
     {
         if(st_WaitForMessage == m_state && element_node::ent_message == node->element_node_type())
@@ -144,23 +144,23 @@ namespace visitors
 
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node) { node->visit(*this); });
     }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(const document_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void back_string_replacer::visit(const document_node *node)
     {
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
     }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(const DTD_node *)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void back_string_replacer::visit(const DTD_node * /*node*/) { }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(element_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void back_string_replacer::visit(element_node *node)
     {
         if(st_WaitForMessage == m_state && element_node::ent_message == node->element_node_type())
@@ -224,10 +224,10 @@ namespace visitors
 
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
     }
-    /*! ***************************************************************************
+    /************************************************
        \fn visit(TS_node *node)
        \brief
-     *************************************************************************** */
+     ***********************************************/
     void back_string_replacer::visit(TS_node *node)
 	{
         if(!m_langid.isEmpty())

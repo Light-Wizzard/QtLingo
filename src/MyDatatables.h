@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QtDebug>
 #include "MySqlDbtModel.h"
-/*! ***************************************************************************
+/************************************************
    \class MyProjectClass
    \brief
         QString         mySource;                   //!< \c mySource            \brief Source
@@ -16,7 +16,7 @@
         bool            myUnfinishedOnly = false;   //!< \c myUnfinishedOnly    \brief Unfinished Only
 
 QtProjectFolder, SourceFolder, DestinationFolder, LanguageIDs
- *************************************************************************** */
+ ***********************************************/
 class MyProjectClass
 {
         QString myID, myQtProjectName, myQtProjectFolder, mySourceFolder, myDestinationFolder, mySourceLanguage, myLanguageIDs, myMake;
@@ -42,10 +42,10 @@ class MyProjectClass
         void setLanguageIDs(const QString &s)       { myLanguageIDs = s;       }
         void setMake(const QString &s)              { myMake = s;              }
 };
-/*! ***************************************************************************
+/************************************************
    \class MyDatatables
    \brief My Datatables
- *************************************************************************** */
+ ***********************************************/
 class MyDatatables : public QObject
 {
         Q_OBJECT

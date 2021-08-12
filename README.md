@@ -32,6 +32,6 @@ then I will translate all the Languages,
 then update the Translations files and compile them into .qm files for deployment.
 
 # Credits
-Writen by Jeffrey Scott Flesher
+Writen by Jeffrey Scott Flesher the Light Wizzard in the Flesh
 
 ### End of File

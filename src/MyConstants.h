@@ -6,10 +6,10 @@
 //
 #define MY_CRYPTO_SEED (Q_UINT64_C(0x0c6add66acdcf066)) //!< \c MY_CRYPTO_SEED      \brief Ini File Name
 #define VERSION "1.0"
-/*! ***************************************************************************
+/************************************************
    \fn class MyConstants
    \brief Constants are defined as const QString, starting with MY_ all capps
- *************************************************************************** */
+ ***********************************************/
 class MyConstants
 {
     public:

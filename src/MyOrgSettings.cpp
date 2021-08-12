@@ -1,9 +1,9 @@
 #include "MyOrgSettings.h"
 
-/*! ***************************************************************************
+/************************************************
    \fn MyOrgSettings
    \brief Creates QSettings for organizationName, organizationDomain, applicationName
- *************************************************************************** */
+ ***********************************************/
 MyOrgSettings::MyOrgSettings(QObject *parent) : QObject(parent)
 {
     // Fixed random number, change it before using it, then leave it,
@@ -15,36 +15,36 @@ MyOrgSettings::MyOrgSettings(QObject *parent) : QObject(parent)
     // Run after GUI loads
     QTimer::singleShot(200, this, &MyOrgSettings::onRunOnStartup);
 }
-/*! ***************************************************************************
+/************************************************
    \fn ~MyOrgSettings
    \brief Deconstructor
- *************************************************************************** */
+ ***********************************************/
 MyOrgSettings::~MyOrgSettings()
 {
 
 }
-/*! ***************************************************************************
+/************************************************
    \fn setDebugMessage
    \brief set Debug Message
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
     if (isDebugMessage) { qDebug() << "setDebugMessage"; }
 }
-/*! ***************************************************************************
+/************************************************
    \fn getDebugMessage
    \brief get Debug Message
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::getDebugMessage()
 {
     if (isDebugMessage) { qDebug() << "getDebugMessage"; }
     return isDebugMessage;
 }
-/*! ***************************************************************************
+/************************************************
    \fn onRunOnStartup
    \brief Run On Start up
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::onRunOnStartup()
 {
     if (isDebugMessage)
@@ -55,10 +55,10 @@ void MyOrgSettings::onRunOnStartup()
         { showMessageBox(QObject::tr("Crypto Fail").toLocal8Bit(), tr("Crypto Fail: MyOrgSettings::onRunOnStartup()").toLocal8Bit(), Critical); }
     }
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSettings
    \brief get Settings
- *************************************************************************** */
+ ***********************************************/
 QSettings *MyOrgSettings::getSettings()
 {
     if (isDebugMessage) { qDebug() << "getSettings"; }
@@ -78,20 +78,20 @@ QSettings *MyOrgSettings::getSettings()
     }
     return new QSettings(myIni, QSettings::IniFormat);
 } // end qSettingsInstance
-/*! ***************************************************************************
+/************************************************
    \fn isSetting
    \brief is Setting
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::isSetting(const QString &thisFieldName)
 {
     if (isDebugMessage) { qDebug() << "isSetting"; }
     QSettings *mySettings = getSettings();
     return mySettings->contains(thisFieldName);
 } // end isSetting
-/*! ***************************************************************************
+/************************************************
    \fn readSettings
    \brief read Settings
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::readSettings(const QString &thisSetting, const QString &thisDefault)
 {
     if (isDebugMessage) { qDebug() << "readSettings"; }
@@ -101,10 +101,10 @@ QString MyOrgSettings::readSettings(const QString &thisSetting, const QString &t
     mySettings->endGroup();
     return theSetting;
 }
-/*! ***************************************************************************
+/************************************************
    \fn readSettingsBool
    \brief read Settings Bool
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::readSettingsBool(const QString &thisSetting, bool thisDefault)
 {
     if (isDebugMessage) { qDebug() << "readSettingsBool"; }
@@ -114,10 +114,10 @@ bool MyOrgSettings::readSettingsBool(const QString &thisSetting, bool thisDefaul
     mySettings->endGroup();
     return theSetting;
 }
-/*! ***************************************************************************
+/************************************************
    \fn readSettingsInt
    \brief read Settings Int
- *************************************************************************** */
+ ***********************************************/
 int MyOrgSettings::readSettingsInt(const QString &thisSetting, int thisDefault)
 {
     if (isDebugMessage) { qDebug() << "readSettingsInt"; }
@@ -127,10 +127,10 @@ int MyOrgSettings::readSettingsInt(const QString &thisSetting, int thisDefault)
     mySettings->endGroup();
     return theSetting;
 }
-/*! ***************************************************************************
+/************************************************
    \fn writeSettings
    \brief write Settings
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::writeSettings(const QString &thisSetting, const QString &thisValue)
 {
     if (isDebugMessage) { qDebug() << "writeSettings"; }
@@ -139,10 +139,10 @@ void MyOrgSettings::writeSettings(const QString &thisSetting, const QString &thi
     mySettings->setValue(thisSetting, thisValue);
     mySettings->endGroup();
 }
-/*! ***************************************************************************
+/************************************************
    \fn getDataPath
    \brief get Data Path
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getDataPath(const QString &thisFileName)
 {
     if (isDebugMessage) { qDebug() << "getDataPath"; }
@@ -153,10 +153,10 @@ QString MyOrgSettings::getDataPath(const QString &thisFileName)
     if (isDebugMessage) { qDebug() << "getDataPath = " << myDataPath; }
     return myDataPath;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getLastApplicationPath
    \brief get Last Application Path
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getLastApplicationPath()
 {
     if (isDebugMessage) { qDebug() << "getLastApplicationPath"; }
@@ -173,48 +173,48 @@ QString MyOrgSettings::getLastApplicationPath()
     }
     return myLastApplicationFolder;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setLastApplicationPath
    \brief set Last Application Path
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::setLastApplicationPath(const QString &thisPath)
 {
     if (isDebugMessage) { qDebug() << "setLastApplicationPath"; }
     myLastApplicationFolder = thisPath;
     writeSettings(myConstants->MY_LAST_PROJECT_FOLDER, thisPath);
 }
-/*! ***************************************************************************
+/************************************************
    \fn combinePathFileName
    \brief combine Path File Name
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::combinePathFileName(const QString &thisPath,const  QString &thisFileName)
 {
     if (isDebugMessage) { qDebug() << "combinePathFileName"; }
     return QString("%1%2%3").arg(thisPath, QDir::separator(), thisFileName);
 } // end combinePathFileName
-/*! ***************************************************************************
+/************************************************
    \fn isPathExists
    \brief is Path Exists
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::isPathExists(const QString &thisPath)
 {
     if (isDebugMessage) { qDebug() << "isPathExists"; }
     return QDir(thisPath).exists() && QFileInfo(thisPath).isDir();
 } // end isPathExists
-/*! ***************************************************************************
+/************************************************
    \fn isFileExists
    \brief is File Exists
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::isFileExists(const QString &thisFile)
 {
     if (isDebugMessage) { qDebug() << "isFileExists"; }
     // check if file exists and if yes: Is it really a file and not directory?
     return QFileInfo::exists(thisFile) && QFileInfo(thisFile).isFile();
 } // end isFileExists
-/*! ***************************************************************************
+/************************************************
    \fn removeFile
    \brief remove File
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::removeFile(const QString &thisFile)
 {
     if (isDebugMessage) { qDebug() << "removeFile"; }
@@ -222,10 +222,10 @@ bool MyOrgSettings::removeFile(const QString &thisFile)
     { return QFile::remove(thisFile); }
     return true;
 }
-/*! ***************************************************************************
+/************************************************
    \fn isFileMake
    \brief is File Make
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::isFileMake(const QString &thisPath, const QString &thisFileName)
 {
     if (isDebugMessage) { qDebug() << "isFileMake"; }
@@ -250,10 +250,10 @@ bool MyOrgSettings::isFileMake(const QString &thisPath, const QString &thisFileN
     }
     return true;
 } // end isFileMake
-/*! ***************************************************************************
+/************************************************
    \fn isMakeDir
    \brief is Make Dir
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::isMakeDir(const QString &thisPath)
 {
     if (isDebugMessage) { qDebug() << "isMakeDir"; }
@@ -266,19 +266,19 @@ bool MyOrgSettings::isMakeDir(const QString &thisPath)
     }
     return isPathExists(thisPath);
 } // end isMakeDir
-/*! ***************************************************************************
+/************************************************
    \fn getOrgName
    \brief This value is used for Qt Settings: GitHub Account Name is one example
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getOrgName()
 {
     if (isDebugMessage) { qDebug() << "getOrgName"; }
     return myOrganizationName;
 } // end getOrgName
-/*! ***************************************************************************
+/************************************************
    \fn setOrgName
    \brief set Org Name
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::setOrgName(const QString &thisOrgName)
 {
     if (isDebugMessage) { qDebug() << "setOrgName"; }
@@ -287,19 +287,19 @@ void MyOrgSettings::setOrgName(const QString &thisOrgName)
         myOrganizationName = thisOrgName;
     }
 } // end setOrgName
-/*! ***************************************************************************
+/************************************************
    \fn getOrgDomain
    \brief get Org Domain
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getOrgDomain()
 {
     if (isDebugMessage) { qDebug() << "getOrgDomain"; }
     return myOrganizationDomain;
 } // end getOrgDomain
-/*! ***************************************************************************
+/************************************************
    \fn setOrgDomain
    \brief set Org Domain
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::setOrgDomain(const QString &thisOrgDomain)
 {
     if (isDebugMessage) { qDebug() << "setOrgDomain"; }
@@ -308,19 +308,19 @@ void MyOrgSettings::setOrgDomain(const QString &thisOrgDomain)
         myOrganizationDomain = thisOrgDomain;
     }
 } // end setOrgDomain
-/*! ***************************************************************************
+/************************************************
    \fn getAppName
    \brief get App Name
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getAppName()
 {
     if (isDebugMessage) { qDebug() << "getAppName"; }
     return myApplicationName;
 } // end getAppName
-/*! ***************************************************************************
+/************************************************
    \fn setAppName
    \brief set App Name
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::setAppName(const QString &thisAppName)
 {
     if (isDebugMessage) { qDebug() << "setAppName"; }
@@ -329,10 +329,10 @@ void MyOrgSettings::setAppName(const QString &thisAppName)
         myApplicationName = thisAppName;
     }
 } // end setAppName
-/*! ***************************************************************************
+/************************************************
    \fn setGeometry
    \brief set Geometry
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::setGeometry(QPoint thisPos, QSize thisSize, bool isMax, bool isMin)
 {
     if (isDebugMessage) { qDebug() << "setGeometry"; }
@@ -344,10 +344,10 @@ void MyOrgSettings::setGeometry(QPoint thisPos, QSize thisSize, bool isMax, bool
     if(!isMax && !isMin) mySettings->setValue(myConstants->MY_GEOMETRY_SIZE, thisSize);
     mySettings->endGroup();
 } // end setGeometry
-/*! ***************************************************************************
+/************************************************
    \fn getGeometry
    \brief get Geometry
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::getGeometry()
 {
     if (isDebugMessage) { qDebug() << "getGeometry"; }
@@ -360,46 +360,46 @@ void MyOrgSettings::getGeometry()
     myGeometryMin  = mySettings->value(myConstants->MY_GEOMETRY_MIN, false).toBool();
     mySettings->endGroup();
 } // end getGeometry
-/*! ***************************************************************************
+/************************************************
    \fn getGeometryPos
    \brief get Geometry Pos
- *************************************************************************** */
+ ***********************************************/
 QPoint MyOrgSettings::getGeometryPos()
 {
     if (isDebugMessage) { qDebug() << "getGeometryPos"; }
     return myGeometryPos;
 } // end getGeometryPos
-/*! ***************************************************************************
+/************************************************
    \fn getGeometrySize
    \brief get Geometry Size
- *************************************************************************** */
+ ***********************************************/
 QSize MyOrgSettings::getGeometrySize()
 {
     if (isDebugMessage) { qDebug() << "getGeometrySize"; }
     return myGeometrySize;
 } // end getGeometrySize
-/*! ***************************************************************************
+/************************************************
    \fn getGeometryMax
    \brief get Geometry Max
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::getGeometryMax()
 {
     if (isDebugMessage) { qDebug() << "getGeometryMax"; }
     return myGeometryMax;
 } // end getGeometryMax
-/*! ***************************************************************************
+/************************************************
    \fn getGeometryMin
    \brief get Geometry Min
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::getGeometryMin()
 {
     if (isDebugMessage) { qDebug() << "getGeometryMin"; }
     return myGeometryMin;
 } // end getGeometryMin
-/*! ***************************************************************************
+/************************************************
    \fn readFile
    \brief read File
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::readFile(const QString &thisFileName)
 {
     if (isDebugMessage) { qDebug() << "readFile"; }
@@ -414,10 +414,10 @@ QString MyOrgSettings::readFile(const QString &thisFileName)
     file.close();
     return thisText;
 }
-/*! ***************************************************************************
+/************************************************
    \fn writeFile
    \brief write File
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::writeFile(const QString &thisFileName, const QString &thisContent)
 {
     if (isDebugMessage) { qDebug() << "writeFile"; }
@@ -435,28 +435,28 @@ bool MyOrgSettings::writeFile(const QString &thisFileName, const QString &thisCo
     theFile.close();
     return true;
 } // end writeFile
-/*! ***************************************************************************
+/************************************************
    \fn encryptThis
    \brief Crypto using SimpleCrypt
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::encryptThis(const QString &thisSecret)
 {
     if (isDebugMessage) { qDebug() << "encryptThis"; }
     return myCrypto->encryptToString(thisSecret);
 }
-/*! ***************************************************************************
+/************************************************
    \fn decryptThis
    \brief Crypto using SimpleCrypt
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::decryptThis(const QString &thisSecret)
 {
     if (isDebugMessage) { qDebug() << "decryptThis"; }
     return myCrypto->decryptToString(thisSecret);
 }
-/*! ***************************************************************************
+/************************************************
    \fn questionYesNo
    \brief Titel and Question Yes No
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::questionYesNo(const char *thisTitle, const char *thisQuestion)
 {
     if (isDebugMessage) { qDebug() << "questionYesNo"; }
@@ -477,10 +477,10 @@ bool MyOrgSettings::questionYesNo(const char *thisTitle, const char *thisQuestio
         return false;
     }
 } // end questionYesNo
-/*! ***************************************************************************
+/************************************************
    \fn showMessageBox
    \brief information, question: 1 = true, 0 = false, warning, critical: theMessage.toLocal8Bit()
- *************************************************************************** */
+ ***********************************************/
 int MyOrgSettings::showMessageBox(const QString &thisTitle, const QString &thisMessage, MyMessageTypes thisMessageType)
 {
     if (isDebugMessage) { qDebug() << "showMessageBox(" << thisTitle << ", " << thisMessage << ", " << thisMessageType << ")"; }
@@ -493,10 +493,10 @@ int MyOrgSettings::showMessageBox(const QString &thisTitle, const QString &thisM
     }
     return 0;
 } // end showMessageBox
-/*! ***************************************************************************
+/************************************************
    \fn getFileInfo
    \brief get File Info
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getFileInfo(MyOrgSettings::MyFileinfo thisInfo, const QString &thisFileFolder)
 {
     if (isDebugMessage) { qDebug() << "getFileInfo"; }
@@ -557,10 +557,10 @@ QString MyOrgSettings::getFileInfo(MyOrgSettings::MyFileinfo thisInfo, const QSt
     }
     return "";
 }
-/*! ***************************************************************************
+/************************************************
    \fn isAppDataLocationGood
    \brief is App Data Location Good
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::isAppDataLocationGood(const QString &thisFolder)
 {
     if (isDebugMessage) { qDebug() << "isAppDataLocationGood"; }
@@ -582,10 +582,10 @@ bool MyOrgSettings::isAppDataLocationGood(const QString &thisFolder)
     }
     return isGood;
 } // end isAppDataLocationGood
-/*! ***************************************************************************
+/************************************************
    \fn getAppDataLocation
    \brief get App Data Location
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getAppDataLocation()
 {
     if (isDebugMessage) { qDebug() << "getAppDataLocation"; }
@@ -604,7 +604,7 @@ QString MyOrgSettings::getAppDataLocation()
     }
     return theAppDataLocation;
 } // end getAppDataLocation
-/*! ***************************************************************************
+/************************************************
    \fn getEnvironmentVar
    \brief get Environment Var
 inline auto get_environement_variable(const char* key )
@@ -616,7 +616,7 @@ auto programFiles = get_environement_variable("%ProgramW6432%");
 auto programFilesX86 = get_environement_variable("%ProgramFiles(x86)%");
 auto userProfile = get_environement_variable("%USERPROFILE%");
 auto userProfile = get_environement_variable("%USERPROFILE%\Documents");
- *************************************************************************** */
+ ***********************************************/
 QString MyOrgSettings::getEnvironmentVar(const QString &thisVar, const QString &thisDefault)
 {
     QString theEnvValue = qEnvironmentVariable(thisVar.toLocal8Bit());
@@ -625,10 +625,10 @@ QString MyOrgSettings::getEnvironmentVar(const QString &thisVar, const QString &
     else
     { return thisDefault; }
 }
-/*! ***************************************************************************
+/************************************************
    \fn isWord
    \brief is Word
- *************************************************************************** */
+ ***********************************************/
 bool MyOrgSettings::isWord(const QString &thisString) const
 {
     for(int i = 0; i< thisString.length(); i++)
@@ -638,30 +638,30 @@ bool MyOrgSettings::isWord(const QString &thisString) const
     }
     return false;
 }
-/*! ***************************************************************************
+/************************************************
    \fn delay
    \brief delay
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::delay(int thisSeconds)
 {
     QEventLoop theDelayLoop;
     QTimer::singleShot(thisSeconds * 1000, &theDelayLoop, &QEventLoop::quit);
     theDelayLoop.exec();
 } // end delay
-/*! ***************************************************************************
+/************************************************
    \fn fileNumberLines
    \brief Number of Lines in a file
- *************************************************************************** */
+ ***********************************************/
 int MyOrgSettings::fileNumberLines(const QString &thisFile)
 {
     if (!isFileExists(thisFile)) { showMessageBox(tr("File not found").toLocal8Bit(), QString("%1: %2").arg(tr("File not found"), thisFile).toLocal8Bit(), Critical); return 0; }
     std::ifstream inFile(thisFile.toLocal8Bit());
     return std::count(std::istreambuf_iterator<char>(inFile), std::istreambuf_iterator<char>(), '\n');
 } // end fileNumberLines
-/*! ***************************************************************************
+/************************************************
    \fn removeAllFiles
    \brief removeAllFiles
- *************************************************************************** */
+ ***********************************************/
 void MyOrgSettings::removeAllFiles(const QString &thisFolder)
 {
     if (!isPathExists(thisFolder)) { showMessageBox(tr("Folder not found").toLocal8Bit(), QString("%1: %2").arg(tr("Folder not found"), thisFolder).toLocal8Bit(), Critical); return;  }

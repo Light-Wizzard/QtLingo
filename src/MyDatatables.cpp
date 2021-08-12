@@ -1,117 +1,117 @@
 #include "MyDatatables.h"
 
-/*! ***************************************************************************
+/************************************************
    \class MyDatatables
    \brief My Datatables Constructor
- *************************************************************************** */
+ ***********************************************/
 MyDatatables::MyDatatables(QObject *parent) : QObject(parent)
 {
     mySqlModel = new MySqlDbtModel();
     // Create Variable Trackers and Set to Empty
     myProject = new MyProjectClass("", "", "", "", "", "", "", "");
 }
-/*! ***************************************************************************
+/************************************************
    \class MyDatatables
    \brief My Datatables Deconstructor
- *************************************************************************** */
+ ***********************************************/
 MyDatatables::~MyDatatables()
 {
 
 }
-/*! ***************************************************************************
+/************************************************
    \fn setDebugMessage
    \brief set Debug Message
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
     if (isDebugMessage) { qDebug() << "setDebugMessage"; }
 }
-/*! ***************************************************************************
+/************************************************
    \fn getDebugMessage
    \brief get Debug Message
- *************************************************************************** */
+ ***********************************************/
 bool MyDatatables::getDebugMessage()
 {
     if (isDebugMessage) { qDebug() << "getDebugMessage"; }
     return isDebugMessage;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setProjectFolder
    \brief set Project Folder
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::setProjectFolder(const QString &thisProjectFolder)
 {
     if (isDebugMessage) { qDebug() << "setProjectFolder"; }
     myProjectFolder = thisProjectFolder;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getProjectFolder
    \brief get Project Folder
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getProjectFolder()
 {
     if (isDebugMessage) { qDebug() << "getProjectFolder"; }
     return myProjectFolder;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setProjectName
    \brief set Project Name
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::setProjectName(const QString &thisProjectName)
 {
     if (isDebugMessage) { qDebug() << "setProjectName"; }
     myProjectName = thisProjectName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getProjectName
    \brief get Project Name
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getProjectName()
 {
     if (isDebugMessage) { qDebug() << "getProjectName"; }
     return myProjectName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setProjectID
    \brief set Project ID
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::setProjectID(const QString &thisProjectID)
 {
     if (isDebugMessage) { qDebug() << "setProjectID"; }
     myProjectID = thisProjectID;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getProjectID
    \brief get Project ID
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getProjectID()
 {
     if (isDebugMessage) { qDebug() << "getProjectID"; }
     return myProjectID;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setComboBoxSqlValue
    \brief set ComboBox Sql Value
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::setComboBoxSqlValue(const QString &thisComboBoxSqlValue)
 {
     if (isDebugMessage) { qDebug() << "setComboBoxSqlValue"; }
     myComboBoxSqlValue = thisComboBoxSqlValue;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getComboBoxSqlValue
    \brief get ComboBox Sql Value
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getComboBoxSqlValue()
 {
     if (isDebugMessage) { qDebug() << "getComboBoxSqlValue"; }
     return myComboBoxSqlValue;
 }
-/*! ***************************************************************************
+/************************************************
    \fn checkDatabase
    \brief check Database
- *************************************************************************** */
+ ***********************************************/
 bool MyDatatables::checkDatabase()
 {
     if (isDebugMessage) { qDebug() << "checkDatabase"; }
@@ -153,10 +153,10 @@ bool MyDatatables::checkDatabase()
     //
     return true;
 }
-/*! ***************************************************************************
+/************************************************
    \fn insertProjects
    \brief insert Projects into SQL Database
- *************************************************************************** */
+ ***********************************************/
 bool MyDatatables::insertQtProjects()
 {
     if (isDebugMessage) { qDebug() << "insertProjects"; }
@@ -172,10 +172,10 @@ bool MyDatatables::insertQtProjects()
     myProjectFolder = mySqlModel->getRecordID();
     return true;
 }
-/*! ***************************************************************************
+/************************************************
    \fn addProject
    \brief addProject Assumes you have ran setProject: QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, LanguageIDs
- *************************************************************************** */
+ ***********************************************/
 bool MyDatatables::addQtProject()
 {
     if (isDebugMessage) { qDebug() << "addQtProject"; }
@@ -187,10 +187,10 @@ bool MyDatatables::addQtProject()
     }
     return insertQtProjects();
 }
-/*! ***************************************************************************
+/************************************************
    \fn deleteProject
    \brief delete Project
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::deleteQtProject(const QString &thisID)
 {
     if (isDebugMessage) { qDebug() << "deleteQtProject"; }
@@ -202,28 +202,28 @@ void MyDatatables::deleteQtProject(const QString &thisID)
         qCritical() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
     }
 }
-/*! ***************************************************************************
+/************************************************
    \fn getQtProjectNameSelectQuery
    \brief get Qt Project Name Select Query SELECT id, QtProjectName FROM Projects
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getQtProjectNameSelectQuery()
 {
     if (isDebugMessage) { qDebug() << "getQtProjectNameSelectQuery"; }
     return QString("SELECT id, QtProjectName FROM Projects");
 }
-/*! ***************************************************************************
+/************************************************
    \fn getQtProjectNameByNameQuery
    \brief get Qt Project Name By Name Query SELECT id, QtProjectName FROM Projects WHERE QtProjectFolder =
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getQtProjectNameByNameQuery(const QString &thisProject)
 {
     if (isDebugMessage) { qDebug() << "getQtProjectNameByNameQuery"; }
     return QString("SELECT id, QtProjectName FROM Projects WHERE QtProjectName = '%1'").arg(thisProject);
 }
-/*! ***************************************************************************
+/************************************************
    \fn isProjectFolderQuery
    \brief is Project Folder Query myAccessSqlDbtModel->isProjectQuery(ui->lineEditSettingsProjectBin->text());
- *************************************************************************** */
+ ***********************************************/
 bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
 {
     if (isDebugMessage) { qDebug() << "isQtProjectNameQuery"; }
@@ -240,28 +240,28 @@ bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
     }
     return false;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getQtProjectFullSelectQueryID
    \brief get Qt Project Full Select Query ID SELECT * FROM Projects WHERE id =
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getQtProjectFullSelectQueryID(const QString &thisWhereID)
 {
     if (isDebugMessage) { qDebug() << "getProjectFolderFullSelectQueryID"; }
     return QString("SELECT * FROM Projects WHERE id = ").append(thisWhereID);
 }
-/*! ***************************************************************************
+/************************************************
    \fn getQtProjectNameSelectQueryID
    \brief get Qt Project Name Select Query ID  SELECT id, QtProjectName FROM Projects WHERE id
- *************************************************************************** */
+ ***********************************************/
 QString MyDatatables::getQtProjectNameSelectQueryID(const QString &thisWhereID)
 {
     if (isDebugMessage) { qDebug() << "getQtProjectNameSelectQueryID"; }
     return QString("SELECT id, QtProjectName FROM Projects WHERE id = ").append(thisWhereID);
 }
-/*! ***************************************************************************
+/************************************************
    \fn saveProject
    \brief save Project Projects: id, QtProjectName QtProjectFolder, SourceFolder, DestinationFolder, SourceLanguage, LanguageIDs, Make
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::saveQtProject()
 {
     if (isDebugMessage) { qDebug() << "saveProject"; }
@@ -274,11 +274,11 @@ void MyDatatables::saveQtProject()
     }
     isSaveSettings = false;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setProject
    \brief set Project Sets all Variables used in the Configuarion Database in one Place:
           QtProjectFolder, SourceFolder, DestinationFolder, SourceLanguage, LanguageIDs, Make
- *************************************************************************** */
+ ***********************************************/
 void MyDatatables::setProject(const QString &thisQtProjectName, const QString &thisQtProjectFolder, const QString &thisSourceFolder, const QString &thisDestinationFolder, const QString &thisSourceLanguage, const QString &thisLanguageIDs, const QString &thisMake)
 {
     if (isDebugMessage) { qDebug() << "setProject"; }

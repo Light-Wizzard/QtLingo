@@ -1,42 +1,42 @@
 #include "MySqlDbtModel.h"
 
-/*! ***************************************************************************
+/************************************************
    \class MySqlDbtModel
    \brief Constructor
- *************************************************************************** */
+ ***********************************************/
 MySqlDbtModel::MySqlDbtModel(QObject *parent)
 {
     // MySettings Settings
     mySetting = new MyOrgSettings(parent);
 }
-/*! ***************************************************************************
+/************************************************
    \fn ~MySqlDbtModel
    \brief Deconstructor
- *************************************************************************** */
+ ***********************************************/
 MySqlDbtModel::~MySqlDbtModel()
 {
     if (myDb.isOpen()) { myDb.close(); }
 }
-/*! ***************************************************************************
+/************************************************
    \fn setDebugMessage
    \brief set Debug Message
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getDebugMessage
    \brief get Debug Message
- *************************************************************************** */
+ ***********************************************/
 bool MySqlDbtModel::getDebugMessage()
 {
     return isDebugMessage;
 }
-/*! ***************************************************************************
+/************************************************
    \fn isDbTable
    \brief is Db Table
- *************************************************************************** */
+ ***********************************************/
 bool MySqlDbtModel::isDbTable(const QString &thisTable)
 {
     if (isDebugMessage) { qDebug() << "isDatabase"; }
@@ -44,161 +44,161 @@ bool MySqlDbtModel::isDbTable(const QString &thisTable)
     if (theTables.contains(thisTable, Qt::CaseInsensitive))  { return true; }
     else                                                     { return false; }
 }
-/*! ***************************************************************************
+/************************************************
    \fn setSqlDatabase
    \brief set Sql Database
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setSqlDatabase(QSqlDatabase thisDatabase)
 {
     if (isDebugMessage) { qDebug() << "setSqlDatabase"; }
     myDb = thisDatabase;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSqlDatabase
    \brief get Sql Database
- *************************************************************************** */
+ ***********************************************/
 QSqlDatabase MySqlDbtModel::getSqlDatabase()
 {
     if (isDebugMessage) { qDebug() << "getSqlDatabase"; }
     return myDb;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSqlDriver
    \brief get Sql Driver
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getSqlDriver()
 {
     if (isDebugMessage) { qDebug() << "getSqlDriver"; }
     return mySqlDriver;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setSqlTableName
    \brief set Sql Table Name
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setSqlTableName(const QString &thisTableName)
 {
     if (isDebugMessage) { qDebug() << "setSqlTableName"; }
     myTableName = thisTableName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSqlTableName
    \brief get Sql Table Name
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getSqlTableName()
 {
     if (isDebugMessage) { qDebug() << "getSqlTableName"; }
     return myTableName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setSqlHostName
    \brief set Sql Host Name
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setSqlHostName(const QString &thisHostName)
 {
     if (isDebugMessage) { qDebug() << "setSqlHostName"; }
     myHostName = thisHostName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSqlHostName
    \brief get Sql Host Name
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getSqlHostName()
 {
     if (isDebugMessage) { qDebug() << "getSqlHostName"; }
     return myHostName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setSqlUserName
    \brief set Sql User Name
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setSqlUserName(const QString &thisUserName)
 {
     if (isDebugMessage) { qDebug() << "setSqlUserName"; }
     myUserName = thisUserName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSqlUserName
    \brief get Sql User Name
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getSqlUserName()
 {
     if (isDebugMessage) { qDebug() << "getSqlUserName"; }
     return myUserName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setSqlDatabaseName
    \brief set Sql Database Name
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setSqlDatabaseName(const QString &thisPassword)
 {
     if (isDebugMessage) { qDebug() << "setSqlDatabaseName"; }
     myDatabaseName = thisPassword;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSqlDatabaseName
    \brief get Sql Database Name
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getSqlDatabaseName()
 {
     if (isDebugMessage) { qDebug() << "getSqlDatabaseName"; }
     return myDatabaseName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setSqlPassword
    \brief set Sql Password
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setSqlPassword(const QString &thisPassword)
 {
     if (isDebugMessage) { qDebug() << "setSqlPassword"; }
     myPassword = thisPassword;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getSqlPassword
    \brief get Sql Password
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getSqlPassword()
 {
     if (isDebugMessage) { qDebug() << "getSqlPassword"; }
     return myPassword;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setConnectionName
    \brief set Connection Name
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setConnectionName(const QString &thisConnectionName)
 {
     if (isDebugMessage) { qDebug() << "setConnectionName"; }
     myConnectionName = thisConnectionName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getRecordID
    \brief get Record ID
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getRecordID()
 {
     return myInsertID;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setRecordID
    \brief set Record ID
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setRecordID(const QString &thisRecordID)
 {
     myInsertID = thisRecordID;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getConnectionName
    \brief get Connection Name
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::getConnectionName()
 {
     if (isDebugMessage) { qDebug() << "getConnectionName"; }
     return myConnectionName;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setSqlDriver
    \brief set Sql Driver setSqlDriver(":memory:");
- *************************************************************************** */
+ ***********************************************/
 void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
 {
     if (isDebugMessage) { qDebug() << "setSqlDriver"; }
@@ -252,10 +252,10 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
         mySqlDriver = theDriver;
     }
 }
-/*! ***************************************************************************
+/************************************************
    \fn createDataBaseConnection
    \brief create DataBase Connection
- *************************************************************************** */
+ ***********************************************/
 bool MySqlDbtModel::createDataBaseConnection()
 {
     if (isDebugMessage) { qDebug() << "createDataBaseConnection"; }
@@ -365,10 +365,10 @@ bool MySqlDbtModel::createDataBaseConnection()
     mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_TYPE, "QSQLITE");
     return true;
 } // end createDataBaseConnection
-/*! ***************************************************************************
+/************************************************
    \fn runQuery
    \brief Set myInsertID, returns true or false
- *************************************************************************** */
+ ***********************************************/
 bool MySqlDbtModel::runQuery(const QString &thisQuery)
 {
     if (isDebugMessage) { qDebug() << "runQuery=" << thisQuery; }
@@ -385,10 +385,10 @@ bool MySqlDbtModel::runQuery(const QString &thisQuery)
         return false;
     }
 }
-/*! ***************************************************************************
+/************************************************
    \fn moveDb
    \brief move Db
- *************************************************************************** */
+ ***********************************************/
 bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSourcePath, const QString &thisDestinationFolder)
 {
     if (isDebugMessage) { qDebug() << "moveDb"; }
@@ -413,11 +413,11 @@ bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSour
     }
     else { return true; }
 }
-/*! ***************************************************************************
+/************************************************
    \fn runProcces
    \brief run Procces given exe path, argument, and if you want to wait and how long,
           in both cases this is a blocking call and will wait till finished and return value.
- *************************************************************************** */
+ ***********************************************/
 QString MySqlDbtModel::runProcces(const QString &thisExePath, const QString &thisArgument, bool isWait, int thisWaitTimeSec)
 {
     QProcess *thisProcess = new QProcess(this);
@@ -441,10 +441,10 @@ QString MySqlDbtModel::runProcces(const QString &thisExePath, const QString &thi
     myRunReturnCode = thisProcess->exitCode();
     return QString(thisProcess->readAllStandardOutput().simplified());
 }
-/*! ***************************************************************************
+/************************************************
    \fn getRunReturnCode
    \brief get Run eturn Code
- *************************************************************************** */
+ ***********************************************/
 int MySqlDbtModel::getRunReturnCode()
 {
     return myRunReturnCode;

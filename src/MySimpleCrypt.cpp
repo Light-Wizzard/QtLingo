@@ -27,20 +27,20 @@
 */
 #include "MySimpleCrypt.h"
 
-/*! ***************************************************************************
+/************************************************
    \class SimpleCrypt
    \brief Constructor
- *************************************************************************** */
+ ***********************************************/
 MySimpleCrypt::MySimpleCrypt(): myKey(0), myCompressionMode(CompressionAuto), myProtectionMode(ProtectionChecksum), myLastError(ErrorNoError)
 {
     QRandomGenerator generator(uint(QDateTime::currentMSecsSinceEpoch() & 0xFFFF));
     generator.generate();
     // qsrand(uint(QDateTime::currentMSecsSinceEpoch() & 0xFFFF));
 }
-/*! ***************************************************************************
+/************************************************
    \class SimpleCrypt
    \brief Constructor
- *************************************************************************** */
+ ***********************************************/
 MySimpleCrypt::MySimpleCrypt(quint64 key): myKey(key), myCompressionMode(CompressionAuto), myProtectionMode(ProtectionChecksum), myLastError(ErrorNoError)
 {
     QRandomGenerator generator(uint(QDateTime::currentMSecsSinceEpoch() & 0xFFFF));
@@ -48,35 +48,35 @@ MySimpleCrypt::MySimpleCrypt(quint64 key): myKey(key), myCompressionMode(Compres
     // qsrand(uint(QDateTime::currentMSecsSinceEpoch() & 0xFFFF));
     splitKey();
 }
-/*! ***************************************************************************
+/************************************************
    \fn setDebugMessage
    \brief set Debug Message
- *************************************************************************** */
+ ***********************************************/
 void MySimpleCrypt::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
 }
-/*! ***************************************************************************
+/************************************************
    \fn getDebugMessage
    \brief get Debug Message
- *************************************************************************** */
+ ***********************************************/
 bool MySimpleCrypt::getDebugMessage()
 {
     return isDebugMessage;
 }
-/*! ***************************************************************************
+/************************************************
    \fn setKey
    \brief set Key
- *************************************************************************** */
+ ***********************************************/
 void MySimpleCrypt::setKey(quint64 key)
 {
     myKey = key;
     splitKey();
 }
-/*! ***************************************************************************
+/************************************************
    \fn splitKey
    \brief split Key
- *************************************************************************** */
+ ***********************************************/
 void MySimpleCrypt::splitKey()
 {
     myKeyParts.clear();
@@ -89,19 +89,19 @@ void MySimpleCrypt::splitKey()
         myKeyParts[i] = static_cast<char>(part);
     }
 }
-/*! ***************************************************************************
+/************************************************
    \fn encryptToByteArray
    \brief encrypt To Byte Array QString
- *************************************************************************** */
+ ***********************************************/
 QByteArray MySimpleCrypt::encryptToByteArray(const QString &plaintext)
 {
     QByteArray plaintextArray = plaintext.toUtf8();
     return encryptToByteArray(plaintextArray);
 }
-/*! ***************************************************************************
+/************************************************
    \fn encryptToByteArray
    \brief encrypt To Byte Array QByteArray
- *************************************************************************** */
+ ***********************************************/
 QByteArray MySimpleCrypt::encryptToByteArray(const QByteArray &plaintext)
 {
     if (myKeyParts.isEmpty())
@@ -171,10 +171,10 @@ QByteArray MySimpleCrypt::encryptToByteArray(const QByteArray &plaintext)
     myLastError = ErrorNoError;
     return resultArray;
 }
-/*! ***************************************************************************
+/************************************************
    \fn encryptToString
    \brief encrypt To String QString
- *************************************************************************** */
+ ***********************************************/
 QString MySimpleCrypt::encryptToString(const QString &plaintext)
 {
     QByteArray plaintextArray = plaintext.toUtf8();
@@ -182,20 +182,20 @@ QString MySimpleCrypt::encryptToString(const QString &plaintext)
     QString cypherString = QString::fromLatin1(cypher.toBase64());
     return cypherString;
 }
-/*! ***************************************************************************
+/************************************************
    \fn encryptToString
    \brief encrypt To String QByteArray
- *************************************************************************** */
+ ***********************************************/
 QString MySimpleCrypt::encryptToString(const QByteArray &plaintext)
 {
     QByteArray cypher = encryptToByteArray(plaintext);
     QString cypherString = QString::fromLatin1(cypher.toBase64());
     return cypherString;
 }
-/*! ***************************************************************************
+/************************************************
    \fn decryptToString
    \brief decrypt To String QString
- *************************************************************************** */
+ ***********************************************/
 QString MySimpleCrypt::decryptToString(const QString &cyphertext)
 {
     QByteArray cyphertextArray = QByteArray::fromBase64(cyphertext.toLatin1());
@@ -204,10 +204,10 @@ QString MySimpleCrypt::decryptToString(const QString &cyphertext)
 
     return plaintext;
 }
-/*! ***************************************************************************
+/************************************************
    \fn decryptToString
    \brief decrypt To String QByteArray
- *************************************************************************** */
+ ***********************************************/
 QString MySimpleCrypt::decryptToString(const QByteArray &cypher)
 {
     QByteArray ba = decryptToByteArray(cypher);
@@ -215,10 +215,10 @@ QString MySimpleCrypt::decryptToString(const QByteArray &cypher)
 
     return plaintext;
 }
-/*! ***************************************************************************
+/************************************************
    \fn decryptToByteArray
    \brief decrypt To Byte Array QString
- *************************************************************************** */
+ ***********************************************/
 QByteArray MySimpleCrypt::decryptToByteArray(const QString &cyphertext)
 {
     QByteArray cyphertextArray = QByteArray::fromBase64(cyphertext.toLatin1());
@@ -226,10 +226,10 @@ QByteArray MySimpleCrypt::decryptToByteArray(const QString &cyphertext)
 
     return ba;
 }
-/*! ***************************************************************************
+/************************************************
    \fn decryptToByteArray
    \brief decrypt To Byte Array QByteArray
- *************************************************************************** */
+ ***********************************************/
 QByteArray MySimpleCrypt::decryptToByteArray(QByteArray cypher)
 {
     if (myKeyParts.isEmpty())

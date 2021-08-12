@@ -1,0 +1,90 @@
+The {\bfseries{\mbox{\hyperlink{structQOption}{QOption}}}} structure provides storage for translation options data for a single type of speech.\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md140}{}\doxysection{Content}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md140}
+
+\begin{DoxyItemize}
+\item \href{\#public-members}{\texttt{ Public Members}}
+\item \href{\#detailed-description}{\texttt{ Detailed Description}}
+\item \href{\#members-documentation}{\texttt{ Members Documentation}}
+\end{DoxyItemize}\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md141}{}\doxysection{Public Members}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md141}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft QString   &\href{\#word}{\texttt{ {\bfseries{word}}}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#gender}{\texttt{ {\bfseries{gender}}}}    \\\cline{1-2}
+\PBS\raggedleft QString\+List   &\href{\#translations}{\texttt{ {\bfseries{translations}}}}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md142}{}\doxysection{Public Functions}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md142}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft QJson\+Object   &\href{\#tojson}{\texttt{ {\bfseries{to\+Json}}()}}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md143}{}\doxysection{Detailed Description}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md143}
+A {\bfseries{\mbox{\hyperlink{structQOption}{QOption}}}} object can be obtained from the \mbox{\hyperlink{QOnlineTranslator_8md}{QOnline\+Translator}} object, which contains translation options for a single word.
+
+{\bfseries{Example\+:}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classQOnlineTranslator}{QOnlineTranslator}} translator;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{}
+\DoxyCodeLine{QTextStream out(stdout);}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = translator.\mbox{\hyperlink{classQOnlineTranslator_ae446df4d1fb62199e240e5f7fe3d78dd}{translationOptions}}().cbegin(); it != translator.\mbox{\hyperlink{classQOnlineTranslator_ae446df4d1fb62199e240e5f7fe3d78dd}{translationOptions}}().cend(); ++it) \{}
+\DoxyCodeLine{    out << it.key() << \textcolor{stringliteral}{"{}:"{}} << endl; \textcolor{comment}{// Output the type of speech with a colon}}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&[word, gender, translations] : it.value()) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (!gender.isEmpty())}
+\DoxyCodeLine{            out << \textcolor{stringliteral}{"{} "{}} << gender; \textcolor{comment}{// Print the gender of the word}}
+\DoxyCodeLine{        out << \textcolor{stringliteral}{"{} "{}} << word << \textcolor{stringliteral}{"{}: "{}}; \textcolor{comment}{// Print the word}}
+\DoxyCodeLine{        out << translations; \textcolor{comment}{// Print translations}}
+\DoxyCodeLine{        out << endl;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    out << endl;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* Returns:}}
+\DoxyCodeLine{\textcolor{comment}{verb:}}
+\DoxyCodeLine{\textcolor{comment}{ sagen: say, tell, speak, mean, utter}}
+\DoxyCodeLine{\textcolor{comment}{ sprechen: speak, talk, say, pronounce, militate, discourse}}
+\DoxyCodeLine{\textcolor{comment}{ meinen: think, mean, believe, say, opine, fancy}}
+\DoxyCodeLine{\textcolor{comment}{ heißen: mean, be called, be named, bid, tell, be titled}}
+\DoxyCodeLine{\textcolor{comment}{ äußern: express, comment, speak, voice, say, utter}}
+\DoxyCodeLine{\textcolor{comment}{ aussprechen: express, pronounce, say, speak, voice, enunciate}}
+\DoxyCodeLine{\textcolor{comment}{ vorbringen: make, put forward, raise, say, put, bring forward}}
+\DoxyCodeLine{\textcolor{comment}{ aufsagen: recite, say, speak}}
+\DoxyCodeLine{\textcolor{comment}{}}
+\DoxyCodeLine{\textcolor{comment}{noun:}}
+\DoxyCodeLine{\textcolor{comment}{ Sagen: say}}
+\DoxyCodeLine{\textcolor{comment}{ Mitspracherecht: say}}
+\DoxyCodeLine{\textcolor{comment}{*/}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md145}{}\doxysection{Members Documentation}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md145}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md146}{}\doxysubsection{$<$a id=\textquotesingle{}word\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOption\+::word}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md146}
+Returns word, that specified for translation options.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md148}{}\doxysubsection{$<$a id=\textquotesingle{}gender\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOption\+::gender}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md148}
+Returns the gender of the word above.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md150}{}\doxysubsection{$<$a id=\textquotesingle{}translations\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstringlist.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString\+List$<$/a$>$ QOption\+::translations}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md150}
+Returns associated translations for the word.\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md151}{}\doxysection{Member Function Documentation}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md151}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md152}{}\doxysubsection{$<$a id=\textquotesingle{}tojson\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qjsonobject.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QJson\+Object$<$/a$>$ QOption\+::to\+Json()}\label{md_src_third_party_qonlinetranslator_docs_QOption_autotoc_md152}
+Returns a \href{https://doc.qt.io/qt-5/qjsonobject.html}{\texttt{ QJson\+Object}} representation from data. 

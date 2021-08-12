@@ -1,0 +1,409 @@
+The {\bfseries{\mbox{\hyperlink{classQOnlineTranslator}{QOnline\+Translator}}}} class provides translation data.\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md35}{}\doxysection{Content}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md35}
+
+\begin{DoxyItemize}
+\item \href{\#public-types}{\texttt{ Public Types}}
+\item \href{\#public-functions}{\texttt{ Public Functions}}
+\item \href{\#static-public-member}{\texttt{ Static Public Members}}
+\item \href{\#member-type-documentation}{\texttt{ Member Type Documentation}}
+\item \href{\#member-function-documentation}{\texttt{ Member Function Documentation}}
+\end{DoxyItemize}\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md36}{}\doxysection{Public Types}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md36}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Type   }&\cellcolor{\tableheadbgcolor}\textbf{ Name    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft enum   &\href{\#language}{\texttt{ {\bfseries{Language}}}} \{ No\+Language, Auto, Afrikaans, Albanian, Amharic, ..., Zulu \}    \\\cline{1-2}
+\PBS\raggedleft enum   &\href{\#engine}{\texttt{ {\bfseries{Engine}}}} \{ Google, Yandex, Bing \}    \\\cline{1-2}
+\PBS\raggedleft enum   &\href{\#translation-error}{\texttt{ {\bfseries{Translation\+Error}}}} \{ No\+Error, Parameters\+Error, Network\+Error, Service\+Error, Parsing\+Error \}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md37}{}\doxysection{Public Functions}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md37}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft &\href{\#constructor}{\texttt{ {\bfseries{QOnline\+Translator}}(QWidget $\ast$parent = nullptr)}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#translate}{\texttt{ {\bfseries{translate}}(const QString \&text, Engine engine = Google, Language translation\+Lang = Auto, Language source\+Lang = Auto, Language ui\+Lang = Auto)}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#detect-language}{\texttt{ {\bfseries{detect\+Language}}(const QString \&text, Engine engine = Google)}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#abort}{\texttt{ {\bfseries{abort}}()}}    \\\cline{1-2}
+\PBS\raggedleft bool   &\href{\#is-running}{\texttt{ {\bfseries{is\+Running}}()}}    \\\cline{1-2}
+\PBS\raggedleft QJson\+Document   &\href{\#tojson}{\texttt{ {\bfseries{to\+Json}}()}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#source}{\texttt{ {\bfseries{source}}()}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#source-translit}{\texttt{ {\bfseries{source\+Translit}}()}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\mbox{[}{\bfseries{source\+Transcription}}()\mbox{]}(source-\/transcription)    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#source-language-name}{\texttt{ {\bfseries{source\+Language\+Name}}()}}    \\\cline{1-2}
+\PBS\raggedleft Language   &\href{\#source-language}{\texttt{ {\bfseries{source\+Language}}()}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#translation}{\texttt{ {\bfseries{translation}}()}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\mbox{[}{\bfseries{translation\+Translit}}()\mbox{]}(translation-\/translit)    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#translation-language-name}{\texttt{ {\bfseries{translation\+Language\+Name}}()}}    \\\cline{1-2}
+\PBS\raggedleft Language   &\href{\#translation-language}{\texttt{ {\bfseries{translation\+Language}}()}}    \\\cline{1-2}
+\PBS\raggedleft QMap$<$QString, QVector$<$\mbox{\hyperlink{structQOption}{QOption}}$>$$>$   &\href{\#translation-options}{\texttt{ {\bfseries{translation\+Options}}()}}    \\\cline{1-2}
+\PBS\raggedleft QMap$<$QString, QVector$<$\mbox{\hyperlink{structQExample}{QExample}}$>$$>$   &\href{\#examples}{\texttt{ {\bfseries{examples}}()}}    \\\cline{1-2}
+\PBS\raggedleft Translation\+Error   &\href{\#error}{\texttt{ {\bfseries{error}}()}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#error-string}{\texttt{ {\bfseries{error\+String}}()}}    \\\cline{1-2}
+\PBS\raggedleft bool   &\href{\#is-source-translit-enabled}{\texttt{ {\bfseries{is\+Source\+Translit\+Enabled}}()}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#set-source-translit-enabled}{\texttt{ {\bfseries{set\+Source\+Translit\+Enabled}}(bool enable)}}    \\\cline{1-2}
+\PBS\raggedleft bool   &\href{\#is-translation-translit-enabled}{\texttt{ {\bfseries{is\+Translation\+Translit\+Enabled}}()}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#set-translation-translit-enabled}{\texttt{ {\bfseries{set\+Translation\+Translit\+Enabled}}(bool enable)}}    \\\cline{1-2}
+\PBS\raggedleft bool   &\href{\#is-source-transcription-enabled}{\texttt{ {\bfseries{is\+Source\+Transcription\+Enabled}}()}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#set-source-transcription-enabled}{\texttt{ {\bfseries{set\+Source\+Transcription\+Enabled}}(bool enable)}}    \\\cline{1-2}
+\PBS\raggedleft bool   &\href{\#is-dictionary-enabled}{\texttt{ {\bfseries{is\+Dictionary\+Enabled}}()}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#set-dictionary-enabled}{\texttt{ {\bfseries{set\+Dictionary\+Enabled}}(bool enable)}}    \\\cline{1-2}
+\PBS\raggedleft bool   &\href{\#is-definitions-enabled}{\texttt{ {\bfseries{is\+Definitions\+Enabled}}()}}    \\\cline{1-2}
+\PBS\raggedleft void   &\href{\#set-definitions-enabled}{\texttt{ {\bfseries{set\+Definitions\+Enabled}}(bool enable)}}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md38}{}\doxysection{Signals}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md38}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft void   &\href{\#finished-signal}{\texttt{ {\bfseries{finished}}()}}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md39}{}\doxysection{Static Public Members}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md39}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Return type   }&\cellcolor{\tableheadbgcolor}\textbf{ Data member    }\\\cline{1-2}
+\endhead
+\PBS\raggedleft QString   &\href{\#language-name}{\texttt{ {\bfseries{language\+Name}}(Language language)}}    \\\cline{1-2}
+\PBS\raggedleft QString   &\href{\#language-code}{\texttt{ {\bfseries{language\+Code}}(Language language)}}    \\\cline{1-2}
+\PBS\raggedleft Language   &\href{\#language-1}{\texttt{ {\bfseries{language}}(const QLocale \&locale)}}    \\\cline{1-2}
+\PBS\raggedleft Language   &\href{\#language-2}{\texttt{ {\bfseries{language}}(const QString \&language\+Code)}}    \\\cline{1-2}
+\PBS\raggedleft bool   &\href{\#is-support-translation}{\texttt{ {\bfseries{is\+Support\+Translation}}(Engine engine, Language lang)}}   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md40}{}\doxysection{Member Type Documentation}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md40}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md41}{}\doxysubsection{$<$a id=\textquotesingle{}language\textquotesingle{}/$>$ enum QOnline\+Translator\+::\+Language}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md41}
+This enum has the following values\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Constant   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\cellcolor{\tableheadbgcolor}\textbf{ Engine   }&\cellcolor{\tableheadbgcolor}\textbf{ Language code    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Constant   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\cellcolor{\tableheadbgcolor}\textbf{ Engine   }&\cellcolor{\tableheadbgcolor}\textbf{ Language code    }\\\cline{1-4}
+\endhead
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daba1101f947dcb37d3ea35e3c40607e3f}{QOnline\+Translator\+::\+No\+Language}}   &\PBS\centering -\/1   &&\\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{QOnline\+Translator\+::\+Auto}}   &\PBS\centering 0   &Google, Yandex, Bing   &auto    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7c235b486820b95cfab3f13fcd9de066}{QOnline\+Translator\+::\+Afrikaans}}   &\PBS\centering 1   &Google, Yandex, Bing   &af    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da498679ad931d9ee6e5d015acb041dd2b}{QOnline\+Translator\+::\+Albanian}}   &\PBS\centering 2   &Google, Yandex   &sq    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daec1199a41c3f10279b4837047deeaac4}{QOnline\+Translator\+::\+Amharic}}   &\PBS\centering 3   &Google, Yandex   &am    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0970cb2a0ff727b33ca35ffdf4123b65}{QOnline\+Translator\+::\+Arabic}}   &\PBS\centering 4   &Google, Yandex, Bing   &ar    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fe4b55467ec03e414dc01f79b4befaa}{QOnline\+Translator\+::\+Armenian}}   &\PBS\centering 5   &Google, Yandex   &hy    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4f5a179a0bd5cc24951eb365fe425dd2}{QOnline\+Translator\+::\+Azerbaijani}}   &\PBS\centering 6   &Google   &az    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeab29df241607d253f8d854d9bd20206}{QOnline\+Translator\+::\+Basque}}   &\PBS\centering 7   &Google, Yandex   &eu    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da678ed3e7307e7a84b25e339a6744bf9a}{QOnline\+Translator\+::\+Bashkir}}   &\PBS\centering 8   &Yandex   &ba    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7e8f94a1cd909d103a4e7efdb77d396}{QOnline\+Translator\+::\+Belarusian}}   &\PBS\centering 9   &Google, Yandex   &be    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac279322d17b7cfcef3a4d05451c9a1e6}{QOnline\+Translator\+::\+Bengali}}   &\PBS\centering 10   &Google, Yandex, Bing   &bn    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa96fb82b352ff44143166059154dd9d3}{QOnline\+Translator\+::\+Bosnian}}   &\PBS\centering 11   &Google, Yandex, Bing   &bs    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daecb77188880803639bc4364b4da3c23d}{QOnline\+Translator\+::\+Bulgarian}}   &\PBS\centering 12   &Google, Yandex, Bing   &bg    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4ed0353d7bbffc77e23eff1b252020da}{QOnline\+Translator\+::\+Catalan}}   &\PBS\centering 13   &Google, Yandex, Bing   &ca    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf8f67de6844fa41edee25a21c2f47073}{QOnline\+Translator\+::\+Cantonese}}   &\PBS\centering 14   &Bing   &yue    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da85559bda34ec940a549a2c396321dbbe}{QOnline\+Translator\+::\+Cebuano}}   &\PBS\centering 15   &Google, Yandex   &ceb    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daab6d5f8e13df93a49111dcd646fdcdd4}{QOnline\+Translator\+::\+Simplified\+Chinese}}   &\PBS\centering 16   &Google, Yandex, Bing   &zh-\/\+CN    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da36dc0b5d90ccf7d9674ab87d72bc37eb}{QOnline\+Translator\+::\+Traditional\+Chinese}}   &\PBS\centering 17   &Google, Yandex, Bing   &zh-\/\+TW    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5c3cabafc73f874395f308290f12f329}{QOnline\+Translator\+::\+Corsican}}   &\PBS\centering 18   &Google   &co    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5a60912729ba2929b015a39d2d0e7e64}{QOnline\+Translator\+::\+Croatian}}   &\PBS\centering 19   &Google, Yandex, Bing   &hr    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8e59c368333cb2a82d308d21dd14c0c5}{QOnline\+Translator\+::\+Czech}}   &\PBS\centering 20   &Google, Yandex, Bing   &cs    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ef97a3f77119b201df0c0bb308bb354}{QOnline\+Translator\+::\+Danish}}   &\PBS\centering 21   &Google, Yandex, Bing   &da    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4dbe4dc04c52f848efde47e5dda1a1c0}{QOnline\+Translator\+::\+Dutch}}   &\PBS\centering 22   &Google, Yandex, Bing   &nl    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da59759e784f024e56af1341329c49ce7c}{QOnline\+Translator\+::\+English}}   &\PBS\centering 23   &Google, Yandex, Bing   &en    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da034433f3c919913e7b69a930c87601d5}{QOnline\+Translator\+::\+Esperanto}}   &\PBS\centering 24   &Google, Yandex   &eo    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da541da964c49f331f0587615090de99f0}{QOnline\+Translator\+::\+Estonian}}   &\PBS\centering 25   &Google, Yandex, Bing   &et    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa17ff875d873c20d82e4290cbcae8206}{QOnline\+Translator\+::\+Fijian}}   &\PBS\centering 26   &Bing   &fj    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae21c39ffaaa746c98dc547318050afc8}{QOnline\+Translator\+::\+Filipino}}   &\PBS\centering 27   &Bing   &fil    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9ea66303942591207a8be82a0a0933b3}{QOnline\+Translator\+::\+Finnish}}   &\PBS\centering 28   &Google, Yandex, Bing   &fi    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ff05cfc6b2ace469b17aad4e3288c07}{QOnline\+Translator\+::\+French}}   &\PBS\centering 29   &Google, Yandex, Bing   &fr    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1e682e2832b1040a9448a00427afcf13}{QOnline\+Translator\+::\+Frisian}}   &\PBS\centering 30   &Google   &fy    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae44d4ce5a68b23905c3abb57ced3382d}{QOnline\+Translator\+::\+Galician}}   &\PBS\centering 31   &Google, Yandex, Bing   &gl    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafd95f6901ef6eec404561367d6f03eef}{QOnline\+Translator\+::\+Georgian}}   &\PBS\centering 32   &Yandex   &ka    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad69f97512845ef62edb14db17d4ff8f5}{QOnline\+Translator\+::\+German}}   &\PBS\centering 33   &Google, Yandex, Bing   &de    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e4170240bda09ebe40f159b53ba285}{QOnline\+Translator\+::\+Greek}}   &\PBS\centering 34   &Google, Yandex, Bing   &el    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae1dab664db3fb6c099ed13eb9760afb4}{QOnline\+Translator\+::\+Gujarati}}   &\PBS\centering 35   &Google, Yandex   &gu    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da71c5afbbfa938203ecd85baea778fc12}{QOnline\+Translator\+::\+Haitian\+Creole}}   &\PBS\centering 36   &Google, Yandex, Bing   &ht    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da83aec6fc27781646bd3c3b3b86c1a305}{QOnline\+Translator\+::\+Hausa}}   &\PBS\centering 37   &Google   &ha    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa954f7171797f9c8663dde964a05d52c}{QOnline\+Translator\+::\+Hawaiian}}   &\PBS\centering 38   &Google   &haw    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daaa3053268d3010e60b2afab40b10185f}{QOnline\+Translator\+::\+Hebrew}}   &\PBS\centering 39   &Google, Yandex, Bing   &he    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1d630b51f2db57c2cea53b9f885008c4}{QOnline\+Translator\+::\+Hill\+Mari}}   &\PBS\centering 40   &Yandex   &mrj    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86f8f627a607c0e36c9aa5951175b19e}{QOnline\+Translator\+::\+Hindi}}   &\PBS\centering 41   &Google, Yandex, Bing   &hi    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa4f7d71e6a601d3e0714165f84cbf8a7}{QOnline\+Translator\+::\+Hmong}}   &\PBS\centering 42   &Google, Bing   &hmn    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da900e00fa15042fb4b5b0ef13677d97e9}{QOnline\+Translator\+::\+Hungarian}}   &\PBS\centering 43   &Google, Yandex, Bing   &hu    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3fa3840a52c38b3438e40deb351620c7}{QOnline\+Translator\+::\+Icelandic}}   &\PBS\centering 44   &Google, Yandex, Bing   &is    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daae9f6663ba0acd3743dd36090bc0c976}{QOnline\+Translator\+::\+Igbo}}   &\PBS\centering 45   &Google   &ig    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0a25f909f4b7388bf5018277d7bb7933}{QOnline\+Translator\+::\+Indonesian}}   &\PBS\centering 46   &Google, Yandex, Bing   &id    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae0c9471728655a8c1e132052b55335c4}{QOnline\+Translator\+::\+Irish}}   &\PBS\centering 47   &Google, Yandex   &ga    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae28fbc1865772823b8812088390584d7}{QOnline\+Translator\+::\+Italian}}   &\PBS\centering 48   &Google, Yandex, Bing   &it    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daadac3279cf16c0589900349de5fcdc7d}{QOnline\+Translator\+::\+Japanese}}   &\PBS\centering 49   &Google, Yandex, Bing   &ja    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae5a1f48b6fb1021b6e38f62336fc633f}{QOnline\+Translator\+::\+Javanese}}   &\PBS\centering 50   &Google, Yandex   &jw    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da30d270a72c84621933b6639d3f2bc62b}{QOnline\+Translator\+::\+Kannada}}   &\PBS\centering 51   &Google, Yandex   &kn    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafcebf7d8b9c7d4a95c33081b92d502d3}{QOnline\+Translator\+::\+Kazakh}}   &\PBS\centering 52   &Google, Yandex   &kk    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf803f167a45e4c36fb323fd99e5f5caa}{QOnline\+Translator\+::\+Khmer}}   &\PBS\centering 53   &Google, Yandex   &km    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3a9b422b4c4b838b6780db779f103d07}{QOnline\+Translator\+::\+Klingon}}   &\PBS\centering 54   &Bing   &tlh    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7e31d3c46498d46ef1170d44def6c5dc}{QOnline\+Translator\+::\+Klingon\+PlqaD}}   &\PBS\centering 55   &Bing   &tlh-\/\+Qaak    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9c815eb8c7e9165fa430af7c14db3d04}{QOnline\+Translator\+::\+Korean}}   &\PBS\centering 56   &Google, Yandex, Bing   &ko    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabb5fd8d84376c7c1b3374d5c4bc79916}{QOnline\+Translator\+::\+Kurdish}}   &\PBS\centering 57   &Google   &ku    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad9c7fbe942a5b265ce1362833856278a}{QOnline\+Translator\+::\+Kyrgyz}}   &\PBS\centering 58   &Google, Yandex   &ky    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8674dace66f1527373db9f394235368c}{QOnline\+Translator\+::\+Lao}}   &\PBS\centering 59   &Google, Yandex   &lo    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da14adab7c890b4d24eb453199d45320e7}{QOnline\+Translator\+::\+Latin}}   &\PBS\centering 60   &Google, Yandex   &la    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da50e9fae33bfe10114e7e0e0200ee828c}{QOnline\+Translator\+::\+Latvian}}   &\PBS\centering 61   &Google, Yandex, Bing   &lv    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa90d1baa2d1305e330ca1d2543e4bac1}{QOnline\+Translator\+::\+Levantine\+Arabic}}   &\PBS\centering 62   &Bing   &apc    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7d0e358b64dce2611923df03b0908ec8}{QOnline\+Translator\+::\+Lithuanian}}   &\PBS\centering 63   &Google, Yandex, Bing   &lt    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad3d2f91eefa8c042a732d310ace618e8}{QOnline\+Translator\+::\+Luxembourgish}}   &\PBS\centering 64   &Google, Yandex   &lb    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da84a47c065a0a459a6f9da96b0ee0ea4a}{QOnline\+Translator\+::\+Macedonian}}   &\PBS\centering 65   &Google, Yandex   &mk    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46d03c2753fc928b0e15aabee591b707}{QOnline\+Translator\+::\+Malagasy}}   &\PBS\centering 66   &Google, Yandex, Bing   &mg    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3d99fde0ae16807c24a2247bcf2b277f}{QOnline\+Translator\+::\+Malay}}   &\PBS\centering 67   &Google, Yandex, Bing   &ms    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da12462dcb9fbe99445f8dd42106dc6954}{QOnline\+Translator\+::\+Malayalam}}   &\PBS\centering 68   &Google, Yandex   &ml    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7fd3e1b1611ccb6f4aec445886b58ba}{QOnline\+Translator\+::\+Maltese}}   &\PBS\centering 69   &Google, Yandex, Bing   &mt    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa99bee84e01f23fcffe46702d626b9e7}{QOnline\+Translator\+::\+Maori}}   &\PBS\centering 70   &Google, Yandex   &mi    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade46e0b96ed9321f905040b8b80192cc}{QOnline\+Translator\+::\+Marathi}}   &\PBS\centering 71   &Google, Yandex   &mr    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da924efefe99fdb72dffbb9fca03cc7cce}{QOnline\+Translator\+::\+Mari}}   &\PBS\centering 72   &Yandex   &mhr    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da24084173444f92f2c71c2e7d420d95fb}{QOnline\+Translator\+::\+Mongolian}}   &\PBS\centering 73   &Google, Yandex   &mn    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da319ff510e90aeebde5027a7ae715f314}{QOnline\+Translator\+::\+Myanmar}}   &\PBS\centering 74   &Google, Yandex   &my    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadcdff70e1a5b54ce10cba23c72696494}{QOnline\+Translator\+::\+Nepali}}   &\PBS\centering 75   &Google, Yandex   &ne    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5f3e3ac78fb6a1c6384cec82d5fe32cd}{QOnline\+Translator\+::\+Norwegian}}   &\PBS\centering 76   &Google, Yandex, Bing   &no    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8de1aa79ab5d024caa47e4d2d5eed5c0}{QOnline\+Translator\+::\+Chichewa}}   &\PBS\centering 77   &Google   &ny    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae2bf70b2aef44cec9e20b68a740a6b82}{QOnline\+Translator\+::\+Papiamento}}   &\PBS\centering 78   &Yandex   &pap    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeb9d3dcda759e078dce84bfd67c779ba}{QOnline\+Translator\+::\+Pashto}}   &\PBS\centering 79   &Google   &ps    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadfe578f587a1836a70276ed963aa1a70}{QOnline\+Translator\+::\+Persian}}   &\PBS\centering 80   &Google, Yandex, Bing   &fa    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da87ec26e0cad5166e049b2268bdb4f7cc}{QOnline\+Translator\+::\+Polish}}   &\PBS\centering 81   &Google, Yandex, Bing   &pl    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5428874d0633f0a57ab34cf771b76cf7}{QOnline\+Translator\+::\+Portuguese}}   &\PBS\centering 82   &Google, Yandex, Bing   &pt    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8fd7608a9d606f1f760baad07453a3c3}{QOnline\+Translator\+::\+Punjabi}}   &\PBS\centering 83   &Google, Yandex   &pa    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac72c017fad2d7dbd2c8c27b0149c72a5}{QOnline\+Translator\+::\+Queretaro\+Otomi}}   &\PBS\centering 84   &Bing   &otq    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86d29d2e5b29774a92ef7c3a46d8a088}{QOnline\+Translator\+::\+Romanian}}   &\PBS\centering 85   &Google, Yandex, Bing   &ro    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabcd0a32a169961da8833d534ac6aec50}{QOnline\+Translator\+::\+Russian}}   &\PBS\centering 86   &Google, Yandex, Bing   &ru    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf456f914454f03bff8c54cf50ef42417}{QOnline\+Translator\+::\+Samoan}}   &\PBS\centering 87   &Google, Bing   &sm    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da073689284494e5bbcce90a3238daac4d}{QOnline\+Translator\+::\+Scots\+Gaelic}}   &\PBS\centering 88   &Google, Yandex   &gd    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9e9a1c79bed7d7db2937c3fb7a07002e}{QOnline\+Translator\+::\+Serbian\+Cyrillic}}   &\PBS\centering 89   &Google, Yandex, Bing   &sr-\/\+Cyrl    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da80fb6cacf31aa26742a7405fbb34ecb1}{QOnline\+Translator\+::\+Serbian\+Latin}}   &\PBS\centering 90   &Bing   &sr-\/\+Latin    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da020a46de26d9233f347cccc27e4cbc92}{QOnline\+Translator\+::\+Sesotho}}   &\PBS\centering 91   &Google   &st    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa2b24bebf1d1ac25b578f57def0b0491}{QOnline\+Translator\+::\+Shona}}   &\PBS\centering 92   &Google   &sn    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da65e1475e9a52674f085998dcf4bf5ac8}{QOnline\+Translator\+::\+Sindhi}}   &\PBS\centering 93   &Google   &sd    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae939959a542d08a9f38cd9cb6e2c13ca}{QOnline\+Translator\+::\+Sinhala}}   &\PBS\centering 94   &Google, Yandex   &si    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2f07c4ed4f6170f5480d8794f390ae50}{QOnline\+Translator\+::\+Slovak}}   &\PBS\centering 95   &Google, Yandex, Bing   &sk    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0ecd6a8cc6bb8f9e48d023424ab2b363}{QOnline\+Translator\+::\+Slovenian}}   &\PBS\centering 96   &Google, Yandex, Bing   &sl    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0c647001c187ebaddfc6d3eb45472c52}{QOnline\+Translator\+::\+Somali}}   &\PBS\centering 97   &Google   &so    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da68be48b9360fa9a1c68c104dd3819bff}{QOnline\+Translator\+::\+Spanish}}   &\PBS\centering 98   &Google, Yandex, Bing   &es    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4bf29461c725fbb87c96df87b75526c0}{QOnline\+Translator\+::\+Sundanese}}   &\PBS\centering 99   &Google, Yandex   &su    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da684f27f73212640d6a7919314eaedff1}{QOnline\+Translator\+::\+Swahili}}   &\PBS\centering 100   &Google, Yandex, Bing   &sw    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da00d1f6a74afaf4d46373fbfabd6bd76e}{QOnline\+Translator\+::\+Swedish}}   &\PBS\centering 101   &Google, Yandex, Bing   &sv    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da687713147e766296bb1958fe94f3a75a}{QOnline\+Translator\+::\+Tagalog}}   &\PBS\centering 102   &Google, Yandex   &tl    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1151e56f72967b144810cfe9ada11309}{QOnline\+Translator\+::\+Tahitian}}   &\PBS\centering 103   &Bing   &ty    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac655176d1a1e9bfe7d295f23fff9aeb0}{QOnline\+Translator\+::\+Tajik}}   &\PBS\centering 104   &Google, Yandex   &tg    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad2f524197f7aac358759b15d88cb1f83}{QOnline\+Translator\+::\+Tamil}}   &\PBS\centering 105   &Google, Yandex, Bing   &ta    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2eceafeb1cadb638af390095aebd78cd}{QOnline\+Translator\+::\+Tatar}}   &\PBS\centering 106   &Yandex   &tt    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0024f0f4fedd39b7dfaeb23423016ef3}{QOnline\+Translator\+::\+Telugu}}   &\PBS\centering 107   &Google, Yandex, Bing   &te    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e0af013c88ed178c965d2c7051fdeb}{QOnline\+Translator\+::\+Thai}}   &\PBS\centering 108   &Google, Yandex, Bing   &th    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da6ea7fba1ec2a79cf4d44989b390f2fc6}{QOnline\+Translator\+::\+Tongan}}   &\PBS\centering 109   &Bing   &to    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf4da215169a8a0b6f1920c0105434fe3}{QOnline\+Translator\+::\+Turkish}}   &\PBS\centering 110   &Google, Yandex, Bing   &tr    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da578efde8a48e735b99fdf29393cd0ea5}{QOnline\+Translator\+::\+Udmurt}}   &\PBS\centering 111   &Yandex   &udm    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8ff78d074a3410ff498b21b9871b52d2}{QOnline\+Translator\+::\+Ukrainian}}   &\PBS\centering 112   &Google, Yandex, Bing   &uk    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade113db4d9e4d534589d0b4639073fc1}{QOnline\+Translator\+::\+Urdu}}   &\PBS\centering 113   &Google, Yandex, Bing   &ur    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da645176c913def2cb796a5e620b1dbb11}{QOnline\+Translator\+::\+Uzbek}}   &\PBS\centering 114   &Google, Yandex   &uz    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7cc7c58ccc6ee476f4fd7fc5bb11827b}{QOnline\+Translator\+::\+Vietnamese}}   &\PBS\centering 115   &Google, Yandex, Bing   &vi    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fc662a16d8e0ca555b3c2d1a6536cc4}{QOnline\+Translator\+::\+Welsh}}   &\PBS\centering 116   &Google, Yandex, Bing   &cy    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da69f810cf444dfe1aa00490a05653135c}{QOnline\+Translator\+::\+Xhosa}}   &\PBS\centering 117   &Google, Yandex   &xh    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf90cacd3a322397d9e3a0418fad804f2}{QOnline\+Translator\+::\+Yiddish}}   &\PBS\centering 118   &Google, Yandex   &yi    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daffcf6018312112a8c92553ef9e17a233}{QOnline\+Translator\+::\+Yoruba}}   &\PBS\centering 119   &Google   &yo    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da51dca39c921ab4b448292c9f297f2d11}{QOnline\+Translator\+::\+Yucatec\+Maya}}   &\PBS\centering 120   &Bing   &yua    \\\cline{1-4}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da76f766b26afbaa91544bca7dcd4b0238}{QOnline\+Translator\+::\+Zulu}}   &\PBS\centering 121   &Google   &zu   \\\cline{1-4}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md42}{}\doxysubsection{$<$a id=\textquotesingle{}engine\textquotesingle{}/$>$ enum QOnline\+Translator\+::\+Engine}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md42}
+This enum has the following values\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Constant   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Constant   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}{QOnline\+Translator\+::\+Google}}   &\PBS\centering 0   &\href{https://translate.google.com}{\texttt{ Google Translate}} engine    \\\cline{1-3}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a6fa990a8e7d8f9b2807e4892cac5c546}{QOnline\+Translator\+::\+Yandex}}   &\PBS\centering 1   &\href{https://translate.yandex.com}{\texttt{ Yandex.\+Translate}} engine    \\\cline{1-3}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca}{QOnline\+Translator\+::\+Bing}}   &\PBS\centering 2   &\href{https://www.bing.com/translator}{\texttt{ Bing Microsoft Translator}} engine   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md43}{}\doxysubsection{$<$a id=\textquotesingle{}translation-\/error\textquotesingle{}/$>$ enum QOnline\+Translator\+::\+Translation\+Error}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md43}
+Indicates all possible error conditions found during the processing of the translation.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Constant   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Constant   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Value   }&\cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda5ed17a2426a5ee0c801d3f50c558e5c7}{QOnline\+Translator\+::\+No\+Error}}   &\PBS\centering 0   &No error condition    \\\cline{1-3}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdad38cfd24a7ec0c3ae4673efb8f9ea1e5}{QOnline\+Translator\+::\+Parameters\+Error}}   &\PBS\centering 1   &Unsupported combination of parameters    \\\cline{1-3}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda773e585fdc4d91db15dedfb2730197cf}{QOnline\+Translator\+::\+Network\+Error}}   &\PBS\centering 2   &Network error    \\\cline{1-3}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdade0de39b3ef2cd8b0ee26ed4ccac9b52}{QOnline\+Translator\+::\+Service\+Error}}   &\PBS\centering 3   &Service unavailable or maximum number of requests    \\\cline{1-3}
+\PBS\raggedleft \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda2a3d30b80e0326fc3b6d63c892f9deb1}{QOnline\+Translator\+::\+Parsing\+Error}}   &\PBS\centering 4   &The request could not be parsed, please let me know about it   \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md44}{}\doxysection{Member Function Documentation}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md44}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md45}{}\doxysubsection{$<$a id=\textquotesingle{}constructor\textquotesingle{}/$>$ QOnline\+Translator\+::\+QOnline\+Translator($<$em$>$\+QObject $\ast$parent = nullptr$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md45}
+Constructs an object with empty data and with {\itshape parent}. You can use \href{\#translate}{\texttt{ translate()}} to send text to object. The destructor of a parent object destroys all child objects. Setting parent to 0 constructs an object with no parent. The parent of an object may be viewed as the object\textquotesingle{}s owner.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md47}{}\doxysubsection{$<$a id=\textquotesingle{}translate\textquotesingle{}/$>$ void QOnline\+Translator\+::translate($<$em$>$const QString \&text, Engine engine = Google, Language translation\+Lang = Auto, Language source\+Lang = Auto, Language ui\+Lang = Auto$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md47}
+Parse {\itshape text} and translate with {\itshape engine} into {\itshape translation\+Lang} from {\itshape source\+Lang} with hints on {\itshape ui\+Lang}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md49}{}\doxysubsection{$<$a id=\textquotesingle{}detect-\/language\textquotesingle{}/$>$ void QOnline\+Translator\+::detect\+Language($<$em$>$const QString \&text, Engine engine = Google$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md49}
+Detect language of the {\itshape text} using specified {\itshape engine}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md51}{}\doxysubsection{$<$a id=\textquotesingle{}abort\textquotesingle{}/$>$ void QOnline\+Translator\+::abort()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md51}
+Cancel translation operation (if any).
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md53}{}\doxysubsection{$<$a id=\textquotesingle{}is-\/running\textquotesingle{}/$>$ bool QOnline\+Translator\+::is\+Running()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md53}
+Returns {\ttfamily true} when the translation is still processing and has not finished or was aborted yet.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md55}{}\doxysubsection{$<$a id=\textquotesingle{}tojson\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qjsonobject.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QJson\+Document$<$/a$>$ QOnline\+Translator\+::to\+Json()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md55}
+Returns a \href{https://doc.qt.io/qt-5/qjsondocument.html}{\texttt{ QJson\+Document}} representation from data.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md57}{}\doxysubsection{$<$a id=\textquotesingle{}source\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::source()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md57}
+Returns the source text.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md59}{}\doxysubsection{$<$a id=\textquotesingle{}source-\/transliteration\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::source\+Translit()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md59}
+Returns the transliteration of the source text.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md61}{}\doxysubsection{$<$a id=\textquotesingle{}finished-\/signal\textquotesingle{}/$>$ void QOnline\+Translator\+::finished()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md61}
+This signal is emitted when the translation has finished processing. After this signal is emitted, there will be no more updates to the translations\textquotesingle{}s data.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md63}{}\doxysubsection{$<$a id=\textquotesingle{}source-\/language-\/name\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::source\+Language\+Name()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md63}
+Returns the name of the source language.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md65}{}\doxysubsection{$<$a id=\textquotesingle{}source-\/language\textquotesingle{}/$>$ Language QOnline\+Translator\+::source\+Language()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md65}
+Returns the source language.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md67}{}\doxysubsection{$<$a id=\textquotesingle{}translation\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::translation()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md67}
+Returns the translated text.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md69}{}\doxysubsection{$<$a id=\textquotesingle{}translation-\/translit\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::translation\+Translit()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md69}
+Returns the transliteration of the translated text.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md71}{}\doxysubsection{$<$a id=\textquotesingle{}source-\/transcription\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::source\+Transcription()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md71}
+Returns the transcription of the source text. Supports only for Yandex.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md73}{}\doxysubsection{$<$a id=\textquotesingle{}translation-\/language-\/name\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::translation\+Language\+Name()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md73}
+Returns the name of the translation language.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md75}{}\doxysubsection{$<$a id=\textquotesingle{}translation-\/language\textquotesingle{}/$>$ Language QOnline\+Translator\+::translation\+Language()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md75}
+Returns the translation language.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md77}{}\doxysubsection{$<$a id=\textquotesingle{}translation-\/options\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qmap.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QMap$<$/a$>$$<$$<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$, $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qvector.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QVector$<$/a$>$$<$@ref /home/jflesher/workspace/\+Qt\+Lingo/\+Qt\+Lingo/src/third-\/party/qonlinetranslator/docs/\+QOption.\+md \char`\"{}\+QOption\char`\"{}$>$$>$ QOnline\+Translator\+::translation\+Options()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md77}
+Returns a \href{https://doc.qt.io/qt-5/qmap.html}{\texttt{ QMap}} whose key represents the type of speech, and the value is a \href{https://doc.qt.io/qt-5/qvector.html}{\texttt{ QVector}} of translation options. Read the \mbox{\hyperlink{md_src_third_party_qonlinetranslator_docs_QOption}{QOption}} for details.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md79}{}\doxysubsection{$<$a id=\textquotesingle{}examples\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qmap.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QMap$<$/a$>$$<$$<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$, $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qvector.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QVector$<$/a$>$$<$@ref /home/jflesher/workspace/\+Qt\+Lingo/\+Qt\+Lingo/src/third-\/party/qonlinetranslator/docs/\+QExample.\+md \char`\"{}\+QExample\char`\"{}$>$$>$ QOnline\+Translator\+::examples()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md79}
+Returns a \href{https://doc.qt.io/qt-5/qmap.html}{\texttt{ QMap}} whose key represents the type of speech, and the value is a \href{https://doc.qt.io/qt-5/qvector.html}{\texttt{ QVector}} of translation examples. Read the \mbox{\hyperlink{md_src_third_party_qonlinetranslator_docs_QExample}{QExample}} for details.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md81}{}\doxysubsection{$<$a id=\textquotesingle{}error\textquotesingle{}/$>$ Translation\+Error QOnline\+Translator\+::error()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md81}
+Returns the error that was found during the processing of the last translation. If no error was found, returns {\ttfamily No\+Error}. The text of the error can be obtained by \href{\#error-string}{\texttt{ {\bfseries{error\+String}}()}}.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md83}{}\doxysubsection{$<$a id=\textquotesingle{}error-\/string\textquotesingle{}/$>$ $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::error\+String()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md83}
+Returns a human-\/readable description of the last translation error that occurred.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md85}{}\doxysubsection{$<$a id=\textquotesingle{}is-\/source-\/translit-\/enabled\textquotesingle{}/$>$ bool QOnline\+Translator\+::is\+Source\+Translit\+Enabled()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md85}
+Return true if source transliteration is enabled.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md87}{}\doxysubsection{$<$a id=\textquotesingle{}set-\/source-\/translit-\/enabled\textquotesingle{}/$>$ void QOnline\+Translator\+::set\+Source\+Translit\+Enabled($<$em$>$bool enable$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md87}
+Allows to enable or disable source transliteration.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md89}{}\doxysubsection{$<$a id=\textquotesingle{}is-\/translation-\/translit-\/enabled\textquotesingle{}/$>$ bool QOnline\+Translator\+::is\+Translation\+Translit\+Enabled()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md89}
+Return true if translation transliteration is enabled.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md91}{}\doxysubsection{$<$a id=\textquotesingle{}set-\/translation-\/translit-\/enabled\textquotesingle{}/$>$ void QOnline\+Translator\+::set\+Translation\+Translit\+Enabled($<$em$>$bool enable$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md91}
+Allows to enable or disable translation transliteration.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md93}{}\doxysubsection{$<$a id=\textquotesingle{}is-\/source-\/transcription-\/enabled\textquotesingle{}/$>$ bool QOnline\+Translator\+::is\+Source\+Transcription\+Enabled()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md93}
+Return true if source transcription is enabled.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md95}{}\doxysubsection{$<$a id=\textquotesingle{}set-\/source-\/transcription-\/enabled\textquotesingle{}/$>$ void QOnline\+Translator\+::set\+Source\+Transcription\+Enabled($<$em$>$bool enable$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md95}
+Allows to enable or disable source transcriptiond.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md97}{}\doxysubsection{$<$a id=\textquotesingle{}is-\/dictionary-\/enabled\textquotesingle{}/$>$ bool QOnline\+Translator\+::is\+Dictionary\+Enabled()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md97}
+Return true if dictionary (translation options) is enabled.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md99}{}\doxysubsection{$<$a id=\textquotesingle{}set-\/dictionary-\/enabled\textquotesingle{}/$>$ void QOnline\+Translator\+::set\+Dictionary\+Enabled($<$em$>$bool enable$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md99}
+Allows to enable or disable dictionary (translation options).
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md101}{}\doxysubsection{$<$a id=\textquotesingle{}is-\/definitions-\/enabled\textquotesingle{}/$>$ bool QOnline\+Translator\+::is\+Definitions\+Enabled()}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md101}
+Return true if definitions is enabled.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md103}{}\doxysubsection{$<$a id=\textquotesingle{}set-\/definitions-\/enabled\textquotesingle{}/$>$ void QOnline\+Translator\+::set\+Definitions\+Enabled($<$em$>$bool enable$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md103}
+Allows to enable or disable definitions.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md105}{}\doxysubsection{$<$a id=\textquotesingle{}language-\/name\textquotesingle{}/$>$ static $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::language\+Name($<$em$>$\+Language language$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md105}
+Returns the {\itshape language} name.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md107}{}\doxysubsection{$<$a id=\textquotesingle{}language-\/code\textquotesingle{}/$>$ static $<$a href=\char`\"{}https\+://doc.\+qt.\+io/qt-\/5/qstring.\+html\char`\"{} title=\char`\"{}\+Qt Documentation\char`\"{}$>$\+QString$<$/a$>$ QOnline\+Translator\+::language\+Code($<$em$>$\+Language language$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md107}
+Returns the code of the {\itshape language}. See table \href{\#language}{\texttt{ below}}.
+
+{\bfseries{Note}}\+: These are not the codes for sending API requests.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md109}{}\doxysubsection{$<$a id=\textquotesingle{}language-\/1\textquotesingle{}/$>$ static Language QOnline\+Translator\+::language($<$em$>$const QLocale \&locale$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md109}
+Returns the \href{\#language}{\texttt{ language}} from {\itshape locale} object.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md111}{}\doxysubsection{$<$a id=\textquotesingle{}language-\/2\textquotesingle{}/$>$ static Language QOnline\+Translator\+::language($<$em$>$const QString \&language\+Code$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md111}
+Returns the \href{\#language}{\texttt{ language}} from ISO {\itshape language\+Code}. Useful for CLI interface.
+
+\DoxyHorRuler{0}
+\hypertarget{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md113}{}\doxysubsection{$<$a id=\textquotesingle{}is-\/support-\/translation\textquotesingle{}/$>$ static bool QOnline\+Translator\+::is\+Support\+Translation($<$em$>$\+Engine engine, Language lang$<$/em$>$)}\label{md_src_third_party_qonlinetranslator_docs_QOnlineTranslator_autotoc_md113}
+Returns true if the {\itshape lang} is supported by the {\itshape engine} for translation. 

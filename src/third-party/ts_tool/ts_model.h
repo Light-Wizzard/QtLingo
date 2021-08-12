@@ -30,10 +30,10 @@ struct TS_node;
 
 namespace visitors
 {
-    /*! ***************************************************************************
+    /************************************************
        \fn struct document_dump
        \brief
-     *************************************************************************** */
+     ***********************************************/
     struct document_dump
     {
             explicit document_dump(QXmlStreamWriter &writer) : m_writer(writer) {}
@@ -46,16 +46,16 @@ namespace visitors
         private:
             QXmlStreamWriter &m_writer;
     };
-    /*! ***************************************************************************
+    /************************************************
        \fn
        \brief
-     *************************************************************************** */
+     ***********************************************/
     typedef std::map<hash_t, QString>	map_hashQString;
     typedef std::map<QString, QString>	map_QStringQString;
-    /*! ***************************************************************************
+    /************************************************
        \fn struct string_extractor_replacer
        \brief
-     *************************************************************************** */
+     ***********************************************/
     struct string_extractor_replacer
     {
             string_extractor_replacer(map_hashQString &vqs, bool with_unfinished, bool with_vanished, bool unfinished_only)
@@ -73,10 +73,10 @@ namespace visitors
             int m_state;
             bool m_with_unfinished, m_with_vanished, m_unfinished_only;
     };
-    /*! ***************************************************************************
+    /************************************************
        \fn struct back_string_replacer
        \brief
-     *************************************************************************** */
+     ***********************************************/
     struct back_string_replacer
     {
             back_string_replacer(const map_QStringQString &strings, const QString &langid)
@@ -96,10 +96,10 @@ namespace visitors
             int m_state;
     };
 }
-/*! ***************************************************************************
+/************************************************
    \fn struct base_node
    \brief
- *************************************************************************** */
+ ***********************************************/
 struct base_node : std::enable_shared_from_this<base_node>
 {
         friend visitors::document_dump;
@@ -136,10 +136,10 @@ struct base_node : std::enable_shared_from_this<base_node>
         nodes_t m_childs;
         base_node_ptr m_parent;
 };
-/*! ***************************************************************************
+/************************************************
    \fn struct document_node
    \brief
- *************************************************************************** */
+ ***********************************************/
 struct document_node : base_node
 {
         document_node() : base_node() {}
@@ -148,10 +148,10 @@ struct document_node : base_node
         virtual void visit(visitors::string_extractor_replacer &visitor) override { visitor.visit(this); }
         virtual void visit(visitors::back_string_replacer &visitor) override { visitor.visit(this); }
 };
-/*! ***************************************************************************
+/************************************************
    \fn struct DTD_node
    \brief
- *************************************************************************** */
+ ***********************************************/
 struct DTD_node : base_node
 {
         explicit DTD_node(const QString &systemId) : base_node(), m_systemId(systemId) {}
@@ -164,10 +164,10 @@ struct DTD_node : base_node
     private:
         QString m_systemId;
 };
-/*! ***************************************************************************
+/************************************************
    \fn struct element_node
    \brief
- *************************************************************************** */
+ ***********************************************/
 struct element_node : base_node
 {
         enum EElementNodeType { ent_element, ent_message, ent_source, ent_translation };
@@ -194,10 +194,10 @@ struct element_node : base_node
         QXmlStreamAttributes m_attributes;
         QString m_text;
 };
-/*! ***************************************************************************
+/************************************************
    \fn struct TS_node
    \brief
- *************************************************************************** */
+ ***********************************************/
 struct TS_node : element_node
 {
         TS_node(const QString &name, const QXmlStreamAttributes &attrs)

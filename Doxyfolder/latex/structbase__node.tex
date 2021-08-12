@@ -1,0 +1,148 @@
+\hypertarget{structbase__node}{}\doxysection{base\+\_\+node Struct Reference}
+\label{structbase__node}\index{base\_node@{base\_node}}
+
+
+{\ttfamily \#include $<$ts\+\_\+model.\+h$>$}
+
+Inheritance diagram for base\+\_\+node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.765432cm]{structbase__node}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structbase__node_af252df126b924fd3e08ff3270cf1966c}{ENode\+Type}} \{ \mbox{\hyperlink{structbase__node_af252df126b924fd3e08ff3270cf1966cab0e2ea28e335643ccff9ecaa6064c3eb}{nt\+\_\+\+Document}} = 0x10000000
+, \mbox{\hyperlink{structbase__node_af252df126b924fd3e08ff3270cf1966cae075167aa93c8a3e9405ec43e8282f0d}{nt\+\_\+\+DTD}} = 0x01000000
+, \mbox{\hyperlink{structbase__node_af252df126b924fd3e08ff3270cf1966ca186a2519eed9fec44f0ed3fb24fb15d8}{nt\+\_\+\+Element}} = 0x00001000
+ \}
+\item 
+typedef std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structbase__node}{base\+\_\+node}} $>$ \mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}} $>$ \mbox{\hyperlink{structbase__node_a893d0b14dd56b3086a67e03e4a056d0d}{nodes\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structbase__node_a39fdd7923202ef4d9a0326a325ee0ae3}{base\+\_\+node}} ()
+\item 
+virtual \mbox{\hyperlink{structbase__node_af252df126b924fd3e08ff3270cf1966c}{ENode\+Type}} \mbox{\hyperlink{structbase__node_ae46b4fe056be151f3b9d851731b0376d}{kind}} () const =0
+\item 
+virtual void \mbox{\hyperlink{structbase__node_ad43117dbce4aa40070498713fbd1c6d1}{visit}} (const \mbox{\hyperlink{structvisitors_1_1document__dump}{visitors\+::document\+\_\+dump}} \&visitor) const =0
+\item 
+virtual void \mbox{\hyperlink{structbase__node_acfcf4061a95bf39ee891f221f7d650a1}{visit}} (\mbox{\hyperlink{structvisitors_1_1string__extractor__replacer}{visitors\+::string\+\_\+extractor\+\_\+replacer}} \&)
+\item 
+virtual void \mbox{\hyperlink{structbase__node_aa6226ed43020bb0c43397003059827ba}{visit}} (\mbox{\hyperlink{structvisitors_1_1back__string__replacer}{visitors\+::back\+\_\+string\+\_\+replacer}} \&visitor)=0
+\item 
+\mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}} \mbox{\hyperlink{structbase__node_a9d6956b26f033f1b8a04b124bac5f5a1}{add\+\_\+child}} (\mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}} ptr)
+\item 
+\mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}} \mbox{\hyperlink{structbase__node_af646e74212dca8ae1f09cf737e657fcb}{parent}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structbase__node_abb75a430c91d015bdc7307f6263717e0}\label{structbase__node_abb75a430c91d015bdc7307f6263717e0}} 
+\index{base\_node@{base\_node}!base\_node\_ptr@{base\_node\_ptr}}
+\index{base\_node\_ptr@{base\_node\_ptr}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{base\_node\_ptr}{base\_node\_ptr}}
+{\footnotesize\ttfamily typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{structbase__node}{base\+\_\+node}}$>$ \mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+::base\+\_\+node\+\_\+ptr}}}
+
+\mbox{\Hypertarget{structbase__node_a893d0b14dd56b3086a67e03e4a056d0d}\label{structbase__node_a893d0b14dd56b3086a67e03e4a056d0d}} 
+\index{base\_node@{base\_node}!nodes\_t@{nodes\_t}}
+\index{nodes\_t@{nodes\_t}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{nodes\_t}{nodes\_t}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}}$>$ \mbox{\hyperlink{structbase__node_a893d0b14dd56b3086a67e03e4a056d0d}{base\+\_\+node\+::nodes\+\_\+t}}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structbase__node_af252df126b924fd3e08ff3270cf1966c}\label{structbase__node_af252df126b924fd3e08ff3270cf1966c}} 
+\index{base\_node@{base\_node}!ENodeType@{ENodeType}}
+\index{ENodeType@{ENodeType}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{ENodeType}{ENodeType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structbase__node_af252df126b924fd3e08ff3270cf1966c}{base\+\_\+node\+::\+ENode\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nt\_Document@{nt\_Document}!base\_node@{base\_node}}\index{base\_node@{base\_node}!nt\_Document@{nt\_Document}}}\mbox{\Hypertarget{structbase__node_af252df126b924fd3e08ff3270cf1966cab0e2ea28e335643ccff9ecaa6064c3eb}\label{structbase__node_af252df126b924fd3e08ff3270cf1966cab0e2ea28e335643ccff9ecaa6064c3eb}} 
+nt\+\_\+\+Document&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nt\_DTD@{nt\_DTD}!base\_node@{base\_node}}\index{base\_node@{base\_node}!nt\_DTD@{nt\_DTD}}}\mbox{\Hypertarget{structbase__node_af252df126b924fd3e08ff3270cf1966cae075167aa93c8a3e9405ec43e8282f0d}\label{structbase__node_af252df126b924fd3e08ff3270cf1966cae075167aa93c8a3e9405ec43e8282f0d}} 
+nt\+\_\+\+DTD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nt\_Element@{nt\_Element}!base\_node@{base\_node}}\index{base\_node@{base\_node}!nt\_Element@{nt\_Element}}}\mbox{\Hypertarget{structbase__node_af252df126b924fd3e08ff3270cf1966ca186a2519eed9fec44f0ed3fb24fb15d8}\label{structbase__node_af252df126b924fd3e08ff3270cf1966ca186a2519eed9fec44f0ed3fb24fb15d8}} 
+nt\+\_\+\+Element&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structbase__node_a39fdd7923202ef4d9a0326a325ee0ae3}\label{structbase__node_a39fdd7923202ef4d9a0326a325ee0ae3}} 
+\index{base\_node@{base\_node}!base\_node@{base\_node}}
+\index{base\_node@{base\_node}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{base\_node()}{base\_node()}}
+{\footnotesize\ttfamily base\+\_\+node\+::base\+\_\+node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structbase__node_a9d6956b26f033f1b8a04b124bac5f5a1}\label{structbase__node_a9d6956b26f033f1b8a04b124bac5f5a1}} 
+\index{base\_node@{base\_node}!add\_child@{add\_child}}
+\index{add\_child@{add\_child}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{add\_child()}{add\_child()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}} base\+\_\+node\+::add\+\_\+child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}}}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structbase__node_ae46b4fe056be151f3b9d851731b0376d}\label{structbase__node_ae46b4fe056be151f3b9d851731b0376d}} 
+\index{base\_node@{base\_node}!kind@{kind}}
+\index{kind@{kind}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{kind()}{kind()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structbase__node_af252df126b924fd3e08ff3270cf1966c}{ENode\+Type}} base\+\_\+node\+::kind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{structelement__node_afab9f3cf5bd72b9e50047a7e2494393b}{element\+\_\+node}}, \mbox{\hyperlink{structDTD__node_a5f86ea493203e7e512c705b655cf574d}{DTD\+\_\+node}}, and \mbox{\hyperlink{structdocument__node_a16a05526af2e08b173eef060a5789ca6}{document\+\_\+node}}.
+
+\mbox{\Hypertarget{structbase__node_af646e74212dca8ae1f09cf737e657fcb}\label{structbase__node_af646e74212dca8ae1f09cf737e657fcb}} 
+\index{base\_node@{base\_node}!parent@{parent}}
+\index{parent@{parent}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{parent()}{parent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+\_\+ptr}} base\+\_\+node\+::parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structbase__node_ad43117dbce4aa40070498713fbd1c6d1}\label{structbase__node_ad43117dbce4aa40070498713fbd1c6d1}} 
+\index{base\_node@{base\_node}!visit@{visit}}
+\index{visit@{visit}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual void base\+\_\+node\+::visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvisitors_1_1document__dump}{visitors\+::document\+\_\+dump}} \&}]{visitor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{structelement__node_ad5dd9c6e8720870e7cb5c98e8643dacf}{element\+\_\+node}}, \mbox{\hyperlink{structDTD__node_ae98c55867f4c5f20b0c988ae7cc4edc1}{DTD\+\_\+node}}, and \mbox{\hyperlink{structdocument__node_aac73bfe16641c823c7f2f42d9842e3c7}{document\+\_\+node}}.
+
+\mbox{\Hypertarget{structbase__node_aa6226ed43020bb0c43397003059827ba}\label{structbase__node_aa6226ed43020bb0c43397003059827ba}} 
+\index{base\_node@{base\_node}!visit@{visit}}
+\index{visit@{visit}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual void base\+\_\+node\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvisitors_1_1back__string__replacer}{visitors\+::back\+\_\+string\+\_\+replacer}} \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{structTS__node_a2c116b0a2058a78f00a576da54ffb35c}{TS\+\_\+node}}, \mbox{\hyperlink{structelement__node_a3d6746586988179cdd6ac12d4c78df32}{element\+\_\+node}}, \mbox{\hyperlink{structDTD__node_ae4a4528443b6e4df893afc5821b02578}{DTD\+\_\+node}}, and \mbox{\hyperlink{structdocument__node_a20a8d7c8cd7807e842dc2cc2ff946613}{document\+\_\+node}}.
+
+\mbox{\Hypertarget{structbase__node_acfcf4061a95bf39ee891f221f7d650a1}\label{structbase__node_acfcf4061a95bf39ee891f221f7d650a1}} 
+\index{base\_node@{base\_node}!visit@{visit}}
+\index{visit@{visit}!base\_node@{base\_node}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual void base\+\_\+node\+::visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvisitors_1_1string__extractor__replacer}{visitors\+::string\+\_\+extractor\+\_\+replacer}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{structelement__node_a16d6be1dc38d008a62b3f6fa046461de}{element\+\_\+node}}, \mbox{\hyperlink{structDTD__node_a920cdd24b2c6723e4811deebcf8cc0d2}{DTD\+\_\+node}}, and \mbox{\hyperlink{structdocument__node_abe4d559af7d94bec062e13acbffef987}{document\+\_\+node}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/third-\/party/ts\+\_\+tool/\mbox{\hyperlink{ts__model_8h}{ts\+\_\+model.\+h}}\end{DoxyCompactItemize}

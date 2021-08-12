@@ -42,10 +42,10 @@ class QStateMachine;
 class QState;
 class QNetworkAccessManager;
 class QNetworkReply;
-/*! ***************************************************************************
+/************************************************
    \class QOnlineTranslator
    \brief QOnlineTranslator
- *************************************************************************** */
+ ***********************************************/
 class QOnlineTranslator : public QObject
 {
         Q_OBJECT

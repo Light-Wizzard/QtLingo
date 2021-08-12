@@ -95,6 +95,7 @@ DISTFILES += README.md CMakeLists.txt \
     src/third-party/docs/QOnlineTts.md \
     src/third-party/docs/QOption.md \
     src/third-party/qonlinetranslator/CMakeLists.txt \
+    .github/workflows/main.yml
 #
 win32:CONFIG   *= windeployqt
 win32:CONFIG   *= windows

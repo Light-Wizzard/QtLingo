@@ -40,6 +40,10 @@ export ARTIFACT_APPIMAGE="${MY_BIN_PRO_RES_NAME}-x86_64.AppImage";
 #export ARTIFACT_ZSYNC="${MY_BIN_PRO_RES_NAME}-x86_64.AppImage.zsync";
 export ARTIFACT_QIF="${MY_BIN_PRO_RES_NAME}-Linux-Installer";
 # 
+doxygen Doxyfile;
+cd latex;
+make;
+cd ..;
 # use RAM disk if possible (as in: not building on CI system like Appveyor, and RAM disk is available)
 declare TEMP_BASE;
 if [ "$CI" == "" ] && [ -d "/dev/shm" ]; then TEMP_BASE="/dev/shm"; else TEMP_BASE="/tmp"; fi

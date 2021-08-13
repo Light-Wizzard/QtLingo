@@ -15,6 +15,13 @@ QT += core gui sql network multimedia concurrent widgets printsupport
  CONFIG *= "c++17"
 #CONFIG *= "c++2a"
 #CONFIG *= "c++latest"
+#
+CONFIG += static
+DEFINES+= STATIC
+QMAKE_LFLAGS += -static
+#
+win32:CONFIG   *= windeployqt
+win32:CONFIG   *= windows
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 # DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
@@ -95,10 +102,7 @@ DISTFILES += README.md CMakeLists.txt \
     src/third-party/docs/QOnlineTts.md \
     src/third-party/docs/QOption.md \
     src/third-party/qonlinetranslator/CMakeLists.txt \
-    .github/workflows/main.yml
-#
-win32:CONFIG   *= windeployqt
-win32:CONFIG   *= windows
+
 ###############################################################################
 #
 # The following define makes your compiler emit warnings if you use
@@ -116,7 +120,17 @@ win32:CONFIG   *= windows
 macos:QMAKE_INFO_PLIST = macos/Info.plist
 ios:QMAKE_INFO_PLIST   = ios/Info.plist
 #-------------------------------------------------------------------------------------
-#GENF_ROOT   = _output
+#contains(QMAKE_HOST.arch, x86_64) { #x64
+#    BUILD_ARCH = x64
+#} else { #x32
+#    BUILD_ARCH += x32
+#}
+#CONFIG(release, debug|release) {
+#    BUILD_TYPE = release
+#} else {
+#    BUILD_TYPE = debug
+#}
+#GENF_ROOT   = $${BUILD_ARCH}/_output
 #BIN_OUTPUT  = $${GENF_ROOT}/_bin
 #DESTDIR     = $${BIN_OUTPUT}/$${BUILD_TYPE}
 #OBJECTS_DIR = $${GENF_ROOT}/$${TARGET}/$${BUILD_TYPE}/_build
@@ -125,19 +139,18 @@ ios:QMAKE_INFO_PLIST   = ios/Info.plist
 #RCC_DIR     = $${GENF_ROOT}/$${TARGET}/$${BUILD_TYPE}/_rc
 #-------------------------------------------------------------------------------------
 #
-#DESTDIR = "$${OUT_PWD}"
-#release: DESTDIR = "$${OUT_PWD}/build/release"
-#debug:   DESTDIR = "$${OUT_PWD}/build/debug"
-#OBJECTS_DIR = "$${DESTDIR}/obj"
-#MOC_DIR     = "$${DESTDIR}/moc"
-#RCC_DIR     = "$${DESTDIR}/qrc"
-#UI_DIR      = "$${DESTDIR}/ui"
-#
-#CONFIG(release, debug|release) {
-#    BUILD_TYPE = release
-#} else {
-#    BUILD_TYPE = debug
-#}
+#Release:DESTDIR     = release
+#Release:OBJECTS_DIR = release/.obj
+#Release:MOC_DIR     = release/.moc
+#Release:RCC_DIR     = release/.rcc
+#Release:UI_DIR      = release/.ui
+
+#Debug:DESTDIR     = debug
+#Debug:OBJECTS_DIR = debug/.obj
+#Debug:MOC_DIR     = debug/.moc
+#Debug:RCC_DIR     = debug/.rcc
+#Debug:UI_DIR      = debug/.ui
+
 
 win32-g++{
     contains(QMAKE_HOST.arch, x86_64) { #x64

@@ -16,9 +16,9 @@ QT += core gui sql network multimedia concurrent widgets printsupport
 #CONFIG *= "c++2a"
 #CONFIG *= "c++latest"
 #
-CONFIG += static
-DEFINES+= STATIC
-QMAKE_LFLAGS += -static
+win32:CONFIG += static
+win32:DEFINES+= STATIC
+win32:QMAKE_LFLAGS += -static
 #
 win32:CONFIG   *= windeployqt
 win32:CONFIG   *= windows

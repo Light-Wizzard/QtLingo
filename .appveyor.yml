@@ -78,6 +78,7 @@ for:
              $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW64\bin"
              $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin"
              $env:Path += ";C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64"
+             cmd.exe /c C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin\qtenv2.bat
           }
     #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Qt; then set PATH=C:\Qt\Tools\%MY_QT_MINGW64%\bin;C:\Qt\%MY_QT_VERSION%\%MY_QT_MINGW64%\bin;C:\Qt\%MY_QT_VERSION%\%MY_QT_MINGW64%\;%PATH% fi"
     #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Qt; then call C:\Qt\%MY_QT_VERSION%\%MY_QT_MINGW64%\bin\qtenv2.bat fi"
@@ -87,6 +88,7 @@ for:
           If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
              $env:Path += ";C:\Qt\Tools\$env:MY_QT_MINGW64\bin"
              $env:Path += ";C:\Qt\$env:MY_QT_VERSION\msvc$($env:MY_VS_VERSION)_64\bin"
+             cmd.exe /c C:\Qt\$env:MY_QT_VERSION\$env:MY_QT_MINGW64\bin\qtenv2.bat
           }
     #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Vs; then set PATH=C:\Qt\Tools\%MY_QT_MINGW64%\bin;C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%_64\bin;%PATH% fi"
     #- cmd: bash -lc "if %platform%==x64 && %MY_COMPILER%==Vs; then call C:\Qt\%MY_QT_VERSION%\msvc%MY_VS_VERSION%_64\bin\qtenv2.bat" fi"
@@ -139,13 +141,13 @@ for:
           If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
             cmd.exe /c qmake -r -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
             cmd.exe /c mingw32-make
-            cmd.exe /c mingw32-make install
+            cmd.exe /c mingw32-make install AppDir
           }
     - ps: |
           If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
             cmd.exe /c qmake -r $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
             cmd.exe /c mingw32-make
-            cmd.exe /c mingw32-make install
+            cmd.exe /c mingw32-make install AppDir
           }
     #- cmd: bash -lc "if %PLATFORM%==x86 && %MY_COMPILER%==Qt; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir && mingw32-make && mingw32-make install fi"
     #- cmd: bash -lc "if %PLATFORM%==x64 && %MY_COMPILER%==Qt; then qmake -v && qmake -r -spec win32-g++ %APPVEYOR_BUILD_FOLDER%\%MY_BIN_PRO_RES_NAME%.pro CONFIG+=%CONFIGURATION% CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir && mingw32-make && mingw32-make install fi"
@@ -170,9 +172,9 @@ for:
     - cmd: dir
     - cmd: dir AppDir
     #- cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%MY_BIN_PRO_RES_NAME%.exe" AppDir
+    - cmd: copy C:\Qt\Tools\QtCreator\bin\plugins\platforms\* AppDir
     - cmd: windeployqt "AppDir\%MY_BIN_PRO_RES_NAME%.exe" --verbose=2
-    - cmd: if %PLATFORM%==x64 set ARTIFACT_APPIMAGE="%MY_BIN_PRO_RES_NAME%-x64.exe"
-    - cmd: if %PLATFORM%==x86 set ARTIFACT_APPIMAGE="%MY_BIN_PRO_RES_NAME%-x86.exe"
+    - cmd: set ARTIFACT_APPIMAGE="%MY_BIN_PRO_RES_NAME%-%PLATFORM%.exe"
     - cmd: set ARTIFACT_QIF="%MY_BIN_PRO_RES_NAME%-Linux-Installer";
     - cmd: 7z a -tzip "%MY_BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%PLATFORM%.zip" AppDir -r
     - cmd: copy "%APPVEYOR_BUILD_FOLDER%\build\%MY_BIN_PRO_RES_NAME%-%MY_OS%-%CONFIGURATION%-%PLATFORM%.zip" "%APPVEYOR_BUILD_FOLDER%\

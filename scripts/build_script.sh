@@ -131,8 +131,8 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
     ./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
     chmod +x "${MY_BIN_PRO_RES_NAME}"*.AppImage*;
     cp -v "${APPVEYOR_BUILD_FOLDER}/README.md" AppDir/usr/bin/;
-    7z a -tzip -r "${MY_BIN_PRO_RES_NAME}-$MY_OS-$CONFIGURATION-$PLATFORM.zip" AppDir;
-    cp "${MY_BIN_PRO_RES_NAME}-$MY_OS-$CONFIGURATION-$PLATFORM.zip" "${OLD_CWD}";
+    7z a -tzip -r "${MY_BIN_PRO_RES_NAME}-${MY_OS-$CONFIGURATION}-${PLATFORM}.zip" AppDir;
+    cp "${MY_BIN_PRO_RES_NAME}-${MY_OS}-${CONFIGURATION}-${PLATFORM}.zip" "${OLD_CWD}";
 fi
 # 
 # AppImage move to Artifacts
@@ -156,9 +156,6 @@ else
     echo -e "Missing ${BUILD_DIR}/${ARTIFACT_APPIMAGE} ";
 fi
 # The packages/${MY_QIF_PACKAGE_URI}/meta/installscript.qs creates this: cp -v "desktop/${MY_BIN_PRO_RES_NAME}.desktop" "${MY_QIF_PACKAGE_URI}";
-cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.png" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.svg" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-cp -v "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.ico" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
 cp -v "${APPVEYOR_BUILD_FOLDER}/README.md" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
 rsync -Ravr "${APPVEYOR_BUILD_FOLDER}/usr/share/icons" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/icons";
 ls "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";

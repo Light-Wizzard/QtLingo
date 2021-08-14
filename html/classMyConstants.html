@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classMyConstants.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
@@ -71,6 +91,9 @@ $(function() {
 <div class="title">MyConstants Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Constants are defined as const QString, starting with MY_ all capps.  
+ <a href="classMyConstants.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>&gt;</code></p>
 <table class="memberdecls">
@@ -201,7 +224,12 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a9d2007766143afaa032c8002818222c2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>ConstDefaultOrgDomain</code>  <a href="classMyConstants.html#a9d2007766143afaa032c8002818222c2">More...</a><br /></td></tr>
 <tr class="separator:a9d2007766143afaa032c8002818222c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Constants are defined as const QString, starting with MY_ all capps. </p>
+<dl class="section author"><dt>Author</dt><dd>Jeffrey Scott Flesher </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00014">14</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="aa241b81cc84f99e8dec0f26c025390c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa241b81cc84f99e8dec0f26c025390c6">&#9670;&nbsp;</a></span>MY_APP_NAME_VALUE</h2>
 
@@ -216,6 +244,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>ConstDefaultAppName</code> </p>
 <p>Default App Name. </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00062">62</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -234,6 +264,8 @@ Public Attributes</h2></td></tr>
 <p><code>ConstSettingsApplicationName</code> </p>
 <p>QSettings Field Settings Application Name. </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00054">54</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="ac4117dd30d167ffb59808baa6885e817"></a>
@@ -250,6 +282,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_CURRENT_LANG_CODE</code> </p>
 <p>Field Name for Current Language Code </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00025">25</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -268,6 +302,8 @@ Public Attributes</h2></td></tr>
 <p><code>ConstDefaultDomain</code> </p>
 <p>Default Domain, This can be any URL. </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00066">66</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a9d2007766143afaa032c8002818222c2"></a>
@@ -284,6 +320,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>ConstDefaultOrgDomain</code> </p>
 <p>Default Org Domain. </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00068">68</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -302,6 +340,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_DESTINATION_FOLDER</code> </p>
 <p>Destination folder </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00039">39</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="ae42cdc17d6f33b34812cd75eae193542"></a>
@@ -316,6 +356,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00051">51</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a65f395958a34d38b58e697fca03399b3"></a>
@@ -329,6 +371,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00052">52</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -347,6 +391,8 @@ Public Attributes</h2></td></tr>
 <p><code>ConstSettingsGeometryMax</code> </p>
 <p>QSettings Field Settings Geometry Max. </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00059">59</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a584f0ad5221daec0d7ee6fa944ef7aef"></a>
@@ -363,6 +409,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>ConstSettingsGeometryMin</code> </p>
 <p>QSettings Field Settings Geometry Min. </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00060">60</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -381,6 +429,8 @@ Public Attributes</h2></td></tr>
 <p><code>ConstSettingsGeometryPos</code> </p>
 <p>QSettings Field Settings Geometry Pos. </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00057">57</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a1cae17d618618ad519a6c0949cef5f4e"></a>
@@ -397,6 +447,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>ConstSettingsGeometrySize</code> </p>
 <p>QSettings Field Settings Geometry Size. </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00058">58</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -415,6 +467,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_INI_FILE</code> </p>
 <p>Ini File Name </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00018">18</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="ab867c5418098ba6622bcb770798f4e64"></a>
@@ -431,6 +485,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_IS_DEBUG_MESSAGE</code> </p>
 <p>Field Name for IsDebugMessage </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00024">24</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -449,6 +505,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_LANGUAGE_COMBO_STATE</code> </p>
 <p>Field Name for Language ComboBox State </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00029">29</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a9365ff9a4121b98419ab692e2f97b2df"></a>
@@ -465,6 +523,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_LANGUAGES_ID</code> </p>
 <p>Langages IDs </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00042">42</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -483,6 +543,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_QT_PROJECT_NAME</code> </p>
 <p>Field Name for Last Project folder </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00043">43</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a4cc3a6e2ac80f2f54d24ae872262985d"></a>
@@ -499,6 +561,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_MAKE</code> </p>
 <p>Default Make Type: qmake or cmake </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00041">41</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -517,6 +581,8 @@ Public Attributes</h2></td></tr>
 <p><code>ConstSettingsOrgDomain</code> </p>
 <p>QSettings Field Settings Org Domain. </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00056">56</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="acb44217267545d5c475480226ccf7dbe"></a>
@@ -533,6 +599,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>ConstSettingsOrgName</code> </p>
 <p>QSettings Field Settings Org Name. </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00055">55</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -551,6 +619,8 @@ Public Attributes</h2></td></tr>
 <p><code>ConstDefaultOrgName</code> </p>
 <p>Default Org Name. </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00064">64</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a64d8e3a1288992459403eb8f40d76c22"></a>
@@ -567,6 +637,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_QT_PROJECT_FOLDER</code> </p>
 <p>Qt Project Folder </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00037">37</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -585,6 +657,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_QT_PROJECT_NAME</code> </p>
 <p>Qt Project Name </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00036">36</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a2fa08fecfc547b74b6a609df14e768c1"></a>
@@ -601,6 +675,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_SOURCE_FOLDER</code> </p>
 <p>Source Folder </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00038">38</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -619,6 +695,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_SOURCE_LANGUAGE</code> </p>
 <p>Source Language </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00040">40</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a154a69efe5003aedb52885961990752b"></a>
@@ -635,6 +713,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>SQL_COMBO_INDEX</code> </p>
 <p>Field Name for Sql ComboBox Index </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00020">20</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -653,6 +733,8 @@ Public Attributes</h2></td></tr>
 <p><code>SQL_COMBO_STATE</code> </p>
 <p>Field Name for Sql ComboBox State </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00022">22</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="ab94d0147445ec1bcfea1c06b34d5c54d"></a>
@@ -669,6 +751,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>SQL_COMBO_VALUE</code> </p>
 <p>Field Name for Sql ComboBox Value </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00021">21</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -687,6 +771,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_SQL_DB_HOST</code> </p>
 <p>SQL Ini Storage Field Name </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00047">47</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a63ea17ac82f3396194888a58f7c4652c"></a>
@@ -703,6 +789,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_SQL_DB_NAME</code> </p>
 <p>SQL Ini Storage Field Name </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00045">45</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -721,6 +809,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_SQL_DB_PASS</code> </p>
 <p>SQL Ini Storage Field Name </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00049">49</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="aa8be0ef5ca07c113d47149208feb3477"></a>
@@ -737,6 +827,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_SQL_DB_TYPE</code> </p>
 <p>SQL Ini Storage Field Name </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00046">46</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -755,6 +847,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_SQL_DB_USER</code> </p>
 <p>SQL Ini Storage Field Name </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00048">48</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a673b33ba2dee738d64bcbfb3ea9e59fc"></a>
@@ -771,6 +865,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>SQL_DEFAULT</code> </p>
 <p>Default Sql Driver QSQLITE </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00019">19</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -789,6 +885,8 @@ Public Attributes</h2></td></tr>
 <p><code>SQL_PROJECT_ID</code> </p>
 <p>Field Name for Project ID </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00023">23</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a7894225d2eb985e0fbea1963bd45573b"></a>
@@ -805,6 +903,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_TRANS_DELAY</code> </p>
 <p>TRANS DELAY </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00034">34</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -823,6 +923,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_TRANS_DELAY_VALUE</code> </p>
 <p>Field Name for Sql Translation Engine Delay Value </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00033">33</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="aaff7b506ff460c24898f2c46979736f3"></a>
@@ -839,6 +941,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_TRANS_ENGINE_BING_VALUE</code> </p>
 <p>Field Name for Sql Translation Engine Value </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00031">31</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -857,6 +961,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_TRANS_ENGINE_GOOGLE_VALUE</code> </p>
 <p>Field Name for Sql Translation Engine Value </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00030">30</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a5ad5858884ccd85cddf6b654110ecaa1"></a>
@@ -873,6 +979,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>MY_TRANS_ENGINE_COMBO_VALUE</code> </p>
 <p>Field Name for Sql Translation Engine Value </p>
+
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00032">32</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
 
 </div>
 </div>
@@ -891,6 +999,8 @@ Public Attributes</h2></td></tr>
 <p><code>MY_TRANSLATION_FOLDER</code> </p>
 <p>Translation Folder </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00027">27</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <a id="a8f4ee93296ce7c15df089b99dd23e3b1"></a>
@@ -908,15 +1018,21 @@ Public Attributes</h2></td></tr>
 <p><code>MY_TRANSLATION_PREFIX</code> </p>
 <p>Translation Prefix </p>
 
+<p class="definition">Definition at line <a class="el" href="MyConstants_8h_source.html#l00028">28</a> of file <a class="el" href="MyConstants_8h_source.html">MyConstants.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="MyConstants_8h_source.html">MyConstants.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMyConstants.html">MyConstants</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classQOnlineTts.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -74,7 +94,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classQOnlineTts.html" title="QOnlineTts.">QOnlineTts</a>.  
+<p>Q Online Tts.  
  <a href="classQOnlineTts.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="qonlinetts_8h_source.html">qonlinetts.h</a>&gt;</code></p>
@@ -119,7 +139,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5810e5192b7a45dc66e50d9b8c735e7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQOnlineTts.html#a5810e5192b7a45dc66e50d9b8c735e7d">QOnlineTts</a> (QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:a5810e5192b7a45dc66e50d9b8c735e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classQOnlineTts.html" title="QOnlineTts.">QOnlineTts</a>.  <a href="classQOnlineTts.html#a5810e5192b7a45dc66e50d9b8c735e7d">More...</a><br /></td></tr>
+<tr class="memdesc:a5810e5192b7a45dc66e50d9b8c735e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classQOnlineTts.html" title="Q Online Tts.">QOnlineTts</a>.  <a href="classQOnlineTts.html#a5810e5192b7a45dc66e50d9b8c735e7d">More...</a><br /></td></tr>
 <tr class="separator:a5810e5192b7a45dc66e50d9b8c735e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad395702a77665b6efcba08fc014731b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQOnlineTts.html#ad395702a77665b6efcba08fc014731b6">generateUrls</a> (const QString &amp;text, <a class="el" href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533">QOnlineTranslator::Engine</a> engine, <a class="el" href="classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73d">QOnlineTranslator::Language</a> lang, <a class="el" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51">Voice</a> <a class="el" href="classQOnlineTts.html#a578f146258c87ef7dd2a713a4907c9fd">voice</a>=<a class="el" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5">NoVoice</a>, <a class="el" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddb">Emotion</a> <a class="el" href="classQOnlineTts.html#ab11daebb085997e867e30ef0e7bce563">emotion</a>=<a class="el" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e">NoEmotion</a>)</td></tr>
 <tr class="memdesc:ad395702a77665b6efcba08fc014731b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">generateUrls  <a href="classQOnlineTts.html#ad395702a77665b6efcba08fc014731b6">More...</a><br /></td></tr>
@@ -150,7 +170,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a578f146258c87ef7dd2a713a4907c9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classQOnlineTts.html" title="QOnlineTts.">QOnlineTts</a>. </p>
+<div class="textblock"><p>Q Online Tts. </p>
+
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8h_source.html#l00033">33</a> of file <a class="el" href="qonlinetts_8h_source.html">qonlinetts.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a6cc0b62943e55ea05c6d50b9b85a9ddb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cc0b62943e55ea05c6d50b9b85a9ddb">&#9670;&nbsp;</a></span>Emotion</h2>
@@ -178,6 +200,20 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8h_source.html#l00053">53</a> of file <a class="el" href="qonlinetts_8h_source.html">qonlinetts.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// All</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e">NoEmotion</a> = -1, </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// Yandex</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddbaec3d9dbd5df29fd9739e649fc0b0d60e">Neutral</a>,        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddba1b498f66a026001b4db7465861e7c035">Good</a>,           </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4">Evil</a>            </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        };</div>
+<div class="ttc" id="aclassQOnlineTts_html_a6cc0b62943e55ea05c6d50b9b85a9ddba1b498f66a026001b4db7465861e7c035"><div class="ttname"><a href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddba1b498f66a026001b4db7465861e7c035">QOnlineTts::Good</a></div><div class="ttdeci">@ Good</div><div class="ttdoc">Good</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00059">qonlinetts.h:59</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e"><div class="ttname"><a href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e">QOnlineTts::NoEmotion</a></div><div class="ttdeci">@ NoEmotion</div><div class="ttdoc">NoEmotion</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00056">qonlinetts.h:56</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_a6cc0b62943e55ea05c6d50b9b85a9ddbaec3d9dbd5df29fd9739e649fc0b0d60e"><div class="ttname"><a href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddbaec3d9dbd5df29fd9739e649fc0b0d60e">QOnlineTts::Neutral</a></div><div class="ttdeci">@ Neutral</div><div class="ttdoc">Neutral</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00058">qonlinetts.h:58</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4"><div class="ttname"><a href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4">QOnlineTts::Evil</a></div><div class="ttdeci">@ Evil</div><div class="ttdoc">Evil</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00061">qonlinetts.h:60</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af99b4dc7142d628a0245679d634c6e58"></a>
@@ -209,6 +245,20 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8h_source.html#l00064">64</a> of file <a class="el" href="qonlinetts_8h_source.html">qonlinetts.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a680d3a1f7f2b8e890576386ee3b94e62">NoError</a>,                </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a6b3d76fe581c974a4889a868280d4580">UnsupportedEngine</a>,      </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58abd9dac60b4ab7aaff65f5a6ed0db2944">UnsupportedLanguage</a>,    </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a533b93dd614be4a5edc752f7dc979dfb">UnsupportedVoice</a>,       </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a39d3aa9d9e4992a633f0349e5c673df6">UnsupportedEmotion</a>,     </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        };</div>
+<div class="ttc" id="aclassQOnlineTts_html_af99b4dc7142d628a0245679d634c6e58a39d3aa9d9e4992a633f0349e5c673df6"><div class="ttname"><a href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a39d3aa9d9e4992a633f0349e5c673df6">QOnlineTts::UnsupportedEmotion</a></div><div class="ttdeci">@ UnsupportedEmotion</div><div class="ttdoc">UnsupportedEmotion</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00070">qonlinetts.h:70</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_af99b4dc7142d628a0245679d634c6e58a533b93dd614be4a5edc752f7dc979dfb"><div class="ttname"><a href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a533b93dd614be4a5edc752f7dc979dfb">QOnlineTts::UnsupportedVoice</a></div><div class="ttdeci">@ UnsupportedVoice</div><div class="ttdoc">UnsupportedVoice</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00069">qonlinetts.h:69</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_af99b4dc7142d628a0245679d634c6e58a680d3a1f7f2b8e890576386ee3b94e62"><div class="ttname"><a href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a680d3a1f7f2b8e890576386ee3b94e62">QOnlineTts::NoError</a></div><div class="ttdeci">@ NoError</div><div class="ttdoc">NoError</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00066">qonlinetts.h:66</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_af99b4dc7142d628a0245679d634c6e58a6b3d76fe581c974a4889a868280d4580"><div class="ttname"><a href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a6b3d76fe581c974a4889a868280d4580">QOnlineTts::UnsupportedEngine</a></div><div class="ttdeci">@ UnsupportedEngine</div><div class="ttdoc">UnsupportedEngine</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00067">qonlinetts.h:67</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_af99b4dc7142d628a0245679d634c6e58abd9dac60b4ab7aaff65f5a6ed0db2944"><div class="ttname"><a href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58abd9dac60b4ab7aaff65f5a6ed0db2944">QOnlineTts::UnsupportedLanguage</a></div><div class="ttdeci">@ UnsupportedLanguage</div><div class="ttdoc">UnsupportedLanguage</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00068">qonlinetts.h:68</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac1c6e43e176ccec03cbabcc2431eba51"></a>
@@ -246,6 +296,26 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8h_source.html#l00039">39</a> of file <a class="el" href="qonlinetts_8h_source.html">qonlinetts.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// All</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5">NoVoice</a> = -1,   </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// Yandex</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a9441742ac7fb2dc9f6fedbec62876b9d">Zahar</a>,          </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a57677cebff90d4e2857bff46955cb541">Ermil</a>,          </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a072d5cb8602e5a578a9945a476fcf5d5">Jane</a>,           </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51aa3fafb4988fe14eca24b91580f5458c8">Oksana</a>,         </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51add7262f73fc9e9989e345adc770f7e11">Alyss</a>,          </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a637eef614c768ce62e4ce5a1461ad1e8">Omazh</a>           </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        };</div>
+<div class="ttc" id="aclassQOnlineTts_html_ac1c6e43e176ccec03cbabcc2431eba51a072d5cb8602e5a578a9945a476fcf5d5"><div class="ttname"><a href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a072d5cb8602e5a578a9945a476fcf5d5">QOnlineTts::Jane</a></div><div class="ttdeci">@ Jane</div><div class="ttdoc">Jane</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00046">qonlinetts.h:46</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5"><div class="ttname"><a href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5">QOnlineTts::NoVoice</a></div><div class="ttdeci">@ NoVoice</div><div class="ttdoc">NoVoice</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00042">qonlinetts.h:42</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_ac1c6e43e176ccec03cbabcc2431eba51a57677cebff90d4e2857bff46955cb541"><div class="ttname"><a href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a57677cebff90d4e2857bff46955cb541">QOnlineTts::Ermil</a></div><div class="ttdeci">@ Ermil</div><div class="ttdoc">Ermil</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00045">qonlinetts.h:45</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_ac1c6e43e176ccec03cbabcc2431eba51a637eef614c768ce62e4ce5a1461ad1e8"><div class="ttname"><a href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a637eef614c768ce62e4ce5a1461ad1e8">QOnlineTts::Omazh</a></div><div class="ttdeci">@ Omazh</div><div class="ttdoc">Omazh</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00050">qonlinetts.h:49</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_ac1c6e43e176ccec03cbabcc2431eba51a9441742ac7fb2dc9f6fedbec62876b9d"><div class="ttname"><a href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a9441742ac7fb2dc9f6fedbec62876b9d">QOnlineTts::Zahar</a></div><div class="ttdeci">@ Zahar</div><div class="ttdoc">Zahar</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00044">qonlinetts.h:44</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_ac1c6e43e176ccec03cbabcc2431eba51aa3fafb4988fe14eca24b91580f5458c8"><div class="ttname"><a href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51aa3fafb4988fe14eca24b91580f5458c8">QOnlineTts::Oksana</a></div><div class="ttdeci">@ Oksana</div><div class="ttdoc">Oksana</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00047">qonlinetts.h:47</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_ac1c6e43e176ccec03cbabcc2431eba51add7262f73fc9e9989e345adc770f7e11"><div class="ttname"><a href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51add7262f73fc9e9989e345adc770f7e11">QOnlineTts::Alyss</a></div><div class="ttdeci">@ Alyss</div><div class="ttdoc">Alyss</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8h_source.html#l00048">qonlinetts.h:48</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -273,8 +343,15 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classQOnlineTts.html" title="QOnlineTts.">QOnlineTts</a>. </p>
+<p><a class="el" href="classQOnlineTts.html" title="Q Online Tts.">QOnlineTts</a>. </p>
+<p>QOnline Tts.</p>
+<p><a class="el" href="classQOnlineTts.html" title="Q Online Tts.">QOnlineTts</a> </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00050">50</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                      : QObject(parent)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -303,7 +380,16 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>emotion </p>
+<p>emotion.</p>
+<p>emotion </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00184">184</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structs__emotionCodes.html">s_emotionCodes</a>.key(<a class="code" href="classQOnlineTts.html#ab4ff4af9151a92cc2fab607b18d8a1e1">emotionCode</a>, <a class="code" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e">NoEmotion</a>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="ttc" id="aclassQOnlineTts_html_ab4ff4af9151a92cc2fab607b18d8a1e1"><div class="ttname"><a href="classQOnlineTts.html#ab4ff4af9151a92cc2fab607b18d8a1e1">QOnlineTts::emotionCode</a></div><div class="ttdeci">static QString emotionCode(Emotion emotion)</div><div class="ttdoc">emotionCode</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8cpp_source.html#l00176">qonlinetts.cpp:176</a></div></div>
+<div class="ttc" id="astructs__emotionCodes_html"><div class="ttname"><a href="structs__emotionCodes.html">s_emotionCodes</a></div><div class="ttdoc">emotion Codes.</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab4ff4af9151a92cc2fab607b18d8a1e1"></a>
@@ -331,7 +417,15 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>emotionCode </p>
+<p>emotion Code.</p>
+<p>emotionCode </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00176">176</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;{</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structs__emotionCodes.html">s_emotionCodes</a>.value(<a class="code" href="classQOnlineTts.html#ab11daebb085997e867e30ef0e7bce563">emotion</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="ttc" id="aclassQOnlineTts_html_ab11daebb085997e867e30ef0e7bce563"><div class="ttname"><a href="classQOnlineTts.html#ab11daebb085997e867e30ef0e7bce563">QOnlineTts::emotion</a></div><div class="ttdeci">static Emotion emotion(const QString &amp;emotionCode)</div><div class="ttdoc">emotion</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8cpp_source.html#l00184">qonlinetts.cpp:184</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa93adeb3ba354f240c7752f50686f370"></a>
@@ -350,7 +444,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>error </p>
+<p>error.</p>
+<p>error </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00160">160</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> m_error;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a18ff8fc000c3b8461f919d5a70f24f07"></a>
@@ -369,7 +470,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>errorString </p>
+<p>error String.</p>
+<p>errorString </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00152">152</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">return</span> m_errorString;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad395702a77665b6efcba08fc014731b6"></a>
@@ -417,7 +525,97 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>generateUrls </p>
+<p>generate Urls.</p>
+<p>generateUrls </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00057">57</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Get speech</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    QString unparsedText = text;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">switch</span> (engine)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e">QOnlineTranslator::Google</a>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classQOnlineTts.html#a578f146258c87ef7dd2a713a4907c9fd">voice</a> != <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5">NoVoice</a>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                setError(<a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a533b93dd614be4a5edc752f7dc979dfb">UnsupportedVoice</a>, QString(<span class="stringliteral">&quot;%1 %2 %3&quot;</span>).arg(tr(<span class="stringliteral">&quot;Selected engine&quot;</span>), QMetaEnum::fromType&lt;QOnlineTranslator::Engine&gt;().valueToKey(engine), tr(<span class="stringliteral">&quot;does not support voice settings&quot;</span>)));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classQOnlineTts.html#ab11daebb085997e867e30ef0e7bce563">emotion</a> != <a class="code" href="classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e">NoEmotion</a>)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                setError(<a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a39d3aa9d9e4992a633f0349e5c673df6">UnsupportedEmotion</a>, QString(<span class="stringliteral">&quot;%1 %2 %3&quot;</span>).arg(tr(<span class="stringliteral">&quot;Selected engine&quot;</span>), QMetaEnum::fromType&lt;QOnlineTranslator::Engine&gt;().valueToKey(engine), tr(<span class="stringliteral">&quot;does not support emotion settings&quot;</span>)));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">const</span> QString langString = languageApiCode(engine, lang);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">if</span> (langString.isNull())</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// Google has a limit of characters per tts request. If the query is larger, then it should be splited into several</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">while</span> (!unparsedText.isEmpty())</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> splitIndex = QOnlineTranslator::getSplitIndex(unparsedText, s_googleTtsLimit); <span class="comment">// Split the part by special symbol</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="comment">// Generate URL API for add it to the playlist</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                QUrl apiUrl(QStringLiteral(<span class="stringliteral">&quot;http://translate.googleapis.com/translate_tts&quot;</span>));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keyword">const</span> QString query = QStringLiteral(<span class="stringliteral">&quot;ie=UTF-8&amp;client=gtx&amp;tl=%1&amp;q=%2&quot;</span>).arg(langString, QString(QUrl::toPercentEncoding(unparsedText.left(splitIndex))));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">                #if defined(Q_OS_LINUX)</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                apiUrl.setQuery(query);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">                #elif defined(Q_OS_WIN)</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                apiUrl.setQuery(query, QUrl::DecodedMode);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">                #endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                m_media.append(apiUrl);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="comment">// Remove the said part from the next saying</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                unparsedText = unparsedText.mid(splitIndex);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533a6fa990a8e7d8f9b2807e4892cac5c546">QOnlineTranslator::Yandex</a>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">const</span> QString langString = languageApiCode(engine, lang);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">if</span> (langString.isNull())</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">const</span> QString voiceString = voiceApiCode(engine, <a class="code" href="classQOnlineTts.html#a578f146258c87ef7dd2a713a4907c9fd">voice</a>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span> (voiceString.isNull())</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keyword">const</span> QString emotionString = emotionApiCode(engine, <a class="code" href="classQOnlineTts.html#ab11daebb085997e867e30ef0e7bce563">emotion</a>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (emotionString.isNull())</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="comment">// Yandex has a limit of characters per tts request. If the query is larger, then it should be splited into several</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">while</span> (!unparsedText.isEmpty())</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> splitIndex = QOnlineTranslator::getSplitIndex(unparsedText, s_yandexTtsLimit); <span class="comment">// Split the part by special symbol</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="comment">// Generate URL API for add it to the playlist</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                QUrl apiUrl(QStringLiteral(<span class="stringliteral">&quot;https://tts.voicetech.yandex.net/tts&quot;</span>));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keyword">const</span> QString query = QStringLiteral(<span class="stringliteral">&quot;text=%1&amp;lang=%2&amp;speaker=%3&amp;emotion=%4&amp;format=mp3&quot;</span>)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        .arg(QUrl::toPercentEncoding(unparsedText.left(splitIndex)), langString, voiceString, emotionString);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">                #if defined(Q_OS_LINUX)</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                apiUrl.setQuery(query);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">                #elif defined(Q_OS_WIN)</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                apiUrl.setQuery(query, QUrl::DecodedMode);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">                #endif</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                m_media.append(apiUrl);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="comment">// Remove the said part from the next saying</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                unparsedText = unparsedText.mid(splitIndex);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca">QOnlineTranslator::Bing</a>:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            setError(<a class="code" href="classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58a6b3d76fe581c974a4889a868280d4580">UnsupportedEngine</a>, QString(<span class="stringliteral">&quot;%1 %2&quot;</span>).arg(QMetaEnum::fromType&lt;QOnlineTranslator::Engine&gt;().valueToKey(<a class="code" href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca">QOnlineTranslator::Bing</a>), tr(<span class="stringliteral">&quot;engine does not support TTS&quot;</span>)));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="ttc" id="aclassQOnlineTranslator_html_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e"><div class="ttname"><a href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e">QOnlineTranslator::Google</a></div><div class="ttdeci">@ Google</div><div class="ttdoc">Google</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetranslator_8h_source.html#l00192">qonlinetranslator.h:192</a></div></div>
+<div class="ttc" id="aclassQOnlineTranslator_html_a40faea8b5247df7edfa512106c532533a6fa990a8e7d8f9b2807e4892cac5c546"><div class="ttname"><a href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533a6fa990a8e7d8f9b2807e4892cac5c546">QOnlineTranslator::Yandex</a></div><div class="ttdeci">@ Yandex</div><div class="ttdoc">Yandex</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetranslator_8h_source.html#l00193">qonlinetranslator.h:193</a></div></div>
+<div class="ttc" id="aclassQOnlineTranslator_html_a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca"><div class="ttname"><a href="classQOnlineTranslator.html#a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca">QOnlineTranslator::Bing</a></div><div class="ttdeci">@ Bing</div><div class="ttdoc">Bing</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetranslator_8h_source.html#l00195">qonlinetranslator.h:194</a></div></div>
+<div class="ttc" id="aclassQOnlineTts_html_a578f146258c87ef7dd2a713a4907c9fd"><div class="ttname"><a href="classQOnlineTts.html#a578f146258c87ef7dd2a713a4907c9fd">QOnlineTts::voice</a></div><div class="ttdeci">static Voice voice(const QString &amp;voiceCode)</div><div class="ttdoc">voice</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8cpp_source.html#l00192">qonlinetts.cpp:192</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abf0f9d5f8b748109b77896ca467435ff"></a>
@@ -436,7 +634,14 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>media </p>
+<p>media.</p>
+<p>media </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00144">144</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> m_media;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a578f146258c87ef7dd2a713a4907c9fd"></a>
@@ -464,7 +669,16 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>voice </p>
+<p>voice.</p>
+<p>voice </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00192">192</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structs__voiceCodes.html">s_voiceCodes</a>.key(<a class="code" href="classQOnlineTts.html#afd49e2131602f28fc8087d1d42bb6c9a">voiceCode</a>, <a class="code" href="classQOnlineTts.html#ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5">NoVoice</a>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="ttc" id="aclassQOnlineTts_html_afd49e2131602f28fc8087d1d42bb6c9a"><div class="ttname"><a href="classQOnlineTts.html#afd49e2131602f28fc8087d1d42bb6c9a">QOnlineTts::voiceCode</a></div><div class="ttdeci">static QString voiceCode(Voice voice)</div><div class="ttdoc">voiceCode</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetts_8cpp_source.html#l00168">qonlinetts.cpp:168</a></div></div>
+<div class="ttc" id="astructs__voiceCodes_html"><div class="ttname"><a href="structs__voiceCodes.html">s_voiceCodes</a></div><div class="ttdoc">voice Codes.</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afd49e2131602f28fc8087d1d42bb6c9a"></a>
@@ -492,17 +706,28 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>voiceCode </p>
+<p>voice Code</p>
+<p>voiceCode </p>
 
+<p class="definition">Definition at line <a class="el" href="qonlinetts_8cpp_source.html#l00168">168</a> of file <a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structs__voiceCodes.html">s_voiceCodes</a>.value(<a class="code" href="classQOnlineTts.html#a578f146258c87ef7dd2a713a4907c9fd">voice</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/third-party/qonlinetranslator/src/<a class="el" href="qonlinetts_8h_source.html">qonlinetts.h</a></li>
-<li>src/third-party/qonlinetranslator/src/<a class="el" href="qonlinetts_8cpp.html">qonlinetts.cpp</a></li>
+<li>src/third-party/qonlinetranslator/src/<a class="el" href="qonlinetts_8cpp_source.html">qonlinetts.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classQOnlineTts.html">QOnlineTts</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -21,20 +21,31 @@ it is all done, nothing more to do.
  - :apple: Currenty unavalible [Apple zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
 
 # Documentaion
-[](https://light-wizzard.github.io/QtLingo/)
+I am trying to get the Doxygen files to upload to this site, not working so far.
+[Documentaion](https://light-wizzard.github.io/QtLingo/)
 
-# GitHub Projects used
+# GitHub Projects and other projects used
 I use to GitHub Applications for this,
 for Translations I use crow-translate at https://github.com/crow-translate/crow-translate,
 and QOnlineTranslator at https://github.com/crow-translate/QOnlineTranslator,
-and to parse the .ts files I use ts_tool at https://github.com/nen777w/ts_tool.
+and to parse the .ts files I use ts_tool at https://github.com/nen777w/ts_tool,
+and I used https://wiki.qt.io/Simple_encryption_with_SimpleCrypt#Versions.
 
 # Process
 First I will update your projects Translations files according to the Languages you have chosen,
 then I will translate all the Languages,
 then update the Translations files and compile them into .qm files for deployment.
 
+# Doxygen
+I tried to document usign Doxygen, you can run it from the commands below.
+
+```bash
+doxygen Doxyfile 
+doxywizard
+```
+
 # Credits
-Writen by Jeffrey Scott Flesher the Light Wizzard in the Flesh
+I used two GitHub Projects that I listed above, everything else is
+writen by Jeffrey Scott Flesher the Light Wizzard in the Flesh
 
 ### End of File

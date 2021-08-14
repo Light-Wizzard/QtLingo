@@ -1,8 +1,8 @@
 #include "MyDatatables.h"
 
 /************************************************
-   \class MyDatatables
-   \brief My Datatables Constructor
+ * MyDatatables
+ * @brief My Datatables Constructor.
  ***********************************************/
 MyDatatables::MyDatatables(QObject *parent) : QObject(parent)
 {
@@ -11,16 +11,16 @@ MyDatatables::MyDatatables(QObject *parent) : QObject(parent)
     myProject = new MyProjectClass("", "", "", "", "", "", "", "");
 }
 /************************************************
-   \class MyDatatables
-   \brief My Datatables Deconstructor
+ * MyDatatables
+ * @brief My Datatables Deconstructor.
  ***********************************************/
 MyDatatables::~MyDatatables()
 {
 
 }
 /************************************************
-   \fn setDebugMessage
-   \brief set Debug Message
+ * setDebugMessage
+ * @brief set Debug Message.
  ***********************************************/
 void MyDatatables::setDebugMessage(bool thisState)
 {
@@ -28,8 +28,8 @@ void MyDatatables::setDebugMessage(bool thisState)
     if (isDebugMessage) { qDebug() << "setDebugMessage"; }
 }
 /************************************************
-   \fn getDebugMessage
-   \brief get Debug Message
+ * getDebugMessage
+ * @brief get Debug Message.
  ***********************************************/
 bool MyDatatables::getDebugMessage()
 {
@@ -37,8 +37,8 @@ bool MyDatatables::getDebugMessage()
     return isDebugMessage;
 }
 /************************************************
-   \fn setProjectFolder
-   \brief set Project Folder
+ * setProjectFolder
+ * @brief set Project Folder.
  ***********************************************/
 void MyDatatables::setProjectFolder(const QString &thisProjectFolder)
 {
@@ -46,8 +46,8 @@ void MyDatatables::setProjectFolder(const QString &thisProjectFolder)
     myProjectFolder = thisProjectFolder;
 }
 /************************************************
-   \fn getProjectFolder
-   \brief get Project Folder
+ * getProjectFolder
+ * @brief get Project Folder.
  ***********************************************/
 QString MyDatatables::getProjectFolder()
 {
@@ -55,8 +55,8 @@ QString MyDatatables::getProjectFolder()
     return myProjectFolder;
 }
 /************************************************
-   \fn setProjectName
-   \brief set Project Name
+ * setProjectName
+ * @brief set Project Name.
  ***********************************************/
 void MyDatatables::setProjectName(const QString &thisProjectName)
 {
@@ -64,8 +64,8 @@ void MyDatatables::setProjectName(const QString &thisProjectName)
     myProjectName = thisProjectName;
 }
 /************************************************
-   \fn getProjectName
-   \brief get Project Name
+ * getProjectName
+ * @brief get Project Name.
  ***********************************************/
 QString MyDatatables::getProjectName()
 {
@@ -73,8 +73,8 @@ QString MyDatatables::getProjectName()
     return myProjectName;
 }
 /************************************************
-   \fn setProjectID
-   \brief set Project ID
+ * setProjectID
+ * @brief set Project ID.
  ***********************************************/
 void MyDatatables::setProjectID(const QString &thisProjectID)
 {
@@ -82,8 +82,8 @@ void MyDatatables::setProjectID(const QString &thisProjectID)
     myProjectID = thisProjectID;
 }
 /************************************************
-   \fn getProjectID
-   \brief get Project ID
+ * getProjectID
+ * @brief get Project ID.
  ***********************************************/
 QString MyDatatables::getProjectID()
 {
@@ -91,8 +91,8 @@ QString MyDatatables::getProjectID()
     return myProjectID;
 }
 /************************************************
-   \fn setComboBoxSqlValue
-   \brief set ComboBox Sql Value
+ * setComboBoxSqlValue
+ * @brief set ComboBox Sql Value.
  ***********************************************/
 void MyDatatables::setComboBoxSqlValue(const QString &thisComboBoxSqlValue)
 {
@@ -100,8 +100,8 @@ void MyDatatables::setComboBoxSqlValue(const QString &thisComboBoxSqlValue)
     myComboBoxSqlValue = thisComboBoxSqlValue;
 }
 /************************************************
-   \fn getComboBoxSqlValue
-   \brief get ComboBox Sql Value
+ * getComboBoxSqlValue
+ * @brief get ComboBox Sql Value.
  ***********************************************/
 QString MyDatatables::getComboBoxSqlValue()
 {
@@ -109,8 +109,8 @@ QString MyDatatables::getComboBoxSqlValue()
     return myComboBoxSqlValue;
 }
 /************************************************
-   \fn checkDatabase
-   \brief check Database
+ * checkDatabase
+ * @brief check Database.
  ***********************************************/
 bool MyDatatables::checkDatabase()
 {
@@ -154,8 +154,8 @@ bool MyDatatables::checkDatabase()
     return true;
 }
 /************************************************
-   \fn insertProjects
-   \brief insert Projects into SQL Database
+ * insertProjects
+ * @brief insert Projects into SQL Database.
  ***********************************************/
 bool MyDatatables::insertQtProjects()
 {
@@ -173,8 +173,8 @@ bool MyDatatables::insertQtProjects()
     return true;
 }
 /************************************************
-   \fn addProject
-   \brief addProject Assumes you have ran setProject: QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, LanguageIDs
+ * addProject
+ * @brief addProject Assumes you have ran setProject: QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, LanguageIDs.
  ***********************************************/
 bool MyDatatables::addQtProject()
 {
@@ -188,8 +188,8 @@ bool MyDatatables::addQtProject()
     return insertQtProjects();
 }
 /************************************************
-   \fn deleteProject
-   \brief delete Project
+ * deleteProject
+ * @brief delete Project.
  ***********************************************/
 void MyDatatables::deleteQtProject(const QString &thisID)
 {
@@ -203,8 +203,8 @@ void MyDatatables::deleteQtProject(const QString &thisID)
     }
 }
 /************************************************
-   \fn getQtProjectNameSelectQuery
-   \brief get Qt Project Name Select Query SELECT id, QtProjectName FROM Projects
+ * getQtProjectNameSelectQuery
+ * @brief get Qt Project Name Select Query SELECT id, QtProjectName FROM Projects.
  ***********************************************/
 QString MyDatatables::getQtProjectNameSelectQuery()
 {
@@ -212,8 +212,8 @@ QString MyDatatables::getQtProjectNameSelectQuery()
     return QString("SELECT id, QtProjectName FROM Projects");
 }
 /************************************************
-   \fn getQtProjectNameByNameQuery
-   \brief get Qt Project Name By Name Query SELECT id, QtProjectName FROM Projects WHERE QtProjectFolder =
+ * getQtProjectNameByNameQuery
+ * @brief get Qt Project Name By Name Query SELECT id, QtProjectName FROM Projects WHERE QtProjectFolder =.
  ***********************************************/
 QString MyDatatables::getQtProjectNameByNameQuery(const QString &thisProject)
 {
@@ -221,8 +221,8 @@ QString MyDatatables::getQtProjectNameByNameQuery(const QString &thisProject)
     return QString("SELECT id, QtProjectName FROM Projects WHERE QtProjectName = '%1'").arg(thisProject);
 }
 /************************************************
-   \fn isProjectFolderQuery
-   \brief is Project Folder Query myAccessSqlDbtModel->isProjectQuery(ui->lineEditSettingsProjectBin->text());
+ * isProjectFolderQuery
+ * @brief is Project Folder Query myAccessSqlDbtModel->isProjectQuery(ui->lineEditSettingsProjectBin->text());.
  ***********************************************/
 bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
 {
@@ -241,8 +241,8 @@ bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
     return false;
 }
 /************************************************
-   \fn getQtProjectFullSelectQueryID
-   \brief get Qt Project Full Select Query ID SELECT * FROM Projects WHERE id =
+ * getQtProjectFullSelectQueryID
+ * @brief get Qt Project Full Select Query ID SELECT * FROM Projects WHERE id =.
  ***********************************************/
 QString MyDatatables::getQtProjectFullSelectQueryID(const QString &thisWhereID)
 {
@@ -250,8 +250,8 @@ QString MyDatatables::getQtProjectFullSelectQueryID(const QString &thisWhereID)
     return QString("SELECT * FROM Projects WHERE id = ").append(thisWhereID);
 }
 /************************************************
-   \fn getQtProjectNameSelectQueryID
-   \brief get Qt Project Name Select Query ID  SELECT id, QtProjectName FROM Projects WHERE id
+ * getQtProjectNameSelectQueryID
+ * @brief get Qt Project Name Select Query ID  SELECT id, QtProjectName FROM Projects WHERE id.
  ***********************************************/
 QString MyDatatables::getQtProjectNameSelectQueryID(const QString &thisWhereID)
 {
@@ -259,8 +259,8 @@ QString MyDatatables::getQtProjectNameSelectQueryID(const QString &thisWhereID)
     return QString("SELECT id, QtProjectName FROM Projects WHERE id = ").append(thisWhereID);
 }
 /************************************************
-   \fn saveProject
-   \brief save Project Projects: id, QtProjectName QtProjectFolder, SourceFolder, DestinationFolder, SourceLanguage, LanguageIDs, Make
+ * saveProject
+ * @brief save Project Projects: id, QtProjectName QtProjectFolder, SourceFolder, DestinationFolder, SourceLanguage, LanguageIDs, Make
  ***********************************************/
 void MyDatatables::saveQtProject()
 {
@@ -275,9 +275,9 @@ void MyDatatables::saveQtProject()
     isSaveSettings = false;
 }
 /************************************************
-   \fn setProject
-   \brief set Project Sets all Variables used in the Configuarion Database in one Place:
-          QtProjectFolder, SourceFolder, DestinationFolder, SourceLanguage, LanguageIDs, Make
+ * setProject
+ * @brief set Project Sets all Variables used in the Configuarion Database in one Place:
+ *        QtProjectFolder, SourceFolder, DestinationFolder, SourceLanguage, LanguageIDs, Make.
  ***********************************************/
 void MyDatatables::setProject(const QString &thisQtProjectName, const QString &thisQtProjectFolder, const QString &thisSourceFolder, const QString &thisDestinationFolder, const QString &thisSourceLanguage, const QString &thisLanguageIDs, const QString &thisMake)
 {

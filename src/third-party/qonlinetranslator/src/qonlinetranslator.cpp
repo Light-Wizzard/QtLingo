@@ -22,8 +22,8 @@
 #include "qonlinetts.h"
 
 /************************************************
-   \fn s_genericLanguageCodes
-   \brief languageCode(Language lang)
+ * \struct s_genericLanguageCodes
+ * @brief languageCode(Language lang).
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_genericLanguageCodes =
 {
@@ -155,8 +155,8 @@ const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_genericLan
     { Zulu,                  QStringLiteral("zu")       }
 };
 /************************************************
-   \fn s_genericLanguageCodesName
-   \brief Added by Light-Wizzard s_genericLanguageCodesName
+ * \struct s_genericLanguageCodesName
+ * @brief Added by Light-Wizzard s_genericLanguageCodesName
  ***********************************************/
 const QMap<QString, QString> QOnlineTranslator::s_genericLanguageNameToCode =
 {
@@ -288,8 +288,8 @@ const QMap<QString, QString> QOnlineTranslator::s_genericLanguageNameToCode =
     { QStringLiteral("Zulu"),                  QStringLiteral("zu")       }
 };
 /************************************************
-   \fn s_genericLanguageCodesName
-   \brief Added by Light-Wizzard s_genericLanguageCodesName
+ * \struct s_genericLanguageCodesName
+ * @brief Added by Light-Wizzard s_genericLanguageCodesName
  ***********************************************/
 const QMap<QString, QString> QOnlineTranslator::s_genericLanguageCodeToName =
 {
@@ -421,16 +421,16 @@ const QMap<QString, QString> QOnlineTranslator::s_genericLanguageCodeToName =
     { QStringLiteral("zu"),         QStringLiteral("Zulu")                  }
 };
 /************************************************
-   \fn s_googleLanguageCodes
-   \brief s_googleLanguageCodes
+ * \struct s_googleLanguageCodes
+ * @brief s_googleLanguageCodes
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_googleLanguageCodes =
 {
     { Hebrew, QStringLiteral("iw") }
 };
 /************************************************
-   \fn s_yandexLanguageCodes
-   \brief s_yandexLanguageCodes
+ * \struct s_yandexLanguageCodes
+ * @brief s_yandexLanguageCodes
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_yandexLanguageCodes =
 {
@@ -438,8 +438,8 @@ const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_yandexLang
     { Javanese,          QStringLiteral("jv") }
 };
 /************************************************
-   \fn s_bingLanguageCodes
-   \brief s_bingLanguageCodes
+ * \struct s_bingLanguageCodes
+ * @brief s_bingLanguageCodes
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_bingLanguageCodes =
 {
@@ -451,8 +451,8 @@ const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_bingLangua
     { Hmong,              QStringLiteral("mww")         }
 };
 /************************************************
-   \fn QOnlineTranslator
-   \brief QOnlineTranslator Constructor
+ * QOnlineTranslator
+ * @brief QOnlineTranslator Constructor.
  ***********************************************/
 QOnlineTranslator::QOnlineTranslator(QObject *parent) : QObject(parent), m_stateMachine(new QStateMachine(this)), m_networkManager(new QNetworkAccessManager(this))
 {
@@ -460,8 +460,8 @@ QOnlineTranslator::QOnlineTranslator(QObject *parent) : QObject(parent), m_state
     connect(m_stateMachine, &QStateMachine::stopped,  this, &QOnlineTranslator::finished);
 }
 /************************************************
-   \fn translate
-   \brief translate
+ * translate
+ * @brief translate.
  ***********************************************/
 void QOnlineTranslator::translate(const QString &text, Engine engine, Language translationLang, Language sourceLang, Language uiLang)
 {
@@ -506,8 +506,8 @@ void QOnlineTranslator::translate(const QString &text, Engine engine, Language t
     m_stateMachine->start();
 }
 /************************************************
-   \fn detectLanguage
-   \brief detect Language
+ * detectLanguage
+ * @brief detect Language.
  ***********************************************/
 void QOnlineTranslator::detectLanguage(const QString &text, Engine engine)
 {
@@ -530,24 +530,24 @@ void QOnlineTranslator::detectLanguage(const QString &text, Engine engine)
     m_stateMachine->start();
 }
 /************************************************
-   \fn abort
-   \brief abort
+ * abort
+ * @brief abort.
  ***********************************************/
 void QOnlineTranslator::abort()
 {
     if (m_currentReply != nullptr) { m_currentReply->abort(); }
 }
 /************************************************
-   \fn isRunning
-   \brief is Running
+ * isRunning
+ * @brief is Running.
  ***********************************************/
 bool QOnlineTranslator::isRunning() const
 {
     return m_stateMachine->isRunning();
 }
 /************************************************
-   \fn toJson
-   \brief toJson
+ * toJson
+ * @brief toJson.
  ***********************************************/
 QJsonDocument QOnlineTranslator::toJson() const
 {
@@ -587,192 +587,192 @@ QJsonDocument QOnlineTranslator::toJson() const
     return QJsonDocument(object);
 }
 /************************************************
-   \fn source
-   \brief source
+ * source
+ * @brief source.
  ***********************************************/
 QString QOnlineTranslator::source() const
 {
     return m_source;
 }
 /************************************************
-   \fn sourceTranslit
-   \brief source Translit
+ * sourceTranslit
+ * @brief source Translit.
  ***********************************************/
 QString QOnlineTranslator::sourceTranslit() const
 {
     return m_sourceTranslit;
 }
 /************************************************
-   \fn sourceTranscription
-   \brief source Transcription
+ * sourceTranscription
+ * @brief source Transcription.
  ***********************************************/
 QString QOnlineTranslator::sourceTranscription() const
 {
     return m_sourceTranscription;
 }
 /************************************************
-   \fn sourceLanguageName
-   \brief source Language Name
+ * sourceLanguageName
+ * @brief source Language Name.
  ***********************************************/
 QString QOnlineTranslator::sourceLanguageName() const
 {
     return languageName(m_sourceLang);
 }
 /************************************************
-   \fn sourceLanguage
-   \brief source Language
+ * sourceLanguage
+ * @brief source Language.
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::sourceLanguage() const
 {
     return m_sourceLang;
 }
 /************************************************
-   \fn translation
-   \brief translation
+ * translation
+ * @brief translation.
  ***********************************************/
 QString QOnlineTranslator::translation() const
 {
     return m_translation;
 }
 /************************************************
-   \fn translationTranslit
-   \brief translation Translit
+ * translationTranslit
+ * @brief translation Translit.
  ***********************************************/
 QString QOnlineTranslator::translationTranslit() const
 {
     return m_translationTranslit;
 }
 /************************************************
-   \fn translationLanguageName
-   \brief translation Language Name
+ * translationLanguageName
+ * @brief translation Language Name.
  ***********************************************/
 QString QOnlineTranslator::translationLanguageName() const
 {
     return languageName(m_translationLang);
 }
 /************************************************
-   \fn translationLanguage
-   \brief translation Language
+ * translationLanguage
+ * @brief translation Language.
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::translationLanguage() const
 {
     return m_translationLang;
 }
 /************************************************
-   \fn translationOptions
-   \brief translation Options
+ * translationOptions
+ * @brief translation Options.
  ***********************************************/
 QMap<QString, QVector<QOption>> QOnlineTranslator::translationOptions() const
 {
     return m_translationOptions;
 }
 /************************************************
-   \fn examples
-   \brief examples
+ * examples
+ * @brief examples.
  ***********************************************/
 QMap<QString, QVector<QExample>> QOnlineTranslator::examples() const
 {
     return m_examples;
 }
 /************************************************
-   \fn error
-   \brief error
+ * error
+ * @brief error.
  ***********************************************/
 QOnlineTranslator::TranslationError QOnlineTranslator::error() const
 {
     return m_error;
 }
 /************************************************
-   \fn errorString
-   \brief error String
+ * errorString
+ * @brief error String.
  ***********************************************/
 QString QOnlineTranslator::errorString() const
 {
     return m_errorString;
 }
 /************************************************
-   \fn isSourceTranslitEnabled
-   \brief is Source Translit Enabled
+ * isSourceTranslitEnabled
+ * @brief is Source Translit Enabled.
  ***********************************************/
 bool QOnlineTranslator::isSourceTranslitEnabled() const
 {
     return m_sourceTranslitEnabled;
 }
 /************************************************
-   \fn setSourceTranslitEnabled
-   \brief set Source Translit Enabled
+ * setSourceTranslitEnabled
+ * @brief set Source Translit Enabled.
  ***********************************************/
 void QOnlineTranslator::setSourceTranslitEnabled(bool enable)
 {
     m_sourceTranslitEnabled = enable;
 }
 /************************************************
-   \fn isTranslationTranslitEnabled
-   \brief is Translation Translit Enabled
+ * isTranslationTranslitEnabled
+ * @brief is Translation Translit Enabled.
  ***********************************************/
 bool QOnlineTranslator::isTranslationTranslitEnabled() const
 {
     return m_translationTranslitEnabled;
 }
 /************************************************
-   \fn setTranslationTranslitEnabled
-   \brief set Translation Translit Enabled
+ * setTranslationTranslitEnabled
+ * @brief set Translation Translit Enabled.
  ***********************************************/
 void QOnlineTranslator::setTranslationTranslitEnabled(bool enable)
 {
     m_translationTranslitEnabled = enable;
 }
 /************************************************
-   \fn isSourceTranscriptionEnabled
-   \brief is Source Transcription Enabled
+ * isSourceTranscriptionEnabled
+ * @brief is Source Transcription Enabled.
  ***********************************************/
 bool QOnlineTranslator::isSourceTranscriptionEnabled() const
 {
     return m_sourceTranscriptionEnabled;
 }
 /************************************************
-   \fn setSourceTranscriptionEnabled
-   \brief set Source Transcription Enabled
+ * setSourceTranscriptionEnabled
+ * @brief set Source Transcription Enabled.
  ***********************************************/
 void QOnlineTranslator::setSourceTranscriptionEnabled(bool enable)
 {
     m_sourceTranscriptionEnabled = enable;
 }
 /************************************************
-   \fn isTranslationOptionsEnabled
-   \brief is Translation Options Enabled
+ * isTranslationOptionsEnabled
+ * @brief is Translation Options Enabled.
  ***********************************************/
 bool QOnlineTranslator::isTranslationOptionsEnabled() const
 {
     return m_translationOptionsEnabled;
 }
 /************************************************
-   \fn setTranslationOptionsEnabled
-   \brief set Translation Options Enabled
+ * setTranslationOptionsEnabled
+ * @brief set Translation Options Enabled.
  ***********************************************/
 void QOnlineTranslator::setTranslationOptionsEnabled(bool enable)
 {
     m_translationOptionsEnabled = enable;
 }
 /************************************************
-   \fn isExamplesEnabled
-   \brief is Examples Enabled
+ * isExamplesEnabled
+ * @brief is Examples Enabled.
  ***********************************************/
 bool QOnlineTranslator::isExamplesEnabled() const
 {
     return m_examplesEnabled;
 }
 /************************************************
-   \fn setExamplesEnabled
-   \brief set Examples Enabled
+ * setExamplesEnabled
+ * @brief set Examples Enabled.
  ***********************************************/
 void QOnlineTranslator::setExamplesEnabled(bool enable)
 {
     m_examplesEnabled = enable;
 }
 /************************************************
-   \fn languageName
-   \brief language Name
+ * languageName
+ * @brief language Name.
  ***********************************************/
 QString QOnlineTranslator::languageName(Language lang)
 {
@@ -908,32 +908,32 @@ QString QOnlineTranslator::languageName(Language lang)
     } // end switch (lang)
 } // end languageName(Language lang)
 /************************************************
-   \fn languageCode
-   \brief language Code
+ * languageCode
+ * @brief language Code.
  ***********************************************/
 QString QOnlineTranslator::languageCode(Language lang)
 {
     return s_genericLanguageCodes.value(lang);
 }
 /************************************************
-   \fn languageNameToCode
-   \brief Added by Light-Wizzard language Name to Code
+ * languageNameToCode
+ * @brief Added by Light-Wizzard language Name to Code.
  ***********************************************/
 QString QOnlineTranslator::languageNameToCode(const QString &lang)
 {
     return s_genericLanguageNameToCode.value(lang);
 } // end languageNameToCode
 /************************************************
-   \fn languageCodeToName
-   \brief Added by Light-Wizzard language Code to Name
+ * languageCodeToName
+ * @brief Added by Light-Wizzard language Code to Name.
  ***********************************************/
 QString QOnlineTranslator::languageCodeToName(const QString &lang)
 {
     return s_genericLanguageCodeToName.value(lang);
 } // end languageCodeToName
 /************************************************
-   \fn language
-   \brief language
+ * language
+ * @brief language.
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::language(const QLocale &locale)
 {
@@ -1045,16 +1045,16 @@ QOnlineTranslator::Language QOnlineTranslator::language(const QLocale &locale)
     }
 }
 /************************************************
-   \fn language
-   \brief Returns general language code
+ * language
+ * @brief Returns general language code.
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::language(const QString &langCode)
 {
     return s_genericLanguageCodes.key(langCode, NoLanguage);
 }
 /************************************************
-   \fn isSupportTranslation
-   \brief is Support Translation
+ * isSupportTranslation
+ * @brief is Support Translation.
  ***********************************************/
 bool QOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
 {
@@ -1206,16 +1206,16 @@ bool QOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
     return isSupported;
 }
 /************************************************
-   \fn skipGarbageText
-   \brief skip Garbage Text
+ * skipGarbageText
+ * @brief skip Garbage Text.
  ***********************************************/
 void QOnlineTranslator::skipGarbageText()
 {
     m_translation.append(sender()->property(s_textProperty).toString());
 }
 /************************************************
-   \fn requestGoogleTranslate
-   \brief request Google Translate
+ * requestGoogleTranslate
+ * @brief request Google Translate.
  ***********************************************/
 void QOnlineTranslator::requestGoogleTranslate()
 {
@@ -1230,8 +1230,8 @@ void QOnlineTranslator::requestGoogleTranslate()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
-   \fn parseGoogleTranslate
-   \brief parse Google Translate
+ * parseGoogleTranslate
+ * @brief parse Google Translate.
  ***********************************************/
 void QOnlineTranslator::parseGoogleTranslate()
 {
@@ -1324,8 +1324,8 @@ void QOnlineTranslator::parseGoogleTranslate()
     }
 }
 /************************************************
-   \fn requestYandexKey
-   \brief request Yandex Key
+ * requestYandexKey
+ * @brief request Yandex Key.
  ***********************************************/
 void QOnlineTranslator::requestYandexKey()
 {
@@ -1333,8 +1333,8 @@ void QOnlineTranslator::requestYandexKey()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
-   \fn parseYandexKey
-   \brief parse Yandex Key
+ * parseYandexKey
+ * @brief parse Yandex Key.
  ***********************************************/
 void QOnlineTranslator::parseYandexKey()
 {
@@ -1378,8 +1378,8 @@ void QOnlineTranslator::parseYandexKey()
     s_yandexKey = sidParts.join('.');
 }
 /************************************************
-   \fn request Yandex Translate
-   \brief requestYandexTranslate
+ * requestYandexTranslate
+ * @brief request Yandex Translate.
  ***********************************************/
 void QOnlineTranslator::requestYandexTranslate()
 {
@@ -1402,8 +1402,8 @@ void QOnlineTranslator::requestYandexTranslate()
     m_currentReply = m_networkManager->post(request, QByteArray());
 }
 /************************************************
-   \fn parseYandexTranslate
-   \brief parse Yandex Translate
+ * parseYandexTranslate
+ * @brief parse Yandex Translate.
  ***********************************************/
 void QOnlineTranslator::parseYandexTranslate()
 {
@@ -1448,40 +1448,40 @@ void QOnlineTranslator::parseYandexTranslate()
     m_translation += jsonData.value(QStringLiteral("text")).toArray().at(0).toString();
 }
 /************************************************
-   \fn requestYandexSourceTranslit
-   \brief request Yandex Source Translit
+ * requestYandexSourceTranslit
+ * @brief request Yandex Source Translit.
  ***********************************************/
 void QOnlineTranslator::requestYandexSourceTranslit()
 {
     requestYandexTranslit(m_sourceLang);
 }
 /************************************************
-   \fn parseYandexSourceTranslit
-   \brief parse Yandex Source Translit
+ * parseYandexSourceTranslit
+ * @brief parse Yandex Source Translit.
  ***********************************************/
 void QOnlineTranslator::parseYandexSourceTranslit()
 {
     parseYandexTranslit(m_sourceTranslit);
 }
 /************************************************
-   \fn requestYandexTranslationTranslit
-   \brief request Yandex Translation Translit
+ * requestYandexTranslationTranslit
+ * @brief request Yandex Translation Translit.
  ***********************************************/
 void QOnlineTranslator::requestYandexTranslationTranslit()
 {
     requestYandexTranslit(m_translationLang);
 }
 /************************************************
-   \fn parseYandexTranslationTranslit
-   \brief parse Yandex Translation Translit
+ * parseYandexTranslationTranslit
+ * @brief parse Yandex Translation Translit.
  ***********************************************/
 void QOnlineTranslator::parseYandexTranslationTranslit()
 {
     parseYandexTranslit(m_translationTranslit);
 }
 /************************************************
-   \fn requestYandexDictionary
-   \brief request Yandex Dictionary
+ * requestYandexDictionary
+ * @brief request Yandex Dictionary.
  ***********************************************/
 void QOnlineTranslator::requestYandexDictionary()
 {
@@ -1500,8 +1500,8 @@ void QOnlineTranslator::requestYandexDictionary()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
-   \fn parseYandexDictionary
-   \brief parse Yandex Dictionary
+ * parseYandexDictionary
+ * @brief parse Yandex Dictionary.
  ***********************************************/
 void QOnlineTranslator::parseYandexDictionary()
 {
@@ -1556,8 +1556,8 @@ void QOnlineTranslator::parseYandexDictionary()
     } // end for
 } // end parseYandexDictionary
 /************************************************
-   \fn requestBingCredentials
-   \brief request Bing Credentials
+ * requestBingCredentials
+ * @brief request Bing Credentials.
  ***********************************************/
 void QOnlineTranslator::requestBingCredentials()
 {
@@ -1565,8 +1565,8 @@ void QOnlineTranslator::requestBingCredentials()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
-   \fn parseBingCredentials
-   \brief parse Bing Credentials
+ * parseBingCredentials
+ * @brief parse Bing Credentials.
  ***********************************************/
 void QOnlineTranslator::parseBingCredentials()
 {
@@ -1606,8 +1606,8 @@ void QOnlineTranslator::parseBingCredentials()
     s_bingToken = webSiteData.mid(tokenBeginPos, tokenEndPos - tokenBeginPos);
 }
 /************************************************
-   \fn requestBingTranslate
-   \brief request Bing Translate
+ * requestBingTranslate
+ * @brief request Bing Translate.
  ***********************************************/
 void QOnlineTranslator::requestBingTranslate()
 {
@@ -1624,8 +1624,8 @@ void QOnlineTranslator::requestBingTranslate()
     m_currentReply = m_networkManager->post(request, postData);
 }
 /************************************************
-   \fn parseBingTranslate
-   \brief parse Bing Translate
+ * parseBingTranslate
+ * @brief parse Bing Translate.
  ***********************************************/
 void QOnlineTranslator::parseBingTranslate()
 {
@@ -1659,8 +1659,8 @@ void QOnlineTranslator::parseBingTranslate()
     m_translationTranslit += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
 }
 /************************************************
-   \fn requestBingDictionary
-   \brief request Bing Dictionary
+ * requestBingDictionary
+ * @brief request Bing Dictionary.
  ***********************************************/
 void QOnlineTranslator::requestBingDictionary()
 {
@@ -1681,8 +1681,8 @@ void QOnlineTranslator::requestBingDictionary()
     m_currentReply = m_networkManager->post(request, postData);
 }
 /************************************************
-   \fn parseBingDictionary
-   \brief parse Bing Dictionary
+ * parseBingDictionary
+ * @brief parse Bing Dictionary.
  ***********************************************/
 void QOnlineTranslator::parseBingDictionary()
 {
@@ -1713,8 +1713,8 @@ void QOnlineTranslator::parseBingDictionary()
     }
 }
 /************************************************
-   \fn buildGoogleStateMachine
-   \brief build Google State Machine
+ * buildGoogleStateMachine
+ * @brief build Google State Machine.
  ***********************************************/
 void QOnlineTranslator::buildGoogleStateMachine()
 {
@@ -1729,8 +1729,8 @@ void QOnlineTranslator::buildGoogleStateMachine()
     buildSplitNetworkRequest(translationState, &QOnlineTranslator::requestGoogleTranslate, &QOnlineTranslator::parseGoogleTranslate, m_source, s_googleTranslateLimit);
 }
 /************************************************
-   \fn buildGoogleDetectStateMachine
-   \brief build Google Detect State Machine
+ * buildGoogleDetectStateMachine
+ * @brief build Google Detect State Machine.
  ***********************************************/
 void QOnlineTranslator::buildGoogleDetectStateMachine()
 {
@@ -1746,8 +1746,8 @@ void QOnlineTranslator::buildGoogleDetectStateMachine()
     buildNetworkRequestState(detectState, &QOnlineTranslator::requestGoogleTranslate, &QOnlineTranslator::parseGoogleTranslate, text);
 }
 /************************************************
-   \fn buildYandexStateMachine
-   \brief build Yandex State Machine
+ * buildYandexStateMachine
+ * @brief build Yandex State Machine.
  ***********************************************/
 void QOnlineTranslator::buildYandexStateMachine()
 {
@@ -1795,8 +1795,8 @@ void QOnlineTranslator::buildYandexStateMachine()
         { dictionaryState->setInitialState(new QFinalState(dictionaryState)); }
 }
 /************************************************
-   \fn buildYandexDetectStateMachine
-   \brief build Yandex Detect State Machine
+ * buildYandexDetectStateMachine
+ * @brief build Yandex Detect State Machine.
  ***********************************************/
 void QOnlineTranslator::buildYandexDetectStateMachine()
 {
@@ -1821,8 +1821,8 @@ void QOnlineTranslator::buildYandexDetectStateMachine()
     buildNetworkRequestState(detectState, &QOnlineTranslator::requestYandexTranslate, &QOnlineTranslator::parseYandexTranslate, text);
 }
 /************************************************
-   \fn buildBingStateMachine
-   \brief build Bing State Machine
+ * buildBingStateMachine
+ * @brief build Bing State Machine.
  ***********************************************/
 void QOnlineTranslator::buildBingStateMachine()
 {
@@ -1854,8 +1854,8 @@ void QOnlineTranslator::buildBingStateMachine()
         { dictionaryState->setInitialState(new QFinalState(dictionaryState)); }
 }
 /************************************************
-   \fn buildBingDetectStateMachine
-   \brief build Bing Detect State Machine
+ * buildBingDetectStateMachine
+ * @brief build Bing Detect State Machine.
  ***********************************************/
 void QOnlineTranslator::buildBingDetectStateMachine()
 {
@@ -1871,8 +1871,8 @@ void QOnlineTranslator::buildBingDetectStateMachine()
     buildNetworkRequestState(detectState, &QOnlineTranslator::requestBingTranslate, &QOnlineTranslator::parseBingTranslate, text);
 }
 /************************************************
-   \fn buildSplitNetworkRequest
-   \brief build Split Network Request
+ * buildSplitNetworkRequest
+ * @brief build Split Network Request.
  ***********************************************/
 void QOnlineTranslator::buildSplitNetworkRequest(QState *parent, void (QOnlineTranslator::*requestMethod)(), void (QOnlineTranslator::*parseMethod)(), const QString &text, int textLimit)
 {
@@ -1909,8 +1909,8 @@ void QOnlineTranslator::buildSplitNetworkRequest(QState *parent, void (QOnlineTr
     nextTranslationState->addTransition(new QFinalState(parent));
 }
 /************************************************
-   \fn buildNetworkRequestState
-   \brief build Network Request State
+ * buildNetworkRequestState
+ * @brief build Network Request State.
  ***********************************************/
 void QOnlineTranslator::buildNetworkRequestState(QState *parent, void (QOnlineTranslator::*requestMethod)(), void (QOnlineTranslator::*parseMethod)(), const QString &text)
 {
@@ -1932,8 +1932,8 @@ void QOnlineTranslator::buildNetworkRequestState(QState *parent, void (QOnlineTr
     connect(parsingState, &QState::entered, this, parseMethod);
 }
 /************************************************
-   \fn requestYandexTranslit
-   \brief request Yandex Translit
+ * requestYandexTranslit
+ * @brief request Yandex Translit.
  ***********************************************/
 void QOnlineTranslator::requestYandexTranslit(Language language)
 {
@@ -1954,8 +1954,8 @@ void QOnlineTranslator::requestYandexTranslit(Language language)
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
-   \fn parseYandexTranslit
-   \brief parse Yandex Translit
+ * parseYandexTranslit
+ * @brief parse Yandex Translit.
  ***********************************************/
 void QOnlineTranslator::parseYandexTranslit(QString &text)
 {
@@ -1977,8 +1977,8 @@ void QOnlineTranslator::parseYandexTranslit(QString &text)
     #endif
 }
 /************************************************
-   \fn resetData
-   \brief reset Data
+ * resetData
+ * @brief reset Data.
  ***********************************************/
 void QOnlineTranslator::resetData(TranslationError error, const QString &errorString)
 {
@@ -2000,8 +2000,8 @@ void QOnlineTranslator::resetData(TranslationError error, const QString &errorSt
     }
 }
 /************************************************
-   \fn isSupportTranslit
-   \brief is Support Translit
+ * isSupportTranslit
+ * @brief is Support Translit.
  ***********************************************/
 bool QOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
 {
@@ -2068,8 +2068,8 @@ bool QOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
     return false;
 }
 /************************************************
-   \fn isSupportDictionary
-   \brief is Support Dictionary
+ * isSupportDictionary
+ * @brief is Support Dictionary.
  ***********************************************/
 bool QOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, Language translationLang)
 {
@@ -2346,8 +2346,8 @@ bool QOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
     return false;
 }
 /************************************************
-   \fn languageApiCode
-   \brief  Returns engine-specific language code for translation
+ * languageApiCode
+ * @brief  Returns engine-specific language code for translation.
  ***********************************************/
 QString QOnlineTranslator::languageApiCode(Engine engine, Language lang)
 {
@@ -2363,8 +2363,8 @@ QString QOnlineTranslator::languageApiCode(Engine engine, Language lang)
     Q_UNREACHABLE();
 }
 /************************************************
-   \fn language
-   \brief Parse language from response language code
+ * language
+ * @brief Parse language from response language code.
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::language(Engine engine, const QString &langCode)
 {
@@ -2379,10 +2379,10 @@ QOnlineTranslator::Language QOnlineTranslator::language(Engine engine, const QSt
     Q_UNREACHABLE();
 }
 /************************************************
-   \fn getSplitIndex
-   \brief get Split Index
+ * @brief get Split Index.
+ * getSplitIndex
+ * Get split index of the text according to the limit.
  ***********************************************/
-// Get split index of the text according to the limit
 int QOnlineTranslator::getSplitIndex(const QString &untranslatedText, int limit)
 {
     if (untranslatedText.size() < limit) { return limit; }
@@ -2402,8 +2402,8 @@ int QOnlineTranslator::getSplitIndex(const QString &untranslatedText, int limit)
     return limit;
 }
 /************************************************
-   \fn isContainsSpace
-   \brief is Contains Space
+ * isContainsSpace
+ * @brief is Contains Space.
  ***********************************************/
 bool QOnlineTranslator::isContainsSpace(const QString &text)
 {
@@ -2413,8 +2413,8 @@ bool QOnlineTranslator::isContainsSpace(const QString &text)
     });
 }
 /************************************************
-   \fn addSpaceBetweenParts
-   \brief add Space Between Parts
+ * addSpaceBetweenParts
+ * @brief add Space Between Parts.
  ***********************************************/
 void QOnlineTranslator::addSpaceBetweenParts(QString &text)
 {

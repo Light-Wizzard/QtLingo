@@ -1,18 +1,15 @@
 var searchData=
 [
-  ['main_2ecpp_1042',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mainwindow_2ecpp_1043',['MainWindow.cpp',['../MainWindow_8cpp.html',1,'']]],
-  ['mainwindow_2eh_1044',['MainWindow.h',['../MainWindow_8h.html',1,'']]],
-  ['moc_5fpredefs_2eh_1045',['moc_predefs.h',['../moc__predefs_8h.html',1,'']]],
-  ['myconstants_2eh_1046',['MyConstants.h',['../MyConstants_8h.html',1,'']]],
-  ['mydatatables_2ecpp_1047',['MyDatatables.cpp',['../MyDatatables_8cpp.html',1,'']]],
-  ['mydatatables_2eh_1048',['MyDatatables.h',['../MyDatatables_8h.html',1,'']]],
-  ['myorgsettings_2ecpp_1049',['MyOrgSettings.cpp',['../MyOrgSettings_8cpp.html',1,'']]],
-  ['myorgsettings_2eh_1050',['MyOrgSettings.h',['../MyOrgSettings_8h.html',1,'']]],
-  ['mysimplecrypt_2ecpp_1051',['MySimpleCrypt.cpp',['../MySimpleCrypt_8cpp.html',1,'']]],
-  ['mysimplecrypt_2eh_1052',['MySimpleCrypt.h',['../MySimpleCrypt_8h.html',1,'']]],
-  ['mysqldbtmodel_2ecpp_1053',['MySqlDbtModel.cpp',['../MySqlDbtModel_8cpp.html',1,'']]],
-  ['mysqldbtmodel_2eh_1054',['MySqlDbtModel.h',['../MySqlDbtModel_8h.html',1,'']]],
-  ['mytranslationfiles_2ecpp_1055',['MyTranslationFiles.cpp',['../MyTranslationFiles_8cpp.html',1,'']]],
-  ['mytranslationfiles_2eh_1056',['MyTranslationFiles.h',['../MyTranslationFiles_8h.html',1,'']]]
+  ['qexample_2ecpp_1057',['qexample.cpp',['../qexample_8cpp.html',1,'']]],
+  ['qexample_2eh_1058',['qexample.h',['../qexample_8h.html',1,'']]],
+  ['qexample_2emd_1059',['QExample.md',['../QExample_8md.html',1,'']]],
+  ['qonlinetranslator_2ecpp_1060',['qonlinetranslator.cpp',['../qonlinetranslator_8cpp.html',1,'']]],
+  ['qonlinetranslator_2eh_1061',['qonlinetranslator.h',['../qonlinetranslator_8h.html',1,'']]],
+  ['qonlinetranslator_2emd_1062',['QOnlineTranslator.md',['../QOnlineTranslator_8md.html',1,'']]],
+  ['qonlinetts_2ecpp_1063',['qonlinetts.cpp',['../qonlinetts_8cpp.html',1,'']]],
+  ['qonlinetts_2eh_1064',['qonlinetts.h',['../qonlinetts_8h.html',1,'']]],
+  ['qonlinetts_2emd_1065',['QOnlineTts.md',['../QOnlineTts_8md.html',1,'']]],
+  ['qoption_2ecpp_1066',['qoption.cpp',['../qoption_8cpp.html',1,'']]],
+  ['qoption_2eh_1067',['qoption.h',['../qoption_8h.html',1,'']]],
+  ['qoption_2emd_1068',['QOption.md',['../QOption_8md.html',1,'']]]
 ];

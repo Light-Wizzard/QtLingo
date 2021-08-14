@@ -1,7 +1,19 @@
+/************************************************
+* @file MainWindow.cpp
+* @brief MainWindow.
+* @author Jeffrey Scott Flesher <Jeffrey.Scott.Flesher@>
+* @version 1.0
+* @section LICENSE
+* Unlicenced, Free, CopyLeft.
+* @section DESCRIPTION
+* Main Window of GUI
+* @mainpage
+* QtLingo is designed to parse TS files and Translate them using Computer Translations.
+ ***********************************************/
 #include "MainWindow.h"
 /************************************************
-   \fn MainWindow
-   \brief MainWindow Constructor
+ * MainWindow
+ * @brief MainWindow Constructor.
  ***********************************************/
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -46,8 +58,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QTimer::singleShot(200, this, &MainWindow::onRunOnStartup);
 }
 /************************************************
-   \fn ~MainWindow
-   \brief MainWindow Deconstructor
+ * ~MainWindow
+ * @brief MainWindow Deconstructor.
  ***********************************************/
 MainWindow::~MainWindow()
 {
@@ -56,8 +68,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 /************************************************
-   \fn closeEvent
-   \brief close Event
+ * closeEvent
+ * @brief close Event.
  ***********************************************/
 void MainWindow::closeEvent(QCloseEvent *event)
 {
@@ -69,8 +81,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
     close();
 } // end closeEvent
 /************************************************
-   \fn changeEvent
-   \brief change Event
+ * changeEvent
+ * @brief change Event.
  ***********************************************/
 void MainWindow::changeEvent(QEvent *event)
 {
@@ -86,8 +98,8 @@ void MainWindow::changeEvent(QEvent *event)
     QMainWindow::changeEvent(event);
 }
 /************************************************
-   \fn loadLanguage
-   \brief load Language.
+ * retranslate
+ * @brief retranslate.
  ***********************************************/
 void MainWindow::retranslate()
 {
@@ -97,8 +109,8 @@ void MainWindow::retranslate()
     loadLanguageComboBoxSource();
 }
 /************************************************
-   \fn loadLanguage
-   \brief load Language.
+ * loadLanguageComboBoxSource
+ * @brief load Language ComboBox Source.
  ***********************************************/
 void MainWindow::loadLanguageComboBoxSource()
 {
@@ -145,8 +157,8 @@ void MainWindow::loadLanguageComboBoxSource()
     isMainLoaded = true;
 }
 /************************************************
-   \fn loadLanguage
-   \brief load Language.
+ * loadLanguageComboBox
+ * @brief load Language ComboBox.
  ***********************************************/
 void MainWindow::loadLanguageComboBox()
 {
@@ -186,8 +198,8 @@ void MainWindow::loadLanguageComboBox()
     isMainLoaded = true;
 }
 /************************************************
-   \fn loadLanguage
-   \brief load Language.
+ * loadLanguage
+ * @brief load Language.
  ***********************************************/
 void MainWindow::loadLanguage(const QString &thisQmLanguageFile)
 {
@@ -205,9 +217,8 @@ void MainWindow::loadLanguage(const QString &thisQmLanguageFile)
     }
 }
 /************************************************
-   \fn getLanguageFile
-   \brief get Language File
-   QString thisLangFile = getLanguageFile("en", getTranslationSource(), getTransFilePrefix());
+ * @brief get Language File.
+ * getLanguageFile
  ***********************************************/
 QString MainWindow::getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix)
 {
@@ -219,10 +230,10 @@ QString MainWindow::getLanguageFile(const QString &thisLanguage, const QString &
             { return theQmFiles.at(i); }
     }
     return "";
-} // getLanguageFile
+}
 /************************************************
-   \fn onRunOnStartup
-   \brief on Run On Startup.
+ * @brief on Run On Startup.
+ * onRunOnStartup
  ***********************************************/
 void MainWindow::onRunOnStartup()
 {
@@ -256,8 +267,8 @@ void MainWindow::onRunOnStartup()
     isMainLoaded = true;
 }
 /************************************************
-   \fn readLanguage
-   \brief read Language
+ * readLanguage
+ * @brief read Language.
  ***********************************************/
 QString MainWindow::readLanguage()
 {
@@ -265,8 +276,8 @@ QString MainWindow::readLanguage()
     return myCurrentLanguageCode;
 }
 /************************************************
-   \fn writeLanguage
-   \brief write Language
+ * writeLanguage
+ * @brief write Language.
  ***********************************************/
 void MainWindow::writeLanguage(const QString &thisCurrentLanguageCode)
 {
@@ -274,8 +285,8 @@ void MainWindow::writeLanguage(const QString &thisCurrentLanguageCode)
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_CURRENT_LANG_CODE, thisCurrentLanguageCode);
 }
 /************************************************
-   \fn readSettingsFirst
-   \brief read Settings First
+ * readSettingsFirst
+ * @brief read Settings First.
  ***********************************************/
 void MainWindow::readSettingsFirst()
 {
@@ -287,8 +298,8 @@ void MainWindow::readSettingsFirst()
     setMessagingStates(isDebugMessage);
 }
 /************************************************
-   \fn readSettings
-   \brief read Settings
+ * readSettings
+ * @brief read Settings.
  ***********************************************/
 void MainWindow::readSettings()
 {
@@ -309,8 +320,8 @@ void MainWindow::readSettings()
     readSqlDatabaseInfo();
 }
 /************************************************
-   \fn writeSettings
-   \brief write Settings
+ * writeSettings
+ * @brief write Settings.
  ***********************************************/
 bool MainWindow::writeSettings()
 {
@@ -322,8 +333,8 @@ bool MainWindow::writeSettings()
     return true;
 }
 /************************************************
-   \fn writeStateChanges
-   \brief write States Changes
+ * writeStateChanges
+ * @brief write States Changes.
  ***********************************************/
 void MainWindow::writeStateChanges()
 {
@@ -350,8 +361,8 @@ void MainWindow::writeStateChanges()
     writeLanguage(myCurrentLanguageCode);
 }
 /************************************************
-   \fn readSqlDatabaseStates
-   \brief read Sql Database States
+ * readSqlDatabaseStates
+ * @brief read Sql Database States.
  ***********************************************/
 void MainWindow::readStatesChanges()
 {
@@ -377,8 +388,8 @@ void MainWindow::readStatesChanges()
     ui->spinBoxSettingsDelay->setValue(mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY_VALUE, mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY));
 }
 /************************************************
-   \fn writeSqlDatabaseInfo
-   \brief write Sql Database Info Uses SimpleCrypt to encrypt and decrypt Password
+ * writeSqlDatabaseInfo
+ * @brief write Sql Database Info Uses SimpleCrypt to encrypt and decrypt Password.
  ***********************************************/
 void MainWindow::writeSqlDatabaseInfo()
 {
@@ -392,8 +403,8 @@ void MainWindow::writeSqlDatabaseInfo()
         { mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_PASS, mySqlDb->mySqlModel->mySetting->encryptThis(ui->lineEditSqlPassword->text())); }
 }
 /************************************************
-   \fn readSqlDatabaseInfo
-   \brief read Sql Database Info Uses SimpleCrypt to encrypt and decrypt Password
+ * readSqlDatabaseInfo
+ * @brief read Sql Database Info Uses SimpleCrypt to encrypt and decrypt Password.
  ***********************************************/
 void MainWindow::readSqlDatabaseInfo()
 {
@@ -411,8 +422,8 @@ void MainWindow::readSqlDatabaseInfo()
         { ui->lineEditSqlPassword->setText(""); }
 }
 /************************************************
-   \fn setProjectCombo
-   \brief set Project Combo
+ * setProjectCombo
+ * @brief set Project Combo.
  ***********************************************/
 bool MainWindow::setQtProjectCombo()
 {
@@ -440,8 +451,8 @@ bool MainWindow::setQtProjectCombo()
     return true;
 }
 /************************************************
-   \fn onAuthor
-   \brief on Author
+ * onAuthor
+ * @brief on Author.
  ***********************************************/
 void MainWindow::onAuthor()
 {
@@ -453,8 +464,8 @@ void MainWindow::onAuthor()
     ui->textEditHelp->setHtml(thisHelp);
 }
 /************************************************
-   \fn onAbout
-   \brief Main Window Destructor.
+ * onAbout
+ * @brief Main Window Destructor.
  ***********************************************/
 void MainWindow::onAbout()
 {
@@ -466,8 +477,8 @@ void MainWindow::onAbout()
     ui->textEditHelp->setHtml(thisHelp);
 }
 /************************************************
-   \fn onHelp
-   \brief Help
+ * onHelp
+ * @brief Help.
  ***********************************************/
 void MainWindow::onHelp()
 {
@@ -479,8 +490,8 @@ void MainWindow::onHelp()
     ui->textEditHelp->setHtml(thisHelp);
 }
 /************************************************
-   \fn on_pushButtonTranslationsSourceBrowse_clicked
-   \brief
+ * on_pushButtonTranslationsSourceBrowse_clicked
+ * @brief on pushButton Translations Source Browse clicked.
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsSourceBrowse_clicked()
 {
@@ -498,8 +509,8 @@ void MainWindow::on_pushButtonTranslationsSourceBrowse_clicked()
     }
 }
 /************************************************
-   \fn on_pushButtonTranslationsDestinationBrowse_clicked
-   \brief
+ * on_pushButtonTranslationsDestinationBrowse_clicked
+ * @brief on pushButton Translations Destination Browse clicked.
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsDestinationBrowse_clicked()
 {
@@ -516,8 +527,8 @@ void MainWindow::on_pushButtonTranslationsDestinationBrowse_clicked()
     }
 }
 /************************************************
-   \fn on_pushButtonSettingsProjectsBrowser_clicked
-   \brief
+ * on_pushButtonSettingsProjectsBrowser_clicked
+ * @brief on pushButton Settings Projects Browser clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
 {
@@ -534,8 +545,8 @@ void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
     }
 }
 /************************************************
-   \fn on_pushButtonTranslationsProjectFolderBrowse_clicked
-   \brief
+ * on_pushButtonTranslationsProjectFolderBrowse_clicked
+ * @brief on pushButton Translations Project Folder Browse clicked.
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsProjectFolderBrowse_clicked()
 {
@@ -552,8 +563,8 @@ void MainWindow::on_pushButtonTranslationsProjectFolderBrowse_clicked()
     }
 }
 /************************************************
-   \fn on_comboBoxSettingsLanguage_currentIndexChanged
-   \brief
+ * on_comboBoxSettingsLanguage_currentIndexChanged
+ * @brief on comboBox Settings Language current Index Changed.
  ***********************************************/
 void MainWindow::on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage)
 {
@@ -563,8 +574,8 @@ void MainWindow::on_comboBoxSettingsLanguage_currentIndexChanged(const QString &
     loadLanguage(getLanguageFile(myQOnlineTranslator.languageNameToCode(thisLanguage), getTranslationSource(), getTransFilePrefix()));
 }
 /************************************************
-   \fn on_checkBoxSettingsGoogle_stateChanged
-   \brief on checkBox Settings Google state Changed
+ * on_checkBoxSettingsGoogle_stateChanged
+ * @brief on checkBox Settings Google state Changed.
  ***********************************************/
 void MainWindow::on_checkBoxSettingsGoogle_stateChanged(int thisArg)
 {
@@ -574,8 +585,8 @@ void MainWindow::on_checkBoxSettingsGoogle_stateChanged(int thisArg)
     writeStateChanges();
 }
 /************************************************
-   \fn on_checkBoxSettingsBing_stateChanged
-   \brief on checkBox Settings Bing state Changed
+ * on_checkBoxSettingsBing_stateChanged
+ * @brief on checkBox Settings Bing state Changed.
  ***********************************************/
 void MainWindow::on_checkBoxSettingsBing_stateChanged(int thisArg)
 {
@@ -585,8 +596,8 @@ void MainWindow::on_checkBoxSettingsBing_stateChanged(int thisArg)
     writeStateChanges();
 }
 /************************************************
-   \fn on_checkBoxSettingsYandex_stateChanged
-   \brief on checkBox Settings Yandex state Changed
+ * on_checkBoxSettingsYandex_stateChanged
+ * @brief on checkBox Settings Yandex state Changed.
  ***********************************************/
 void MainWindow::on_checkBoxSettingsYandex_stateChanged(int thisArg)
 {
@@ -596,8 +607,8 @@ void MainWindow::on_checkBoxSettingsYandex_stateChanged(int thisArg)
     writeStateChanges();
 }
 /************************************************
-   \fn on_pushButtonSqlDatabaseNameBrowse_clicked
-   \brief Sql Database Name Browse clicked
+ * on_pushButtonSqlDatabaseNameBrowse_clicked
+ * @brief Sql Database Name Browse clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
 {
@@ -628,8 +639,8 @@ void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
     }
 }
 /************************************************
-   \fn on_comboBoxSettingsProjects_currentIndexChanged
-   \brief on comboBox Settings Projects current Index Changed
+ * on_comboBoxSettingsProjects_currentIndexChanged
+ * @brief on comboBox Settings Projects current Index Changed.
  ***********************************************/
 void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
 {
@@ -640,8 +651,8 @@ void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
     fillForms(theIndex);
 }
 /************************************************
-   \fn on_pushButtonSqlPasswordShow_clicked
-   \brief on pushButton Sql Password Show clicked
+ * on_pushButtonSqlPasswordShow_clicked
+ * @brief on pushButton Sql Password Show clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSqlPasswordShow_clicked()
 {
@@ -649,8 +660,8 @@ void MainWindow::on_pushButtonSqlPasswordShow_clicked()
     mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Password Revieled").toLocal8Bit(), ui->lineEditSqlPassword->text().toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Information);
 }
 /************************************************
-   \fn on_pushButtonSqlSave_clicked
-   \brief on pushButton Sql Save clicked
+ * on_pushButtonSqlSave_clicked
+ * @brief on pushButton Sql Save clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSqlSave_clicked()
 {
@@ -658,8 +669,8 @@ void MainWindow::on_pushButtonSqlSave_clicked()
     writeStateChanges();
 }
 /************************************************
-   \fn onSave
-   \brief on pushButton Settings Save clicked
+ * onSave
+ * @brief on pushButton Settings Save clicked.
  ***********************************************/
 void MainWindow::onSave()
 {
@@ -668,8 +679,8 @@ void MainWindow::onSave()
     mySqlDb->saveQtProject();
 }
 /************************************************
-   \fn on_pushButtonSettingsSave_clicked
-   \brief on pushButton Settings Save clicked
+ * on_pushButtonSettingsSave_clicked
+ * @brief on pushButton Settings Save clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSettingsSave_clicked()
 {
@@ -677,8 +688,8 @@ void MainWindow::on_pushButtonSettingsSave_clicked()
     onSave();
 }
 /************************************************
-   \fn on_pushButtonSettingsAdd_clicked
-   \brief on pushButton Settings Add clicked
+ * on_pushButtonSettingsAdd_clicked
+ * @brief on pushButton Settings Add clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSettingsAdd_clicked()
 {
@@ -687,8 +698,8 @@ void MainWindow::on_pushButtonSettingsAdd_clicked()
     mySqlDb->addQtProject();
 }
 /************************************************
-   \fn on_pushButtonSettingsDelete_clicked
-   \brief on pushButton Settings Delete clicked
+ * on_pushButtonSettingsDelete_clicked
+ * @brief on pushButton Settings Delete clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSettingsDelete_clicked()
 {
@@ -697,8 +708,8 @@ void MainWindow::on_pushButtonSettingsDelete_clicked()
     mySqlDb->deleteQtProject(ui->labelRecordIdSettings->text());
 }
 /************************************************
-   \fn setPrograms
-   \brief set Programs
+ * setPrograms
+ * @brief set Programs.
  ***********************************************/
 void MainWindow::setPrograms()
 {
@@ -755,8 +766,8 @@ void MainWindow::setPrograms()
     ui->lineEditSettingsLrelease->setText(theLreleasePath);
 }
 /************************************************
-   \fn on_comboBoxSqlDatabaseType_currentIndexChanged
-   \brief on comboBox Sql Database Type current Index Changed
+ * on_comboBoxSqlDatabaseType_currentIndexChanged
+ * @brief on comboBox Sql Database Type current Index Changed.
  ***********************************************/
 void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType)
 {
@@ -767,8 +778,8 @@ void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &t
     setSqlBrowseButton();
 }
 /************************************************
-   \fn languageChecked
-   \brief language Checked
+ * languageChecked
+ * @brief language Checked.
  ***********************************************/
 QString MainWindow::languageChecked()
 {
@@ -895,8 +906,8 @@ QString MainWindow::languageChecked()
     return myLanguages;
 }
 /************************************************
-   \fn checkLanguage
-   \brief check Language
+ * checkLanguage
+ * @brief check Language.
  ***********************************************/
 void MainWindow::checkLanguage(const QString &thisName, const QString &thisLanguage, bool thisChecked)
 {
@@ -935,8 +946,8 @@ void MainWindow::checkLanguage(const QString &thisName, const QString &thisLangu
     myLanguages = theLangagesIDs;
 }
 /************************************************
-   \fn fillForms
-   \brief fill Forms
+ * fillForms
+ * @brief fill Forms.
  ***********************************************/
 void MainWindow::fillForms(const QString &thisProjectID)
 {
@@ -1460,8 +1471,8 @@ void MainWindow::fillForms(const QString &thisProjectID)
     isSaveSettings = false;
 }
 /************************************************
-   \fn clearTabSettings
-   \brief clear Tab Settings
+ * clearTabSettings
+ * @brief clear Tab Settings.
  ***********************************************/
 void MainWindow::clearTabSettings()
 {
@@ -1470,8 +1481,8 @@ void MainWindow::clearTabSettings()
     ui->labelRecordIdSettings->setText("0");
 }
 /************************************************
-   \fn clearTabTranslations
-   \brief clear Tab Translations
+ * clearTabTranslations
+ * @brief clear Tab Translations.
  ***********************************************/
 void MainWindow::clearTabTranslations()
 {
@@ -1726,8 +1737,8 @@ void MainWindow::clearTabTranslations()
     #endif
 }
 /************************************************
-   \fn clearTabProject
-   \brief clear Tab Project
+ * clearTabProject
+ * @brief clear Tab Project.
  ***********************************************/
 void MainWindow::clearTabProject()
 {
@@ -1735,8 +1746,8 @@ void MainWindow::clearTabProject()
     ui->textEditProjects->setText("");
 }
 /************************************************
-   \fn clearTabHelp
-   \brief clear Tab Help
+ * clearTabHelp
+ * @brief clear Tab Help.
  ***********************************************/
 void MainWindow::clearTabHelp()
 {
@@ -1744,8 +1755,8 @@ void MainWindow::clearTabHelp()
     ui->textEditHelp->setText("");
 }
 /************************************************
-   \fn clearForms
-   \brief  clear Forms
+ * clearForms
+ * @brief  clear Forms.
  ***********************************************/
 void MainWindow::clearForms(int tabNumber)
 {
@@ -1766,8 +1777,8 @@ void MainWindow::clearForms(int tabNumber)
     }
 }
 /************************************************
-   \fn setProjectClass
-   \brief set Project Class
+ * setProjectClass
+ * @brief set Project Class.
  ***********************************************/
 void MainWindow::setProjectClass(int tabNumber)
 {
@@ -1811,8 +1822,8 @@ void MainWindow::setProjectClass(int tabNumber)
     }
 }
 /************************************************
-   \fn onCompile
-   \brief on Compile
+ * onCompile
+ * @brief on Compile.
  ***********************************************/
 void MainWindow::onCompile()
 {
@@ -2084,9 +2095,9 @@ void MainWindow::onCompile()
     myTranslationFiles->fileRemoveArgs();
 } // end onCompile
 /************************************************
-   \fn createTranslationJob
-   \brief create Translation Job, I pass in the Name of the Language,
-          and the language ID, I do not use the Name, but find it nice to have the info with it.
+ * createTranslationJob
+ * @brief create Translation Job, I pass in the Name of the Language,
+ *        and the language ID, I do not use the Name, but find it nice to have the info with it.
  ***********************************************/
 void MainWindow::createTranslationJob(const QString &thisLanguageName, const QString &thisLanguage, const QString &thisSourceLanguage, bool thisChecked)
 {
@@ -2111,8 +2122,8 @@ void MainWindow::createTranslationJob(const QString &thisLanguageName, const QSt
     myLingoJob.append(theTranslationJobs);
 }
 /************************************************
-   \fn translateWithReturn
-   \brief translate With Return Added by Light-Wizzard
+ * translateWithReturn
+ * @brief translate With Return Added by Light-Wizzard.
  ***********************************************/
 QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang)
 {
@@ -2147,9 +2158,9 @@ QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::
     return myTranslation;
 } // end translateWithReturn
 /************************************************
-   \fn getLanguageFromFile
-   \brief get Language File
-   QString thisLangFile = getLanguageFromFile(getTransFilePrefix(), "?.qm");
+ * getLanguageFromFile
+ * @brief get Language File.
+ * QString thisLangFile = getLanguageFromFile(getTransFilePrefix(), "?.qm");
  ***********************************************/
 QString MainWindow::getLanguageFromFile(const QString &thisPrefix, const QString &thisQmLanguageFile)
 {
@@ -2157,8 +2168,8 @@ QString MainWindow::getLanguageFromFile(const QString &thisPrefix, const QString
     return myTranslationFiles->getLocalizerCode(thisPrefix, thisQmLanguageFile);
 }
 /************************************************
-   \fn getTranslationSource
-   \brief get Translation Source
+ * getTranslationSource
+ * @brief get Translation Source.
  ***********************************************/
 QString MainWindow::getTranslationSource()
 {
@@ -2166,8 +2177,8 @@ QString MainWindow::getTranslationSource()
     return myTranslationSource;
 }
 /************************************************
-   \fn setTranslationSource
-   \brief set Translation Source
+ * setTranslationSource
+ * @brief set Translation Source.
  ***********************************************/
 void MainWindow::setTranslationSource(const QString &thisTranslationSource)
 {
@@ -2175,8 +2186,8 @@ void MainWindow::setTranslationSource(const QString &thisTranslationSource)
     myTranslationSource = thisTranslationSource;
 }
 /************************************************
-   \fn getTransFilePrefix
-   \brief get Trans File Prefix
+ * getTransFilePrefix
+ * @brief get Trans File Prefix.
  ***********************************************/
 QString MainWindow::getTransFilePrefix()
 {
@@ -2185,8 +2196,8 @@ QString MainWindow::getTransFilePrefix()
     return myTransFilePrefix;
 }
 /************************************************
-   \fn setTransFilePrefix
-   \brief set Trans File Prefix setTransFilePrefix("QtLingo");
+ * setTransFilePrefix
+ * @brief set Trans File Prefix setTransFilePrefix("QtLingo");.
  ***********************************************/
 void MainWindow::setTransFilePrefix(const QString &thisTransFilePrefix)
 {
@@ -2194,8 +2205,8 @@ void MainWindow::setTransFilePrefix(const QString &thisTransFilePrefix)
     myTransFilePrefix = thisTransFilePrefix;
 }
 /************************************************
-   \fn setDebugMessage
-   \brief set Debug Message
+ * setDebugMessage
+ * @brief set Debug Message.
  ***********************************************/
 void MainWindow::setDebugMessage(bool thisState)
 {
@@ -2203,8 +2214,8 @@ void MainWindow::setDebugMessage(bool thisState)
     if (isDebugMessage && isMainLoaded) { qDebug() << "setDebugMessage"; }
 }
 /************************************************
-   \fn getDebugMessage
-   \brief get Debug Message
+ * getDebugMessage
+ * @brief get Debug Message.
  ***********************************************/
 bool MainWindow::getDebugMessage()
 {
@@ -2212,8 +2223,8 @@ bool MainWindow::getDebugMessage()
     return isDebugMessage;
 }
 /************************************************
-   \fn setSqlBrowseButton
-   \brief set Sql Browse Button
+ * setSqlBrowseButton
+ * @brief set Sql Browse Button.
  ***********************************************/
 void MainWindow::setSqlBrowseButton()
 {
@@ -2221,8 +2232,8 @@ void MainWindow::setSqlBrowseButton()
     ui->pushButtonSqlDatabaseNameBrowse->setEnabled(ui->comboBoxSqlDatabaseType->currentText() == mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT || ui->comboBoxSqlDatabaseType->currentText() == ":memory:");
 }
 /************************************************
-   \fn onClipboard
-   \brief Clipboard
+ * onClipboard
+ * @brief Clipboard.
  ***********************************************/
 void MainWindow::onClipboard()
 {
@@ -2231,8 +2242,8 @@ void MainWindow::onClipboard()
     clipboard->setText(ui->textEditProjects->toPlainText());
 }
 /************************************************
-   \fn on_checkBoxSettignsMessaging_stateChanged
-   \brief on checkBox Settigns Messaging state Changed
+ * on_checkBoxSettignsMessaging_stateChanged
+ * @brief on checkBox Settigns Messaging state Changed.
  ***********************************************/
 void MainWindow::on_checkBoxSettignsMessaging_stateChanged(int thisCheckState)
 {
@@ -2248,8 +2259,8 @@ void MainWindow::on_checkBoxSettignsMessaging_stateChanged(int thisCheckState)
     }
 }
 /************************************************
-   \fn setMessagingStates
-   \brief set Messaging States
+ * setMessagingStates
+ * @brief set Messaging States.
  ***********************************************/
 void MainWindow::setMessagingStates(bool thisMessageState)
 {

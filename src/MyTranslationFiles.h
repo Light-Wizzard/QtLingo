@@ -30,8 +30,8 @@
 #include "MyDatatables.h"
 
 /************************************************
-   \class TranslationFiles
-   \brief Translation Files
+ * \class TranslationFiles
+ * @brief Translation Files.
  ***********************************************/
 class MyTranslationFiles : public QObject
 {
@@ -40,10 +40,10 @@ class MyTranslationFiles : public QObject
         explicit MyTranslationFiles(QObject *parent = nullptr, MyDatatables *thisSqlDb = nullptr);  //!< TranslationFiles Constructor
         enum MyMessageTypes
         {
-            Information = 100, //!< \c Information  \brief Information
-            Question    = 101, //!< \c Question     \brief Question
-            Warning     = 102, //!< \c Warning      \brief Warning
-            Critical    = 103, //!< \c Critical     \brief Critical
+            Information = 100, //!< \c Information  @brief Information
+            Question    = 101, //!< \c Question     @brief Question
+            Warning     = 102, //!< \c Warning      @brief Warning
+            Critical    = 103, //!< \c Critical     @brief Critical
         }; // end enum MyFileinfo
         // Makes getting file Info easier
         Q_ENUM(MyMessageTypes)
@@ -71,10 +71,10 @@ class MyTranslationFiles : public QObject
         bool questionYesNo(const char *thisTitle, const char *thisQuestion); //!< question Yes No
 
     private:
-        MyDatatables       *mySqlDb;               //!< \c mySqlDb              \brief Sql Datatables
-        bool                isDebugMessage = true; //!< \c isDebugMessage       \brief is Debug Message
-        QString             myRemoveTransArgs;     //!< \c myRemoveTransArgs    \brief List of Remove Trans Args
-        QOnlineTranslator   myQOnlineTranslator;   //!< \c myQOnlineTranslator  \brief QOnlineTranslator
+        MyDatatables       *mySqlDb;               //!< \c mySqlDb              @brief Sql Datatables
+        bool                isDebugMessage = true; //!< \c isDebugMessage       @brief is Debug Message
+        QString             myRemoveTransArgs;     //!< \c myRemoveTransArgs    @brief List of Remove Trans Args
+        QOnlineTranslator   myQOnlineTranslator;   //!< \c myQOnlineTranslator  @brief QOnlineTranslator
 
 };
 #endif // MYTRANSLATIONFILES_H

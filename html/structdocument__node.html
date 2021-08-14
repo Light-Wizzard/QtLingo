@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structdocument__node.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,6 +92,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>document node.  
+ <a href="structdocument__node.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ts__model_8h_source.html">ts_model.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for document_node:</div>
@@ -79,7 +102,7 @@ Inheritance diagram for document_node:</div>
  <div class="center">
   <img src="structdocument__node.png" usemap="#document_5Fnode_map" alt=""/>
   <map id="document_5Fnode_map" name="document_5Fnode_map">
-<area href="structbase__node.html" alt="base_node" shape="rect" coords="0,56,262,80"/>
+<area href="structbase__node.html" title="base node." alt="base_node" shape="rect" coords="0,56,262,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -116,7 +139,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a893d0b14dd56b3086a67e03e4a056d0d inherit pub_types_structbase__node"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; <a class="el" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node_ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbase__node.html#a893d0b14dd56b3086a67e03e4a056d0d">nodes_t</a></td></tr>
 <tr class="separator:a893d0b14dd56b3086a67e03e4a056d0d inherit pub_types_structbase__node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>document node. </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00143">143</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2e3e3164870cd82fd890cc91805112f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e3e3164870cd82fd890cc91805112f4">&#9670;&nbsp;</a></span>document_node()</h2>
 
@@ -140,6 +167,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00145">145</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;: <a class="code" href="structbase__node.html#a39fdd7923202ef4d9a0326a325ee0ae3">base_node</a>() {}</div>
+<div class="ttc" id="astructbase__node_html_a39fdd7923202ef4d9a0326a325ee0ae3"><div class="ttname"><a href="structbase__node.html#a39fdd7923202ef4d9a0326a325ee0ae3">base_node::base_node</a></div><div class="ttdeci">base_node()</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00119">ts_model.h:119</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -168,6 +199,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="structbase__node.html#ae46b4fe056be151f3b9d851731b0376d">base_node</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00146">146</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structbase__node.html#af252df126b924fd3e08ff3270cf1966cab0e2ea28e335643ccff9ecaa6064c3eb">nt_Document</a>; }</div>
+<div class="ttc" id="astructbase__node_html_af252df126b924fd3e08ff3270cf1966cab0e2ea28e335643ccff9ecaa6064c3eb"><div class="ttname"><a href="structbase__node.html#af252df126b924fd3e08ff3270cf1966cab0e2ea28e335643ccff9ecaa6064c3eb">base_node::nt_Document</a></div><div class="ttdeci">@ nt_Document</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00111">ts_model.h:111</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aac73bfe16641c823c7f2f42d9842e3c7"></a>
@@ -196,6 +231,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="structbase__node.html#ad43117dbce4aa40070498713fbd1c6d1">base_node</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00147">147</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{ visitor.<a class="code" href="structvisitors_1_1document__dump.html#abd3ae090bc488f2d32292f6bf7adcfe1">visit</a>(<span class="keyword">this</span>); }</div>
+<div class="ttc" id="astructvisitors_1_1document__dump_html_abd3ae090bc488f2d32292f6bf7adcfe1"><div class="ttname"><a href="structvisitors_1_1document__dump.html#abd3ae090bc488f2d32292f6bf7adcfe1">visitors::document_dump::visit</a></div><div class="ttdeci">void visit(const document_node *node) const</div><div class="ttdoc">visit(const document_node *node).</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8cpp_source.html#l00018">ts_model.cpp:18</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a20a8d7c8cd7807e842dc2cc2ff946613"></a>
@@ -224,6 +263,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="structbase__node.html#aa6226ed43020bb0c43397003059827ba">base_node</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00149">149</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{ visitor.<a class="code" href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33">visit</a>(<span class="keyword">this</span>); }</div>
+<div class="ttc" id="astructvisitors_1_1back__string__replacer_html_a0e284048374712dfdbff729e7de8be33"><div class="ttname"><a href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33">visitors::back_string_replacer::visit</a></div><div class="ttdeci">void visit(const document_node *node)</div><div class="ttdoc">visit(const document_node *node).</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8cpp_source.html#l00151">ts_model.cpp:151</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abe4d559af7d94bec062e13acbffef987"></a>
@@ -252,15 +295,23 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="structbase__node.html#acfcf4061a95bf39ee891f221f7d650a1">base_node</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00148">148</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;{ visitor.<a class="code" href="structvisitors_1_1string__extractor__replacer.html#ad1e13169be56903506f55feb13a313fc">visit</a>(<span class="keyword">this</span>); }</div>
+<div class="ttc" id="astructvisitors_1_1string__extractor__replacer_html_ad1e13169be56903506f55feb13a313fc"><div class="ttname"><a href="structvisitors_1_1string__extractor__replacer.html#ad1e13169be56903506f55feb13a313fc">visitors::string_extractor_replacer::visit</a></div><div class="ttdeci">void visit(const document_node *node)</div><div class="ttdoc">visit(const document_node *node).</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8cpp_source.html#l00048">ts_model.cpp:48</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/third-party/ts_tool/<a class="el" href="ts__model_8h_source.html">ts_model.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structdocument__node.html">document_node</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

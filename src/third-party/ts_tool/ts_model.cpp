@@ -6,14 +6,14 @@
 #include <algorithm>
 
 /************************************************
-   \class namespace visitors
-   \brief
+   \namespace visitors
+   @brief visitors/
  ***********************************************/
 namespace visitors
 {
     /************************************************
-       \fn visit(const document_node *node)
-       \brief
+     * visit
+     * @brief visit(const document_node *node).
      ***********************************************/
     void document_dump::visit(const document_node *node) const
     {
@@ -22,16 +22,16 @@ namespace visitors
         m_writer.writeEndDocument();
     }
     /************************************************
-       \fn visit(const DTD_node *node)
-       \brief
+     *  visit
+     * @brief visit(const DTD_node *node).
      ***********************************************/
     void document_dump::visit(const DTD_node *node) const
     {
         m_writer.writeDTD(node->id());
     }
     /************************************************
-       \fn visit(const element_node *node)
-       \brief
+     * visit
+     * @brief visit(const element_node *node).
      ***********************************************/
     void document_dump::visit(const element_node *node) const
     {
@@ -42,21 +42,21 @@ namespace visitors
         m_writer.writeEndElement();
     }
     /************************************************
-       \fn visit(const document_node *node)
-       \brief
+     * visit
+     * @brief visit(const document_node *node).
      ***********************************************/
     void string_extractor_replacer::visit(const document_node *node)
     {
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
     }
     /************************************************
-       \fn visit(const DTD_node *)
-       \brief
+     * visit
+     * @brief visit(const DTD_node *).
      ***********************************************/
     void string_extractor_replacer::visit(const DTD_node * /*node*/) { }
     /************************************************
-       \fn visit(element_node *node)
-       \brief
+     * visit
+     * @brief visit(element_node *node).
      ***********************************************/
     void string_extractor_replacer::visit(element_node *node)
     {
@@ -145,21 +145,21 @@ namespace visitors
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node) { node->visit(*this); });
     }
     /************************************************
-       \fn visit(const document_node *node)
-       \brief
+     * visit
+     * @brief visit(const document_node *node).
      ***********************************************/
     void back_string_replacer::visit(const document_node *node)
     {
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
     }
     /************************************************
-       \fn visit(const DTD_node *)
-       \brief
+     * visit
+     * @brief visit(const DTD_node *).
      ***********************************************/
     void back_string_replacer::visit(const DTD_node * /*node*/) { }
     /************************************************
-       \fn visit(element_node *node)
-       \brief
+     * visit
+     * @brief visit(element_node *node).
      ***********************************************/
     void back_string_replacer::visit(element_node *node)
     {
@@ -225,8 +225,8 @@ namespace visitors
         std::for_each(node->m_childs.begin(), node->m_childs.end(), [this](const base_node::base_node_ptr node){ node->visit(*this); } );
     }
     /************************************************
-       \fn visit(TS_node *node)
-       \brief
+     * visit
+     * @brief visit(TS_node *node).
      ***********************************************/
     void back_string_replacer::visit(TS_node *node)
 	{

@@ -27,8 +27,8 @@
 #include <QUrl>
 
 /************************************************
-   \class QOnlineTts
-   \brief QOnlineTts
+ * \class QOnlineTts
+ * @brief Q Online Tts.
  ***********************************************/
 class QOnlineTts : public QObject
 {
@@ -39,35 +39,35 @@ class QOnlineTts : public QObject
         enum Voice
         {
             // All
-            NoVoice = -1,   //!< \c NoVoice \brief NoVoice
+            NoVoice = -1,   //!< \c NoVoice @brief NoVoice
             // Yandex
-            Zahar,          //!< \c Zahar   \brief Zahar
-            Ermil,          //!< \c Ermil   \brief Ermil
-            Jane,           //!< \c Jane    \brief Jane
-            Oksana,         //!< \c Oksana  \brief Oksana
-            Alyss,          //!< \c Alyss   \brief Alyss
-            Omazh           //!< \c Omazh   \brief Omazh
+            Zahar,          //!< \c Zahar   @brief Zahar
+            Ermil,          //!< \c Ermil   @brief Ermil
+            Jane,           //!< \c Jane    @brief Jane
+            Oksana,         //!< \c Oksana  @brief Oksana
+            Alyss,          //!< \c Alyss   @brief Alyss
+            Omazh           //!< \c Omazh   @brief Omazh
         };
         Q_ENUM(Voice)
 
         enum Emotion
         {
             // All
-            NoEmotion = -1, //!< \c NoEmotion   \brief NoEmotion
+            NoEmotion = -1, //!< \c NoEmotion   @brief NoEmotion
             // Yandex
-            Neutral,        //!< \c Neutral     \brief Neutral
-            Good,           //!< \c Good        \brief Good
-            Evil            //!< \c Evil        \brief Evil
+            Neutral,        //!< \c Neutral     @brief Neutral
+            Good,           //!< \c Good        @brief Good
+            Evil            //!< \c Evil        @brief Evil
         };
         Q_ENUM(Emotion)
 
         enum TtsError
         {
-            NoError,                //!< \c NoError             \brief NoError
-            UnsupportedEngine,      //!< \c UnsupportedEngine   \brief Unsupported Engine
-            UnsupportedLanguage,    //!< \c UnsupportedLanguage \brief Unsupported Language
-            UnsupportedVoice,       //!< \c UnsupportedVoice    \brief Unsupported Voice
-            UnsupportedEmotion,     //!< \c UnsupportedEmotion  \brief Unsupported Emotion
+            NoError,                //!< \c NoError             @brief NoError
+            UnsupportedEngine,      //!< \c UnsupportedEngine   @brief Unsupported Engine
+            UnsupportedLanguage,    //!< \c UnsupportedLanguage @brief Unsupported Language
+            UnsupportedVoice,       //!< \c UnsupportedVoice    @brief Unsupported Voice
+            UnsupportedEmotion,     //!< \c UnsupportedEmotion  @brief Unsupported Emotion
         };
 
         explicit QOnlineTts(QObject *parent = nullptr); //!< QOnlineTts
@@ -93,12 +93,12 @@ class QOnlineTts : public QObject
         static const QMap<Emotion, QString> s_emotionCodes; //!< s_emotionCodes
         static const QMap<Voice, QString>   s_voiceCodes;   //!< s_voiceCodes
 
-        static constexpr int s_googleTtsLimit = 200;    //!< \c s_googleTtsLimit    \brief google Tts Limit
-        static constexpr int s_yandexTtsLimit = 1400;   //!< \c s_yandexTtsLimit    \brief yandex Tts Limit
+        static constexpr int s_googleTtsLimit = 200;    //!< \c s_googleTtsLimit    @brief google Tts Limit
+        static constexpr int s_yandexTtsLimit = 1400;   //!< \c s_yandexTtsLimit    @brief yandex Tts Limit
 
-        QList<QMediaContent>    m_media;            //!< \c m_media         \brief m_media
-        QString                 m_errorString;      //!< \c m_errorString   \brief m_errorString
-        TtsError                m_error = NoError;  //!< \c m_error         \brief m_error
+        QList<QMediaContent>    m_media;            //!< \c m_media         @brief m_media
+        QString                 m_errorString;      //!< \c m_errorString   @brief m_errorString
+        TtsError                m_error = NoError;  //!< \c m_error         @brief m_error
 };
 
 #endif // QONLINETTS_H

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structQOption.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -98,6 +118,8 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structQOption.html" title="QOption.">QOption</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="qoption_8h_source.html#l00031">31</a> of file <a class="el" href="qoption_8h_source.html">qoption.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a33216560921151a91019c0d25fd5a24d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33216560921151a91019c0d25fd5a24d">&#9670;&nbsp;</a></span>toJson()</h2>
@@ -115,8 +137,24 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><code>toJson</code> </p>
+<p>toJson.</p>
 <p>toJson </p>
 
+<p class="definition">Definition at line <a class="el" href="qoption_8cpp_source.html#l00030">30</a> of file <a class="el" href="qoption_8cpp_source.html">qoption.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    QJsonObject <span class="keywordtype">object</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {<span class="stringliteral">&quot;gender&quot;</span>, <a class="code" href="structQOption.html#aa6b24bf30b821716c79b42037041d243">gender</a>},</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {<span class="stringliteral">&quot;translations&quot;</span>, QJsonArray::fromStringList(<a class="code" href="structQOption.html#a35fd2dacd8b452b6b2540a30d835756d">translations</a>)},</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {<span class="stringliteral">&quot;word&quot;</span>, <a class="code" href="structQOption.html#a48509e105227d108bcee9ad8b2337e16">word</a>},</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> object;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="ttc" id="astructQOption_html_a35fd2dacd8b452b6b2540a30d835756d"><div class="ttname"><a href="structQOption.html#a35fd2dacd8b452b6b2540a30d835756d">QOption::translations</a></div><div class="ttdeci">QStringList translations</div><div class="ttdoc">translations</div><div class="ttdef"><b>Definition:</b> <a href="qoption_8h_source.html#l00035">qoption.h:35</a></div></div>
+<div class="ttc" id="astructQOption_html_a48509e105227d108bcee9ad8b2337e16"><div class="ttname"><a href="structQOption.html#a48509e105227d108bcee9ad8b2337e16">QOption::word</a></div><div class="ttdeci">QString word</div><div class="ttdoc">word</div><div class="ttdef"><b>Definition:</b> <a href="qoption_8h_source.html#l00033">qoption.h:33</a></div></div>
+<div class="ttc" id="astructQOption_html_aa6b24bf30b821716c79b42037041d243"><div class="ttname"><a href="structQOption.html#aa6b24bf30b821716c79b42037041d243">QOption::gender</a></div><div class="ttdeci">QString gender</div><div class="ttdoc">gender</div><div class="ttdef"><b>Definition:</b> <a href="qoption_8h_source.html#l00034">qoption.h:34</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -135,6 +173,8 @@ Public Attributes</h2></td></tr>
 <p><code>gender</code> </p>
 <p>gender </p>
 
+<p class="definition">Definition at line <a class="el" href="qoption_8h_source.html#l00034">34</a> of file <a class="el" href="qoption_8h_source.html">qoption.h</a>.</p>
+
 </div>
 </div>
 <a id="a35fd2dacd8b452b6b2540a30d835756d"></a>
@@ -151,6 +191,8 @@ Public Attributes</h2></td></tr>
 
 <p><code>translations</code> </p>
 <p>translations </p>
+
+<p class="definition">Definition at line <a class="el" href="qoption_8h_source.html#l00035">35</a> of file <a class="el" href="qoption_8h_source.html">qoption.h</a>.</p>
 
 </div>
 </div>
@@ -169,16 +211,22 @@ Public Attributes</h2></td></tr>
 <p><code>word</code> </p>
 <p>word </p>
 
+<p class="definition">Definition at line <a class="el" href="qoption_8h_source.html#l00033">33</a> of file <a class="el" href="qoption_8h_source.html">qoption.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/third-party/qonlinetranslator/src/<a class="el" href="qoption_8h_source.html">qoption.h</a></li>
-<li>src/third-party/qonlinetranslator/src/<a class="el" href="qoption_8cpp.html">qoption.cpp</a></li>
+<li>src/third-party/qonlinetranslator/src/<a class="el" href="qoption_8cpp_source.html">qoption.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structQOption.html">QOption</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

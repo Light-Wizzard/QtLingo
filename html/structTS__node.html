@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structTS__node.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,6 +92,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>TS node.  
+ <a href="structTS__node.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ts__model_8h_source.html">ts_model.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TS_node:</div>
@@ -79,8 +102,8 @@ Inheritance diagram for TS_node:</div>
  <div class="center">
   <img src="structTS__node.png" usemap="#TS_5Fnode_map" alt=""/>
   <map id="TS_5Fnode_map" name="TS_5Fnode_map">
-<area href="structelement__node.html" alt="element_node" shape="rect" coords="0,112,262,136"/>
-<area href="structbase__node.html" alt="base_node" shape="rect" coords="0,56,262,80"/>
+<area href="structelement__node.html" title="element node." alt="element_node" shape="rect" coords="0,112,262,136"/>
+<area href="structbase__node.html" title="base node." alt="base_node" shape="rect" coords="0,56,262,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -148,7 +171,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a084029bc383b5a117ddff63a5983ef33 inherit pro_attribs_structelement__node"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelement__node.html#a084029bc383b5a117ddff63a5983ef33">m_text</a></td></tr>
 <tr class="separator:a084029bc383b5a117ddff63a5983ef33 inherit pro_attribs_structelement__node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>TS node. </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00201">201</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a810c0f85709d9ba5c88e7e28f0b5b35e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a810c0f85709d9ba5c88e7e28f0b5b35e">&#9670;&nbsp;</a></span>TS_node()</h2>
 
@@ -183,6 +210,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00203">203</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            : <a class="code" href="structelement__node.html#ab3bf8ac874dc3947ed727286de30ab9f">element_node</a>(<a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a6b884d356e40227c875ff209c1527e31">element_node::ent_element</a>, <a class="code" href="structelement__node.html#a304f7d10a33c7b642782a4f543be05b5">name</a>, attrs)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        {}</div>
+<div class="ttc" id="astructelement__node_html_a304f7d10a33c7b642782a4f543be05b5"><div class="ttname"><a href="structelement__node.html#a304f7d10a33c7b642782a4f543be05b5">element_node::name</a></div><div class="ttdeci">const QString &amp; name() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00188">ts_model.h:188</a></div></div>
+<div class="ttc" id="astructelement__node_html_ab3bf8ac874dc3947ed727286de30ab9f"><div class="ttname"><a href="structelement__node.html#ab3bf8ac874dc3947ed727286de30ab9f">element_node::element_node</a></div><div class="ttdeci">element_node(EElementNodeType ent, const QString &amp;name, const QXmlStreamAttributes &amp;attrs)</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00175">ts_model.h:175</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a6b884d356e40227c875ff209c1527e31"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a6b884d356e40227c875ff209c1527e31">element_node::ent_element</a></div><div class="ttdeci">@ ent_element</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -220,6 +254,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00209">209</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            QXmlStreamAttributes::iterator it = std::find_if(<a class="code" href="structelement__node.html#a6ce777ee3ebade28d8ff17433942221f">m_attributes</a>.begin(), <a class="code" href="structelement__node.html#a6ce777ee3ebade28d8ff17433942221f">m_attributes</a>.end(), [&amp;att_name](<span class="keyword">const</span> QXmlStreamAttribute &amp;att){ return att_name == att.name(); });</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordflow">if</span>(it != <a class="code" href="structelement__node.html#a6ce777ee3ebade28d8ff17433942221f">m_attributes</a>.end())</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                *it = QXmlStreamAttribute(it-&gt;namespaceUri().toString(), it-&gt;name().toString(), value);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        }</div>
+<div class="ttc" id="astructelement__node_html_a6ce777ee3ebade28d8ff17433942221f"><div class="ttname"><a href="structelement__node.html#a6ce777ee3ebade28d8ff17433942221f">element_node::m_attributes</a></div><div class="ttdeci">QXmlStreamAttributes m_attributes</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00194">ts_model.h:194</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a2c116b0a2058a78f00a576da54ffb35c"></a>
@@ -248,15 +293,23 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="structelement__node.html#a3d6746586988179cdd6ac12d4c78df32">element_node</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00207">207</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{ visitor.<a class="code" href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33">visit</a>(<span class="keyword">this</span>); }</div>
+<div class="ttc" id="astructvisitors_1_1back__string__replacer_html_a0e284048374712dfdbff729e7de8be33"><div class="ttname"><a href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33">visitors::back_string_replacer::visit</a></div><div class="ttdeci">void visit(const document_node *node)</div><div class="ttdoc">visit(const document_node *node).</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8cpp_source.html#l00151">ts_model.cpp:151</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/third-party/ts_tool/<a class="el" href="ts__model_8h_source.html">ts_model.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structTS__node.html">TS_node</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

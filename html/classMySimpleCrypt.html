@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classMySimpleCrypt.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -106,10 +126,13 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a91ad802aa5c315cbfcf35c2bee947269"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a91ad802aa5c315cbfcf35c2bee947269">MySimpleCrypt</a> ()</td></tr>
+<tr class="memdesc:a91ad802aa5c315cbfcf35c2bee947269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classMySimpleCrypt.html#a91ad802aa5c315cbfcf35c2bee947269">More...</a><br /></td></tr>
 <tr class="separator:a91ad802aa5c315cbfcf35c2bee947269"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67cfdf5fbf9daa6cf890932b7e5b1665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a67cfdf5fbf9daa6cf890932b7e5b1665">MySimpleCrypt</a> (quint64 key)</td></tr>
+<tr class="memdesc:a67cfdf5fbf9daa6cf890932b7e5b1665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classMySimpleCrypt.html#a67cfdf5fbf9daa6cf890932b7e5b1665">More...</a><br /></td></tr>
 <tr class="separator:a67cfdf5fbf9daa6cf890932b7e5b1665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80ede524774928c10a28bbaac241dcbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a80ede524774928c10a28bbaac241dcbf">setKey</a> (quint64 key)</td></tr>
+<tr class="memdesc:a80ede524774928c10a28bbaac241dcbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">set Key.  <a href="classMySimpleCrypt.html#a80ede524774928c10a28bbaac241dcbf">More...</a><br /></td></tr>
 <tr class="separator:a80ede524774928c10a28bbaac241dcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13df2a0d5d54c288bf92f776d9a1de91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a13df2a0d5d54c288bf92f776d9a1de91">hasKey</a> () const</td></tr>
 <tr class="separator:a13df2a0d5d54c288bf92f776d9a1de91"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,20 +147,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a30063532e2aa1577e3a57e8c4c16dce9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3e">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a30063532e2aa1577e3a57e8c4c16dce9">lastError</a> () const</td></tr>
 <tr class="separator:a30063532e2aa1577e3a57e8c4c16dce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93f7cda3877aac2fb9862988b9006ded"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded">encryptToString</a> (const QString &amp;plaintext)</td></tr>
+<tr class="memdesc:a93f7cda3877aac2fb9862988b9006ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">encrypt To String QString.  <a href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded">More...</a><br /></td></tr>
 <tr class="separator:a93f7cda3877aac2fb9862988b9006ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9529ed89697639d53bc59651d2aa2b1e"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a9529ed89697639d53bc59651d2aa2b1e">encryptToString</a> (const QByteArray &amp;plaintext)</td></tr>
+<tr class="memdesc:a9529ed89697639d53bc59651d2aa2b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">encrypt To String QByteArray.  <a href="classMySimpleCrypt.html#a9529ed89697639d53bc59651d2aa2b1e">More...</a><br /></td></tr>
 <tr class="separator:a9529ed89697639d53bc59651d2aa2b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fff242d3a0445472239e98e7c803636"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a1fff242d3a0445472239e98e7c803636">encryptToByteArray</a> (const QString &amp;plaintext)</td></tr>
+<tr class="memdesc:a1fff242d3a0445472239e98e7c803636"><td class="mdescLeft">&#160;</td><td class="mdescRight">encrypt To Byte Array QString.  <a href="classMySimpleCrypt.html#a1fff242d3a0445472239e98e7c803636">More...</a><br /></td></tr>
 <tr class="separator:a1fff242d3a0445472239e98e7c803636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a998f45bc039d4cd65f2504c999871c2c"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a998f45bc039d4cd65f2504c999871c2c">encryptToByteArray</a> (const QByteArray &amp;plaintext)</td></tr>
+<tr class="memdesc:a998f45bc039d4cd65f2504c999871c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">encrypt To Byte Array QByteArray.  <a href="classMySimpleCrypt.html#a998f45bc039d4cd65f2504c999871c2c">More...</a><br /></td></tr>
 <tr class="separator:a998f45bc039d4cd65f2504c999871c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb25f7c05bae1f816a35480497204f2d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#abb25f7c05bae1f816a35480497204f2d">decryptToString</a> (const QString &amp;cyphertext)</td></tr>
+<tr class="memdesc:abb25f7c05bae1f816a35480497204f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">decrypt To String QString.  <a href="classMySimpleCrypt.html#abb25f7c05bae1f816a35480497204f2d">More...</a><br /></td></tr>
 <tr class="separator:abb25f7c05bae1f816a35480497204f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a321ac7368766792d96c5215fc783df87"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a321ac7368766792d96c5215fc783df87">decryptToByteArray</a> (const QString &amp;cyphertext)</td></tr>
+<tr class="memdesc:a321ac7368766792d96c5215fc783df87"><td class="mdescLeft">&#160;</td><td class="mdescRight">decrypt To Byte Array QString.  <a href="classMySimpleCrypt.html#a321ac7368766792d96c5215fc783df87">More...</a><br /></td></tr>
 <tr class="separator:a321ac7368766792d96c5215fc783df87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c530ffdf546a2472a99e7188743f582"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a7c530ffdf546a2472a99e7188743f582">decryptToString</a> (const QByteArray &amp;cypher)</td></tr>
+<tr class="memdesc:a7c530ffdf546a2472a99e7188743f582"><td class="mdescLeft">&#160;</td><td class="mdescRight">decrypt To String QByteArray.  <a href="classMySimpleCrypt.html#a7c530ffdf546a2472a99e7188743f582">More...</a><br /></td></tr>
 <tr class="separator:a7c530ffdf546a2472a99e7188743f582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ee988ca7f7e87b7002d6b68baf19cbf"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a0ee988ca7f7e87b7002d6b68baf19cbf">decryptToByteArray</a> (QByteArray cypher)</td></tr>
+<tr class="memdesc:a0ee988ca7f7e87b7002d6b68baf19cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">decrypt To Byte Array QByteArray.  <a href="classMySimpleCrypt.html#a0ee988ca7f7e87b7002d6b68baf19cbf">More...</a><br /></td></tr>
 <tr class="separator:a0ee988ca7f7e87b7002d6b68baf19cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e54154269c1b7caad4fa4f901be222"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMySimpleCrypt.html#a22e54154269c1b7caad4fa4f901be222">Q_DECLARE_FLAGS</a> (CryptoFlags, <a class="el" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6c">CryptoFlag</a>)</td></tr>
 <tr class="separator:a22e54154269c1b7caad4fa4f901be222"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,9 +183,11 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Simple encryption and decryption of strings and byte arrays. </p>
 <p>This class provides a simple implementation of encryption and decryption of strings and byte arrays.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The encryption provided by this class is NOT strong encryption. It may help to shield things from curious eyes, but it will NOT stand up to someone determined to break the encryption. Don't say you were not warned.</dd></dl>
-<p>The class uses a 64 bit key. Simply create an instance of the class, set the key, and use the <a class="el" href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded">encryptToString()</a> method to calculate an encrypted version of the input string. To decrypt that string again, use an instance of <a class="el" href="classSimpleCrypt.html" title="Constructor.">SimpleCrypt</a> initialized with the same key, and call the <a class="el" href="classMySimpleCrypt.html#abb25f7c05bae1f816a35480497204f2d">decryptToString()</a> method with the encrypted string. If the key matches, the decrypted version of the string will be returned again.</p>
+<p>The class uses a 64 bit key. Simply create an instance of the class, set the key, and use the <a class="el" href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded" title="encrypt To String QString.">encryptToString()</a> method to calculate an encrypted version of the input string. To decrypt that string again, use an instance of SimpleCrypt initialized with the same key, and call the <a class="el" href="classMySimpleCrypt.html#abb25f7c05bae1f816a35480497204f2d" title="decrypt To String QString.">decryptToString()</a> method with the encrypted string. If the key matches, the decrypted version of the string will be returned again.</p>
 <p>If you do not provide a key, or if something else is wrong, the encryption and decryption function will return an empty string or will return a string containing nonsense. <a class="el" href="classMySimpleCrypt.html#a30063532e2aa1577e3a57e8c4c16dce9">lastError()</a> will return a value indicating if the method was succesful, and if not, why not.</p>
-<p><a class="el" href="classSimpleCrypt.html" title="Constructor.">SimpleCrypt</a> is prepared for the case that the encryption and decryption algorithm is changed in a later version, by prepending a version identifier to the cypertext. </p>
+<p>SimpleCrypt is prepared for the case that the encryption and decryption algorithm is changed in a later version, by prepending a version identifier to the cypertext. </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00065">65</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a252c066edc873e5d2ed60699174b504d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a252c066edc873e5d2ed60699174b504d">&#9670;&nbsp;</a></span>CompressionMode</h2>
@@ -176,6 +209,16 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00069">69</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4">CompressionAuto</a>,    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daff742a272c2533f5313f69fbe26aee25">CompressionAlways</a>,  </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daa62bd9ae01d52e2cdd079e182740086f">CompressionNever</a>    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        };</div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a252c066edc873e5d2ed60699174b504daa62bd9ae01d52e2cdd079e182740086f"><div class="ttname"><a href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daa62bd9ae01d52e2cdd079e182740086f">MySimpleCrypt::CompressionNever</a></div><div class="ttdeci">@ CompressionNever</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00074">MySimpleCrypt.h:73</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4"><div class="ttname"><a href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4">MySimpleCrypt::CompressionAuto</a></div><div class="ttdeci">@ CompressionAuto</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00071">MySimpleCrypt.h:71</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a252c066edc873e5d2ed60699174b504daff742a272c2533f5313f69fbe26aee25"><div class="ttname"><a href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daff742a272c2533f5313f69fbe26aee25">MySimpleCrypt::CompressionAlways</a></div><div class="ttdeci">@ CompressionAlways</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00072">MySimpleCrypt.h:72</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae5ceb4e209370d4739a44e996ad83e6c"></a>
@@ -204,6 +247,18 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00189">189</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca3c9cdb733aa9fe66a728a9be11cf478d">CryptoFlagNone</a>        = 0,    </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4">CryptoFlagCompression</a> = 0x01, </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2">CryptoFlagChecksum</a>    = 0x02, </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a">CryptoFlagHash</a>        = 0x04  </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        };</div>
+<div class="ttc" id="aclassMySimpleCrypt_html_ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4"><div class="ttname"><a href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4">MySimpleCrypt::CryptoFlagCompression</a></div><div class="ttdeci">@ CryptoFlagCompression</div><div class="ttdoc">TabSettings</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00192">MySimpleCrypt.h:192</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_ae5ceb4e209370d4739a44e996ad83e6ca3c9cdb733aa9fe66a728a9be11cf478d"><div class="ttname"><a href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca3c9cdb733aa9fe66a728a9be11cf478d">MySimpleCrypt::CryptoFlagNone</a></div><div class="ttdeci">@ CryptoFlagNone</div><div class="ttdoc">TabSettings</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00191">MySimpleCrypt.h:191</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a"><div class="ttname"><a href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a">MySimpleCrypt::CryptoFlagHash</a></div><div class="ttdeci">@ CryptoFlagHash</div><div class="ttdoc">TabSettings</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00195">MySimpleCrypt.h:194</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2"><div class="ttname"><a href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2">MySimpleCrypt::CryptoFlagChecksum</a></div><div class="ttdeci">@ CryptoFlagChecksum</div><div class="ttdoc">TabSettings</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00193">MySimpleCrypt.h:193</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a054cd164e306ef180fe154bcdd8d8e3e"></a>
@@ -228,6 +283,18 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00088">88</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812">ErrorNoError</a>,         </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4">ErrorNoKeySet</a>,        </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea5ee9b52c4247f8e136339ce8723b2cc3">ErrorUnknownVersion</a>,  </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5">ErrorIntegrityFailed</a>  </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        };</div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4"><div class="ttname"><a href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4">MySimpleCrypt::ErrorNoKeySet</a></div><div class="ttdeci">@ ErrorNoKeySet</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00091">MySimpleCrypt.h:91</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a054cd164e306ef180fe154bcdd8d8e3ea5ee9b52c4247f8e136339ce8723b2cc3"><div class="ttname"><a href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea5ee9b52c4247f8e136339ce8723b2cc3">MySimpleCrypt::ErrorUnknownVersion</a></div><div class="ttdeci">@ ErrorUnknownVersion</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00092">MySimpleCrypt.h:92</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812"><div class="ttname"><a href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812">MySimpleCrypt::ErrorNoError</a></div><div class="ttdeci">@ ErrorNoError</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00090">MySimpleCrypt.h:90</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5"><div class="ttname"><a href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5">MySimpleCrypt::ErrorIntegrityFailed</a></div><div class="ttdeci">@ ErrorIntegrityFailed</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00094">MySimpleCrypt.h:93</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abfeda1932fcdaa04278de79459af7f11"></a>
@@ -251,6 +318,16 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00081">81</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a2a1f690ba3828dea0f255a6759547385">ProtectionNone</a>,    </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f">ProtectionChecksum</a>,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a0406ec5bfeff1a9361235e2916b7c77e">ProtectionHash</a>     </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        };</div>
+<div class="ttc" id="aclassMySimpleCrypt_html_abfeda1932fcdaa04278de79459af7f11a0406ec5bfeff1a9361235e2916b7c77e"><div class="ttname"><a href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a0406ec5bfeff1a9361235e2916b7c77e">MySimpleCrypt::ProtectionHash</a></div><div class="ttdeci">@ ProtectionHash</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00086">MySimpleCrypt.h:85</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_abfeda1932fcdaa04278de79459af7f11a2a1f690ba3828dea0f255a6759547385"><div class="ttname"><a href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a2a1f690ba3828dea0f255a6759547385">MySimpleCrypt::ProtectionNone</a></div><div class="ttdeci">@ ProtectionNone</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00083">MySimpleCrypt.h:83</a></div></div>
+<div class="ttc" id="aclassMySimpleCrypt_html_abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f"><div class="ttname"><a href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f">MySimpleCrypt::ProtectionChecksum</a></div><div class="ttdeci">@ ProtectionChecksum</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8h_source.html#l00084">MySimpleCrypt.h:84</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -268,8 +345,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor. Constructs a <a class="el" href="classSimpleCrypt.html" title="Constructor.">SimpleCrypt</a> instance without a valid key set on it. </p>
 
+<p>Constructor. </p>
+<p>Constructor. Constructs a SimpleCrypt instance without a valid key set on it.</p>
+<p>SimpleCrypt </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00034">34</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            : myKey(0), myCompressionMode(<a class="code" href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4">CompressionAuto</a>), myProtectionMode(<a class="code" href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f">ProtectionChecksum</a>), myLastError(<a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812">ErrorNoError</a>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QRandomGenerator generator(uint(QDateTime::currentMSecsSinceEpoch() &amp; 0xFFFF));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    generator.generate();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// qsrand(uint(QDateTime::currentMSecsSinceEpoch() &amp; 0xFFFF));</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a67cfdf5fbf9daa6cf890932b7e5b1665"></a>
@@ -295,10 +383,22 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Constructor. Constructs a <a class="el" href="classSimpleCrypt.html" title="Constructor.">SimpleCrypt</a> instance and initializes it with the given </p><ul>
-<li>key. </li>
-</ul>
 
+<p>Constructor. </p>
+<p>Constructor. Constructs a SimpleCrypt instance and initializes it with the given </p><ul>
+<li>key.</li>
+</ul>
+<p>SimpleCrypt </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00044">44</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                       : myKey(key), myCompressionMode(<a class="code" href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4">CompressionAuto</a>), myProtectionMode(<a class="code" href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f">ProtectionChecksum</a>), myLastError(<a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812">ErrorNoError</a>)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    QRandomGenerator generator(uint(QDateTime::currentMSecsSinceEpoch() &amp; 0xFFFF));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    generator.generate();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// qsrand(uint(QDateTime::currentMSecsSinceEpoch() &amp; 0xFFFF));</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    splitKey();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -325,6 +425,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00116">116</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{<span class="keywordflow">return</span> myCompressionMode;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a321ac7368766792d96c5215fc783df87"></a>
@@ -342,9 +445,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Decrypts a cyphertext string encrypted with this class with the set key back to the plain text version.</p>
-<p>If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. </p>
 
+<p>decrypt To Byte Array QString. </p>
+<p>Decrypts a cyphertext string encrypted with this class with the set key back to the plain text version.</p>
+<p>If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned.</p>
+<p>decryptToByteArray </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00222">222</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;{</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    QByteArray cyphertextArray = QByteArray::fromBase64(cyphertext.toLatin1());</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    QByteArray ba = <a class="code" href="classMySimpleCrypt.html#a321ac7368766792d96c5215fc783df87">decryptToByteArray</a>(cyphertextArray);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> ba;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a321ac7368766792d96c5215fc783df87"><div class="ttname"><a href="classMySimpleCrypt.html#a321ac7368766792d96c5215fc783df87">MySimpleCrypt::decryptToByteArray</a></div><div class="ttdeci">QByteArray decryptToByteArray(const QString &amp;cyphertext)</div><div class="ttdoc">decrypt To Byte Array QString.</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8cpp_source.html#l00222">MySimpleCrypt.cpp:222</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0ee988ca7f7e87b7002d6b68baf19cbf"></a>
@@ -362,9 +477,96 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Decrypts a cyphertext binary encrypted with this class with the set key back to the plain text version.</p>
-<p>If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. </p>
 
+<p>decrypt To Byte Array QByteArray. </p>
+<p>Decrypts a cyphertext binary encrypted with this class with the set key back to the plain text version.</p>
+<p>If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned.</p>
+<p>decryptToByteArray </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00233">233</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> (myKeyParts.isEmpty())</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;No key set.&quot;</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4">ErrorNoKeySet</a>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">return</span> QByteArray();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    QByteArray ba = cypher;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">if</span>( cypher.count() &lt; 3 )</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        { <span class="keywordflow">return</span> QByteArray(); }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">char</span> version = ba.at(0);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (version !=3)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    {  <span class="comment">//we only work with version 3</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea5ee9b52c4247f8e136339ce8723b2cc3">ErrorUnknownVersion</a>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Invalid version or not a cyphertext.&quot;</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">return</span> QByteArray();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    CryptoFlags flags = CryptoFlags(ba.at(1));</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    ba = ba.mid(2);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">int</span> pos(0);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">int</span> cnt(ba.count());</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">char</span> lastChar = 0;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">while</span> (pos &lt; cnt)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordtype">char</span> currentChar = ba[pos];</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        ba[pos] = ba.at(pos) ^ lastChar ^ myKeyParts.at(pos % 8);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        lastChar = currentChar;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        ++pos;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    ba = ba.mid(1); <span class="comment">// chop off the random number at the start</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordtype">bool</span> integrityOk(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (flags.testFlag(<a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2">CryptoFlagChecksum</a>))</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">if</span> (ba.length() &lt; 2)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5">ErrorIntegrityFailed</a>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">return</span> QByteArray();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        quint16 storedChecksum;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            QDataStream s(&amp;ba, QIODevice::ReadOnly);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            s &gt;&gt; storedChecksum;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        ba = ba.mid(2);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        quint16 checksum = qChecksum(ba.constData(), ba.length());</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        integrityOk = (checksum == storedChecksum);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flags.testFlag(<a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a">CryptoFlagHash</a>))</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">if</span> (ba.length() &lt; 20)</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5">ErrorIntegrityFailed</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">return</span> QByteArray();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        QByteArray storedHash = ba.left(20);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        ba = ba.mid(20);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        QCryptographicHash hash(QCryptographicHash::Sha1);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        hash.addData(ba);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        integrityOk = (hash.result() == storedHash);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keywordflow">if</span> (!integrityOk)</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9bbe87d6928b0f498b88574b8d5c02b5">ErrorIntegrityFailed</a>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">return</span> QByteArray();</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (flags.testFlag(<a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4">CryptoFlagCompression</a>))</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;       { ba = qUncompress(ba); }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812">ErrorNoError</a>;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">return</span> ba;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7c530ffdf546a2472a99e7188743f582"></a>
@@ -382,8 +584,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Decrypts a cyphertext binary encrypted with this class with the set key back to the plain text version. If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. </p>
 
+<p>decrypt To String QByteArray. </p>
+<p>Decrypts a cyphertext binary encrypted with this class with the set key back to the plain text version. If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned.</p>
+<p>decryptToString </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00211">211</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;{</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    QByteArray ba = <a class="code" href="classMySimpleCrypt.html#a321ac7368766792d96c5215fc783df87">decryptToByteArray</a>(cypher);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    QString plaintext = QString::fromUtf8(ba, ba.size());</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> plaintext;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abb25f7c05bae1f816a35480497204f2d"></a>
@@ -401,9 +614,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Decrypts a cyphertext string encrypted with this class with the set key back to the plain text version.</p>
-<p>If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned. </p>
 
+<p>decrypt To String QString. </p>
+<p>Decrypts a cyphertext string encrypted with this class with the set key back to the plain text version.</p>
+<p>If an error occured, such as non-matching keys between encryption and decryption, an empty string or a string containing nonsense may be returned.</p>
+<p>decryptToString </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00199">199</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    QByteArray cyphertextArray = QByteArray::fromBase64(cyphertext.toLatin1());</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    QByteArray plaintextArray = <a class="code" href="classMySimpleCrypt.html#a321ac7368766792d96c5215fc783df87">decryptToByteArray</a>(cyphertextArray);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    QString plaintext = QString::fromUtf8(plaintextArray, plaintextArray.size());</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">return</span> plaintext;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a998f45bc039d4cd65f2504c999871c2c"></a>
@@ -421,11 +646,84 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>encrypt To Byte Array QByteArray. </p>
 <p>Encrypts the </p><ul>
 <li>plaintext QByteArray with the key the class was initialized with, and returns a binary cyphertext in a QByteArray the result.</li>
 </ul>
-<p>This method returns a byte array, that is useable for storing a binary format. If you need a string you can store in a text file, use <a class="el" href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded">encryptToString()</a> instead. </p>
+<p>This method returns a byte array, that is useable for storing a binary format. If you need a string you can store in a text file, use <a class="el" href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded" title="encrypt To String QString.">encryptToString()</a> instead.</p>
+<p>encryptToByteArray </p>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00105">105</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (myKeyParts.isEmpty())</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;No key set.&quot;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea3736a381b72fc92341c13b57317510c4">ErrorNoKeySet</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> QByteArray();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QByteArray ba = plaintext;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    CryptoFlags flags = <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca3c9cdb733aa9fe66a728a9be11cf478d">CryptoFlagNone</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (myCompressionMode == <a class="code" href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daff742a272c2533f5313f69fbe26aee25">CompressionAlways</a>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        ba = qCompress(ba, 9); <span class="comment">//maximum compression</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        flags |= <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4">CryptoFlagCompression</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (myCompressionMode == <a class="code" href="classMySimpleCrypt.html#a252c066edc873e5d2ed60699174b504daeeef75583b5e869ad10897fe6cd30de4">CompressionAuto</a>)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        QByteArray compressed = qCompress(ba, 9);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (compressed.count() &lt; ba.count())</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            ba = compressed;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            flags |= <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca0c26b6871ce7454ce4ab7347777832d4">CryptoFlagCompression</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    QByteArray integrityProtection;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">if</span> (myProtectionMode == <a class="code" href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a5e4b35f0ac7668a226fe7a43c48cba0f">ProtectionChecksum</a>)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        flags |= <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6caea76ac1192360aa97b5d7375489d21d2">CryptoFlagChecksum</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        QDataStream s(&amp;integrityProtection, QIODevice::WriteOnly);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        s &lt;&lt; qChecksum(ba.constData(), ba.length());</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (myProtectionMode == <a class="code" href="classMySimpleCrypt.html#abfeda1932fcdaa04278de79459af7f11a0406ec5bfeff1a9361235e2916b7c77e">ProtectionHash</a>)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        flags |= <a class="code" href="classMySimpleCrypt.html#ae5ceb4e209370d4739a44e996ad83e6ca48154cbf795b473e028dfaaad492ad4a">CryptoFlagHash</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        QCryptographicHash hash(QCryptographicHash::Sha1);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        hash.addData(ba);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        integrityProtection += hash.result();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">//prepend a random char to the string</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    QRandomGenerator generator(uint(QDateTime::currentMSecsSinceEpoch() &amp; 0xFFFF));</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">char</span> randomChar = char(generator.generate() &amp; 0xFF);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">//char randomChar = char(qrand() &amp; 0xFF);</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ba = randomChar + integrityProtection + ba;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">int</span> pos(0);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">char</span> lastChar(0);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">int</span> cnt = ba.count();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">while</span> (pos &lt; cnt)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        ba[pos] = ba.at(pos) ^ myKeyParts.at(pos % 8) ^ lastChar;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        lastChar = ba.at(pos);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        ++pos;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    QByteArray resultArray;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    resultArray.append(<span class="keywordtype">char</span>(0x03));  <span class="comment">//version for future updates to algorithm</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    resultArray.append(<span class="keywordtype">char</span>(flags)); <span class="comment">//encryption flags</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    resultArray.append(ba);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    myLastError = <a class="code" href="classMySimpleCrypt.html#a054cd164e306ef180fe154bcdd8d8e3ea9657a50f766be827004da3f3fb6ef812">ErrorNoError</a>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> resultArray;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1fff242d3a0445472239e98e7c803636"></a>
@@ -443,11 +741,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>encrypt To Byte Array QString. </p>
 <p>Encrypts the </p><ul>
 <li>plaintext string with the key the class was initialized with, and returns a binary cyphertext in a QByteArray the result.</li>
 </ul>
-<p>This method returns a byte array, that is useable for storing a binary format. If you need a string you can store in a text file, use <a class="el" href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded">encryptToString()</a> instead. </p>
+<p>This method returns a byte array, that is useable for storing a binary format. If you need a string you can store in a text file, use <a class="el" href="classMySimpleCrypt.html#a93f7cda3877aac2fb9862988b9006ded" title="encrypt To String QString.">encryptToString()</a> instead.</p>
+<p>encryptToByteArray </p>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00096">96</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    QByteArray plaintextArray = plaintext.toUtf8();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMySimpleCrypt.html#a1fff242d3a0445472239e98e7c803636">encryptToByteArray</a>(plaintextArray);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="ttc" id="aclassMySimpleCrypt_html_a1fff242d3a0445472239e98e7c803636"><div class="ttname"><a href="classMySimpleCrypt.html#a1fff242d3a0445472239e98e7c803636">MySimpleCrypt::encryptToByteArray</a></div><div class="ttdeci">QByteArray encryptToByteArray(const QString &amp;plaintext)</div><div class="ttdoc">encrypt To Byte Array QString.</div><div class="ttdef"><b>Definition:</b> <a href="MySimpleCrypt_8cpp_source.html#l00096">MySimpleCrypt.cpp:96</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9529ed89697639d53bc59651d2aa2b1e"></a>
@@ -465,10 +773,20 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Encrypts the </p><ul>
-<li>plaintext QByteArray with the key the class was initialized with, and returns a cyphertext the result. The result is a base64 encoded version of the binary array that is the actual result of the encryption, so it can be stored easily in a text format. </li>
-</ul>
 
+<p>encrypt To String QByteArray. </p>
+<p>Encrypts the </p><ul>
+<li>plaintext QByteArray with the key the class was initialized with, and returns a cyphertext the result. The result is a base64 encoded version of the binary array that is the actual result of the encryption, so it can be stored easily in a text format.</li>
+</ul>
+<p>encryptToString </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00189">189</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    QByteArray cypher = <a class="code" href="classMySimpleCrypt.html#a1fff242d3a0445472239e98e7c803636">encryptToByteArray</a>(plaintext);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    QString cypherString = QString::fromLatin1(cypher.toBase64());</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> cypherString;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a93f7cda3877aac2fb9862988b9006ded"></a>
@@ -486,10 +804,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Encrypts the </p><ul>
-<li>plaintext string with the key the class was initialized with, and returns a cyphertext the result. The result is a base64 encoded version of the binary array that is the actual result of the string, so it can be stored easily in a text format. </li>
-</ul>
 
+<p>encrypt To String QString. </p>
+<p>Encrypts the </p><ul>
+<li>plaintext string with the key the class was initialized with, and returns a cyphertext the result. The result is a base64 encoded version of the binary array that is the actual result of the string, so it can be stored easily in a text format.</li>
+</ul>
+<p>encryptToString </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00178">178</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    QByteArray plaintextArray = plaintext.toUtf8();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    QByteArray cypher = <a class="code" href="classMySimpleCrypt.html#a1fff242d3a0445472239e98e7c803636">encryptToByteArray</a>(plaintextArray);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    QString cypherString = QString::fromLatin1(cypher.toBase64());</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">return</span> cypherString;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a9382b0cbec096df5bd3bd268081bf59d"></a>
@@ -508,7 +837,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>get Debug Message </p>
+<p>get Debug Message.</p>
+<p>getDebugMessage </p>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00063">63</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> isDebugMessage;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a13df2a0d5d54c288bf92f776d9a1de91"></a>
@@ -534,6 +870,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00108">108</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{<span class="keywordflow">return</span> !myKeyParts.isEmpty();}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7ceceb39829357c8883132c7d68ed243"></a>
@@ -559,6 +898,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00125">125</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{<span class="keywordflow">return</span> myProtectionMode;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a30063532e2aa1577e3a57e8c4c16dce9"></a>
@@ -584,6 +926,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00128">128</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{<span class="keywordflow">return</span> myLastError;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a22e54154269c1b7caad4fa4f901be222"></a>
@@ -640,6 +985,9 @@ Public Member Functions</h2></td></tr>
 <p>Sets the compression mode to use when encrypting data. The default mode is Auto.</p>
 <p>Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting. </p>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00114">114</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{myCompressionMode = mode;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a623c3586eaa8c46e68ac9efb0b9d61d9"></a>
@@ -659,7 +1007,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set Debug Message </p>
+<p>set Debug Message.</p>
+<p>setDebugMessage </p>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00055">55</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    isDebugMessage = thisState;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1162673cf4cb0cb932d5c5c47328e641"></a>
@@ -688,6 +1043,9 @@ Public Member Functions</h2></td></tr>
 <p>Sets the integrity mode to use when encrypting data. The default mode is Checksum.</p>
 <p>Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting. </p>
 
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8h_source.html#l00123">123</a> of file <a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{myProtectionMode = mode;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a80ede524774928c10a28bbaac241dcbf"></a>
@@ -706,16 +1064,29 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>set Key. </p>
+<p>setKey </p>
+
+<p class="definition">Definition at line <a class="el" href="MySimpleCrypt_8cpp_source.html#l00071">71</a> of file <a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    myKey = key;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    splitKey();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="MySimpleCrypt_8h_source.html">MySimpleCrypt.h</a></li>
-<li>src/<a class="el" href="MySimpleCrypt_8cpp.html">MySimpleCrypt.cpp</a></li>
+<li>src/<a class="el" href="MySimpleCrypt_8cpp_source.html">MySimpleCrypt.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMySimpleCrypt.html">MySimpleCrypt</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

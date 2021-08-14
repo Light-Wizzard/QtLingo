@@ -1,13 +1,13 @@
 #ifndef __EFL_HASH_h__
 #define __EFL_HASH_h__
 /************************************************
-   \fn hash_t
-   \brief type of efl_hash
+ *  \typedef hash_t
+ *  @brief type of efl_hash.
  ***********************************************/
 typedef unsigned long hash_t;
 /************************************************
-   \fn efl_hash
-   \brief do some fancy bitwanking on the string
+ * @brief do some fancy bitwanking on the string.
+ * efl_hash
  ***********************************************/
 inline hash_t efl_hash(const wchar_t * s)
 {

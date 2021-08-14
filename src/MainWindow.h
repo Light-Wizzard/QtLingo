@@ -24,13 +24,12 @@
 //
 namespace Ui { class MainWindow; }
 /************************************************
-   \class MyTranslationJobs
-   \brief My Translation Jobs
+ * MyTranslationJobs
+ * @brief My Translation Jobs.
+ * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyLingoJobs
 {
-        QString myLanguageName, myLangName, myTsFile;
-        QOnlineTranslator::Language myLang, mySourceLang;
     public:
         MyLingoJobs(const QString &thisLanguageName, const QString &thisLangName, const QString &thisTsFile, QOnlineTranslator::Language thisLang, QOnlineTranslator::Language thisSourceLang)
             : myLanguageName{thisLanguageName}, myLangName{thisLangName}, myTsFile{thisTsFile}, myLang{thisLang}, mySourceLang{thisSourceLang} {}
@@ -46,11 +45,15 @@ class MyLingoJobs
         void setTsFile(const QString &s)                  { myTsFile = s;       }
         void setSourceLang(QOnlineTranslator::Language s) { mySourceLang = s;   }
         void setLang(QOnlineTranslator::Language s)       { myLang = s;         }
+
+    private:
+        QString myLanguageName, myLangName, myTsFile;
+        QOnlineTranslator::Language myLang, mySourceLang;
 };
 /************************************************
-   \class MainWindow
-   \fn MainWindow::MainWindow(QWidget *parent) : QDialog(parent), ui(new Ui::MainWindow)
-   \brief Main Window Constructor.
+ * MainWindow
+ * @brief Main Window Constructor.
+ * @author Jeffrey Scott Flesher
  ***********************************************/
 class MainWindow : public QMainWindow
 {
@@ -61,19 +64,19 @@ class MainWindow : public QMainWindow
         ~MainWindow();
         /*!
             \enum MainTabs
-            \brief Tabs must be forced to be int 0 based indexes that match the actual ui for widgetTab, this enforces compile-time checks.
+            @brief Tabs must be forced to be int 0 based indexes that match the actual ui for widgetTab, this enforces compile-time checks.
          */
         enum MainTabs
         {
-            TabSettings     = 100,  //!< \c TabSettings     \brief Tab Settings.
-            TabSql          = 101,  //!< \c TabSql          \brief Tab SQL
-            TabTranslations = 102,  //!< \c TabTranslations \brief Tab Ubuntu.
-            TabProject      = 103,  //!< \c TabProject      \brief Tab Project.
-            TabTabHelp      = 104,  //!< \c TabHelp         \brief Tab Help.
-            TabAll          = 200   //!< \c TabAll          \brief Tab All used for Actions on all Tabs.
+            TabSettings     = 100,  //!< \c TabSettings     @brief Tab Settings.
+            TabSql          = 101,  //!< \c TabSql          @brief Tab SQL
+            TabTranslations = 102,  //!< \c TabTranslations @brief Tab Ubuntu.
+            TabProject      = 103,  //!< \c TabProject      @brief Tab Project.
+            TabTabHelp      = 104,  //!< \c TabHelp         @brief Tab Help.
+            TabAll          = 200   //!< \c TabAll          @brief Tab All used for Actions on all Tabs.
         }; // end enum MainTabs
 
-        Q_ENUM(MainTabs) // I enumerate the Tabs to make it easier to travers
+        Q_ENUM(MainTabs) //!<  I enumerate the Tabs to make it easier to travers
         //
         void onRunOnStartup();                          //!< on Run On Startup
         //
@@ -157,32 +160,32 @@ class MainWindow : public QMainWindow
         virtual void changeEvent(QEvent * event) override;           //!< change Event
 
     private:
-        Ui::MainWindow     *ui;                                 //!< \c ui                      \brief ui
-        MyDatatables       *mySqlDb;                            //!< \c mySqlDb                 \brief Sql Datatables
-        MyTranslationFiles *myTranslationFiles;                 //!< \c myTranslationFiles      \brief Translation Files
-        QOnlineTranslator   myQOnlineTranslator;                //!< \c myQOnlineTranslator     \brief QOnlineTranslator
-        QClipboard         *clipboard;                          //!< \c clipboard               \brief clipboard
-        bool                isDebugMessage        = true;       //!< \c isDebugMessage          \brief true of false for Debugging
-        bool                isMainLoaded          = false;      //!< \c isMainLoaded            \brief Set true after one shot time loads
-        bool                isQtSettingsLoaded    = false;      //!< \c isQtSettingsLoaded      \brief is Qt Settings Loaded
-        bool                isSaveSettings        = false;      //!< \c isSaveSettings          \brief Auto Save
-        bool                isTranslationError    = false;      //!< \c isTranslationError      \brief is Translation Error
-        QString             myLanguages           = "";         //!< \c myLanguages             \brief Languages for checkboxes
-        QString             myTranslationConf     = "";         //!< \c myTranslationConf       \brief Languages for Config
-        QString             myTranslationQrc      = "";         //!< \c myTranslationQrc        \brief Translation qrc
-        QString             myLanguageName        = "";         //!< \c myLanguageName          \brief Language Name
-        QString             myCurrentLanguage     = "";         //!< \c myCurrentLanguage       \brief Current Language
-        QString             myCurrentLanguageCode = "";         //!< \c myCurrentLanguage       \brief Current Language
-        QString             myTranslation         = "";         //!< \c myTranslation           \brief Translation
-        QString             myTranslationError    = "";         //!< \c myTranslationError      \brief Translation Error
-        QString             myTranslationSource   = "";         //!< \c myTranslationSource     \brief Translation Source
-        QString             myTransFilePrefix     = "";         //!< \c myTransFilePrefix       \brief Translation File Prefix
-        QString             mySourceLanguage      = "";         //!< \c mySourceLanguage        \brief Source Language
-        QList<MyLingoJobs>  myLingoJob;                         //!< \c myLingoJob              \brief Lingo Job
-        QTranslator        *myTranslator;                       //!< \c myTranslator            \brief Translator
-        QTranslator        *myLastTranslator = nullptr;         //!< \c myLastTranslator        \brief Last Translator
-        int                 myLanguageCombBoxIndex = -1;        //!< \c myLanguageCombBoxIndex  \brief Language CombBox Index
-        int                 myRecordID             = -1;        //!< \c myRecordID              \brief Record ID
+        Ui::MainWindow     *ui;                                 //!< \c ui                      @brief ui
+        MyDatatables       *mySqlDb;                            //!< \c mySqlDb                 @brief Sql Datatables
+        MyTranslationFiles *myTranslationFiles;                 //!< \c myTranslationFiles      @brief Translation Files
+        QOnlineTranslator   myQOnlineTranslator;                //!< \c myQOnlineTranslator     @brief QOnlineTranslator
+        QClipboard         *clipboard;                          //!< \c clipboard               @brief clipboard
+        bool                isDebugMessage        = true;       //!< \c isDebugMessage          @brief true of false for Debugging
+        bool                isMainLoaded          = false;      //!< \c isMainLoaded            @brief Set true after one shot time loads
+        bool                isQtSettingsLoaded    = false;      //!< \c isQtSettingsLoaded      @brief is Qt Settings Loaded
+        bool                isSaveSettings        = false;      //!< \c isSaveSettings          @brief Auto Save
+        bool                isTranslationError    = false;      //!< \c isTranslationError      @brief is Translation Error
+        QString             myLanguages           = "";         //!< \c myLanguages             @brief Languages for checkboxes
+        QString             myTranslationConf     = "";         //!< \c myTranslationConf       @brief Languages for Config
+        QString             myTranslationQrc      = "";         //!< \c myTranslationQrc        @brief Translation qrc
+        QString             myLanguageName        = "";         //!< \c myLanguageName          @brief Language Name
+        QString             myCurrentLanguage     = "";         //!< \c myCurrentLanguage       @brief Current Language
+        QString             myCurrentLanguageCode = "";         //!< \c myCurrentLanguage       @brief Current Language
+        QString             myTranslation         = "";         //!< \c myTranslation           @brief Translation
+        QString             myTranslationError    = "";         //!< \c myTranslationError      @brief Translation Error
+        QString             myTranslationSource   = "";         //!< \c myTranslationSource     @brief Translation Source
+        QString             myTransFilePrefix     = "";         //!< \c myTransFilePrefix       @brief Translation File Prefix
+        QString             mySourceLanguage      = "";         //!< \c mySourceLanguage        @brief Source Language
+        QList<MyLingoJobs>  myLingoJob;                         //!< \c myLingoJob              @brief Lingo Job
+        QTranslator        *myTranslator;                       //!< \c myTranslator            @brief Translator
+        QTranslator        *myLastTranslator = nullptr;         //!< \c myLastTranslator        @brief Last Translator
+        int                 myLanguageCombBoxIndex = -1;        //!< \c myLanguageCombBoxIndex  @brief Language CombBox Index
+        int                 myRecordID             = -1;        //!< \c myRecordID              @brief Record ID
 };
 #endif // MAINWINDOW_H
 /******************************* End of File *********************************/

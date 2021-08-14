@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('md_src_third_party_qonlinetranslator_docs_QOption.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,21 +83,20 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title"><a class="el" href="structQOption.html" title="QOption.">QOption</a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The <b><a class="el" href="structQOption.html" title="QOption.">QOption</a></b> structure provides storage for translation options data for a single type of speech.</p>
-<h1><a class="anchor" id="autotoc_md141"></a>
+<h1><a class="anchor" id="autotoc_md118"></a>
 Content</h1>
 <ul>
 <li><a href="#public-members">Public Members</a></li>
 <li><a href="#detailed-description">Detailed Description</a></li>
 <li><a href="#members-documentation">Members Documentation</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md142"></a>
+<h1><a class="anchor" id="autotoc_md119"></a>
 Public Members</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -88,7 +108,7 @@ Public Members</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">QStringList   </td><td class="markdownTableBodyLeft"><a href="#translations"><b>translations</b></a>   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md143"></a>
+<h1><a class="anchor" id="autotoc_md120"></a>
 Public Functions</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -96,7 +116,7 @@ Public Functions</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyRight">QJsonObject   </td><td class="markdownTableBodyLeft"><a href="#tojson"><b>toJson</b>()</a>   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md144"></a>
+<h1><a class="anchor" id="autotoc_md121"></a>
 Detailed Description</h1>
 <p>A <b><a class="el" href="structQOption.html" title="QOption.">QOption</a></b> object can be obtained from the <a class="el" href="QOnlineTranslator_8md.html">QOnlineTranslator</a> object, which contains translation options for a single word.</p>
 <p><b>Example:</b></p>
@@ -131,32 +151,35 @@ Detailed Description</h1>
 <div class="line"><span class="comment"> Sagen: say</span></div>
 <div class="line"><span class="comment"> Mitspracherecht: say</span></div>
 <div class="line"><span class="comment">*/</span></div>
-<div class="ttc" id="aclassQOnlineTranslator_html"><div class="ttname"><a href="classQOnlineTranslator.html">QOnlineTranslator</a></div><div class="ttdoc">QOnlineTranslator.</div><div class="ttdef"><b>Definition:</b> qonlinetranslator.h:50</div></div>
-<div class="ttc" id="aclassQOnlineTranslator_html_ae446df4d1fb62199e240e5f7fe3d78dd"><div class="ttname"><a href="classQOnlineTranslator.html#ae446df4d1fb62199e240e5f7fe3d78dd">QOnlineTranslator::translationOptions</a></div><div class="ttdeci">QMap&lt; QString, QVector&lt; QOption &gt; &gt; translationOptions() const</div><div class="ttdoc">translation Options</div><div class="ttdef"><b>Definition:</b> qonlinetranslator.cpp:665</div></div>
+<div class="ttc" id="aclassQOnlineTranslator_html"><div class="ttname"><a href="classQOnlineTranslator.html">QOnlineTranslator</a></div><div class="ttdoc">QOnlineTranslator.</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetranslator_8h_source.html#l00049">qonlinetranslator.h:50</a></div></div>
+<div class="ttc" id="aclassQOnlineTranslator_html_ae446df4d1fb62199e240e5f7fe3d78dd"><div class="ttname"><a href="classQOnlineTranslator.html#ae446df4d1fb62199e240e5f7fe3d78dd">QOnlineTranslator::translationOptions</a></div><div class="ttdeci">QMap&lt; QString, QVector&lt; QOption &gt; &gt; translationOptions() const</div><div class="ttdoc">translation Options</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetranslator_8cpp_source.html#l00665">qonlinetranslator.cpp:665</a></div></div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md146"></a>
+<h1><a class="anchor" id="autotoc_md123"></a>
 Members Documentation</h1>
-<h2><a class="anchor" id="autotoc_md147"></a>
+<h2><a class="anchor" id="autotoc_md124"></a>
 &lt;a id='word'/&gt; &lt;a href="https://doc.qt.io/qt-5/qstring.html" title="Qt Documentation"&gt;QString&lt;/a&gt; QOption::word</h2>
 <p>Returns word, that specified for translation options.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md149"></a>
+<h2><a class="anchor" id="autotoc_md126"></a>
 &lt;a id='gender'/&gt; &lt;a href="https://doc.qt.io/qt-5/qstring.html" title="Qt Documentation"&gt;QString&lt;/a&gt; QOption::gender</h2>
 <p>Returns the gender of the word above.</p>
 <hr  />
-<h2><a class="anchor" id="autotoc_md151"></a>
+<h2><a class="anchor" id="autotoc_md128"></a>
 &lt;a id='translations'/&gt; &lt;a href="https://doc.qt.io/qt-5/qstringlist.html" title="Qt Documentation"&gt;QStringList&lt;/a&gt; QOption::translations</h2>
 <p>Returns associated translations for the word.</p>
-<h1><a class="anchor" id="autotoc_md152"></a>
+<h1><a class="anchor" id="autotoc_md129"></a>
 Member Function Documentation</h1>
-<h2><a class="anchor" id="autotoc_md153"></a>
+<h2><a class="anchor" id="autotoc_md130"></a>
 &lt;a id='tojson'/&gt; &lt;a href="https://doc.qt.io/qt-5/qjsonobject.html" title="Qt Documentation"&gt;QJsonObject&lt;/a&gt; QOption::toJson()</h2>
 <p>Returns a <a href="https://doc.qt.io/qt-5/qjsonobject.html" title="Qt Documentation">QJsonObject</a> representation from data. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['back_5fstring_5freplacer_438',['back_string_replacer',['../structvisitors_1_1back__string__replacer.html#a6eec58417c079ac1b00bac12799c72c9',1,'visitors::back_string_replacer::back_string_replacer()'],['../structvisitors_1_1back__string__replacer.html',1,'visitors::back_string_replacer']]],
+  ['back_5fstring_5freplacer_438',['back_string_replacer',['../structback__string__replacer.html',1,'back_string_replacer'],['../structvisitors_1_1back__string__replacer.html#a6eec58417c079ac1b00bac12799c72c9',1,'visitors::back_string_replacer::back_string_replacer()'],['../structvisitors_1_1back__string__replacer.html',1,'visitors::back_string_replacer']]],
   ['base_5fnode_439',['base_node',['../structbase__node.html',1,'base_node'],['../structbase__node.html#a39fdd7923202ef4d9a0326a325ee0ae3',1,'base_node::base_node()']]],
   ['base_5fnode_5fptr_440',['base_node_ptr',['../structbase__node.html#abb75a430c91d015bdc7307f6263717e0',1,'base_node']]],
   ['basename_441',['BaseName',['../classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456aa681c4f10f78e2959304f3a2458a48a12',1,'MyOrgSettings']]],

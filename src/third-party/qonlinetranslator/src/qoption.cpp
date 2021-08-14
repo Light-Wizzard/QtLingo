@@ -24,8 +24,8 @@
 #include <QJsonArray>
 
 /************************************************
-   \fn toJson
-   \brief toJson
+ * toJson
+ * @brief toJson.
  ***********************************************/
 QJsonObject QOption::toJson() const
 {

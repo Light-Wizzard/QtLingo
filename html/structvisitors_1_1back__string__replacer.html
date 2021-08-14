@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structvisitors_1_1back__string__replacer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,11 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespacevisitors.html">visitors</a></li><li class="navelem"><a class="el" href="structvisitors_1_1back__string__replacer.html">back_string_replacer</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -76,22 +92,33 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>back string replacer.  
+ <a href="structvisitors_1_1back__string__replacer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ts__model_8h_source.html">ts_model.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6eec58417c079ac1b00bac12799c72c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a6eec58417c079ac1b00bac12799c72c9">back_string_replacer</a> (const <a class="el" href="namespacevisitors.html#a410d608aff0ee08d41221b3315765de9">map_QStringQString</a> &amp;strings, const QString &amp;langid)</td></tr>
 <tr class="separator:a6eec58417c079ac1b00bac12799c72c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9591cbe42e9a2747fc0c85dfff37c155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a9591cbe42e9a2747fc0c85dfff37c155">visit</a> (const <a class="el" href="structdocument__node.html">document_node</a> *node)</td></tr>
-<tr class="separator:a9591cbe42e9a2747fc0c85dfff37c155"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c7af49ef98bf8cfef0f14cfcecc5952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a2c7af49ef98bf8cfef0f14cfcecc5952">visit</a> (const <a class="el" href="structDTD__node.html">DTD_node</a> *node)</td></tr>
-<tr class="separator:a2c7af49ef98bf8cfef0f14cfcecc5952"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89315ea481cc0092383f1c381776f613"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a89315ea481cc0092383f1c381776f613">visit</a> (<a class="el" href="structelement__node.html">element_node</a> *node)</td></tr>
-<tr class="separator:a89315ea481cc0092383f1c381776f613"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18a8946adfbbb9c43356f211f4b1eeb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a18a8946adfbbb9c43356f211f4b1eeb9">visit</a> (<a class="el" href="structTS__node.html">TS_node</a> *node)</td></tr>
-<tr class="separator:a18a8946adfbbb9c43356f211f4b1eeb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e284048374712dfdbff729e7de8be33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33">visit</a> (const <a class="el" href="structdocument__node.html">document_node</a> *node)</td></tr>
+<tr class="memdesc:a0e284048374712dfdbff729e7de8be33"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33" title="visit(const document_node *node).">visit(const document_node *node)</a>.  <a href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33">More...</a><br /></td></tr>
+<tr class="separator:a0e284048374712dfdbff729e7de8be33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a322fe2fa28bc62406d0449e5fe46eedb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a322fe2fa28bc62406d0449e5fe46eedb">visit</a> (const <a class="el" href="structDTD__node.html">DTD_node</a> *node)</td></tr>
+<tr class="memdesc:a322fe2fa28bc62406d0449e5fe46eedb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structvisitors_1_1back__string__replacer.html#a322fe2fa28bc62406d0449e5fe46eedb" title="visit(const DTD_node *).">visit(const DTD_node *)</a>.  <a href="structvisitors_1_1back__string__replacer.html#a322fe2fa28bc62406d0449e5fe46eedb">More...</a><br /></td></tr>
+<tr class="separator:a322fe2fa28bc62406d0449e5fe46eedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5d77b7cf665583dbf329020e87f8c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#a0a5d77b7cf665583dbf329020e87f8c4">visit</a> (<a class="el" href="structelement__node.html">element_node</a> *node)</td></tr>
+<tr class="memdesc:a0a5d77b7cf665583dbf329020e87f8c4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structvisitors_1_1back__string__replacer.html#a0a5d77b7cf665583dbf329020e87f8c4" title="visit(element_node *node).">visit(element_node *node)</a>.  <a href="structvisitors_1_1back__string__replacer.html#a0a5d77b7cf665583dbf329020e87f8c4">More...</a><br /></td></tr>
+<tr class="separator:a0a5d77b7cf665583dbf329020e87f8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac049dd3bff60b04e8cc83810405c2bfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1back__string__replacer.html#ac049dd3bff60b04e8cc83810405c2bfa">visit</a> (<a class="el" href="structTS__node.html">TS_node</a> *node)</td></tr>
+<tr class="memdesc:ac049dd3bff60b04e8cc83810405c2bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structvisitors_1_1back__string__replacer.html#ac049dd3bff60b04e8cc83810405c2bfa" title="visit(TS_node *node).">visit(TS_node *node)</a>.  <a href="structvisitors_1_1back__string__replacer.html#ac049dd3bff60b04e8cc83810405c2bfa">More...</a><br /></td></tr>
+<tr class="separator:ac049dd3bff60b04e8cc83810405c2bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>back string replacer. </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00080">80</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6eec58417c079ac1b00bac12799c72c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6eec58417c079ac1b00bac12799c72c9">&#9670;&nbsp;</a></span>back_string_replacer()</h2>
 
@@ -126,17 +153,21 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00082">82</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                : m_strings(strings), m_langid(langid), source(<span class="keyword">nullptr</span>), translation(<span class="keyword">nullptr</span>), m_state(st_WaitForMessage)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9591cbe42e9a2747fc0c85dfff37c155"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9591cbe42e9a2747fc0c85dfff37c155">&#9670;&nbsp;</a></span>visit() <span class="overload">[1/4]</span></h2>
+<a id="a0e284048374712dfdbff729e7de8be33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e284048374712dfdbff729e7de8be33">&#9670;&nbsp;</a></span>visit() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void visitors::back_string_replacer::visit </td>
+          <td class="memname">void back_string_replacer::visit </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structdocument__node.html">document_node</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -145,16 +176,25 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="structvisitors_1_1back__string__replacer.html#a0e284048374712dfdbff729e7de8be33" title="visit(const document_node *node).">visit(const document_node *node)</a>. </p>
+<p>visit </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8cpp_source.html#l00151">151</a> of file <a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        std::for_each(node-&gt;m_childs.begin(), node-&gt;m_childs.end(), [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a> node){ node-&gt;visit(*this); } );</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="ttc" id="astructbase__node_html_abb75a430c91d015bdc7307f6263717e0"><div class="ttname"><a href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; base_node &gt; base_node_ptr</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00116">ts_model.h:116</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a2c7af49ef98bf8cfef0f14cfcecc5952"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c7af49ef98bf8cfef0f14cfcecc5952">&#9670;&nbsp;</a></span>visit() <span class="overload">[2/4]</span></h2>
+<a id="a322fe2fa28bc62406d0449e5fe46eedb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322fe2fa28bc62406d0449e5fe46eedb">&#9670;&nbsp;</a></span>visit() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void visitors::back_string_replacer::visit </td>
+          <td class="memname">void back_string_replacer::visit </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDTD__node.html">DTD_node</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -163,16 +203,22 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="structvisitors_1_1back__string__replacer.html#a322fe2fa28bc62406d0449e5fe46eedb" title="visit(const DTD_node *).">visit(const DTD_node *)</a>. </p>
+<p>visit </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8cpp_source.html#l00159">159</a> of file <a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{ }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a89315ea481cc0092383f1c381776f613"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89315ea481cc0092383f1c381776f613">&#9670;&nbsp;</a></span>visit() <span class="overload">[3/4]</span></h2>
+<a id="a0a5d77b7cf665583dbf329020e87f8c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5d77b7cf665583dbf329020e87f8c4">&#9670;&nbsp;</a></span>visit() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void visitors::back_string_replacer::visit </td>
+          <td class="memname">void back_string_replacer::visit </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structelement__node.html">element_node</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -181,16 +227,89 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="structvisitors_1_1back__string__replacer.html#a0a5d77b7cf665583dbf329020e87f8c4" title="visit(element_node *node).">visit(element_node *node)</a>. </p>
+<p>visit </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8cpp_source.html#l00164">164</a> of file <a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span>(st_WaitForMessage == m_state &amp;&amp; <a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a44608a1cf62084ec95e757ddaed77798">element_node::ent_message</a> == node-&gt;<a class="code" href="structelement__node.html#a770cc0d0946d0d7230fc54bdca1ffa50">element_node_type</a>())</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            m_state = st_WaitForSource | st_WaitForTranslation;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(st_WaitForSource &amp; m_state &amp;&amp; <a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a4f0ae8f42903b888022d46329b7af9ef">element_node::ent_source</a> == node-&gt;<a class="code" href="structelement__node.html#a770cc0d0946d0d7230fc54bdca1ffa50">element_node_type</a>())</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            assert(!source);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            source = node;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            m_state &amp;= ~st_WaitForSource;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">if</span>(!(m_state &amp; st_WaitForTranslation)) </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                m_state |= st_Complete;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(st_WaitForTranslation &amp; m_state &amp;&amp; <a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a33584a987a9544d79a429dc074360853">element_node::ent_translation</a> == node-&gt;<a class="code" href="structelement__node.html#a770cc0d0946d0d7230fc54bdca1ffa50">element_node_type</a>())</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            assert(!translation);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            translation = node;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            m_state &amp;= ~st_WaitForTranslation;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">if</span>(!(m_state &amp; st_WaitForSource)) </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                m_state |= st_Complete;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span>(st_Complete &amp; m_state)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            map_QStringQString::const_iterator it = m_strings.find(translation-&gt;<a class="code" href="structelement__node.html#ad7600f5a06e9029ac738a5f926382924">text</a>());</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">if</span>(m_strings.end() == it)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                std::cerr &lt;&lt; <span class="stringliteral">&quot;Unprocessed tags &lt;source&gt;: &quot;</span> &lt;&lt; source-&gt;<a class="code" href="structelement__node.html#ad7600f5a06e9029ac738a5f926382924">text</a>().toUtf8().constData() </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot; &lt;translation&gt;: &quot;</span> &lt;&lt; translation-&gt;<a class="code" href="structelement__node.html#ad7600f5a06e9029ac738a5f926382924">text</a>().toUtf8().constData() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                QString text = it-&gt;second;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                text.replace(<span class="stringliteral">&quot;\\n&quot;</span>, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                text.replace(<span class="stringliteral">&quot;\\r&quot;</span>, <span class="stringliteral">&quot;\r&quot;</span>);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                text.replace(<span class="stringliteral">&quot;\\t&quot;</span>, <span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                translation-&gt;<a class="code" href="structelement__node.html#ac4d113d6c3bb9231b3adbec5875121d6">set_text</a>(text);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            source = translation = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            m_state = st_WaitForMessage;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        std::for_each(node-&gt;m_childs.begin(), node-&gt;m_childs.end(), [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a> node){ node-&gt;visit(*this); } );</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="ttc" id="astructelement__node_html_a770cc0d0946d0d7230fc54bdca1ffa50"><div class="ttname"><a href="structelement__node.html#a770cc0d0946d0d7230fc54bdca1ffa50">element_node::element_node_type</a></div><div class="ttdeci">EElementNodeType element_node_type() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00183">ts_model.h:183</a></div></div>
+<div class="ttc" id="astructelement__node_html_ac4d113d6c3bb9231b3adbec5875121d6"><div class="ttname"><a href="structelement__node.html#ac4d113d6c3bb9231b3adbec5875121d6">element_node::set_text</a></div><div class="ttdeci">void set_text(const QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00185">ts_model.h:185</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a33584a987a9544d79a429dc074360853"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a33584a987a9544d79a429dc074360853">element_node::ent_translation</a></div><div class="ttdeci">@ ent_translation</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a44608a1cf62084ec95e757ddaed77798"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a44608a1cf62084ec95e757ddaed77798">element_node::ent_message</a></div><div class="ttdeci">@ ent_message</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a4f0ae8f42903b888022d46329b7af9ef"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a4f0ae8f42903b888022d46329b7af9ef">element_node::ent_source</a></div><div class="ttdeci">@ ent_source</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+<div class="ttc" id="astructelement__node_html_ad7600f5a06e9029ac738a5f926382924"><div class="ttname"><a href="structelement__node.html#ad7600f5a06e9029ac738a5f926382924">element_node::text</a></div><div class="ttdeci">const QString &amp; text() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00186">ts_model.h:186</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a18a8946adfbbb9c43356f211f4b1eeb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18a8946adfbbb9c43356f211f4b1eeb9">&#9670;&nbsp;</a></span>visit() <span class="overload">[4/4]</span></h2>
+<a id="ac049dd3bff60b04e8cc83810405c2bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac049dd3bff60b04e8cc83810405c2bfa">&#9670;&nbsp;</a></span>visit() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void visitors::back_string_replacer::visit </td>
+          <td class="memname">void back_string_replacer::visit </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structTS__node.html">TS_node</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -199,16 +318,37 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="structvisitors_1_1back__string__replacer.html#ac049dd3bff60b04e8cc83810405c2bfa" title="visit(TS_node *node).">visit(TS_node *node)</a>. </p>
+<p>visit </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8cpp_source.html#l00231">231</a> of file <a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">if</span>(!m_langid.isEmpty())</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            node-&gt;<a class="code" href="structTS__node.html#a5cd0aabb70fc3d3beb5a7ffa0a616b08">replace_attribute_value</a>(<span class="stringliteral">&quot;language&quot;</span>, m_langid);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        std::for_each(node-&gt;m_childs.begin(), node-&gt;m_childs.end(), [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a> node)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        { </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            node-&gt;visit(*this); </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        });</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="ttc" id="astructTS__node_html_a5cd0aabb70fc3d3beb5a7ffa0a616b08"><div class="ttname"><a href="structTS__node.html#a5cd0aabb70fc3d3beb5a7ffa0a616b08">TS_node::replace_attribute_value</a></div><div class="ttdeci">void replace_attribute_value(const QString &amp;att_name, const QString &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00209">ts_model.h:209</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/third-party/ts_tool/<a class="el" href="ts__model_8h_source.html">ts_model.h</a></li>
-<li>src/third-party/ts_tool/<a class="el" href="ts__model_8cpp.html">ts_model.cpp</a></li>
+<li>src/third-party/ts_tool/<a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacevisitors.html">visitors</a></li><li class="navelem"><a class="el" href="structvisitors_1_1back__string__replacer.html">back_string_replacer</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

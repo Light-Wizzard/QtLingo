@@ -31,8 +31,8 @@ struct TS_node;
 namespace visitors
 {
     /************************************************
-       \fn struct document_dump
-       \brief
+     * \struct document_dump
+     * @brief document dump.
      ***********************************************/
     struct document_dump
     {
@@ -47,14 +47,14 @@ namespace visitors
             QXmlStreamWriter &m_writer;
     };
     /************************************************
-       \fn
-       \brief
+     * \typedef map_hashQString
+     * @brief map hashQString.
      ***********************************************/
     typedef std::map<hash_t, QString>	map_hashQString;
     typedef std::map<QString, QString>	map_QStringQString;
     /************************************************
-       \fn struct string_extractor_replacer
-       \brief
+     * \struct string_extractor_replacer
+     * @brief string extractor replacer.
      ***********************************************/
     struct string_extractor_replacer
     {
@@ -74,8 +74,8 @@ namespace visitors
             bool m_with_unfinished, m_with_vanished, m_unfinished_only;
     };
     /************************************************
-       \fn struct back_string_replacer
-       \brief
+     * \struct back_string_replacer
+     * @brief back string replacer.
      ***********************************************/
     struct back_string_replacer
     {
@@ -97,14 +97,14 @@ namespace visitors
     };
 }
 /************************************************
-   \fn struct base_node
-   \brief
+ * \struct base_node
+ * @brief base node.
  ***********************************************/
 struct base_node : std::enable_shared_from_this<base_node>
 {
-        friend visitors::document_dump;
-        friend visitors::string_extractor_replacer;
-        friend visitors::back_string_replacer;
+        friend visitors::document_dump;              //!< \struct document_dump
+        friend visitors::string_extractor_replacer;  //!< \struct string_extractor_replacer
+        friend visitors::back_string_replacer;       //!< \struct back_string_replacer
 
         enum ENodeType
         {
@@ -137,8 +137,8 @@ struct base_node : std::enable_shared_from_this<base_node>
         base_node_ptr m_parent;
 };
 /************************************************
-   \fn struct document_node
-   \brief
+ * \struct document_node
+ * @brief document node.
  ***********************************************/
 struct document_node : base_node
 {
@@ -149,8 +149,8 @@ struct document_node : base_node
         virtual void visit(visitors::back_string_replacer &visitor) override { visitor.visit(this); }
 };
 /************************************************
-   \fn struct DTD_node
-   \brief
+ * \struct DTD_node
+ * @brief DTD node.
  ***********************************************/
 struct DTD_node : base_node
 {
@@ -165,8 +165,8 @@ struct DTD_node : base_node
         QString m_systemId;
 };
 /************************************************
-   \fn struct element_node
-   \brief
+ * \struct element_node
+ * @brief element node.
  ***********************************************/
 struct element_node : base_node
 {
@@ -195,8 +195,8 @@ struct element_node : base_node
         QString m_text;
 };
 /************************************************
-   \fn struct TS_node
-   \brief
+ * \struct TS_node
+ * @brief TS node.
  ***********************************************/
 struct TS_node : element_node
 {

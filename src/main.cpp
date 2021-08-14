@@ -1,7 +1,7 @@
 ﻿#include "MainWindow.h"
 /************************************************
-   \fn getAppDataLocation
-   \brief get App Data Location
+* \fn getAppDataLocation
+* @brief get App Data Location.
  ***********************************************/
 QString getAppDataLocation()
 {
@@ -17,24 +17,24 @@ QString getAppDataLocation()
     return theAppDataLocation;
 }
 /************************************************
-   \fn getMessageLogFile
-   \brief get Message Log File
+* \fn getMessageLogFile
+* @brief get Message Log File.
  ***********************************************/
 QString getMessageLogFile()
 {
     return QString("%1%2%3").arg(getAppDataLocation(), QDir::separator(), "messageLog.txt");
 }
 /************************************************
-   \fn setMessageLogFile
-   \brief set Message Log File
+* \fn getFileErrorMessage
+* @brief get File Error Message.
  ***********************************************/
 QString getFileErrorMessage()
 {
     return QString("%1: %2").arg(QObject::tr("Failed to open log file"), getMessageLogFile());
 }
 /************************************************
-   \fn setMessageLogFile
-   \brief set Message Log File
+* \fn setMessageLogFile
+* @brief set Message Log File.
  ***********************************************/
 bool setMessageLogFile()
 {
@@ -60,8 +60,8 @@ bool setMessageLogFile()
         { return false; }
 }
 /************************************************
-   \fn logEvents
-   \brief log Events
+* \fn logEvents
+* @brief log Events.
  ***********************************************/
 void logEvents(const QString &thisMessage)
 {
@@ -79,8 +79,8 @@ void logEvents(const QString &thisMessage)
     theFileHandle.close();
 }
 /************************************************
-   \fn myMessageHandler
-   \brief I use a special Message Handler to format the output of Error
+ * \fn myMessageHandler
+ * @brief I use a special Message Handler to format the output of Error.
  ***********************************************/
 void myMessageHandler(QtMsgType thisType, const QMessageLogContext &thisContext, const QString &thisMsg)
 {
@@ -112,8 +112,8 @@ void myMessageHandler(QtMsgType thisType, const QMessageLogContext &thisContext,
     }
 }
 /************************************************
-   \fn main
-   \brief main
+ * \fn main
+ * @brief main.
  ***********************************************/
 int main(int argc, char *argv[])
 {

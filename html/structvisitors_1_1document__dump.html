@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structvisitors_1_1document__dump.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,11 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="namespacevisitors.html">visitors</a></li><li class="navelem"><a class="el" href="structvisitors_1_1document__dump.html">document_dump</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -76,22 +92,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>document dump.  
+ <a href="structvisitors_1_1document__dump.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ts__model_8h_source.html">ts_model.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a10bb63129db8110ecfc9a0935ff24fa1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#a10bb63129db8110ecfc9a0935ff24fa1">document_dump</a> (QXmlStreamWriter &amp;writer)</td></tr>
 <tr class="separator:a10bb63129db8110ecfc9a0935ff24fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bfa2c39a6d3c433d55327b8ada1fa10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#a4bfa2c39a6d3c433d55327b8ada1fa10">visit</a> (const <a class="el" href="structdocument__node.html">document_node</a> *node) const</td></tr>
-<tr class="separator:a4bfa2c39a6d3c433d55327b8ada1fa10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9db26e655d42450d3fcd6771b13152d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#a9db26e655d42450d3fcd6771b13152d2">visit</a> (const <a class="el" href="structDTD__node.html">DTD_node</a> *node) const</td></tr>
-<tr class="separator:a9db26e655d42450d3fcd6771b13152d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf9a7c7a1330a9274d28463ccd13c8e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#acf9a7c7a1330a9274d28463ccd13c8e8">visit</a> (const <a class="el" href="structelement__node.html">element_node</a> *node) const</td></tr>
-<tr class="separator:acf9a7c7a1330a9274d28463ccd13c8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd3ae090bc488f2d32292f6bf7adcfe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#abd3ae090bc488f2d32292f6bf7adcfe1">visit</a> (const <a class="el" href="structdocument__node.html">document_node</a> *node) const</td></tr>
+<tr class="memdesc:abd3ae090bc488f2d32292f6bf7adcfe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">visit(const document_node *node).  <a href="structvisitors_1_1document__dump.html#abd3ae090bc488f2d32292f6bf7adcfe1">More...</a><br /></td></tr>
+<tr class="separator:abd3ae090bc488f2d32292f6bf7adcfe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a50617a5b18aea2d5bdcd01e36e614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#a52a50617a5b18aea2d5bdcd01e36e614">visit</a> (const <a class="el" href="structDTD__node.html">DTD_node</a> *node) const</td></tr>
+<tr class="memdesc:a52a50617a5b18aea2d5bdcd01e36e614"><td class="mdescLeft">&#160;</td><td class="mdescRight">visit(const DTD_node *node).  <a href="structvisitors_1_1document__dump.html#a52a50617a5b18aea2d5bdcd01e36e614">More...</a><br /></td></tr>
+<tr class="separator:a52a50617a5b18aea2d5bdcd01e36e614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac05632452d9acb941f3e429684c62abd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#ac05632452d9acb941f3e429684c62abd">visit</a> (const <a class="el" href="structelement__node.html">element_node</a> *node) const</td></tr>
+<tr class="memdesc:ac05632452d9acb941f3e429684c62abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">visit(const element_node *node).  <a href="structvisitors_1_1document__dump.html#ac05632452d9acb941f3e429684c62abd">More...</a><br /></td></tr>
+<tr class="separator:ac05632452d9acb941f3e429684c62abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c1e30d42182cbfdc9cf78ff035e6908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvisitors_1_1document__dump.html#a1c1e30d42182cbfdc9cf78ff035e6908">visit</a> (const <a class="el" href="structTS__node.html">TS_node</a> *node) const</td></tr>
 <tr class="separator:a1c1e30d42182cbfdc9cf78ff035e6908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>document dump. </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00037">37</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a10bb63129db8110ecfc9a0935ff24fa1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10bb63129db8110ecfc9a0935ff24fa1">&#9670;&nbsp;</a></span>document_dump()</h2>
 
@@ -116,17 +142,20 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ts__model_8h_source.html#l00039">39</a> of file <a class="el" href="ts__model_8h_source.html">ts_model.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;: m_writer(writer) {}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4bfa2c39a6d3c433d55327b8ada1fa10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bfa2c39a6d3c433d55327b8ada1fa10">&#9670;&nbsp;</a></span>visit() <span class="overload">[1/4]</span></h2>
+<a id="abd3ae090bc488f2d32292f6bf7adcfe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd3ae090bc488f2d32292f6bf7adcfe1">&#9670;&nbsp;</a></span>visit() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void visitors::document_dump::visit </td>
+          <td class="memname">void document_dump::visit </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structdocument__node.html">document_node</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -135,16 +164,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>visit(const document_node *node). </p>
+<p>visit </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8cpp_source.html#l00018">18</a> of file <a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        m_writer.writeStartDocument();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::for_each(node-&gt;m_childs.begin(), node-&gt;m_childs.end(), [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a> node){ node-&gt;visit(*this); } );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        m_writer.writeEndDocument();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="ttc" id="astructbase__node_html_abb75a430c91d015bdc7307f6263717e0"><div class="ttname"><a href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; base_node &gt; base_node_ptr</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00116">ts_model.h:116</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a9db26e655d42450d3fcd6771b13152d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9db26e655d42450d3fcd6771b13152d2">&#9670;&nbsp;</a></span>visit() <span class="overload">[2/4]</span></h2>
+<a id="a52a50617a5b18aea2d5bdcd01e36e614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a50617a5b18aea2d5bdcd01e36e614">&#9670;&nbsp;</a></span>visit() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void visitors::document_dump::visit </td>
+          <td class="memname">void document_dump::visit </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structDTD__node.html">DTD_node</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -153,16 +193,25 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>visit(const DTD_node *node). </p>
+<p>visit </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8cpp_source.html#l00028">28</a> of file <a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        m_writer.writeDTD(node-&gt;<a class="code" href="structDTD__node.html#aa12539ba9b4c29b800769d44db26bf7c">id</a>());</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="ttc" id="astructDTD__node_html_aa12539ba9b4c29b800769d44db26bf7c"><div class="ttname"><a href="structDTD__node.html#aa12539ba9b4c29b800769d44db26bf7c">DTD_node::id</a></div><div class="ttdeci">const QString &amp; id() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00163">ts_model.h:163</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="acf9a7c7a1330a9274d28463ccd13c8e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf9a7c7a1330a9274d28463ccd13c8e8">&#9670;&nbsp;</a></span>visit() <span class="overload">[3/4]</span></h2>
+<a id="ac05632452d9acb941f3e429684c62abd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05632452d9acb941f3e429684c62abd">&#9670;&nbsp;</a></span>visit() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void visitors::document_dump::visit </td>
+          <td class="memname">void document_dump::visit </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structelement__node.html">element_node</a> *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -171,6 +220,21 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>visit(const element_node *node). </p>
+<p>visit </p>
+
+<p class="definition">Definition at line <a class="el" href="ts__model_8cpp_source.html#l00036">36</a> of file <a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        m_writer.writeStartElement(node-&gt;<a class="code" href="structelement__node.html#a304f7d10a33c7b642782a4f543be05b5">name</a>());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        m_writer.writeAttributes(node-&gt;<a class="code" href="structelement__node.html#a89594a56209789a214c364f9921f1c6a">attributes</a>());</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        m_writer.writeCharacters(node-&gt;<a class="code" href="structelement__node.html#ad7600f5a06e9029ac738a5f926382924">text</a>());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::for_each(node-&gt;m_childs.begin(), node-&gt;m_childs.end(), [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a> node){ node-&gt;visit(*this); } );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        m_writer.writeEndElement();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="ttc" id="astructelement__node_html_a304f7d10a33c7b642782a4f543be05b5"><div class="ttname"><a href="structelement__node.html#a304f7d10a33c7b642782a4f543be05b5">element_node::name</a></div><div class="ttdeci">const QString &amp; name() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00188">ts_model.h:188</a></div></div>
+<div class="ttc" id="astructelement__node_html_a89594a56209789a214c364f9921f1c6a"><div class="ttname"><a href="structelement__node.html#a89594a56209789a214c364f9921f1c6a">element_node::attributes</a></div><div class="ttdeci">const QXmlStreamAttributes &amp; attributes() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00189">ts_model.h:189</a></div></div>
+<div class="ttc" id="astructelement__node_html_ad7600f5a06e9029ac738a5f926382924"><div class="ttname"><a href="structelement__node.html#ad7600f5a06e9029ac738a5f926382924">element_node::text</a></div><div class="ttdeci">const QString &amp; text() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00186">ts_model.h:186</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1c1e30d42182cbfdc9cf78ff035e6908"></a>
@@ -193,12 +257,16 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/third-party/ts_tool/<a class="el" href="ts__model_8h_source.html">ts_model.h</a></li>
-<li>src/third-party/ts_tool/<a class="el" href="ts__model_8cpp.html">ts_model.cpp</a></li>
+<li>src/third-party/ts_tool/<a class="el" href="ts__model_8cpp_source.html">ts_model.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacevisitors.html">visitors</a></li><li class="navelem"><a class="el" href="structvisitors_1_1document__dump.html">document_dump</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

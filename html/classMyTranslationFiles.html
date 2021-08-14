@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classMyTranslationFiles.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -62,7 +83,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
@@ -72,9 +92,6 @@ $(function() {
 <div class="title">MyTranslationFiles Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Translation Files Constructor.  
- <a href="classMyTranslationFiles.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="MyTranslationFiles_8h_source.html">MyTranslationFiles.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -157,7 +174,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05578c5eb7b60c622941c6c63e15965b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Translation Files Constructor. </p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8h_source.html#l00036">36</a> of file <a class="el" href="MyTranslationFiles_8h_source.html">MyTranslationFiles.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="acf7fe3aa310eeacdf81d07189fedd9db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf7fe3aa310eeacdf81d07189fedd9db">&#9670;&nbsp;</a></span>MyMessageTypes</h2>
@@ -185,6 +203,18 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8h_source.html#l00041">41</a> of file <a class="el" href="MyTranslationFiles_8h_source.html">MyTranslationFiles.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba826bf4709648dcec972cbacc2496d800">Information</a> = 100, </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba85d466ea5dcb961c1096a52e94d862ef">Question</a>    = 101, </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba251d996ee143ba30436a70cf5e1e498a">Warning</a>     = 102, </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba98450f02ba6dae7523765ee0a43d68e8">Critical</a>    = 103, </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }; <span class="comment">// end enum MyFileinfo</span></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_acf7fe3aa310eeacdf81d07189fedd9dba251d996ee143ba30436a70cf5e1e498a"><div class="ttname"><a href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba251d996ee143ba30436a70cf5e1e498a">MyTranslationFiles::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">Warning</div><div class="ttdef"><b>Definition:</b> <a href="MyTranslationFiles_8h_source.html#l00045">MyTranslationFiles.h:45</a></div></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_acf7fe3aa310eeacdf81d07189fedd9dba826bf4709648dcec972cbacc2496d800"><div class="ttname"><a href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba826bf4709648dcec972cbacc2496d800">MyTranslationFiles::Information</a></div><div class="ttdeci">@ Information</div><div class="ttdoc">Information</div><div class="ttdef"><b>Definition:</b> <a href="MyTranslationFiles_8h_source.html#l00043">MyTranslationFiles.h:43</a></div></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_acf7fe3aa310eeacdf81d07189fedd9dba85d466ea5dcb961c1096a52e94d862ef"><div class="ttname"><a href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba85d466ea5dcb961c1096a52e94d862ef">MyTranslationFiles::Question</a></div><div class="ttdeci">@ Question</div><div class="ttdoc">Question</div><div class="ttdef"><b>Definition:</b> <a href="MyTranslationFiles_8h_source.html#l00044">MyTranslationFiles.h:44</a></div></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_acf7fe3aa310eeacdf81d07189fedd9dba98450f02ba6dae7523765ee0a43d68e8"><div class="ttname"><a href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba98450f02ba6dae7523765ee0a43d68e8">MyTranslationFiles::Critical</a></div><div class="ttdeci">@ Critical</div><div class="ttdoc">Critical</div><div class="ttdef"><b>Definition:</b> <a href="MyTranslationFiles_8h_source.html#l00046">MyTranslationFiles.h:46</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -223,7 +253,15 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classTranslationFiles.html" title="Translation Files.">TranslationFiles</a> Constructor. </p>
+<p>Translation Files Constructor.</p>
+<p><a class="el" href="classMyTranslationFiles.html">MyTranslationFiles</a> </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00007">7</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                                               : QObject(parent), mySqlDb(thisSqlDb)</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -243,7 +281,22 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>file Remove Args </p>
+<p>file Remove Args "String %1".</p>
+<p>fileRemoveArgs </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00063">63</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (!myRemoveTransArgs.isEmpty())</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        QString theRemoveFileName = QString(<span class="stringliteral">&quot;%1&quot;</span>).arg(<a class="code" href="classMyTranslationFiles.html#a8fd5d179d95676fc3a5ca19ad728edb1">getAppDataLocation</a>(), QDir::separator(), <span class="stringliteral">&quot;RemoveArgFile.txt&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="classMyTranslationFiles.html#aa26fa2c22d74061de0564a85c1db2a64">writeFile</a>(theRemoveFileName, myRemoveTransArgs);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classMyTranslationFiles.html#a88e8060bd1a9692ed0f712e565ae2ff3">showMessageBox</a>(QObject::tr(<span class="stringliteral">&quot;Remove Args file is created&quot;</span>).toLocal8Bit(), QString(<span class="stringliteral">&quot;%1: %2 %3 %4&quot;</span>).arg(tr(<span class="stringliteral">&quot;Remove Args&quot;</span>), myRemoveTransArgs, tr(<span class="stringliteral">&quot;File: &quot;</span>), theRemoveFileName).toLocal8Bit(), <a class="code" href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba251d996ee143ba30436a70cf5e1e498a">Warning</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// end fileRemoveArgs</span></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_a88e8060bd1a9692ed0f712e565ae2ff3"><div class="ttname"><a href="classMyTranslationFiles.html#a88e8060bd1a9692ed0f712e565ae2ff3">MyTranslationFiles::showMessageBox</a></div><div class="ttdeci">int showMessageBox(const QString &amp;thisTitle, const QString &amp;thisMessage, MyMessageTypes thisMessageType)</div><div class="ttdoc">show Message Box</div></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_a8fd5d179d95676fc3a5ca19ad728edb1"><div class="ttname"><a href="classMyTranslationFiles.html#a8fd5d179d95676fc3a5ca19ad728edb1">MyTranslationFiles::getAppDataLocation</a></div><div class="ttdeci">QString getAppDataLocation()</div><div class="ttdoc">getAppDataLocation</div></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_aa26fa2c22d74061de0564a85c1db2a64"><div class="ttname"><a href="classMyTranslationFiles.html#aa26fa2c22d74061de0564a85c1db2a64">MyTranslationFiles::writeFile</a></div><div class="ttdeci">bool writeFile(const QString &amp;thisFileName, const QString &amp;thisContent)</div><div class="ttdoc">write File</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aaf489745d9bec3cbd7a5a277bb1d16e2"></a>
@@ -263,7 +316,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>findQmFiles </p>
+<p>find Qm Files.</p>
+<p>findQmFiles </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00116">116</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    QDir dir(QString(<span class="stringliteral">&quot;:/%1&quot;</span>).arg(thisFolder));</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    QStringList fileNames = dir.entryList(QStringList(<span class="stringliteral">&quot;*.qm&quot;</span>), QDir::Files, QDir::Name);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">for</span> (QString &amp;fileName : fileNames)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        { fileName = dir.filePath(fileName); }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> fileNames;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad26ac442b9fb0717cdd023327b2ca6af"></a>
@@ -283,7 +347,36 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>fix Translation File </p>
+<p>fix Translation File; mostly Arabic gets the value before the ID on some fields.</p>
+<p>fixTranslationFile </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00076">76</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classMyTranslationFiles.html#a007fedddd6e8d99a6c5a8bbfe818bfd0">isFileExists</a>(thisFile)) { <a class="code" href="classMyTranslationFiles.html#a88e8060bd1a9692ed0f712e565ae2ff3">showMessageBox</a>(tr(<span class="stringliteral">&quot;File not found&quot;</span>).toLocal8Bit(), QString(<span class="stringliteral">&quot;%1: %2&quot;</span>).arg(tr(<span class="stringliteral">&quot;File not found&quot;</span>), thisFile).toLocal8Bit(), <a class="code" href="classMyTranslationFiles.html#acf7fe3aa310eeacdf81d07189fedd9dba98450f02ba6dae7523765ee0a43d68e8">Critical</a>); <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    QString theNewFileContent;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    QFile theInputTxtFile(thisFile);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (theInputTxtFile.open(QIODevice::ReadOnly))</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        QTextStream theFileStream(&amp;theInputTxtFile);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">while</span> (!theFileStream.atEnd())</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            QString theLine = theFileStream.readLine();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">if</span> (theLine.mid(0, 1) != <span class="stringliteral">&quot;[&quot;</span>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                QString theTransValue = theLine;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                theTransValue.remove(QRegExp(<span class="stringliteral">&quot;\[([^)]+)\\]&quot;</span>));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="comment">//</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                QRegExp rx(<span class="stringliteral">&quot;\[([^)]+)\\]&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                QString theOnlyID = theLine;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">if</span> (rx.indexIn(theLine) == 0) { theOnlyID = rx.cap(1); }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                theNewFileContent.append(QString(<span class="stringliteral">&quot;%1 %2\n&quot;</span>).arg(theOnlyID, theTransValue));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// end fixTranslationFile</span></div>
+<div class="ttc" id="aclassMyTranslationFiles_html_a007fedddd6e8d99a6c5a8bbfe818bfd0"><div class="ttname"><a href="classMyTranslationFiles.html#a007fedddd6e8d99a6c5a8bbfe818bfd0">MyTranslationFiles::isFileExists</a></div><div class="ttdeci">bool isFileExists(const QString &amp;thisFile)</div><div class="ttdoc">is File Exists</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8fd5d179d95676fc3a5ca19ad728edb1"></a>
@@ -321,7 +414,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>get Debug Message </p>
+<p>get Debug Message.</p>
+<p>getDebugMessage </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00023">23</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> isDebugMessage;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3744f7a08655ab5d9169540e36138d70"></a>
@@ -351,7 +451,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>get Localized Code From File </p>
+<p>language Match qmFile naming.</p>
+<p>languageMatch </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00043">43</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getLocalizedCodeFromFile&quot;</span>; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    QFileInfo theFileInfo(thisQmFile);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    QString theFileName = theFileInfo.baseName();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> theFileName.remove(QString(<span class="stringliteral">&quot;%1_&quot;</span>).arg(thisPrefix));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5afd0c82a324832d969ce15df56762ac"></a>
@@ -381,7 +492,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>get Localizer Code </p>
+<p>get Localizer Code.</p>
+<p>getLocalizerCode </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00128">128</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    QString thisLocalizer = <a class="code" href="classMyTranslationFiles.html#a3744f7a08655ab5d9169540e36138d70">getLocalizedCodeFromFile</a>(thisPrefix, thisQmFile);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> myQOnlineTranslator.<a class="code" href="classQOnlineTranslator.html#af73a6a6b213331b16ed9afa64108fddc">languageCodeToName</a>(thisLocalizer);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="ttc" id="aclassMyTranslationFiles_html_a3744f7a08655ab5d9169540e36138d70"><div class="ttname"><a href="classMyTranslationFiles.html#a3744f7a08655ab5d9169540e36138d70">MyTranslationFiles::getLocalizedCodeFromFile</a></div><div class="ttdeci">QString getLocalizedCodeFromFile(const QString &amp;thisPrefix, const QString &amp;thisQmFile)</div><div class="ttdoc">get Localized Code From File</div><div class="ttdef"><b>Definition:</b> <a href="MyTranslationFiles_8cpp_source.html#l00043">MyTranslationFiles.cpp:43</a></div></div>
+<div class="ttc" id="aclassQOnlineTranslator_html_af73a6a6b213331b16ed9afa64108fddc"><div class="ttname"><a href="classQOnlineTranslator.html#af73a6a6b213331b16ed9afa64108fddc">QOnlineTranslator::languageCodeToName</a></div><div class="ttdeci">QString languageCodeToName(const QString &amp;lang)</div><div class="ttdoc">language Code to Name Added by Light-Wizzard</div><div class="ttdef"><b>Definition:</b> <a href="qonlinetranslator_8cpp_source.html#l00930">qonlinetranslator.cpp:930</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a007fedddd6e8d99a6c5a8bbfe818bfd0"></a>
@@ -437,7 +558,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>language Match </p>
+<p>language Match qmFile naming.</p>
+<p>languageMatch </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00105">105</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;languageMatch&quot;</span>; }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">//qmFile: ProjectName_xx.qm</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    QString thisLocalizer = <a class="code" href="classMyTranslationFiles.html#a3744f7a08655ab5d9169540e36138d70">getLocalizedCodeFromFile</a>(thisPrefix, thisQmFile);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> thisLocalizer == thisLang;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a17b2b74c8bddd38bcbf5ee7db5c2cf25"></a>
@@ -457,7 +588,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>language Name From File </p>
+<p>language Name From File.</p>
+<p>languageNameFromFile </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00031">31</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;languageNameFromFile&quot;</span>; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    QTranslator translator;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    translator.load(thisTranslationFile);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// FIXME</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> translator.translate(<span class="stringliteral">&quot;MainWindow&quot;</span>, <span class="stringliteral">&quot;English&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af6d68dcf750b4075e1f8f2e57ee9dc51"></a>
@@ -477,7 +619,113 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>parse_ts_file </p>
+<p>parse ts file.</p>
+<p>parse_ts_file </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00137">137</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    QFile iFile(inputFile);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    iFile.open(QIODevice::ReadOnly);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    QXmlStreamReader xmlReader(&amp;iFile);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a> root, current;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    QString text;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">enum</span> EStates</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        st_Unstate             = 0,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        st_WaitForStartElement = 0x01,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        st_WaitForText         = 0x02,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        st_WaitForEndElement   = 0x04</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    };</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">int</span> states = st_WaitForStartElement;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">while</span>(!xmlReader.atEnd())</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        QXmlStreamReader::TokenType tt = xmlReader.readNext();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">switch</span>(tt)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::StartDocument:</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                root = std::make_shared&lt;document_node&gt;();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                current = root;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            } <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::DTD:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                current-&gt;add_child(std::make_shared&lt;DTD_node&gt;(<span class="stringliteral">&quot;&lt;!DOCTYPE TS&gt;&quot;</span>));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            } <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::StartElement:</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                assert(states &amp; st_WaitForStartElement);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                QString name = xmlReader.name().toString();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                QXmlStreamAttributes attrs = xmlReader.attributes();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span>(<span class="stringliteral">&quot;message&quot;</span> == name)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    current = current-&gt;add_child(std::make_shared&lt;element_node&gt;(<a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a44608a1cf62084ec95e757ddaed77798">element_node::ent_message</a>, name, attrs));</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;source&quot;</span> == name)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    current = current-&gt;add_child(std::make_shared&lt;element_node&gt;(<a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a4f0ae8f42903b888022d46329b7af9ef">element_node::ent_source</a>, name, attrs));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;translation&quot;</span> == name)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    current = current-&gt;add_child(std::make_shared&lt;element_node&gt;(<a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a33584a987a9544d79a429dc074360853">element_node::ent_translation</a>, name, attrs));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<span class="stringliteral">&quot;TS&quot;</span> == name)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    current = current-&gt;add_child(std::make_shared&lt;TS_node&gt;(name, attrs));</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    current = current-&gt;add_child(std::make_shared&lt;element_node&gt;(<a class="code" href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a6b884d356e40227c875ff209c1527e31">element_node::ent_element</a>, name, attrs));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                states = st_WaitForText|st_WaitForStartElement|st_WaitForEndElement;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            } <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::Characters:</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <span class="keywordflow">if</span>(states &amp; st_WaitForText)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    text = xmlReader.text().toString();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    states = st_WaitForEndElement|st_WaitForStartElement;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            } <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::EndElement:</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                assert(states &amp; st_WaitForEndElement);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                assert(current-&gt;kind() &amp; <a class="code" href="structbase__node.html#af252df126b924fd3e08ff3270cf1966ca186a2519eed9fec44f0ed3fb24fb15d8">base_node::nt_Element</a>);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="comment">//((element_node*)current.get())-&gt;set_text(text);</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="structelement__node.html">element_node</a>*<span class="keyword">&gt;</span>(current.get())-&gt;set_text(text);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                text.clear();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                states = st_WaitForStartElement|st_WaitForEndElement;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                current = current-&gt;<a class="code" href="structbase__node.html#af646e74212dca8ae1f09cf737e657fcb">parent</a>();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            } <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::Invalid:               { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::EndDocument:           { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::Comment:               { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::EntityReference:       { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::ProcessingInstruction: { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">case</span> QXmlStreamReader::NoToken:               { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> root;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="ttc" id="astructbase__node_html_abb75a430c91d015bdc7307f6263717e0"><div class="ttname"><a href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; base_node &gt; base_node_ptr</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00116">ts_model.h:116</a></div></div>
+<div class="ttc" id="astructbase__node_html_af252df126b924fd3e08ff3270cf1966ca186a2519eed9fec44f0ed3fb24fb15d8"><div class="ttname"><a href="structbase__node.html#af252df126b924fd3e08ff3270cf1966ca186a2519eed9fec44f0ed3fb24fb15d8">base_node::nt_Element</a></div><div class="ttdeci">@ nt_Element</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00114">ts_model.h:113</a></div></div>
+<div class="ttc" id="astructbase__node_html_af646e74212dca8ae1f09cf737e657fcb"><div class="ttname"><a href="structbase__node.html#af646e74212dca8ae1f09cf737e657fcb">base_node::parent</a></div><div class="ttdeci">base_node_ptr parent() const</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00133">ts_model.h:133</a></div></div>
+<div class="ttc" id="astructelement__node_html"><div class="ttname"><a href="structelement__node.html">element_node</a></div><div class="ttdoc">element node.</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00171">ts_model.h:172</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a33584a987a9544d79a429dc074360853"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a33584a987a9544d79a429dc074360853">element_node::ent_translation</a></div><div class="ttdeci">@ ent_translation</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a44608a1cf62084ec95e757ddaed77798"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a44608a1cf62084ec95e757ddaed77798">element_node::ent_message</a></div><div class="ttdeci">@ ent_message</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a4f0ae8f42903b888022d46329b7af9ef"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a4f0ae8f42903b888022d46329b7af9ef">element_node::ent_source</a></div><div class="ttdeci">@ ent_source</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+<div class="ttc" id="astructelement__node_html_acad7de7d1ee0278535cdf46e9635cfa8a6b884d356e40227c875ff209c1527e31"><div class="ttname"><a href="structelement__node.html#acad7de7d1ee0278535cdf46e9635cfa8a6b884d356e40227c875ff209c1527e31">element_node::ent_element</a></div><div class="ttdeci">@ ent_element</div><div class="ttdef"><b>Definition:</b> <a href="ts__model_8h_source.html#l00173">ts_model.h:173</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a45f6d6893638c9ea7025165f3948727f"></a>
@@ -507,6 +755,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>parse_txt_file </p>
+<p>parse txt file.</p>
+<p>parse_txt_file </p>
+
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00236">236</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
 
 </div>
 </div>
@@ -567,7 +819,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>remove Args file creation </p>
+<p>"String %1".</p>
+<p>removeArgs </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00055">55</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    myRemoveTransArgs.append(QString(<span class="stringliteral">&quot;%1 |%2| in file %3&quot;</span>).arg(tr(<span class="stringliteral">&quot;Remove Arguments that use Percent Sign x&quot;</span>), thisString, thisTransFile));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// end removeArgs</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af5719bae05c9eec5410e9c35d0fe6017"></a>
@@ -587,7 +846,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>set Debug Message </p>
+<p>set Debug Message.</p>
+<p>setDebugMessage </p>
 
+<p class="definition">Definition at line <a class="el" href="MyTranslationFiles_8cpp_source.html#l00015">15</a> of file <a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    isDebugMessage = thisState;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a88e8060bd1a9692ed0f712e565ae2ff3"></a>
@@ -742,12 +1008,16 @@ Public Member Functions</h2></td></tr>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="MyTranslationFiles_8h_source.html">MyTranslationFiles.h</a></li>
-<li>src/<a class="el" href="MyTranslationFiles_8cpp.html">MyTranslationFiles.cpp</a></li>
+<li>src/<a class="el" href="MyTranslationFiles_8cpp_source.html">MyTranslationFiles.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classMyTranslationFiles.html">MyTranslationFiles</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

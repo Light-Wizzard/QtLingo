@@ -5,21 +5,12 @@
 #include <QtDebug>
 #include "MySqlDbtModel.h"
 /************************************************
-   \class MyProjectClass
-   \brief
-        QString         mySource;                   //!< \c mySource            \brief Source
-        QString         myDestination;              //!< \c myDestination       \brief Destination
-        QString         myMode;                     //!< \c myMode              \brief Mode
-        QString         myLanguageID;               //!< \c myLanguageID        \brief Language ID
-        bool            myWithUnfinished = false;   //!< \c myWithUnfinished    \brief With Unfinished
-        bool            myWithVanished = false;     //!< \c myWithVanished      \brief With Vanished
-        bool            myUnfinishedOnly = false;   //!< \c myUnfinishedOnly    \brief Unfinished Only
-
-QtProjectFolder, SourceFolder, DestinationFolder, LanguageIDs
+ * \class MyProjectClass
+ * @brief Project Class.
+ * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyProjectClass
 {
-        QString myID, myQtProjectName, myQtProjectFolder, mySourceFolder, myDestinationFolder, mySourceLanguage, myLanguageIDs, myMake;
     public:
         MyProjectClass(const QString &thisID, const QString &thisQtProjectName, const QString &thisQtProjectFolder, const QString &thisSourceFolder, const QString &thisDestinationFolder, const QString &thisSourceLanguage, const QString &thisLanguageIDs, const QString &thisMake)
             : myID{thisID}, myQtProjectName{thisQtProjectName}, myQtProjectFolder{thisQtProjectFolder}, mySourceFolder{thisSourceFolder}, myDestinationFolder{thisDestinationFolder}, mySourceLanguage{thisSourceLanguage}, myLanguageIDs{thisLanguageIDs}, myMake{thisMake} {}
@@ -41,10 +32,14 @@ class MyProjectClass
         void setSourceLanguage(const QString &s)    { mySourceLanguage = s;    }
         void setLanguageIDs(const QString &s)       { myLanguageIDs = s;       }
         void setMake(const QString &s)              { myMake = s;              }
+
+    private:
+        QString myID, myQtProjectName, myQtProjectFolder, mySourceFolder, myDestinationFolder, mySourceLanguage, myLanguageIDs, myMake;
 };
 /************************************************
-   \class MyDatatables
-   \brief My Datatables
+ * \class MyDatatables
+ * @brief My Datatables.
+ * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyDatatables : public QObject
 {
@@ -53,8 +48,8 @@ class MyDatatables : public QObject
         explicit MyDatatables(QObject *parent = nullptr);
         ~MyDatatables();
         //
-        MyProjectClass *myProject;                                  //!< \c myProject \brief My Project Variables
-        MySqlDbtModel  *mySqlModel;                                 //!< \c mySqlModel \brief Pointer to DataTable
+        MyProjectClass *myProject;                                  //!< \c myProject  @brief My Project Variables
+        MySqlDbtModel  *mySqlModel;                                 //!< \c mySqlModel @brief Pointer to DataTable
         //
         bool checkDatabase();                                       //!< check Database
         bool insertQtProjects();                                    //!< insert Qt Project
@@ -86,12 +81,12 @@ class MyDatatables : public QObject
         bool getDebugMessage();                                             //!< get Debug Message
 
     private:
-        QString          myProjectID        = "-1";          //!< \c myProjectID         \brief Project ID
-        QString          myComboBoxSqlValue = "-1";          //!< \c myComboBoxSqlValue  \brief ComboBox Sql Value
-        QString          myProjectFolder    = "QtLingo";     //!< \c myProjectFolder     \brief Project Folder
-        QString          myProjectName      = "QtLingo";     //!< \c myProjectName       \brief Project Name
-        bool             isDebugMessage     = true;          //!< \c isDebugMessage      \brief Debug Message
-        bool             isSaveSettings     = false;         //!< \c isSaveSettings      \brief is Save Settings for Auto Save
+        QString          myProjectID        = "-1";          //!< \c myProjectID         @brief Project ID
+        QString          myComboBoxSqlValue = "-1";          //!< \c myComboBoxSqlValue  @brief ComboBox Sql Value
+        QString          myProjectFolder    = "QtLingo";     //!< \c myProjectFolder     @brief Project Folder
+        QString          myProjectName      = "QtLingo";     //!< \c myProjectName       @brief Project Name
+        bool             isDebugMessage     = true;          //!< \c isDebugMessage      @brief Debug Message
+        bool             isSaveSettings     = false;         //!< \c isSaveSettings      @brief is Save Settings for Auto Save
 
 };
 #endif // MYDATATABLES_H

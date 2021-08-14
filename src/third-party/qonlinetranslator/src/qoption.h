@@ -25,15 +25,15 @@
 #include <QStringList>
 
 /************************************************
-   \class QOption
-   \brief QOption
+ * \class QOption
+ * @brief QOption.
  ***********************************************/
 struct QOption
 {
-        QString word;               //!< \c word            \brief word
-        QString gender;             //!< \c gender          \brief gender
-        QStringList translations;   //!< \c translations    \brief translations
-        QJsonObject toJson() const; //!< \c toJson          \brief toJson
+        QString word;               //!< \c word            @brief word
+        QString gender;             //!< \c gender          @brief gender
+        QStringList translations;   //!< \c translations    @brief translations
+        QJsonObject toJson() const; //!< \c toJson          @brief toJson
 };
 #endif // QOPTION_H
 /******************************* End of File *********************************/

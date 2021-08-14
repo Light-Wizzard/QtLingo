@@ -1,8 +1,8 @@
 #include "MySqlDbtModel.h"
 
 /************************************************
-   \class MySqlDbtModel
-   \brief Constructor
+ * MySqlDbtModel
+ * @brief Constructor.
  ***********************************************/
 MySqlDbtModel::MySqlDbtModel(QObject *parent)
 {
@@ -10,32 +10,32 @@ MySqlDbtModel::MySqlDbtModel(QObject *parent)
     mySetting = new MyOrgSettings(parent);
 }
 /************************************************
-   \fn ~MySqlDbtModel
-   \brief Deconstructor
+ * ~MySqlDbtModel
+ * @brief Deconstructor.
  ***********************************************/
 MySqlDbtModel::~MySqlDbtModel()
 {
     if (myDb.isOpen()) { myDb.close(); }
 }
 /************************************************
-   \fn setDebugMessage
-   \brief set Debug Message
+ * setDebugMessage
+ * @brief set Debug Message.
  ***********************************************/
 void MySqlDbtModel::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
 }
 /************************************************
-   \fn getDebugMessage
-   \brief get Debug Message
+ * getDebugMessage
+ * @brief get Debug Message.
  ***********************************************/
 bool MySqlDbtModel::getDebugMessage()
 {
     return isDebugMessage;
 }
 /************************************************
-   \fn isDbTable
-   \brief is Db Table
+ * isDbTable
+ * @brief is Db Table.
  ***********************************************/
 bool MySqlDbtModel::isDbTable(const QString &thisTable)
 {
@@ -45,8 +45,8 @@ bool MySqlDbtModel::isDbTable(const QString &thisTable)
     else                                                     { return false; }
 }
 /************************************************
-   \fn setSqlDatabase
-   \brief set Sql Database
+ * setSqlDatabase
+ * @brief set Sql Database.
  ***********************************************/
 void MySqlDbtModel::setSqlDatabase(QSqlDatabase thisDatabase)
 {
@@ -54,8 +54,8 @@ void MySqlDbtModel::setSqlDatabase(QSqlDatabase thisDatabase)
     myDb = thisDatabase;
 }
 /************************************************
-   \fn getSqlDatabase
-   \brief get Sql Database
+ * getSqlDatabase
+ * @brief get Sql Database.
  ***********************************************/
 QSqlDatabase MySqlDbtModel::getSqlDatabase()
 {
@@ -63,8 +63,8 @@ QSqlDatabase MySqlDbtModel::getSqlDatabase()
     return myDb;
 }
 /************************************************
-   \fn getSqlDriver
-   \brief get Sql Driver
+ * getSqlDriver
+ * @brief get Sql Driver.
  ***********************************************/
 QString MySqlDbtModel::getSqlDriver()
 {
@@ -72,8 +72,8 @@ QString MySqlDbtModel::getSqlDriver()
     return mySqlDriver;
 }
 /************************************************
-   \fn setSqlTableName
-   \brief set Sql Table Name
+ * setSqlTableName
+ * @brief set Sql Table Name.
  ***********************************************/
 void MySqlDbtModel::setSqlTableName(const QString &thisTableName)
 {
@@ -81,8 +81,8 @@ void MySqlDbtModel::setSqlTableName(const QString &thisTableName)
     myTableName = thisTableName;
 }
 /************************************************
-   \fn getSqlTableName
-   \brief get Sql Table Name
+ * getSqlTableName
+ * @brief get Sql Table Name.
  ***********************************************/
 QString MySqlDbtModel::getSqlTableName()
 {
@@ -90,8 +90,8 @@ QString MySqlDbtModel::getSqlTableName()
     return myTableName;
 }
 /************************************************
-   \fn setSqlHostName
-   \brief set Sql Host Name
+ * setSqlHostName
+ * @brief set Sql Host Name.
  ***********************************************/
 void MySqlDbtModel::setSqlHostName(const QString &thisHostName)
 {
@@ -99,8 +99,8 @@ void MySqlDbtModel::setSqlHostName(const QString &thisHostName)
     myHostName = thisHostName;
 }
 /************************************************
-   \fn getSqlHostName
-   \brief get Sql Host Name
+ * getSqlHostName
+ * @brief get Sql Host Name.
  ***********************************************/
 QString MySqlDbtModel::getSqlHostName()
 {
@@ -108,8 +108,8 @@ QString MySqlDbtModel::getSqlHostName()
     return myHostName;
 }
 /************************************************
-   \fn setSqlUserName
-   \brief set Sql User Name
+ * setSqlUserName
+ * @brief set Sql User Name.
  ***********************************************/
 void MySqlDbtModel::setSqlUserName(const QString &thisUserName)
 {
@@ -117,8 +117,8 @@ void MySqlDbtModel::setSqlUserName(const QString &thisUserName)
     myUserName = thisUserName;
 }
 /************************************************
-   \fn getSqlUserName
-   \brief get Sql User Name
+ * getSqlUserName
+ * @brief get Sql User Name.
  ***********************************************/
 QString MySqlDbtModel::getSqlUserName()
 {
@@ -126,8 +126,8 @@ QString MySqlDbtModel::getSqlUserName()
     return myUserName;
 }
 /************************************************
-   \fn setSqlDatabaseName
-   \brief set Sql Database Name
+ * setSqlDatabaseName
+ * @brief set Sql Database Name.
  ***********************************************/
 void MySqlDbtModel::setSqlDatabaseName(const QString &thisPassword)
 {
@@ -135,8 +135,8 @@ void MySqlDbtModel::setSqlDatabaseName(const QString &thisPassword)
     myDatabaseName = thisPassword;
 }
 /************************************************
-   \fn getSqlDatabaseName
-   \brief get Sql Database Name
+ * getSqlDatabaseName
+ * @brief get Sql Database Name.
  ***********************************************/
 QString MySqlDbtModel::getSqlDatabaseName()
 {
@@ -144,8 +144,8 @@ QString MySqlDbtModel::getSqlDatabaseName()
     return myDatabaseName;
 }
 /************************************************
-   \fn setSqlPassword
-   \brief set Sql Password
+ * setSqlPassword
+ * @brief set Sql Password.
  ***********************************************/
 void MySqlDbtModel::setSqlPassword(const QString &thisPassword)
 {
@@ -153,8 +153,8 @@ void MySqlDbtModel::setSqlPassword(const QString &thisPassword)
     myPassword = thisPassword;
 }
 /************************************************
-   \fn getSqlPassword
-   \brief get Sql Password
+ * getSqlPassword
+ * @brief get Sql Password.
  ***********************************************/
 QString MySqlDbtModel::getSqlPassword()
 {
@@ -162,8 +162,8 @@ QString MySqlDbtModel::getSqlPassword()
     return myPassword;
 }
 /************************************************
-   \fn setConnectionName
-   \brief set Connection Name
+ * setConnectionName
+ * @brief set Connection Name.
  ***********************************************/
 void MySqlDbtModel::setConnectionName(const QString &thisConnectionName)
 {
@@ -171,24 +171,24 @@ void MySqlDbtModel::setConnectionName(const QString &thisConnectionName)
     myConnectionName = thisConnectionName;
 }
 /************************************************
-   \fn getRecordID
-   \brief get Record ID
+ * getRecordID
+ * @brief get Record ID.
  ***********************************************/
 QString MySqlDbtModel::getRecordID()
 {
     return myInsertID;
 }
 /************************************************
-   \fn setRecordID
-   \brief set Record ID
+ * setRecordID
+ * @brief set Record ID.
  ***********************************************/
 void MySqlDbtModel::setRecordID(const QString &thisRecordID)
 {
     myInsertID = thisRecordID;
 }
 /************************************************
-   \fn getConnectionName
-   \brief get Connection Name
+ * getConnectionName
+ * @brief get Connection Name.
  ***********************************************/
 QString MySqlDbtModel::getConnectionName()
 {
@@ -196,8 +196,8 @@ QString MySqlDbtModel::getConnectionName()
     return myConnectionName;
 }
 /************************************************
-   \fn setSqlDriver
-   \brief set Sql Driver setSqlDriver(":memory:");
+ * setSqlDriver
+ * @brief set Sql Driver setSqlDriver(":memory:");.
  ***********************************************/
 void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
 {
@@ -253,8 +253,8 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
     }
 }
 /************************************************
-   \fn createDataBaseConnection
-   \brief create DataBase Connection
+ * createDataBaseConnection
+ * @brief create DataBase Connection.
  ***********************************************/
 bool MySqlDbtModel::createDataBaseConnection()
 {
@@ -366,8 +366,8 @@ bool MySqlDbtModel::createDataBaseConnection()
     return true;
 } // end createDataBaseConnection
 /************************************************
-   \fn runQuery
-   \brief Set myInsertID, returns true or false
+ * runQuery
+ * @brief Set myInsertID, returns true or false.
  ***********************************************/
 bool MySqlDbtModel::runQuery(const QString &thisQuery)
 {
@@ -386,8 +386,8 @@ bool MySqlDbtModel::runQuery(const QString &thisQuery)
     }
 }
 /************************************************
-   \fn moveDb
-   \brief move Db
+ * moveDb
+ * @brief move Db.
  ***********************************************/
 bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSourcePath, const QString &thisDestinationFolder)
 {
@@ -414,9 +414,9 @@ bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSour
     else { return true; }
 }
 /************************************************
-   \fn runProcces
-   \brief run Procces given exe path, argument, and if you want to wait and how long,
-          in both cases this is a blocking call and will wait till finished and return value.
+ * runProcces
+ * @brief run Procces given exe path, argument, and if you want to wait and how long,
+ *        in both cases this is a blocking call and will wait till finished and return value.
  ***********************************************/
 QString MySqlDbtModel::runProcces(const QString &thisExePath, const QString &thisArgument, bool isWait, int thisWaitTimeSec)
 {
@@ -442,8 +442,8 @@ QString MySqlDbtModel::runProcces(const QString &thisExePath, const QString &thi
     return QString(thisProcess->readAllStandardOutput().simplified());
 }
 /************************************************
-   \fn getRunReturnCode
-   \brief get Run eturn Code
+ * getRunReturnCode
+ * @brief get Run eturn Code.
  ***********************************************/
 int MySqlDbtModel::getRunReturnCode()
 {

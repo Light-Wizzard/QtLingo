@@ -10,8 +10,9 @@
 #include "MyOrgSettings.h"
 
 /************************************************
-   \class MySqlDbtModel
-   \brief Sql Dbt Model
+ * \class MySqlDbtModel
+ * @brief SQL Database Table Model.
+ * @author Jeffrey Scott Flesher
  ***********************************************/
 class MySqlDbtModel : public QObject
 {
@@ -20,7 +21,7 @@ class MySqlDbtModel : public QObject
         MySqlDbtModel(QObject *parent = 0);                         //!< MySqlDbtModel
         ~MySqlDbtModel();                                           //!< ~MySqlDbtModel
         // Public
-        MyOrgSettings  *mySetting;                                  //!< \c mySetting \brief Domain Settings
+        MyOrgSettings  *mySetting;                                  //!< \c mySetting @brief Domain Settings
         //
         bool createDataBaseConnection();                            //!< create DataBase Connection
         bool isDbTable(const QString &thisTable);                   //!< isDbTable
@@ -63,17 +64,17 @@ class MySqlDbtModel : public QObject
         bool getDebugMessage();                     //!< get Debug Message
 
     private:
-        QSqlDatabase myDb;                              //!< \c myDb               \brief Database
-        QString      myDatabaseName   = "QtLingo";      //!< \c myDatabaseName     \brief Sql Driver DatabaseName with extention for Sqlite
-        QString      myTableName      = "QtLingo" ;     //!< \c myTableName        \brief Table Name
-        QString      mySqlDriver      = "NOTSET";       //!< \c mySqlDriver        \brief Sql Driver NOTSET
-        QString      myHostName       = "localhost";    //!< \c myHostName         \brief Sql HostName location of your MySQL server and database, localhost
-        QString      myUserName       = "";             //!< \c myUserName         \brief Sql User Name
-        QString      myPassword       = "";             //!< \c myPassword         \brief Sql Password
-        QString      myConnectionName = "QtLingo";      //!< \c myConnectionName   \brief Connection Name
-        QString      myInsertID       = "-1";           //!< \c myInsertID         \brief InsertID for last SQL insert
-        bool         isDebugMessage   = true;           //!< \c isDebugMessage     \brief Debug Message
-        int          myRunReturnCode  = 1;              //!< \c myRunReturnCode    \brief Run Return Code
+        QSqlDatabase myDb;                              //!< \c myDb               @brief Database
+        QString      myDatabaseName   = "QtLingo";      //!< \c myDatabaseName     @brief Sql Driver DatabaseName with extention for Sqlite
+        QString      myTableName      = "QtLingo" ;     //!< \c myTableName        @brief Table Name
+        QString      mySqlDriver      = "NOTSET";       //!< \c mySqlDriver        @brief Sql Driver NOTSET
+        QString      myHostName       = "localhost";    //!< \c myHostName         @brief Sql HostName location of your MySQL server and database, localhost
+        QString      myUserName       = "";             //!< \c myUserName         @brief Sql User Name
+        QString      myPassword       = "";             //!< \c myPassword         @brief Sql Password
+        QString      myConnectionName = "QtLingo";      //!< \c myConnectionName   @brief Connection Name
+        QString      myInsertID       = "-1";           //!< \c myInsertID         @brief InsertID for last SQL insert
+        bool         isDebugMessage   = true;           //!< \c isDebugMessage     @brief Debug Message
+        int          myRunReturnCode  = 1;              //!< \c myRunReturnCode    @brief Run Return Code
 };
 #endif // MY_SQL_DBT_MODEL_H
 /*** ************************* End of File ***********************************/

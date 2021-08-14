@@ -150,13 +150,13 @@ for:
     # DESTDIR=%cd%
     - ps: |
           If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
-            cmd.exe /c qmake -r -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
+            cmd.exe /c qmake -r -Wall -Wlogic -Wparser -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build
             cmd.exe /c mingw32-make
             cmd.exe /c mingw32-make install AppDir
           }
     - ps: |
           If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
-            cmd.exe /c qmake -r $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
+            cmd.exe /c qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro -o AppDir CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build
             cmd.exe /c mingw32-make
             cmd.exe /c mingw32-make install AppDir
           }
@@ -166,13 +166,13 @@ for:
     # Vs
     - ps: |
           If ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
-            cmd.exe /c qmake -r -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir
+            cmd.exe /c qmake -r -Wall -Wlogic -Wparser -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build
             cmd.exe /c mmake
             cmd.exe /c mmake install AppDir
           }
     - ps: |
           If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
-            cmd.exe /c qmake -r $env:APPVEYOR_BUILD_FOLDER%\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir
+            cmd.exe /c qmake -r -Wall -Wlogic -Wparser $env:APPVEYOR_BUILD_FOLDER%\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=c++11 CONFIG+=x86_64 DESTDIR=AppDir $env:APPVEYOR_BUILD_FOLDER\build
             cmd.exe /c mmake
             cmd.exe /c mmake install AppDir
           }

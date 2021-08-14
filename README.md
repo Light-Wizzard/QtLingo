@@ -41,11 +41,14 @@ I tried to document usign Doxygen, you can run it from the commands below.
 
 ```bash
 doxygen Doxyfile 
+
+or
+
 doxywizard
 ```
 
 # Credits
-I used two GitHub Projects that I listed above, everything else is
+I used a few GitHub Projects that I listed above, everything else is
 writen by Jeffrey Scott Flesher the Light Wizzard in the Flesh
 
 ### End of File

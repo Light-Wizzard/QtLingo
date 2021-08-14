@@ -11,7 +11,7 @@
 # This file is Open Source and I tried my best to make it cut and paste,
 # so I am adding the Environment Variables here as well as the OS installer.
 #
-echo build_script Unix
+echo "build_script Unix";
 #
 # Debug Information, not always a good idea when not debugging, and thanks to the TheAssassin, this is now working.
 # These are the setting you might want to change
@@ -40,8 +40,7 @@ export ARTIFACT_APPIMAGE="${MY_BIN_PRO_RES_NAME}-x86_64.AppImage";
 #export ARTIFACT_ZSYNC="${MY_BIN_PRO_RES_NAME}-x86_64.AppImage.zsync";
 export ARTIFACT_QIF="${MY_BIN_PRO_RES_NAME}-Linux-Installer";
 # 
-declare -i RUN_DOXYFILE; RUN_DOXYFILE=0;
-if [ "$RUN_DOXYFILE" -eq 1 ]; then
+if [ "$MY_RUN_DOXYFILE" == "true" ]; then
     doxygen Doxyfile;
     cd latex;
     make;

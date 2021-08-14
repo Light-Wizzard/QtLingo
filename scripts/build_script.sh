@@ -131,7 +131,7 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
     ./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
     chmod +x "${MY_BIN_PRO_RES_NAME}"*.AppImage*;
     cp -v "${APPVEYOR_BUILD_FOLDER}/README.md" AppDir/usr/bin/;
-    7z a -tzip -r "${MY_BIN_PRO_RES_NAME}-${MY_OS-$CONFIGURATION}-${PLATFORM}.zip" AppDir;
+    7z a -tzip -r "${MY_BIN_PRO_RES_NAME}-${MY_OS}-${CONFIGURATION}-${PLATFORM}.zip" AppDir;
     cp "${MY_BIN_PRO_RES_NAME}-${MY_OS}-${CONFIGURATION}-${PLATFORM}.zip" "${OLD_CWD}";
 fi
 # 

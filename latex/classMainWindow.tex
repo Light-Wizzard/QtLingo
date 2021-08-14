@@ -1,0 +1,650 @@
+\hypertarget{classMainWindow}{}\doxysection{Main\+Window Class Reference}
+\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$Main\+Window.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMainWindow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}{Main\+Tabs}} \{ \newline
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac26a471bd4fb81ab05dd3099a4cc3d1a}{Tab\+Settings}} = 100
+, \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53af211b6f18f25f55ae839d39e424a0f81}{Tab\+Sql}} = 101
+, \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a7097474093a268b29e3f0ea420abc1ba}{Tab\+Translations}} = 102
+, \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aef5f33d92a8783c428692e6455271f1d}{Tab\+Project}} = 103
+, \newline
+\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53acfaa727b94014db5fc8c53f71754601e}{Tab\+Tab\+Help}} = 104
+, \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53accd80924188b8ffef87975906371b340}{Tab\+All}} = 200
+ \}
+\begin{DoxyCompactList}\small\item\em Tabs must be forced to be int 0 based indexes that match the actual ui for widget\+Tab, this enforces compile-\/time checks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_ae474afd7d58ddf27decea3c31e79d91d}{on\+Help}} ()
+\begin{DoxyCompactList}\small\item\em on Help \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_ada07f1501d5aa1ee3c67f4986ba8b153}{on\+About}} ()
+\begin{DoxyCompactList}\small\item\em on About \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_ac7ae689dcc5e8321b3dfb054d9cd7288}{on\+Clipboard}} ()
+\begin{DoxyCompactList}\small\item\em on Clipboard \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a35f2c5c2938c23293f70261e10c03c0e}{on\+Compile}} ()
+\begin{DoxyCompactList}\small\item\em on Compile \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_ab6c80d15f60ef6292b468c5e1e3c6d38}{on\+Author}} ()
+\begin{DoxyCompactList}\small\item\em on Author \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a852accfef25bc0a020896553d7c9c7e0}{on\+Save}} ()
+\begin{DoxyCompactList}\small\item\em on Save \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Main Window Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\item 
+\mbox{\hyperlink{classMainWindow_a5abaa7597c80bc979030e5ca39bed75a}{Q\+\_\+\+ENUM}} (\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}{Main\+Tabs}}) void on\+Run\+On\+Startup()
+\begin{DoxyCompactList}\small\item\em on Run On Startup \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMainWindow_a2f0ac2578b352db357801c79602fd65d}{set\+Qt\+Project\+Combo}} ()
+\begin{DoxyCompactList}\small\item\em set Qt Project Combo \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a06476208b8466211f3bb0fcae787052b}{read\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em read Settings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a42b32b087bb8b6c1601144ec513e8f12}{read\+States\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em read States Changes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_ab9196b2547d09289a1fb9cb068afb7d4}{read\+Sql\+Database\+Info}} ()
+\begin{DoxyCompactList}\small\item\em read Sql Database Info \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMainWindow_a9bc7de1af66d938b329c228394ba244b}{write\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em write Settings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a4b19b2ca806d7674b2a4cf1ff307b9ea}{write\+State\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em write State Changes \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_ae81fdd40d2735e75581c5bf8ccc26380}{write\+Sql\+Database\+Info}} ()
+\begin{DoxyCompactList}\small\item\em write Sql Database Info \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_af9daaab4379f824f789a7bb5440a253e}{set\+Sql\+Browse\+Button}} ()
+\begin{DoxyCompactList}\small\item\em set Sql Browse Button \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a5a5b29ba7968e9666019077d807161e8}{fill\+Forms}} (const QString \&this\+Project\+ID)
+\begin{DoxyCompactList}\small\item\em fill Forms \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a274d81d364e3b827ea80ea5761178050}{clear\+Forms}} (int tab\+Number)
+\begin{DoxyCompactList}\small\item\em clear Forms \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a02fb36e1e88a71fd2b9790d5160c8d19}{clear\+Tab\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em clear Tab Settings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a1dac775cdbc2de99f1bb5219363ed9a1}{clear\+Tab\+Help}} ()
+\begin{DoxyCompactList}\small\item\em clear Tab Help \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a6e60c337fa45dfb29624ff5fb0e9004a}{clear\+Tab\+Translations}} ()
+\begin{DoxyCompactList}\small\item\em clear Tab Translations \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_aa62dfc72d3d7a7d62b53b372b5bf8c12}{clear\+Tab\+Project}} ()
+\begin{DoxyCompactList}\small\item\em clear Tab Project \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_adf7965315499fbc50d3fb6e1eed58012}{check\+Language}} (const QString \&this\+Name, const QString \&this\+Language, bool this\+Checked)
+\begin{DoxyCompactList}\small\item\em check Language \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMainWindow_aa83f60c4078cd4413be430b2220675ad}{language\+Checked}} ()
+\begin{DoxyCompactList}\small\item\em language Checked \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_abd03666209196bf8bdece81045ca3b75}{set\+Project\+Class}} (int tab\+Number)
+\begin{DoxyCompactList}\small\item\em set Project Class \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a6a99424fc195787c07d14ca24db7c083}{create\+Translation\+Job}} (const QString \&this\+Translate, const QString \&this\+Language, const QString \&this\+Source\+Language, bool this\+Checked)
+\begin{DoxyCompactList}\small\item\em get Translation String \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_afa2858e06ca124a4f261f4e1d4d43c89}{set\+Programs}} ()
+\begin{DoxyCompactList}\small\item\em set Programs \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMainWindow_a223b7c655dd3016d1a1ae7a9a9bece5b}{translate\+With\+Return}} (const QString \&text, \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{QOnline\+Translator\+::\+Engine}} engine, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} translation\+Lang, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} source\+Lang, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} ui\+Lang)
+\begin{DoxyCompactList}\small\item\em translate With Return, note this is blocking \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a17a08910975db57ecccb8488c72e5457}{load\+Language}} (const QString \&this\+Qm\+Language\+File)
+\begin{DoxyCompactList}\small\item\em load Language \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMainWindow_ac741d1ec4b415f53c157b91806535199}{get\+Language\+File}} (const QString \&this\+Language, const QString \&this\+Path, const QString \&this\+Prefix)
+\begin{DoxyCompactList}\small\item\em get Language File \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMainWindow_acbe0346c3aa2fc61c5040e2cdf84966c}{get\+Language\+From\+File}} (const QString \&this\+Prefix, const QString \&this\+Qm\+Language\+File)
+\begin{DoxyCompactList}\small\item\em get\+Language\+From\+File \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMainWindow_ae66743f5b3a3f8555142960799aa0691}{get\+Translation\+Source}} ()
+\begin{DoxyCompactList}\small\item\em get Translation Source \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a59009c701c345def54b8018afa2f3c19}{set\+Translation\+Source}} (const QString \&this\+Translation\+Source)
+\begin{DoxyCompactList}\small\item\em set Translation Source \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMainWindow_a9c8ba702d324356573189020d7d43b16}{get\+Trans\+File\+Prefix}} ()
+\begin{DoxyCompactList}\small\item\em get Trans\+File Prefix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a71c94e3142ba348ca4eb2cf6411020dd}{set\+Trans\+File\+Prefix}} (const QString \&this\+Trans\+File\+Prefix)
+\begin{DoxyCompactList}\small\item\em set Trans\+File Prefix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a2840366f8c8c4231f80fb6da0714f7d5}{set\+Debug\+Message}} (bool this\+State)
+\begin{DoxyCompactList}\small\item\em set Debug Message \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMainWindow_a77cfc5fce06d86502dfd983553767c24}{get\+Debug\+Message}} ()
+\begin{DoxyCompactList}\small\item\em get Debug Message \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMainWindow_a3b2452f5605c1e568da36f3345d9fb2a}{read\+Language}} ()
+\begin{DoxyCompactList}\small\item\em read Language \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_aa0a00c59ec2d8d475ef2ba2a08c0a157}{write\+Language}} (const QString \&this\+Current\+Language\+Code)
+\begin{DoxyCompactList}\small\item\em write Language \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_ae8662ae2ae5fc1d7921a9b18ec38ae9d}{retranslate}} ()
+\begin{DoxyCompactList}\small\item\em retranslate none designer components \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a30c84325abab7d85524ddedb058b6a3d}{load\+Language\+Combo\+Box}} ()
+\begin{DoxyCompactList}\small\item\em load Language Combo\+Box \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a30ebfa7acdb51591325833c328308c71}{load\+Language\+Combo\+Box\+Source}} ()
+\begin{DoxyCompactList}\small\item\em load Language Combo\+Box Source \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a84a272c6f581b39d5eafd2e1387fabc6}{read\+Settings\+First}} ()
+\begin{DoxyCompactList}\small\item\em read Settings First \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_acaf4f4d06b8b4263e5628b4d0b035df9}{set\+Messaging\+States}} (bool this\+Message\+State)
+\begin{DoxyCompactList}\small\item\em set Messaging States \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMainWindow_a416ae2140ac1aa9f03a6279316abdcad}{change\+Event}} (QEvent $\ast$event) override
+\begin{DoxyCompactList}\small\item\em change Event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}{close\+Event}} (QClose\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em close Event \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}} 
+\index{MainWindow@{MainWindow}!MainTabs@{MainTabs}}
+\index{MainTabs@{MainTabs}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainTabs}{MainTabs}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}{Main\+Window\+::\+Main\+Tabs}}}
+
+
+
+Tabs must be forced to be int 0 based indexes that match the actual ui for widget\+Tab, this enforces compile-\/time checks. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabSettings@{TabSettings}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabSettings@{TabSettings}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac26a471bd4fb81ab05dd3099a4cc3d1a}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53ac26a471bd4fb81ab05dd3099a4cc3d1a}} 
+Tab\+Settings&{\ttfamily Tab\+Settings} Tab Settings. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabSql@{TabSql}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabSql@{TabSql}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53af211b6f18f25f55ae839d39e424a0f81}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53af211b6f18f25f55ae839d39e424a0f81}} 
+Tab\+Sql&{\ttfamily Tab\+Sql} Tab SQL \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabTranslations@{TabTranslations}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabTranslations@{TabTranslations}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a7097474093a268b29e3f0ea420abc1ba}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53a7097474093a268b29e3f0ea420abc1ba}} 
+Tab\+Translations&{\ttfamily Tab\+Translations} Tab Ubuntu. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabProject@{TabProject}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabProject@{TabProject}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aef5f33d92a8783c428692e6455271f1d}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53aef5f33d92a8783c428692e6455271f1d}} 
+Tab\+Project&{\ttfamily Tab\+Project} Tab Project. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabTabHelp@{TabTabHelp}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabTabHelp@{TabTabHelp}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53acfaa727b94014db5fc8c53f71754601e}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53acfaa727b94014db5fc8c53f71754601e}} 
+Tab\+Tab\+Help&{\ttfamily Tab\+Help} Tab Help. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TabAll@{TabAll}!MainWindow@{MainWindow}}\index{MainWindow@{MainWindow}!TabAll@{TabAll}}}\mbox{\Hypertarget{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53accd80924188b8ffef87975906371b340}\label{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53accd80924188b8ffef87975906371b340}} 
+Tab\+All&{\ttfamily Tab\+All} Tab All used for Actions on all Tabs. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Main Window Constructor. 
+
+$<$ Prefix of Translation files
+
+$<$ Relative Folder for Translation files\mbox{\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainWindow_a416ae2140ac1aa9f03a6279316abdcad}\label{classMainWindow_a416ae2140ac1aa9f03a6279316abdcad}} 
+\index{MainWindow@{MainWindow}!changeEvent@{changeEvent}}
+\index{changeEvent@{changeEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{changeEvent}{changeEvent}}
+{\footnotesize\ttfamily void Main\+Window\+::change\+Event (\begin{DoxyParamCaption}\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+change Event 
+
+\mbox{\Hypertarget{classMainWindow_adf7965315499fbc50d3fb6e1eed58012}\label{classMainWindow_adf7965315499fbc50d3fb6e1eed58012}} 
+\index{MainWindow@{MainWindow}!checkLanguage@{checkLanguage}}
+\index{checkLanguage@{checkLanguage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{checkLanguage()}{checkLanguage()}}
+{\footnotesize\ttfamily void Main\+Window\+::check\+Language (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Name,  }\item[{const QString \&}]{this\+Language,  }\item[{bool}]{this\+Checked }\end{DoxyParamCaption})}
+
+
+
+check Language 
+
+\mbox{\Hypertarget{classMainWindow_a274d81d364e3b827ea80ea5761178050}\label{classMainWindow_a274d81d364e3b827ea80ea5761178050}} 
+\index{MainWindow@{MainWindow}!clearForms@{clearForms}}
+\index{clearForms@{clearForms}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearForms()}{clearForms()}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Forms (\begin{DoxyParamCaption}\item[{int}]{tab\+Number }\end{DoxyParamCaption})}
+
+
+
+clear Forms 
+
+\mbox{\Hypertarget{classMainWindow_a1dac775cdbc2de99f1bb5219363ed9a1}\label{classMainWindow_a1dac775cdbc2de99f1bb5219363ed9a1}} 
+\index{MainWindow@{MainWindow}!clearTabHelp@{clearTabHelp}}
+\index{clearTabHelp@{clearTabHelp}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearTabHelp()}{clearTabHelp()}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Tab\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clear Tab Help 
+
+\mbox{\Hypertarget{classMainWindow_aa62dfc72d3d7a7d62b53b372b5bf8c12}\label{classMainWindow_aa62dfc72d3d7a7d62b53b372b5bf8c12}} 
+\index{MainWindow@{MainWindow}!clearTabProject@{clearTabProject}}
+\index{clearTabProject@{clearTabProject}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearTabProject()}{clearTabProject()}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Tab\+Project (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clear Tab Project 
+
+\mbox{\Hypertarget{classMainWindow_a02fb36e1e88a71fd2b9790d5160c8d19}\label{classMainWindow_a02fb36e1e88a71fd2b9790d5160c8d19}} 
+\index{MainWindow@{MainWindow}!clearTabSettings@{clearTabSettings}}
+\index{clearTabSettings@{clearTabSettings}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearTabSettings()}{clearTabSettings()}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Tab\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clear Tab Settings 
+
+\mbox{\Hypertarget{classMainWindow_a6e60c337fa45dfb29624ff5fb0e9004a}\label{classMainWindow_a6e60c337fa45dfb29624ff5fb0e9004a}} 
+\index{MainWindow@{MainWindow}!clearTabTranslations@{clearTabTranslations}}
+\index{clearTabTranslations@{clearTabTranslations}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{clearTabTranslations()}{clearTabTranslations()}}
+{\footnotesize\ttfamily void Main\+Window\+::clear\+Tab\+Translations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clear Tab Translations 
+
+\mbox{\Hypertarget{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}\label{classMainWindow_a05fb9d72c044aa3bb7d187b994704e2f}} 
+\index{MainWindow@{MainWindow}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Main\+Window\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+close Event 
+
+\mbox{\Hypertarget{classMainWindow_a6a99424fc195787c07d14ca24db7c083}\label{classMainWindow_a6a99424fc195787c07d14ca24db7c083}} 
+\index{MainWindow@{MainWindow}!createTranslationJob@{createTranslationJob}}
+\index{createTranslationJob@{createTranslationJob}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{createTranslationJob()}{createTranslationJob()}}
+{\footnotesize\ttfamily void Main\+Window\+::create\+Translation\+Job (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Translate,  }\item[{const QString \&}]{this\+Language,  }\item[{const QString \&}]{this\+Source\+Language,  }\item[{bool}]{this\+Checked }\end{DoxyParamCaption})}
+
+
+
+get Translation String 
+
+\mbox{\Hypertarget{classMainWindow_a5a5b29ba7968e9666019077d807161e8}\label{classMainWindow_a5a5b29ba7968e9666019077d807161e8}} 
+\index{MainWindow@{MainWindow}!fillForms@{fillForms}}
+\index{fillForms@{fillForms}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{fillForms()}{fillForms()}}
+{\footnotesize\ttfamily void Main\+Window\+::fill\+Forms (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Project\+ID }\end{DoxyParamCaption})}
+
+
+
+fill Forms 
+
+$<$ SQL Query\mbox{\Hypertarget{classMainWindow_a77cfc5fce06d86502dfd983553767c24}\label{classMainWindow_a77cfc5fce06d86502dfd983553767c24}} 
+\index{MainWindow@{MainWindow}!getDebugMessage@{getDebugMessage}}
+\index{getDebugMessage@{getDebugMessage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{getDebugMessage()}{getDebugMessage()}}
+{\footnotesize\ttfamily bool Main\+Window\+::get\+Debug\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get Debug Message 
+
+\mbox{\Hypertarget{classMainWindow_ac741d1ec4b415f53c157b91806535199}\label{classMainWindow_ac741d1ec4b415f53c157b91806535199}} 
+\index{MainWindow@{MainWindow}!getLanguageFile@{getLanguageFile}}
+\index{getLanguageFile@{getLanguageFile}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{getLanguageFile()}{getLanguageFile()}}
+{\footnotesize\ttfamily QString Main\+Window\+::get\+Language\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Language,  }\item[{const QString \&}]{this\+Path,  }\item[{const QString \&}]{this\+Prefix }\end{DoxyParamCaption})}
+
+
+
+get Language File 
+
+\mbox{\Hypertarget{classMainWindow_acbe0346c3aa2fc61c5040e2cdf84966c}\label{classMainWindow_acbe0346c3aa2fc61c5040e2cdf84966c}} 
+\index{MainWindow@{MainWindow}!getLanguageFromFile@{getLanguageFromFile}}
+\index{getLanguageFromFile@{getLanguageFromFile}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{getLanguageFromFile()}{getLanguageFromFile()}}
+{\footnotesize\ttfamily QString Main\+Window\+::get\+Language\+From\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Prefix,  }\item[{const QString \&}]{this\+Qm\+Language\+File }\end{DoxyParamCaption})}
+
+
+
+get\+Language\+From\+File 
+
+\mbox{\Hypertarget{classMainWindow_a9c8ba702d324356573189020d7d43b16}\label{classMainWindow_a9c8ba702d324356573189020d7d43b16}} 
+\index{MainWindow@{MainWindow}!getTransFilePrefix@{getTransFilePrefix}}
+\index{getTransFilePrefix@{getTransFilePrefix}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{getTransFilePrefix()}{getTransFilePrefix()}}
+{\footnotesize\ttfamily QString Main\+Window\+::get\+Trans\+File\+Prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get Trans\+File Prefix 
+
+\mbox{\Hypertarget{classMainWindow_ae66743f5b3a3f8555142960799aa0691}\label{classMainWindow_ae66743f5b3a3f8555142960799aa0691}} 
+\index{MainWindow@{MainWindow}!getTranslationSource@{getTranslationSource}}
+\index{getTranslationSource@{getTranslationSource}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{getTranslationSource()}{getTranslationSource()}}
+{\footnotesize\ttfamily QString Main\+Window\+::get\+Translation\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get Translation Source 
+
+\mbox{\Hypertarget{classMainWindow_aa83f60c4078cd4413be430b2220675ad}\label{classMainWindow_aa83f60c4078cd4413be430b2220675ad}} 
+\index{MainWindow@{MainWindow}!languageChecked@{languageChecked}}
+\index{languageChecked@{languageChecked}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{languageChecked()}{languageChecked()}}
+{\footnotesize\ttfamily QString Main\+Window\+::language\+Checked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+language Checked 
+
+\mbox{\Hypertarget{classMainWindow_a17a08910975db57ecccb8488c72e5457}\label{classMainWindow_a17a08910975db57ecccb8488c72e5457}} 
+\index{MainWindow@{MainWindow}!loadLanguage@{loadLanguage}}
+\index{loadLanguage@{loadLanguage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loadLanguage()}{loadLanguage()}}
+{\footnotesize\ttfamily void Main\+Window\+::load\+Language (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Qm\+Language\+File }\end{DoxyParamCaption})}
+
+
+
+load Language 
+
+\mbox{\Hypertarget{classMainWindow_a30c84325abab7d85524ddedb058b6a3d}\label{classMainWindow_a30c84325abab7d85524ddedb058b6a3d}} 
+\index{MainWindow@{MainWindow}!loadLanguageComboBox@{loadLanguageComboBox}}
+\index{loadLanguageComboBox@{loadLanguageComboBox}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loadLanguageComboBox()}{loadLanguageComboBox()}}
+{\footnotesize\ttfamily void Main\+Window\+::load\+Language\+Combo\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load Language Combo\+Box 
+
+\mbox{\Hypertarget{classMainWindow_a30ebfa7acdb51591325833c328308c71}\label{classMainWindow_a30ebfa7acdb51591325833c328308c71}} 
+\index{MainWindow@{MainWindow}!loadLanguageComboBoxSource@{loadLanguageComboBoxSource}}
+\index{loadLanguageComboBoxSource@{loadLanguageComboBoxSource}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loadLanguageComboBoxSource()}{loadLanguageComboBoxSource()}}
+{\footnotesize\ttfamily void Main\+Window\+::load\+Language\+Combo\+Box\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+load Language Combo\+Box Source 
+
+\mbox{\Hypertarget{classMainWindow_ada07f1501d5aa1ee3c67f4986ba8b153}\label{classMainWindow_ada07f1501d5aa1ee3c67f4986ba8b153}} 
+\index{MainWindow@{MainWindow}!onAbout@{onAbout}}
+\index{onAbout@{onAbout}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onAbout}{onAbout}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+About (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+on About 
+
+\mbox{\Hypertarget{classMainWindow_ab6c80d15f60ef6292b468c5e1e3c6d38}\label{classMainWindow_ab6c80d15f60ef6292b468c5e1e3c6d38}} 
+\index{MainWindow@{MainWindow}!onAuthor@{onAuthor}}
+\index{onAuthor@{onAuthor}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onAuthor}{onAuthor}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Author (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+on Author 
+
+\mbox{\Hypertarget{classMainWindow_ac7ae689dcc5e8321b3dfb054d9cd7288}\label{classMainWindow_ac7ae689dcc5e8321b3dfb054d9cd7288}} 
+\index{MainWindow@{MainWindow}!onClipboard@{onClipboard}}
+\index{onClipboard@{onClipboard}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onClipboard}{onClipboard}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Clipboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+on Clipboard 
+
+\mbox{\Hypertarget{classMainWindow_a35f2c5c2938c23293f70261e10c03c0e}\label{classMainWindow_a35f2c5c2938c23293f70261e10c03c0e}} 
+\index{MainWindow@{MainWindow}!onCompile@{onCompile}}
+\index{onCompile@{onCompile}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onCompile}{onCompile}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Compile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+on Compile 
+
+\mbox{\Hypertarget{classMainWindow_ae474afd7d58ddf27decea3c31e79d91d}\label{classMainWindow_ae474afd7d58ddf27decea3c31e79d91d}} 
+\index{MainWindow@{MainWindow}!onHelp@{onHelp}}
+\index{onHelp@{onHelp}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onHelp}{onHelp}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+on Help 
+
+\mbox{\Hypertarget{classMainWindow_a852accfef25bc0a020896553d7c9c7e0}\label{classMainWindow_a852accfef25bc0a020896553d7c9c7e0}} 
+\index{MainWindow@{MainWindow}!onSave@{onSave}}
+\index{onSave@{onSave}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{onSave}{onSave}}
+{\footnotesize\ttfamily void Main\+Window\+::on\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+on Save 
+
+\mbox{\Hypertarget{classMainWindow_a5abaa7597c80bc979030e5ca39bed75a}\label{classMainWindow_a5abaa7597c80bc979030e5ca39bed75a}} 
+\index{MainWindow@{MainWindow}!Q\_ENUM@{Q\_ENUM}}
+\index{Q\_ENUM@{Q\_ENUM}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{Q\_ENUM()}{Q\_ENUM()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Q\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMainWindow_a6e8dd0e44f3fccecac008d4db0c6ed53}{Main\+Tabs}}}]{ }\end{DoxyParamCaption})}
+
+
+
+on Run On Startup 
+
+\mbox{\Hypertarget{classMainWindow_a3b2452f5605c1e568da36f3345d9fb2a}\label{classMainWindow_a3b2452f5605c1e568da36f3345d9fb2a}} 
+\index{MainWindow@{MainWindow}!readLanguage@{readLanguage}}
+\index{readLanguage@{readLanguage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readLanguage()}{readLanguage()}}
+{\footnotesize\ttfamily QString Main\+Window\+::read\+Language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+read Language 
+
+\mbox{\Hypertarget{classMainWindow_a06476208b8466211f3bb0fcae787052b}\label{classMainWindow_a06476208b8466211f3bb0fcae787052b}} 
+\index{MainWindow@{MainWindow}!readSettings@{readSettings}}
+\index{readSettings@{readSettings}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readSettings()}{readSettings()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+read Settings 
+
+\mbox{\Hypertarget{classMainWindow_a84a272c6f581b39d5eafd2e1387fabc6}\label{classMainWindow_a84a272c6f581b39d5eafd2e1387fabc6}} 
+\index{MainWindow@{MainWindow}!readSettingsFirst@{readSettingsFirst}}
+\index{readSettingsFirst@{readSettingsFirst}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readSettingsFirst()}{readSettingsFirst()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Settings\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+read Settings First 
+
+\mbox{\Hypertarget{classMainWindow_ab9196b2547d09289a1fb9cb068afb7d4}\label{classMainWindow_ab9196b2547d09289a1fb9cb068afb7d4}} 
+\index{MainWindow@{MainWindow}!readSqlDatabaseInfo@{readSqlDatabaseInfo}}
+\index{readSqlDatabaseInfo@{readSqlDatabaseInfo}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readSqlDatabaseInfo()}{readSqlDatabaseInfo()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+Sql\+Database\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+read Sql Database Info 
+
+\mbox{\Hypertarget{classMainWindow_a42b32b087bb8b6c1601144ec513e8f12}\label{classMainWindow_a42b32b087bb8b6c1601144ec513e8f12}} 
+\index{MainWindow@{MainWindow}!readStatesChanges@{readStatesChanges}}
+\index{readStatesChanges@{readStatesChanges}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{readStatesChanges()}{readStatesChanges()}}
+{\footnotesize\ttfamily void Main\+Window\+::read\+States\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+read States Changes 
+
+\mbox{\Hypertarget{classMainWindow_ae8662ae2ae5fc1d7921a9b18ec38ae9d}\label{classMainWindow_ae8662ae2ae5fc1d7921a9b18ec38ae9d}} 
+\index{MainWindow@{MainWindow}!retranslate@{retranslate}}
+\index{retranslate@{retranslate}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{retranslate()}{retranslate()}}
+{\footnotesize\ttfamily void Main\+Window\+::retranslate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+retranslate none designer components 
+
+\mbox{\Hypertarget{classMainWindow_a2840366f8c8c4231f80fb6da0714f7d5}\label{classMainWindow_a2840366f8c8c4231f80fb6da0714f7d5}} 
+\index{MainWindow@{MainWindow}!setDebugMessage@{setDebugMessage}}
+\index{setDebugMessage@{setDebugMessage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setDebugMessage()}{setDebugMessage()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Debug\+Message (\begin{DoxyParamCaption}\item[{bool}]{this\+State }\end{DoxyParamCaption})}
+
+
+
+set Debug Message 
+
+\mbox{\Hypertarget{classMainWindow_acaf4f4d06b8b4263e5628b4d0b035df9}\label{classMainWindow_acaf4f4d06b8b4263e5628b4d0b035df9}} 
+\index{MainWindow@{MainWindow}!setMessagingStates@{setMessagingStates}}
+\index{setMessagingStates@{setMessagingStates}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setMessagingStates()}{setMessagingStates()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Messaging\+States (\begin{DoxyParamCaption}\item[{bool}]{this\+Message\+State }\end{DoxyParamCaption})}
+
+
+
+set Messaging States 
+
+\mbox{\Hypertarget{classMainWindow_afa2858e06ca124a4f261f4e1d4d43c89}\label{classMainWindow_afa2858e06ca124a4f261f4e1d4d43c89}} 
+\index{MainWindow@{MainWindow}!setPrograms@{setPrograms}}
+\index{setPrograms@{setPrograms}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setPrograms()}{setPrograms()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Programs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set Programs 
+
+\mbox{\Hypertarget{classMainWindow_abd03666209196bf8bdece81045ca3b75}\label{classMainWindow_abd03666209196bf8bdece81045ca3b75}} 
+\index{MainWindow@{MainWindow}!setProjectClass@{setProjectClass}}
+\index{setProjectClass@{setProjectClass}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setProjectClass()}{setProjectClass()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Project\+Class (\begin{DoxyParamCaption}\item[{int}]{tab\+Number }\end{DoxyParamCaption})}
+
+
+
+set Project Class 
+
+\mbox{\Hypertarget{classMainWindow_a2f0ac2578b352db357801c79602fd65d}\label{classMainWindow_a2f0ac2578b352db357801c79602fd65d}} 
+\index{MainWindow@{MainWindow}!setQtProjectCombo@{setQtProjectCombo}}
+\index{setQtProjectCombo@{setQtProjectCombo}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setQtProjectCombo()}{setQtProjectCombo()}}
+{\footnotesize\ttfamily bool Main\+Window\+::set\+Qt\+Project\+Combo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set Qt Project Combo 
+
+$<$ SQL Query Model\mbox{\Hypertarget{classMainWindow_af9daaab4379f824f789a7bb5440a253e}\label{classMainWindow_af9daaab4379f824f789a7bb5440a253e}} 
+\index{MainWindow@{MainWindow}!setSqlBrowseButton@{setSqlBrowseButton}}
+\index{setSqlBrowseButton@{setSqlBrowseButton}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setSqlBrowseButton()}{setSqlBrowseButton()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Sql\+Browse\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set Sql Browse Button 
+
+\mbox{\Hypertarget{classMainWindow_a71c94e3142ba348ca4eb2cf6411020dd}\label{classMainWindow_a71c94e3142ba348ca4eb2cf6411020dd}} 
+\index{MainWindow@{MainWindow}!setTransFilePrefix@{setTransFilePrefix}}
+\index{setTransFilePrefix@{setTransFilePrefix}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setTransFilePrefix()}{setTransFilePrefix()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Trans\+File\+Prefix (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Trans\+File\+Prefix }\end{DoxyParamCaption})}
+
+
+
+set Trans\+File Prefix 
+
+\mbox{\Hypertarget{classMainWindow_a59009c701c345def54b8018afa2f3c19}\label{classMainWindow_a59009c701c345def54b8018afa2f3c19}} 
+\index{MainWindow@{MainWindow}!setTranslationSource@{setTranslationSource}}
+\index{setTranslationSource@{setTranslationSource}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{setTranslationSource()}{setTranslationSource()}}
+{\footnotesize\ttfamily void Main\+Window\+::set\+Translation\+Source (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Translation\+Source }\end{DoxyParamCaption})}
+
+
+
+set Translation Source 
+
+\mbox{\Hypertarget{classMainWindow_a223b7c655dd3016d1a1ae7a9a9bece5b}\label{classMainWindow_a223b7c655dd3016d1a1ae7a9a9bece5b}} 
+\index{MainWindow@{MainWindow}!translateWithReturn@{translateWithReturn}}
+\index{translateWithReturn@{translateWithReturn}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{translateWithReturn()}{translateWithReturn()}}
+{\footnotesize\ttfamily QString Main\+Window\+::translate\+With\+Return (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{QOnline\+Translator\+::\+Engine}}}]{engine,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}}}]{translation\+Lang,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}}}]{source\+Lang,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}}}]{ui\+Lang }\end{DoxyParamCaption})}
+
+
+
+translate With Return, note this is blocking 
+
+\mbox{\Hypertarget{classMainWindow_aa0a00c59ec2d8d475ef2ba2a08c0a157}\label{classMainWindow_aa0a00c59ec2d8d475ef2ba2a08c0a157}} 
+\index{MainWindow@{MainWindow}!writeLanguage@{writeLanguage}}
+\index{writeLanguage@{writeLanguage}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{writeLanguage()}{writeLanguage()}}
+{\footnotesize\ttfamily void Main\+Window\+::write\+Language (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Current\+Language\+Code }\end{DoxyParamCaption})}
+
+
+
+write Language 
+
+\mbox{\Hypertarget{classMainWindow_a9bc7de1af66d938b329c228394ba244b}\label{classMainWindow_a9bc7de1af66d938b329c228394ba244b}} 
+\index{MainWindow@{MainWindow}!writeSettings@{writeSettings}}
+\index{writeSettings@{writeSettings}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{writeSettings()}{writeSettings()}}
+{\footnotesize\ttfamily bool Main\+Window\+::write\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+write Settings 
+
+\mbox{\Hypertarget{classMainWindow_ae81fdd40d2735e75581c5bf8ccc26380}\label{classMainWindow_ae81fdd40d2735e75581c5bf8ccc26380}} 
+\index{MainWindow@{MainWindow}!writeSqlDatabaseInfo@{writeSqlDatabaseInfo}}
+\index{writeSqlDatabaseInfo@{writeSqlDatabaseInfo}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{writeSqlDatabaseInfo()}{writeSqlDatabaseInfo()}}
+{\footnotesize\ttfamily void Main\+Window\+::write\+Sql\+Database\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+write Sql Database Info 
+
+\mbox{\Hypertarget{classMainWindow_a4b19b2ca806d7674b2a4cf1ff307b9ea}\label{classMainWindow_a4b19b2ca806d7674b2a4cf1ff307b9ea}} 
+\index{MainWindow@{MainWindow}!writeStateChanges@{writeStateChanges}}
+\index{writeStateChanges@{writeStateChanges}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{writeStateChanges()}{writeStateChanges()}}
+{\footnotesize\ttfamily void Main\+Window\+::write\+State\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+write State Changes 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{MainWindow_8h}{Main\+Window.\+h}}\item 
+src/\mbox{\hyperlink{MainWindow_8cpp}{Main\+Window.\+cpp}}\end{DoxyCompactItemize}

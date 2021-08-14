@@ -1,0 +1,266 @@
+\hypertarget{classQOnlineTts}{}\doxysection{QOnline\+Tts Class Reference}
+\label{classQOnlineTts}\index{QOnlineTts@{QOnlineTts}}
+
+
+\mbox{\hyperlink{classQOnlineTts}{QOnline\+Tts}}.  
+
+
+
+
+{\ttfamily \#include $<$qonlinetts.\+h$>$}
+
+Inheritance diagram for QOnline\+Tts\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQOnlineTts}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{Voice}} \{ \newline
+\mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5}{No\+Voice}} = -\/1
+, \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a9441742ac7fb2dc9f6fedbec62876b9d}{Zahar}}
+, \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a57677cebff90d4e2857bff46955cb541}{Ermil}}
+, \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a072d5cb8602e5a578a9945a476fcf5d5}{Jane}}
+, \newline
+\mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51aa3fafb4988fe14eca24b91580f5458c8}{Oksana}}
+, \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51add7262f73fc9e9989e345adc770f7e11}{Alyss}}
+, \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a637eef614c768ce62e4ce5a1461ad1e8}{Omazh}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{Emotion}} \{ \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e}{No\+Emotion}} = -\/1
+, \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddbaec3d9dbd5df29fd9739e649fc0b0d60e}{Neutral}}
+, \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba1b498f66a026001b4db7465861e7c035}{Good}}
+, \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4}{Evil}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58}{Tts\+Error}} \{ \newline
+\mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a680d3a1f7f2b8e890576386ee3b94e62}{No\+Error}}
+, \mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a6b3d76fe581c974a4889a868280d4580}{Unsupported\+Engine}}
+, \mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58abd9dac60b4ab7aaff65f5a6ed0db2944}{Unsupported\+Language}}
+, \mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a533b93dd614be4a5edc752f7dc979dfb}{Unsupported\+Voice}}
+, \newline
+\mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a39d3aa9d9e4992a633f0349e5c673df6}{Unsupported\+Emotion}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQOnlineTts_a5810e5192b7a45dc66e50d9b8c735e7d}{QOnline\+Tts}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classQOnlineTts}{QOnline\+Tts}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTts_ad395702a77665b6efcba08fc014731b6}{generate\+Urls}} (const QString \&text, \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{QOnline\+Translator\+::\+Engine}} engine, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} lang, \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{Voice}} \mbox{\hyperlink{classQOnlineTts_a578f146258c87ef7dd2a713a4907c9fd}{voice}}=\mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5}{No\+Voice}}, \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{Emotion}} \mbox{\hyperlink{classQOnlineTts_ab11daebb085997e867e30ef0e7bce563}{emotion}}=\mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e}{No\+Emotion}})
+\begin{DoxyCompactList}\small\item\em generate\+Urls \end{DoxyCompactList}\item 
+QList$<$ QMedia\+Content $>$ \mbox{\hyperlink{classQOnlineTts_abf0f9d5f8b748109b77896ca467435ff}{media}} () const
+\begin{DoxyCompactList}\small\item\em media \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58}{Tts\+Error}} \mbox{\hyperlink{classQOnlineTts_aa93adeb3ba354f240c7752f50686f370}{error}} () const
+\begin{DoxyCompactList}\small\item\em error \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTts_a18ff8fc000c3b8461f919d5a70f24f07}{error\+String}} () const
+\begin{DoxyCompactList}\small\item\em error\+String \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{classQOnlineTts_afd49e2131602f28fc8087d1d42bb6c9a}{voice\+Code}} (\mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{Voice}} \mbox{\hyperlink{classQOnlineTts_a578f146258c87ef7dd2a713a4907c9fd}{voice}})
+\begin{DoxyCompactList}\small\item\em voice\+Code \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{classQOnlineTts_ab4ff4af9151a92cc2fab607b18d8a1e1}{emotion\+Code}} (\mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{Emotion}} \mbox{\hyperlink{classQOnlineTts_ab11daebb085997e867e30ef0e7bce563}{emotion}})
+\begin{DoxyCompactList}\small\item\em emotion\+Code \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{Emotion}} \mbox{\hyperlink{classQOnlineTts_ab11daebb085997e867e30ef0e7bce563}{emotion}} (const QString \&\mbox{\hyperlink{classQOnlineTts_ab4ff4af9151a92cc2fab607b18d8a1e1}{emotion\+Code}})
+\begin{DoxyCompactList}\small\item\em emotion \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{Voice}} \mbox{\hyperlink{classQOnlineTts_a578f146258c87ef7dd2a713a4907c9fd}{voice}} (const QString \&\mbox{\hyperlink{classQOnlineTts_afd49e2131602f28fc8087d1d42bb6c9a}{voice\+Code}})
+\begin{DoxyCompactList}\small\item\em voice \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classQOnlineTts}{QOnline\+Tts}}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}\label{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}} 
+\index{QOnlineTts@{QOnlineTts}!Emotion@{Emotion}}
+\index{Emotion@{Emotion}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{Emotion}{Emotion}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{QOnline\+Tts\+::\+Emotion}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoEmotion@{NoEmotion}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!NoEmotion@{NoEmotion}}}\mbox{\Hypertarget{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e}\label{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e}} 
+No\+Emotion&{\ttfamily No\+Emotion} No\+Emotion \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Neutral@{Neutral}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Neutral@{Neutral}}}\mbox{\Hypertarget{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddbaec3d9dbd5df29fd9739e649fc0b0d60e}\label{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddbaec3d9dbd5df29fd9739e649fc0b0d60e}} 
+Neutral&{\ttfamily Neutral} Neutral \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Good@{Good}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Good@{Good}}}\mbox{\Hypertarget{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba1b498f66a026001b4db7465861e7c035}\label{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba1b498f66a026001b4db7465861e7c035}} 
+Good&{\ttfamily Good} Good \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Evil@{Evil}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Evil@{Evil}}}\mbox{\Hypertarget{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4}\label{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4}} 
+Evil&{\ttfamily Evil} Evil \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58}\label{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58}} 
+\index{QOnlineTts@{QOnlineTts}!TtsError@{TtsError}}
+\index{TtsError@{TtsError}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{TtsError}{TtsError}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58}{QOnline\+Tts\+::\+Tts\+Error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoError@{NoError}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!NoError@{NoError}}}\mbox{\Hypertarget{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a680d3a1f7f2b8e890576386ee3b94e62}\label{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a680d3a1f7f2b8e890576386ee3b94e62}} 
+No\+Error&{\ttfamily No\+Error} No\+Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnsupportedEngine@{UnsupportedEngine}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!UnsupportedEngine@{UnsupportedEngine}}}\mbox{\Hypertarget{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a6b3d76fe581c974a4889a868280d4580}\label{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a6b3d76fe581c974a4889a868280d4580}} 
+Unsupported\+Engine&{\ttfamily Unsupported\+Engine} Unsupported Engine \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnsupportedLanguage@{UnsupportedLanguage}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!UnsupportedLanguage@{UnsupportedLanguage}}}\mbox{\Hypertarget{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58abd9dac60b4ab7aaff65f5a6ed0db2944}\label{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58abd9dac60b4ab7aaff65f5a6ed0db2944}} 
+Unsupported\+Language&{\ttfamily Unsupported\+Language} Unsupported Language \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnsupportedVoice@{UnsupportedVoice}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!UnsupportedVoice@{UnsupportedVoice}}}\mbox{\Hypertarget{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a533b93dd614be4a5edc752f7dc979dfb}\label{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a533b93dd614be4a5edc752f7dc979dfb}} 
+Unsupported\+Voice&{\ttfamily Unsupported\+Voice} Unsupported Voice \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnsupportedEmotion@{UnsupportedEmotion}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!UnsupportedEmotion@{UnsupportedEmotion}}}\mbox{\Hypertarget{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a39d3aa9d9e4992a633f0349e5c673df6}\label{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58a39d3aa9d9e4992a633f0349e5c673df6}} 
+Unsupported\+Emotion&{\ttfamily Unsupported\+Emotion} Unsupported Emotion \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}} 
+\index{QOnlineTts@{QOnlineTts}!Voice@{Voice}}
+\index{Voice@{Voice}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{Voice}{Voice}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{QOnline\+Tts\+::\+Voice}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoVoice@{NoVoice}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!NoVoice@{NoVoice}}}\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5}} 
+No\+Voice&{\ttfamily No\+Voice} No\+Voice \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zahar@{Zahar}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Zahar@{Zahar}}}\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a9441742ac7fb2dc9f6fedbec62876b9d}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a9441742ac7fb2dc9f6fedbec62876b9d}} 
+Zahar&{\ttfamily Zahar} Zahar \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ermil@{Ermil}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Ermil@{Ermil}}}\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a57677cebff90d4e2857bff46955cb541}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a57677cebff90d4e2857bff46955cb541}} 
+Ermil&{\ttfamily Ermil} Ermil \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Jane@{Jane}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Jane@{Jane}}}\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a072d5cb8602e5a578a9945a476fcf5d5}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a072d5cb8602e5a578a9945a476fcf5d5}} 
+Jane&{\ttfamily Jane} Jane \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Oksana@{Oksana}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Oksana@{Oksana}}}\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51aa3fafb4988fe14eca24b91580f5458c8}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51aa3fafb4988fe14eca24b91580f5458c8}} 
+Oksana&{\ttfamily Oksana} Oksana \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Alyss@{Alyss}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Alyss@{Alyss}}}\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51add7262f73fc9e9989e345adc770f7e11}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51add7262f73fc9e9989e345adc770f7e11}} 
+Alyss&{\ttfamily Alyss} Alyss \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Omazh@{Omazh}!QOnlineTts@{QOnlineTts}}\index{QOnlineTts@{QOnlineTts}!Omazh@{Omazh}}}\mbox{\Hypertarget{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a637eef614c768ce62e4ce5a1461ad1e8}\label{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a637eef614c768ce62e4ce5a1461ad1e8}} 
+Omazh&{\ttfamily Omazh} Omazh \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQOnlineTts_a5810e5192b7a45dc66e50d9b8c735e7d}\label{classQOnlineTts_a5810e5192b7a45dc66e50d9b8c735e7d}} 
+\index{QOnlineTts@{QOnlineTts}!QOnlineTts@{QOnlineTts}}
+\index{QOnlineTts@{QOnlineTts}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{QOnlineTts()}{QOnlineTts()}}
+{\footnotesize\ttfamily QOnline\+Tts\+::\+QOnline\+Tts (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{classQOnlineTts}{QOnline\+Tts}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQOnlineTts_ab11daebb085997e867e30ef0e7bce563}\label{classQOnlineTts_ab11daebb085997e867e30ef0e7bce563}} 
+\index{QOnlineTts@{QOnlineTts}!emotion@{emotion}}
+\index{emotion@{emotion}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{emotion()}{emotion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{QOnline\+Tts\+::\+Emotion}} QOnline\+Tts\+::emotion (\begin{DoxyParamCaption}\item[{const QString \&}]{emotion\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+emotion 
+
+\mbox{\Hypertarget{classQOnlineTts_ab4ff4af9151a92cc2fab607b18d8a1e1}\label{classQOnlineTts_ab4ff4af9151a92cc2fab607b18d8a1e1}} 
+\index{QOnlineTts@{QOnlineTts}!emotionCode@{emotionCode}}
+\index{emotionCode@{emotionCode}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{emotionCode()}{emotionCode()}}
+{\footnotesize\ttfamily QString QOnline\+Tts\+::emotion\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{Emotion}}}]{emotion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+emotion\+Code 
+
+\mbox{\Hypertarget{classQOnlineTts_aa93adeb3ba354f240c7752f50686f370}\label{classQOnlineTts_aa93adeb3ba354f240c7752f50686f370}} 
+\index{QOnlineTts@{QOnlineTts}!error@{error}}
+\index{error@{error}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTts_af99b4dc7142d628a0245679d634c6e58}{QOnline\+Tts\+::\+Tts\+Error}} QOnline\+Tts\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+error 
+
+\mbox{\Hypertarget{classQOnlineTts_a18ff8fc000c3b8461f919d5a70f24f07}\label{classQOnlineTts_a18ff8fc000c3b8461f919d5a70f24f07}} 
+\index{QOnlineTts@{QOnlineTts}!errorString@{errorString}}
+\index{errorString@{errorString}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{errorString()}{errorString()}}
+{\footnotesize\ttfamily QString QOnline\+Tts\+::error\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+error\+String 
+
+\mbox{\Hypertarget{classQOnlineTts_ad395702a77665b6efcba08fc014731b6}\label{classQOnlineTts_ad395702a77665b6efcba08fc014731b6}} 
+\index{QOnlineTts@{QOnlineTts}!generateUrls@{generateUrls}}
+\index{generateUrls@{generateUrls}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{generateUrls()}{generateUrls()}}
+{\footnotesize\ttfamily void QOnline\+Tts\+::generate\+Urls (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{QOnline\+Translator\+::\+Engine}}}]{engine,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}}}]{lang,  }\item[{\mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{Voice}}}]{voice = {\ttfamily \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51a32bd23c2c536963aaf3eea5ad65dc9e5}{No\+Voice}}},  }\item[{\mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddb}{Emotion}}}]{emotion = {\ttfamily \mbox{\hyperlink{classQOnlineTts_a6cc0b62943e55ea05c6d50b9b85a9ddba77ff721c5d0a98403dd070e607b5972e}{No\+Emotion}}} }\end{DoxyParamCaption})}
+
+
+
+generate\+Urls 
+
+\mbox{\Hypertarget{classQOnlineTts_abf0f9d5f8b748109b77896ca467435ff}\label{classQOnlineTts_abf0f9d5f8b748109b77896ca467435ff}} 
+\index{QOnlineTts@{QOnlineTts}!media@{media}}
+\index{media@{media}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{media()}{media()}}
+{\footnotesize\ttfamily QList$<$ QMedia\+Content $>$ QOnline\+Tts\+::media (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+media 
+
+\mbox{\Hypertarget{classQOnlineTts_a578f146258c87ef7dd2a713a4907c9fd}\label{classQOnlineTts_a578f146258c87ef7dd2a713a4907c9fd}} 
+\index{QOnlineTts@{QOnlineTts}!voice@{voice}}
+\index{voice@{voice}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{voice()}{voice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{QOnline\+Tts\+::\+Voice}} QOnline\+Tts\+::voice (\begin{DoxyParamCaption}\item[{const QString \&}]{voice\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+voice 
+
+\mbox{\Hypertarget{classQOnlineTts_afd49e2131602f28fc8087d1d42bb6c9a}\label{classQOnlineTts_afd49e2131602f28fc8087d1d42bb6c9a}} 
+\index{QOnlineTts@{QOnlineTts}!voiceCode@{voiceCode}}
+\index{voiceCode@{voiceCode}!QOnlineTts@{QOnlineTts}}
+\doxysubsubsection{\texorpdfstring{voiceCode()}{voiceCode()}}
+{\footnotesize\ttfamily QString QOnline\+Tts\+::voice\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQOnlineTts_ac1c6e43e176ccec03cbabcc2431eba51}{Voice}}}]{voice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+voice\+Code 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/third-\/party/qonlinetranslator/src/\mbox{\hyperlink{qonlinetts_8h}{qonlinetts.\+h}}\item 
+src/third-\/party/qonlinetranslator/src/\mbox{\hyperlink{qonlinetts_8cpp}{qonlinetts.\+cpp}}\end{DoxyCompactItemize}

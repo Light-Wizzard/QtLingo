@@ -1,0 +1,19 @@
+Utility for extracting strings from .ts files for translation services.
+
+HOW TO USE\+:
+
+ts\+\_\+tool.\+exe --src v\+:\textbackslash{}\+PROJECTS\textbackslash{}\+CODIJY\textbackslash{}\+Color\+Magic\+GUI\textbackslash{}translations\textbackslash{}\+Color\+Magic\+\_\+\+EN.ts --dst t\+:\textbackslash{}test\textbackslash{} --mode TXT
+
+The utility take input .ts file, parse it with priority for $<$translation$>$ tag (if $<$translation$>$ is empty it use the $<$source$>$) and generate two files on output\+:
+
+.ts file with hash\textquotesingle{}s .txt file in format \mbox{[}hash\mbox{]} \char`\"{}\+String for translation\char`\"{} i.\+e. for example .ts\+: ... $<$message$>$ $<$location filename=\char`\"{}../shortcuts/shortcut\+\_\+manager.\+cpp\char`\"{} line=\char`\"{}30\char`\"{}$>$$<$/location$>$ $<$source$>$Arm Tool$<$/source$>$ $<$translation$>$\mbox{[}08F5\+B2\+DC\mbox{]}$<$/translation$>$ $<$/message$>$ ...
+
+.txt\+: ... \mbox{[}08F5\+B2\+DC\mbox{]} \char`\"{}\+Arm Tool\char`\"{} ...
+
+Then you can send .txt file for translation. After translation for insert translated strings back to .ts file use this command\+:
+
+ts\+\_\+tool.\+exe --src t\+:\textbackslash{}test\textbackslash{} --dst v\+:\textbackslash{}\+PROJECTS\textbackslash{}\+CODIJY\textbackslash{}\+Color\+Magic\+GUI\textbackslash{}translations\textbackslash{}\+Color\+Magic\+\_\+\+EN.ts --mode TS
+
+Additinal options\+:
+
+--with-\/unfinished -\/ for include unfinished records to result .txt file. --with-\/vanished -\/ for include obsolete records to result .txt file. 

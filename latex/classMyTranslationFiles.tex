@@ -1,0 +1,311 @@
+\hypertarget{classMyTranslationFiles}{}\doxysection{My\+Translation\+Files Class Reference}
+\label{classMyTranslationFiles}\index{MyTranslationFiles@{MyTranslationFiles}}
+
+
+Translation Files Constructor.  
+
+
+
+
+{\ttfamily \#include $<$My\+Translation\+Files.\+h$>$}
+
+Inheritance diagram for My\+Translation\+Files\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMyTranslationFiles}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9db}{My\+Message\+Types}} \{ \mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba826bf4709648dcec972cbacc2496d800}{Information}} = 100
+, \mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba85d466ea5dcb961c1096a52e94d862ef}{Question}} = 101
+, \mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba251d996ee143ba30436a70cf5e1e498a}{Warning}} = 102
+, \mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba98450f02ba6dae7523765ee0a43d68e8}{Critical}} = 103
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMyTranslationFiles_ac7418b9ccaf30eb6df04d14fc6e0fdff}{My\+Translation\+Files}} (QObject $\ast$parent=nullptr, \mbox{\hyperlink{classMyDatatables}{My\+Datatables}} $\ast$this\+Sql\+Db=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classTranslationFiles}{Translation\+Files}} Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+::base\+\_\+node\+\_\+ptr}} \mbox{\hyperlink{classMyTranslationFiles_af6d68dcf750b4075e1f8f2e57ee9dc51}{parse\+\_\+ts\+\_\+file}} (const QString \&input\+File)
+\begin{DoxyCompactList}\small\item\em parse\+\_\+ts\+\_\+file \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMyTranslationFiles_a45f6d6893638c9ea7025165f3948727f}{parse\+\_\+txt\+\_\+file}} (const QString \&input\+File, \mbox{\hyperlink{namespacevisitors_a410d608aff0ee08d41221b3315765de9}{visitors\+::map\+\_\+\+QString\+QString}} \&strings)
+\begin{DoxyCompactList}\small\item\em parse\+\_\+txt\+\_\+file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMyTranslationFiles_ac3bc844a7b8cef18604a079adca8118e}{to\+TXT}} (const QString \&input\+File, const QString \&output\+Dir, bool with\+\_\+unfinished, bool with\+\_\+vanished, bool unfinished\+\_\+only)
+\begin{DoxyCompactList}\small\item\em to\+TXT \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMyTranslationFiles_a218cffe44ee6ad31585704e0364d22e6}{to\+TS}} (const QString \&input\+Dir, const QString \&output\+File, const QString \&langid)
+\begin{DoxyCompactList}\small\item\em to\+TS \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMyTranslationFiles_af5719bae05c9eec5410e9c35d0fe6017}{set\+Debug\+Message}} (bool this\+State)
+\begin{DoxyCompactList}\small\item\em set Debug Message \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMyTranslationFiles_ac7a06872b595760cccb8e138234d0f79}{get\+Debug\+Message}} ()
+\begin{DoxyCompactList}\small\item\em get Debug Message \end{DoxyCompactList}\item 
+QString\+List \mbox{\hyperlink{classMyTranslationFiles_aaf489745d9bec3cbd7a5a277bb1d16e2}{find\+Qm\+Files}} (const QString \&this\+Folder)
+\begin{DoxyCompactList}\small\item\em find\+Qm\+Files \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMyTranslationFiles_ac9849a6ab3b00a88d8992d71895f2299}{language\+Match}} (const QString \&this\+Prefix, const QString \&this\+Lang, const QString \&this\+Qm\+File)
+\begin{DoxyCompactList}\small\item\em language Match \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMyTranslationFiles_a17b2b74c8bddd38bcbf5ee7db5c2cf25}{language\+Name\+From\+File}} (const QString \&this\+Translation\+File)
+\begin{DoxyCompactList}\small\item\em language Name From File \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMyTranslationFiles_a5afd0c82a324832d969ce15df56762ac}{get\+Localizer\+Code}} (const QString \&this\+Prefix, const QString \&this\+Qm\+File)
+\begin{DoxyCompactList}\small\item\em get Localizer Code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMyTranslationFiles_a0c9cde2fa0088bd7a76059b2f99a2827}{remove\+Args}} (const QString \&this\+String, const QString \&this\+Trans\+File)
+\begin{DoxyCompactList}\small\item\em remove Args file creation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMyTranslationFiles_a9e397f2806fa6b7ce993d7c46d611eeb}{file\+Remove\+Args}} ()
+\begin{DoxyCompactList}\small\item\em file Remove Args \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMyTranslationFiles_ad26ac442b9fb0717cdd023327b2ca6af}{fix\+Translation\+File}} (const QString \&this\+File)
+\begin{DoxyCompactList}\small\item\em fix Translation File \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMyTranslationFiles_a3744f7a08655ab5d9169540e36138d70}{get\+Localized\+Code\+From\+File}} (const QString \&this\+Prefix, const QString \&this\+Qm\+File)
+\begin{DoxyCompactList}\small\item\em get Localized Code From File \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMyTranslationFiles_aa26fa2c22d74061de0564a85c1db2a64}{write\+File}} (const QString \&this\+File\+Name, const QString \&this\+Content)
+\begin{DoxyCompactList}\small\item\em write File \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classMyTranslationFiles_a8fd5d179d95676fc3a5ca19ad728edb1}{get\+App\+Data\+Location}} ()
+\begin{DoxyCompactList}\small\item\em get\+App\+Data\+Location \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMyTranslationFiles_a007fedddd6e8d99a6c5a8bbfe818bfd0}{is\+File\+Exists}} (const QString \&this\+File)
+\begin{DoxyCompactList}\small\item\em is File Exists \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMyTranslationFiles_a88e8060bd1a9692ed0f712e565ae2ff3}{show\+Message\+Box}} (const QString \&this\+Title, const QString \&this\+Message, \mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9db}{My\+Message\+Types}} this\+Message\+Type)
+\begin{DoxyCompactList}\small\item\em show Message Box \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMyTranslationFiles_a05578c5eb7b60c622941c6c63e15965b}{question\+Yes\+No}} (const char $\ast$this\+Title, const char $\ast$this\+Question)
+\begin{DoxyCompactList}\small\item\em question Yes No \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Translation Files Constructor. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9db}\label{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9db}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!MyMessageTypes@{MyMessageTypes}}
+\index{MyMessageTypes@{MyMessageTypes}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{MyMessageTypes}{MyMessageTypes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9db}{My\+Translation\+Files\+::\+My\+Message\+Types}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Information@{Information}!MyTranslationFiles@{MyTranslationFiles}}\index{MyTranslationFiles@{MyTranslationFiles}!Information@{Information}}}\mbox{\Hypertarget{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba826bf4709648dcec972cbacc2496d800}\label{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba826bf4709648dcec972cbacc2496d800}} 
+Information&{\ttfamily Information} Information \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Question@{Question}!MyTranslationFiles@{MyTranslationFiles}}\index{MyTranslationFiles@{MyTranslationFiles}!Question@{Question}}}\mbox{\Hypertarget{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba85d466ea5dcb961c1096a52e94d862ef}\label{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba85d466ea5dcb961c1096a52e94d862ef}} 
+Question&{\ttfamily Question} Question \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!MyTranslationFiles@{MyTranslationFiles}}\index{MyTranslationFiles@{MyTranslationFiles}!Warning@{Warning}}}\mbox{\Hypertarget{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba251d996ee143ba30436a70cf5e1e498a}\label{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba251d996ee143ba30436a70cf5e1e498a}} 
+Warning&{\ttfamily Warning} Warning \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Critical@{Critical}!MyTranslationFiles@{MyTranslationFiles}}\index{MyTranslationFiles@{MyTranslationFiles}!Critical@{Critical}}}\mbox{\Hypertarget{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba98450f02ba6dae7523765ee0a43d68e8}\label{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9dba98450f02ba6dae7523765ee0a43d68e8}} 
+Critical&{\ttfamily Critical} Critical \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMyTranslationFiles_ac7418b9ccaf30eb6df04d14fc6e0fdff}\label{classMyTranslationFiles_ac7418b9ccaf30eb6df04d14fc6e0fdff}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!MyTranslationFiles@{MyTranslationFiles}}
+\index{MyTranslationFiles@{MyTranslationFiles}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{MyTranslationFiles()}{MyTranslationFiles()}}
+{\footnotesize\ttfamily My\+Translation\+Files\+::\+My\+Translation\+Files (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr},  }\item[{\mbox{\hyperlink{classMyDatatables}{My\+Datatables}} $\ast$}]{this\+Sql\+Db = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{classTranslationFiles}{Translation\+Files}} Constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMyTranslationFiles_a9e397f2806fa6b7ce993d7c46d611eeb}\label{classMyTranslationFiles_a9e397f2806fa6b7ce993d7c46d611eeb}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!fileRemoveArgs@{fileRemoveArgs}}
+\index{fileRemoveArgs@{fileRemoveArgs}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{fileRemoveArgs()}{fileRemoveArgs()}}
+{\footnotesize\ttfamily void My\+Translation\+Files\+::file\+Remove\+Args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+file Remove Args 
+
+\mbox{\Hypertarget{classMyTranslationFiles_aaf489745d9bec3cbd7a5a277bb1d16e2}\label{classMyTranslationFiles_aaf489745d9bec3cbd7a5a277bb1d16e2}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!findQmFiles@{findQmFiles}}
+\index{findQmFiles@{findQmFiles}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{findQmFiles()}{findQmFiles()}}
+{\footnotesize\ttfamily QString\+List My\+Translation\+Files\+::find\+Qm\+Files (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Folder }\end{DoxyParamCaption})}
+
+
+
+find\+Qm\+Files 
+
+\mbox{\Hypertarget{classMyTranslationFiles_ad26ac442b9fb0717cdd023327b2ca6af}\label{classMyTranslationFiles_ad26ac442b9fb0717cdd023327b2ca6af}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!fixTranslationFile@{fixTranslationFile}}
+\index{fixTranslationFile@{fixTranslationFile}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{fixTranslationFile()}{fixTranslationFile()}}
+{\footnotesize\ttfamily void My\+Translation\+Files\+::fix\+Translation\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+File }\end{DoxyParamCaption})}
+
+
+
+fix Translation File 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a8fd5d179d95676fc3a5ca19ad728edb1}\label{classMyTranslationFiles_a8fd5d179d95676fc3a5ca19ad728edb1}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!getAppDataLocation@{getAppDataLocation}}
+\index{getAppDataLocation@{getAppDataLocation}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{getAppDataLocation()}{getAppDataLocation()}}
+{\footnotesize\ttfamily QString My\+Translation\+Files\+::get\+App\+Data\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+App\+Data\+Location 
+
+\mbox{\Hypertarget{classMyTranslationFiles_ac7a06872b595760cccb8e138234d0f79}\label{classMyTranslationFiles_ac7a06872b595760cccb8e138234d0f79}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!getDebugMessage@{getDebugMessage}}
+\index{getDebugMessage@{getDebugMessage}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{getDebugMessage()}{getDebugMessage()}}
+{\footnotesize\ttfamily bool My\+Translation\+Files\+::get\+Debug\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get Debug Message 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a3744f7a08655ab5d9169540e36138d70}\label{classMyTranslationFiles_a3744f7a08655ab5d9169540e36138d70}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!getLocalizedCodeFromFile@{getLocalizedCodeFromFile}}
+\index{getLocalizedCodeFromFile@{getLocalizedCodeFromFile}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{getLocalizedCodeFromFile()}{getLocalizedCodeFromFile()}}
+{\footnotesize\ttfamily QString My\+Translation\+Files\+::get\+Localized\+Code\+From\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Prefix,  }\item[{const QString \&}]{this\+Qm\+File }\end{DoxyParamCaption})}
+
+
+
+get Localized Code From File 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a5afd0c82a324832d969ce15df56762ac}\label{classMyTranslationFiles_a5afd0c82a324832d969ce15df56762ac}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!getLocalizerCode@{getLocalizerCode}}
+\index{getLocalizerCode@{getLocalizerCode}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{getLocalizerCode()}{getLocalizerCode()}}
+{\footnotesize\ttfamily QString My\+Translation\+Files\+::get\+Localizer\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Prefix,  }\item[{const QString \&}]{this\+Qm\+File }\end{DoxyParamCaption})}
+
+
+
+get Localizer Code 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a007fedddd6e8d99a6c5a8bbfe818bfd0}\label{classMyTranslationFiles_a007fedddd6e8d99a6c5a8bbfe818bfd0}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!isFileExists@{isFileExists}}
+\index{isFileExists@{isFileExists}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{isFileExists()}{isFileExists()}}
+{\footnotesize\ttfamily bool My\+Translation\+Files\+::is\+File\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+File }\end{DoxyParamCaption})}
+
+
+
+is File Exists 
+
+\mbox{\Hypertarget{classMyTranslationFiles_ac9849a6ab3b00a88d8992d71895f2299}\label{classMyTranslationFiles_ac9849a6ab3b00a88d8992d71895f2299}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!languageMatch@{languageMatch}}
+\index{languageMatch@{languageMatch}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{languageMatch()}{languageMatch()}}
+{\footnotesize\ttfamily bool My\+Translation\+Files\+::language\+Match (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Prefix,  }\item[{const QString \&}]{this\+Lang,  }\item[{const QString \&}]{this\+Qm\+File }\end{DoxyParamCaption})}
+
+
+
+language Match 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a17b2b74c8bddd38bcbf5ee7db5c2cf25}\label{classMyTranslationFiles_a17b2b74c8bddd38bcbf5ee7db5c2cf25}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!languageNameFromFile@{languageNameFromFile}}
+\index{languageNameFromFile@{languageNameFromFile}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{languageNameFromFile()}{languageNameFromFile()}}
+{\footnotesize\ttfamily QString My\+Translation\+Files\+::language\+Name\+From\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Translation\+File }\end{DoxyParamCaption})}
+
+
+
+language Name From File 
+
+\mbox{\Hypertarget{classMyTranslationFiles_af6d68dcf750b4075e1f8f2e57ee9dc51}\label{classMyTranslationFiles_af6d68dcf750b4075e1f8f2e57ee9dc51}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!parse\_ts\_file@{parse\_ts\_file}}
+\index{parse\_ts\_file@{parse\_ts\_file}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{parse\_ts\_file()}{parse\_ts\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbase__node_abb75a430c91d015bdc7307f6263717e0}{base\+\_\+node\+::base\+\_\+node\+\_\+ptr}} My\+Translation\+Files\+::parse\+\_\+ts\+\_\+file (\begin{DoxyParamCaption}\item[{const QString \&}]{input\+File }\end{DoxyParamCaption})}
+
+
+
+parse\+\_\+ts\+\_\+file 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a45f6d6893638c9ea7025165f3948727f}\label{classMyTranslationFiles_a45f6d6893638c9ea7025165f3948727f}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!parse\_txt\_file@{parse\_txt\_file}}
+\index{parse\_txt\_file@{parse\_txt\_file}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{parse\_txt\_file()}{parse\_txt\_file()}}
+{\footnotesize\ttfamily bool My\+Translation\+Files\+::parse\+\_\+txt\+\_\+file (\begin{DoxyParamCaption}\item[{const QString \&}]{input\+File,  }\item[{\mbox{\hyperlink{namespacevisitors_a410d608aff0ee08d41221b3315765de9}{visitors\+::map\+\_\+\+QString\+QString}} \&}]{strings }\end{DoxyParamCaption})}
+
+
+
+parse\+\_\+txt\+\_\+file 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a05578c5eb7b60c622941c6c63e15965b}\label{classMyTranslationFiles_a05578c5eb7b60c622941c6c63e15965b}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!questionYesNo@{questionYesNo}}
+\index{questionYesNo@{questionYesNo}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{questionYesNo()}{questionYesNo()}}
+{\footnotesize\ttfamily bool My\+Translation\+Files\+::question\+Yes\+No (\begin{DoxyParamCaption}\item[{const char $\ast$}]{this\+Title,  }\item[{const char $\ast$}]{this\+Question }\end{DoxyParamCaption})}
+
+
+
+question Yes No 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a0c9cde2fa0088bd7a76059b2f99a2827}\label{classMyTranslationFiles_a0c9cde2fa0088bd7a76059b2f99a2827}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!removeArgs@{removeArgs}}
+\index{removeArgs@{removeArgs}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{removeArgs()}{removeArgs()}}
+{\footnotesize\ttfamily void My\+Translation\+Files\+::remove\+Args (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+String,  }\item[{const QString \&}]{this\+Trans\+File }\end{DoxyParamCaption})}
+
+
+
+remove Args file creation 
+
+\mbox{\Hypertarget{classMyTranslationFiles_af5719bae05c9eec5410e9c35d0fe6017}\label{classMyTranslationFiles_af5719bae05c9eec5410e9c35d0fe6017}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!setDebugMessage@{setDebugMessage}}
+\index{setDebugMessage@{setDebugMessage}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{setDebugMessage()}{setDebugMessage()}}
+{\footnotesize\ttfamily void My\+Translation\+Files\+::set\+Debug\+Message (\begin{DoxyParamCaption}\item[{bool}]{this\+State }\end{DoxyParamCaption})}
+
+
+
+set Debug Message 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a88e8060bd1a9692ed0f712e565ae2ff3}\label{classMyTranslationFiles_a88e8060bd1a9692ed0f712e565ae2ff3}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!showMessageBox@{showMessageBox}}
+\index{showMessageBox@{showMessageBox}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{showMessageBox()}{showMessageBox()}}
+{\footnotesize\ttfamily int My\+Translation\+Files\+::show\+Message\+Box (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+Title,  }\item[{const QString \&}]{this\+Message,  }\item[{\mbox{\hyperlink{classMyTranslationFiles_acf7fe3aa310eeacdf81d07189fedd9db}{My\+Message\+Types}}}]{this\+Message\+Type }\end{DoxyParamCaption})}
+
+
+
+show Message Box 
+
+\mbox{\Hypertarget{classMyTranslationFiles_a218cffe44ee6ad31585704e0364d22e6}\label{classMyTranslationFiles_a218cffe44ee6ad31585704e0364d22e6}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!toTS@{toTS}}
+\index{toTS@{toTS}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{toTS()}{toTS()}}
+{\footnotesize\ttfamily void My\+Translation\+Files\+::to\+TS (\begin{DoxyParamCaption}\item[{const QString \&}]{input\+Dir,  }\item[{const QString \&}]{output\+File,  }\item[{const QString \&}]{langid }\end{DoxyParamCaption})}
+
+
+
+to\+TS 
+
+\mbox{\Hypertarget{classMyTranslationFiles_ac3bc844a7b8cef18604a079adca8118e}\label{classMyTranslationFiles_ac3bc844a7b8cef18604a079adca8118e}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!toTXT@{toTXT}}
+\index{toTXT@{toTXT}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{toTXT()}{toTXT()}}
+{\footnotesize\ttfamily void My\+Translation\+Files\+::to\+TXT (\begin{DoxyParamCaption}\item[{const QString \&}]{input\+File,  }\item[{const QString \&}]{output\+Dir,  }\item[{bool}]{with\+\_\+unfinished,  }\item[{bool}]{with\+\_\+vanished,  }\item[{bool}]{unfinished\+\_\+only }\end{DoxyParamCaption})}
+
+
+
+to\+TXT 
+
+\mbox{\Hypertarget{classMyTranslationFiles_aa26fa2c22d74061de0564a85c1db2a64}\label{classMyTranslationFiles_aa26fa2c22d74061de0564a85c1db2a64}} 
+\index{MyTranslationFiles@{MyTranslationFiles}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!MyTranslationFiles@{MyTranslationFiles}}
+\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily bool My\+Translation\+Files\+::write\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{this\+File\+Name,  }\item[{const QString \&}]{this\+Content }\end{DoxyParamCaption})}
+
+
+
+write File 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{MyTranslationFiles_8h}{My\+Translation\+Files.\+h}}\item 
+src/\mbox{\hyperlink{MyTranslationFiles_8cpp}{My\+Translation\+Files.\+cpp}}\end{DoxyCompactItemize}

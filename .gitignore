@@ -38,6 +38,4 @@ QtLingo.pro.*
 *.out
 *.app
 
-#doxygen
-html
-latex
+

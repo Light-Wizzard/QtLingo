@@ -1,0 +1,1260 @@
+\hypertarget{classQOnlineTranslator}{}\doxysection{QOnline\+Translator Class Reference}
+\label{classQOnlineTranslator}\index{QOnlineTranslator@{QOnlineTranslator}}
+
+
+\mbox{\hyperlink{classQOnlineTranslator}{QOnline\+Translator}}.  
+
+
+
+
+{\ttfamily \#include $<$qonlinetranslator.\+h$>$}
+
+Inheritance diagram for QOnline\+Translator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQOnlineTranslator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} \{ \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daba1101f947dcb37d3ea35e3c40607e3f}{No\+Language}} = -\/1
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{Auto}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7c235b486820b95cfab3f13fcd9de066}{Afrikaans}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da498679ad931d9ee6e5d015acb041dd2b}{Albanian}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daec1199a41c3f10279b4837047deeaac4}{Amharic}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0970cb2a0ff727b33ca35ffdf4123b65}{Arabic}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fe4b55467ec03e414dc01f79b4befaa}{Armenian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4f5a179a0bd5cc24951eb365fe425dd2}{Azerbaijani}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da678ed3e7307e7a84b25e339a6744bf9a}{Bashkir}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeab29df241607d253f8d854d9bd20206}{Basque}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7e8f94a1cd909d103a4e7efdb77d396}{Belarusian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac279322d17b7cfcef3a4d05451c9a1e6}{Bengali}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa96fb82b352ff44143166059154dd9d3}{Bosnian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daecb77188880803639bc4364b4da3c23d}{Bulgarian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf8f67de6844fa41edee25a21c2f47073}{Cantonese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4ed0353d7bbffc77e23eff1b252020da}{Catalan}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da85559bda34ec940a549a2c396321dbbe}{Cebuano}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8de1aa79ab5d024caa47e4d2d5eed5c0}{Chichewa}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5c3cabafc73f874395f308290f12f329}{Corsican}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5a60912729ba2929b015a39d2d0e7e64}{Croatian}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8e59c368333cb2a82d308d21dd14c0c5}{Czech}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ef97a3f77119b201df0c0bb308bb354}{Danish}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4dbe4dc04c52f848efde47e5dda1a1c0}{Dutch}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da59759e784f024e56af1341329c49ce7c}{English}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da034433f3c919913e7b69a930c87601d5}{Esperanto}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da541da964c49f331f0587615090de99f0}{Estonian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa17ff875d873c20d82e4290cbcae8206}{Fijian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae21c39ffaaa746c98dc547318050afc8}{Filipino}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9ea66303942591207a8be82a0a0933b3}{Finnish}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ff05cfc6b2ace469b17aad4e3288c07}{French}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1e682e2832b1040a9448a00427afcf13}{Frisian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae44d4ce5a68b23905c3abb57ced3382d}{Galician}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafd95f6901ef6eec404561367d6f03eef}{Georgian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad69f97512845ef62edb14db17d4ff8f5}{German}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e4170240bda09ebe40f159b53ba285}{Greek}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae1dab664db3fb6c099ed13eb9760afb4}{Gujarati}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da71c5afbbfa938203ecd85baea778fc12}{Haitian\+Creole}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da83aec6fc27781646bd3c3b3b86c1a305}{Hausa}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa954f7171797f9c8663dde964a05d52c}{Hawaiian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daaa3053268d3010e60b2afab40b10185f}{Hebrew}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1d630b51f2db57c2cea53b9f885008c4}{Hill\+Mari}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86f8f627a607c0e36c9aa5951175b19e}{Hindi}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa4f7d71e6a601d3e0714165f84cbf8a7}{Hmong}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da900e00fa15042fb4b5b0ef13677d97e9}{Hungarian}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3fa3840a52c38b3438e40deb351620c7}{Icelandic}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daae9f6663ba0acd3743dd36090bc0c976}{Igbo}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0a25f909f4b7388bf5018277d7bb7933}{Indonesian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae0c9471728655a8c1e132052b55335c4}{Irish}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae28fbc1865772823b8812088390584d7}{Italian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daadac3279cf16c0589900349de5fcdc7d}{Japanese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae5a1f48b6fb1021b6e38f62336fc633f}{Javanese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da30d270a72c84621933b6639d3f2bc62b}{Kannada}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafcebf7d8b9c7d4a95c33081b92d502d3}{Kazakh}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf803f167a45e4c36fb323fd99e5f5caa}{Khmer}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da309aed87c4f70823135cad0fde5070b1}{Kinyarwanda}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3a9b422b4c4b838b6780db779f103d07}{Klingon}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7e31d3c46498d46ef1170d44def6c5dc}{Klingon\+PlqaD}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9c815eb8c7e9165fa430af7c14db3d04}{Korean}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabb5fd8d84376c7c1b3374d5c4bc79916}{Kurdish}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad9c7fbe942a5b265ce1362833856278a}{Kyrgyz}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8674dace66f1527373db9f394235368c}{Lao}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da14adab7c890b4d24eb453199d45320e7}{Latin}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da50e9fae33bfe10114e7e0e0200ee828c}{Latvian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa90d1baa2d1305e330ca1d2543e4bac1}{Levantine\+Arabic}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7d0e358b64dce2611923df03b0908ec8}{Lithuanian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad3d2f91eefa8c042a732d310ace618e8}{Luxembourgish}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da84a47c065a0a459a6f9da96b0ee0ea4a}{Macedonian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46d03c2753fc928b0e15aabee591b707}{Malagasy}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3d99fde0ae16807c24a2247bcf2b277f}{Malay}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da12462dcb9fbe99445f8dd42106dc6954}{Malayalam}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7fd3e1b1611ccb6f4aec445886b58ba}{Maltese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa99bee84e01f23fcffe46702d626b9e7}{Maori}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade46e0b96ed9321f905040b8b80192cc}{Marathi}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da924efefe99fdb72dffbb9fca03cc7cce}{Mari}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da24084173444f92f2c71c2e7d420d95fb}{Mongolian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da319ff510e90aeebde5027a7ae715f314}{Myanmar}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadcdff70e1a5b54ce10cba23c72696494}{Nepali}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5f3e3ac78fb6a1c6384cec82d5fe32cd}{Norwegian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac804076894739517cc275f8e60e6ce11}{Oriya}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae2bf70b2aef44cec9e20b68a740a6b82}{Papiamento}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeb9d3dcda759e078dce84bfd67c779ba}{Pashto}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadfe578f587a1836a70276ed963aa1a70}{Persian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da87ec26e0cad5166e049b2268bdb4f7cc}{Polish}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5428874d0633f0a57ab34cf771b76cf7}{Portuguese}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8fd7608a9d606f1f760baad07453a3c3}{Punjabi}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac72c017fad2d7dbd2c8c27b0149c72a5}{Queretaro\+Otomi}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86d29d2e5b29774a92ef7c3a46d8a088}{Romanian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabcd0a32a169961da8833d534ac6aec50}{Russian}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf456f914454f03bff8c54cf50ef42417}{Samoan}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da073689284494e5bbcce90a3238daac4d}{Scots\+Gaelic}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9e9a1c79bed7d7db2937c3fb7a07002e}{Serbian\+Cyrillic}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da80fb6cacf31aa26742a7405fbb34ecb1}{Serbian\+Latin}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da020a46de26d9233f347cccc27e4cbc92}{Sesotho}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa2b24bebf1d1ac25b578f57def0b0491}{Shona}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daab6d5f8e13df93a49111dcd646fdcdd4}{Simplified\+Chinese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da65e1475e9a52674f085998dcf4bf5ac8}{Sindhi}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae939959a542d08a9f38cd9cb6e2c13ca}{Sinhala}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2f07c4ed4f6170f5480d8794f390ae50}{Slovak}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0ecd6a8cc6bb8f9e48d023424ab2b363}{Slovenian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0c647001c187ebaddfc6d3eb45472c52}{Somali}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da68be48b9360fa9a1c68c104dd3819bff}{Spanish}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4bf29461c725fbb87c96df87b75526c0}{Sundanese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da684f27f73212640d6a7919314eaedff1}{Swahili}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da00d1f6a74afaf4d46373fbfabd6bd76e}{Swedish}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da687713147e766296bb1958fe94f3a75a}{Tagalog}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1151e56f72967b144810cfe9ada11309}{Tahitian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac655176d1a1e9bfe7d295f23fff9aeb0}{Tajik}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad2f524197f7aac358759b15d88cb1f83}{Tamil}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2eceafeb1cadb638af390095aebd78cd}{Tatar}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0024f0f4fedd39b7dfaeb23423016ef3}{Telugu}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e0af013c88ed178c965d2c7051fdeb}{Thai}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da6ea7fba1ec2a79cf4d44989b390f2fc6}{Tongan}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da36dc0b5d90ccf7d9674ab87d72bc37eb}{Traditional\+Chinese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf4da215169a8a0b6f1920c0105434fe3}{Turkish}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dacd560da7a4ba029e2e6a9cac8d10dd8f}{Turkmen}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da578efde8a48e735b99fdf29393cd0ea5}{Udmurt}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4831376f004771748c9da4805196b461}{Uighur}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8ff78d074a3410ff498b21b9871b52d2}{Ukrainian}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade113db4d9e4d534589d0b4639073fc1}{Urdu}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da645176c913def2cb796a5e620b1dbb11}{Uzbek}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7cc7c58ccc6ee476f4fd7fc5bb11827b}{Vietnamese}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fc662a16d8e0ca555b3c2d1a6536cc4}{Welsh}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da69f810cf444dfe1aa00490a05653135c}{Xhosa}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf90cacd3a322397d9e3a0418fad804f2}{Yiddish}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daffcf6018312112a8c92553ef9e17a233}{Yoruba}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da51dca39c921ab4b448292c9f297f2d11}{Yucatec\+Maya}}
+, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da76f766b26afbaa91544bca7dcd4b0238}{Zulu}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{Engine}} \{ \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}{Google}}
+, \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a6fa990a8e7d8f9b2807e4892cac5c546}{Yandex}}
+, \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca}{Bing}}
+ \}
+\item 
+enum \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbd}{Translation\+Error}} \{ \newline
+\mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda5ed17a2426a5ee0c801d3f50c558e5c7}{No\+Error}}
+, \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdad38cfd24a7ec0c3ae4673efb8f9ea1e5}{Parameters\+Error}}
+, \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda773e585fdc4d91db15dedfb2730197cf}{Network\+Error}}
+, \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdade0de39b3ef2cd8b0ee26ed4ccac9b52}{Service\+Error}}
+, \newline
+\mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda2a3d30b80e0326fc3b6d63c892f9deb1}{Parsing\+Error}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classQOnlineTranslator_ad0affaf0812f078a2bce6ca737981e17}{finished}} ()
+\begin{DoxyCompactList}\small\item\em finished \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQOnlineTranslator_aa7f2d7fcc725b0d88ab46083ded4a72e}{QOnline\+Translator}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classQOnlineTranslator}{QOnline\+Translator}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_ad8a776add899d6e82f3bc73000791462}{translate}} (const QString \&text, \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{Engine}} engine=\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}{Google}}, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} translation\+Lang=\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{Auto}}, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} source\+Lang=\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{Auto}}, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} ui\+Lang=\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{Auto}})
+\begin{DoxyCompactList}\small\item\em translate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_a2efc79c29ce74b453ae953f0d4f17d3c}{detect\+Language}} (const QString \&text, \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{Engine}} engine=\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}{Google}})
+\begin{DoxyCompactList}\small\item\em detect Language \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_a2df960bd41adf05dc001b655cfefb93e}{abort}} ()
+\begin{DoxyCompactList}\small\item\em abort \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQOnlineTranslator_a8d23946f7c9353aa0fddfb71a1029bc0}{is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em is Running \end{DoxyCompactList}\item 
+QJson\+Document \mbox{\hyperlink{classQOnlineTranslator_a52bf8c44f0b4c044d33b1c24614b49e6}{to\+Json}} () const
+\begin{DoxyCompactList}\small\item\em to Json \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_ab283aadbe8315ab8a13efe7cccdca06a}{source}} () const
+\begin{DoxyCompactList}\small\item\em source \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_a6afad1b2004015a088a608b953a83a96}{source\+Translit}} () const
+\begin{DoxyCompactList}\small\item\em source Translit \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_ae65f614f0d185cffd5ebdc4fff6ae7ae}{source\+Transcription}} () const
+\begin{DoxyCompactList}\small\item\em source Transcription \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_aaab777ec4eeae1ee5b9c26f2a6b958b4}{source\+Language\+Name}} () const
+\begin{DoxyCompactList}\small\item\em source Language Name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} \mbox{\hyperlink{classQOnlineTranslator_a417cd273df87719877a46da978d96daf}{source\+Language}} () const
+\begin{DoxyCompactList}\small\item\em source Language \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_a807bac85a6c5b18fa93163fa3a680935}{translation}} () const
+\begin{DoxyCompactList}\small\item\em translation \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_aea15d8f2fab7935b46579ef02ca119e7}{translation\+Translit}} () const
+\begin{DoxyCompactList}\small\item\em translation Translit \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_a965dc46140e9b8243469e90505a1f8b8}{translation\+Language\+Name}} () const
+\begin{DoxyCompactList}\small\item\em translation Language Name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} \mbox{\hyperlink{classQOnlineTranslator_a6c0d3bd52219d672c09a3adfc3d6da77}{translation\+Language}} () const
+\begin{DoxyCompactList}\small\item\em translation Language \end{DoxyCompactList}\item 
+QMap$<$ QString, QVector$<$ \mbox{\hyperlink{structQOption}{QOption}} $>$ $>$ \mbox{\hyperlink{classQOnlineTranslator_ae446df4d1fb62199e240e5f7fe3d78dd}{translation\+Options}} () const
+\begin{DoxyCompactList}\small\item\em translation Options \end{DoxyCompactList}\item 
+QMap$<$ QString, QVector$<$ \mbox{\hyperlink{structQExample}{QExample}} $>$ $>$ \mbox{\hyperlink{classQOnlineTranslator_aa6c547e380882ddf9a3d6df0e3af1270}{examples}} () const
+\begin{DoxyCompactList}\small\item\em examples \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbd}{Translation\+Error}} \mbox{\hyperlink{classQOnlineTranslator_af1c49492b85901b6c275b804cceb5106}{error}} () const
+\begin{DoxyCompactList}\small\item\em error \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_a2afc5015536f921e3ab514ba8c35c5d2}{error\+String}} () const
+\begin{DoxyCompactList}\small\item\em error String \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQOnlineTranslator_a09ae65585f77610d627d7fb460963202}{is\+Source\+Translit\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em is Source Translit Enabled \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_adb317247732149974e30394e385b9645}{set\+Source\+Translit\+Enabled}} (bool enable)
+\begin{DoxyCompactList}\small\item\em set Source Translit Enabled \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQOnlineTranslator_a1b448497bd595cde714b4a2f93f21347}{is\+Translation\+Translit\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em is Translation Translit Enabled \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_a27bc1dd48fe1f05bccc433c19e34cde2}{set\+Translation\+Translit\+Enabled}} (bool enable)
+\begin{DoxyCompactList}\small\item\em set Translation Translit Enabled \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQOnlineTranslator_a7d4f8f979c9fb4ae52290fef36a363c0}{is\+Source\+Transcription\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em is Source Transcription Enabled \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_a3eaaf2feab357a91141044b738dd1b5c}{set\+Source\+Transcription\+Enabled}} (bool enable)
+\begin{DoxyCompactList}\small\item\em set Source Transcription Enabled \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQOnlineTranslator_a3d7c4622295b06f433d60c2af1a124f6}{is\+Translation\+Options\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em is Translation Options Enabled \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_acd137490116cbefa5d2499665bab535b}{set\+Translation\+Options\+Enabled}} (bool enable)
+\begin{DoxyCompactList}\small\item\em set Translation Options Enabled \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQOnlineTranslator_a6e28732373c03238c1f581c672509c31}{is\+Examples\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em is Examples Enabled \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classQOnlineTranslator_a5357dda5ff3f00f04d703a6901b6fa9f}{set\+Examples\+Enabled}} (bool enable)
+\begin{DoxyCompactList}\small\item\em set Examples Enabled \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_ab9e9f9ca315aa4a5048e744f476951cc}{language\+Name}} (const QString \&lang)
+\begin{DoxyCompactList}\small\item\em language Name \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_aeeaa369a5b7ada09071e45ac60b9d268}{language\+Name\+To\+Code}} (const QString \&lang)
+\begin{DoxyCompactList}\small\item\em language Name to Code Added by Light-\/\+Wizzard \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classQOnlineTranslator_af73a6a6b213331b16ed9afa64108fddc}{language\+Code\+To\+Name}} (const QString \&lang)
+\begin{DoxyCompactList}\small\item\em language Code to Name Added by Light-\/\+Wizzard \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{classQOnlineTranslator_a658c059d04fd4ea3f46d0a9dc83a44fe}{language\+Name}} (\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} lang)
+\begin{DoxyCompactList}\small\item\em language Name \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{classQOnlineTranslator_a0bce8a584713a201f3437319dfce44b8}{language\+Code}} (\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} lang)
+\begin{DoxyCompactList}\small\item\em language Code \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} \mbox{\hyperlink{classQOnlineTranslator_a7c99dd13e094ebc6b473da754e16012c}{language}} (const QLocale \&locale)
+\begin{DoxyCompactList}\small\item\em language \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} \mbox{\hyperlink{classQOnlineTranslator_a16a905c7055353eb58bab831e699899a}{language}} (const QString \&lang\+Code)
+\begin{DoxyCompactList}\small\item\em language \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classQOnlineTranslator_a1d420384a1c87fb9d902b769c8c6f203}{is\+Support\+Translation}} (\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{Engine}} engine, \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}} lang)
+\begin{DoxyCompactList}\small\item\em is Support Translation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classQOnlineTranslator_ac125dd7c3a05d93ff802552eb6b8a9f8}{QOnline\+Tts}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classQOnlineTts}{QOnline\+Tts}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classQOnlineTranslator}{QOnline\+Translator}}. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}\label{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!Engine@{Engine}}
+\index{Engine@{Engine}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{Engine}{Engine}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{QOnline\+Translator\+::\+Engine}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Google@{Google}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Google@{Google}}}\mbox{\Hypertarget{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}\label{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}} 
+Google&{\ttfamily Google} Google \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Yandex@{Yandex}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Yandex@{Yandex}}}\mbox{\Hypertarget{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a6fa990a8e7d8f9b2807e4892cac5c546}\label{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a6fa990a8e7d8f9b2807e4892cac5c546}} 
+Yandex&{\ttfamily Yandex} Yandex \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bing@{Bing}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Bing@{Bing}}}\mbox{\Hypertarget{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca}\label{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533ad15fc1618344c286c908d7f6316b51ca}} 
+Bing&{\ttfamily Bing} Bing \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!Language@{Language}}
+\index{Language@{Language}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{Language}{Language}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoLanguage@{NoLanguage}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!NoLanguage@{NoLanguage}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daba1101f947dcb37d3ea35e3c40607e3f}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daba1101f947dcb37d3ea35e3c40607e3f}} 
+No\+Language&{\ttfamily No\+Language} No\+Language \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Auto@{Auto}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Auto@{Auto}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}} 
+Auto&{\ttfamily Auto} Auto \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Afrikaans@{Afrikaans}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Afrikaans@{Afrikaans}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7c235b486820b95cfab3f13fcd9de066}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7c235b486820b95cfab3f13fcd9de066}} 
+Afrikaans&{\ttfamily Afrikaans} Afrikaans \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Albanian@{Albanian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Albanian@{Albanian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da498679ad931d9ee6e5d015acb041dd2b}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da498679ad931d9ee6e5d015acb041dd2b}} 
+Albanian&{\ttfamily Albanian} Albanian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Amharic@{Amharic}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Amharic@{Amharic}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daec1199a41c3f10279b4837047deeaac4}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daec1199a41c3f10279b4837047deeaac4}} 
+Amharic&{\ttfamily Amharic} Amharic \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arabic@{Arabic}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Arabic@{Arabic}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0970cb2a0ff727b33ca35ffdf4123b65}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0970cb2a0ff727b33ca35ffdf4123b65}} 
+Arabic&{\ttfamily Arabic} Arabic \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Armenian@{Armenian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Armenian@{Armenian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fe4b55467ec03e414dc01f79b4befaa}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fe4b55467ec03e414dc01f79b4befaa}} 
+Armenian&{\ttfamily Armenian} Armenian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Azerbaijani@{Azerbaijani}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Azerbaijani@{Azerbaijani}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4f5a179a0bd5cc24951eb365fe425dd2}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4f5a179a0bd5cc24951eb365fe425dd2}} 
+Azerbaijani&{\ttfamily Azerbaijani} Azerbaijani \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bashkir@{Bashkir}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Bashkir@{Bashkir}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da678ed3e7307e7a84b25e339a6744bf9a}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da678ed3e7307e7a84b25e339a6744bf9a}} 
+Bashkir&{\ttfamily Bashkir} Bashkir \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Basque@{Basque}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Basque@{Basque}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeab29df241607d253f8d854d9bd20206}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeab29df241607d253f8d854d9bd20206}} 
+Basque&{\ttfamily Basque} Basque \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Belarusian@{Belarusian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Belarusian@{Belarusian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7e8f94a1cd909d103a4e7efdb77d396}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7e8f94a1cd909d103a4e7efdb77d396}} 
+Belarusian&{\ttfamily Belarusian} Belarusian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bengali@{Bengali}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Bengali@{Bengali}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac279322d17b7cfcef3a4d05451c9a1e6}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac279322d17b7cfcef3a4d05451c9a1e6}} 
+Bengali&{\ttfamily Bengali} Bengali \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bosnian@{Bosnian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Bosnian@{Bosnian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa96fb82b352ff44143166059154dd9d3}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa96fb82b352ff44143166059154dd9d3}} 
+Bosnian&{\ttfamily Bosnian} Bosnian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bulgarian@{Bulgarian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Bulgarian@{Bulgarian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daecb77188880803639bc4364b4da3c23d}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daecb77188880803639bc4364b4da3c23d}} 
+Bulgarian&{\ttfamily Bulgarian} Bulgarian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cantonese@{Cantonese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Cantonese@{Cantonese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf8f67de6844fa41edee25a21c2f47073}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf8f67de6844fa41edee25a21c2f47073}} 
+Cantonese&{\ttfamily Cantonese} Cantonese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Catalan@{Catalan}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Catalan@{Catalan}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4ed0353d7bbffc77e23eff1b252020da}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4ed0353d7bbffc77e23eff1b252020da}} 
+Catalan&{\ttfamily Catalan} Catalan \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cebuano@{Cebuano}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Cebuano@{Cebuano}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da85559bda34ec940a549a2c396321dbbe}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da85559bda34ec940a549a2c396321dbbe}} 
+Cebuano&{\ttfamily Cebuano} Cebuano \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Chichewa@{Chichewa}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Chichewa@{Chichewa}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8de1aa79ab5d024caa47e4d2d5eed5c0}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8de1aa79ab5d024caa47e4d2d5eed5c0}} 
+Chichewa&{\ttfamily Chichewa} Chichewa \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Corsican@{Corsican}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Corsican@{Corsican}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5c3cabafc73f874395f308290f12f329}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5c3cabafc73f874395f308290f12f329}} 
+Corsican&{\ttfamily Corsican} Corsican \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Croatian@{Croatian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Croatian@{Croatian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5a60912729ba2929b015a39d2d0e7e64}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5a60912729ba2929b015a39d2d0e7e64}} 
+Croatian&{\ttfamily Croatian} Croatian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Czech@{Czech}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Czech@{Czech}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8e59c368333cb2a82d308d21dd14c0c5}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8e59c368333cb2a82d308d21dd14c0c5}} 
+Czech&{\ttfamily Czech} Czech \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Danish@{Danish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Danish@{Danish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ef97a3f77119b201df0c0bb308bb354}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ef97a3f77119b201df0c0bb308bb354}} 
+Danish&{\ttfamily Danish} Danish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dutch@{Dutch}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Dutch@{Dutch}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4dbe4dc04c52f848efde47e5dda1a1c0}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4dbe4dc04c52f848efde47e5dda1a1c0}} 
+Dutch&{\ttfamily Dutch} Dutch \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{English@{English}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!English@{English}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da59759e784f024e56af1341329c49ce7c}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da59759e784f024e56af1341329c49ce7c}} 
+English&{\ttfamily English} English \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Esperanto@{Esperanto}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Esperanto@{Esperanto}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da034433f3c919913e7b69a930c87601d5}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da034433f3c919913e7b69a930c87601d5}} 
+Esperanto&{\ttfamily Esperanto} Esperanto \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Estonian@{Estonian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Estonian@{Estonian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da541da964c49f331f0587615090de99f0}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da541da964c49f331f0587615090de99f0}} 
+Estonian&{\ttfamily Estonian} Estonian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fijian@{Fijian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Fijian@{Fijian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa17ff875d873c20d82e4290cbcae8206}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa17ff875d873c20d82e4290cbcae8206}} 
+Fijian&{\ttfamily Fijian} Fijian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Filipino@{Filipino}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Filipino@{Filipino}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae21c39ffaaa746c98dc547318050afc8}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae21c39ffaaa746c98dc547318050afc8}} 
+Filipino&{\ttfamily Filipino} Filipino \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Finnish@{Finnish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Finnish@{Finnish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9ea66303942591207a8be82a0a0933b3}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9ea66303942591207a8be82a0a0933b3}} 
+Finnish&{\ttfamily Finnish} Finnish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{French@{French}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!French@{French}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ff05cfc6b2ace469b17aad4e3288c07}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3ff05cfc6b2ace469b17aad4e3288c07}} 
+French&{\ttfamily French} French \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Frisian@{Frisian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Frisian@{Frisian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1e682e2832b1040a9448a00427afcf13}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1e682e2832b1040a9448a00427afcf13}} 
+Frisian&{\ttfamily Frisian} Frisian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Galician@{Galician}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Galician@{Galician}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae44d4ce5a68b23905c3abb57ced3382d}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae44d4ce5a68b23905c3abb57ced3382d}} 
+Galician&{\ttfamily Galician} Galician \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Georgian@{Georgian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Georgian@{Georgian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafd95f6901ef6eec404561367d6f03eef}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafd95f6901ef6eec404561367d6f03eef}} 
+Georgian&{\ttfamily Georgian} Georgian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{German@{German}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!German@{German}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad69f97512845ef62edb14db17d4ff8f5}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad69f97512845ef62edb14db17d4ff8f5}} 
+German&{\ttfamily German} German \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Greek@{Greek}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Greek@{Greek}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e4170240bda09ebe40f159b53ba285}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e4170240bda09ebe40f159b53ba285}} 
+Greek&{\ttfamily Greek} Greek \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gujarati@{Gujarati}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Gujarati@{Gujarati}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae1dab664db3fb6c099ed13eb9760afb4}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae1dab664db3fb6c099ed13eb9760afb4}} 
+Gujarati&{\ttfamily Gujarati} Gujarati \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HaitianCreole@{HaitianCreole}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!HaitianCreole@{HaitianCreole}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da71c5afbbfa938203ecd85baea778fc12}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da71c5afbbfa938203ecd85baea778fc12}} 
+Haitian\+Creole&{\ttfamily Haitian\+Creole} Haitian\+Creole \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hausa@{Hausa}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Hausa@{Hausa}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da83aec6fc27781646bd3c3b3b86c1a305}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da83aec6fc27781646bd3c3b3b86c1a305}} 
+Hausa&{\ttfamily Hausa} Hausa \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hawaiian@{Hawaiian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Hawaiian@{Hawaiian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa954f7171797f9c8663dde964a05d52c}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa954f7171797f9c8663dde964a05d52c}} 
+Hawaiian&{\ttfamily Hawaiian} Hawaiian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hebrew@{Hebrew}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Hebrew@{Hebrew}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daaa3053268d3010e60b2afab40b10185f}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daaa3053268d3010e60b2afab40b10185f}} 
+Hebrew&{\ttfamily Hebrew} Hebrew \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HillMari@{HillMari}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!HillMari@{HillMari}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1d630b51f2db57c2cea53b9f885008c4}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1d630b51f2db57c2cea53b9f885008c4}} 
+Hill\+Mari&{\ttfamily Hill\+Mari} Hill\+Mari \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hindi@{Hindi}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Hindi@{Hindi}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86f8f627a607c0e36c9aa5951175b19e}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86f8f627a607c0e36c9aa5951175b19e}} 
+Hindi&{\ttfamily Hindi} Hindi \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hmong@{Hmong}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Hmong@{Hmong}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa4f7d71e6a601d3e0714165f84cbf8a7}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa4f7d71e6a601d3e0714165f84cbf8a7}} 
+Hmong&{\ttfamily Hmong} Hmong \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hungarian@{Hungarian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Hungarian@{Hungarian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da900e00fa15042fb4b5b0ef13677d97e9}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da900e00fa15042fb4b5b0ef13677d97e9}} 
+Hungarian&{\ttfamily Hungarian} Hungarian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Icelandic@{Icelandic}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Icelandic@{Icelandic}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3fa3840a52c38b3438e40deb351620c7}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3fa3840a52c38b3438e40deb351620c7}} 
+Icelandic&{\ttfamily Icelandic} Icelandic \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Igbo@{Igbo}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Igbo@{Igbo}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daae9f6663ba0acd3743dd36090bc0c976}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daae9f6663ba0acd3743dd36090bc0c976}} 
+Igbo&{\ttfamily Igbo} Igbo \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Indonesian@{Indonesian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Indonesian@{Indonesian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0a25f909f4b7388bf5018277d7bb7933}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0a25f909f4b7388bf5018277d7bb7933}} 
+Indonesian&{\ttfamily Indonesian} Indonesian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Irish@{Irish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Irish@{Irish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae0c9471728655a8c1e132052b55335c4}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae0c9471728655a8c1e132052b55335c4}} 
+Irish&{\ttfamily Irish} Irish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Italian@{Italian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Italian@{Italian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae28fbc1865772823b8812088390584d7}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae28fbc1865772823b8812088390584d7}} 
+Italian&{\ttfamily Italian} Italian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Japanese@{Japanese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Japanese@{Japanese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daadac3279cf16c0589900349de5fcdc7d}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daadac3279cf16c0589900349de5fcdc7d}} 
+Japanese&{\ttfamily Japanese} Japanese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Javanese@{Javanese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Javanese@{Javanese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae5a1f48b6fb1021b6e38f62336fc633f}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae5a1f48b6fb1021b6e38f62336fc633f}} 
+Javanese&{\ttfamily Javanese} Javanese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Kannada@{Kannada}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Kannada@{Kannada}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da30d270a72c84621933b6639d3f2bc62b}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da30d270a72c84621933b6639d3f2bc62b}} 
+Kannada&{\ttfamily Kannada} Kannada \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Kazakh@{Kazakh}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Kazakh@{Kazakh}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafcebf7d8b9c7d4a95c33081b92d502d3}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dafcebf7d8b9c7d4a95c33081b92d502d3}} 
+Kazakh&{\ttfamily Kazakh} Kazakh \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Khmer@{Khmer}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Khmer@{Khmer}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf803f167a45e4c36fb323fd99e5f5caa}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf803f167a45e4c36fb323fd99e5f5caa}} 
+Khmer&{\ttfamily Khmer} Khmer \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Kinyarwanda@{Kinyarwanda}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Kinyarwanda@{Kinyarwanda}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da309aed87c4f70823135cad0fde5070b1}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da309aed87c4f70823135cad0fde5070b1}} 
+Kinyarwanda&{\ttfamily Kinyarwanda} Kinyarwanda \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Klingon@{Klingon}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Klingon@{Klingon}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3a9b422b4c4b838b6780db779f103d07}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3a9b422b4c4b838b6780db779f103d07}} 
+Klingon&{\ttfamily Klingon} Klingon \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KlingonPlqaD@{KlingonPlqaD}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!KlingonPlqaD@{KlingonPlqaD}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7e31d3c46498d46ef1170d44def6c5dc}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7e31d3c46498d46ef1170d44def6c5dc}} 
+Klingon\+PlqaD&{\ttfamily Klingon\+PlqaD} Klingon\+PlqaD \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Korean@{Korean}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Korean@{Korean}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9c815eb8c7e9165fa430af7c14db3d04}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9c815eb8c7e9165fa430af7c14db3d04}} 
+Korean&{\ttfamily Korean} Korean \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Kurdish@{Kurdish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Kurdish@{Kurdish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabb5fd8d84376c7c1b3374d5c4bc79916}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabb5fd8d84376c7c1b3374d5c4bc79916}} 
+Kurdish&{\ttfamily Kurdish} Kurdish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Kyrgyz@{Kyrgyz}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Kyrgyz@{Kyrgyz}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad9c7fbe942a5b265ce1362833856278a}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad9c7fbe942a5b265ce1362833856278a}} 
+Kyrgyz&{\ttfamily Kyrgyz} Kyrgyz \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lao@{Lao}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Lao@{Lao}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8674dace66f1527373db9f394235368c}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8674dace66f1527373db9f394235368c}} 
+Lao&{\ttfamily Lao} Lao \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Latin@{Latin}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Latin@{Latin}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da14adab7c890b4d24eb453199d45320e7}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da14adab7c890b4d24eb453199d45320e7}} 
+Latin&{\ttfamily Latin} Latin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Latvian@{Latvian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Latvian@{Latvian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da50e9fae33bfe10114e7e0e0200ee828c}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da50e9fae33bfe10114e7e0e0200ee828c}} 
+Latvian&{\ttfamily Latvian} Latvian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LevantineArabic@{LevantineArabic}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!LevantineArabic@{LevantineArabic}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa90d1baa2d1305e330ca1d2543e4bac1}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa90d1baa2d1305e330ca1d2543e4bac1}} 
+Levantine\+Arabic&{\ttfamily Levantine\+Arabic} Levantine\+Arabic \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lithuanian@{Lithuanian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Lithuanian@{Lithuanian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7d0e358b64dce2611923df03b0908ec8}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7d0e358b64dce2611923df03b0908ec8}} 
+Lithuanian&{\ttfamily Lithuanian} Lithuanian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Luxembourgish@{Luxembourgish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Luxembourgish@{Luxembourgish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad3d2f91eefa8c042a732d310ace618e8}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad3d2f91eefa8c042a732d310ace618e8}} 
+Luxembourgish&{\ttfamily Luxembourgish} Luxembourgish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Macedonian@{Macedonian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Macedonian@{Macedonian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da84a47c065a0a459a6f9da96b0ee0ea4a}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da84a47c065a0a459a6f9da96b0ee0ea4a}} 
+Macedonian&{\ttfamily Macedonian} Macedonian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Malagasy@{Malagasy}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Malagasy@{Malagasy}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46d03c2753fc928b0e15aabee591b707}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46d03c2753fc928b0e15aabee591b707}} 
+Malagasy&{\ttfamily Malagasy} Malagasy \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Malay@{Malay}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Malay@{Malay}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3d99fde0ae16807c24a2247bcf2b277f}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da3d99fde0ae16807c24a2247bcf2b277f}} 
+Malay&{\ttfamily Malay} Malay \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Malayalam@{Malayalam}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Malayalam@{Malayalam}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da12462dcb9fbe99445f8dd42106dc6954}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da12462dcb9fbe99445f8dd42106dc6954}} 
+Malayalam&{\ttfamily Malayalam} Malayalam \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Maltese@{Maltese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Maltese@{Maltese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7fd3e1b1611ccb6f4aec445886b58ba}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae7fd3e1b1611ccb6f4aec445886b58ba}} 
+Maltese&{\ttfamily Maltese} Maltese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Maori@{Maori}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Maori@{Maori}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa99bee84e01f23fcffe46702d626b9e7}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa99bee84e01f23fcffe46702d626b9e7}} 
+Maori&{\ttfamily Maori} Maori \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Marathi@{Marathi}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Marathi@{Marathi}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade46e0b96ed9321f905040b8b80192cc}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade46e0b96ed9321f905040b8b80192cc}} 
+Marathi&{\ttfamily Marathi} Marathi \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mari@{Mari}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Mari@{Mari}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da924efefe99fdb72dffbb9fca03cc7cce}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da924efefe99fdb72dffbb9fca03cc7cce}} 
+Mari&{\ttfamily Mari} Mari \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mongolian@{Mongolian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Mongolian@{Mongolian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da24084173444f92f2c71c2e7d420d95fb}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da24084173444f92f2c71c2e7d420d95fb}} 
+Mongolian&{\ttfamily Mongolian} Mongolian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Myanmar@{Myanmar}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Myanmar@{Myanmar}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da319ff510e90aeebde5027a7ae715f314}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da319ff510e90aeebde5027a7ae715f314}} 
+Myanmar&{\ttfamily Myanmar} Myanmar \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Nepali@{Nepali}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Nepali@{Nepali}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadcdff70e1a5b54ce10cba23c72696494}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadcdff70e1a5b54ce10cba23c72696494}} 
+Nepali&{\ttfamily Nepali} Nepali \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Norwegian@{Norwegian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Norwegian@{Norwegian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5f3e3ac78fb6a1c6384cec82d5fe32cd}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5f3e3ac78fb6a1c6384cec82d5fe32cd}} 
+Norwegian&{\ttfamily Norwegian} Norwegian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Oriya@{Oriya}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Oriya@{Oriya}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac804076894739517cc275f8e60e6ce11}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac804076894739517cc275f8e60e6ce11}} 
+Oriya&{\ttfamily Oriya} Oriya \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Papiamento@{Papiamento}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Papiamento@{Papiamento}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae2bf70b2aef44cec9e20b68a740a6b82}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae2bf70b2aef44cec9e20b68a740a6b82}} 
+Papiamento&{\ttfamily Papiamento} Papiamento \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pashto@{Pashto}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Pashto@{Pashto}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeb9d3dcda759e078dce84bfd67c779ba}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daeb9d3dcda759e078dce84bfd67c779ba}} 
+Pashto&{\ttfamily Pashto} Pashto \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Persian@{Persian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Persian@{Persian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadfe578f587a1836a70276ed963aa1a70}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dadfe578f587a1836a70276ed963aa1a70}} 
+Persian&{\ttfamily Persian} Persian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Polish@{Polish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Polish@{Polish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da87ec26e0cad5166e049b2268bdb4f7cc}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da87ec26e0cad5166e049b2268bdb4f7cc}} 
+Polish&{\ttfamily Polish} Polish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Portuguese@{Portuguese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Portuguese@{Portuguese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5428874d0633f0a57ab34cf771b76cf7}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da5428874d0633f0a57ab34cf771b76cf7}} 
+Portuguese&{\ttfamily Portuguese} Portuguese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Punjabi@{Punjabi}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Punjabi@{Punjabi}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8fd7608a9d606f1f760baad07453a3c3}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8fd7608a9d606f1f760baad07453a3c3}} 
+Punjabi&{\ttfamily Punjabi} Punjabi \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QueretaroOtomi@{QueretaroOtomi}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!QueretaroOtomi@{QueretaroOtomi}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac72c017fad2d7dbd2c8c27b0149c72a5}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac72c017fad2d7dbd2c8c27b0149c72a5}} 
+Queretaro\+Otomi&{\ttfamily Queretaro\+Otomi} Queretaro\+Otomi \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Romanian@{Romanian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Romanian@{Romanian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86d29d2e5b29774a92ef7c3a46d8a088}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da86d29d2e5b29774a92ef7c3a46d8a088}} 
+Romanian&{\ttfamily Romanian} Romanian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Russian@{Russian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Russian@{Russian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabcd0a32a169961da8833d534ac6aec50}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dabcd0a32a169961da8833d534ac6aec50}} 
+Russian&{\ttfamily Russian} Russian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Samoan@{Samoan}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Samoan@{Samoan}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf456f914454f03bff8c54cf50ef42417}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf456f914454f03bff8c54cf50ef42417}} 
+Samoan&{\ttfamily Samoan} Samoan \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScotsGaelic@{ScotsGaelic}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!ScotsGaelic@{ScotsGaelic}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da073689284494e5bbcce90a3238daac4d}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da073689284494e5bbcce90a3238daac4d}} 
+Scots\+Gaelic&{\ttfamily Scots\+Gaelic} Scots\+Gaelic \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SerbianCyrillic@{SerbianCyrillic}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!SerbianCyrillic@{SerbianCyrillic}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9e9a1c79bed7d7db2937c3fb7a07002e}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da9e9a1c79bed7d7db2937c3fb7a07002e}} 
+Serbian\+Cyrillic&{\ttfamily Serbian\+Cyrillic} Serbian\+Cyrillic \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SerbianLatin@{SerbianLatin}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!SerbianLatin@{SerbianLatin}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da80fb6cacf31aa26742a7405fbb34ecb1}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da80fb6cacf31aa26742a7405fbb34ecb1}} 
+Serbian\+Latin&{\ttfamily Serbian\+Latin} Serbian\+Latin \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sesotho@{Sesotho}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Sesotho@{Sesotho}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da020a46de26d9233f347cccc27e4cbc92}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da020a46de26d9233f347cccc27e4cbc92}} 
+Sesotho&{\ttfamily Sesotho} Sesotho \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shona@{Shona}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Shona@{Shona}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa2b24bebf1d1ac25b578f57def0b0491}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daa2b24bebf1d1ac25b578f57def0b0491}} 
+Shona&{\ttfamily Shona} Shona \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SimplifiedChinese@{SimplifiedChinese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!SimplifiedChinese@{SimplifiedChinese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daab6d5f8e13df93a49111dcd646fdcdd4}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daab6d5f8e13df93a49111dcd646fdcdd4}} 
+Simplified\+Chinese&{\ttfamily Simplified\+Chinese} Simplified\+Chinese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sindhi@{Sindhi}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Sindhi@{Sindhi}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da65e1475e9a52674f085998dcf4bf5ac8}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da65e1475e9a52674f085998dcf4bf5ac8}} 
+Sindhi&{\ttfamily Sindhi} Sindhi \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sinhala@{Sinhala}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Sinhala@{Sinhala}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae939959a542d08a9f38cd9cb6e2c13ca}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dae939959a542d08a9f38cd9cb6e2c13ca}} 
+Sinhala&{\ttfamily Sinhala} Sinhala \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slovak@{Slovak}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Slovak@{Slovak}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2f07c4ed4f6170f5480d8794f390ae50}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2f07c4ed4f6170f5480d8794f390ae50}} 
+Slovak&{\ttfamily Slovak} Slovak \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slovenian@{Slovenian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Slovenian@{Slovenian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0ecd6a8cc6bb8f9e48d023424ab2b363}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0ecd6a8cc6bb8f9e48d023424ab2b363}} 
+Slovenian&{\ttfamily Slovenian} Slovenian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Somali@{Somali}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Somali@{Somali}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0c647001c187ebaddfc6d3eb45472c52}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0c647001c187ebaddfc6d3eb45472c52}} 
+Somali&{\ttfamily Somali} Somali \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Spanish@{Spanish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Spanish@{Spanish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da68be48b9360fa9a1c68c104dd3819bff}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da68be48b9360fa9a1c68c104dd3819bff}} 
+Spanish&{\ttfamily Spanish} Spanish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sundanese@{Sundanese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Sundanese@{Sundanese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4bf29461c725fbb87c96df87b75526c0}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4bf29461c725fbb87c96df87b75526c0}} 
+Sundanese&{\ttfamily Sundanese} Sundanese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Swahili@{Swahili}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Swahili@{Swahili}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da684f27f73212640d6a7919314eaedff1}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da684f27f73212640d6a7919314eaedff1}} 
+Swahili&{\ttfamily Swahili} Swahili \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Swedish@{Swedish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Swedish@{Swedish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da00d1f6a74afaf4d46373fbfabd6bd76e}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da00d1f6a74afaf4d46373fbfabd6bd76e}} 
+Swedish&{\ttfamily Swedish} Swedish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tagalog@{Tagalog}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Tagalog@{Tagalog}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da687713147e766296bb1958fe94f3a75a}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da687713147e766296bb1958fe94f3a75a}} 
+Tagalog&{\ttfamily Tagalog} Tagalog \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tahitian@{Tahitian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Tahitian@{Tahitian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1151e56f72967b144810cfe9ada11309}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da1151e56f72967b144810cfe9ada11309}} 
+Tahitian&{\ttfamily Tahitian} Tahitian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tajik@{Tajik}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Tajik@{Tajik}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac655176d1a1e9bfe7d295f23fff9aeb0}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dac655176d1a1e9bfe7d295f23fff9aeb0}} 
+Tajik&{\ttfamily Tajik} Tajik \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tamil@{Tamil}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Tamil@{Tamil}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad2f524197f7aac358759b15d88cb1f83}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dad2f524197f7aac358759b15d88cb1f83}} 
+Tamil&{\ttfamily Tamil} Tamil \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tatar@{Tatar}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Tatar@{Tatar}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2eceafeb1cadb638af390095aebd78cd}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2eceafeb1cadb638af390095aebd78cd}} 
+Tatar&{\ttfamily Tatar} Tatar \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Telugu@{Telugu}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Telugu@{Telugu}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0024f0f4fedd39b7dfaeb23423016ef3}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da0024f0f4fedd39b7dfaeb23423016ef3}} 
+Telugu&{\ttfamily Telugu} Telugu \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Thai@{Thai}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Thai@{Thai}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e0af013c88ed178c965d2c7051fdeb}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da46e0af013c88ed178c965d2c7051fdeb}} 
+Thai&{\ttfamily Thai} Thai \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tongan@{Tongan}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Tongan@{Tongan}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da6ea7fba1ec2a79cf4d44989b390f2fc6}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da6ea7fba1ec2a79cf4d44989b390f2fc6}} 
+Tongan&{\ttfamily Tongan} Tongan \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TraditionalChinese@{TraditionalChinese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!TraditionalChinese@{TraditionalChinese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da36dc0b5d90ccf7d9674ab87d72bc37eb}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da36dc0b5d90ccf7d9674ab87d72bc37eb}} 
+Traditional\+Chinese&{\ttfamily Traditional\+Chinese} Traditional\+Chinese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Turkish@{Turkish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Turkish@{Turkish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf4da215169a8a0b6f1920c0105434fe3}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf4da215169a8a0b6f1920c0105434fe3}} 
+Turkish&{\ttfamily Turkish} Turkish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Turkmen@{Turkmen}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Turkmen@{Turkmen}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dacd560da7a4ba029e2e6a9cac8d10dd8f}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dacd560da7a4ba029e2e6a9cac8d10dd8f}} 
+Turkmen&{\ttfamily Turkmen} Turkmen \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Udmurt@{Udmurt}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Udmurt@{Udmurt}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da578efde8a48e735b99fdf29393cd0ea5}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da578efde8a48e735b99fdf29393cd0ea5}} 
+Udmurt&{\ttfamily Udmurt} Udmurt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Uighur@{Uighur}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Uighur@{Uighur}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4831376f004771748c9da4805196b461}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da4831376f004771748c9da4805196b461}} 
+Uighur&{\ttfamily Uighur} Uighur \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ukrainian@{Ukrainian}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Ukrainian@{Ukrainian}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8ff78d074a3410ff498b21b9871b52d2}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da8ff78d074a3410ff498b21b9871b52d2}} 
+Ukrainian&{\ttfamily Ukrainian} Ukrainian \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Urdu@{Urdu}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Urdu@{Urdu}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade113db4d9e4d534589d0b4639073fc1}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73dade113db4d9e4d534589d0b4639073fc1}} 
+Urdu&{\ttfamily Urdu} Urdu \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Uzbek@{Uzbek}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Uzbek@{Uzbek}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da645176c913def2cb796a5e620b1dbb11}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da645176c913def2cb796a5e620b1dbb11}} 
+Uzbek&{\ttfamily Uzbek} Uzbek \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vietnamese@{Vietnamese}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Vietnamese@{Vietnamese}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7cc7c58ccc6ee476f4fd7fc5bb11827b}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da7cc7c58ccc6ee476f4fd7fc5bb11827b}} 
+Vietnamese&{\ttfamily Vietnamese} Vietnamese \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Welsh@{Welsh}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Welsh@{Welsh}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fc662a16d8e0ca555b3c2d1a6536cc4}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da2fc662a16d8e0ca555b3c2d1a6536cc4}} 
+Welsh&{\ttfamily Welsh} Welsh \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Xhosa@{Xhosa}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Xhosa@{Xhosa}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da69f810cf444dfe1aa00490a05653135c}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da69f810cf444dfe1aa00490a05653135c}} 
+Xhosa&{\ttfamily Xhosa} Xhosa \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Yiddish@{Yiddish}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Yiddish@{Yiddish}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf90cacd3a322397d9e3a0418fad804f2}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daf90cacd3a322397d9e3a0418fad804f2}} 
+Yiddish&{\ttfamily Yiddish} Yiddish \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Yoruba@{Yoruba}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Yoruba@{Yoruba}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daffcf6018312112a8c92553ef9e17a233}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73daffcf6018312112a8c92553ef9e17a233}} 
+Yoruba&{\ttfamily Yoruba} Yoruba \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YucatecMaya@{YucatecMaya}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!YucatecMaya@{YucatecMaya}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da51dca39c921ab4b448292c9f297f2d11}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da51dca39c921ab4b448292c9f297f2d11}} 
+Yucatec\+Maya&{\ttfamily Yucatec\+Maya} Yucatec\+Maya \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Zulu@{Zulu}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!Zulu@{Zulu}}}\mbox{\Hypertarget{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da76f766b26afbaa91544bca7dcd4b0238}\label{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da76f766b26afbaa91544bca7dcd4b0238}} 
+Zulu&{\ttfamily Zulu} Zulu \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbd}\label{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbd}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!TranslationError@{TranslationError}}
+\index{TranslationError@{TranslationError}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{TranslationError}{TranslationError}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbd}{QOnline\+Translator\+::\+Translation\+Error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoError@{NoError}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!NoError@{NoError}}}\mbox{\Hypertarget{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda5ed17a2426a5ee0c801d3f50c558e5c7}\label{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda5ed17a2426a5ee0c801d3f50c558e5c7}} 
+No\+Error&{\ttfamily No\+Error} No Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParametersError@{ParametersError}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!ParametersError@{ParametersError}}}\mbox{\Hypertarget{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdad38cfd24a7ec0c3ae4673efb8f9ea1e5}\label{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdad38cfd24a7ec0c3ae4673efb8f9ea1e5}} 
+Parameters\+Error&{\ttfamily Parameters\+Error} Parameters Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NetworkError@{NetworkError}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!NetworkError@{NetworkError}}}\mbox{\Hypertarget{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda773e585fdc4d91db15dedfb2730197cf}\label{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda773e585fdc4d91db15dedfb2730197cf}} 
+Network\+Error&{\ttfamily Network\+Error} Network Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ServiceError@{ServiceError}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!ServiceError@{ServiceError}}}\mbox{\Hypertarget{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdade0de39b3ef2cd8b0ee26ed4ccac9b52}\label{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbdade0de39b3ef2cd8b0ee26ed4ccac9b52}} 
+Service\+Error&{\ttfamily Service\+Error} Service Error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ParsingError@{ParsingError}!QOnlineTranslator@{QOnlineTranslator}}\index{QOnlineTranslator@{QOnlineTranslator}!ParsingError@{ParsingError}}}\mbox{\Hypertarget{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda2a3d30b80e0326fc3b6d63c892f9deb1}\label{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbda2a3d30b80e0326fc3b6d63c892f9deb1}} 
+Parsing\+Error&{\ttfamily Parsing\+Error} Parsing Error \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classQOnlineTranslator_aa7f2d7fcc725b0d88ab46083ded4a72e}\label{classQOnlineTranslator_aa7f2d7fcc725b0d88ab46083ded4a72e}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!QOnlineTranslator@{QOnlineTranslator}}
+\index{QOnlineTranslator@{QOnlineTranslator}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{QOnlineTranslator()}{QOnlineTranslator()}}
+{\footnotesize\ttfamily QOnline\+Translator\+::\+QOnline\+Translator (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{classQOnlineTranslator}{QOnline\+Translator}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQOnlineTranslator_a2df960bd41adf05dc001b655cfefb93e}\label{classQOnlineTranslator_a2df960bd41adf05dc001b655cfefb93e}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!abort@{abort}}
+\index{abort@{abort}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{abort()}{abort()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+abort 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a2efc79c29ce74b453ae953f0d4f17d3c}\label{classQOnlineTranslator_a2efc79c29ce74b453ae953f0d4f17d3c}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!detectLanguage@{detectLanguage}}
+\index{detectLanguage@{detectLanguage}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{detectLanguage()}{detectLanguage()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::detect\+Language (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{Engine}}}]{engine = {\ttfamily \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}{Google}}} }\end{DoxyParamCaption})}
+
+
+
+detect Language 
+
+\mbox{\Hypertarget{classQOnlineTranslator_af1c49492b85901b6c275b804cceb5106}\label{classQOnlineTranslator_af1c49492b85901b6c275b804cceb5106}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!error@{error}}
+\index{error@{error}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTranslator_a8992762fdc20d45a1a507d59e1e90fbd}{QOnline\+Translator\+::\+Translation\+Error}} QOnline\+Translator\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+error 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a2afc5015536f921e3ab514ba8c35c5d2}\label{classQOnlineTranslator_a2afc5015536f921e3ab514ba8c35c5d2}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!errorString@{errorString}}
+\index{errorString@{errorString}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{errorString()}{errorString()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::error\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+error String 
+
+\mbox{\Hypertarget{classQOnlineTranslator_aa6c547e380882ddf9a3d6df0e3af1270}\label{classQOnlineTranslator_aa6c547e380882ddf9a3d6df0e3af1270}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!examples@{examples}}
+\index{examples@{examples}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{examples()}{examples()}}
+{\footnotesize\ttfamily QMap$<$ QString, QVector$<$ \mbox{\hyperlink{structQExample}{QExample}} $>$ $>$ QOnline\+Translator\+::examples (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+examples 
+
+\mbox{\Hypertarget{classQOnlineTranslator_ad0affaf0812f078a2bce6ca737981e17}\label{classQOnlineTranslator_ad0affaf0812f078a2bce6ca737981e17}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!finished@{finished}}
+\index{finished@{finished}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+finished 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a6e28732373c03238c1f581c672509c31}\label{classQOnlineTranslator_a6e28732373c03238c1f581c672509c31}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!isExamplesEnabled@{isExamplesEnabled}}
+\index{isExamplesEnabled@{isExamplesEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{isExamplesEnabled()}{isExamplesEnabled()}}
+{\footnotesize\ttfamily bool QOnline\+Translator\+::is\+Examples\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+is Examples Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a8d23946f7c9353aa0fddfb71a1029bc0}\label{classQOnlineTranslator_a8d23946f7c9353aa0fddfb71a1029bc0}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily bool QOnline\+Translator\+::is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+is Running 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a7d4f8f979c9fb4ae52290fef36a363c0}\label{classQOnlineTranslator_a7d4f8f979c9fb4ae52290fef36a363c0}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!isSourceTranscriptionEnabled@{isSourceTranscriptionEnabled}}
+\index{isSourceTranscriptionEnabled@{isSourceTranscriptionEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{isSourceTranscriptionEnabled()}{isSourceTranscriptionEnabled()}}
+{\footnotesize\ttfamily bool QOnline\+Translator\+::is\+Source\+Transcription\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+is Source Transcription Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a09ae65585f77610d627d7fb460963202}\label{classQOnlineTranslator_a09ae65585f77610d627d7fb460963202}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!isSourceTranslitEnabled@{isSourceTranslitEnabled}}
+\index{isSourceTranslitEnabled@{isSourceTranslitEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{isSourceTranslitEnabled()}{isSourceTranslitEnabled()}}
+{\footnotesize\ttfamily bool QOnline\+Translator\+::is\+Source\+Translit\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+is Source Translit Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a1d420384a1c87fb9d902b769c8c6f203}\label{classQOnlineTranslator_a1d420384a1c87fb9d902b769c8c6f203}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!isSupportTranslation@{isSupportTranslation}}
+\index{isSupportTranslation@{isSupportTranslation}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{isSupportTranslation()}{isSupportTranslation()}}
+{\footnotesize\ttfamily bool QOnline\+Translator\+::is\+Support\+Translation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{Engine}}}]{engine,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}}}]{lang }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+is Support Translation 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a3d7c4622295b06f433d60c2af1a124f6}\label{classQOnlineTranslator_a3d7c4622295b06f433d60c2af1a124f6}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!isTranslationOptionsEnabled@{isTranslationOptionsEnabled}}
+\index{isTranslationOptionsEnabled@{isTranslationOptionsEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{isTranslationOptionsEnabled()}{isTranslationOptionsEnabled()}}
+{\footnotesize\ttfamily bool QOnline\+Translator\+::is\+Translation\+Options\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+is Translation Options Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a1b448497bd595cde714b4a2f93f21347}\label{classQOnlineTranslator_a1b448497bd595cde714b4a2f93f21347}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!isTranslationTranslitEnabled@{isTranslationTranslitEnabled}}
+\index{isTranslationTranslitEnabled@{isTranslationTranslitEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{isTranslationTranslitEnabled()}{isTranslationTranslitEnabled()}}
+{\footnotesize\ttfamily bool QOnline\+Translator\+::is\+Translation\+Translit\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+is Translation Translit Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a7c99dd13e094ebc6b473da754e16012c}\label{classQOnlineTranslator_a7c99dd13e094ebc6b473da754e16012c}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!language@{language}}
+\index{language@{language}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{language()}{language()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} QOnline\+Translator\+::language (\begin{DoxyParamCaption}\item[{const QLocale \&}]{locale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+language 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a16a905c7055353eb58bab831e699899a}\label{classQOnlineTranslator_a16a905c7055353eb58bab831e699899a}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!language@{language}}
+\index{language@{language}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{language()}{language()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} QOnline\+Translator\+::language (\begin{DoxyParamCaption}\item[{const QString \&}]{lang\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+language 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a0bce8a584713a201f3437319dfce44b8}\label{classQOnlineTranslator_a0bce8a584713a201f3437319dfce44b8}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!languageCode@{languageCode}}
+\index{languageCode@{languageCode}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{languageCode()}{languageCode()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::language\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}}}]{lang }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+language Code 
+
+\mbox{\Hypertarget{classQOnlineTranslator_af73a6a6b213331b16ed9afa64108fddc}\label{classQOnlineTranslator_af73a6a6b213331b16ed9afa64108fddc}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!languageCodeToName@{languageCodeToName}}
+\index{languageCodeToName@{languageCodeToName}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{languageCodeToName()}{languageCodeToName()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::language\+Code\+To\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{lang }\end{DoxyParamCaption})}
+
+
+
+language Code to Name Added by Light-\/\+Wizzard 
+
+\mbox{\Hypertarget{classQOnlineTranslator_ab9e9f9ca315aa4a5048e744f476951cc}\label{classQOnlineTranslator_ab9e9f9ca315aa4a5048e744f476951cc}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!languageName@{languageName}}
+\index{languageName@{languageName}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{languageName()}{languageName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::language\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{lang }\end{DoxyParamCaption})}
+
+
+
+language Name 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a658c059d04fd4ea3f46d0a9dc83a44fe}\label{classQOnlineTranslator_a658c059d04fd4ea3f46d0a9dc83a44fe}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!languageName@{languageName}}
+\index{languageName@{languageName}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{languageName()}{languageName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::language\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}}}]{lang }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+language Name 
+
+\mbox{\Hypertarget{classQOnlineTranslator_aeeaa369a5b7ada09071e45ac60b9d268}\label{classQOnlineTranslator_aeeaa369a5b7ada09071e45ac60b9d268}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!languageNameToCode@{languageNameToCode}}
+\index{languageNameToCode@{languageNameToCode}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{languageNameToCode()}{languageNameToCode()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::language\+Name\+To\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{lang }\end{DoxyParamCaption})}
+
+
+
+language Name to Code Added by Light-\/\+Wizzard 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a5357dda5ff3f00f04d703a6901b6fa9f}\label{classQOnlineTranslator_a5357dda5ff3f00f04d703a6901b6fa9f}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!setExamplesEnabled@{setExamplesEnabled}}
+\index{setExamplesEnabled@{setExamplesEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{setExamplesEnabled()}{setExamplesEnabled()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::set\+Examples\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+set Examples Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a3eaaf2feab357a91141044b738dd1b5c}\label{classQOnlineTranslator_a3eaaf2feab357a91141044b738dd1b5c}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!setSourceTranscriptionEnabled@{setSourceTranscriptionEnabled}}
+\index{setSourceTranscriptionEnabled@{setSourceTranscriptionEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{setSourceTranscriptionEnabled()}{setSourceTranscriptionEnabled()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::set\+Source\+Transcription\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+set Source Transcription Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_adb317247732149974e30394e385b9645}\label{classQOnlineTranslator_adb317247732149974e30394e385b9645}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!setSourceTranslitEnabled@{setSourceTranslitEnabled}}
+\index{setSourceTranslitEnabled@{setSourceTranslitEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{setSourceTranslitEnabled()}{setSourceTranslitEnabled()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::set\+Source\+Translit\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+set Source Translit Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_acd137490116cbefa5d2499665bab535b}\label{classQOnlineTranslator_acd137490116cbefa5d2499665bab535b}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!setTranslationOptionsEnabled@{setTranslationOptionsEnabled}}
+\index{setTranslationOptionsEnabled@{setTranslationOptionsEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{setTranslationOptionsEnabled()}{setTranslationOptionsEnabled()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::set\+Translation\+Options\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+set Translation Options Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a27bc1dd48fe1f05bccc433c19e34cde2}\label{classQOnlineTranslator_a27bc1dd48fe1f05bccc433c19e34cde2}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!setTranslationTranslitEnabled@{setTranslationTranslitEnabled}}
+\index{setTranslationTranslitEnabled@{setTranslationTranslitEnabled}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{setTranslationTranslitEnabled()}{setTranslationTranslitEnabled()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::set\+Translation\+Translit\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+set Translation Translit Enabled 
+
+\mbox{\Hypertarget{classQOnlineTranslator_ab283aadbe8315ab8a13efe7cccdca06a}\label{classQOnlineTranslator_ab283aadbe8315ab8a13efe7cccdca06a}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!source@{source}}
+\index{source@{source}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{source()}{source()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+source 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a417cd273df87719877a46da978d96daf}\label{classQOnlineTranslator_a417cd273df87719877a46da978d96daf}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!sourceLanguage@{sourceLanguage}}
+\index{sourceLanguage@{sourceLanguage}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{sourceLanguage()}{sourceLanguage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} QOnline\+Translator\+::source\+Language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+source Language 
+
+\mbox{\Hypertarget{classQOnlineTranslator_aaab777ec4eeae1ee5b9c26f2a6b958b4}\label{classQOnlineTranslator_aaab777ec4eeae1ee5b9c26f2a6b958b4}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!sourceLanguageName@{sourceLanguageName}}
+\index{sourceLanguageName@{sourceLanguageName}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{sourceLanguageName()}{sourceLanguageName()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::source\+Language\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+source Language Name 
+
+\mbox{\Hypertarget{classQOnlineTranslator_ae65f614f0d185cffd5ebdc4fff6ae7ae}\label{classQOnlineTranslator_ae65f614f0d185cffd5ebdc4fff6ae7ae}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!sourceTranscription@{sourceTranscription}}
+\index{sourceTranscription@{sourceTranscription}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{sourceTranscription()}{sourceTranscription()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::source\+Transcription (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+source Transcription 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a6afad1b2004015a088a608b953a83a96}\label{classQOnlineTranslator_a6afad1b2004015a088a608b953a83a96}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!sourceTranslit@{sourceTranslit}}
+\index{sourceTranslit@{sourceTranslit}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{sourceTranslit()}{sourceTranslit()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::source\+Translit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+source Translit 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a52bf8c44f0b4c044d33b1c24614b49e6}\label{classQOnlineTranslator_a52bf8c44f0b4c044d33b1c24614b49e6}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!toJson@{toJson}}
+\index{toJson@{toJson}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily QJson\+Document QOnline\+Translator\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+to Json 
+
+\mbox{\Hypertarget{classQOnlineTranslator_ad8a776add899d6e82f3bc73000791462}\label{classQOnlineTranslator_ad8a776add899d6e82f3bc73000791462}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!translate@{translate}}
+\index{translate@{translate}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void QOnline\+Translator\+::translate (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{\mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533}{Engine}}}]{engine = {\ttfamily \mbox{\hyperlink{classQOnlineTranslator_a40faea8b5247df7edfa512106c532533a563150689cf827bbe8c03e6e3b75ff8e}{Google}}},  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}}}]{translation\+Lang = {\ttfamily \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{Auto}}},  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}}}]{source\+Lang = {\ttfamily \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{Auto}}},  }\item[{\mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{Language}}}]{ui\+Lang = {\ttfamily \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73da200dca86782cb9f94681b7caef2d3b5d}{Auto}}} }\end{DoxyParamCaption})}
+
+
+
+translate 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a807bac85a6c5b18fa93163fa3a680935}\label{classQOnlineTranslator_a807bac85a6c5b18fa93163fa3a680935}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!translation@{translation}}
+\index{translation@{translation}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{translation()}{translation()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::translation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+translation 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a6c0d3bd52219d672c09a3adfc3d6da77}\label{classQOnlineTranslator_a6c0d3bd52219d672c09a3adfc3d6da77}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!translationLanguage@{translationLanguage}}
+\index{translationLanguage@{translationLanguage}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{translationLanguage()}{translationLanguage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQOnlineTranslator_aebb2566af08a68eb014fe0698a10f73d}{QOnline\+Translator\+::\+Language}} QOnline\+Translator\+::translation\+Language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+translation Language 
+
+\mbox{\Hypertarget{classQOnlineTranslator_a965dc46140e9b8243469e90505a1f8b8}\label{classQOnlineTranslator_a965dc46140e9b8243469e90505a1f8b8}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!translationLanguageName@{translationLanguageName}}
+\index{translationLanguageName@{translationLanguageName}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{translationLanguageName()}{translationLanguageName()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::translation\+Language\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+translation Language Name 
+
+\mbox{\Hypertarget{classQOnlineTranslator_ae446df4d1fb62199e240e5f7fe3d78dd}\label{classQOnlineTranslator_ae446df4d1fb62199e240e5f7fe3d78dd}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!translationOptions@{translationOptions}}
+\index{translationOptions@{translationOptions}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{translationOptions()}{translationOptions()}}
+{\footnotesize\ttfamily QMap$<$ QString, QVector$<$ \mbox{\hyperlink{structQOption}{QOption}} $>$ $>$ QOnline\+Translator\+::translation\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+translation Options 
+
+\mbox{\Hypertarget{classQOnlineTranslator_aea15d8f2fab7935b46579ef02ca119e7}\label{classQOnlineTranslator_aea15d8f2fab7935b46579ef02ca119e7}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!translationTranslit@{translationTranslit}}
+\index{translationTranslit@{translationTranslit}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{translationTranslit()}{translationTranslit()}}
+{\footnotesize\ttfamily QString QOnline\+Translator\+::translation\+Translit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+translation Translit 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classQOnlineTranslator_ac125dd7c3a05d93ff802552eb6b8a9f8}\label{classQOnlineTranslator_ac125dd7c3a05d93ff802552eb6b8a9f8}} 
+\index{QOnlineTranslator@{QOnlineTranslator}!QOnlineTts@{QOnlineTts}}
+\index{QOnlineTts@{QOnlineTts}!QOnlineTranslator@{QOnlineTranslator}}
+\doxysubsubsection{\texorpdfstring{QOnlineTts}{QOnlineTts}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classQOnlineTts}{QOnline\+Tts}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\mbox{\hyperlink{classQOnlineTts}{QOnline\+Tts}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/third-\/party/qonlinetranslator/src/\mbox{\hyperlink{qonlinetranslator_8h}{qonlinetranslator.\+h}}\item 
+src/third-\/party/qonlinetranslator/src/\mbox{\hyperlink{qonlinetranslator_8cpp}{qonlinetranslator.\+cpp}}\end{DoxyCompactItemize}

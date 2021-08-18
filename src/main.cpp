@@ -121,17 +121,17 @@ int main(int argc, char *argv[])
 {
     // Load Resource File QtLingo.qrc before creating Application
     Q_INIT_RESOURCE(QtLingo);
-    QApplication thisApplication(argc, argv);
-    thisApplication.setOrganizationName("QtLingo");
-    thisApplication.setApplicationName("QtLingo");
-    thisApplication.setApplicationDisplayName("QtLingo");
-    thisApplication.setApplicationVersion(VERSION);
+    QApplication theApplication(argc, argv);
+    theApplication.setOrganizationName("QtLingo");
+    theApplication.setApplicationName("QtLingo");
+    theApplication.setApplicationDisplayName("QtLingo");
+    theApplication.setApplicationVersion(VERSION);
     // Run after the Application is created and given a name and before creating MainWindow
     qInstallMessageHandler(myMessageHandler);
-    setMessageLogFile(thisApplication.applicationName()); // FIXME what if error
+    setMessageLogFile(theApplication.applicationName()); // FIXME what if error
     //
-    MainWindow thisMainWindow;
-    thisMainWindow.show();
-    return thisApplication.exec();
+    MainWindow theMainWindow;
+    theMainWindow.show();
+    return theApplication.exec();
 }
 /******************************* End of File *********************************/

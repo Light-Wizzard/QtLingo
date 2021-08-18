@@ -24,18 +24,17 @@
 #include <QJsonArray>
 
 /************************************************
- * toJson
  * @brief toJson.
+ * toJson
  ***********************************************/
 QJsonObject QOption::toJson() const
 {
     QJsonObject object
     {
-        {"gender", gender},
-        {"translations", QJsonArray::fromStringList(translations)},
-        {"word", word},
+        {"gender", gender},                                         //!< \c gender       @brief gender
+        {"translations", QJsonArray::fromStringList(translations)}, //!< \c translations @brief translations
+        {"word", word},                                             //!< \c word         @brief word
     };
-
     return object;
 }
 /******************************* End of File *********************************/

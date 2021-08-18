@@ -1,19 +1,46 @@
 <RCC>
     <qresource prefix="/">
         <file>README.md</file>
-        <file>help/Help-en.html</file>
-        <file>help/About-en.html</file>
-        <file>help/About-Author-en.html</file>
-        <file>translations/QtLingo_en.qm</file>
+        <file>help/Help_ar.md</file>
+        <file>help/Help_de.md</file>
+        <file>help/Help_en.md</file>
+        <file>help/Help_fr.md</file>
+        <file>help/Help_it.md</file>
+        <file>help/Help_ja.md</file>
+        <file>help/Help_no.md</file>
+        <file>help/Help_ru.md</file>
+        <file>help/Help_sv.md</file>
+        <file>help/Help_zh-CN.md</file>
+        <file>help/About_ar.md</file>
+        <file>help/About_de.md</file>
+        <file>help/About_en.md</file>
+        <file>help/About_fr.md</file>
+        <file>help/About_it.md</file>
+        <file>help/About_ja.md</file>
+        <file>help/About_no.md</file>
+        <file>help/About_ru.md</file>
+        <file>help/About_sv.md</file>
+        <file>help/About_zh-CN.md</file>
+        <file>help/About-Author_ar.md</file>
+        <file>help/About-Author_de.md</file>
+        <file>help/About-Author_en.md</file>
+        <file>help/About-Author_fr.md</file>
+        <file>help/About-Author_it.md</file>
+        <file>help/About-Author_ja.md</file>
+        <file>help/About-Author_no.md</file>
+        <file>help/About-Author_ru.md</file>
+        <file>help/About-Author_sv.md</file>
+        <file>help/About-Author_zh-CN.md</file>
+        <file>help/Language.txt</file>
+        <file>translations/QtLingo_ar.qm</file>
         <file>translations/QtLingo_de.qm</file>
+        <file>translations/QtLingo_en.qm</file>
         <file>translations/QtLingo_fr.qm</file>
         <file>translations/QtLingo_it.qm</file>
         <file>translations/QtLingo_ja.qm</file>
-        <file>translations/QtLingo_ko.qm</file>
         <file>translations/QtLingo_no.qm</file>
         <file>translations/QtLingo_ru.qm</file>
         <file>translations/QtLingo_sv.qm</file>
-        <file>translations/QtLingo_ar.qm</file>
         <file>translations/QtLingo_zh-CN.qm</file>     
         <file>images/google_translate.png</file>
         <file>images/microsoft_translator.png</file>

@@ -1,7 +1,7 @@
 ﻿#include "MainWindow.h"
 /************************************************
+* @brief get App Data Location, Linux: $HOME/.local/share/AppName, Windows:.
 * \fn getAppDataLocation
-* @brief get App Data Location.
  ***********************************************/
 QString getAppDataLocation()
 {
@@ -14,35 +14,36 @@ QString getAppDataLocation()
         if (theAppDataLocation.isEmpty())
         { theAppDataLocation = QDir::currentPath(); }
     }
+
     return theAppDataLocation;
 }
 /************************************************
-* \fn getMessageLogFile
 * @brief get Message Log File.
+* \fn getMessageLogFile
  ***********************************************/
 QString getMessageLogFile()
 {
     return QString("%1%2%3").arg(getAppDataLocation(), QDir::separator(), "messageLog.txt");
 }
 /************************************************
-* \fn getFileErrorMessage
 * @brief get File Error Message.
+* \fn getFileErrorMessage
  ***********************************************/
 QString getFileErrorMessage()
 {
     return QString("%1: %2").arg(QObject::tr("Failed to open log file"), getMessageLogFile());
 }
 /************************************************
-* \fn setMessageLogFile
 * @brief set Message Log File.
+* \fn setMessageLogFile
  ***********************************************/
-bool setMessageLogFile()
+bool setMessageLogFile(const QString &thisAppName)
 {
     QString theLogFile = getMessageLogFile();
     if (QFileInfo::exists(theLogFile) && QFileInfo(theLogFile).isFile())
         { QFile::remove(theLogFile); }
     QFile theFile(theLogFile);
-    if(!theFile.open(QFile::WriteOnly | QFile::Text))
+    if(!theFile.open(QFile::WriteOnly | QFile::Text | QIODevice::Truncate))
     {
         QString theErrorMessage = getFileErrorMessage();
         std::cout << theErrorMessage.toStdString() << std::endl;
@@ -51,7 +52,8 @@ bool setMessageLogFile()
     // Write to log file
     QTextStream theFileStream(&theFile);
     const QDateTime theDateTimeStamp = QDateTime::currentDateTime();
-    theFileStream << theDateTimeStamp.toString("MM-yyyy-dd hh:mm:ss") << theDateTimeStamp.timeZoneAbbreviation() << '\n';
+    QString theDateStamp = QString("%1: %2 - %3 %4").arg(QObject::tr("Log File"), thisAppName, theDateTimeStamp.toString("dd MMM yyyy hh:mm:ss"), theDateTimeStamp.timeZoneAbbreviation());
+    theFileStream << theDateStamp  << '\n';
     theFile.flush();
     theFile.close();
     if (QFileInfo::exists(theLogFile) && QFileInfo(theLogFile).isFile())
@@ -60,8 +62,8 @@ bool setMessageLogFile()
         { return false; }
 }
 /************************************************
-* \fn logEvents
 * @brief log Events.
+* \fn logEvents
  ***********************************************/
 void logEvents(const QString &thisMessage)
 {
@@ -79,8 +81,8 @@ void logEvents(const QString &thisMessage)
     theFileHandle.close();
 }
 /************************************************
- * \fn myMessageHandler
  * @brief I use a special Message Handler to format the output of Error.
+ * \fn myMessageHandler
  ***********************************************/
 void myMessageHandler(QtMsgType thisType, const QMessageLogContext &thisContext, const QString &thisMsg)
 {
@@ -112,20 +114,21 @@ void myMessageHandler(QtMsgType thisType, const QMessageLogContext &thisContext,
     }
 }
 /************************************************
- * \fn main
  * @brief main.
+ * \fn main
  ***********************************************/
 int main(int argc, char *argv[])
 {
-    setMessageLogFile(); // FIXME what if error
-    qInstallMessageHandler(myMessageHandler);
-    // Load Resource File QtLingo.qrc
+    // Load Resource File QtLingo.qrc before creating Application
     Q_INIT_RESOURCE(QtLingo);
     QApplication thisApplication(argc, argv);
     thisApplication.setOrganizationName("QtLingo");
     thisApplication.setApplicationName("QtLingo");
     thisApplication.setApplicationDisplayName("QtLingo");
     thisApplication.setApplicationVersion(VERSION);
+    // Run after the Application is created and given a name and before creating MainWindow
+    qInstallMessageHandler(myMessageHandler);
+    setMessageLogFile(thisApplication.applicationName()); // FIXME what if error
     //
     MainWindow thisMainWindow;
     thisMainWindow.show();

@@ -21,38 +21,38 @@
 #include "qonlinetts.h"
 
 /************************************************
- * \struct s_emotionCodes
  * @brief  emotion Codes.
+ * s_emotionCodes
  ***********************************************/
 const QMap<QOnlineTts::Emotion, QString> QOnlineTts::s_emotionCodes =
 {
     {Neutral, QStringLiteral("neutral")},
-    {Good, QStringLiteral("good")},
-    {Evil, QStringLiteral("evil")}
+    {Good,    QStringLiteral("good")},
+    {Evil,    QStringLiteral("evil")}
 };
 /************************************************
- * \struct s_voiceCodes
  * @brief  voice Codes.
+ * s_voiceCodes
  ***********************************************/
 const QMap<QOnlineTts::Voice, QString> QOnlineTts::s_voiceCodes =
 {
-    {Zahar, QStringLiteral("zahar")},
-    {Ermil, QStringLiteral("ermil")},
-    {Jane, QStringLiteral("jane")},
+    {Zahar,  QStringLiteral("zahar")},
+    {Ermil,  QStringLiteral("ermil")},
+    {Jane,   QStringLiteral("jane")},
     {Oksana, QStringLiteral("oksana")},
-    {Alyss, QStringLiteral("alyss")},
-    {Omazh, QStringLiteral("omazh")}
+    {Alyss,  QStringLiteral("alyss")},
+    {Omazh,  QStringLiteral("omazh")}
 };
 /************************************************
- * QOnlineTts
  * @brief QOnline Tts.
+ * QOnlineTts
  ***********************************************/
 QOnlineTts::QOnlineTts(QObject *parent) : QObject(parent)
 {
 }
 /************************************************
- * generateUrls
  * @brief generate Urls.
+ * generateUrls
  ***********************************************/
 void QOnlineTts::generateUrls(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language lang, Voice voice, Emotion emotion)
 {
@@ -138,64 +138,64 @@ void QOnlineTts::generateUrls(const QString &text, QOnlineTranslator::Engine eng
     }
 }
 /************************************************
- * media
  * @brief media.
+ * media
  ***********************************************/
 QList<QMediaContent> QOnlineTts::media() const
 {
     return m_media;
 }
 /************************************************
- * errorString
  * @brief error String.
+ * errorString
  ***********************************************/
 QString QOnlineTts::errorString() const
 {
     return m_errorString;
 }
 /************************************************
- * error
  * @brief error.
+ * error
  ***********************************************/
 QOnlineTts::TtsError QOnlineTts::error() const
 {
     return m_error;
 }
 /************************************************
- * voiceCode
  * @brief voice Code
+ * voiceCode
  ***********************************************/
 QString QOnlineTts::voiceCode(Voice voice)
 {
     return s_voiceCodes.value(voice);
 }
 /************************************************
- * emotionCode
  * @brief emotion Code.
+ * emotionCode
  ***********************************************/
 QString QOnlineTts::emotionCode(Emotion emotion)
 {
     return s_emotionCodes.value(emotion);
 }
 /************************************************
- * emotion
  * @brief emotion.
+ * emotion
  ***********************************************/
 QOnlineTts::Emotion QOnlineTts::emotion(const QString &emotionCode)
 {
     return s_emotionCodes.key(emotionCode, NoEmotion);
 }
 /************************************************
- * voice
  * @brief voice.
+ * voice
  ***********************************************/
 QOnlineTts::Voice QOnlineTts::voice(const QString &voiceCode)
 {
     return s_voiceCodes.key(voiceCode, NoVoice);
 }
 /************************************************
- * setError
  * @brief set Error.
+ * setError
  ***********************************************/
 void QOnlineTts::setError(TtsError error, const QString &errorString)
 {
@@ -203,8 +203,8 @@ void QOnlineTts::setError(TtsError error, const QString &errorString)
     m_errorString = errorString;
 }
 /************************************************
- * languageApiCode
  * @brief Returns engine-specific language code for tts.
+ * languageApiCode
  ***********************************************/
 QString QOnlineTts::languageApiCode(QOnlineTranslator::Engine engine, QOnlineTranslator::Language lang)
 {
@@ -235,8 +235,8 @@ QString QOnlineTts::languageApiCode(QOnlineTranslator::Engine engine, QOnlineTra
     return QString();
 }
 /************************************************
- * voiceApiCode
  * @brief voice Api Code.
+ * voiceApiCode
  ***********************************************/
 QString QOnlineTts::voiceApiCode(QOnlineTranslator::Engine engine, Voice voice)
 {
@@ -251,8 +251,8 @@ QString QOnlineTts::voiceApiCode(QOnlineTranslator::Engine engine, Voice voice)
     return QString();
 }
 /************************************************
- * emotionApiCode
  * @brief emotion Api Code.
+ * emotionApiCode
  ***********************************************/
 QString QOnlineTts::emotionApiCode(QOnlineTranslator::Engine engine, Emotion emotion)
 {

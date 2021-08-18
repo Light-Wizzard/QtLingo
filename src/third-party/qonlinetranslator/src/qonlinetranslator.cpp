@@ -22,8 +22,8 @@
 #include "qonlinetts.h"
 
 /************************************************
- * \struct s_genericLanguageCodes
  * @brief languageCode(Language lang).
+ * s_genericLanguageCodes
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_genericLanguageCodes =
 {
@@ -155,282 +155,16 @@ const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_genericLan
     { Zulu,                  QStringLiteral("zu")       }
 };
 /************************************************
- * \struct s_genericLanguageCodesName
- * @brief Added by Light-Wizzard s_genericLanguageCodesName
- ***********************************************/
-const QMap<QString, QString> QOnlineTranslator::s_genericLanguageNameToCode =
-{
-    { QStringLiteral("Auto"),                  QStringLiteral("auto")     },
-    { QStringLiteral("Afrikaans"),             QStringLiteral("af")       },
-    { QStringLiteral("Albanian"),              QStringLiteral("sq")       },
-    { QStringLiteral("Amharic"),               QStringLiteral("am")       },
-    { QStringLiteral("Arabic"),                QStringLiteral("ar")       },
-    { QStringLiteral("Armenian"),              QStringLiteral("hy")       },
-    { QStringLiteral("Azerbaijani"),           QStringLiteral("az")       },
-    { QStringLiteral("Bashkir"),               QStringLiteral("ba")       },
-    { QStringLiteral("Basque"),                QStringLiteral("eu")       },
-    { QStringLiteral("Belarusian"),            QStringLiteral("be")       },
-    { QStringLiteral("Bengali"),               QStringLiteral("bn")       },
-    { QStringLiteral("Bosnian"),               QStringLiteral("bs")       },
-    { QStringLiteral("Bulgarian"),             QStringLiteral("bg")       },
-    { QStringLiteral("Cantonese"),             QStringLiteral("yue")      },
-    { QStringLiteral("Catalan"),               QStringLiteral("ca")       },
-    { QStringLiteral("Cebuano"),               QStringLiteral("ceb")      },
-    { QStringLiteral("Chichewa"),              QStringLiteral("ny")       },
-    { QStringLiteral("Corsican"),              QStringLiteral("co")       },
-    { QStringLiteral("Croatian"),              QStringLiteral("hr")       },
-    { QStringLiteral("Czech"),                 QStringLiteral("cs")       },
-    { QStringLiteral("Danish"),                QStringLiteral("da")       },
-    { QStringLiteral("Dutch"),                 QStringLiteral("nl")       },
-    { QStringLiteral("English"),               QStringLiteral("en")       },
-    { QStringLiteral("Esperanto"),             QStringLiteral("eo")       },
-    { QStringLiteral("Estonian"),              QStringLiteral("et")       },
-    { QStringLiteral("Fijian"),                QStringLiteral("fj")       },
-    { QStringLiteral("Filipino"),              QStringLiteral("fil")      },
-    { QStringLiteral("Finnish"),               QStringLiteral("fi")       },
-    { QStringLiteral("French"),                QStringLiteral("fr")       },
-    { QStringLiteral("Frisian"),               QStringLiteral("fy")       },
-    { QStringLiteral("Galician"),              QStringLiteral("gl")       },
-    { QStringLiteral("Georgian"),              QStringLiteral("ka")       },
-    { QStringLiteral("German"),                QStringLiteral("de")       },
-    { QStringLiteral("Greek"),                 QStringLiteral("el")       },
-    { QStringLiteral("Gujarati"),              QStringLiteral("gu")       },
-    { QStringLiteral("HaitianCreole"),         QStringLiteral("ht")       },
-    { QStringLiteral("Hausa"),                 QStringLiteral("ha")       },
-    { QStringLiteral("Hawaiian"),              QStringLiteral("haw")      },
-    { QStringLiteral("Hebrew"),                QStringLiteral("he")       },
-    { QStringLiteral("HillMari"),              QStringLiteral("mrj")      },
-    { QStringLiteral("Hindi"),                 QStringLiteral("hi")       },
-    { QStringLiteral("Hmong"),                 QStringLiteral("hmn")      },
-    { QStringLiteral("Hungarian"),             QStringLiteral("hu")       },
-    { QStringLiteral("Icelandic"),             QStringLiteral("is")       },
-    { QStringLiteral("Igbo"),                  QStringLiteral("ig")       },
-    { QStringLiteral("Indonesian"),            QStringLiteral("id")       },
-    { QStringLiteral("Irish"),                 QStringLiteral("ga")       },
-    { QStringLiteral("Italian"),               QStringLiteral("it")       },
-    { QStringLiteral("Japanese"),              QStringLiteral("ja")       },
-    { QStringLiteral("Javanese"),              QStringLiteral("jw")       },
-    { QStringLiteral("Kannada"),               QStringLiteral("kn")       },
-    { QStringLiteral("Kazakh"),                QStringLiteral("kk")       },
-    { QStringLiteral("Khmer"),                 QStringLiteral("km")       },
-    { QStringLiteral("Kinyarwanda"),           QStringLiteral("rw")       },
-    { QStringLiteral("Klingon"),               QStringLiteral("tlh")      },
-    { QStringLiteral("KlingonPlqaD"),          QStringLiteral("tlh-Qaak") },
-    { QStringLiteral("Korean"),                QStringLiteral("ko")       },
-    { QStringLiteral("Kurdish"),               QStringLiteral("ku")       },
-    { QStringLiteral("Kyrgyz"),                QStringLiteral("ky")       },
-    { QStringLiteral("Lao"),                   QStringLiteral("lo")       },
-    { QStringLiteral("Latin"),                 QStringLiteral("la")       },
-    { QStringLiteral("Latvian"),               QStringLiteral("lv")       },
-    { QStringLiteral("LevantineArabic"),       QStringLiteral("apc")      },
-    { QStringLiteral("Lithuanian"),            QStringLiteral("lt")       },
-    { QStringLiteral("Luxembourgish"),         QStringLiteral("lb")       },
-    { QStringLiteral("Macedonian"),            QStringLiteral("mk")       },
-    { QStringLiteral("Malagasy"),              QStringLiteral("mg")       },
-    { QStringLiteral("Malay"),                 QStringLiteral("ms")       },
-    { QStringLiteral("Malayalam"),             QStringLiteral("ml")       },
-    { QStringLiteral("Maltese"),               QStringLiteral("mt")       },
-    { QStringLiteral("Maori"),                 QStringLiteral("mi")       },
-    { QStringLiteral("Marathi"),               QStringLiteral("mr")       },
-    { QStringLiteral("Mari"),                  QStringLiteral("mhr")      },
-    { QStringLiteral("Mongolian"),             QStringLiteral("mn")       },
-    { QStringLiteral("Myanmar"),               QStringLiteral("my")       },
-    { QStringLiteral("Nepali"),                QStringLiteral("ne")       },
-    { QStringLiteral("Norwegian"),             QStringLiteral("no")       },
-    { QStringLiteral("Oriya"),                 QStringLiteral("or")       },
-    { QStringLiteral("Papiamento"),            QStringLiteral("pap")      },
-    { QStringLiteral("Pashto"),                QStringLiteral("ps")       },
-    { QStringLiteral("Persian"),               QStringLiteral("fa")       },
-    { QStringLiteral("Polish"),                QStringLiteral("pl")       },
-    { QStringLiteral("Portuguese"),            QStringLiteral("pt")       },
-    { QStringLiteral("Punjabi"),               QStringLiteral("pa")       },
-    { QStringLiteral("QueretaroOtomi"),        QStringLiteral("otq")      },
-    { QStringLiteral("Romanian"),              QStringLiteral("ro")       },
-    { QStringLiteral("Russian"),               QStringLiteral("ru")       },
-    { QStringLiteral("Samoan"),                QStringLiteral("sm")       },
-    { QStringLiteral("ScotsGaelic"),           QStringLiteral("gd")       },
-    { QStringLiteral("SerbianCyrillic"),       QStringLiteral("sr")       },
-    { QStringLiteral("SerbianLatin"),          QStringLiteral("sr-Latin") },
-    { QStringLiteral("Sesotho"),               QStringLiteral("st")       },
-    { QStringLiteral("Shona"),                 QStringLiteral("sn")       },
-    { QStringLiteral("SimplifiedChinese"),     QStringLiteral("zh-CN")    },
-    { QStringLiteral("Sindhi"),                QStringLiteral("sd")       },
-    { QStringLiteral("Sinhala"),               QStringLiteral("si")       },
-    { QStringLiteral("Slovak"),                QStringLiteral("sk")       },
-    { QStringLiteral("Slovenian"),             QStringLiteral("sl")       },
-    { QStringLiteral("Somali"),                QStringLiteral("so")       },
-    { QStringLiteral("Spanish"),               QStringLiteral("es")       },
-    { QStringLiteral("Sundanese"),             QStringLiteral("su")       },
-    { QStringLiteral("Swahili"),               QStringLiteral("sw")       },
-    { QStringLiteral("Swedish"),               QStringLiteral("sv")       },
-    { QStringLiteral("Tagalog"),               QStringLiteral("tl")       },
-    { QStringLiteral("Tahitian"),              QStringLiteral("ty")       },
-    { QStringLiteral("Tajik"),                 QStringLiteral("tg")       },
-    { QStringLiteral("Tamil"),                 QStringLiteral("ta")       },
-    { QStringLiteral("Tatar"),                 QStringLiteral("tt")       },
-    { QStringLiteral("Telugu"),                QStringLiteral("te")       },
-    { QStringLiteral("Thai"),                  QStringLiteral("th")       },
-    { QStringLiteral("Tongan"),                QStringLiteral("to")       },
-    { QStringLiteral("TraditionalChinese"),    QStringLiteral("zh-TW")    },
-    { QStringLiteral("Turkish"),               QStringLiteral("tr")       },
-    { QStringLiteral("Turkmen"),               QStringLiteral("tk")       },
-    { QStringLiteral("Udmurt"),                QStringLiteral("udm")      },
-    { QStringLiteral("Uighur"),                QStringLiteral("ug")       },
-    { QStringLiteral("Ukrainian"),             QStringLiteral("uk")       },
-    { QStringLiteral("Urdu"),                  QStringLiteral("ur")       },
-    { QStringLiteral("Uzbek"),                 QStringLiteral("uz")       },
-    { QStringLiteral("Vietnamese"),            QStringLiteral("vi")       },
-    { QStringLiteral("Welsh"),                 QStringLiteral("cy")       },
-    { QStringLiteral("Xhosa"),                 QStringLiteral("xh")       },
-    { QStringLiteral("Yiddish"),               QStringLiteral("yi")       },
-    { QStringLiteral("Yoruba"),                QStringLiteral("yo")       },
-    { QStringLiteral("YucatecMaya"),           QStringLiteral("yua")      },
-    { QStringLiteral("Zulu"),                  QStringLiteral("zu")       }
-};
-/************************************************
- * \struct s_genericLanguageCodesName
- * @brief Added by Light-Wizzard s_genericLanguageCodesName
- ***********************************************/
-const QMap<QString, QString> QOnlineTranslator::s_genericLanguageCodeToName =
-{
-    { QStringLiteral("auto"),       QStringLiteral("Auto")                  },
-    { QStringLiteral("af"),         QStringLiteral("Afrikaans")             },
-    { QStringLiteral("sq"),         QStringLiteral("Albanian")              },
-    { QStringLiteral("am"),         QStringLiteral("Amharic")               },
-    { QStringLiteral("ar"),         QStringLiteral("Arabic")                },
-    { QStringLiteral("hy"),         QStringLiteral("Armenian")              },
-    { QStringLiteral("az"),         QStringLiteral("Azerbaijani")           },
-    { QStringLiteral("ba"),         QStringLiteral("Bashkir")               },
-    { QStringLiteral("eu"),         QStringLiteral("Basque")                },
-    { QStringLiteral("be"),         QStringLiteral("Belarusian")            },
-    { QStringLiteral("bn"),         QStringLiteral("Bengali")               },
-    { QStringLiteral("bs"),         QStringLiteral("Bosnian")               },
-    { QStringLiteral("bg"),         QStringLiteral("Bulgarian")             },
-    { QStringLiteral("yue"),        QStringLiteral("Cantonese")             },
-    { QStringLiteral("ca"),         QStringLiteral("Catalan")               },
-    { QStringLiteral("ceb"),        QStringLiteral("Cebuano")               },
-    { QStringLiteral("ny"),         QStringLiteral("Chichewa")              },
-    { QStringLiteral("co"),         QStringLiteral("Corsican")              },
-    { QStringLiteral("hr"),         QStringLiteral("Croatian")              },
-    { QStringLiteral("cs"),         QStringLiteral("Czech")                 },
-    { QStringLiteral("da"),         QStringLiteral("Danish")                },
-    { QStringLiteral("nl"),         QStringLiteral("Dutch")                 },
-    { QStringLiteral("en"),         QStringLiteral("English")               },
-    { QStringLiteral("eo"),         QStringLiteral("Esperanto")             },
-    { QStringLiteral("et"),         QStringLiteral("Estonian")              },
-    { QStringLiteral("fj"),         QStringLiteral("Fijian")                },
-    { QStringLiteral("fil"),        QStringLiteral("Filipino")              },
-    { QStringLiteral("fi"),         QStringLiteral("Finnish")               },
-    { QStringLiteral("fr"),         QStringLiteral("French")                },
-    { QStringLiteral("fy"),         QStringLiteral("Frisian")               },
-    { QStringLiteral("gl"),         QStringLiteral("Galician")              },
-    { QStringLiteral("ka"),         QStringLiteral("Georgian")              },
-    { QStringLiteral("de"),         QStringLiteral("German")                },
-    { QStringLiteral("el"),         QStringLiteral("Greek")                 },
-    { QStringLiteral("gu"),         QStringLiteral("Gujarati")              },
-    { QStringLiteral("ht"),         QStringLiteral("HaitianCreole")         },
-    { QStringLiteral("ha"),         QStringLiteral("Hausa")                 },
-    { QStringLiteral("haw"),        QStringLiteral("Hawaiian")              },
-    { QStringLiteral("he"),         QStringLiteral("Hebrew")                },
-    { QStringLiteral("mrj"),        QStringLiteral("HillMari")              },
-    { QStringLiteral("hi"),         QStringLiteral("Hindi")                 },
-    { QStringLiteral("hmn"),        QStringLiteral("Hmong")                 },
-    { QStringLiteral("hu"),         QStringLiteral("Hungarian")             },
-    { QStringLiteral("is"),         QStringLiteral("Icelandic")             },
-    { QStringLiteral("ig"),         QStringLiteral("Igbo")                  },
-    { QStringLiteral("id"),         QStringLiteral("Indonesian")            },
-    { QStringLiteral("ga"),         QStringLiteral("Irish")                 },
-    { QStringLiteral("it"),         QStringLiteral("Italian")               },
-    { QStringLiteral("ja"),         QStringLiteral("Japanese")              },
-    { QStringLiteral("jw"),         QStringLiteral("Javanese")              },
-    { QStringLiteral("kn"),         QStringLiteral("Kannada")               },
-    { QStringLiteral("kk"),         QStringLiteral("Kazakh")                },
-    { QStringLiteral("km"),         QStringLiteral("Khmer")                 },
-    { QStringLiteral("rw"),         QStringLiteral("Kinyarwanda")           },
-    { QStringLiteral("tlh"),        QStringLiteral("Klingon")               },
-    { QStringLiteral("tlh-Qaak"),   QStringLiteral("KlingonPlqaD")          },
-    { QStringLiteral("ko"),         QStringLiteral("Korean")                },
-    { QStringLiteral("ku"),         QStringLiteral("Kurdish")               },
-    { QStringLiteral("ky"),         QStringLiteral("Kyrgyz")                },
-    { QStringLiteral("lo"),         QStringLiteral("Lao")                   },
-    { QStringLiteral("la"),         QStringLiteral("Latin")                 },
-    { QStringLiteral("lv"),         QStringLiteral("Latvian")               },
-    { QStringLiteral("apc"),        QStringLiteral("LevantineArabic")       },
-    { QStringLiteral("lt"),         QStringLiteral("Lithuanian")            },
-    { QStringLiteral("lb"),         QStringLiteral("Luxembourgish")         },
-    { QStringLiteral("mk"),         QStringLiteral("Macedonian")            },
-    { QStringLiteral("mg"),         QStringLiteral("Malagasy")              },
-    { QStringLiteral("ms"),         QStringLiteral("Malay")                 },
-    { QStringLiteral("ml"),         QStringLiteral("Malayalam")             },
-    { QStringLiteral("mt"),         QStringLiteral("Maltese")               },
-    { QStringLiteral("mi"),         QStringLiteral("Maori")                 },
-    { QStringLiteral("mr"),         QStringLiteral("Marathi")               },
-    { QStringLiteral("mhr"),        QStringLiteral("Mari")                  },
-    { QStringLiteral("mn"),         QStringLiteral("Mongolian")             },
-    { QStringLiteral("my"),         QStringLiteral("Myanmar")               },
-    { QStringLiteral("ne"),         QStringLiteral("Nepali")                },
-    { QStringLiteral("no"),         QStringLiteral("Norwegian")             },
-    { QStringLiteral("or"),         QStringLiteral("Oriya")                 },
-    { QStringLiteral("pap"),        QStringLiteral("Papiamento")            },
-    { QStringLiteral("ps"),         QStringLiteral("Pashto")                },
-    { QStringLiteral("fa"),         QStringLiteral("Persian")               },
-    { QStringLiteral("pl"),         QStringLiteral("Polish")                },
-    { QStringLiteral("pt"),         QStringLiteral("Portuguese")            },
-    { QStringLiteral("pa"),         QStringLiteral("Punjabi")               },
-    { QStringLiteral("otq"),        QStringLiteral("QueretaroOtomi")        },
-    { QStringLiteral("ro"),         QStringLiteral("Romanian")              },
-    { QStringLiteral("ru"),         QStringLiteral("Russian")               },
-    { QStringLiteral("sm"),         QStringLiteral("Samoan")                },
-    { QStringLiteral("gd"),         QStringLiteral("ScotsGaelic")           },
-    { QStringLiteral("sr"),         QStringLiteral("SerbianCyrillic")       },
-    { QStringLiteral("sr-Latin"),   QStringLiteral("SerbianLatin")          },
-    { QStringLiteral("st"),         QStringLiteral("Sesotho")               },
-    { QStringLiteral("sn"),         QStringLiteral("Shona")                 },
-    { QStringLiteral("zh-CN"),      QStringLiteral("SimplifiedChinese")     },
-    { QStringLiteral("sd"),         QStringLiteral("Sindhi")                },
-    { QStringLiteral("si"),         QStringLiteral("Sinhala")               },
-    { QStringLiteral("sk"),         QStringLiteral("Slovak")                },
-    { QStringLiteral("sl"),         QStringLiteral("Slovenian")             },
-    { QStringLiteral("so"),         QStringLiteral("Somali")                },
-    { QStringLiteral("es"),         QStringLiteral("Spanish")               },
-    { QStringLiteral("su"),         QStringLiteral("Sundanese")             },
-    { QStringLiteral("sw"),         QStringLiteral("Swahili")               },
-    { QStringLiteral("sv"),         QStringLiteral("Swedish")               },
-    { QStringLiteral("tl"),         QStringLiteral("Tagalog")               },
-    { QStringLiteral("ty"),         QStringLiteral("Tahitian")              },
-    { QStringLiteral("tg"),         QStringLiteral("Tajik")                 },
-    { QStringLiteral("ta"),         QStringLiteral("Tamil")                 },
-    { QStringLiteral("tt"),         QStringLiteral("Tatar")                 },
-    { QStringLiteral("te"),         QStringLiteral("Telugu")                },
-    { QStringLiteral("th"),         QStringLiteral("Thai")                  },
-    { QStringLiteral("to"),         QStringLiteral("Tongan")                },
-    { QStringLiteral("zh-TW"),      QStringLiteral("TraditionalChinese")    },
-    { QStringLiteral("tr"),         QStringLiteral("Turkish")               },
-    { QStringLiteral("tk"),         QStringLiteral("Turkmen")               },
-    { QStringLiteral("udm"),        QStringLiteral("Udmurt")                },
-    { QStringLiteral("ug"),         QStringLiteral("Uighur")                },
-    { QStringLiteral("uk"),         QStringLiteral("Ukrainian")             },
-    { QStringLiteral("ur"),         QStringLiteral("Urdu")                  },
-    { QStringLiteral("uz"),         QStringLiteral("Uzbek")                 },
-    { QStringLiteral("vi"),         QStringLiteral("Vietnamese")            },
-    { QStringLiteral("cy"),         QStringLiteral("Welsh")                 },
-    { QStringLiteral("xh"),         QStringLiteral("Xhosa")                 },
-    { QStringLiteral("yi"),         QStringLiteral("Yiddish")               },
-    { QStringLiteral("yo"),         QStringLiteral("Yoruba")                },
-    { QStringLiteral("yua"),        QStringLiteral("YucatecMaya")           },
-    { QStringLiteral("zu"),         QStringLiteral("Zulu")                  }
-};
-/************************************************
- * \struct s_googleLanguageCodes
  * @brief s_googleLanguageCodes
+ * s_googleLanguageCodes
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_googleLanguageCodes =
 {
     { Hebrew, QStringLiteral("iw") }
 };
 /************************************************
- * \struct s_yandexLanguageCodes
  * @brief s_yandexLanguageCodes
+ * s_yandexLanguageCodes
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_yandexLanguageCodes =
 {
@@ -438,8 +172,8 @@ const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_yandexLang
     { Javanese,          QStringLiteral("jv") }
 };
 /************************************************
- * \struct s_bingLanguageCodes
  * @brief s_bingLanguageCodes
+ * s_bingLanguageCodes
  ***********************************************/
 const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_bingLanguageCodes =
 {
@@ -451,8 +185,8 @@ const QMap<QOnlineTranslator::Language, QString> QOnlineTranslator::s_bingLangua
     { Hmong,              QStringLiteral("mww")         }
 };
 /************************************************
- * QOnlineTranslator
  * @brief QOnlineTranslator Constructor.
+ * QOnlineTranslator
  ***********************************************/
 QOnlineTranslator::QOnlineTranslator(QObject *parent) : QObject(parent), m_stateMachine(new QStateMachine(this)), m_networkManager(new QNetworkAccessManager(this))
 {
@@ -460,8 +194,8 @@ QOnlineTranslator::QOnlineTranslator(QObject *parent) : QObject(parent), m_state
     connect(m_stateMachine, &QStateMachine::stopped,  this, &QOnlineTranslator::finished);
 }
 /************************************************
- * translate
  * @brief translate.
+ * translate
  ***********************************************/
 void QOnlineTranslator::translate(const QString &text, Engine engine, Language translationLang, Language sourceLang, Language uiLang)
 {
@@ -506,8 +240,8 @@ void QOnlineTranslator::translate(const QString &text, Engine engine, Language t
     m_stateMachine->start();
 }
 /************************************************
- * detectLanguage
  * @brief detect Language.
+ * detectLanguage
  ***********************************************/
 void QOnlineTranslator::detectLanguage(const QString &text, Engine engine)
 {
@@ -530,24 +264,24 @@ void QOnlineTranslator::detectLanguage(const QString &text, Engine engine)
     m_stateMachine->start();
 }
 /************************************************
- * abort
  * @brief abort.
+ * abort
  ***********************************************/
 void QOnlineTranslator::abort()
 {
     if (m_currentReply != nullptr) { m_currentReply->abort(); }
 }
 /************************************************
- * isRunning
  * @brief is Running.
+ * isRunning
  ***********************************************/
 bool QOnlineTranslator::isRunning() const
 {
     return m_stateMachine->isRunning();
 }
 /************************************************
- * toJson
  * @brief toJson.
+ * toJson
  ***********************************************/
 QJsonDocument QOnlineTranslator::toJson() const
 {
@@ -587,64 +321,64 @@ QJsonDocument QOnlineTranslator::toJson() const
     return QJsonDocument(object);
 }
 /************************************************
- * source
  * @brief source.
+ * source
  ***********************************************/
 QString QOnlineTranslator::source() const
 {
     return m_source;
 }
 /************************************************
- * sourceTranslit
  * @brief source Translit.
+ * sourceTranslit
  ***********************************************/
 QString QOnlineTranslator::sourceTranslit() const
 {
     return m_sourceTranslit;
 }
 /************************************************
- * sourceTranscription
  * @brief source Transcription.
+ * sourceTranscription
  ***********************************************/
 QString QOnlineTranslator::sourceTranscription() const
 {
     return m_sourceTranscription;
 }
 /************************************************
- * sourceLanguageName
  * @brief source Language Name.
+ * sourceLanguageName
  ***********************************************/
 QString QOnlineTranslator::sourceLanguageName() const
 {
     return languageName(m_sourceLang);
 }
 /************************************************
- * sourceLanguage
  * @brief source Language.
+ * sourceLanguage
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::sourceLanguage() const
 {
     return m_sourceLang;
 }
 /************************************************
- * translation
  * @brief translation.
+ * translation
  ***********************************************/
 QString QOnlineTranslator::translation() const
 {
     return m_translation;
 }
 /************************************************
- * translationTranslit
  * @brief translation Translit.
+ * translationTranslit
  ***********************************************/
 QString QOnlineTranslator::translationTranslit() const
 {
     return m_translationTranslit;
 }
 /************************************************
- * translationLanguageName
  * @brief translation Language Name.
+ * translationLanguageName
  ***********************************************/
 QString QOnlineTranslator::translationLanguageName() const
 {
@@ -659,120 +393,120 @@ QOnlineTranslator::Language QOnlineTranslator::translationLanguage() const
     return m_translationLang;
 }
 /************************************************
- * translationOptions
  * @brief translation Options.
+ * translationOptions
  ***********************************************/
 QMap<QString, QVector<QOption>> QOnlineTranslator::translationOptions() const
 {
     return m_translationOptions;
 }
 /************************************************
- * examples
  * @brief examples.
+ * examples
  ***********************************************/
 QMap<QString, QVector<QExample>> QOnlineTranslator::examples() const
 {
     return m_examples;
 }
 /************************************************
- * error
  * @brief error.
+ * error
  ***********************************************/
 QOnlineTranslator::TranslationError QOnlineTranslator::error() const
 {
     return m_error;
 }
 /************************************************
- * errorString
  * @brief error String.
+ * errorString
  ***********************************************/
 QString QOnlineTranslator::errorString() const
 {
     return m_errorString;
 }
 /************************************************
- * isSourceTranslitEnabled
  * @brief is Source Translit Enabled.
+ * isSourceTranslitEnabled
  ***********************************************/
 bool QOnlineTranslator::isSourceTranslitEnabled() const
 {
     return m_sourceTranslitEnabled;
 }
 /************************************************
- * setSourceTranslitEnabled
  * @brief set Source Translit Enabled.
+ * setSourceTranslitEnabled
  ***********************************************/
 void QOnlineTranslator::setSourceTranslitEnabled(bool enable)
 {
     m_sourceTranslitEnabled = enable;
 }
 /************************************************
- * isTranslationTranslitEnabled
  * @brief is Translation Translit Enabled.
+ * isTranslationTranslitEnabled
  ***********************************************/
 bool QOnlineTranslator::isTranslationTranslitEnabled() const
 {
     return m_translationTranslitEnabled;
 }
 /************************************************
- * setTranslationTranslitEnabled
  * @brief set Translation Translit Enabled.
+ * setTranslationTranslitEnabled
  ***********************************************/
 void QOnlineTranslator::setTranslationTranslitEnabled(bool enable)
 {
     m_translationTranslitEnabled = enable;
 }
 /************************************************
- * isSourceTranscriptionEnabled
  * @brief is Source Transcription Enabled.
+ * isSourceTranscriptionEnabled
  ***********************************************/
 bool QOnlineTranslator::isSourceTranscriptionEnabled() const
 {
     return m_sourceTranscriptionEnabled;
 }
 /************************************************
- * setSourceTranscriptionEnabled
  * @brief set Source Transcription Enabled.
+ * setSourceTranscriptionEnabled
  ***********************************************/
 void QOnlineTranslator::setSourceTranscriptionEnabled(bool enable)
 {
     m_sourceTranscriptionEnabled = enable;
 }
 /************************************************
- * isTranslationOptionsEnabled
  * @brief is Translation Options Enabled.
+ * isTranslationOptionsEnabled
  ***********************************************/
 bool QOnlineTranslator::isTranslationOptionsEnabled() const
 {
     return m_translationOptionsEnabled;
 }
 /************************************************
- * setTranslationOptionsEnabled
  * @brief set Translation Options Enabled.
+ * setTranslationOptionsEnabled
  ***********************************************/
 void QOnlineTranslator::setTranslationOptionsEnabled(bool enable)
 {
     m_translationOptionsEnabled = enable;
 }
 /************************************************
- * isExamplesEnabled
  * @brief is Examples Enabled.
+ * isExamplesEnabled
  ***********************************************/
 bool QOnlineTranslator::isExamplesEnabled() const
 {
     return m_examplesEnabled;
 }
 /************************************************
- * setExamplesEnabled
  * @brief set Examples Enabled.
+ * setExamplesEnabled
  ***********************************************/
 void QOnlineTranslator::setExamplesEnabled(bool enable)
 {
     m_examplesEnabled = enable;
 }
 /************************************************
- * languageName
  * @brief language Name.
+ * languageName
  ***********************************************/
 QString QOnlineTranslator::languageName(Language lang)
 {
@@ -908,32 +642,16 @@ QString QOnlineTranslator::languageName(Language lang)
     } // end switch (lang)
 } // end languageName(Language lang)
 /************************************************
- * languageCode
  * @brief language Code.
+ * languageCode
  ***********************************************/
 QString QOnlineTranslator::languageCode(Language lang)
 {
     return s_genericLanguageCodes.value(lang);
 }
 /************************************************
- * languageNameToCode
- * @brief Added by Light-Wizzard language Name to Code.
- ***********************************************/
-QString QOnlineTranslator::languageNameToCode(const QString &lang)
-{
-    return s_genericLanguageNameToCode.value(lang);
-} // end languageNameToCode
-/************************************************
- * languageCodeToName
- * @brief Added by Light-Wizzard language Code to Name.
- ***********************************************/
-QString QOnlineTranslator::languageCodeToName(const QString &lang)
-{
-    return s_genericLanguageCodeToName.value(lang);
-} // end languageCodeToName
-/************************************************
- * language
  * @brief language.
+ * language
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::language(const QLocale &locale)
 {
@@ -1043,18 +761,19 @@ QOnlineTranslator::Language QOnlineTranslator::language(const QLocale &locale)
         case QLocale::Zulu:             return Zulu;
         default:                        return English;
     }
-}
+} // end language(const QLocale
 /************************************************
- * language
  * @brief Returns general language code.
+ * @parm langCode QString "en" returns English
+ * language
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::language(const QString &langCode)
 {
     return s_genericLanguageCodes.key(langCode, NoLanguage);
 }
 /************************************************
- * isSupportTranslation
  * @brief is Support Translation.
+ * isSupportTranslation
  ***********************************************/
 bool QOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
 {
@@ -1206,16 +925,16 @@ bool QOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
     return isSupported;
 }
 /************************************************
- * skipGarbageText
  * @brief skip Garbage Text.
+ * skipGarbageText
  ***********************************************/
 void QOnlineTranslator::skipGarbageText()
 {
     m_translation.append(sender()->property(s_textProperty).toString());
 }
 /************************************************
- * requestGoogleTranslate
  * @brief request Google Translate.
+ * requestGoogleTranslate
  ***********************************************/
 void QOnlineTranslator::requestGoogleTranslate()
 {
@@ -1230,8 +949,8 @@ void QOnlineTranslator::requestGoogleTranslate()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
- * parseGoogleTranslate
  * @brief parse Google Translate.
+ * parseGoogleTranslate
  ***********************************************/
 void QOnlineTranslator::parseGoogleTranslate()
 {
@@ -1324,8 +1043,8 @@ void QOnlineTranslator::parseGoogleTranslate()
     }
 }
 /************************************************
- * requestYandexKey
  * @brief request Yandex Key.
+ * requestYandexKey
  ***********************************************/
 void QOnlineTranslator::requestYandexKey()
 {
@@ -1333,8 +1052,8 @@ void QOnlineTranslator::requestYandexKey()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
- * parseYandexKey
  * @brief parse Yandex Key.
+ * parseYandexKey
  ***********************************************/
 void QOnlineTranslator::parseYandexKey()
 {
@@ -1378,8 +1097,8 @@ void QOnlineTranslator::parseYandexKey()
     s_yandexKey = sidParts.join('.');
 }
 /************************************************
- * requestYandexTranslate
  * @brief request Yandex Translate.
+ * requestYandexTranslate
  ***********************************************/
 void QOnlineTranslator::requestYandexTranslate()
 {
@@ -1402,8 +1121,8 @@ void QOnlineTranslator::requestYandexTranslate()
     m_currentReply = m_networkManager->post(request, QByteArray());
 }
 /************************************************
- * parseYandexTranslate
  * @brief parse Yandex Translate.
+ * parseYandexTranslate
  ***********************************************/
 void QOnlineTranslator::parseYandexTranslate()
 {
@@ -1448,40 +1167,40 @@ void QOnlineTranslator::parseYandexTranslate()
     m_translation += jsonData.value(QStringLiteral("text")).toArray().at(0).toString();
 }
 /************************************************
- * requestYandexSourceTranslit
  * @brief request Yandex Source Translit.
+ * requestYandexSourceTranslit
  ***********************************************/
 void QOnlineTranslator::requestYandexSourceTranslit()
 {
     requestYandexTranslit(m_sourceLang);
 }
 /************************************************
- * parseYandexSourceTranslit
  * @brief parse Yandex Source Translit.
+ * parseYandexSourceTranslit
  ***********************************************/
 void QOnlineTranslator::parseYandexSourceTranslit()
 {
     parseYandexTranslit(m_sourceTranslit);
 }
 /************************************************
- * requestYandexTranslationTranslit
  * @brief request Yandex Translation Translit.
+ * requestYandexTranslationTranslit
  ***********************************************/
 void QOnlineTranslator::requestYandexTranslationTranslit()
 {
     requestYandexTranslit(m_translationLang);
 }
 /************************************************
- * parseYandexTranslationTranslit
  * @brief parse Yandex Translation Translit.
+ * parseYandexTranslationTranslit
  ***********************************************/
 void QOnlineTranslator::parseYandexTranslationTranslit()
 {
     parseYandexTranslit(m_translationTranslit);
 }
 /************************************************
- * requestYandexDictionary
  * @brief request Yandex Dictionary.
+ * requestYandexDictionary
  ***********************************************/
 void QOnlineTranslator::requestYandexDictionary()
 {
@@ -1500,8 +1219,8 @@ void QOnlineTranslator::requestYandexDictionary()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
- * parseYandexDictionary
  * @brief parse Yandex Dictionary.
+ * parseYandexDictionary
  ***********************************************/
 void QOnlineTranslator::parseYandexDictionary()
 {
@@ -1556,8 +1275,8 @@ void QOnlineTranslator::parseYandexDictionary()
     } // end for
 } // end parseYandexDictionary
 /************************************************
- * requestBingCredentials
  * @brief request Bing Credentials.
+ * requestBingCredentials
  ***********************************************/
 void QOnlineTranslator::requestBingCredentials()
 {
@@ -1565,8 +1284,8 @@ void QOnlineTranslator::requestBingCredentials()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
- * parseBingCredentials
  * @brief parse Bing Credentials.
+ * parseBingCredentials
  ***********************************************/
 void QOnlineTranslator::parseBingCredentials()
 {
@@ -1606,8 +1325,8 @@ void QOnlineTranslator::parseBingCredentials()
     s_bingToken = webSiteData.mid(tokenBeginPos, tokenEndPos - tokenBeginPos);
 }
 /************************************************
- * requestBingTranslate
  * @brief request Bing Translate.
+ * requestBingTranslate
  ***********************************************/
 void QOnlineTranslator::requestBingTranslate()
 {
@@ -1624,8 +1343,8 @@ void QOnlineTranslator::requestBingTranslate()
     m_currentReply = m_networkManager->post(request, postData);
 }
 /************************************************
- * parseBingTranslate
  * @brief parse Bing Translate.
+ * parseBingTranslate
  ***********************************************/
 void QOnlineTranslator::parseBingTranslate()
 {
@@ -1659,8 +1378,8 @@ void QOnlineTranslator::parseBingTranslate()
     m_translationTranslit += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
 }
 /************************************************
- * requestBingDictionary
  * @brief request Bing Dictionary.
+ * requestBingDictionary
  ***********************************************/
 void QOnlineTranslator::requestBingDictionary()
 {
@@ -1681,8 +1400,8 @@ void QOnlineTranslator::requestBingDictionary()
     m_currentReply = m_networkManager->post(request, postData);
 }
 /************************************************
- * parseBingDictionary
  * @brief parse Bing Dictionary.
+ * parseBingDictionary
  ***********************************************/
 void QOnlineTranslator::parseBingDictionary()
 {
@@ -1713,8 +1432,8 @@ void QOnlineTranslator::parseBingDictionary()
     }
 }
 /************************************************
- * buildGoogleStateMachine
  * @brief build Google State Machine.
+ * buildGoogleStateMachine
  ***********************************************/
 void QOnlineTranslator::buildGoogleStateMachine()
 {
@@ -1729,8 +1448,8 @@ void QOnlineTranslator::buildGoogleStateMachine()
     buildSplitNetworkRequest(translationState, &QOnlineTranslator::requestGoogleTranslate, &QOnlineTranslator::parseGoogleTranslate, m_source, s_googleTranslateLimit);
 }
 /************************************************
- * buildGoogleDetectStateMachine
  * @brief build Google Detect State Machine.
+ * buildGoogleDetectStateMachine
  ***********************************************/
 void QOnlineTranslator::buildGoogleDetectStateMachine()
 {
@@ -1746,8 +1465,8 @@ void QOnlineTranslator::buildGoogleDetectStateMachine()
     buildNetworkRequestState(detectState, &QOnlineTranslator::requestGoogleTranslate, &QOnlineTranslator::parseGoogleTranslate, text);
 }
 /************************************************
- * buildYandexStateMachine
  * @brief build Yandex State Machine.
+ * buildYandexStateMachine
  ***********************************************/
 void QOnlineTranslator::buildYandexStateMachine()
 {
@@ -1795,8 +1514,8 @@ void QOnlineTranslator::buildYandexStateMachine()
         { dictionaryState->setInitialState(new QFinalState(dictionaryState)); }
 }
 /************************************************
- * buildYandexDetectStateMachine
  * @brief build Yandex Detect State Machine.
+ * buildYandexDetectStateMachine
  ***********************************************/
 void QOnlineTranslator::buildYandexDetectStateMachine()
 {
@@ -1821,8 +1540,8 @@ void QOnlineTranslator::buildYandexDetectStateMachine()
     buildNetworkRequestState(detectState, &QOnlineTranslator::requestYandexTranslate, &QOnlineTranslator::parseYandexTranslate, text);
 }
 /************************************************
- * buildBingStateMachine
  * @brief build Bing State Machine.
+ * buildBingStateMachine
  ***********************************************/
 void QOnlineTranslator::buildBingStateMachine()
 {
@@ -1854,8 +1573,8 @@ void QOnlineTranslator::buildBingStateMachine()
         { dictionaryState->setInitialState(new QFinalState(dictionaryState)); }
 }
 /************************************************
- * buildBingDetectStateMachine
  * @brief build Bing Detect State Machine.
+ * buildBingDetectStateMachine
  ***********************************************/
 void QOnlineTranslator::buildBingDetectStateMachine()
 {
@@ -1871,8 +1590,8 @@ void QOnlineTranslator::buildBingDetectStateMachine()
     buildNetworkRequestState(detectState, &QOnlineTranslator::requestBingTranslate, &QOnlineTranslator::parseBingTranslate, text);
 }
 /************************************************
- * buildSplitNetworkRequest
  * @brief build Split Network Request.
+ * buildSplitNetworkRequest
  ***********************************************/
 void QOnlineTranslator::buildSplitNetworkRequest(QState *parent, void (QOnlineTranslator::*requestMethod)(), void (QOnlineTranslator::*parseMethod)(), const QString &text, int textLimit)
 {
@@ -1909,8 +1628,8 @@ void QOnlineTranslator::buildSplitNetworkRequest(QState *parent, void (QOnlineTr
     nextTranslationState->addTransition(new QFinalState(parent));
 }
 /************************************************
- * buildNetworkRequestState
  * @brief build Network Request State.
+ * buildNetworkRequestState
  ***********************************************/
 void QOnlineTranslator::buildNetworkRequestState(QState *parent, void (QOnlineTranslator::*requestMethod)(), void (QOnlineTranslator::*parseMethod)(), const QString &text)
 {
@@ -1919,21 +1638,18 @@ void QOnlineTranslator::buildNetworkRequestState(QState *parent, void (QOnlineTr
     auto *parsingState    = new QState(parent);
 
     parent->setInitialState(requestingState);
-
     // Substates transitions
     requestingState->addTransition(m_networkManager, &QNetworkAccessManager::finished, parsingState);
     parsingState->addTransition(new QFinalState(parent));
-
     // Setup requesting state
     requestingState->setProperty(s_textProperty, text);
     connect(requestingState, &QState::entered, this, requestMethod);
-
     // Setup parsing state
-    connect(parsingState, &QState::entered, this, parseMethod);
+    connect(parsingState,    &QState::entered, this, parseMethod);
 }
 /************************************************
- * requestYandexTranslit
  * @brief request Yandex Translit.
+ * requestYandexTranslit
  ***********************************************/
 void QOnlineTranslator::requestYandexTranslit(Language language)
 {
@@ -1954,8 +1670,8 @@ void QOnlineTranslator::requestYandexTranslit(Language language)
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 /************************************************
- * parseYandexTranslit
  * @brief parse Yandex Translit.
+ * parseYandexTranslit
  ***********************************************/
 void QOnlineTranslator::parseYandexTranslit(QString &text)
 {
@@ -1977,8 +1693,8 @@ void QOnlineTranslator::parseYandexTranslit(QString &text)
     #endif
 }
 /************************************************
- * resetData
  * @brief reset Data.
+ * resetData
  ***********************************************/
 void QOnlineTranslator::resetData(TranslationError error, const QString &errorString)
 {
@@ -2000,8 +1716,8 @@ void QOnlineTranslator::resetData(TranslationError error, const QString &errorSt
     }
 }
 /************************************************
- * isSupportTranslit
  * @brief is Support Translit.
+ * isSupportTranslit
  ***********************************************/
 bool QOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
 {
@@ -2068,8 +1784,8 @@ bool QOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
     return false;
 }
 /************************************************
- * isSupportDictionary
  * @brief is Support Dictionary.
+ * isSupportDictionary
  ***********************************************/
 bool QOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, Language translationLang)
 {
@@ -2346,8 +2062,8 @@ bool QOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
     return false;
 }
 /************************************************
- * languageApiCode
  * @brief  Returns engine-specific language code for translation.
+ * languageApiCode
  ***********************************************/
 QString QOnlineTranslator::languageApiCode(Engine engine, Language lang)
 {
@@ -2363,8 +2079,8 @@ QString QOnlineTranslator::languageApiCode(Engine engine, Language lang)
     Q_UNREACHABLE();
 }
 /************************************************
- * language
  * @brief Parse language from response language code.
+ * language
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::language(Engine engine, const QString &langCode)
 {
@@ -2402,31 +2118,26 @@ int QOnlineTranslator::getSplitIndex(const QString &untranslatedText, int limit)
     return limit;
 }
 /************************************************
- * isContainsSpace
  * @brief is Contains Space.
+ * isContainsSpace
  ***********************************************/
 bool QOnlineTranslator::isContainsSpace(const QString &text)
 {
     return std::any_of(text.cbegin(), text.cend(), [](QChar symbol)
-    {
-        return symbol.isSpace();
-    });
+    { return symbol.isSpace(); });
 }
 /************************************************
- * addSpaceBetweenParts
  * @brief add Space Between Parts.
+ * addSpaceBetweenParts
  ***********************************************/
 void QOnlineTranslator::addSpaceBetweenParts(QString &text)
 {
     if (text.isEmpty()) { return; }
-
     #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     if (!text.back().isSpace())
     #else
     if (!text.at(text.size() - 1).isSpace())
     #endif
-    {
-        text.append(' ');
-    }
+    { text.append(' '); }
 }
 /******************************* End of File *********************************/

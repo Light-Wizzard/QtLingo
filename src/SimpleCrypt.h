@@ -25,8 +25,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef MYSIMPLECRYPT_H
-#define MYSIMPLECRYPT_H
+#ifndef SIMPLECRYPT_H
+#define SIMPLECRYPT_H
 
 #include <QString>
 #include <QVector>
@@ -40,14 +40,14 @@
 #include <QRandomGenerator>
 
 /************************************************
- * \class MySimpleCrypt
+ * \class SimpleCrypt
  * @brief @short Simple encryption and decryption of strings and byte arrays
  *
  * This class provides a simple implementation of encryption and decryption of strings and byte arrays.
  *
  * @warning The encryption provided by this class is NOT strong encryption.
  * It may help to shield things from curious eyes, but it will NOT stand up to someone determined to break the encryption.
- * Don't say you were not warned.
+ * Do not say you were not warned.
  *
  * The class uses a 64 bit key. Simply create an instance of the class, set the key,
  * and use the encryptToString() method to calculate an encrypted version of the input string.
@@ -62,10 +62,12 @@
  * SimpleCrypt is prepared for the case that the encryption and decryption algorithm is changed in a later version,
  * by prepending a version identifier to the cypertext.
  ***********************************************/
-class MySimpleCrypt
+class SimpleCrypt
 {
     public:
-        // CompressionMode describes if compression will be applied to the data to be encrypted.
+        /************************************************
+         * CompressionMode describes if compression will be applied to the data to be encrypted.
+         ***********************************************/
         enum CompressionMode
         {
             CompressionAuto,    /*!< Only apply compression if that results in a shorter plaintext. */
@@ -73,7 +75,7 @@ class MySimpleCrypt
             CompressionNever    /*!< Never apply compression. */
         };
         /************************************************
-         * IntegrityProtectionMode describes measures taken to make it possible to detect problems with the data or wrong decryption keys.
+         * IntegrityProtectionMode describes measures taken to make it possible to detect problems with the data, or wrong decryption keys.
          * Measures involve adding a checksum or a cryptograhpic hash to the data to be encrypted.
          * This increases the length of the resulting cypertext,
          *   but makes it possible to check if the plaintext appears to be valid after decryption.
@@ -96,30 +98,35 @@ class MySimpleCrypt
          * Constructor.
          * Constructs a SimpleCrypt instance without a valid key set on it.
          ***********************************************/
-        MySimpleCrypt();
+        SimpleCrypt();
         /************************************************
          * Constructor.
          * Constructs a SimpleCrypt instance and initializes it with the given @arg key.
          ***********************************************/
-        explicit MySimpleCrypt(quint64 key);
-        // (Re-) initializes the key with the given @arg key.
+        explicit SimpleCrypt(quint64 key);
+        /************************************************
+         * (Re-) initializes the key with the given @arg key.
+         ***********************************************/
         void setKey(quint64 key);
-        // Returns true if SimpleCrypt has been initialized with a key.
+        /************************************************
+         * Returns true if SimpleCrypt has been initialized with a key.
+         ***********************************************/
         bool hasKey() const {return !myKeyParts.isEmpty();}
         /************************************************
          * Sets the compression mode to use when encrypting data. The default mode is Auto.
          *
          * Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting.
-        ***********************************************/
+         ***********************************************/
         void setCompressionMode(CompressionMode mode) {myCompressionMode = mode;}
-        // Returns the CompressionMode that is currently in use.
+        /************************************************
+         * Returns the CompressionMode that is currently in use.
+         ***********************************************/
         CompressionMode compressionMode() const {return myCompressionMode;}
-
         /************************************************
          * Sets the integrity mode to use when encrypting data. The default mode is Checksum.
          *
          * Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting.
-        ***********************************************/
+         ***********************************************/
         void setIntegrityProtectionMode(IntegrityProtectionMode mode) {myProtectionMode = mode;}
         // Returns the IntegrityProtectionMode that is currently in use.
         IntegrityProtectionMode integrityProtectionMode() const {return myProtectionMode;}
@@ -182,16 +189,18 @@ class MySimpleCrypt
          *
          * If an error occured, such as non-matching keys between encryption and decryption,
          * an empty string or a string containing nonsense may be returned.
-        ***********************************************/
+         ***********************************************/
         QByteArray decryptToByteArray(QByteArray cypher);
-        // enum to describe options that have been used for the encryption. Currently only one,
-        // but that only leaves room for future extensions like adding a cryptographic hash...
+        /************************************************
+         * enum to describe options that have been used for the encryption.
+         * Currently only one, but that only leaves room for future extensions like adding a cryptographic hash...
+         ***********************************************/
         enum CryptoFlag
         {
-            CryptoFlagNone        = 0,    //!< \c TabSettings     @brief CryptoFlagNone
-            CryptoFlagCompression = 0x01, //!< \c TabSettings     @brief CryptoFlagCompression
-            CryptoFlagChecksum    = 0x02, //!< \c TabSettings     @brief CryptoFlagChecksum
-            CryptoFlagHash        = 0x04  //!< \c TabSettings     @brief CryptoFlagHash
+            CryptoFlagNone        = 0,    //!< \c CryptoFlagNone        @brief Crypto Flag None
+            CryptoFlagCompression = 0x01, //!< \c CryptoFlagCompression @brief Crypto Flag Compression
+            CryptoFlagChecksum    = 0x02, //!< \c CryptoFlagChecksum    @brief Crypto Flag Checksum
+            CryptoFlagHash        = 0x04  //!< \c CryptoFlagHash        @brief Crypto Flag Hash
         };
         Q_DECLARE_FLAGS(CryptoFlags, CryptoFlag);
         // Is Debug Message
@@ -208,7 +217,7 @@ class MySimpleCrypt
         IntegrityProtectionMode myProtectionMode;       //!< \c myProtectionMode    @brief Protection Mode
         Error                   myLastError;            //!< \c myLastError         @brief Last Error
         bool                    isDebugMessage = true;  //!< \c isDebugMessage      @brief true of false for Debugging
-}; // end class MySimpleCrypt
-Q_DECLARE_OPERATORS_FOR_FLAGS(MySimpleCrypt::CryptoFlags)
-#endif // MySimpleCrypt_H
+}; // end class SimpleCrypt
+Q_DECLARE_OPERATORS_FOR_FLAGS(SimpleCrypt::CryptoFlags)
+#endif // SimpleCrypt_H
 /******************************* End of File *********************************/

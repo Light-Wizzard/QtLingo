@@ -65,6 +65,9 @@
               <property name="inputMask">
                <string notr="true"/>
               </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
               <property name="placeholderText">
                <string notr="true"/>
               </property>
@@ -168,10 +171,25 @@
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsLupdate">
             <item>
              <widget class="QLineEdit" name="lineEditSettingsLupdate">
+              <property name="toolTip">
+               <string notr="true"/>
+              </property>
+              <property name="statusTip">
+               <string notr="true"/>
+              </property>
               <property name="accessibleName">
                <string notr="true"/>
               </property>
               <property name="accessibleDescription">
+               <string notr="true"/>
+              </property>
+              <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <property name="placeholderText">
                <string notr="true"/>
               </property>
              </widget>
@@ -195,7 +213,23 @@
           <item row="3" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsLrelease">
             <item>
-             <widget class="QLineEdit" name="lineEditSettingsLrelease"/>
+             <widget class="QLineEdit" name="lineEditSettingsLrelease">
+              <property name="accessibleName">
+               <string notr="true"/>
+              </property>
+              <property name="accessibleDescription">
+               <string notr="true"/>
+              </property>
+              <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <property name="placeholderText">
+               <string notr="true"/>
+              </property>
+             </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButtonSettingsLrelease">
@@ -236,7 +270,7 @@
             <item row="0" column="0">
              <widget class="QCheckBox" name="checkBoxSettingsGoogle">
               <property name="text">
-               <string>Google</string>
+               <string notr="true">Google</string>
               </property>
               <property name="icon">
                <iconset>
@@ -248,7 +282,7 @@
             <item row="0" column="2">
              <widget class="QCheckBox" name="checkBoxSettingsYandex">
               <property name="text">
-               <string>Yandex</string>
+               <string notr="true">Yandex</string>
               </property>
               <property name="icon">
                <iconset>
@@ -260,7 +294,7 @@
             <item row="0" column="1">
              <widget class="QCheckBox" name="checkBoxSettingsBing">
               <property name="text">
-               <string>Bing</string>
+               <string notr="true">Bing</string>
               </property>
               <property name="icon">
                <iconset>
@@ -417,6 +451,9 @@
             <property name="inputMask">
              <string notr="true"/>
             </property>
+            <property name="text">
+             <string notr="true"/>
+            </property>
             <property name="placeholderText">
              <string notr="true"/>
             </property>
@@ -432,6 +469,9 @@
           <item row="3" column="1">
            <widget class="QLineEdit" name="lineEditSqlUserName">
             <property name="inputMask">
+             <string notr="true"/>
+            </property>
+            <property name="text">
              <string notr="true"/>
             </property>
             <property name="placeholderText">
@@ -451,6 +491,9 @@
             <item>
              <widget class="QLineEdit" name="lineEditSqlPassword">
               <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
                <string notr="true"/>
               </property>
               <property name="placeholderText">
@@ -503,6 +546,9 @@
             <item>
              <widget class="QLineEdit" name="lineEditSqlDatabaseName">
               <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
                <string notr="true"/>
               </property>
               <property name="placeholderText">
@@ -575,6 +621,9 @@
               <property name="inputMask">
                <string notr="true"/>
               </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
               <property name="placeholderText">
                <string notr="true"/>
               </property>
@@ -612,6 +661,9 @@
               <property name="inputMask">
                <string notr="true"/>
               </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
               <property name="placeholderText">
                <string notr="true"/>
               </property>
@@ -626,14 +678,14 @@
             </item>
            </layout>
           </item>
-          <item row="5" column="0">
+          <item row="6" column="0">
            <widget class="QLabel" name="labelTranslationsCountryCode">
             <property name="text">
              <string>Country Codes</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="6" column="1">
            <widget class="QScrollArea" name="scrollArea">
             <property name="widgetResizable">
              <bool>true</bool>
@@ -643,192 +695,199 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1097</width>
-               <height>1070</height>
+               <width>1157</width>
+               <height>1202</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridLayout_2">
               <item row="0" column="0">
                <layout class="QGridLayout" name="gridLayoutCountryCodes">
-                <item row="24" column="2">
+                <item row="28" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTO">
+                  <property name="text">
+                   <string>Tongan - to</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsFY">
+                  <property name="text">
+                   <string>Frisian - fy</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="28" column="2">
                  <widget class="QCheckBox" name="checkBoxTranslationsTE">
                   <property name="text">
                    <string>Telugu - te</string>
                   </property>
                  </widget>
                 </item>
-                <item row="23" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTL">
-                  <property name="text">
-                   <string>Tagalog - tl</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="13" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsLV">
-                  <property name="text">
-                   <string>Latvian - lv</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsBA">
-                  <property name="text">
-                   <string>Bashkir - ba</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="9" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsIG">
-                  <property name="text">
-                   <string>Igbo - ig</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="10" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsJW">
-                  <property name="text">
-                   <string>Javanese - jw</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="30" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsYI">
-                  <property name="text">
-                   <string>Yiddish - yi</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="23" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTG">
-                  <property name="text">
-                   <string>Tajik - tg</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="14" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsMG">
-                  <property name="text">
-                   <string>Malagasy - mg</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="11" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsRW">
-                  <property name="text">
-                   <string>Kinyarwanda - rw</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="19" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsRU">
-                  <property name="text">
-                   <string>Russian - ru</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsGL">
-                  <property name="text">
-                   <string>Galician - gl</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="20" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsSR">
-                  <property name="text">
-                   <string>Serbian - sr</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="31" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsZU">
-                  <property name="text">
-                   <string>Zulu - zu</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="23" column="4">
+                <item row="27" column="4">
                  <widget class="QCheckBox" name="checkBoxTranslationsTT">
                   <property name="text">
                    <string>Tatar - tt</string>
                   </property>
                  </widget>
                 </item>
-                <item row="12" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsKY">
+                <item row="16" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsLV">
                   <property name="text">
-                   <string>Kyrgyz - ky</string>
+                   <string>Latvian - lv</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsFA">
-                  <property name="text">
-                   <string>Farsi - fa</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsGD">
-                  <property name="text">
-                   <string>Gaelic - gd</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="5">
+                <item row="4" column="3">
                  <widget class="QCheckBox" name="checkBoxTranslationsCS">
                   <property name="text">
                    <string>Czech - cs</string>
                   </property>
                  </widget>
                 </item>
-                <item row="11" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsKM">
+                <item row="15" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsKY">
                   <property name="text">
-                   <string>Khmer - km</string>
+                   <string>Kyrgyz - ky</string>
                   </property>
                  </widget>
                 </item>
-                <item row="23" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTY">
+                <item row="35" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsZU">
                   <property name="text">
-                   <string>Tahitian - ty</string>
+                   <string>Zulu - zu</string>
                   </property>
                  </widget>
                 </item>
-                <item row="20" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsST">
+                <item row="14" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsRW">
                   <property name="text">
-                   <string>Sesotho - st</string>
+                   <string>Kinyarwanda - rw</string>
                   </property>
                  </widget>
                 </item>
-                <item row="14" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsMT">
+                <item row="10" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHI">
                   <property name="text">
-                   <string>Maltese - mt</string>
+                   <string>Hindi - hi</string>
                   </property>
                  </widget>
                 </item>
-                <item row="7" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsEL">
+                <item row="15" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTLH_QAAK">
                   <property name="text">
-                   <string>Greek - el</string>
+                   <string>KlingonPlqaD - tlh-Qaak</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="16" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsLB">
+                  <property name="text">
+                   <string>Luxembourgish - lb</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHT">
+                  <property name="text">
+                   <string>Haitian - ht</string>
                   </property>
                  </widget>
                 </item>
                 <item row="6" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsEN">
+                  <property name="text">
+                   <string>English - en</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="14" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsKN">
+                  <property name="text">
+                   <string>Kannada - kn</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="21" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsPL">
+                  <property name="text">
+                   <string>Polish - pl</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsNL">
+                  <property name="text">
+                   <string>Dutch - nl</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="24" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsSM">
+                  <property name="text">
+                   <string>Samoan - sm</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsAPC">
+                  <property name="text">
+                   <string>Levantine Arabic - apc</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="27" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTH">
+                  <property name="text">
+                   <string>Thai - th</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsNY">
+                  <property name="text">
+                   <string>Chichewa - ny</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="17" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMS">
+                  <property name="text">
+                   <string>Malaysian - ms</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="12" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsIG">
+                  <property name="text">
+                   <string>Igbo - ig</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="31" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsVI">
+                  <property name="text">
+                   <string>Vietnamese - vi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
                  <widget class="QCheckBox" name="checkBoxTranslationsFO">
                   <property name="text">
                    <string>Faeroese - fo</string>
                   </property>
                  </widget>
                 </item>
-                <item row="9" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsIT">
+                <item row="0" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsAM">
                   <property name="text">
-                   <string>Italian - it</string>
+                   <string>Amharic - am</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="12" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsGA">
+                  <property name="text">
+                   <string>Irish - ga</string>
                   </property>
                  </widget>
                 </item>
@@ -839,283 +898,136 @@
                   </property>
                  </widget>
                 </item>
-                <item row="17" column="0">
+                <item row="20" column="0">
                  <widget class="QCheckBox" name="checkBoxTranslationsOR">
                   <property name="text">
                    <string>Oriya - or</string>
                   </property>
                  </widget>
                 </item>
-                <item row="26" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsUZ">
-                  <property name="text">
-                   <string>Uzbek - uz</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="24" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTS">
-                  <property name="text">
-                   <string>Tsonga - ts</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="23" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTH">
-                  <property name="text">
-                   <string>Thai - th</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="7" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsGU">
-                  <property name="text">
-                   <string>Gujarati - gu</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsEO">
-                  <property name="text">
-                   <string>Esperanto - eo</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="19" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsRO">
-                  <property name="text">
-                   <string>Romanian - ro</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="13" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsLA">
-                  <property name="text">
-                   <string>Latin - la</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="18" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsPT">
-                  <property name="text">
-                   <string>Portuguese - pt</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="5">
+                <item row="7" column="5">
                  <widget class="QCheckBox" name="checkBoxTranslationsFR">
                   <property name="text">
                    <string>French - fr</string>
                   </property>
                  </widget>
                 </item>
-                <item row="25" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTK">
+                <item row="10" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHU">
                   <property name="text">
-                   <string>Turkmen - tk</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="13" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsLT">
-                  <property name="text">
-                   <string>Lithuanian - lt</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="8" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsHT">
-                  <property name="text">
-                   <string>Haitian - ht</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsET">
-                  <property name="text">
-                   <string>Estonian - et</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="11" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsKO">
-                  <property name="text">
-                   <string>Korean - ko</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsBN">
-                  <property name="text">
-                   <string>Bengali - bn</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsBE">
-                  <property name="text">
-                   <string>Belarusian - be</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsAF">
-                  <property name="text">
-                   <string>Afrikaans - af</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="16" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsNO">
-                  <property name="text">
-                   <string>Norwegian - no</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="20" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsSN">
-                  <property name="text">
-                   <string>Shona - sn</string>
+                   <string>Hungarian - hu</string>
                   </property>
                  </widget>
                 </item>
                 <item row="8" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsHA">
+                 <widget class="QCheckBox" name="checkBoxTranslationsFIL">
                   <property name="text">
-                   <string>Hausa - ha</string>
+                   <string>Filipino - fil</string>
                   </property>
                  </widget>
                 </item>
-                <item row="26" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsUK">
+                <item row="9" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsGD">
                   <property name="text">
-                   <string>Ukrainian - uk</string>
+                   <string>Gaelic - gd</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsFJ">
-                  <property name="text">
-                   <string>Fijian - fj</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="9" column="2">
+                <item row="12" column="2">
                  <widget class="QCheckBox" name="checkBoxTranslationsID">
                   <property name="text">
                    <string>Indonesian - id</string>
                   </property>
                  </widget>
                 </item>
-                <item row="20" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsSK">
+                <item row="14" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsKM">
                   <property name="text">
-                   <string>Slovak - sk</string>
+                   <string>Khmer - km</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="23" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsRU">
+                  <property name="text">
+                   <string>Russian - ru</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="23" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsRO">
+                  <property name="text">
+                   <string>Romanian - ro</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="17" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMG">
+                  <property name="text">
+                   <string>Malagasy - mg</string>
                   </property>
                  </widget>
                 </item>
                 <item row="27" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsVE">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTL">
                   <property name="text">
-                   <string>Venda - ve</string>
+                   <string>Tagalog - tl</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsNY">
+                <item row="18" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMN">
                   <property name="text">
-                   <string>Chichewa - ny</string>
+                   <string>Mongolian - mn</string>
                   </property>
                  </widget>
                 </item>
-                <item row="11" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsKU">
+                <item row="21" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsPT">
                   <property name="text">
-                   <string>Kurdish - ku</string>
+                   <string>Portuguese - pt</string>
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsNL">
-                  <property name="text">
-                   <string>Dutch - nl</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="16" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsNN">
-                  <property name="text">
-                   <string>Nynorsk - nn</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsBG">
-                  <property name="text">
-                   <string>Bulgarian - bg</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="8" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsHE">
-                  <property name="text">
-                   <string>Hebrew - he</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="26" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsUG">
-                  <property name="text">
-                   <string>Uighur - ug</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsAZ">
-                  <property name="text">
-                   <string>Azerbaijani - az</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="13" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsLO">
-                  <property name="text">
-                   <string>Lao - lo</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsFY">
-                  <property name="text">
-                   <string>Frisian - fy</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="13" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsLB">
-                  <property name="text">
-                   <string>Luxembourgish - lb</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsEU">
-                  <property name="text">
-                   <string>Basque - eu</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="14" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsMS">
-                  <property name="text">
-                   <string>Malaysian - ms</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="16" column="2">
+                <item row="19" column="2">
                  <widget class="QCheckBox" name="checkBoxTranslationsNB">
                   <property name="text">
                    <string>Bokmal - nb</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsGU">
+                  <property name="text">
+                   <string>Gujarati - gu</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="19" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsNE">
+                  <property name="text">
+                   <string>Nepali - ne</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsFI">
+                  <property name="text">
+                   <string>Finnish - fi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsZH_CN">
+                  <property name="text">
+                   <string>S. China - zh-CN</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="31" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsVE">
+                  <property name="text">
+                   <string>Venda - ve</string>
                   </property>
                  </widget>
                 </item>
@@ -1126,129 +1038,129 @@
                   </property>
                  </widget>
                 </item>
-                <item row="7" column="2">
+                <item row="9" column="2">
                  <widget class="QCheckBox" name="checkBoxTranslationsKA">
                   <property name="text">
                    <string>Georgian - ka</string>
                   </property>
                  </widget>
                 </item>
-                <item row="28" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsCY">
+                <item row="4" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsZH_TW">
                   <property name="text">
-                   <string>Welsh - cy</string>
+                   <string>T. China - zh-TW</string>
                   </property>
                  </widget>
                 </item>
-                <item row="19" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsRM">
+                <item row="16" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsLA">
                   <property name="text">
-                   <string>Rhaeto-Romanic - rm </string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="24" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTR">
-                  <property name="text">
-                   <string>Turkish - tr</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="14" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsMK">
-                  <property name="text">
-                   <string>Macedonian - mk</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="24" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTN">
-                  <property name="text">
-                   <string>Tswana - tn</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="26" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsUR">
-                  <property name="text">
-                   <string>Urdu - ur</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="10" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsJA">
-                  <property name="text">
-                   <string>Japanese - ja</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="30" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsYO">
-                  <property name="text">
-                   <string>Yoruba - yo</string>
+                   <string>Latin - la</string>
                   </property>
                  </widget>
                 </item>
                 <item row="7" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsDE">
+                 <widget class="QCheckBox" name="checkBoxTranslationsFJ">
                   <property name="text">
-                   <string>German - de</string>
+                   <string>Fijian - fj</string>
                   </property>
                  </widget>
                 </item>
-                <item row="18" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsPS">
+                <item row="9" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsEL">
                   <property name="text">
-                   <string>Pashto - ps</string>
+                   <string>Greek - el</string>
                   </property>
                  </widget>
                 </item>
-                <item row="24" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTO">
+                <item row="16" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsLO">
                   <property name="text">
-                   <string>Tongan - to</string>
+                   <string>Lao - lo</string>
                   </property>
                  </widget>
                 </item>
-                <item row="23" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsTA">
+                <item row="3" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsCO">
                   <property name="text">
-                   <string>Tamil - ta</string>
+                   <string>Corsican - co</string>
                   </property>
                  </widget>
                 </item>
-                <item row="14" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsML">
+                <item row="15" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTLH">
                   <property name="text">
-                   <string>Malayalam - ml</string>
+                   <string>Klingon - tlh</string>
                   </property>
                  </widget>
                 </item>
-                <item row="8" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsHI">
+                <item row="2" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsBN">
                   <property name="text">
-                   <string>Hindi - hi</string>
+                   <string>Bengali - bn</string>
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="0">
+                <item row="27" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTY">
+                  <property name="text">
+                   <string>Tahitian - ty</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsET">
+                  <property name="text">
+                   <string>Estonian - et</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="21" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsPAP">
+                  <property name="text">
+                   <string>Papiamento - pap</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsFA">
+                  <property name="text">
+                   <string>Farsi - fa</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
                  <widget class="QCheckBox" name="checkBoxTranslationsDA">
                   <property name="text">
                    <string>Danish - da</string>
                   </property>
                  </widget>
                 </item>
-                <item row="8" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsHU">
+                <item row="19" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsNO">
                   <property name="text">
-                   <string>Hungarian - hu</string>
+                   <string>Norwegian - no</string>
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsAM">
+                <item row="9" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsDE">
                   <property name="text">
-                   <string>Amharic - am</string>
+                   <string>German - de</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsCEB">
+                  <property name="text">
+                   <string>Cebuano - ceb</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="28" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTS">
+                  <property name="text">
+                   <string>Tsonga - ts</string>
                   </property>
                  </widget>
                 </item>
@@ -1265,94 +1177,192 @@
                   </property>
                  </spacer>
                 </item>
-                <item row="15" column="1">
+                <item row="18" column="1">
                  <widget class="QCheckBox" name="checkBoxTranslationsMR">
                   <property name="text">
                    <string>Marathi - mr</string>
                   </property>
                  </widget>
                 </item>
-                <item row="9" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsIS">
+                <item row="32" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsCY">
                   <property name="text">
-                   <string>Icelandic - is</string>
+                   <string>Welsh - cy</string>
                   </property>
                  </widget>
                 </item>
-                <item row="9" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsGA">
+                <item row="19" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsNN">
                   <property name="text">
-                   <string>Irish - ga</string>
+                   <string>Nynorsk - nn</string>
                   </property>
                  </widget>
                 </item>
-                <item row="5" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsEN">
+                <item row="14" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsKO">
                   <property name="text">
-                   <string>English - en</string>
+                   <string>Korean - ko</string>
                   </property>
                  </widget>
                 </item>
-                <item row="27" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsVI">
+                <item row="17" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsML">
                   <property name="text">
-                   <string>Vietnamese - vi</string>
+                   <string>Malayalam - ml</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsCA">
+                <item row="33" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsXH">
                   <property name="text">
-                   <string>Catalan - ca</string>
+                   <string>Xhosa - xh</string>
                   </property>
                  </widget>
                 </item>
-                <item row="20" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsSM">
+                <item row="34" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsYO">
                   <property name="text">
-                   <string>Samoan - sm</string>
+                   <string>Yoruba - yo</string>
                   </property>
                  </widget>
                 </item>
-                <item row="11" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsKK">
-                  <property name="text">
-                   <string>Kazakh - kk</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="15" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsMY">
-                  <property name="text">
-                   <string>Myanmar - my</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="16" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsNE">
-                  <property name="text">
-                   <string>Nepali - ne</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="18" column="3">
+                <item row="21" column="4">
                  <widget class="QCheckBox" name="checkBoxTranslationsPA">
                   <property name="text">
                    <string>Punjabi - pa</string>
                   </property>
                  </widget>
                 </item>
-                <item row="15" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsMN">
-                  <property name="text">
-                   <string>Mongolian - mn</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="4">
+                <item row="2" column="4">
                  <widget class="QCheckBox" name="checkBoxTranslationsBS">
                   <property name="text">
                    <string>Bosnian - bs</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHMN">
+                  <property name="text">
+                   <string>Hmong - hmn</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsGL">
+                  <property name="text">
+                   <string>Galician - gl</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHAW">
+                  <property name="text">
+                   <string>Hawaiian - haw</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="18" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMY">
+                  <property name="text">
+                   <string>Myanmar - my</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsAF">
+                  <property name="text">
+                   <string>Afrikaans - af</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="18" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMHR">
+                  <property name="text">
+                   <string>Mari - mhr</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsBA">
+                  <property name="text">
+                   <string>Bashkir - ba</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsCA">
+                  <property name="text">
+                   <string>Catalan - ca</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="34" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsYI">
+                  <property name="text">
+                   <string>Yiddish - yi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="13" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsJA">
+                  <property name="text">
+                   <string>Japanese - ja</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="13" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsJW">
+                  <property name="text">
+                   <string>Javanese - jw</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsBG">
+                  <property name="text">
+                   <string>Bulgarian - bg</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="24" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsSR">
+                  <property name="text">
+                   <string>Serbian - sr</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="28" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTR">
+                  <property name="text">
+                   <string>Turkish - tr</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="27" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTA">
+                  <property name="text">
+                   <string>Tamil - ta</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="17" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMI">
+                  <property name="text">
+                   <string>Maori - mi</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHR">
+                  <property name="text">
+                   <string>Croatian - hr</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="21" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsPS">
+                  <property name="text">
+                   <string>Pashto - ps</string>
                   </property>
                  </widget>
                 </item>
@@ -1363,129 +1373,276 @@
                   </property>
                  </widget>
                 </item>
-                <item row="18" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsPL">
+                <item row="28" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTN">
                   <property name="text">
-                   <string>Polish - pl</string>
+                   <string>Tswana - tn</string>
                   </property>
                  </widget>
                 </item>
                 <item row="14" column="5">
-                 <widget class="QCheckBox" name="checkBoxTranslationsMI">
+                 <widget class="QCheckBox" name="checkBoxTranslationsKU">
                   <property name="text">
-                   <string>Maori - mi</string>
+                   <string>Kurdish - ku</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsFI">
+                <item row="10" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHE">
                   <property name="text">
-                   <string>Finnish - fi</string>
+                   <string>Hebrew - he</string>
                   </property>
                  </widget>
                 </item>
-                <item row="29" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsXH">
+                <item row="17" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMT">
                   <property name="text">
-                   <string>Xhosa - xh</string>
+                   <string>Maltese - mt</string>
                   </property>
                  </widget>
                 </item>
-                <item row="11" column="0">
-                 <widget class="QCheckBox" name="checkBoxTranslationsKN">
+                <item row="12" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsIT">
                   <property name="text">
-                   <string>Kannada - kn</string>
+                   <string>Italian - it</string>
                   </property>
                  </widget>
                 </item>
-                <item row="20" column="4">
-                 <widget class="QCheckBox" name="checkBoxTranslationsSL">
+                <item row="2" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsEU">
                   <property name="text">
-                   <string>Slovenian - sl</string>
+                   <string>Basque - eu</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="1">
-                 <widget class="QCheckBox" name="checkBoxTranslationsZH_TW">
+                <item row="27" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTG">
                   <property name="text">
-                   <string>T. China - zh-TW</string>
+                   <string>Tajik - tg</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsAZ">
+                  <property name="text">
+                   <string>Azerbaijani - az</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="29" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsTK">
+                  <property name="text">
+                   <string>Turkmen - tk</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsHA">
+                  <property name="text">
+                   <string>Hausa - ha</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="12" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsIS">
+                  <property name="text">
+                   <string>Icelandic - is</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsYUE">
+                  <property name="text">
+                   <string>Cantonese - yue</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsCO">
+                 <widget class="QCheckBox" name="checkBoxTranslationsBE">
                   <property name="text">
-                   <string>Corsican - co</string>
+                   <string>Belarusian - be</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="3">
-                 <widget class="QCheckBox" name="checkBoxTranslationsHR">
+                <item row="11" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMRJ">
                   <property name="text">
-                   <string>Croatian - hr</string>
+                   <string>HillMari - mrj</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="2">
-                 <widget class="QCheckBox" name="checkBoxTranslationsZH_CN">
+                <item row="14" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsKK">
                   <property name="text">
-                   <string>S. China - zh-CN</string>
+                   <string>Kazakh - kk</string>
                   </property>
                  </widget>
                 </item>
-                <item row="22" column="3">
+                <item row="23" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsRM">
+                  <property name="text">
+                   <string>Rhaeto-Romanic - rm </string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="17" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsMK">
+                  <property name="text">
+                   <string>Macedonian - mk</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsEO">
+                  <property name="text">
+                   <string>Esperanto - eo</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="16" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsLT">
+                  <property name="text">
+                   <string>Lithuanian - lt</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="22" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsOTQ">
+                  <property name="text">
+                   <string>Queretaro Otomi - otq</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="26" column="4">
                  <widget class="QCheckBox" name="checkBoxTranslationsSW">
                   <property name="text">
                    <string>Swahili - sw</string>
                   </property>
                  </widget>
                 </item>
-                <item row="22" column="2">
+                <item row="26" column="3">
                  <widget class="QCheckBox" name="checkBoxTranslationsSU">
                   <property name="text">
                    <string>Sundanese - su</string>
                   </property>
                  </widget>
                 </item>
-                <item row="22" column="1">
+                <item row="26" column="2">
                  <widget class="QCheckBox" name="checkBoxTranslationsSO">
                   <property name="text">
                    <string>Somali - so</string>
                   </property>
                  </widget>
                 </item>
-                <item row="21" column="5">
+                <item row="26" column="1">
                  <widget class="QCheckBox" name="checkBoxTranslationsSI">
                   <property name="text">
                    <string>Sinhala - si</string>
                   </property>
                  </widget>
                 </item>
-                <item row="21" column="4">
+                <item row="25" column="5">
                  <widget class="QCheckBox" name="checkBoxTranslationsSD">
                   <property name="text">
                    <string>Sindhi - sd</string>
                   </property>
                  </widget>
                 </item>
-                <item row="21" column="3">
+                <item row="25" column="4">
                  <widget class="QCheckBox" name="checkBoxTranslationsES">
                   <property name="text">
                    <string>Spanish - es</string>
                   </property>
                  </widget>
                 </item>
-                <item row="21" column="2">
+                <item row="25" column="3">
                  <widget class="QCheckBox" name="checkBoxTranslationsSB">
                   <property name="text">
                    <string>Sorbian - sb</string>
                   </property>
                  </widget>
                 </item>
-                <item row="21" column="1">
+                <item row="25" column="2">
                  <widget class="QCheckBox" name="checkBoxTranslationsSV">
                   <property name="text">
                    <string>Swedish - sv</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="25" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsSN">
+                  <property name="text">
+                   <string>Shona - sn</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="24" column="5">
+                 <widget class="QCheckBox" name="checkBoxTranslationsSL">
+                  <property name="text">
+                   <string>Slovenian - sl</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="24" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsSK">
+                  <property name="text">
+                   <string>Slovak - sk</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="24" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsST">
+                  <property name="text">
+                   <string>Sesotho - st</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="24" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsSR_LATIN">
+                  <property name="text">
+                   <string>Serbian Latin -sr-Latin</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="30" column="4">
+                 <widget class="QCheckBox" name="checkBoxTranslationsUZ">
+                  <property name="text">
+                   <string>Uzbek - uz</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="30" column="3">
+                 <widget class="QCheckBox" name="checkBoxTranslationsUR">
+                  <property name="text">
+                   <string>Urdu - ur</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="30" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsUG">
+                  <property name="text">
+                   <string>Uighur - ug</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="30" column="1">
+                 <widget class="QCheckBox" name="checkBoxTranslationsUK">
+                  <property name="text">
+                   <string>Ukrainian - uk</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="30" column="0">
+                 <widget class="QCheckBox" name="checkBoxTranslationsUDM">
+                  <property name="text">
+                   <string>Udmurt - udm</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="34" column="2">
+                 <widget class="QCheckBox" name="checkBoxTranslationsYUA">
+                  <property name="text">
+                   <string>Yucatec Maya - yua</string>
                   </property>
                  </widget>
                 </item>
@@ -1507,6 +1664,9 @@
             <item>
              <widget class="QLineEdit" name="lineEditTranslationsProjectFolder">
               <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
                <string notr="true"/>
               </property>
               <property name="placeholderText">
@@ -1540,6 +1700,13 @@
              </widget>
             </item>
             <item>
+             <widget class="QLabel" name="labelTranslationsSourceLanguageCode">
+              <property name="text">
+               <string notr="true">en</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <spacer name="horizontalSpacerTranslationsSourceLang">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -1566,14 +1733,14 @@
             <item>
              <widget class="QRadioButton" name="radioButtonTranslationsQmake">
               <property name="text">
-               <string>qmake</string>
+               <string notr="true">qmake</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QRadioButton" name="radioButtonTranslationsCmake">
               <property name="text">
-               <string>cmake</string>
+               <string notr="true">cmake</string>
               </property>
              </widget>
             </item>
@@ -1589,6 +1756,37 @@
                </size>
               </property>
              </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="labelTranslationsHelp">
+            <property name="text">
+             <string>Help Folder</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutTranslationsHelp">
+            <item>
+             <widget class="QLineEdit" name="lineEditTranslationsHelp">
+              <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <property name="placeholderText">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonTranslationsHelp">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -1648,6 +1846,7 @@
      <string>File</string>
     </property>
     <addaction name="actionCompile"/>
+    <addaction name="actionTranslate_Help"/>
     <addaction name="separator"/>
     <addaction name="actionClipboard"/>
     <addaction name="separator"/>
@@ -1681,12 +1880,18 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionSave"/>
+   <addaction name="separator"/>
    <addaction name="actionCompile"/>
+   <addaction name="actionTranslate_Help"/>
+   <addaction name="separator"/>
    <addaction name="actionClipboard"/>
+   <addaction name="separator"/>
    <addaction name="actionAbout"/>
    <addaction name="actionHelp"/>
    <addaction name="actionAuthor"/>
+   <addaction name="separator"/>
    <addaction name="actionExit"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actionExit">
    <property name="icon">
@@ -1721,7 +1926,7 @@
      <normaloff>:/images/thumbsup.png</normaloff>:/images/thumbsup.png</iconset>
    </property>
    <property name="text">
-    <string>Compile</string>
+    <string>Translate</string>
    </property>
   </action>
   <action name="actionClipboard">
@@ -1749,6 +1954,15 @@
    </property>
    <property name="text">
     <string>Save</string>
+   </property>
+  </action>
+  <action name="actionTranslate_Help">
+   <property name="icon">
+    <iconset resource="../QtLingo.qrc">
+     <normaloff>:/images/wizardwand.png</normaloff>:/images/wizardwand.png</iconset>
+   </property>
+   <property name="text">
+    <string>Translate Help</string>
    </property>
   </action>
  </widget>

@@ -27,8 +27,8 @@
 #include <QUrl>
 
 /************************************************
- * \class QOnlineTts
  * @brief Q Online Tts.
+ * \class QOnlineTts
  ***********************************************/
 class QOnlineTts : public QObject
 {

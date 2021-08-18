@@ -23,8 +23,8 @@
 #include <QJsonObject>
 
 /************************************************
- * toJson
  * @brief toJson.
+ * toJson
  ***********************************************/
 QJsonObject QExample::toJson() const
 {

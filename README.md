@@ -47,6 +47,18 @@ or
 doxywizard
 ```
 
+# Problems
+
+Dealing with Internet connection going down.
+
+```
+Critical: "Socket operation timed out" (../QtLingo/src/MainWindow.cpp:2280, MainWindow::translateWithReturn(const QString&, QOnlineTranslator::Engine, QOnlineTranslator::Language, QOnlineTranslator::Language, QOnlineTranslator::Language)::<lambda()>)
+Critical: "Host www.bing.com not found" (../QtLingo/src/MainWindow.cpp:2280, MainWindow::translateWithReturn(const QString&, QOnlineTranslator::Engine, QOnlineTranslator::Language, QOnlineTranslator::Language, QOnlineTranslator::Language)::<lambda()>)
+Critical: "Host translate.yandex.com not found" (../QtLingo/src/MainWindow.cpp:2280, MainWindow::translateWithReturn(const QString&, QOnlineTranslator::Engine, QOnlineTranslator::Language, QOnlineTranslator::Language, QOnlineTranslator::Language)::<lambda()>)
+Critical: "Host translate.googleapis.com not found" (../QtLingo/src/MainWindow.cpp:2280, MainWindow::translateWithReturn(const QString&, QOnlineTranslator::Engine, QOnlineTranslator::Language, QOnlineTranslator::Language, QOnlineTranslator::Language)::<lambda()>)
+
+```
+
 # Credits
 I used a few GitHub Projects that I listed above, everything else is
 writen by Jeffrey Scott Flesher the Light Wizzard in the Flesh

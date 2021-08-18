@@ -1,53 +1,62 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QTimer>
-#include <QTranslator>
-#include <QtGlobal>
-#include <QMap>
-#include <QPointer>
-#include <QVector>
 #include <QCloseEvent>
 #include <QFile>
-//
-#include "qexample.h"
-#include "qoption.h"
+#include <QMainWindow>
+#include <QMap>
+#include <QObject>
+#include <QPointer>
+#include <QTimer>
+#include <QTranslator>
+#include <QVector>
+#include <QtGlobal>
 // UI
 #include "ui_MainWindow.h"
 // MyDatatables
 #include "MyDatatables.h"
-#include "MyTranslationFiles.h"
-//
-//#include "third-party/qonlinetranslator/src/qonlinetranslator.h"
+#include "MyLocalization.h"
+// QOnlineTranslator
+#include "qexample.h"
+#include "qoption.h"
 #include "qonlinetranslator.h"
+//
+#include "MyTranlatorParser.h"
 //
 namespace Ui { class MainWindow; }
 /************************************************
  * MyTranslationJobs
  * @brief My Translation Jobs.
+ * @parm thisLanguageName    QString Full Name: English
+ * @parm thisLangName        QString Language code of tile: en
+ * @parm thisTsFile          QString Full path to Translation File
+ * @parm thisDestinationFile QString Destination File
+ * @parm thisLang            QOnlineTranslator::Language Translate to
+ * @parm thisSourceLang      QOnlineTranslator::Language Translate from
  * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyLingoJobs
 {
     public:
-        MyLingoJobs(const QString &thisLanguageName, const QString &thisLangName, const QString &thisTsFile, QOnlineTranslator::Language thisLang, QOnlineTranslator::Language thisSourceLang)
-            : myLanguageName{thisLanguageName}, myLangName{thisLangName}, myTsFile{thisTsFile}, myLang{thisLang}, mySourceLang{thisSourceLang} {}
+        MyLingoJobs(const QString &thisLanguageName, const QString &thisLangName, const QString &thisTsFile, const QString &thisDestinationFile, QOnlineTranslator::Language thisLang, QOnlineTranslator::Language thisSourceLang)
+            : myLanguageName{thisLanguageName}, myLangName{thisLangName}, myTsFile{thisTsFile}, myDestinationFile{thisDestinationFile}, myLang{thisLang}, mySourceLang{thisSourceLang} {}
         // Getters
-        QString getLanguageName()                   const { return myLanguageName; }
-        QString getLangName()                       const { return myLangName;     }
-        QString getTsFile()                         const { return myTsFile;       }
-        QOnlineTranslator::Language getLang()       const { return myLang;         }
-        QOnlineTranslator::Language getSourceLang() const { return mySourceLang;   }
+        QString getLanguageName()                   const { return myLanguageName;    }
+        QString getLangName()                       const { return myLangName;        }
+        QString getTsFile()                         const { return myTsFile;          }
+        QString getDestinationFile()                const { return myDestinationFile; }
+        QOnlineTranslator::Language getLang()       const { return myLang;            }
+        QOnlineTranslator::Language getSourceLang() const { return mySourceLang;      }
         // Setters
-        void setLanguageName(const QString &s)            { myLanguageName = s; }
-        void setLangName(const QString &s)                { myLangName = s;     }
-        void setTsFile(const QString &s)                  { myTsFile = s;       }
-        void setSourceLang(QOnlineTranslator::Language s) { mySourceLang = s;   }
-        void setLang(QOnlineTranslator::Language s)       { myLang = s;         }
+        void setLanguageName(const QString &s)            { myLanguageName    = s; }
+        void setLangName(const QString &s)                { myLangName        = s; }
+        void setTsFile(const QString &s)                  { myTsFile          = s; }
+        void setDestinationFile(const QString &s)         { myDestinationFile = s; }
+        void setSourceLang(QOnlineTranslator::Language s) { mySourceLang      = s; }
+        void setLang(QOnlineTranslator::Language s)       { myLang            = s; }
 
     private:
-        QString myLanguageName, myLangName, myTsFile;
+        QString myLanguageName, myLangName, myTsFile, myDestinationFile;
         QOnlineTranslator::Language myLang, mySourceLang;
 };
 /************************************************
@@ -75,22 +84,33 @@ class MainWindow : public QMainWindow
             TabTabHelp      = 104,  //!< \c TabHelp         @brief Tab Help.
             TabAll          = 200   //!< \c TabAll          @brief Tab All used for Actions on all Tabs.
         }; // end enum MainTabs
-
         Q_ENUM(MainTabs) //!<  I enumerate the Tabs to make it easier to travers
+        /*!
+            \enum TranslationsErrors
+            @brief Translations Errors.
+         */
+        enum TranslationsErrors
+        {
+            NoError           = 100,  //!< \c NoError           @brief No Error.
+            HostNotFound      = 101,  //!< \c HostNotFound      @brief Host Not Found: Internet Down, wait till it comes back up.
+            ErrorTransferring = 102,  //!< \c ErrorTransferring @brief Error Transferring: server replied: Too Many Requests, increase Delay time.
+        }; // end enum MainTabs
+
+        Q_ENUM(TranslationsErrors) //!<  I enumerate the Tabs to make it easier to travers
         //
-        void onRunOnStartup();                          //!< on Run On Startup
+        void onRunFirstOnStartup();                     //!< on Run First On Startup
         //
-        bool setQtProjectCombo();                       //!< set Qt Project Combo
+        void setQtProjectCombo();                       //!< set Qt Project Combo
         // Read
-        void readSettings();                            //!< read Settings
+        void readAllSettings();                         //!< read Settings
         void readStatesChanges();                       //!< read States Changes
-        void readSqlDatabaseInfo();                     //!< read Sql Database Info
+        void readSqlDatabaseInfo();                     //!< read SQL Database Info
         // Write
-        bool writeSettings();                           //!< write Settings
+        bool writeAllSettings();                        //!< write Settings
         void writeStateChanges();                       //!< write State Changes
-        void writeSqlDatabaseInfo();                    //!< write Sql Database Info
+        void writeSqlDatabaseInfo();                    //!< write SQL Database Info
         //
-        void setSqlBrowseButton();                      //!< set Sql Browse Button
+        void setSqlBrowseButton();                      //!< set SQL Browse Button
         //
         void fillForms(const QString &thisProjectID);   //!< fill Forms
         //
@@ -104,25 +124,26 @@ class MainWindow : public QMainWindow
         void setProjectClass(int tabNumber);            //!< set Project Class
         void createTranslationJob(const QString &thisTranslate, const QString &thisLanguage, const QString &thisSourceLanguage, bool thisChecked); //!< get Translation String
         void setPrograms();                             //!< set Programs
-        // Added by Light-Wizzard
-        QString translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang); //!< translate With Return, note this is blocking
-        void loadLanguage(const QString &thisQmLanguageFile); //!< load Language
-        QString getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix); //!< get Language File
-        QString getLanguageFromFile(const QString &thisPrefix, const QString &thisQmLanguageFile); //!< getLanguageFromFile
-        QString getTranslationSource();                                     //!< get Translation Source
-        void setTranslationSource(const QString &thisTranslationSource);    //!< set Translation Source
-        QString getTransFilePrefix();                                       //!< get TransFile Prefix
-        void setTransFilePrefix(const QString &thisTransFilePrefix);        //!< set TransFile Prefix
         // Is Debug Message
         void setDebugMessage(bool thisState);           //!< set Debug Message
         bool getDebugMessage();                         //!< get Debug Message
-        QString readLanguage();                         //!< read Language
-        void writeLanguage(const QString &thisCurrentLanguageCode); //!< write Language
         void retranslate();                             //!< retranslate none designer components
         void loadLanguageComboBox();                    //!< load Language ComboBox
         void loadLanguageComboBoxSource();              //!< load Language ComboBox Source
         void readSettingsFirst();                       //!< read Settings First
         void setMessagingStates(bool thisMessageState); //!< set Messaging States
+        // Set Tabs
+        void setTabSettings();                          //!< set Tab Settings
+        void setTabTranslations();                      //!< set Tab Translations
+        void setTabAll();                               //!< set Tab All
+        //
+        QString translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang); //!< translate With Return, note this is blocking
+        QString checkTranslationErrors(const QString &thisTranslations, const QString &thisText, QOnlineTranslator::Engine thisEngine, QOnlineTranslator::Language thisTranslationLang, QOnlineTranslator::Language thisSourceLang, QOnlineTranslator::Language thisUiLang); //!< check Translation Errors
+        void setTranslationErrorType(const QString &thisTranslations); //!< set Translation Error Type
+        // Translate Help
+        void translateHelp();                           //!< translate Help Files
+        void createHelpTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create Help Translation Job
+        void setLanguageCode();                         //!< set Language Code Lable in UI
 
     public slots:
         void onHelp();                                  //!< on Help
@@ -131,61 +152,70 @@ class MainWindow : public QMainWindow
         void onCompile();                               //!< on Compile
         void onAuthor();                                //!< on Author
         void onSave();                                  //!< on Save
+        void onInternetProgress();                      //!< on Internet Progress
 
     private slots:
         // ComboBoxes
-        void on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex);                               //!< on comboBox Settings Projects current Index Changed
-        void on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage);             //!< on comboBox Settings Language current Index Changed
-        void on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType);               //!< on comboBox Sql Database Type current Index Changed
-        // Push Buttons
+        void on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex);                //!< on comboBox Settings Projects current Index Changed
+        void on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage);  //!< on comboBox Settings Language current Index Changed
+        void on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType);    //!< on comboBox SQL Database Type current Index Changed
+        // Push Buttons Settings
         void on_pushButtonSettingsAdd_clicked();                                            //!< on pushButton Settings Add clicked
         void on_pushButtonSettingsSave_clicked();                                           //!< on pushButton Settings Save clicked
         void on_pushButtonSettingsDelete_clicked();                                         //!< on pushButton Settings Delete clicked
         void on_pushButtonSettingsProjectsBrowser_clicked();                                //!< on pushButton Settings Projects Browser clicked
-        void on_pushButtonSqlDatabaseNameBrowse_clicked();                                  //!< on pushButton Sql Database Name Browse clicked
-        void on_pushButtonSqlPasswordShow_clicked();                                        //!< on pushButton Sql Password Show clicked
-        void on_pushButtonSqlSave_clicked();                                                //!< on pushButton Sql Save clicked
+        // Push Buttons SQL
+        void on_pushButtonSqlDatabaseNameBrowse_clicked();                                  //!< on pushButton SQL Database Name Browse clicked
+        void on_pushButtonSqlPasswordShow_clicked();                                        //!< on pushButton SQL Password Show clicked
+        void on_pushButtonSqlSave_clicked();                                                //!< on pushButton SQL Save clicked
+        // Push Buttons Translations
         void on_pushButtonTranslationsSourceBrowse_clicked();                               //!< on pushButton Translations Source Browse clicked
         void on_pushButtonTranslationsDestinationBrowse_clicked();                          //!< on pushButton Translations Destination Browse clicked
         void on_pushButtonTranslationsProjectFolderBrowse_clicked();                        //!< on pushButton Translations ProjectFolder Browse clicked
+        void on_pushButtonTranslationsHelp_clicked();                                       //!< on pushButton Translations Help clicked
+        // Checkboxes Settings
         void on_checkBoxSettingsGoogle_stateChanged(int thisArg);                           //!< on checkBox Settings Google state Changed
         void on_checkBoxSettingsBing_stateChanged(int thisArg);                             //!< on checkBox Settings Bing state Changed
         void on_checkBoxSettingsYandex_stateChanged(int thisArg);                           //!< on checkBox Settings Yandex state Changed
         void on_checkBoxSettignsMessaging_stateChanged(int thisCheckState);                 //!< on checkBox Settigns Messaging state Changed
 
+        void on_comboBoxTranslationSourceLanguage_currentIndexChanged(const QString &arg1);
+
     protected:
-        void closeEvent(QCloseEvent *event) override;                //!< close Event
+        void closeEvent(QCloseEvent *event) override;           //!< close Event
 
     protected slots:
-        virtual void changeEvent(QEvent * event) override;           //!< change Event
+        virtual void changeEvent(QEvent * event) override;      //!< change Event
 
     private:
-        Ui::MainWindow     *ui;                                 //!< \c ui                      @brief ui
-        MyDatatables       *mySqlDb;                            //!< \c mySqlDb                 @brief Sql Datatables
-        MyTranslationFiles *myTranslationFiles;                 //!< \c myTranslationFiles      @brief Translation Files
-        QOnlineTranslator   myQOnlineTranslator;                //!< \c myQOnlineTranslator     @brief QOnlineTranslator
-        QClipboard         *clipboard;                          //!< \c clipboard               @brief clipboard
-        bool                isDebugMessage        = true;       //!< \c isDebugMessage          @brief true of false for Debugging
-        bool                isMainLoaded          = false;      //!< \c isMainLoaded            @brief Set true after one shot time loads
-        bool                isQtSettingsLoaded    = false;      //!< \c isQtSettingsLoaded      @brief is Qt Settings Loaded
-        bool                isSaveSettings        = false;      //!< \c isSaveSettings          @brief Auto Save
-        bool                isTranslationError    = false;      //!< \c isTranslationError      @brief is Translation Error
-        QString             myLanguages           = "";         //!< \c myLanguages             @brief Languages for checkboxes
-        QString             myTranslationConf     = "";         //!< \c myTranslationConf       @brief Languages for Config
-        QString             myTranslationQrc      = "";         //!< \c myTranslationQrc        @brief Translation qrc
-        QString             myLanguageName        = "";         //!< \c myLanguageName          @brief Language Name
-        QString             myCurrentLanguage     = "";         //!< \c myCurrentLanguage       @brief Current Language
-        QString             myCurrentLanguageCode = "";         //!< \c myCurrentLanguage       @brief Current Language
-        QString             myTranslation         = "";         //!< \c myTranslation           @brief Translation
-        QString             myTranslationError    = "";         //!< \c myTranslationError      @brief Translation Error
-        QString             myTranslationSource   = "";         //!< \c myTranslationSource     @brief Translation Source
-        QString             myTransFilePrefix     = "";         //!< \c myTransFilePrefix       @brief Translation File Prefix
-        QString             mySourceLanguage      = "";         //!< \c mySourceLanguage        @brief Source Language
-        QList<MyLingoJobs>  myLingoJob;                         //!< \c myLingoJob              @brief Lingo Job
-        QTranslator        *myTranslator;                       //!< \c myTranslator            @brief Translator
-        QTranslator        *myLastTranslator = nullptr;         //!< \c myLastTranslator        @brief Last Translator
-        int                 myLanguageCombBoxIndex = -1;        //!< \c myLanguageCombBoxIndex  @brief Language CombBox Index
-        int                 myRecordID             = -1;        //!< \c myRecordID              @brief Record ID
+        Ui::MainWindow     *ui;                                 //!< \c ui                      @brief ui.
+        MyDatatables       *mySqlDb;                            //!< \c mySqlDb                 @brief SQL Datatables.
+        MyLocalization     *myLocalization;                     //!< \c myLocalization          @brief Localization.
+        QOnlineTranslator   myQOnlineTranslator;                //!< \c myQOnlineTranslator     @brief QOnlineTranslator.
+        QClipboard         *clipboard;                          //!< \c clipboard               @brief clipboard.
+        bool                isDebugMessage        = true;       //!< \c isDebugMessage          @brief true of false for Debugging.
+        bool                isTranslationLog      = false;      //!< \c isTranslationLog        @brief true of false for Info during Translation.
+        bool                isMainLoaded          = false;      //!< \c isMainLoaded            @brief Set true after one shot time loads.
+        bool                isQtSettingsLoaded    = false;      //!< \c isQtSettingsLoaded      @brief is Qt Settings Loaded.
+        bool                isSaveSettings        = false;      //!< \c isSaveSettings          @brief Auto Save.
+        bool                isTranslationError    = false;      //!< \c isTranslationError      @brief is Translation Error.
+        QString             myLanguages           = "";         //!< \c myLanguages             @brief Languages for checkboxes.
+        QString             myTranslationConf     = "";         //!< \c myTranslationConf       @brief Languages for Config.
+        QString             myTranslationQrc      = "";         //!< \c myTranslationQrc        @brief Translation qrc.
+        QString             myLanguageName        = "";         //!< \c myLanguageName          @brief Language Name.
+        QString             myCurrentLanguage     = "";         //!< \c myCurrentLanguage       @brief Current Language.
+        QString             myTranslation         = "";         //!< \c myTranslation           @brief Translation.
+        QString             myTranslationError    = "";         //!< \c myTranslationError      @brief Translation Error.
+        QString             mySourceLanguage      = "";         //!< \c mySourceLanguage        @brief Source Language.
+        QList<MyLingoJobs>  myLingoJob;                         //!< \c myLingoJob              @brief Lingo Job.
+        QStringList         myHelpTranslationsFiles;            //!< \c myHelpTranslationsFiles @brief Help Translations Files
+        QStringList         myHelpFileNames;                    //!< \c myHelpFileNames         @brief Help File Names
+        int                 myLanguageCombBoxIndex = -1;        //!< \c myLanguageCombBoxIndex  @brief Language CombBox Index.
+        int                 myRecordID             = -1;        //!< \c myRecordID              @brief Record ID.
+        int                 myTranslationErrorType = -1;        //!< \c myTranslationErrorType  @brief Translation Error Type.
+        int                 myIncreameantValue     = 60;        //!< \c myIncreameantValue      @brief Increameant Value in Seconds.
+        int                 myDelayValue           = 60*6;      //!< \c myIncreameantValue      @brief Increameant Value in Seconds.
+        MyTranlatorParser  *myTranlatorParser;                  //!< \c myDelayValue            @brief Delay Value.
 };
 #endif // MAINWINDOW_H
 /******************************* End of File *********************************/

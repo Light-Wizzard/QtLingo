@@ -25,8 +25,8 @@
 #include <QStringList>
 
 /************************************************
- * \class QOption
  * @brief QOption.
+ * \struct QOption
  ***********************************************/
 struct QOption
 {

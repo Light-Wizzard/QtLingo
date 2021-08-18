@@ -35,20 +35,22 @@ INCLUDEPATH     += "${QT_INSTALL_LIBS}/qt"
 HEADERS += src/MainWindow.h \
     src/MyConstants.h \
     src/MyDatatables.h \
+    src/MyLocalization.h \
     src/MyOrgSettings.h \
-    src/MySimpleCrypt.h \
     src/MySqlDbtModel.h \
-    src/MyTranslationFiles.h \
+    src/MyTranlatorParser.h \
+    src/SimpleCrypt.h \
     src/third-party/ts_tool/efl_hash.h \
     src/third-party/ts_tool/ts_model.h
 #
 #
 SOURCES += src/main.cpp src/MainWindow.cpp \
     src/MyDatatables.cpp \
+    src/MyLocalization.cpp \
     src/MyOrgSettings.cpp \
-    src/MySimpleCrypt.cpp \
     src/MySqlDbtModel.cpp \
-    src/MyTranslationFiles.cpp \
+    src/MyTranlatorParser.cpp \
+    src/SimpleCrypt.cpp \
     src/third-party/ts_tool/ts_model.cpp
 #
 FORMS += src/MainWindow.ui
@@ -66,17 +68,16 @@ CONFIG += lrelease
 CONFIG += embed_translations
 LRELEASE_DIR=./translations
 QM_FILES_RESOURCE_PREFIX=./translations
-# en,de,fr,it,ja,zh,no,ru,sv,ar
-TRANSLATIONS += translations/QtLingo_en.ts \
+# ar,de,en,fr,it,ja,no,ru,sv,zh-CN
+TRANSLATIONS += translations/QtLingo_ar.ts \
                 translations/QtLingo_de.ts \
+                translations/QtLingo_en.ts \
                 translations/QtLingo_fr.ts \
                 translations/QtLingo_it.ts \
                 translations/QtLingo_ja.ts \
-                translations/QtLingo_ko.ts \
                 translations/QtLingo_no.ts \
                 translations/QtLingo_ru.ts \
                 translations/QtLingo_sv.ts \
-                translations/QtLingo_ar.ts \
                 translations/QtLingo_zh-CN.ts
 #
 include(src/third-party/qonlinetranslator/qonlinetranslator.pri)
@@ -84,10 +85,10 @@ include(src/third-party/qonlinetranslator/qonlinetranslator.pri)
 DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \
     Doxyfile \
-    help/About-Author-en.html \
-    help/About-en.html \
-    help/Help-en.html \
-    help/ReadMe.md \
+    help/About-Author_en.md \
+    help/About_en.md \
+    help/Help_en.md \
+    help/Languages.txt \
     help/images/settings.png \
     help/images/sql.png \
     scripts/build_script.cmd \

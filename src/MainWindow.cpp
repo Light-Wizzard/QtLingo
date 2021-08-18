@@ -12,22 +12,23 @@
  ***********************************************/
 #include "MainWindow.h"
 /************************************************
- * MainWindow
  * @brief MainWindow Constructor.
+ * MainWindow
  ***********************************************/
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     // Create table model:
-    mySqlDb             = new MyDatatables(this);
-    myTranslationFiles  = new MyTranslationFiles(this, mySqlDb);
-    myTranslator        = new QTranslator(qApp);
+    mySqlDb           = new MyDatatables(this);
+    myLocalization    = new MyLocalization(this, mySqlDb);
+    myTranlatorParser = new MyTranlatorParser(this, mySqlDb);
     // Set up UI
     ui->setupUi(this);
     // Read in Settings First
     readSettingsFirst();
     // Set to defaults
-    setTransFilePrefix("QtLingo");          //!< Prefix of Translation files
-    setTranslationSource("translations");   //!< Relative Folder for Translation files
+    myLocalization->setTransFilePrefix("QtLingo");          //!< Prefix of Translation files
+    myLocalization->setTranslationSource("translations");   //!< Relative Folder for Translation files
+    myLocalization->setHelpSource("help");                  //!< Relative Folder for Help files
     // SQL Database Types Do not Translate these
     ui->comboBoxSqlDatabaseType->addItem(":memory:");
     ui->comboBoxSqlDatabaseType->addItem("QSQLITE");
@@ -41,25 +42,28 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
     // Connect actions
-    connect(ui->actionExit,      &QAction::triggered, this, &MainWindow::close);
-    connect(ui->actionAbout,     &QAction::triggered, this, &MainWindow::onAbout);
-    connect(ui->actionHelp,      &QAction::triggered, this, &MainWindow::onHelp);
-    connect(ui->actionAuthor,    &QAction::triggered, this, &MainWindow::onAuthor);
-    connect(ui->actionClipboard, &QAction::triggered, this, &MainWindow::onClipboard);
-    connect(ui->actionCompile,   &QAction::triggered, this, &MainWindow::onCompile);
-    connect(ui->actionSave,      &QAction::triggered, this, &MainWindow::onSave);
+    connect(ui->actionExit,           &QAction::triggered, this, &MainWindow::close);
+    connect(ui->actionAbout,          &QAction::triggered, this, &MainWindow::onAbout);
+    connect(ui->actionHelp,           &QAction::triggered, this, &MainWindow::onHelp);
+    connect(ui->actionAuthor,         &QAction::triggered, this, &MainWindow::onAuthor);
+    connect(ui->actionClipboard,      &QAction::triggered, this, &MainWindow::onClipboard);
+    connect(ui->actionCompile,        &QAction::triggered, this, &MainWindow::onCompile);
+    connect(ui->actionSave,           &QAction::triggered, this, &MainWindow::onSave);
+    connect(ui->actionTranslate_Help, &QAction::triggered, this, &MainWindow::translateHelp);
+    //
+    connect(mySqlDb->mySqlModel->mySetting, &MyOrgSettings::sendInternetProgress, this, &MainWindow::onInternetProgress);
     //
     ui->labelSettingsLanguageUI->setText(myQOnlineTranslator.languageCode(myQOnlineTranslator.language(QLocale())));
     // Set Window Title to Application Name
     setWindowTitle(QApplication::applicationName());
     //
     setPrograms();
-    // Do a one time Single Shot call to onRunOnStartup to allow the GUI to load before calling what is in that call
-    QTimer::singleShot(200, this, &MainWindow::onRunOnStartup);
+    // Do a one time Single Shot call to onRunFirstOnStartup to allow the GUI to load before calling what is in that call
+    QTimer::singleShot(200, this, &MainWindow::onRunFirstOnStartup);
 }
 /************************************************
- * ~MainWindow
  * @brief MainWindow Deconstructor.
+ * ~MainWindow
  ***********************************************/
 MainWindow::~MainWindow()
 {
@@ -68,21 +72,21 @@ MainWindow::~MainWindow()
     delete ui;
 }
 /************************************************
- * closeEvent
  * @brief close Event.
+ * closeEvent
  ***********************************************/
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "closeEvent"; }
     if (isSaveSettings) onSave();
     mySqlDb->mySqlModel->mySetting->setGeometry(pos(), size(), isMaximized(), isMinimized());
-    writeSettings();
+    writeAllSettings();
     QMainWindow::closeEvent(event);
     close();
 } // end closeEvent
 /************************************************
- * changeEvent
  * @brief change Event.
+ * changeEvent
  ***********************************************/
 void MainWindow::changeEvent(QEvent *event)
 {
@@ -98,8 +102,16 @@ void MainWindow::changeEvent(QEvent *event)
     QMainWindow::changeEvent(event);
 }
 /************************************************
- * retranslate
  * @brief retranslate.
+ * retranslate
+ ***********************************************/
+void MainWindow::onInternetProgress()
+{
+    ui->statusbar->showMessage(tr("Internet is down, trying to reconnect"));
+}
+/************************************************
+ * @brief retranslate.
+ * retranslate
  ***********************************************/
 void MainWindow::retranslate()
 {
@@ -109,16 +121,17 @@ void MainWindow::retranslate()
     loadLanguageComboBoxSource();
 }
 /************************************************
- * loadLanguageComboBoxSource
  * @brief load Language ComboBox Source.
+ * loadLanguageComboBoxSource
  ***********************************************/
 void MainWindow::loadLanguageComboBoxSource()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "loadLanguageComboBoxSource"; }
     //
     QMetaEnum e = QMetaEnum::fromType<QOnlineTranslator::Language>();
-
+    bool lastIsMainLoaded = isMainLoaded;
     isMainLoaded = false;
+    myLocalization->setMainLoaded(false);
     int theCurrentIndex = ui->comboBoxTranslationSourceLanguage->currentIndex();
     if (theCurrentIndex < 0)
     {
@@ -154,107 +167,84 @@ void MainWindow::loadLanguageComboBoxSource()
     { ui->comboBoxTranslationSourceLanguage->setCurrentIndex(ui->comboBoxTranslationSourceLanguage->findText(mySourceLanguage)); }
     else
     { ui->comboBoxTranslationSourceLanguage->setCurrentIndex(theCurrentIndex); }
-    isMainLoaded = true;
+    setLanguageCode();
+    isMainLoaded = lastIsMainLoaded;
+    myLocalization->setMainLoaded(lastIsMainLoaded);
 }
 /************************************************
- * loadLanguageComboBox
+ * @brief set Language Code.
+ * setLanguageCode
+ ***********************************************/
+void MainWindow::setLanguageCode()
+{
+    ui->labelTranslationsSourceLanguageCode->setText(myLocalization->languageNameToCode(ui->comboBoxTranslationSourceLanguage->currentText()));
+}
+/************************************************
  * @brief load Language ComboBox.
+ * loadLanguageComboBox
  ***********************************************/
 void MainWindow::loadLanguageComboBox()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "loadLanguageComboBox"; }
+    bool lastIsMainLoaded = isMainLoaded;
+    myLocalization->setMainLoaded(false);
     isMainLoaded = false;
     int theCurrentIndex = ui->comboBoxSettingsLanguage->currentIndex();
-    if (theCurrentIndex < 0)
-    {
-        theCurrentIndex = myLanguageCombBoxIndex;
-    }
+    if (theCurrentIndex < 0) { theCurrentIndex = myLanguageCombBoxIndex; }
     ui->comboBoxSettingsLanguage->clear();
-    const QStringList theQmFiles =  myTranslationFiles->findQmFiles(getTranslationSource());
+    const QStringList theQmFiles =  myLocalization->findQmFiles(myLocalization->getTranslationSource());
     QStandardItemModel *theLangModel = new QStandardItemModel(this);
     theLangModel->setColumnCount(2);
     for (int i = 0; i < theQmFiles.size(); ++i)
     {
-        QString theLanguageName = getLanguageFromFile(getTransFilePrefix(), theQmFiles.at(i));
+        QString theLanguageName = myLocalization->getLanguageFromFile(myLocalization->getTransFilePrefix(), theQmFiles.at(i));
         QStandardItem* theCol0 = new QStandardItem(theLanguageName);
         QStandardItem* theCol1 = new QStandardItem(tr(theLanguageName.toLocal8Bit()));
         theLangModel->setItem(i, 0, theCol0);
         theLangModel->setItem(i, 1, theCol1);
     } // end for
-    QTableView* tableView = new QTableView(this);
-    tableView->setModel(theLangModel);
-    tableView->verticalHeader()->setVisible(false);
-    tableView->horizontalHeader()->setVisible(false);
-    tableView->setColumnWidth (0, 196);
-    tableView->setColumnWidth (1, 196);
-    tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
-    tableView->setAutoScroll(false);
+    QTableView* theTableView = new QTableView(this);
+    theTableView->setModel(theLangModel);
+    theTableView->verticalHeader()->setVisible(false);
+    theTableView->horizontalHeader()->setVisible(false);
+    theTableView->setColumnWidth (0, 196);
+    theTableView->setColumnWidth (1, 196);
+    theTableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    theTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    theTableView->setAutoScroll(false);
     // Set comboBox
     ui->comboBoxSettingsLanguage->setMinimumWidth(400);
-    ui->comboBoxSettingsLanguage->setModel( theLangModel );
-    ui->comboBoxSettingsLanguage->setView( tableView );
+    ui->comboBoxSettingsLanguage->setModel(theLangModel);
+    ui->comboBoxSettingsLanguage->setView(theTableView);
     ui->comboBoxSettingsLanguage->setCurrentIndex(theCurrentIndex);
-    isMainLoaded = true;
+    isMainLoaded = lastIsMainLoaded;
+    myLocalization->setMainLoaded(lastIsMainLoaded);
 }
 /************************************************
- * loadLanguage
- * @brief load Language.
+ * @brief on Run First On Startup.
+ * onRunFirstOnStartup
  ***********************************************/
-void MainWindow::loadLanguage(const QString &thisQmLanguageFile)
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "loadLanguage"; }
-
-    if (myTranslator->load(thisQmLanguageFile))
-    {
-        if (myLastTranslator == nullptr ) { qApp->removeTranslator(myLastTranslator); }
-        qApp->installTranslator(myTranslator);
-        myLastTranslator = myTranslator;
-    }
-    else
-    {
-        qCritical() << "loadLanguage failed";
-    }
-}
-/************************************************
- * @brief get Language File.
- * getLanguageFile
- ***********************************************/
-QString MainWindow::getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix)
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getLanguageFile"; }
-    const QStringList theQmFiles = myTranslationFiles->findQmFiles(thisPath);
-    for (int i = 0; i < theQmFiles.size(); ++i)
-    {
-        if (myTranslationFiles->languageMatch(thisPrefix, thisLanguage, theQmFiles.at(i)))
-            { return theQmFiles.at(i); }
-    }
-    return "";
-}
-/************************************************
- * @brief on Run On Startup.
- * onRunOnStartup
- ***********************************************/
-void MainWindow::onRunOnStartup()
+void MainWindow::onRunFirstOnStartup()
 {
     isMainLoaded = false;
+    myLocalization->setMainLoaded(false);
     clearForms(TabAll);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabSettings")));
     // Read Settings
-    readSettings();
+    readAllSettings();
 
     // Read Saved Language
-    readLanguage();
+    myLocalization->readLanguage();
     // Get Language File
-    QString theQmLanguageFile = getLanguageFile(myCurrentLanguageCode, getTranslationSource(), getTransFilePrefix());
+    QString theQmLanguageFile = myLocalization->getLanguageFile(myLocalization->getLanguageCode(), myLocalization->getTranslationSource(), myLocalization->getTransFilePrefix());
     // Load Language
-    loadLanguage(theQmLanguageFile);
-    QString theLastLanguage = getLanguageFromFile(getTransFilePrefix(), theQmLanguageFile);
+    myLocalization->loadLanguage(theQmLanguageFile);
+    QString theLastLanguage = myLocalization->getLanguageFromFile(myLocalization->getTransFilePrefix(), theQmLanguageFile);
     loadLanguageComboBox();
     ui->comboBoxSettingsLanguage->setCurrentIndex(ui->comboBoxSettingsLanguage->findText(theLastLanguage));
     //
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onRunOnStartup"; }
+    if (isDebugMessage && isMainLoaded) { qDebug() << "onRunFirstOnStartup"; }
     //
     if (!mySqlDb->checkDatabase()) close();
     setQtProjectCombo();
@@ -265,50 +255,28 @@ void MainWindow::onRunOnStartup()
     setSqlBrowseButton();
     //
     isMainLoaded = true;
+    myLocalization->setMainLoaded(true);
 }
 /************************************************
- * readLanguage
- * @brief read Language.
- ***********************************************/
-QString MainWindow::readLanguage()
-{
-    myCurrentLanguageCode = mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_CURRENT_LANG_CODE, myQOnlineTranslator.languageCode(myQOnlineTranslator.language(QLocale())));
-    return myCurrentLanguageCode;
-}
-/************************************************
- * writeLanguage
- * @brief write Language.
- ***********************************************/
-void MainWindow::writeLanguage(const QString &thisCurrentLanguageCode)
-{
-    myCurrentLanguageCode = thisCurrentLanguageCode;
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_CURRENT_LANG_CODE, thisCurrentLanguageCode);
-}
-/************************************************
- * readSettingsFirst
  * @brief read Settings First.
+ * readSettingsFirst
  ***********************************************/
 void MainWindow::readSettingsFirst()
 {
     isDebugMessage = mySqlDb->mySqlModel->mySetting->readSettingsBool(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage);
     if (isDebugMessage)
-    { ui->checkBoxSettignsMessaging->setCheckState(Qt::CheckState::Checked); }
+        { ui->checkBoxSettignsMessaging->setCheckState(Qt::CheckState::Checked); }
     else
-    { ui->checkBoxSettignsMessaging->setCheckState(Qt::CheckState::Unchecked); }
+        { ui->checkBoxSettignsMessaging->setCheckState(Qt::CheckState::Unchecked); }
     setMessagingStates(isDebugMessage);
 }
 /************************************************
- * readSettings
  * @brief read Settings.
+ * readAllSettings
  ***********************************************/
-void MainWindow::readSettings()
+void MainWindow::readAllSettings()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readSettings"; }
-    // SQL Memory option Chech
-    // default set to myProjectID="-1"
-    QString theProjectID = mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, mySqlDb->getProjectID());
-    // We cannot read from the database yet, we are only getting the last states we know of
-    if (theProjectID != "-1") { mySqlDb->setProjectID(theProjectID); } else { mySqlDb->setProjectID("1"); }
+    if (isDebugMessage && isMainLoaded) { qDebug() << "readAllSettings"; }
     //resize(myMySettings->getGeometrySize());
     //move(myMySettings->getGeometryPos());
     //
@@ -320,12 +288,12 @@ void MainWindow::readSettings()
     readSqlDatabaseInfo();
 }
 /************************************************
- * writeSettings
- * @brief write Settings.
+ * @brief Write All Settings.
+ * writeAllSettings
  ***********************************************/
-bool MainWindow::writeSettings()
+bool MainWindow::writeAllSettings()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "writeSettings"; }
+    if (isDebugMessage && isMainLoaded) { qDebug() << "writeAllSettings"; }
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage ? "true" : "false");
     //
     writeStateChanges();
@@ -333,18 +301,40 @@ bool MainWindow::writeSettings()
     return true;
 }
 /************************************************
- * writeStateChanges
+ * @brief read SQL Database States.
+ * readSqlDatabaseStates
+ ***********************************************/
+void MainWindow::readStatesChanges()
+{
+    if (isDebugMessage && isMainLoaded) { qDebug() << "readStatesChanges"; }
+    // SQL Memory option Chech
+    // default set to myProjectID="-1"
+    QString theProjectID = mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, mySqlDb->getProjectID());
+    // We cannot read from the database yet, we are only getting the last states we know of
+    if (theProjectID != "-1") { mySqlDb->setProjectID(theProjectID); } else { mySqlDb->setProjectID("1"); }
+    mySqlDb->setProjectName(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_NAME, mySqlDb->getProjectName()));
+    // Project ID
+    ui->labelRecordIdSettings->setText(mySqlDb->getProjectID());
+    // Trans Engine
+    // Google
+    ui->checkBoxSettingsGoogle->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+    // Bing
+    ui->checkBoxSettingsBing->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_BING_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+    // Yandex
+    ui->checkBoxSettingsYandex->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_YANDEX_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+    // Delay
+    ui->spinBoxSettingsDelay->setValue(mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY_VALUE, mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY));
+}
+/************************************************
  * @brief write States Changes.
+ * writeStateChanges
  ***********************************************/
 void MainWindow::writeStateChanges()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "writeStateChanges"; }
-    // Sql Database Type Index
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, QString::number(ui->comboBoxSqlDatabaseType->currentIndex()));
-    // Sql Database Type Value
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_VALUE, ui->comboBoxSqlDatabaseType->currentText());
     // Project ID
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, ui->labelRecordIdSettings->text());
+    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_NAME, ui->comboBoxSettingsProjects->currentText());
     // Trans Engines
     // Google
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, (ui->checkBoxSettingsGoogle->isChecked()) ? "true" : "false" );
@@ -357,64 +347,49 @@ void MainWindow::writeStateChanges()
     // Delay
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY_VALUE, ui->spinBoxSettingsDelay->text());
     // Language ComboBox
-    myCurrentLanguageCode = myQOnlineTranslator.languageNameToCode(ui->comboBoxSettingsLanguage->currentText());
-    writeLanguage(myCurrentLanguageCode);
+    myLocalization->getLanguageCode() = myLocalization->languageNameToCode(ui->comboBoxSettingsLanguage->currentText());
+    myLocalization->writeLanguage(myLocalization->getLanguageCode());
 }
 /************************************************
- * readSqlDatabaseStates
- * @brief read Sql Database States.
- ***********************************************/
-void MainWindow::readStatesChanges()
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readStatesChanges"; }
-    // Set ComboBox for SQL
-    ui->comboBoxSqlDatabaseType->setCurrentIndex(mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, 1));
-    // SQL Type Value
-    mySqlDb->setComboBoxSqlValue(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_VALUE, mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT));
-    // Project ID
-    ui->labelRecordIdSettings->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, "-1"));
-    // Trans Engine
-    // Google
-    ui->checkBoxSettingsGoogle->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
-    // Bing
-    ui->checkBoxSettingsBing->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_BING_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
-    // Yandex
-    ui->checkBoxSettingsYandex->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_YANDEX_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
-    // Language
-    int theDefaultIndex = ui->comboBoxSettingsLanguage->findText(myQOnlineTranslator.languageName(myQOnlineTranslator.language(QLocale())));
-    myLanguageCombBoxIndex = mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_LANGUAGE_COMBO_STATE, theDefaultIndex);
-    ui->comboBoxSettingsLanguage->setCurrentIndex(myLanguageCombBoxIndex);
-    // Delay
-    ui->spinBoxSettingsDelay->setValue(mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY_VALUE, mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY));
-}
-/************************************************
+ * @brief write SQL Database Info Uses SimpleCrypt to encrypt and decrypt Password.
  * writeSqlDatabaseInfo
- * @brief write Sql Database Info Uses SimpleCrypt to encrypt and decrypt Password.
  ***********************************************/
 void MainWindow::writeSqlDatabaseInfo()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "writeSqlDatabaseInfo"; }
+    // SQL Database Type Index
+    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, QString::number(ui->comboBoxSqlDatabaseType->currentIndex()));
+    // SQL Database Type Value
+    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_TYPE, ui->comboBoxSqlDatabaseType->currentText());
+    // SQL Database Name
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_NAME,  ui->lineEditSqlDatabaseName->text());
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_TYPE,  ui->comboBoxSqlDatabaseType->currentText());
+    // SQL Database Type Host
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_HOST,  ui->lineEditSqlHostName->text());
+    // SQL Database Type User
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_USER,  ui->lineEditSqlUserName->text());
-    // Encrypt Password, it is saved in Ini file
+    // SQL Encrypted Password, it is saved in Ini file
     if (!ui->lineEditSqlPassword->text().isEmpty())
         { mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_PASS, mySqlDb->mySqlModel->mySetting->encryptThis(ui->lineEditSqlPassword->text())); }
 }
 /************************************************
+ * @brief read SQL Database Info Uses SimpleCrypt to encrypt and decrypt Password.
  * readSqlDatabaseInfo
- * @brief read Sql Database Info Uses SimpleCrypt to encrypt and decrypt Password.
  ***********************************************/
 void MainWindow::readSqlDatabaseInfo()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "readSqlDatabaseInfo"; }
     QString theDb = QString("%1%2%3.db").arg(mySqlDb->mySqlModel->mySetting->getAppDataLocation(), QDir::separator(), mySqlDb->mySqlModel->getSqlDatabaseName());
+    // SQL Database Name
     ui->lineEditSqlDatabaseName->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_NAME, theDb));
-    //myOrgDomainSetting->readSettings(myOrgDomainSetting->myConstants->MY_SQL_DB_TYPE, ""); // No Default
+    // Set ComboBox for SQL
+    ui->comboBoxSqlDatabaseType->setCurrentIndex(mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, 1));
+    // SQL Type Value
+    mySqlDb->setComboBoxSqlValue(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_TYPE, mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT));
+    // SQL Host
     ui->lineEditSqlHostName->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_HOST, "")); // No Default
+    // SQL User
     ui->lineEditSqlUserName->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_USER, "")); // No Default
-    // Decrypt Password, it is saved in Ini file
+    // SQL Decrypt Password, it is saved in Ini file
     QString thePassword = mySqlDb->mySqlModel->mySetting->decryptThis(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_PASS, ""));
     if (!thePassword.isEmpty())
         { ui->lineEditSqlPassword->setText(thePassword); }
@@ -422,37 +397,50 @@ void MainWindow::readSqlDatabaseInfo()
         { ui->lineEditSqlPassword->setText(""); }
 }
 /************************************************
- * setProjectCombo
  * @brief set Project Combo.
+ * setProjectCombo
  ***********************************************/
-bool MainWindow::setQtProjectCombo()
+void MainWindow::setQtProjectCombo()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "setQtProjectCombo"; }
-    QSqlQueryModel *modalQtLingo = new QSqlQueryModel; //!< SQL Query Model
+    bool lastIsMainLoaded = isMainLoaded;
+    isMainLoaded = false;
+    myLocalization->setMainLoaded(false);
+    ui->comboBoxSettingsProjects->clear();
+    QSqlQueryModel *theModalQtLingo = new QSqlQueryModel; //!< SQL Query Model
     //  SELECT id, QtProjectName FROM Projects
     const auto SELECTED_PROJECTS_SQL = QLatin1String(R"(%1)").arg(mySqlDb->getQtProjectNameSelectQuery());
-    modalQtLingo->setQuery(SELECTED_PROJECTS_SQL);
-    if (modalQtLingo->lastError().isValid())
-    {
-        qWarning() << modalQtLingo->lastError();
-    }
-    modalQtLingo->setHeaderData(0,Qt::Horizontal, tr("ID"));
-    modalQtLingo->setHeaderData(1, Qt::Horizontal, tr("Project"));
-    QTableView *view = new QTableView;
-    view->setSelectionBehavior(QAbstractItemView::SelectRows);
-    view->setSelectionMode(QAbstractItemView::SingleSelection);
+    theModalQtLingo->setQuery(SELECTED_PROJECTS_SQL);
+    if (theModalQtLingo->lastError().isValid()) { qWarning() << theModalQtLingo->lastError(); }
+    theModalQtLingo->setHeaderData(0,Qt::Horizontal, tr("ID"));
+    theModalQtLingo->setHeaderData(1, Qt::Horizontal, tr("Project"));
+    QTableView *theView = new QTableView;
+    theView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    theView->setSelectionMode(QAbstractItemView::SingleSelection);
+    theView->verticalHeader()->setVisible(false);
+    theView->horizontalHeader()->setVisible(false);
+    theView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    theView->setAutoScroll(false);
+    theView->setColumnWidth (0, 10);
+    theView->setColumnWidth (1, 196);
+    theView->setColumnHidden(0, true);
     //ui->comboBoxSettingsProjects->setModel(nullptr);
-    ui->comboBoxSettingsProjects->setModel(modalQtLingo);
-    ui->comboBoxSettingsProjects->setView(view);
-    view->setColumnHidden(0, true);
+    ui->comboBoxSettingsProjects->setModel(theModalQtLingo);
+    ui->comboBoxSettingsProjects->setView(theView);
+    ui->comboBoxSettingsProjects->setMinimumWidth(200);
     ui->comboBoxSettingsProjects->setModelColumn(1);
     ui->comboBoxSettingsProjects->setCurrentIndex(0);
-    view->setColumnWidth(1, 166);
-    return true;
+    // Set by Project name or Index
+    QString theProjectName = mySqlDb->getProjectName();
+    ui->comboBoxSettingsProjects->setCurrentIndex(ui->comboBoxSettingsProjects->findText(theProjectName));
+    // int theProjectIndex = mySqlDb->getProjectID().toInt();
+    //  ui->comboBoxSettingsProjects->setCurrentIndex(theProjectIndex);
+    isMainLoaded = lastIsMainLoaded;
+    myLocalization->setMainLoaded(lastIsMainLoaded);
 }
 /************************************************
- * onAuthor
  * @brief on Author.
+ * onAuthor
  ***********************************************/
 void MainWindow::onAuthor()
 {
@@ -460,12 +448,14 @@ void MainWindow::onAuthor()
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
-    QString thisHelp = mySqlDb->mySqlModel->mySetting->readFile(":help/About-Author-en.html");
-    ui->textEditHelp->setHtml(thisHelp);
+    QString theFileName = QString(":help/About-Author_%1.md").arg(myLocalization->getLanguageCode());
+    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theFileName))
+        { theFileName = QString(":help/About-Author_%1.md").arg(mySqlDb->mySqlModel->mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
+    ui->textEditHelp->setMarkdown(mySqlDb->mySqlModel->mySetting->readFile(theFileName));
 }
 /************************************************
- * onAbout
  * @brief Main Window Destructor.
+ * onAbout
  ***********************************************/
 void MainWindow::onAbout()
 {
@@ -473,12 +463,14 @@ void MainWindow::onAbout()
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
-    QString thisHelp = mySqlDb->mySqlModel->mySetting->readFile(":help/About-en.html");
-    ui->textEditHelp->setHtml(thisHelp);
+    QString theFileName = QString(":help/About_%1.md").arg(myLocalization->getLanguageCode());
+    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theFileName))
+        { theFileName = QString(":help/About_%1.md").arg(mySqlDb->mySqlModel->mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
+    ui->textEditHelp->setMarkdown(mySqlDb->mySqlModel->mySetting->readFile(theFileName));
 }
 /************************************************
- * onHelp
  * @brief Help.
+ * onHelp
  ***********************************************/
 void MainWindow::onHelp()
 {
@@ -486,12 +478,21 @@ void MainWindow::onHelp()
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
-    QString thisHelp = mySqlDb->mySqlModel->mySetting->readFile(":help/Help-en.html");
-    ui->textEditHelp->setHtml(thisHelp);
+    QString theFileName = QString(":help/Help_%1.md").arg(myLocalization->getLanguageCode());
+    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theFileName))
+        { theFileName = QString(":help/Help_%1.md").arg(mySqlDb->mySqlModel->mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
+    QString theFileContent = mySqlDb->mySqlModel->mySetting->readFile(theFileName);
+    // Do not translate this file
+    QString theLanguageFileName = QString(":help/Language.txt").arg(myLocalization->getLanguageCode());
+    if (mySqlDb->mySqlModel->mySetting->isFileExists(theLanguageFileName))
+    {
+        theFileContent.append(mySqlDb->mySqlModel->mySetting->readFile(theLanguageFileName));
+    }
+    ui->textEditHelp->setMarkdown(theFileContent);
 }
 /************************************************
- * on_pushButtonTranslationsSourceBrowse_clicked
  * @brief on pushButton Translations Source Browse clicked.
+ * on_pushButtonTranslationsSourceBrowse_clicked
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsSourceBrowse_clicked()
 {
@@ -504,13 +505,11 @@ void MainWindow::on_pushButtonTranslationsSourceBrowse_clicked()
     QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Source Folder Location"), mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANSLATION_FOLDER);
     //QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Source Folder Location"), mySqlDb->mySqlModel->mySetting->getQtProjectPath());
     if (!theTranslationFolder.isEmpty())
-    {
-        ui->lineEditTranslationsSource->setText(theTranslationFolder);
-    }
+        { ui->lineEditTranslationsSource->setText(theTranslationFolder); }
 }
 /************************************************
- * on_pushButtonTranslationsDestinationBrowse_clicked
  * @brief on pushButton Translations Destination Browse clicked.
+ * on_pushButtonTranslationsDestinationBrowse_clicked
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsDestinationBrowse_clicked()
 {
@@ -522,13 +521,11 @@ void MainWindow::on_pushButtonTranslationsDestinationBrowse_clicked()
     //
     QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Destination Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
-    {
-        ui->lineEditTranslationsDestination->setText(theTranslationFolder);
-    }
+        { ui->lineEditTranslationsDestination->setText(theTranslationFolder); }
 }
 /************************************************
- * on_pushButtonSettingsProjectsBrowser_clicked
  * @brief on pushButton Settings Projects Browser clicked.
+ * on_pushButtonSettingsProjectsBrowser_clicked
  ***********************************************/
 void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
 {
@@ -540,13 +537,11 @@ void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
     //
     QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Projects Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
-    {
-        ui->lineEditSettingsQtProjectName->setText(theTranslationFolder);
-    }
+        { ui->lineEditSettingsQtProjectName->setText(theTranslationFolder); }
 }
 /************************************************
- * on_pushButtonTranslationsProjectFolderBrowse_clicked
  * @brief on pushButton Translations Project Folder Browse clicked.
+ * on_pushButtonTranslationsProjectFolderBrowse_clicked
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsProjectFolderBrowse_clicked()
 {
@@ -558,24 +553,22 @@ void MainWindow::on_pushButtonTranslationsProjectFolderBrowse_clicked()
     //
     QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Projects Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
-    {
-        ui->lineEditTranslationsProjectFolder->setText(theTranslationFolder);
-    }
+        { ui->lineEditTranslationsProjectFolder->setText(theTranslationFolder); }
 }
 /************************************************
- * on_comboBoxSettingsLanguage_currentIndexChanged
  * @brief on comboBox Settings Language current Index Changed.
+ * on_comboBoxSettingsLanguage_currentIndexChanged
  ***********************************************/
 void MainWindow::on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage)
 {
     if (!isMainLoaded) { return; }
     if (isDebugMessage && isMainLoaded) { qDebug() << "on_comboBoxSettingsLanguage_currentIndexChanged"; }
-    writeLanguage(myQOnlineTranslator.languageNameToCode(thisLanguage));
-    loadLanguage(getLanguageFile(myQOnlineTranslator.languageNameToCode(thisLanguage), getTranslationSource(), getTransFilePrefix()));
+    myLocalization->writeLanguage(myLocalization->languageNameToCode(thisLanguage));
+    myLocalization->loadLanguage(myLocalization->getLanguageFile(myLocalization->languageNameToCode(thisLanguage), myLocalization->getTranslationSource(), myLocalization->getTransFilePrefix()));
 }
 /************************************************
- * on_checkBoxSettingsGoogle_stateChanged
  * @brief on checkBox Settings Google state Changed.
+ * on_checkBoxSettingsGoogle_stateChanged
  ***********************************************/
 void MainWindow::on_checkBoxSettingsGoogle_stateChanged(int thisArg)
 {
@@ -585,8 +578,8 @@ void MainWindow::on_checkBoxSettingsGoogle_stateChanged(int thisArg)
     writeStateChanges();
 }
 /************************************************
- * on_checkBoxSettingsBing_stateChanged
  * @brief on checkBox Settings Bing state Changed.
+ * on_checkBoxSettingsBing_stateChanged
  ***********************************************/
 void MainWindow::on_checkBoxSettingsBing_stateChanged(int thisArg)
 {
@@ -607,8 +600,8 @@ void MainWindow::on_checkBoxSettingsYandex_stateChanged(int thisArg)
     writeStateChanges();
 }
 /************************************************
+ * @brief SQL Database Name Browse clicked.
  * on_pushButtonSqlDatabaseNameBrowse_clicked
- * @brief Sql Database Name Browse clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
 {
@@ -639,8 +632,8 @@ void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
     }
 }
 /************************************************
- * on_comboBoxSettingsProjects_currentIndexChanged
  * @brief on comboBox Settings Projects current Index Changed.
+ * on_comboBoxSettingsProjects_currentIndexChanged
  ***********************************************/
 void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
 {
@@ -651,8 +644,8 @@ void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
     fillForms(theIndex);
 }
 /************************************************
+ * @brief on pushButton SQL Password Show clicked.
  * on_pushButtonSqlPasswordShow_clicked
- * @brief on pushButton Sql Password Show clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSqlPasswordShow_clicked()
 {
@@ -661,7 +654,7 @@ void MainWindow::on_pushButtonSqlPasswordShow_clicked()
 }
 /************************************************
  * on_pushButtonSqlSave_clicked
- * @brief on pushButton Sql Save clicked.
+ * @brief on pushButton SQL Save clicked.
  ***********************************************/
 void MainWindow::on_pushButtonSqlSave_clicked()
 {
@@ -669,8 +662,8 @@ void MainWindow::on_pushButtonSqlSave_clicked()
     writeStateChanges();
 }
 /************************************************
- * onSave
  * @brief on pushButton Settings Save clicked.
+ * onSave
  ***********************************************/
 void MainWindow::onSave()
 {
@@ -688,14 +681,15 @@ void MainWindow::on_pushButtonSettingsSave_clicked()
     onSave();
 }
 /************************************************
- * on_pushButtonSettingsAdd_clicked
  * @brief on pushButton Settings Add clicked.
+ * on_pushButtonSettingsAdd_clicked
  ***********************************************/
 void MainWindow::on_pushButtonSettingsAdd_clicked()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSettingsAdd_clicked"; }
     setProjectClass(TabAll);
     mySqlDb->addQtProject();
+    setQtProjectCombo();
 }
 /************************************************
  * on_pushButtonSettingsDelete_clicked
@@ -708,8 +702,8 @@ void MainWindow::on_pushButtonSettingsDelete_clicked()
     mySqlDb->deleteQtProject(ui->labelRecordIdSettings->text());
 }
 /************************************************
- * setPrograms
  * @brief set Programs.
+ * setPrograms
  ***********************************************/
 void MainWindow::setPrograms()
 {
@@ -766,8 +760,17 @@ void MainWindow::setPrograms()
     ui->lineEditSettingsLrelease->setText(theLreleasePath);
 }
 /************************************************
+ * @brief set SQL Browse Button.
+ * setSqlBrowseButton
+ ***********************************************/
+void MainWindow::setSqlBrowseButton()
+{
+    if (isDebugMessage && isMainLoaded) { qDebug() << "settingsButtons"; }
+    ui->pushButtonSqlDatabaseNameBrowse->setEnabled(ui->comboBoxSqlDatabaseType->currentText() == mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT || ui->comboBoxSqlDatabaseType->currentText() == ":memory:");
+}
+/************************************************
+ * @brief on comboBox SQL Database Type current Index Changed.
  * on_comboBoxSqlDatabaseType_currentIndexChanged
- * @brief on comboBox Sql Database Type current Index Changed.
  ***********************************************/
 void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType)
 {
@@ -778,8 +781,8 @@ void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &t
     setSqlBrowseButton();
 }
 /************************************************
- * languageChecked
  * @brief language Checked.
+ * languageChecked
  ***********************************************/
 QString MainWindow::languageChecked()
 {
@@ -903,11 +906,27 @@ QString MainWindow::languageChecked()
     checkLanguage("Zulu",           "zu" , ui->checkBoxTranslationsZU->isChecked());
     checkLanguage("SimplifiedChinese",  "zh-CN" , ui->checkBoxTranslationsZH_CN->isChecked());
     checkLanguage("TraditionalChinese", "zh-TW" , ui->checkBoxTranslationsZH_TW->isChecked());
+    // Added
+    checkLanguage("Klingon", "tlh" ,            ui->checkBoxTranslationsTLH->isChecked());
+    checkLanguage("KlingonPlqaD", "tlh-Qaak" ,  ui->checkBoxTranslationsTLH_QAAK->isChecked());
+    checkLanguage("Cantonese", "yue" ,          ui->checkBoxTranslationsYUE->isChecked());
+    checkLanguage("Cebuano", "ceb" ,            ui->checkBoxTranslationsCEB->isChecked());
+    checkLanguage("Filipino", "fil" ,           ui->checkBoxTranslationsFIL->isChecked());
+    checkLanguage("Hawaiian", "haw" ,           ui->checkBoxTranslationsHAW->isChecked());
+    checkLanguage("HillMari", "mrj" ,           ui->checkBoxTranslationsMRJ->isChecked());
+    checkLanguage("Hmong", "hmn" ,              ui->checkBoxTranslationsHMN->isChecked());
+    checkLanguage("LevantineArabic", "apc" ,    ui->checkBoxTranslationsAPC->isChecked());
+    checkLanguage("Mari", "mhr" ,               ui->checkBoxTranslationsMHR->isChecked());
+    checkLanguage("Papiamento", "pap" ,         ui->checkBoxTranslationsPAP->isChecked());
+    checkLanguage("QueretaroOtomi", "otq" ,     ui->checkBoxTranslationsOTQ->isChecked());
+    checkLanguage("SerbianLatin", "sr-Latin" ,  ui->checkBoxTranslationsSR_LATIN->isChecked());
+    checkLanguage("Udmurt", "udm" ,             ui->checkBoxTranslationsUDM->isChecked());
+    checkLanguage("YucatecMaya", "yua" ,        ui->checkBoxTranslationsYUA->isChecked());
     return myLanguages;
 }
 /************************************************
- * checkLanguage
  * @brief check Language.
+ * checkLanguage
  ***********************************************/
 void MainWindow::checkLanguage(const QString &thisName, const QString &thisLanguage, bool thisChecked)
 {
@@ -946,8 +965,8 @@ void MainWindow::checkLanguage(const QString &thisName, const QString &thisLangu
     myLanguages = theLangagesIDs;
 }
 /************************************************
- * fillForms
  * @brief fill Forms.
+ * fillForms
  ***********************************************/
 void MainWindow::fillForms(const QString &thisProjectID)
 {
@@ -960,13 +979,13 @@ void MainWindow::fillForms(const QString &thisProjectID)
     QString myConfigurationSelectQuery = mySqlDb->getQtProjectFullSelectQueryID(thisProjectID);
     if (isDebugMessage && isMainLoaded) { qDebug() << " myConfigurationSelectQuery=|" << myConfigurationSelectQuery << "|"; }
     /*
-     * id, QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, LanguageIDs
+     * id, QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, LanguageIDs
     */
     if (query.exec(myConfigurationSelectQuery))
     {
         if (query.first())
         {
-            if (isDebugMessage && isMainLoaded) { qDebug() << " QtProjectName=|" << query.value("QtProjectName").toString() << "|" << " SourceFolder=|" << query.value("SourceFolder").toString() << "|" << " QtProjectFolder=|" << query.value("QtProjectFolder").toString() << "|" << " DestinationFolder=|" << query.value("DestinationFolder").toString() << "|" << " LanguageIDs=|" << query.value("LanguageIDs").toString() << "|"; }
+            if (isDebugMessage && isMainLoaded) { qDebug() << " QtProjectName=|" << query.value("QtProjectName").toString() << "| SourceFolder=|" << query.value("SourceFolder").toString() << "| QtProjectFolder=|" << query.value("QtProjectFolder").toString() << "| DestinationFolder=|" << query.value("DestinationFolder").toString() << "| HelpFolder=|" << query.value("HelpFolder").toString() << "| LanguageIDs=|" << query.value("LanguageIDs").toString() << "|"; }
             // Set Record ID
             myRecordID = query.value("id").toInt();
             ui->labelRecordIdSettings->setText(query.value("id").toString());
@@ -974,12 +993,14 @@ void MainWindow::fillForms(const QString &thisProjectID)
             ui->lineEditTranslationsProjectFolder->setText(query.value("QtProjectFolder").toString());
             ui->lineEditTranslationsSource->setText(query.value("SourceFolder").toString());
             ui->lineEditTranslationsDestination->setText(query.value("DestinationFolder").toString());
+            ui->lineEditTranslationsHelp->setText(query.value("HelpFolder").toString());
             //
             ui->radioButtonTranslationsQmake->setChecked(query.value("Make").toString() == "qmake" ? true : false);
             ui->radioButtonTranslationsCmake->setChecked(query.value("Make").toString() == "cmake" ? true : false);
             //
             mySourceLanguage = query.value("SourceLanguage").toString();
             ui->comboBoxTranslationSourceLanguage->setCurrentIndex(ui->comboBoxTranslationSourceLanguage->findText(query.value("SourceLanguage").toString()));
+            setLanguageCode();
             // en,de,fr,it,ja,zh,no,ru,sv,ar
             theDbValve = query.value("LanguageIDs").toString();
             // set check boxes
@@ -1457,6 +1478,66 @@ void MainWindow::fillForms(const QString &thisProjectID)
             { ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Checked); }
             else
             { ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("tlh", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("tlh-Qaak", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("yue", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("ceb", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("fil", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("haw", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("mrj", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("hmn", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("apc", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("mhr", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("pap", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("otq", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("sr-Latin", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("udm", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Unchecked); }
+            if (theDbValve.contains("yua", Qt::CaseInsensitive))
+            { ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Checked); }
+            else
+            { ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Unchecked); }
         }
         else
         {
@@ -1471,8 +1552,8 @@ void MainWindow::fillForms(const QString &thisProjectID)
     isSaveSettings = false;
 }
 /************************************************
- * clearTabSettings
  * @brief clear Tab Settings.
+ * clearTabSettings
  ***********************************************/
 void MainWindow::clearTabSettings()
 {
@@ -1481,8 +1562,8 @@ void MainWindow::clearTabSettings()
     ui->labelRecordIdSettings->setText("0");
 }
 /************************************************
- * clearTabTranslations
  * @brief clear Tab Translations.
+ * clearTabTranslations
  ***********************************************/
 void MainWindow::clearTabTranslations()
 {
@@ -1611,6 +1692,21 @@ void MainWindow::clearTabTranslations()
     ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Checked);
     ui->checkBoxTranslationsZH_CN->setCheckState(Qt::CheckState::Checked);
     ui->checkBoxTranslationsZH_TW->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Checked);
+    ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Checked);
     #else
     ui->lineEditTranslationsDestination->setText("");
     ui->lineEditTranslationsSource->setText("");
@@ -1734,11 +1830,26 @@ void MainWindow::clearTabTranslations()
     ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Unchecked);
     ui->checkBoxTranslationsZH_CN->setCheckState(Qt::CheckState::Unchecked);
     ui->checkBoxTranslationsZH_TW->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Unchecked);
+    ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Unchecked);
     #endif
 }
 /************************************************
- * clearTabProject
  * @brief clear Tab Project.
+ * clearTabProject
  ***********************************************/
 void MainWindow::clearTabProject()
 {
@@ -1746,8 +1857,8 @@ void MainWindow::clearTabProject()
     ui->textEditProjects->setText("");
 }
 /************************************************
- * clearTabHelp
  * @brief clear Tab Help.
+ * clearTabHelp
  ***********************************************/
 void MainWindow::clearTabHelp()
 {
@@ -1755,8 +1866,8 @@ void MainWindow::clearTabHelp()
     ui->textEditHelp->setText("");
 }
 /************************************************
+ * @brief clear Forms.
  * clearForms
- * @brief  clear Forms.
  ***********************************************/
 void MainWindow::clearForms(int tabNumber)
 {
@@ -1777,8 +1888,56 @@ void MainWindow::clearForms(int tabNumber)
     }
 }
 /************************************************
- * setProjectClass
+ * @brief set Tab Settings.
+ * setTabSettings
+ ***********************************************/
+void MainWindow::setTabSettings()
+{
+    mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
+    mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
+    mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
+    mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
+    mySqlDb->myProject->setDestinationFolder(ui->lineEditTranslationsDestination->text());
+    mySqlDb->myProject->setHelpFolder(ui->lineEditTranslationsHelp->text());
+    mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
+    mySqlDb->myProject->setLanguageIDs(languageChecked());
+    mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+}
+/************************************************
+ * @brief set Tab Translations.
+ * setTabTranslations
+ ***********************************************/
+void MainWindow::setTabTranslations()
+{
+    mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
+    mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
+    mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
+    mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
+    mySqlDb->myProject->setDestinationFolder(ui->lineEditTranslationsDestination->text());
+    mySqlDb->myProject->setHelpFolder(ui->lineEditTranslationsHelp->text());
+    mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
+    mySqlDb->myProject->setLanguageIDs(languageChecked());
+    mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+}
+/************************************************
+ * @brief set Tab All.
+ * setTabAll
+ ***********************************************/
+void MainWindow::setTabAll()
+{
+    mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
+    mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
+    mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
+    mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
+    mySqlDb->myProject->setDestinationFolder(ui->lineEditTranslationsDestination->text());
+    mySqlDb->myProject->setHelpFolder(ui->lineEditTranslationsHelp->text());
+    mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
+    mySqlDb->myProject->setLanguageIDs(languageChecked());
+    mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+}
+/************************************************
  * @brief set Project Class.
+ * setProjectClass
  ***********************************************/
 void MainWindow::setProjectClass(int tabNumber)
 {
@@ -1786,44 +1945,26 @@ void MainWindow::setProjectClass(int tabNumber)
     switch (tabNumber)
     {
         case TabSettings:
-            mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
-            mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
-            mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
-            mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
-            mySqlDb->myProject->setDestinationFolder(ui->lineEditTranslationsDestination->text());
-            mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
-            mySqlDb->myProject->setLanguageIDs(languageChecked());
-            mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+            setTabSettings();
             break;
         case TabTranslations:
-            mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
-            mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
-            mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
-            mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
-            mySqlDb->myProject->setDestinationFolder(ui->lineEditTranslationsDestination->text());
-            mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
-            mySqlDb->myProject->setLanguageIDs(languageChecked());
-            mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+            setTabTranslations();
             break;
         case TabProject:
             break;
         case TabTabHelp:
             break;
+        case TabSql:
+            writeAllSettings();
+            break;
         case TabAll:
-            mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
-            mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
-            mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
-            mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
-            mySqlDb->myProject->setDestinationFolder(ui->lineEditTranslationsDestination->text());
-            mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
-            mySqlDb->myProject->setLanguageIDs(languageChecked());
-            mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+            setTabAll();
             break;
     }
 }
 /************************************************
- * onCompile
  * @brief on Compile.
+ * onCompile
  ***********************************************/
 void MainWindow::onCompile()
 {
@@ -1863,126 +2004,140 @@ void MainWindow::onCompile()
     }
     myTranslationQrc.clear();
 
-    createTranslationJob("Afrikaans",      "af" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAF->isChecked());
-    createTranslationJob("Albanian",       "sq" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSQ->isChecked());
-    createTranslationJob("Arabic",         "ar" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAR->isChecked());
-    createTranslationJob("Basque",         "eu" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEU->isChecked());
-    createTranslationJob("Belarusian",     "be" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBE->isChecked());
-    createTranslationJob("Bulgarian",      "bg" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBG->isChecked());
-    createTranslationJob("Catalan",        "ca" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCA->isChecked());
-    createTranslationJob("Croatian",       "hr" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHR->isChecked());
-    createTranslationJob("Czech",          "cs" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCS->isChecked());
-    createTranslationJob("Danish",         "da" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsDA->isChecked());
-    createTranslationJob("Dutch",          "nl" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNL->isChecked());
-    createTranslationJob("English",        "en" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEN->isChecked());
-    createTranslationJob("Estonian",       "et" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsET->isChecked());
-    createTranslationJob("Faeroese",       "fo" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFO->isChecked());
-    createTranslationJob("Farsi",          "fa" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFA->isChecked());
-    createTranslationJob("Finnish",        "fi" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFI->isChecked());
-    createTranslationJob("French",         "fr" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFR->isChecked());
-    createTranslationJob("Gaelic",         "gd" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGD->isChecked());
-    createTranslationJob("German",         "de" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsDE->isChecked());
-    createTranslationJob("Greek",          "el" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEL->isChecked());
-    createTranslationJob("Hebrew",         "he" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHE->isChecked());
-    createTranslationJob("Hindi",          "hi" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHI->isChecked());
-    createTranslationJob("Hungarian",      "hu" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHU->isChecked());
-    createTranslationJob("Icelandic",      "is" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsIS->isChecked());
-    createTranslationJob("Indonesian",     "id" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsID->isChecked());
-    createTranslationJob("Irish",          "ga" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGA->isChecked());
-    createTranslationJob("Italian",        "it" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsIT->isChecked());
-    createTranslationJob("Japanese",       "ja" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsJA->isChecked());
-    createTranslationJob("Korean",         "ko" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKO->isChecked());
-    createTranslationJob("Kurdish",        "ku" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKU->isChecked());
-    createTranslationJob("Latvian",        "lv" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLV->isChecked());
-    createTranslationJob("Lithuanian",     "lt" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLT->isChecked());
-    createTranslationJob("Macedonian",     "mk" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMK->isChecked());
-    createTranslationJob("Malayalam",      "ml" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsML->isChecked());
-    createTranslationJob("Malaysian",      "ms" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMS->isChecked());
-    createTranslationJob("Maltese",        "mt" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMT->isChecked());
-    createTranslationJob("Norwegian",      "no" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNO->isChecked());
-    createTranslationJob("Bokmal",         "nb" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNB->isChecked());
-    createTranslationJob("Nynorsk",        "nn" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNN->isChecked());
-    createTranslationJob("Polish",         "pl" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPL->isChecked());
-    createTranslationJob("Portuguese",     "pt" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPT->isChecked());
-    createTranslationJob("Punjabi",        "pa" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPA->isChecked());
-    createTranslationJob("Rhaeto-Romanic", "rm" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRM->isChecked());
-    createTranslationJob("Romanian",       "ro" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRO->isChecked());
-    createTranslationJob("Russian",        "ru" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRU->isChecked());
-    createTranslationJob("Serbian",        "sr" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSR->isChecked());
-    createTranslationJob("Slovak",         "sk" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSK->isChecked());
-    createTranslationJob("Slovenian",      "sl" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSL->isChecked());
-    createTranslationJob("Sorbian",        "sb" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSB->isChecked());
-    createTranslationJob("Spanish",        "es" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsES->isChecked());
-    createTranslationJob("Swedish",        "sv" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSV->isChecked());
-    createTranslationJob("Thai",           "th" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTH->isChecked());
-    createTranslationJob("Tsonga",         "ts" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTS->isChecked());
-    createTranslationJob("Tswana",         "tn" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTN->isChecked());
-    createTranslationJob("Turkish",        "tr" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTR->isChecked());
-    createTranslationJob("Ukrainian",      "uk" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUK->isChecked());
-    createTranslationJob("Urdu",           "ur" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUR->isChecked());
-    createTranslationJob("Venda",          "ve" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsVE->isChecked());
-    createTranslationJob("Vietnamese",     "vi" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsVI->isChecked());
-    createTranslationJob("Welsh",          "cy" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCY->isChecked());
-    createTranslationJob("Xhosa",          "xh" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsXH->isChecked());
-    createTranslationJob("Yiddish",        "yi" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYI->isChecked());
-    createTranslationJob("Zulu",           "zu" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsZU->isChecked());
+    createTranslationJob("Afrikaans",           "af" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAF->isChecked());
+    createTranslationJob("Albanian",            "sq" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSQ->isChecked());
+    createTranslationJob("Amharic",             "am" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAM->isChecked());
+    createTranslationJob("Arabic",              "ar" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAR->isChecked());
+    createTranslationJob("Armenian",            "hy" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHY->isChecked());
+    createTranslationJob("Azerbaijani",         "az" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAZ->isChecked());
+    createTranslationJob("Bashkir",             "ba" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBA->isChecked());
+    createTranslationJob("Basque",              "eu" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEU->isChecked());
+    createTranslationJob("Belarusian",          "be" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBE->isChecked());
+    createTranslationJob("Bengali",             "bn" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBN->isChecked());
+    createTranslationJob("Bosnian",             "bs" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBS->isChecked());
+    createTranslationJob("Bulgarian",           "bg" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBG->isChecked());
+    createTranslationJob("Cantonese",           "yue",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Catalan",             "ca" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCA->isChecked());
+    createTranslationJob("Cebuano",             "ceb",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Chichewa",            "ny" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNY->isChecked());
+    createTranslationJob("Corsican",            "co" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCO->isChecked());
+    createTranslationJob("Croatian",            "hr" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHR->isChecked());
+    createTranslationJob("Czech",               "cs" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCS->isChecked());
+    createTranslationJob("SimplifiedChinese",   "zh-CN" ,   ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsZH_CN->isChecked());
+    createTranslationJob("TraditionalChinese",  "zh-TW" ,   ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsZH_TW->isChecked());
+    createTranslationJob("Danish",              "da" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsDA->isChecked());
+    createTranslationJob("Dutch",               "nl" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNL->isChecked());
+    createTranslationJob("English",             "en" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEN->isChecked());
+    createTranslationJob("Estonian",            "et" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsET->isChecked());
+    createTranslationJob("Esperanto",           "eo" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEO->isChecked());
+    createTranslationJob("Faeroese",            "fo" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFO->isChecked());
+    createTranslationJob("Farsi",               "fa" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFA->isChecked());
+    createTranslationJob("Fijian",              "fj" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFJ->isChecked());
+    createTranslationJob("Filipino",            "fil",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Finnish",             "fi" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFI->isChecked());
+    createTranslationJob("French",              "fr" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFR->isChecked());
+    createTranslationJob("Frisian",             "fy" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFY->isChecked());
+    createTranslationJob("Gaelic",              "gd" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGD->isChecked());
+    createTranslationJob("Galician",            "gl" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGL->isChecked());
+    createTranslationJob("Georgian",            "ka" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKA->isChecked());
+    createTranslationJob("German",              "de" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsDE->isChecked());
+    createTranslationJob("Greek",               "el" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEL->isChecked());
+    createTranslationJob("Gujarati",            "gu" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGU->isChecked());
+    createTranslationJob("Haitian",             "ht" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHT->isChecked());
+    createTranslationJob("Hausa",               "ha" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHA->isChecked());
+    createTranslationJob("Hawaiian",            "haw",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Hebrew",              "he" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHE->isChecked());
+    createTranslationJob("HillMari",            "mrj",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Hindi",               "hi" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHI->isChecked());
+    createTranslationJob("Hmong",               "hmn",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Hungarian",           "hu" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHU->isChecked());
+    createTranslationJob("Icelandic",           "is" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsIS->isChecked());
+    createTranslationJob("Igbo",                "ig" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsIG->isChecked());
+    createTranslationJob("Indonesian",          "id" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsID->isChecked());
+    createTranslationJob("Irish",               "ga" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGA->isChecked());
+    createTranslationJob("Italian",             "it" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsIT->isChecked());
+    createTranslationJob("Japanese",            "ja" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsJA->isChecked());
+    createTranslationJob("Javanese",            "jw" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsJW->isChecked());
+    createTranslationJob("Kannada",             "kn" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKN->isChecked());
+    createTranslationJob("Kazakh",              "kk" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKK->isChecked());
+    createTranslationJob("Khmer",               "km" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKM->isChecked());
+    createTranslationJob("Kinyarwanda",         "rw" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRW->isChecked());
+    createTranslationJob("Klingon",             "tlh",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("KlingonPlqaD",        "tlh-Qaak", ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Korean",              "ko" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKO->isChecked());
+    createTranslationJob("Kurdish",             "ku" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKU->isChecked());
+    createTranslationJob("Kyrgyz",              "ky" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKY->isChecked());
+    createTranslationJob("Latvian",             "lv" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLV->isChecked());
+    createTranslationJob("Lao",                 "lo" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLO->isChecked());
+    createTranslationJob("Latin",               "la" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLA->isChecked());
+    createTranslationJob("LevantineArabic",     "apc",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Lithuanian",          "lt" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLT->isChecked());
+    createTranslationJob("Luxembourgish",       "lb" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLB->isChecked());
+    createTranslationJob("Macedonian",          "mk" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMK->isChecked());
+    createTranslationJob("Mari",                "mhr",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Maori",               "mi" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMI->isChecked());
+    createTranslationJob("Marathi",             "mr" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMR->isChecked());
+    createTranslationJob("Malagasy",            "mg" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMG->isChecked());
+    createTranslationJob("Malayalam",           "ml" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsML->isChecked());
+    createTranslationJob("Malaysian",           "ms" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMS->isChecked());
+    createTranslationJob("Maltese",             "mt" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMT->isChecked());
+    createTranslationJob("Mongolian",           "mn" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMN->isChecked());
+    createTranslationJob("Myanmar",             "my" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMY->isChecked());
+    createTranslationJob("Norwegian",           "no" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNO->isChecked());
+    createTranslationJob("Bokmal",              "nb" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNB->isChecked());
+    createTranslationJob("Nepali",              "ne" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNE->isChecked());
+    createTranslationJob("Nynorsk",             "nn" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNN->isChecked());
+    createTranslationJob("Oriya",               "or" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsOR->isChecked());
+    createTranslationJob("Pashto",              "ps" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPS->isChecked());
+    createTranslationJob("Papiamento",          "pap",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Polish",              "pl" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPL->isChecked());
+    createTranslationJob("Portuguese",          "pt" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPT->isChecked());
+    createTranslationJob("Punjabi",             "pa" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPA->isChecked());
+    createTranslationJob("QueretaroOtomi",      "otq",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Rhaeto-Romanic",      "rm" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRM->isChecked());
+    createTranslationJob("Romanian",            "ro" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRO->isChecked());
+    createTranslationJob("Russian",             "ru" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRU->isChecked());
+    createTranslationJob("Samoan",              "sm" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSM->isChecked());
+    createTranslationJob("Serbian",             "sr" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSR->isChecked());
+    createTranslationJob("SerbianLatin",        "sr-Latin", ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Slovak",              "sk" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSK->isChecked());
+    createTranslationJob("Slovenian",           "sl" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSL->isChecked());
+    createTranslationJob("Sesotho",             "st" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsST->isChecked());
+    createTranslationJob("Shona",               "sn" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSN->isChecked());
+    createTranslationJob("Sindhi",              "sd" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSD->isChecked());
+    createTranslationJob("Sinhala",             "si" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSI->isChecked());
+    createTranslationJob("Somali",              "so" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSO->isChecked());
+    createTranslationJob("Sorbian",             "sb" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSB->isChecked());
+    createTranslationJob("Spanish",             "es" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsES->isChecked());
+    createTranslationJob("Sundanese",           "su" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSU->isChecked());
+    createTranslationJob("Swahili",             "sw" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSW->isChecked());
+    createTranslationJob("Swedish",             "sv" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSV->isChecked());
+    createTranslationJob("Tagalog",             "tl" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTL->isChecked());
+    createTranslationJob("Tahitian",            "ty" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTY->isChecked());
+    createTranslationJob("Tajik",               "tg" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTG->isChecked());
+    createTranslationJob("Tamil",               "ta" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTA->isChecked());
+    createTranslationJob("Tatar",               "tt" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTT->isChecked());
+    createTranslationJob("Telugu",              "te" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTE->isChecked());
+    createTranslationJob("Thai",                "th" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTH->isChecked());
+    createTranslationJob("Tongan",              "to" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTO->isChecked());
+    createTranslationJob("Tsonga",              "ts" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTS->isChecked());
+    createTranslationJob("Tswana",              "tn" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTN->isChecked());
+    createTranslationJob("Turkish",             "tr" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTR->isChecked());
+    createTranslationJob("Turkmen",             "tk" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTK->isChecked());
+    createTranslationJob("Uighur",              "ub" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUG->isChecked());
+    createTranslationJob("Ukrainian",           "uk" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUK->isChecked());
+    createTranslationJob("Urdu",                "ur" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUR->isChecked());
+    createTranslationJob("Udmurt",              "udm",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Uzbek",               "uz" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUZ->isChecked());
+    createTranslationJob("Venda",               "ve" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsVE->isChecked());
+    createTranslationJob("Vietnamese",          "vi" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsVI->isChecked());
+    createTranslationJob("Welsh",               "cy" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCY->isChecked());
+    createTranslationJob("Xhosa",               "xh" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsXH->isChecked());
+    createTranslationJob("Yiddish",             "yi" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYI->isChecked());
+    createTranslationJob("Yoruba",              "yo" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("YucatecMaya",         "yua",      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
+    createTranslationJob("Zulu",                "zu" ,      ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsZU->isChecked());
 
-    createTranslationJob("Amharic",        "am",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAM->isChecked());
-    createTranslationJob("Armenian",       "hy",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHY->isChecked());
-    createTranslationJob("Azerbaijani",    "az",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsAZ->isChecked());
-    createTranslationJob("Bashkir",        "ba",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBA->isChecked());
-    createTranslationJob("Bengali",        "bn",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBN->isChecked());
-    createTranslationJob("Bosnian",        "bs",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsBS->isChecked());
-    createTranslationJob("Chichewa",       "ny",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNY->isChecked());
-    createTranslationJob("Corsican",       "co",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsCO->isChecked());
-    createTranslationJob("Esperanto",      "eo",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsEO->isChecked());
-    createTranslationJob("Fijian",         "fj",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFJ->isChecked());
-    createTranslationJob("Frisian",        "fy",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsFY->isChecked());
-    createTranslationJob("Galician",       "gl",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGL->isChecked());
-    createTranslationJob("Georgian",       "ka",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKA->isChecked());
-    createTranslationJob("Gujarati",       "gu",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsGU->isChecked());
-    createTranslationJob("Haitian",        "ht",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHT->isChecked());
-    createTranslationJob("Hausa",          "ha",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsHA->isChecked());
-    createTranslationJob("Igbo",           "ig",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsIG->isChecked());
-    createTranslationJob("Javanese",       "jw",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsJW->isChecked());
-    createTranslationJob("Kannada",        "kn",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKN->isChecked());
-    createTranslationJob("Kazakh",         "kk",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKK->isChecked());
-    createTranslationJob("Khmer",          "km",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKM->isChecked());
-    createTranslationJob("Kinyarwanda",    "rw",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsRW->isChecked());
-    createTranslationJob("Kyrgyz",         "ky",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsKY->isChecked());
-    createTranslationJob("Lao",            "lo",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLO->isChecked());
-    createTranslationJob("Latin",          "la",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLA->isChecked());
-    createTranslationJob("Luxembourgish",  "lb",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsLB->isChecked());
-    createTranslationJob("Malagasy",       "mg",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMG->isChecked());
-    createTranslationJob("Maori",          "mi",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMI->isChecked());
-    createTranslationJob("Marathi",        "mr",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMR->isChecked());
-    createTranslationJob("Mongolian",      "mn",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMN->isChecked());
-    createTranslationJob("Myanmar",        "my",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsMY->isChecked());
-    createTranslationJob("Nepali",         "ne",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsNE->isChecked());
-    createTranslationJob("Oriya",          "or",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsOR->isChecked());
-    createTranslationJob("Pashto",         "ps",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsPS->isChecked());
-    createTranslationJob("Samoan",         "sm",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSM->isChecked());
-    createTranslationJob("Sesotho",        "st",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsST->isChecked());
-    createTranslationJob("Shona",          "sn",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSN->isChecked());
-    createTranslationJob("Sindhi",         "sd",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSD->isChecked());
-    createTranslationJob("Sinhala",        "si",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSI->isChecked());
-    createTranslationJob("Somali",         "so",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSO->isChecked());
-    createTranslationJob("Sundanese",      "su",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSU->isChecked());
-    createTranslationJob("Swahili",        "sw",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsSW->isChecked());
-    createTranslationJob("Tagalog",        "tl",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTL->isChecked());
-    createTranslationJob("Tahitian",       "ty",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTY->isChecked());
-    createTranslationJob("Tajik",          "tg",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTG->isChecked());
-    createTranslationJob("Tamil",          "ta",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTA->isChecked());
-    createTranslationJob("Tatar",          "tt",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTT->isChecked());
-    createTranslationJob("Telugu",         "te",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTE->isChecked());
-    createTranslationJob("Tongan",         "to",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTO->isChecked());
-    createTranslationJob("Turkmen",        "tk",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsTK->isChecked());
-    createTranslationJob("Uighur",         "ub",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUG->isChecked());
-    createTranslationJob("Uzbek",          "uz",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsUZ->isChecked());
-    createTranslationJob("Yoruba",         "yo",  ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsYO->isChecked());
-    createTranslationJob("SimplifiedChinese",  "zh-CN" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsZH_CN->isChecked());
-    createTranslationJob("TraditionalChinese", "zh-TW" , ui->comboBoxTranslationSourceLanguage->currentText(), ui->checkBoxTranslationsZH_TW->isChecked());
-    //
     if (ui->radioButtonTranslationsCmake->isChecked()) { myTranslationConf.append(")"); }
     //
     ui->textEditProjects->setText(QString("%1\n\n\n%2").arg(myTranslationConf, myTranslationQrc));
@@ -2014,7 +2169,7 @@ void MainWindow::onCompile()
             }
         }
         // Create Txt file
-        myTranslationFiles->toTXT(myLingoJob.at(i).getTsFile(), ui->lineEditTranslationsDestination->text(), true, false, true);
+        myTranlatorParser->toTXT(myLingoJob.at(i).getTsFile(), ui->lineEditTranslationsDestination->text(), true, false, true);
         // make sure txt file exist
         if (!mySqlDb->mySqlModel->mySetting->isFileExists(theDestTxtFile))
         {
@@ -2044,27 +2199,23 @@ void MainWindow::onCompile()
                 // Check to see if it has any Letters in it
                 if (mySqlDb->mySqlModel->mySetting->isWord(theMatch))
                 {
-                    if (theMatch.contains("%")) { myTranslationFiles->removeArgs(theMatch, myLingoJob.at(i).getTsFile()); }
+                    if (theMatch.contains("%")) { myLocalization->removeArgs(theMatch, myLingoJob.at(i).getTsFile()); }
                     if (isSameLanguage)
                     { myTranslation = theMatch; }
                     else
                     {
                         // QString &text, Engine engine, Language translationLang, Language sourceLang, Language uiLang
                         myTranslation = translateWithReturn(theMatch, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+                        myTranslation = checkTranslationErrors(myTranslation, theMatch, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
                         // if empty use another service
                         if (myTranslation.isEmpty())
                         {
-                            if (isTranslationError)
-                            {
-                                if (myTranslationError.contains("Error transferring"))
-                                {
-                                    // server replied: Too Many Requests, seems to happen with Arabic FIXME
-                                }
-                            }
                             myTranslation = translateWithReturn(theMatch, QOnlineTranslator::Engine::Bing, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+                            myTranslation = checkTranslationErrors(myTranslation, theMatch, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
                             if (myTranslation.isEmpty())
                             {
                                 myTranslation = translateWithReturn(theMatch, QOnlineTranslator::Engine::Yandex, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+                                myTranslation = checkTranslationErrors(myTranslation, theMatch, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
                             }
                         }
                     }
@@ -2079,9 +2230,9 @@ void MainWindow::onCompile()
             mySqlDb->mySqlModel->mySetting->writeFile(theDestTxtFile, theTxtFileContent);
             if (mySqlDb->mySqlModel->mySetting->isFileExists(theDestTxtFile))
             {
-                myTranslationFiles->fixTranslationFile(theDestTxtFile);
+                myLocalization->fixTranslationFile(theDestTxtFile);
                 // Create Txt file
-                myTranslationFiles->toTS(ui->lineEditTranslationsDestination->text(), myLingoJob.at(i).getTsFile(), myLingoJob.at(i).getLangName());
+                myTranlatorParser->toTS(ui->lineEditTranslationsDestination->text(), myLingoJob.at(i).getTsFile(), myLingoJob.at(i).getLangName());
             }
         } // end if (theInputTxtFile.open(QIODevice::ReadOnly))
     } // end for( int i = 0; i < myLingoJob.count(); ++i )
@@ -2092,12 +2243,77 @@ void MainWindow::onCompile()
     }
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
-    myTranslationFiles->fileRemoveArgs();
+    myLocalization->fileRemoveArgs();
 } // end onCompile
 /************************************************
- * createTranslationJob
+ * @brief check Translation Errors.
+ * checkTranslationErrors
+ ***********************************************/
+void MainWindow::setTranslationErrorType(const QString &thisTranslations)
+{
+    if (!myTranslationError.isEmpty())
+    {
+        if (thisTranslations.contains("Error transferring"))
+        {
+            // server replied: Too Many Requests, seems to happen with Arabic FIXME
+            myTranslationErrorType = ErrorTransferring;
+        }
+        else if (thisTranslations.contains("Socket operation timed out"))
+        {
+            // Internet Down
+            myTranslationErrorType = HostNotFound;
+        }
+        else if (thisTranslations.contains("Host www.bing.com not found"))
+        {
+            // Internet Down
+            myTranslationErrorType = HostNotFound;
+        }
+        else if (thisTranslations.contains("Host translate.yandex.com not found"))
+        {
+            // Internet Down
+            myTranslationErrorType = HostNotFound;
+        }
+        else if (thisTranslations.contains("Host translate.googleapis.com not found"))
+        {
+            // Internet Down
+            myTranslationErrorType = HostNotFound;
+        }
+        else
+        {
+            myTranslationErrorType = NoError; // No Error Type detected, Log Critical
+        }
+    }
+}
+/************************************************
+ * @brief check Translation Errors.
+ * checkTranslationErrors
+ ***********************************************/
+QString MainWindow::checkTranslationErrors(const QString &thisTranslations, const QString &thisText, QOnlineTranslator::Engine thisEngine, QOnlineTranslator::Language thisTranslationLang, QOnlineTranslator::Language thisSourceLang, QOnlineTranslator::Language thisUiLang)
+{
+    if (isTranslationError) { setTranslationErrorType(thisTranslations); }
+    switch (myTranslationErrorType)
+    {
+        case HostNotFound:
+            mySqlDb->mySqlModel->mySetting->getInternetWait();
+            myTranslation = translateWithReturn(thisText, thisEngine, thisTranslationLang, thisSourceLang, thisUiLang);
+            break;
+        case ErrorTransferring:
+            // Increase delay, wait, and retry
+            ui->spinBoxSettingsDelay->setValue(ui->spinBoxSettingsDelay->value() + myIncreameantValue);
+            mySqlDb->mySqlModel->mySetting->delay(myDelayValue + myIncreameantValue);
+            myTranslation = translateWithReturn(thisText, thisEngine, thisTranslationLang, thisSourceLang, thisUiLang);
+            break;
+        case NoError:
+            qCritical() << "Translation Error not found: " << thisTranslations;
+            myTranslation = thisTranslations;
+            break;
+    }
+    return myTranslation;
+}
+/************************************************
  * @brief create Translation Job, I pass in the Name of the Language,
  *        and the language ID, I do not use the Name, but find it nice to have the info with it.
+ * createTranslationJob
  ***********************************************/
 void MainWindow::createTranslationJob(const QString &thisLanguageName, const QString &thisLanguage, const QString &thisSourceLanguage, bool thisChecked)
 {
@@ -2105,25 +2321,276 @@ void MainWindow::createTranslationJob(const QString &thisLanguageName, const QSt
     //
     if (!thisChecked) { return; }
     // Create Translation file names for configuration
-    QString theTsFile =QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", thisLanguage, ".ts");
-    QString theQmFile =QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", thisLanguage, ".qm");
+    QString theTsFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", thisLanguage, ".ts");
+    QString theQmFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", thisLanguage, ".qm");
     //
     QString theTransFile = theTsFile;
     QString theTransQmFile = theQmFile;
     theTransFile.remove(ui->lineEditTranslationsProjectFolder->text());
     theTransQmFile.remove(ui->lineEditTranslationsProjectFolder->text());
-    if (theTransFile.mid(0, 1) == "/" || theTransFile.mid(0, 1) == "\\") { theTransFile = theTransFile.mid(1); }
+    if (theTransFile.mid(0, 1)   == "/" || theTransFile.mid(0, 1)   == "\\") { theTransFile = theTransFile.mid(1); }
     if (theTransQmFile.mid(0, 1) == "/" || theTransQmFile.mid(0, 1) == "\\") { theTransQmFile = theTransQmFile.mid(1); }
     myTranslationConf.append(QString(" %1").arg(theTransFile));
     myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
     // Create Job
     // to store a job I need the theSourcePath and Language
-    MyLingoJobs theTranslationJobs(thisLanguageName, thisLanguage, theTsFile, QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myQOnlineTranslator.languageNameToCode(thisSourceLanguage)));
+    MyLingoJobs theTranslationJobs(thisLanguageName, thisLanguage, theTsFile, theTransQmFile, QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myLocalization->languageNameToCode(thisSourceLanguage)));
     myLingoJob.append(theTranslationJobs);
 }
 /************************************************
- * translateWithReturn
+ * @brief translate Help files.
+ * translateHelp
+ ***********************************************/
+void MainWindow::translateHelp()
+{
+    myLingoJob.clear();
+    myHelpTranslationsFiles.clear();
+    myHelpFileNames.clear();
+    myTranslationQrc.clear();
+    QString theHelpPath = ui->lineEditTranslationsHelp->text();
+    QDir dir(theHelpPath);
+    QStringList fileNames = dir.entryList(QStringList("*.md"), QDir::Files, QDir::Name);
+    for (QString &fileName : fileNames)
+    {
+        myHelpTranslationsFiles.append(dir.filePath(fileName));
+    }
+    for (QString &fileName : myHelpTranslationsFiles)
+    {
+        QString theFileName = mySqlDb->mySqlModel->mySetting->getFileInfo(mySqlDb->mySqlModel->mySetting->BaseName, fileName);
+        int theIndex = theFileName.indexOf("_");
+        theFileName = theFileName.mid(0, theIndex);
+        myHelpFileNames.append(theFileName);
+    }
+    //
+    setProjectClass(TabAll);
+    //
+    createHelpTranslationJob("Afrikaans",           "af" ,      ui->checkBoxTranslationsAF->isChecked());
+    createHelpTranslationJob("Albanian",            "sq" ,      ui->checkBoxTranslationsSQ->isChecked());
+    createHelpTranslationJob("Amharic",             "am" ,      ui->checkBoxTranslationsAM->isChecked());
+    createHelpTranslationJob("Arabic",              "ar" ,      ui->checkBoxTranslationsAR->isChecked());
+    createHelpTranslationJob("Armenian",            "hy" ,      ui->checkBoxTranslationsHY->isChecked());
+    createHelpTranslationJob("Azerbaijani",         "az" ,      ui->checkBoxTranslationsAZ->isChecked());
+    createHelpTranslationJob("Bashkir",             "ba" ,      ui->checkBoxTranslationsBA->isChecked());
+    createHelpTranslationJob("Basque",              "eu" ,      ui->checkBoxTranslationsEU->isChecked());
+    createHelpTranslationJob("Belarusian",          "be" ,      ui->checkBoxTranslationsBE->isChecked());
+    createHelpTranslationJob("Bengali",             "bn" ,      ui->checkBoxTranslationsBN->isChecked());
+    createHelpTranslationJob("Bosnian",             "bs" ,      ui->checkBoxTranslationsBS->isChecked());
+    createHelpTranslationJob("Bulgarian",           "bg" ,      ui->checkBoxTranslationsBG->isChecked());
+    createHelpTranslationJob("Cantonese",           "yue",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Catalan",             "ca" ,      ui->checkBoxTranslationsCA->isChecked());
+    createHelpTranslationJob("Cebuano",             "ceb",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Chichewa",            "ny" ,      ui->checkBoxTranslationsNY->isChecked());
+    createHelpTranslationJob("Corsican",            "co" ,      ui->checkBoxTranslationsCO->isChecked());
+    createHelpTranslationJob("Croatian",            "hr" ,      ui->checkBoxTranslationsHR->isChecked());
+    createHelpTranslationJob("Czech",               "cs" ,      ui->checkBoxTranslationsCS->isChecked());
+    createHelpTranslationJob("SimplifiedChinese",   "zh-CN" ,   ui->checkBoxTranslationsZH_CN->isChecked());
+    createHelpTranslationJob("TraditionalChinese",  "zh-TW" ,   ui->checkBoxTranslationsZH_TW->isChecked());
+    createHelpTranslationJob("Danish",              "da" ,      ui->checkBoxTranslationsDA->isChecked());
+    createHelpTranslationJob("Dutch",               "nl" ,      ui->checkBoxTranslationsNL->isChecked());
+    createHelpTranslationJob("English",             "en" ,      ui->checkBoxTranslationsEN->isChecked());
+    createHelpTranslationJob("Estonian",            "et" ,      ui->checkBoxTranslationsET->isChecked());
+    createHelpTranslationJob("Esperanto",           "eo" ,      ui->checkBoxTranslationsEO->isChecked());
+    createHelpTranslationJob("Faeroese",            "fo" ,      ui->checkBoxTranslationsFO->isChecked());
+    createHelpTranslationJob("Farsi",               "fa" ,      ui->checkBoxTranslationsFA->isChecked());
+    createHelpTranslationJob("Fijian",              "fj" ,      ui->checkBoxTranslationsFJ->isChecked());
+    createHelpTranslationJob("Filipino",            "fil",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Finnish",             "fi" ,      ui->checkBoxTranslationsFI->isChecked());
+    createHelpTranslationJob("French",              "fr" ,      ui->checkBoxTranslationsFR->isChecked());
+    createHelpTranslationJob("Frisian",             "fy" ,      ui->checkBoxTranslationsFY->isChecked());
+    createHelpTranslationJob("Gaelic",              "gd" ,      ui->checkBoxTranslationsGD->isChecked());
+    createHelpTranslationJob("Galician",            "gl" ,      ui->checkBoxTranslationsGL->isChecked());
+    createHelpTranslationJob("Georgian",            "ka" ,      ui->checkBoxTranslationsKA->isChecked());
+    createHelpTranslationJob("German",              "de" ,      ui->checkBoxTranslationsDE->isChecked());
+    createHelpTranslationJob("Greek",               "el" ,      ui->checkBoxTranslationsEL->isChecked());
+    createHelpTranslationJob("Gujarati",            "gu" ,      ui->checkBoxTranslationsGU->isChecked());
+    createHelpTranslationJob("Haitian",             "ht" ,      ui->checkBoxTranslationsHT->isChecked());
+    createHelpTranslationJob("Hausa",               "ha" ,      ui->checkBoxTranslationsHA->isChecked());
+    createHelpTranslationJob("Hawaiian",            "haw",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Hebrew",              "he" ,      ui->checkBoxTranslationsHE->isChecked());
+    createHelpTranslationJob("HillMari",            "mrj",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Hindi",               "hi" ,      ui->checkBoxTranslationsHI->isChecked());
+    createHelpTranslationJob("Hmong",               "hmn",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Hungarian",           "hu" ,      ui->checkBoxTranslationsHU->isChecked());
+    createHelpTranslationJob("Icelandic",           "is" ,      ui->checkBoxTranslationsIS->isChecked());
+    createHelpTranslationJob("Igbo",                "ig" ,      ui->checkBoxTranslationsIG->isChecked());
+    createHelpTranslationJob("Indonesian",          "id" ,      ui->checkBoxTranslationsID->isChecked());
+    createHelpTranslationJob("Irish",               "ga" ,      ui->checkBoxTranslationsGA->isChecked());
+    createHelpTranslationJob("Italian",             "it" ,      ui->checkBoxTranslationsIT->isChecked());
+    createHelpTranslationJob("Japanese",            "ja" ,      ui->checkBoxTranslationsJA->isChecked());
+    createHelpTranslationJob("Javanese",            "jw" ,      ui->checkBoxTranslationsJW->isChecked());
+    createHelpTranslationJob("Kannada",             "kn" ,      ui->checkBoxTranslationsKN->isChecked());
+    createHelpTranslationJob("Kazakh",              "kk" ,      ui->checkBoxTranslationsKK->isChecked());
+    createHelpTranslationJob("Khmer",               "km" ,      ui->checkBoxTranslationsKM->isChecked());
+    createHelpTranslationJob("Kinyarwanda",         "rw" ,      ui->checkBoxTranslationsRW->isChecked());
+    createHelpTranslationJob("Klingon",             "tlh",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("KlingonPlqaD",        "tlh-Qaak", ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Korean",              "ko" ,      ui->checkBoxTranslationsKO->isChecked());
+    createHelpTranslationJob("Kurdish",             "ku" ,      ui->checkBoxTranslationsKU->isChecked());
+    createHelpTranslationJob("Kyrgyz",              "ky" ,      ui->checkBoxTranslationsKY->isChecked());
+    createHelpTranslationJob("Latvian",             "lv" ,      ui->checkBoxTranslationsLV->isChecked());
+    createHelpTranslationJob("Lao",                 "lo" ,      ui->checkBoxTranslationsLO->isChecked());
+    createHelpTranslationJob("Latin",               "la" ,      ui->checkBoxTranslationsLA->isChecked());
+    createHelpTranslationJob("LevantineArabic",     "apc",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Lithuanian",          "lt" ,      ui->checkBoxTranslationsLT->isChecked());
+    createHelpTranslationJob("Luxembourgish",       "lb" ,      ui->checkBoxTranslationsLB->isChecked());
+    createHelpTranslationJob("Macedonian",          "mk" ,      ui->checkBoxTranslationsMK->isChecked());
+    createHelpTranslationJob("Mari",                "mhr",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Maori",               "mi" ,      ui->checkBoxTranslationsMI->isChecked());
+    createHelpTranslationJob("Marathi",             "mr" ,      ui->checkBoxTranslationsMR->isChecked());
+    createHelpTranslationJob("Malagasy",            "mg" ,      ui->checkBoxTranslationsMG->isChecked());
+    createHelpTranslationJob("Malayalam",           "ml" ,      ui->checkBoxTranslationsML->isChecked());
+    createHelpTranslationJob("Malaysian",           "ms" ,      ui->checkBoxTranslationsMS->isChecked());
+    createHelpTranslationJob("Maltese",             "mt" ,      ui->checkBoxTranslationsMT->isChecked());
+    createHelpTranslationJob("Mongolian",           "mn" ,      ui->checkBoxTranslationsMN->isChecked());
+    createHelpTranslationJob("Myanmar",             "my" ,      ui->checkBoxTranslationsMY->isChecked());
+    createHelpTranslationJob("Norwegian",           "no" ,      ui->checkBoxTranslationsNO->isChecked());
+    createHelpTranslationJob("Bokmal",              "nb" ,      ui->checkBoxTranslationsNB->isChecked());
+    createHelpTranslationJob("Nepali",              "ne" ,      ui->checkBoxTranslationsNE->isChecked());
+    createHelpTranslationJob("Nynorsk",             "nn" ,      ui->checkBoxTranslationsNN->isChecked());
+    createHelpTranslationJob("Oriya",               "or" ,      ui->checkBoxTranslationsOR->isChecked());
+    createHelpTranslationJob("Pashto",              "ps" ,      ui->checkBoxTranslationsPS->isChecked());
+    createHelpTranslationJob("Papiamento",          "pap",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Polish",              "pl" ,      ui->checkBoxTranslationsPL->isChecked());
+    createHelpTranslationJob("Portuguese",          "pt" ,      ui->checkBoxTranslationsPT->isChecked());
+    createHelpTranslationJob("Punjabi",             "pa" ,      ui->checkBoxTranslationsPA->isChecked());
+    createHelpTranslationJob("QueretaroOtomi",      "otq",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Rhaeto-Romanic",      "rm" ,      ui->checkBoxTranslationsRM->isChecked());
+    createHelpTranslationJob("Romanian",            "ro" ,      ui->checkBoxTranslationsRO->isChecked());
+    createHelpTranslationJob("Russian",             "ru" ,      ui->checkBoxTranslationsRU->isChecked());
+    createHelpTranslationJob("Samoan",              "sm" ,      ui->checkBoxTranslationsSM->isChecked());
+    createHelpTranslationJob("Serbian",             "sr" ,      ui->checkBoxTranslationsSR->isChecked());
+    createHelpTranslationJob("SerbianLatin",        "sr-Latin", ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Slovak",              "sk" ,      ui->checkBoxTranslationsSK->isChecked());
+    createHelpTranslationJob("Slovenian",           "sl" ,      ui->checkBoxTranslationsSL->isChecked());
+    createHelpTranslationJob("Sesotho",             "st" ,      ui->checkBoxTranslationsST->isChecked());
+    createHelpTranslationJob("Shona",               "sn" ,      ui->checkBoxTranslationsSN->isChecked());
+    createHelpTranslationJob("Sindhi",              "sd" ,      ui->checkBoxTranslationsSD->isChecked());
+    createHelpTranslationJob("Sinhala",             "si" ,      ui->checkBoxTranslationsSI->isChecked());
+    createHelpTranslationJob("Somali",              "so" ,      ui->checkBoxTranslationsSO->isChecked());
+    createHelpTranslationJob("Sorbian",             "sb" ,      ui->checkBoxTranslationsSB->isChecked());
+    createHelpTranslationJob("Spanish",             "es" ,      ui->checkBoxTranslationsES->isChecked());
+    createHelpTranslationJob("Sundanese",           "su" ,      ui->checkBoxTranslationsSU->isChecked());
+    createHelpTranslationJob("Swahili",             "sw" ,      ui->checkBoxTranslationsSW->isChecked());
+    createHelpTranslationJob("Swedish",             "sv" ,      ui->checkBoxTranslationsSV->isChecked());
+    createHelpTranslationJob("Tagalog",             "tl" ,      ui->checkBoxTranslationsTL->isChecked());
+    createHelpTranslationJob("Tahitian",            "ty" ,      ui->checkBoxTranslationsTY->isChecked());
+    createHelpTranslationJob("Tajik",               "tg" ,      ui->checkBoxTranslationsTG->isChecked());
+    createHelpTranslationJob("Tamil",               "ta" ,      ui->checkBoxTranslationsTA->isChecked());
+    createHelpTranslationJob("Tatar",               "tt" ,      ui->checkBoxTranslationsTT->isChecked());
+    createHelpTranslationJob("Telugu",              "te" ,      ui->checkBoxTranslationsTE->isChecked());
+    createHelpTranslationJob("Thai",                "th" ,      ui->checkBoxTranslationsTH->isChecked());
+    createHelpTranslationJob("Tongan",              "to" ,      ui->checkBoxTranslationsTO->isChecked());
+    createHelpTranslationJob("Tsonga",              "ts" ,      ui->checkBoxTranslationsTS->isChecked());
+    createHelpTranslationJob("Tswana",              "tn" ,      ui->checkBoxTranslationsTN->isChecked());
+    createHelpTranslationJob("Turkish",             "tr" ,      ui->checkBoxTranslationsTR->isChecked());
+    createHelpTranslationJob("Turkmen",             "tk" ,      ui->checkBoxTranslationsTK->isChecked());
+    createHelpTranslationJob("Uighur",              "ub" ,      ui->checkBoxTranslationsUG->isChecked());
+    createHelpTranslationJob("Ukrainian",           "uk" ,      ui->checkBoxTranslationsUK->isChecked());
+    createHelpTranslationJob("Urdu",                "ur" ,      ui->checkBoxTranslationsUR->isChecked());
+    createHelpTranslationJob("Udmurt",              "udm",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Uzbek",               "uz" ,      ui->checkBoxTranslationsUZ->isChecked());
+    createHelpTranslationJob("Venda",               "ve" ,      ui->checkBoxTranslationsVE->isChecked());
+    createHelpTranslationJob("Vietnamese",          "vi" ,      ui->checkBoxTranslationsVI->isChecked());
+    createHelpTranslationJob("Welsh",               "cy" ,      ui->checkBoxTranslationsCY->isChecked());
+    createHelpTranslationJob("Xhosa",               "xh" ,      ui->checkBoxTranslationsXH->isChecked());
+    createHelpTranslationJob("Yiddish",             "yi" ,      ui->checkBoxTranslationsYI->isChecked());
+    createHelpTranslationJob("Yoruba",              "yo" ,      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("YucatecMaya",         "yua",      ui->checkBoxTranslationsYO->isChecked());
+    createHelpTranslationJob("Zulu",                "zu" ,      ui->checkBoxTranslationsZU->isChecked());
+    ui->textEditProjects->setText(QString("%1\n").arg(myTranslationQrc));
+    // Go to Tab
+    ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabProject")));
+    //
+    ui->progressBarProjectsTranslations->setMaximum(myLingoJob.count());
+    ui->progressBarProjectsTranslations->setValue(0);
+    ui->progressBarProjectsTranslations->show();
+    ui->progressBarProjectsFiles->setMaximum(myLingoJob.count());
+    ui->progressBarProjectsFiles->show();
+    // Now I can run the job with myLingoJob
+    for( int i = 0; i < myLingoJob.count(); ++i )
+    {
+        ui->progressBarProjectsFiles->setValue(i);
+        if (isDebugMessage && isMainLoaded) { qDebug() << "Translating..." << myLingoJob.at(i).getLanguageName(); }
+        // Skip if current language is the same as source
+        if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { continue; }
+        QString theHelpFile = myLingoJob.at(i).getTsFile();
+        // Make sure Source file exists
+        if (!mySqlDb->mySqlModel->mySetting->isFileExists(theHelpFile))
+        {
+            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File not found"), QString("%1: %2").arg(tr("Help File not found"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            return;
+        }
+        QString theHelpFileContents = mySqlDb->mySqlModel->mySetting->readFile(theHelpFile);
+        if (theHelpFileContents.isEmpty())
+        {
+            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File is Empty"), QString("%1: %2").arg(tr("Help File is Empty"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            return;
+        }
+        // QString &text, Engine engine, Language translationLang, Language sourceLang, Language uiLang
+        myTranslation = translateWithReturn(theHelpFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+        myTranslation = checkTranslationErrors(myTranslation, theHelpFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+        // if empty use another service
+        if (myTranslation.isEmpty())
+        {
+            myTranslation = translateWithReturn(theHelpFileContents, QOnlineTranslator::Engine::Bing, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+            myTranslation = checkTranslationErrors(myTranslation, theHelpFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+            if (myTranslation.isEmpty())
+            {
+                myTranslation = translateWithReturn(theHelpFileContents, QOnlineTranslator::Engine::Yandex, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+                myTranslation = checkTranslationErrors(myTranslation, theHelpFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+            }
+        }
+        // Make sure Translation string has content
+        if (myTranslation.isEmpty()) { myTranslation = theHelpFileContents; }
+        mySqlDb->mySqlModel->mySetting->writeFile(myLingoJob.at(i).getDestinationFile(), myTranslation);
+        if (!mySqlDb->mySqlModel->mySetting->isFileExists(myLingoJob.at(i).getDestinationFile()))
+        {
+            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File could not be created"), QString("%1: %2").arg(tr("Help File could not be created"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            return;
+        }
+        ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theHelpFileContents, myTranslation));
+        // Set a delay or you will be ban from Engine
+        mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
+        ui->progressBarProjectsTranslations->setValue(i);
+    } // end for( int i = 0; i < myLingoJob.count(); ++i )
+    ui->progressBarProjectsTranslations->hide();
+    ui->progressBarProjectsFiles->hide();
+} // end translateHelp
+/************************************************
  * @brief translate With Return Added by Light-Wizzard.
+ * translateWithReturn
+ ***********************************************/
+void MainWindow::createHelpTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked)
+{
+    if (isDebugMessage && isMainLoaded) { qDebug() << "createHelpTranslationJob(" << thisLanguageName << ", " << theLangCode << ", " << thisChecked << ")"; }
+    //
+    if (!thisChecked) { return; }
+    if (ui->labelTranslationsSourceLanguageCode->text() == theLangCode) { return; }
+    //
+    for (QString &fileName : myHelpFileNames)
+    {
+        // Create Translation file names for configuration
+        QString theMdFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", theLangCode, ".md");
+        QString theQmFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", theLangCode, ".qm");
+        QString theHelpSource = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", ui->labelTranslationsSourceLanguageCode->text(), ".md");
+        //
+        QString theTransMdFile = theMdFile;
+        QString theTransQmFile = theQmFile;
+        theTransMdFile.remove(ui->lineEditTranslationsProjectFolder->text());
+        theTransQmFile.remove(ui->lineEditTranslationsProjectFolder->text());
+        if (theTransMdFile.mid(0, 1) == "/" || theTransMdFile.mid(0, 1) == "\\") { theTransMdFile = theTransMdFile.mid(1); }
+        if (theTransQmFile.mid(0, 1) == "/" || theTransQmFile.mid(0, 1) == "\\") { theTransQmFile = theTransQmFile.mid(1); }
+        // for display
+        myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
+        // Create Job
+        // to store a job I need the theSourcePath and Language
+        MyLingoJobs theTranslationJobs(thisLanguageName, theLangCode, theHelpSource, theMdFile, QOnlineTranslator::language(theLangCode), QOnlineTranslator::language(ui->labelTranslationsSourceLanguageCode->text()));
+        myLingoJob.append(theTranslationJobs);
+    }
+}
+/************************************************
+ * @brief translate With Return Added by Light-Wizzard.
+ * translateWithReturn
  ***********************************************/
 QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang)
 {
@@ -2131,19 +2598,20 @@ QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::
     //
     myTranslation = "";
     //
-    QEventLoop eventLoop;
+    QEventLoop theEventLoop;
     //
     QOnlineTranslator translator;
     //
     translator.translate(text, engine, translationLang, sourceLang, uiLang);
     //
-    QObject::connect(&translator, &QOnlineTranslator::finished, &eventLoop, [&]
+    QObject::connect(&translator, &QOnlineTranslator::finished, &theEventLoop, [&]
     {
         if (translator.error() == QOnlineTranslator::NoError)
         {
-            qInfo() << translator.translation();
+            if (isTranslationLog) { qInfo() << translator.translation(); }
             myTranslation = translator.translation();
             isTranslationError = false;
+            myTranslationError = "";
         }
         else
         {
@@ -2152,61 +2620,14 @@ QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::
             isTranslationError = true;
             myTranslation = "";
         }
-        eventLoop.quit();
+        theEventLoop.quit();
     });
-    eventLoop.exec();
+    theEventLoop.exec();
     return myTranslation;
 } // end translateWithReturn
 /************************************************
- * getLanguageFromFile
- * @brief get Language File.
- * QString thisLangFile = getLanguageFromFile(getTransFilePrefix(), "?.qm");
- ***********************************************/
-QString MainWindow::getLanguageFromFile(const QString &thisPrefix, const QString &thisQmLanguageFile)
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getLanguageFromFile"; }
-    return myTranslationFiles->getLocalizerCode(thisPrefix, thisQmLanguageFile);
-}
-/************************************************
- * getTranslationSource
- * @brief get Translation Source.
- ***********************************************/
-QString MainWindow::getTranslationSource()
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getTranslationSource"; }
-    return myTranslationSource;
-}
-/************************************************
- * setTranslationSource
- * @brief set Translation Source.
- ***********************************************/
-void MainWindow::setTranslationSource(const QString &thisTranslationSource)
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setTranslationSource"; }
-    myTranslationSource = thisTranslationSource;
-}
-/************************************************
- * getTransFilePrefix
- * @brief get Trans File Prefix.
- ***********************************************/
-QString MainWindow::getTransFilePrefix()
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getTransFilePrefix"; }
-    if (myTransFilePrefix.isEmpty()) { myTransFilePrefix = mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANSLATION_PREFIX; }
-    return myTransFilePrefix;
-}
-/************************************************
- * setTransFilePrefix
- * @brief set Trans File Prefix setTransFilePrefix("QtLingo");.
- ***********************************************/
-void MainWindow::setTransFilePrefix(const QString &thisTransFilePrefix)
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setTransFilePrefix"; }
-    myTransFilePrefix = thisTransFilePrefix;
-}
-/************************************************
- * setDebugMessage
  * @brief set Debug Message.
+ * setDebugMessage
  ***********************************************/
 void MainWindow::setDebugMessage(bool thisState)
 {
@@ -2214,8 +2635,8 @@ void MainWindow::setDebugMessage(bool thisState)
     if (isDebugMessage && isMainLoaded) { qDebug() << "setDebugMessage"; }
 }
 /************************************************
- * getDebugMessage
  * @brief get Debug Message.
+ * getDebugMessage
  ***********************************************/
 bool MainWindow::getDebugMessage()
 {
@@ -2223,17 +2644,8 @@ bool MainWindow::getDebugMessage()
     return isDebugMessage;
 }
 /************************************************
- * setSqlBrowseButton
- * @brief set Sql Browse Button.
- ***********************************************/
-void MainWindow::setSqlBrowseButton()
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "settingsButtons"; }
-    ui->pushButtonSqlDatabaseNameBrowse->setEnabled(ui->comboBoxSqlDatabaseType->currentText() == mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT || ui->comboBoxSqlDatabaseType->currentText() == ":memory:");
-}
-/************************************************
- * onClipboard
  * @brief Clipboard.
+ * onClipboard
  ***********************************************/
 void MainWindow::onClipboard()
 {
@@ -2242,25 +2654,21 @@ void MainWindow::onClipboard()
     clipboard->setText(ui->textEditProjects->toPlainText());
 }
 /************************************************
- * on_checkBoxSettignsMessaging_stateChanged
  * @brief on checkBox Settigns Messaging state Changed.
+ * on_checkBoxSettignsMessaging_stateChanged
  ***********************************************/
 void MainWindow::on_checkBoxSettignsMessaging_stateChanged(int thisCheckState)
 {
-    if (isMainLoaded) { return; }
+    if (!isMainLoaded) { return; }
     if (isDebugMessage) { qDebug() << "on_checkBoxSettignsMessaging_stateChanged"; }
     if (thisCheckState == Qt::Checked)
-    {
-        setMessagingStates(true);
-    }
+        { setMessagingStates(true); }
     else
-    {
-        setMessagingStates(false);
-    }
+        { setMessagingStates(false); }
 }
 /************************************************
- * setMessagingStates
  * @brief set Messaging States.
+ * setMessagingStates
  ***********************************************/
 void MainWindow::setMessagingStates(bool thisMessageState)
 {
@@ -2271,7 +2679,7 @@ void MainWindow::setMessagingStates(bool thisMessageState)
         mySqlDb->setDebugMessage(true);
         mySqlDb->mySqlModel->setDebugMessage(true);
         mySqlDb->mySqlModel->mySetting->setDebugMessage(true);
-        myTranslationFiles->setDebugMessage(true);
+        myLocalization->setDebugMessage(true);
         mySqlDb->mySqlModel->mySetting->myCrypto->setDebugMessage(true);
     }
     else
@@ -2281,28 +2689,36 @@ void MainWindow::setMessagingStates(bool thisMessageState)
         mySqlDb->setDebugMessage(false);
         mySqlDb->mySqlModel->setDebugMessage(false);
         mySqlDb->mySqlModel->mySetting->setDebugMessage(false);
-        myTranslationFiles->setDebugMessage(false);
+        myLocalization->setDebugMessage(false);
         mySqlDb->mySqlModel->mySetting->myCrypto->setDebugMessage(false);
     }
 }
+/************************************************
+ * @brief on pushButton Translations Help clicked.
+ * on_pushButtonTranslationsHelp_clicked
+ ***********************************************/
+void MainWindow::on_pushButtonTranslationsHelp_clicked()
+{
+    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonTranslationsHelp_clicked"; }
+    QFileDialog dialogTranslationFolder;
+    dialogTranslationFolder.setFileMode(QFileDialog::Directory);
+    dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
+    dialogTranslationFolder.setOption(QFileDialog::DontResolveSymlinks);
+    //
+    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Help Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
+    if (!theTranslationFolder.isEmpty())
+        { ui->lineEditTranslationsHelp->setText(theTranslationFolder); }
+    else
+        { ui->lineEditTranslationsHelp->setText(""); }
+}
+/************************************************
+ * @brief on comboBox Translation Source Language current Index Changed.
+ * on_comboBoxTranslationSourceLanguage_currentIndexChanged
+ ***********************************************/
+void MainWindow::on_comboBoxTranslationSourceLanguage_currentIndexChanged(const QString &arg1)
+{
+    Q_UNUSED(arg1)
+    setLanguageCode();
+}
 /* ******************************* End of File ***************************** */
-/*
- * Not Supported
-{Klingon, QStringLiteral("tlh")},               // Klingon tlh
-{KlingonPlqaD, QStringLiteral("tlh-Qaak")},     // KlingonPlqaD tlh-Qaak
-{Cantonese, QStringLiteral("yue")},             // Cantonese yue
-{Cebuano, QStringLiteral("ceb")},               // Cebuano ceb
-{Filipino, QStringLiteral("fil")},              // Filipino fil
-{Hawaiian, QStringLiteral("haw")},              // Hawaiian haw
-{HillMari, QStringLiteral("mrj")},              // HillMari mrj
-{Hmong, QStringLiteral("hmn")},                 // Hmong hmn
-{LevantineArabic, QStringLiteral("apc")},       // Levantine Arabic apc
-{Mari, QStringLiteral("mhr")},                  // Mari mhr
-{Papiamento, QStringLiteral("pap")},            // Papiamento pap
-{QueretaroOtomi, QStringLiteral("otq")},        // QueretaroOtomi otq
-{SerbianLatin, QStringLiteral("sr-Latin")},     // SerbianLatin sr-Latin
-{Udmurt, QStringLiteral("udm")},                // Udmurt udm
-{YucatecMaya, QStringLiteral("yua")},           // YucatecMaya yua
- */
-
 

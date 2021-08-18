@@ -43,8 +43,8 @@ class QState;
 class QNetworkAccessManager;
 class QNetworkReply;
 /************************************************
- * \class QOnlineTranslator
  * @brief QOnlineTranslator.
+ * \class QOnlineTranslator
  ***********************************************/
 class QOnlineTranslator : public QObject
 {
@@ -252,43 +252,37 @@ class QOnlineTranslator : public QObject
         static Language language(const QLocale &locale);                //!< language
         static Language language(const QString &langCode);              //!< language
         static bool isSupportTranslation(Engine engine, Language lang); //!< is Support Translation
-        // Added by Light-Wizzard
-        QString languageNameToCode(const QString &lang);                //!< language Name to Code Added by Light-Wizzard
-        QString languageCodeToName(const QString &lang);                //!< language Code to Name Added by Light-Wizzard
 
     signals:
         void finished();                            //!< finished
 
     private slots:
         void skipGarbageText();                     //!< skip Garbage Text
-
-        // Google
+        // Google Translate
         void requestGoogleTranslate();              //!< request Google Translate
         void parseGoogleTranslate();                //!< parse Google Translate
-
-        // Yandex
+        // Yandex Key
         void requestYandexKey();                    //!< request Yandex Key
         void parseYandexKey();                      //!< parse Yandex Key
-
+        // Yandex Translate
         void requestYandexTranslate();              //!< request Yandex Translate
         void parseYandexTranslate();                //!< parse Yandex Translate
-
+        // Yandex Source Translit
         void requestYandexSourceTranslit();         //!< request Yandex Source Translit
         void parseYandexSourceTranslit();           //!< parse Yandex Source Translit
-
+        // Yandex Translation Translit
         void requestYandexTranslationTranslit();    //!< request Yandex Translation Translit
         void parseYandexTranslationTranslit();      //!< parse Yandex Translation Translit
-
+        // Yandex Dictionary
         void requestYandexDictionary();             //!< request Yandex Dictionary
         void parseYandexDictionary();               //!< parse Yandex Dictionary
-
-        // Bing
+        // Bing Credentials
         void requestBingCredentials();              //!< request Bing Credentials
         void parseBingCredentials();                //!< parse Bing Credentials
-
+        // Bing Translate
         void requestBingTranslate();                //!< request Bing Translate
         void parseBingTranslate();                  //!< parse Bing Translate
-
+        // Bing Dictionary
         void requestBingDictionary();               //!< request Bing Dictionary
         void parseBingDictionary();                 //!< parse Bing Dictionary
 
@@ -329,8 +323,6 @@ class QOnlineTranslator : public QObject
         static void addSpaceBetweenParts(QString &text);                        //!< add Space Between Parts
 
         static const QMap<Language, QString> s_genericLanguageCodes;      //!< \c s_genericLanguageCodes @brief generic Language Codes
-        static const QMap<QString, QString>  s_genericLanguageNameToCode; //!< \c s_genericLanguageNameToCode @brief generic Language Name to Code
-        static const QMap<QString, QString>  s_genericLanguageCodeToName; //!< \c s_genericLanguageCodeToName @brief generic Language Code to Name
 
         // Engines have some language codes exceptions
         static const QMap<Language, QString> s_googleLanguageCodes; //!< \c s_googleLanguageCodes   @brief google Language Codes
@@ -371,12 +363,12 @@ class QOnlineTranslator : public QObject
         QMap<QString, QVector<QOption>>  m_translationOptions;   //!< \c m_translationOptions @brief translation Options
         QMap<QString, QVector<QExample>> m_examples;             //!< \c m_examples           @brief examples
 
-        bool m_sourceTranslitEnabled      = true; //!< \c m_sourceTranslitEnabled       @brief source Translit Enabled
-        bool m_translationTranslitEnabled = true; //!< \c m_translationTranslitEnabled  @brief translation Translit Enabled
-        bool m_sourceTranscriptionEnabled = true; //!< \c m_sourceTranscriptionEnabled  @brief source Transcription Enabled
-        bool m_translationOptionsEnabled  = true; //!< \c m_translationOptionsEnabled   @brief translation Options Enabled
-        bool m_examplesEnabled            = true; //!< \c m_examplesEnabled             @brief examples Enabled
-        bool m_onlyDetectLanguage         = false; //!< \c m_onlyDetectLanguage         @brief only Detect Language
+        bool m_sourceTranslitEnabled      = true;  //!< \c m_sourceTranslitEnabled       @brief source Translit Enabled
+        bool m_translationTranslitEnabled = true;  //!< \c m_translationTranslitEnabled  @brief translation Translit Enabled
+        bool m_sourceTranscriptionEnabled = true;  //!< \c m_sourceTranscriptionEnabled  @brief source Transcription Enabled
+        bool m_translationOptionsEnabled  = true;  //!< \c m_translationOptionsEnabled   @brief translation Options Enabled
+        bool m_examplesEnabled            = true;  //!< \c m_examplesEnabled             @brief examples Enabled
+        bool m_onlyDetectLanguage         = false; //!< \c m_onlyDetectLanguage          @brief only Detect Language
 
 }; // end class QOnlineTranslator
 #endif // QONLINETRANSLATOR_H

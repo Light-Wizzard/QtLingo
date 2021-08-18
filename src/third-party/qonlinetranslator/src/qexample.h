@@ -24,14 +24,14 @@
 #include <QJsonObject>
 
 /************************************************
- * \struct QExample
  * @brief QExample.
+ * \struct QExample
  ***********************************************/
 struct QExample
 {
-        QString example;             //!< \c NoLanguage          @brief
-        QString description;         //!< \c NoLanguage          @brief
-        QJsonObject toJson() const;  //!< \c NoLanguage          @brief
+        QString example;             //!< \c example     @brief example
+        QString description;         //!< \c description @brief description
+        QJsonObject toJson() const;  //!< \c toJson      @brief toJson
 };
 #endif // QEXAMPLE_H
 /******************************* End of File *********************************/

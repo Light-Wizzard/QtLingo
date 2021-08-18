@@ -2,27 +2,26 @@
 #define MY_ORG_SETTINGS_H
 
 #include <QCoreApplication>
-#include <QtCore>
-#include <QObject>
-#include <QtDebug>
-#include <QMessageBox>
 #include <QFileInfo>
-#include <QtGlobal>
+#include <QMessageBox>
+#include <QObject>
 #include <QTime>
+//
+#include <QtCore>
+#include <QtDebug>
+#include <QtGlobal>
 //
 #include "MyConstants.h"
 // Crypto
-#include "MySimpleCrypt.h"
-
-//#include "third-party/qonlinetranslator/src/qonlinetranslator.h"
+#include "SimpleCrypt.h"
+// QOnlineTranslator
 #include "qonlinetranslator.h"
-
+//
 #include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
-
 /************************************************
  * \class MyOrgSettings
  * @brief My Org Settings.
@@ -74,8 +73,8 @@ class MyOrgSettings : public QObject
         // Makes getting file Info easier
         Q_ENUM(MyMessageTypes)
         //
-        MyConstants   *myConstants; //!< \c myConstants @brief All Constants in one class
-        MySimpleCrypt *myCrypto;    //!< \c myCrypto    @brief myCrypto
+        MyConstants *myConstants; //!< \c myConstants @brief All Constants in one class
+        SimpleCrypt *myCrypto;    //!< \c myCrypto    @brief myCrypto
         // Not added to above Constants, these need to FIXME
         const QPoint  ConstDefaultGeometryPos  = QPoint(10, 10);   //!< \c ConstDefaultGeometryPos     @brief Top, Left.
         const QSize   ConstDefaultGeometrySize = QSize(1134, 817); //!< \c ConstDefaultGeometrySize    @brief Width x Height.
@@ -136,9 +135,16 @@ class MyOrgSettings : public QObject
         // Is Debug Message
         void setDebugMessage(bool thisState);                       //!< set Debug Message
         bool getDebugMessage();                                     //!< get Debug Message
+        // Internet with Wait
+        bool getInternetWait();                                     //!< get Internet Wait
+        bool pingInternet();                                        //!< ping Internet
+        bool connectInternet();                                     //!< connect Internet
+
+    signals:
+        void sendInternetProgress();                                //!< send Internet Progress
 
     private:
-        QSettings          *mySettings             = nullptr;       //!< \c mySettings              @brief QSettings is used for this class.
+        QSettings          *mySettings              = nullptr;      //!< \c mySettings              @brief QSettings is used for this class.
         QOnlineTranslator   myQOnlineTranslator;                    //!< \c myQOnlineTranslator     @brief QOnlineTranslator
         QString             myOrganizationName      = "QtLingo";    //!< \c myOrganizationName      @brief Organization Name.
         QString             myOrganizationDomain    = "QtLingo";    //!< \c myOrganizationDomain    @brief Organization Domain.

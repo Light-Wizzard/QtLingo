@@ -40,8 +40,8 @@ class MyProjectClass
         QString mySourceLanguage, myLanguageIDs, myMake;
 };
 /************************************************
- * \class MyDatatables
  * @brief My Datatables.
+ * \class MyDatatables
  * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyDatatables : public QObject

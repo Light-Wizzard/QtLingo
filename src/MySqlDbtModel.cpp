@@ -251,7 +251,7 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
     {
         mySqlDriver = theDriver;
     }
-}
+} // end setSqlDriver
 /************************************************
  * @brief create DataBase Connection.
  * createDataBaseConnection

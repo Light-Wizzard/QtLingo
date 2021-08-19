@@ -17,12 +17,14 @@
  ***********************************************/
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    // Create table model:
-    mySqlDb           = new MyDatatables(this);
-    myLocalization    = new MyLocalization(this, mySqlDb);
-    myTranlatorParser = new MyTranlatorParser(this, mySqlDb);
+    // App Icon
+    QApplication::setWindowIcon(QIcon(":/images/logo32.png"));
     // Set up UI
     ui->setupUi(this);
+    // Create table model:
+    mySqlDb           = new MyDatatables(this);
+    myLocalization    = new MyLocalization(this, mySqlDb->mySqlModel->mySetting);
+    myTranlatorParser = new MyTranlatorParser(this, mySqlDb->mySqlModel->mySetting);
     // Read in Settings First
     readSettingsFirst();
     // Set to defaults
@@ -190,7 +192,7 @@ void MainWindow::loadLanguageComboBox()
     myLocalization->setMainLoaded(false);
     isMainLoaded = false;
     int theCurrentIndex = ui->comboBoxSettingsLanguage->currentIndex();
-    if (theCurrentIndex < 0) { theCurrentIndex = myLanguageCombBoxIndex; }
+    if (theCurrentIndex < 0) { theCurrentIndex = myLanguageCombBoxIndex; } // FIXME never set
     ui->comboBoxSettingsLanguage->clear();
     const QStringList theQmFiles =  myLocalization->findQmFiles(myLocalization->getTranslationSource());
     QStandardItemModel *theLangModel = new QStandardItemModel(this);
@@ -233,7 +235,6 @@ void MainWindow::onRunFirstOnStartup()
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabSettings")));
     // Read Settings
     readAllSettings();
-
     // Read Saved Language
     myLocalization->readLanguage();
     // Get Language File
@@ -291,14 +292,13 @@ void MainWindow::readAllSettings()
  * @brief Write All Settings.
  * writeAllSettings
  ***********************************************/
-bool MainWindow::writeAllSettings()
+void MainWindow::writeAllSettings()
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "writeAllSettings"; }
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage ? "true" : "false");
     //
     writeStateChanges();
     writeSqlDatabaseInfo();
-    return true;
 }
 /************************************************
  * @brief read SQL Database States.
@@ -347,7 +347,7 @@ void MainWindow::writeStateChanges()
     // Delay
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY_VALUE, ui->spinBoxSettingsDelay->text());
     // Language ComboBox
-    myLocalization->getLanguageCode() = myLocalization->languageNameToCode(ui->comboBoxSettingsLanguage->currentText());
+    myLocalization->setLanguageCode(myLocalization->languageNameToCode(ui->comboBoxSettingsLanguage->currentText()));
     myLocalization->writeLanguage(myLocalization->getLanguageCode());
 }
 /************************************************
@@ -2334,7 +2334,7 @@ void MainWindow::createTranslationJob(const QString &thisLanguageName, const QSt
     myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
     // Create Job
     // to store a job I need the theSourcePath and Language
-    MyLingoJobs theTranslationJobs(thisLanguageName, thisLanguage, theTsFile, theTransQmFile, QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myLocalization->languageNameToCode(thisSourceLanguage)));
+    MyLingoJobs theTranslationJobs(thisLanguageName, thisLanguage, theTsFile, theTransQmFile, "", QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myLocalization->languageNameToCode(thisSourceLanguage)));
     myLingoJob.append(theTranslationJobs);
 }
 /************************************************
@@ -2497,6 +2497,9 @@ void MainWindow::translateHelp()
     createHelpTranslationJob("Yoruba",              "yo" ,      ui->checkBoxTranslationsYO->isChecked());
     createHelpTranslationJob("YucatecMaya",         "yua",      ui->checkBoxTranslationsYO->isChecked());
     createHelpTranslationJob("Zulu",                "zu" ,      ui->checkBoxTranslationsZU->isChecked());
+    // Read Me
+    QString theReadMeFile = QString("%1%2%3").arg(ui->lineEditTranslationsProjectFolder->text(), QDir::separator(), "README.md");
+    //
     ui->textEditProjects->setText(QString("%1\n").arg(myTranslationQrc));
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabProject")));
@@ -2513,6 +2516,8 @@ void MainWindow::translateHelp()
         if (isDebugMessage && isMainLoaded) { qDebug() << "Translating..." << myLingoJob.at(i).getLanguageName(); }
         // Skip if current language is the same as source
         if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { continue; }
+#define MY_HELP_SYSTEM
+#ifdef MY_HELP_SYSTEM
         QString theHelpFile = myLingoJob.at(i).getTsFile();
         // Make sure Source file exists
         if (!mySqlDb->mySqlModel->mySetting->isFileExists(theHelpFile))
@@ -2548,7 +2553,46 @@ void MainWindow::translateHelp()
             mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File could not be created"), QString("%1: %2").arg(tr("Help File could not be created"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
             return;
         }
-        ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theHelpFileContents, myTranslation));
+        ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theHelpFileContents.mid(0, 16), myTranslation));
+        // Set a delay or you will be ban from Engine
+        mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
+#endif
+        /* *********************************************************************************** */
+        // Make sure Source file exists
+        if (!mySqlDb->mySqlModel->mySetting->isFileExists(theReadMeFile))
+        {
+            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("README File not found"), QString("%1: %2").arg(tr("README File not found"), myLingoJob.at(i).getReadMe()), mySqlDb->mySqlModel->mySetting->Critical);
+            return;
+        }
+        QString theReadMeFileContents = mySqlDb->mySqlModel->mySetting->readFile(theReadMeFile);
+        if (theReadMeFileContents.isEmpty())
+        {
+            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("README File is Empty"), QString("%1: %2").arg(tr("README File is Empty"), myLingoJob.at(i).getReadMe()), mySqlDb->mySqlModel->mySetting->Critical);
+            return;
+        }
+        // QString &text, Engine engine, Language translationLang, Language sourceLang, Language uiLang
+        myTranslation = translateWithReturn(theReadMeFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+        myTranslation = checkTranslationErrors(myTranslation, theReadMeFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+        // if empty use another service
+        if (myTranslation.isEmpty())
+        {
+            myTranslation = translateWithReturn(theReadMeFileContents, QOnlineTranslator::Engine::Bing, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+            myTranslation = checkTranslationErrors(myTranslation, theReadMeFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+            if (myTranslation.isEmpty())
+            {
+                myTranslation = translateWithReturn(theReadMeFileContents, QOnlineTranslator::Engine::Yandex, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+                myTranslation = checkTranslationErrors(myTranslation, theReadMeFileContents, QOnlineTranslator::Engine::Google, myLingoJob.at(i).getLang(), myLingoJob.at(i).getSourceLang(), myQOnlineTranslator.language(QLocale()));
+            }
+        }
+        // Make sure Translation string has content
+        if (myTranslation.isEmpty()) { myTranslation = theReadMeFileContents; }
+        mySqlDb->mySqlModel->mySetting->writeFile(myLingoJob.at(i).getReadMe(), myTranslation);
+        if (!mySqlDb->mySqlModel->mySetting->isFileExists(myLingoJob.at(i).getReadMe()))
+        {
+            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("README File could not be created"), QString("%1: %2").arg(tr("README File could not be created"), myLingoJob.at(i).getReadMe()), mySqlDb->mySqlModel->mySetting->Critical);
+            return;
+        }
+        ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theReadMeFileContents.mid(0, 16), myTranslation));
         // Set a delay or you will be ban from Engine
         mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
         ui->progressBarProjectsTranslations->setValue(i);
@@ -2573,6 +2617,7 @@ void MainWindow::createHelpTranslationJob(const QString &thisLanguageName, const
         QString theMdFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", theLangCode, ".md");
         QString theQmFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", theLangCode, ".qm");
         QString theHelpSource = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", ui->labelTranslationsSourceLanguageCode->text(), ".md");
+        QString theReadMeFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsProjectFolder->text(), QDir::separator(), "README", "_", theLangCode, ".md");
         //
         QString theTransMdFile = theMdFile;
         QString theTransQmFile = theQmFile;
@@ -2584,7 +2629,7 @@ void MainWindow::createHelpTranslationJob(const QString &thisLanguageName, const
         myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
         // Create Job
         // to store a job I need the theSourcePath and Language
-        MyLingoJobs theTranslationJobs(thisLanguageName, theLangCode, theHelpSource, theMdFile, QOnlineTranslator::language(theLangCode), QOnlineTranslator::language(ui->labelTranslationsSourceLanguageCode->text()));
+        MyLingoJobs theTranslationJobs(thisLanguageName, theLangCode, theHelpSource, theMdFile, theReadMeFile, QOnlineTranslator::language(theLangCode), QOnlineTranslator::language(ui->labelTranslationsSourceLanguageCode->text()));
         myLingoJob.append(theTranslationJobs);
     }
 }

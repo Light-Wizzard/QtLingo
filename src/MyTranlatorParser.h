@@ -12,13 +12,13 @@
 //model
 #include "third-party/ts_tool/ts_model.h"
 // Local
-#include "MyDatatables.h"
+#include "MyOrgSettings.h"
 
 class MyTranlatorParser : public QObject
 {
         Q_OBJECT
     public:
-        explicit MyTranlatorParser(QObject *parent = nullptr, MyDatatables *thisSqlDb = nullptr);
+        explicit MyTranlatorParser(QObject *parent = nullptr, MyOrgSettings *thisSetting = nullptr);
         //
         base_node::base_node_ptr parse_ts_file(const QString &inputFile);                         //!< parse_ts_file
         bool parse_txt_file(const QString &inputFile, visitors::map_QStringQString &strings);     //!< parse_txt_file
@@ -26,8 +26,8 @@ class MyTranlatorParser : public QObject
         void toTS(const QString &inputDir, const QString &outputFile, const QString &langid);     //!< toTS
 
     private:
-        MyDatatables       *mySqlDb;               //!< \c mySqlDb              @brief Sql Datatables
-        bool                isDebugMessage = true; //!< \c isDebugMessage       @brief is Debug Message
+        MyOrgSettings  *mySetting;             //!< \c mySetting @brief Domain Settings
+        bool            isDebugMessage = true; //!< \c isDebugMessage       @brief is Debug Message
 
 };
 #endif // MYTRANLATORPARSER_H

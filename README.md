@@ -1,4 +1,5 @@
 # QtLingo
+
 QtLingo is an Application to make Qt Translations easier,
 the normal flow would have you edit files and replace words with their Translations,
 this is too much work for me to do,
@@ -13,6 +14,7 @@ and deploy your project,
 it is all done, nothing more to do.
 
 ## Status
+
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/qtlingo)
 
 ### :package: **Downloads:**
@@ -21,10 +23,12 @@ it is all done, nothing more to do.
  - :apple: Currenty unavalible [Apple zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
 
 # Documentaion
+
 I am trying to get the Doxygen files to upload to this site, not working so far.
 [Documentaion](https://light-wizzard.github.io/QtLingo/)
 
 # GitHub Projects and other projects used
+
 I use to GitHub Applications for this,
 for Translations I use crow-translate at https://github.com/crow-translate/crow-translate,
 and QOnlineTranslator at https://github.com/crow-translate/QOnlineTranslator,
@@ -32,11 +36,13 @@ and to parse the .ts files I use ts_tool at https://github.com/nen777w/ts_tool,
 and I used https://wiki.qt.io/Simple_encryption_with_SimpleCrypt#Versions.
 
 # Process
+
 First I will update your projects Translations files according to the Languages you have chosen,
 then I will translate all the Languages,
 then update the Translations files and compile them into .qm files for deployment.
 
 # Doxygen
+
 I tried to document usign Doxygen, you can run it from the commands below.
 
 ```bash
@@ -60,6 +66,7 @@ Critical: "Host translate.googleapis.com not found" (../QtLingo/src/MainWindow.c
 ```
 
 # Credits
+
 I used a few GitHub Projects that I listed above, everything else is
 writen by Jeffrey Scott Flesher the Light Wizzard in the Flesh
 

@@ -190,6 +190,7 @@ void MyOrgSettings::setLastApplicationPath(const QString &thisPath)
 QString MyOrgSettings::getOrgName()
 {
     if (isDebugMessage) { qDebug() << "getOrgName"; }
+    if (myOrganizationName.isEmpty()) { myOrganizationName = qApp->organizationName(); }
     return myOrganizationName;
 } // end getOrgName
 /************************************************
@@ -211,6 +212,7 @@ void MyOrgSettings::setOrgName(const QString &thisOrgName)
 QString MyOrgSettings::getOrgDomain()
 {
     if (isDebugMessage) { qDebug() << "getOrgDomain"; }
+    if (myOrganizationDomain.isEmpty()) { myOrganizationDomain = qApp->organizationDomain(); }
     return myOrganizationDomain;
 } // end getOrgDomain
 /************************************************
@@ -232,6 +234,7 @@ void MyOrgSettings::setOrgDomain(const QString &thisOrgDomain)
 QString MyOrgSettings::getAppName()
 {
     if (isDebugMessage) { qDebug() << "getAppName"; }
+    if (myApplicationName.isEmpty()) { myApplicationName = qApp->applicationName(); }
     return myApplicationName;
 } // end getAppName
 /************************************************
@@ -242,9 +245,7 @@ void MyOrgSettings::setAppName(const QString &thisAppName)
 {
     if (isDebugMessage) { qDebug() << "setAppName"; }
     if (QString::compare(myApplicationName, thisAppName, Qt::CaseInsensitive))
-    {
-        myApplicationName = thisAppName;
-    }
+        { myApplicationName = thisAppName; }
 } // end setAppName
 /************************************************
  * @brief set Geometry.
@@ -333,8 +334,8 @@ QString MyOrgSettings::readFile(const QString &thisFileName)
 }
 /************************************************
  * @brief write File.
- * @parm thisFileName QString File Name
- * @parm thisContent  QString Content
+ * @param thisFileName QString File Name
+ * @param thisContent  QString Content
  * writeFile
  ***********************************************/
 bool MyOrgSettings::writeFile(const QString &thisFileName, const QString &thisContent)
@@ -398,9 +399,9 @@ bool MyOrgSettings::questionYesNo(const char *thisTitle, const char *thisQuestio
 } // end questionYesNo
 /************************************************
  * @brief information, question: 1 = true, 0 = false, warning, critical: theMessage.toLocal8Bit().
- * @parm thisTitle       QString Title
- * @parm thisMessage     QString Message
- * @parm thisMessageType QString Message Type
+ * @param thisTitle       QString Title
+ * @param thisMessage     QString Message
+ * @param thisMessageType QString Message Type
  * showMessageBox
  ***********************************************/
 int MyOrgSettings::showMessageBox(const QString &thisTitle, const QString &thisMessage, MyMessageTypes thisMessageType)

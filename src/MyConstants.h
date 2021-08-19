@@ -12,8 +12,8 @@
     #define VERSION "1.0"
 #endif
 /************************************************
- * \class MyConstants
  * @brief Constants are defined as const QString, starting with MY_ all capps.
+ * \class MyConstants
  * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyConstants

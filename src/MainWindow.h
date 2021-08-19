@@ -13,7 +13,7 @@
 #include <QtGlobal>
 // UI
 #include "ui_MainWindow.h"
-// MyDatatables
+//
 #include "MyDatatables.h"
 #include "MyLocalization.h"
 // QOnlineTranslator
@@ -25,26 +25,28 @@
 //
 namespace Ui { class MainWindow; }
 /************************************************
- * MyTranslationJobs
- * @brief My Translation Jobs.
- * @parm thisLanguageName    QString Full Name: English
- * @parm thisLangName        QString Language code of tile: en
- * @parm thisTsFile          QString Full path to Translation File
- * @parm thisDestinationFile QString Destination File
- * @parm thisLang            QOnlineTranslator::Language Translate to
- * @parm thisSourceLang      QOnlineTranslator::Language Translate from
+ * @brief My Lingo Jobs.
+ * @param thisLanguageName    QString Full Name: English
+ * @param thisLangName        QString Language code of file: en
+ * @param thisTsFile          QString Full path to Translation File
+ * @param thisDestinationFile QString Destination File
+ * @param thisReadMe          QString README_xx.md file
+ * @param thisLang            QOnlineTranslator::Language Translate to
+ * @param thisSourceLang      QOnlineTranslator::Language Translate from
  * @author Jeffrey Scott Flesher
+ * MyLingoJobs
  ***********************************************/
 class MyLingoJobs
 {
     public:
-        MyLingoJobs(const QString &thisLanguageName, const QString &thisLangName, const QString &thisTsFile, const QString &thisDestinationFile, QOnlineTranslator::Language thisLang, QOnlineTranslator::Language thisSourceLang)
-            : myLanguageName{thisLanguageName}, myLangName{thisLangName}, myTsFile{thisTsFile}, myDestinationFile{thisDestinationFile}, myLang{thisLang}, mySourceLang{thisSourceLang} {}
+        MyLingoJobs(const QString &thisLanguageName, const QString &thisLangName, const QString &thisTsFile, const QString &thisDestinationFile, const QString &thisReadMe, QOnlineTranslator::Language thisLang, QOnlineTranslator::Language thisSourceLang)
+            : myLanguageName{thisLanguageName}, myLangName{thisLangName}, myTsFile{thisTsFile}, myDestinationFile{thisDestinationFile}, myReadMe{thisReadMe}, myLang{thisLang}, mySourceLang{thisSourceLang} {}
         // Getters
         QString getLanguageName()                   const { return myLanguageName;    }
         QString getLangName()                       const { return myLangName;        }
         QString getTsFile()                         const { return myTsFile;          }
         QString getDestinationFile()                const { return myDestinationFile; }
+        QString getReadMe()                         const { return myReadMe;          }
         QOnlineTranslator::Language getLang()       const { return myLang;            }
         QOnlineTranslator::Language getSourceLang() const { return mySourceLang;      }
         // Setters
@@ -52,16 +54,17 @@ class MyLingoJobs
         void setLangName(const QString &s)                { myLangName        = s; }
         void setTsFile(const QString &s)                  { myTsFile          = s; }
         void setDestinationFile(const QString &s)         { myDestinationFile = s; }
+        void setReadMe(const QString &s)                  { myReadMe          = s; }
         void setSourceLang(QOnlineTranslator::Language s) { mySourceLang      = s; }
         void setLang(QOnlineTranslator::Language s)       { myLang            = s; }
 
     private:
-        QString myLanguageName, myLangName, myTsFile, myDestinationFile;
+        QString myLanguageName, myLangName, myTsFile, myDestinationFile, myReadMe;
         QOnlineTranslator::Language myLang, mySourceLang;
 };
 /************************************************
- * MainWindow
  * @brief Main Window Constructor.
+ * /class MainWindow
  * @author Jeffrey Scott Flesher
  ***********************************************/
 class MainWindow : public QMainWindow
@@ -106,7 +109,7 @@ class MainWindow : public QMainWindow
         void readStatesChanges();                       //!< read States Changes
         void readSqlDatabaseInfo();                     //!< read SQL Database Info
         // Write
-        bool writeAllSettings();                        //!< write Settings
+        void writeAllSettings();                        //!< write Settings
         void writeStateChanges();                       //!< write State Changes
         void writeSqlDatabaseInfo();                    //!< write SQL Database Info
         //
@@ -191,14 +194,9 @@ class MainWindow : public QMainWindow
         Ui::MainWindow     *ui;                                 //!< \c ui                      @brief ui.
         MyDatatables       *mySqlDb;                            //!< \c mySqlDb                 @brief SQL Datatables.
         MyLocalization     *myLocalization;                     //!< \c myLocalization          @brief Localization.
+        MyTranlatorParser  *myTranlatorParser;                  //!< \c myDelayValue            @brief Delay Value.
         QOnlineTranslator   myQOnlineTranslator;                //!< \c myQOnlineTranslator     @brief QOnlineTranslator.
         QClipboard         *clipboard;                          //!< \c clipboard               @brief clipboard.
-        bool                isDebugMessage        = true;       //!< \c isDebugMessage          @brief true of false for Debugging.
-        bool                isTranslationLog      = false;      //!< \c isTranslationLog        @brief true of false for Info during Translation.
-        bool                isMainLoaded          = false;      //!< \c isMainLoaded            @brief Set true after one shot time loads.
-        bool                isQtSettingsLoaded    = false;      //!< \c isQtSettingsLoaded      @brief is Qt Settings Loaded.
-        bool                isSaveSettings        = false;      //!< \c isSaveSettings          @brief Auto Save.
-        bool                isTranslationError    = false;      //!< \c isTranslationError      @brief is Translation Error.
         QString             myLanguages           = "";         //!< \c myLanguages             @brief Languages for checkboxes.
         QString             myTranslationConf     = "";         //!< \c myTranslationConf       @brief Languages for Config.
         QString             myTranslationQrc      = "";         //!< \c myTranslationQrc        @brief Translation qrc.
@@ -210,12 +208,17 @@ class MainWindow : public QMainWindow
         QList<MyLingoJobs>  myLingoJob;                         //!< \c myLingoJob              @brief Lingo Job.
         QStringList         myHelpTranslationsFiles;            //!< \c myHelpTranslationsFiles @brief Help Translations Files
         QStringList         myHelpFileNames;                    //!< \c myHelpFileNames         @brief Help File Names
+        bool                isDebugMessage        = true;       //!< \c isDebugMessage          @brief true of false for Debugging.
+        bool                isTranslationLog      = false;      //!< \c isTranslationLog        @brief true of false for Info during Translation.
+        bool                isMainLoaded          = false;      //!< \c isMainLoaded            @brief Set true after one shot time loads.
+        bool                isQtSettingsLoaded    = false;      //!< \c isQtSettingsLoaded      @brief is Qt Settings Loaded.
+        bool                isSaveSettings        = false;      //!< \c isSaveSettings          @brief Auto Save.
+        bool                isTranslationError    = false;      //!< \c isTranslationError      @brief is Translation Error.
         int                 myLanguageCombBoxIndex = -1;        //!< \c myLanguageCombBoxIndex  @brief Language CombBox Index.
         int                 myRecordID             = -1;        //!< \c myRecordID              @brief Record ID.
         int                 myTranslationErrorType = -1;        //!< \c myTranslationErrorType  @brief Translation Error Type.
         int                 myIncreameantValue     = 60;        //!< \c myIncreameantValue      @brief Increameant Value in Seconds.
         int                 myDelayValue           = 60*6;      //!< \c myIncreameantValue      @brief Increameant Value in Seconds.
-        MyTranlatorParser  *myTranlatorParser;                  //!< \c myDelayValue            @brief Delay Value.
 };
 #endif // MAINWINDOW_H
 /******************************* End of File *********************************/

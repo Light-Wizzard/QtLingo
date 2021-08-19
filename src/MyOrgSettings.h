@@ -4,6 +4,8 @@
 #include <QCoreApplication>
 #include <QFileInfo>
 #include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include <QObject>
 #include <QTime>
 //
@@ -14,8 +16,7 @@
 #include "MyConstants.h"
 // Crypto
 #include "SimpleCrypt.h"
-// QOnlineTranslator
-#include "qonlinetranslator.h"
+//
 //
 #include <algorithm>
 #include <iostream>
@@ -23,8 +24,8 @@
 #include <string>
 using namespace std;
 /************************************************
- * \class MyOrgSettings
  * @brief My Org Settings.
+ * \class MyOrgSettings
  * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyOrgSettings : public QObject
@@ -145,10 +146,9 @@ class MyOrgSettings : public QObject
 
     private:
         QSettings          *mySettings              = nullptr;      //!< \c mySettings              @brief QSettings is used for this class.
-        QOnlineTranslator   myQOnlineTranslator;                    //!< \c myQOnlineTranslator     @brief QOnlineTranslator
-        QString             myOrganizationName      = "QtLingo";    //!< \c myOrganizationName      @brief Organization Name.
-        QString             myOrganizationDomain    = "QtLingo";    //!< \c myOrganizationDomain    @brief Organization Domain.
-        QString             myApplicationName       = "QtLingo";    //!< \c myApplicationName       @brief Application Name.
+        QString             myOrganizationName      = "";           //!< \c myOrganizationName      @brief Organization Name.
+        QString             myOrganizationDomain    = "";           //!< \c myOrganizationDomain    @brief Organization Domain.
+        QString             myApplicationName       = "";           //!< \c myApplicationName       @brief Application Name.
         QString             myLastApplicationFolder = "";           //!< \c myLastApplicationFolder @brief Last Application Folder
         QPoint              myGeometryPos;                          //!< \c myGeometryPos           @brief Windows Geometry Pos
         QSize               myGeometrySize;                         //!< \c myGeometrySize          @brief Windows Geometry Size

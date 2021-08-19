@@ -9,8 +9,8 @@
 //
 #include "MyOrgSettings.h"
 /************************************************
- * \class MySqlDbtModel
  * @brief SQL Database Table Model.
+ * \class MySqlDbtModel
  * @author Jeffrey Scott Flesher
  ***********************************************/
 class MySqlDbtModel : public QObject

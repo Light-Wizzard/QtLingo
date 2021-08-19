@@ -764,7 +764,7 @@ QOnlineTranslator::Language QOnlineTranslator::language(const QLocale &locale)
 } // end language(const QLocale
 /************************************************
  * @brief Returns general language code.
- * @parm langCode QString "en" returns English
+ * @param langCode QString "en" returns English
  * language
  ***********************************************/
 QOnlineTranslator::Language QOnlineTranslator::language(const QString &langCode)

@@ -24,9 +24,9 @@
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
+//
+#include "MyOrgSettings.h"
 // Local
-#include "MyDatatables.h"
-
 /************************************************
  * \class TranslationFiles
  * @brief Translation Files.
@@ -35,7 +35,7 @@ class MyLocalization : public QObject
 {
         Q_OBJECT
     public:
-        explicit MyLocalization(QObject *parent = nullptr, MyDatatables *thisSqlDb = nullptr);  //!< TranslationFiles Constructor
+        explicit MyLocalization(QObject *parent = nullptr, MyOrgSettings *thisSetting = nullptr);  //!< TranslationFiles Constructor
         enum MyMessageTypes
         {
             Information = 100, //!< \c Information  @brief Information
@@ -46,6 +46,11 @@ class MyLocalization : public QObject
         // Makes getting file Info easier
         Q_ENUM(MyMessageTypes)
 //
+        // Public
+        MyOrgSettings  *mySetting;                       //!< \c mySetting @brief Domain Settings
+        // Constants
+        const QString MY_LANG_CODE     = "LanguageCode"; //!< \c MY_LANG_CODE @brief Field Name for Language Code
+        const QString MY_LANG_NAME     = "LanguageName"; //!< \c MY_LANG_NAME @brief Field Name for Language Name
         // Is Debug Message
         void setDebugMessage(bool thisState);       //!< set Debug Message
         bool getDebugMessage();                     //!< get Debug Message
@@ -77,7 +82,7 @@ class MyLocalization : public QObject
         //
         QString readLanguage();                                             //!< read Language
         void writeLanguage(const QString &thisCurrentLanguageCode);         //!< write Language
-        QString language(const QLocale &locale);                            //!< language
+        QString language(const QLocale &thisLocale);                        //!< language
         // Language Code
         void setLanguageCode(const QString &thisLanguageCode);              //!< set Language Code
         QString getLanguageCode();                                          //!< get Language Code
@@ -88,7 +93,6 @@ class MyLocalization : public QObject
     private:
         static const QMap<QString, QString>  s_genericLanguageNameToCode; //!< \c s_genericLanguageNameToCode @brief generic Language Name to Code
         static const QMap<QString, QString>  s_genericLanguageCodeToName; //!< \c s_genericLanguageCodeToName @brief generic Language Code to Name
-        MyDatatables   *mySqlDb;                        //!< \c mySqlDb              @brief Sql Datatables
         bool            isDebugMessage       = true;    //!< \c isDebugMessage       @brief is Debug Message
         QString         myRemoveTransArgs;              //!< \c myRemoveTransArgs    @brief List of Remove Trans Args
         QString         myTranslationSource  = "";      //!< \c myTranslationSource  @brief Translation Source

@@ -418,7 +418,6 @@ int MyOrgSettings::showMessageBox(const QString &thisTitle, const QString &thisM
 } // end showMessageBox
 /************************************************
  * @brief get File Info.
- * @example getFileInfo(BaseName, "/thisPath/fileName.ext")
  * getFileInfo
  ***********************************************/
 QString MyOrgSettings::getFileInfo(MyOrgSettings::MyFileinfo thisInfo, const QString &thisFileFolder)

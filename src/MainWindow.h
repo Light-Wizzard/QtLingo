@@ -76,8 +76,8 @@ class MainWindow : public QMainWindow
         explicit MainWindow(QWidget *parent = nullptr);
         ~MainWindow();
         /*!
-            \enum MainTabs
             @brief Tabs must be forced to be int 0 based indexes that match the actual ui for widgetTab, this enforces compile-time checks.
+            \enum MainTabs
          */
         enum MainTabs
         {
@@ -88,19 +88,18 @@ class MainWindow : public QMainWindow
             TabTabHelp      = 104,  //!< \c TabHelp         @brief Tab Help.
             TabAll          = 200   //!< \c TabAll          @brief Tab All used for Actions on all Tabs.
         }; // end enum MainTabs
-        Q_ENUM(MainTabs) //!<  I enumerate the Tabs to make it easier to travers
+        Q_ENUM(MainTabs)
         /*!
-            \enum TranslationsErrors
             @brief Translations Errors.
+            \enum TranslationsErrors
          */
         enum TranslationsErrors
         {
             NoError           = 100,  //!< \c NoError           @brief No Error.
             HostNotFound      = 101,  //!< \c HostNotFound      @brief Host Not Found: Internet Down, wait till it comes back up.
             ErrorTransferring = 102,  //!< \c ErrorTransferring @brief Error Transferring: server replied: Too Many Requests, increase Delay time.
-        }; // end enum MainTabs
-
-        Q_ENUM(TranslationsErrors) //!<  I enumerate the Tabs to make it easier to travers
+        }; // end enum TranslationsErrors
+        Q_ENUM(TranslationsErrors)
         //
         void onRunFirstOnStartup();                     //!< on Run First On Startup
         //

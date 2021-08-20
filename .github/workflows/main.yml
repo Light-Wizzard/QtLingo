@@ -6,7 +6,7 @@ name: Doxygen Action
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,7 +24,7 @@ jobs:
       uses: mattnotmitt/doxygen-action@v1.1.0
       with:
         # Path to Doxyfile
-        doxyfile-path: "./Doxyfile" # default is ./Doxyfile
+        doxyfile-path: ./Doxyfile # default is ./Doxyfile
         # Working directory
         working-directory: "." # default is .
     
@@ -32,7 +32,8 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        # Default Doxyfile build documentation to html directory. 
-        # Change the directory if changes in Doxyfile
-        publish_dir: ./html
-
+        publish_dir: ./doc/html/
+        #enable_jekyll: false
+        allow_empty_commit: false
+        force_orphan: true
+        publish_branch: gh-pages

@@ -314,9 +314,7 @@ bool MyLocalization::getMainLoaded()
 /************************************************
  * @brief language.
  * language
- * const QMap<QString, QString> MyLocalization::s_genericLanguageNameToCode =
  * @param thisLocale QLocale given QLocale() returns Country Code
- * @example theLocale = language(QLocale());
  ***********************************************/
 QString MyLocalization::language(const QLocale &thisLocale)
 {

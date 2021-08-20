@@ -40,7 +40,6 @@
 #include <QRandomGenerator>
 
 /************************************************
- * \class SimpleCrypt
  * @brief @short Simple encryption and decryption of strings and byte arrays
  *
  * This class provides a simple implementation of encryption and decryption of strings and byte arrays.
@@ -61,6 +60,7 @@
  *
  * SimpleCrypt is prepared for the case that the encryption and decryption algorithm is changed in a later version,
  * by prepending a version identifier to the cypertext.
+ * \class SimpleCrypt
  ***********************************************/
 class SimpleCrypt
 {

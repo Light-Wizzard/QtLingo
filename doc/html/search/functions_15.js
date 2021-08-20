@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['_7emainwindow_1795',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
-  ['_7emydatatables_1796',['~MyDatatables',['../classMyDatatables.html#afddeb9099481eb82a8eb91367f316eef',1,'MyDatatables']]],
-  ['_7emyorgsettings_1797',['~MyOrgSettings',['../classMyOrgSettings.html#a3fe4c6e09f68342e242e86c754e0005c',1,'MyOrgSettings']]],
-  ['_7emysqldbtmodel_1798',['~MySqlDbtModel',['../classMySqlDbtModel.html#a63dad1efad75e7acd44c0072f91be8b9',1,'MySqlDbtModel']]],
-  ['_7eqtlingocase_1799',['~QtLingoCase',['../classQtLingoCase.html#ab0ac0b3c0598a28ad11a2119e95eddf5',1,'QtLingoCase']]]
+  ['_7emainwindow_1701',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
+  ['_7emydatatables_1702',['~MyDatatables',['../classMyDatatables.html#afddeb9099481eb82a8eb91367f316eef',1,'MyDatatables']]],
+  ['_7emyorgsettings_1703',['~MyOrgSettings',['../classMyOrgSettings.html#a3fe4c6e09f68342e242e86c754e0005c',1,'MyOrgSettings']]],
+  ['_7emysqldbtmodel_1704',['~MySqlDbtModel',['../classMySqlDbtModel.html#a63dad1efad75e7acd44c0072f91be8b9',1,'MySqlDbtModel']]],
+  ['_7eqtlingocase_1705',['~QtLingoCase',['../classQtLingoCase.html#ab0ac0b3c0598a28ad11a2119e95eddf5',1,'QtLingoCase']]]
 ];

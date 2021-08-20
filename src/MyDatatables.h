@@ -5,8 +5,8 @@
 #include <QtDebug>
 #include "MySqlDbtModel.h"
 /************************************************
- * \class MyProjectClass
  * @brief Project Class.
+ * \class MyProjectClass
  * @author Jeffrey Scott Flesher
  ***********************************************/
 class MyProjectClass

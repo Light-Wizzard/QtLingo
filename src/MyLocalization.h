@@ -28,8 +28,8 @@
 #include "MyOrgSettings.h"
 // Local
 /************************************************
- * \class TranslationFiles
  * @brief Translation Files.
+ * \class TranslationFiles
  ***********************************************/
 class MyLocalization : public QObject
 {
@@ -49,8 +49,8 @@ class MyLocalization : public QObject
         // Public
         MyOrgSettings  *mySetting;                       //!< \c mySetting @brief Domain Settings
         // Constants
-        const QString MY_LANG_CODE     = "LanguageCode"; //!< \c MY_LANG_CODE @brief Field Name for Language Code
-        const QString MY_LANG_NAME     = "LanguageName"; //!< \c MY_LANG_NAME @brief Field Name for Language Name
+        const QString MY_LANG_CODE = "LanguageCode"; //!< \c MY_LANG_CODE @brief Field Name for Language Code
+        const QString MY_LANG_NAME = "LanguageName"; //!< \c MY_LANG_NAME @brief Field Name for Language Name
         // Is Debug Message
         void setDebugMessage(bool thisState);       //!< set Debug Message
         bool getDebugMessage();                     //!< get Debug Message

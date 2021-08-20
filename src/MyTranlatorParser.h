@@ -13,7 +13,10 @@
 #include "third-party/ts_tool/ts_model.h"
 // Local
 #include "MyOrgSettings.h"
-
+/************************************************
+ * @brief Tranlator Parser.
+ * \class MyTranlatorParser
+ ***********************************************/
 class MyTranlatorParser : public QObject
 {
         Q_OBJECT
@@ -26,8 +29,8 @@ class MyTranlatorParser : public QObject
         void toTS(const QString &inputDir, const QString &outputFile, const QString &langid);     //!< toTS
 
     private:
-        MyOrgSettings  *mySetting;             //!< \c mySetting @brief Domain Settings
-        bool            isDebugMessage = true; //!< \c isDebugMessage       @brief is Debug Message
+        MyOrgSettings  *mySetting;             //!< \c mySetting      @brief Domain Settings
+        bool            isDebugMessage = true; //!< \c isDebugMessage @brief is Debug Message
 
 };
 #endif // MYTRANLATORPARSER_H

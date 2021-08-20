@@ -1,8 +1,8 @@
 #include "MyDatatables.h"
 
 /************************************************
- * MyDatatables
  * @brief My Datatables Constructor.
+ * MyDatatables
  ***********************************************/
 MyDatatables::MyDatatables(QObject *parent) : QObject(parent)
 {
@@ -11,16 +11,16 @@ MyDatatables::MyDatatables(QObject *parent) : QObject(parent)
     myProject = new MyProjectClass("", "", "", "", "", "", "", "", "");
 }
 /************************************************
- * MyDatatables
  * @brief My Datatables Deconstructor.
+ * MyDatatables
  ***********************************************/
 MyDatatables::~MyDatatables()
 {
 
 }
 /************************************************
- * setDebugMessage
  * @brief set Debug Message.
+ * setDebugMessage
  ***********************************************/
 void MyDatatables::setDebugMessage(bool thisState)
 {
@@ -28,8 +28,8 @@ void MyDatatables::setDebugMessage(bool thisState)
     if (isDebugMessage) { qDebug() << "setDebugMessage"; }
 }
 /************************************************
- * getDebugMessage
  * @brief get Debug Message.
+ * getDebugMessage
  ***********************************************/
 bool MyDatatables::getDebugMessage()
 {
@@ -37,8 +37,8 @@ bool MyDatatables::getDebugMessage()
     return isDebugMessage;
 }
 /************************************************
- * setProjectFolder
  * @brief set Project Folder.
+ * setProjectFolder
  ***********************************************/
 void MyDatatables::setProjectFolder(const QString &thisProjectFolder)
 {
@@ -46,8 +46,8 @@ void MyDatatables::setProjectFolder(const QString &thisProjectFolder)
     myProjectFolder = thisProjectFolder;
 }
 /************************************************
- * getProjectFolder
  * @brief get Project Folder.
+ * getProjectFolder
  ***********************************************/
 QString MyDatatables::getProjectFolder()
 {
@@ -55,8 +55,8 @@ QString MyDatatables::getProjectFolder()
     return myProjectFolder;
 }
 /************************************************
- * setProjectName
  * @brief set Project Name.
+ * setProjectName
  ***********************************************/
 void MyDatatables::setProjectName(const QString &thisProjectName)
 {
@@ -64,8 +64,8 @@ void MyDatatables::setProjectName(const QString &thisProjectName)
     myProjectName = thisProjectName;
 }
 /************************************************
- * getProjectName
  * @brief get Project Name.
+ * getProjectName
  ***********************************************/
 QString MyDatatables::getProjectName()
 {
@@ -73,8 +73,8 @@ QString MyDatatables::getProjectName()
     return myProjectName;
 }
 /************************************************
- * setProjectID
  * @brief set Project ID.
+ * setProjectID
  ***********************************************/
 void MyDatatables::setProjectID(const QString &thisProjectID)
 {
@@ -82,8 +82,8 @@ void MyDatatables::setProjectID(const QString &thisProjectID)
     myProjectID = thisProjectID;
 }
 /************************************************
- * getProjectID
  * @brief get Project ID.
+ * getProjectID
  ***********************************************/
 QString MyDatatables::getProjectID()
 {
@@ -91,8 +91,8 @@ QString MyDatatables::getProjectID()
     return myProjectID;
 }
 /************************************************
- * setComboBoxSqlValue
  * @brief set ComboBox Sql Value.
+ * setComboBoxSqlValue
  ***********************************************/
 void MyDatatables::setComboBoxSqlValue(const QString &thisComboBoxSqlValue)
 {
@@ -100,8 +100,8 @@ void MyDatatables::setComboBoxSqlValue(const QString &thisComboBoxSqlValue)
     myComboBoxSqlValue = thisComboBoxSqlValue;
 }
 /************************************************
- * getComboBoxSqlValue
  * @brief get ComboBox Sql Value.
+ * getComboBoxSqlValue
  ***********************************************/
 QString MyDatatables::getComboBoxSqlValue()
 {
@@ -213,8 +213,8 @@ QString MyDatatables::getQtProjectNameSelectQuery()
     return QString("SELECT id, QtProjectName FROM Projects");
 }
 /************************************************
- * getQtProjectNameByNameQuery
  * @brief get Qt Project Name By Name Query SELECT id, QtProjectName FROM Projects WHERE QtProjectFolder =.
+ * getQtProjectNameByNameQuery
  ***********************************************/
 QString MyDatatables::getQtProjectNameByNameQuery(const QString &thisProject)
 {

@@ -1,8 +1,8 @@
 #ifndef __EFL_HASH_h__
 #define __EFL_HASH_h__
 /************************************************
- *  \typedef hash_t
  *  @brief type of efl_hash.
+ *  \typedef hash_t
  ***********************************************/
 typedef unsigned long hash_t;
 /************************************************

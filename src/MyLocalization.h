@@ -55,7 +55,8 @@ class MyLocalization : public QObject
         void setDebugMessage(bool thisState);       //!< set Debug Message
         bool getDebugMessage();                     //!< get Debug Message
         // Localization
-        QStringList findQmFiles(const QString &thisFolder);                             //!< findQmFiles
+        QStringList findQmFiles(const QString &thisFolder);                             //!< find Qm Files
+        QStringList findTsFiles(const QString &thisFolder);                             //!< find Ts Files
         bool        languageMatch(const QString &thisPrefix, const QString &thisLang, const QString &thisQmFile); //!< language Match
         QString     languageNameFromFile(const QString &thisTranslationFile);               //!< language Name From File
         QString     getLocalizerCode(const QString &thisPrefix, const QString &thisQmFile); //!< get Localizer Code

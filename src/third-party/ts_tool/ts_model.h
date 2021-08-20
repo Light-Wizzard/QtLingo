@@ -6,33 +6,33 @@
 #include <QXmlStreamAttributes>
 
 //std
+#include <algorithm>
+#include <assert.h>
 #include <iostream>
-#include <vector>
 #include <map>
 #include <memory>
-
+#include <vector>
 //algs
 #include "efl_hash.h"
 
 QT_BEGIN_NAMESPACE
 class QXmlStreamWriter;
 class QFile;
-QT_END_NAMESPACE
-
-//...............................................................................................................
-// Visitors
-//...............................................................................................................
-
 struct document_node;
 struct DTD_node;
 struct element_node;
 struct TS_node;
+QT_END_NAMESPACE
 
+/************************************************
+ * @brief visitors.
+ * \namespace visitors
+ ***********************************************/
 namespace visitors
 {
     /************************************************
-     * \struct document_dump
      * @brief document dump.
+     * \struct document_dump
      ***********************************************/
     struct document_dump
     {
@@ -47,14 +47,14 @@ namespace visitors
             QXmlStreamWriter &m_writer;
     };
     /************************************************
-     * \typedef map_hashQString
      * @brief map hashQString.
+     * \typedef map_hashQString
      ***********************************************/
     typedef std::map<hash_t, QString>	map_hashQString;
     typedef std::map<QString, QString>	map_QStringQString;
     /************************************************
-     * \struct string_extractor_replacer
      * @brief string extractor replacer.
+     * \struct string_extractor_replacer
      ***********************************************/
     struct string_extractor_replacer
     {
@@ -74,8 +74,8 @@ namespace visitors
             bool m_with_unfinished, m_with_vanished, m_unfinished_only;
     };
     /************************************************
-     * \struct back_string_replacer
      * @brief back string replacer.
+     * \struct back_string_replacer
      ***********************************************/
     struct back_string_replacer
     {
@@ -97,8 +97,8 @@ namespace visitors
     };
 }
 /************************************************
- * \struct base_node
  * @brief base node.
+ * \struct base_node
  ***********************************************/
 struct base_node : std::enable_shared_from_this<base_node>
 {
@@ -137,8 +137,8 @@ struct base_node : std::enable_shared_from_this<base_node>
         base_node_ptr m_parent;
 };
 /************************************************
- * \struct document_node
  * @brief document node.
+ * \struct document_node
  ***********************************************/
 struct document_node : base_node
 {
@@ -149,8 +149,8 @@ struct document_node : base_node
         virtual void visit(visitors::back_string_replacer &visitor) override { visitor.visit(this); }
 };
 /************************************************
- * \struct DTD_node
  * @brief DTD node.
+ * \struct DTD_node
  ***********************************************/
 struct DTD_node : base_node
 {
@@ -165,8 +165,8 @@ struct DTD_node : base_node
         QString m_systemId;
 };
 /************************************************
- * \struct element_node
  * @brief element node.
+ * \struct element_node
  ***********************************************/
 struct element_node : base_node
 {
@@ -195,8 +195,8 @@ struct element_node : base_node
         QString m_text;
 };
 /************************************************
- * \struct TS_node
  * @brief TS node.
+ * \struct TS_node
  ***********************************************/
 struct TS_node : element_node
 {

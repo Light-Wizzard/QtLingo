@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QCloseEvent>
+#include <QDir>
 #include <QFile>
 #include <QMainWindow>
 #include <QMap>
@@ -147,6 +148,7 @@ class MainWindow : public QMainWindow
         void translateHelp();                           //!< translate Help Files
         void createHelpTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create Help Translation Job
         void setLanguageCode();                         //!< set Language Code Lable in UI
+        void acceptTranslations();                      //!< accept Translations
 
     public slots:
         void onHelp();                                  //!< on Help

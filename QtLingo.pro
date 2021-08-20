@@ -55,7 +55,9 @@ SOURCES += src/main.cpp src/MainWindow.cpp \
 #
 FORMS += src/MainWindow.ui
 #
-INCLUDEPATH += $$PWD/src $$PWD/third-party/qonlinetranslator/src
+INCLUDEPATH += $$PWD/src $$PWD/src/third-party/qonlinetranslator/src
+#
+include(src/third-party/qonlinetranslator/qonlinetranslator.pri)
 # Resources
 RESOURCES   += QtLingo.qrc
 #
@@ -80,10 +82,9 @@ TRANSLATIONS += translations/QtLingo_ar.ts \
                 translations/QtLingo_sv.ts \
                 translations/QtLingo_zh-CN.ts
 #
-include(src/third-party/qonlinetranslator/qonlinetranslator.pri)
-#
 DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \
+    .github/workflows/main.yml \
     Doxyfile \
     help/About-Author_en.md \
     help/About_en.md \
@@ -102,7 +103,7 @@ DISTFILES += README.md CMakeLists.txt \
     src/third-party/docs/QOnlineTranslator.md \
     src/third-party/docs/QOnlineTts.md \
     src/third-party/docs/QOption.md \
-    src/third-party/qonlinetranslator/CMakeLists.txt \
+    src/third-party/qonlinetranslator/CMakeLists.txt
 
 ###############################################################################
 #

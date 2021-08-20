@@ -221,6 +221,17 @@ QStringList MyLocalization::findQmFiles(const QString &thisFolder)
     return fileNames;
 }
 /************************************************
+ * @brief find Ts Files.
+ * findTsFiles
+ ***********************************************/
+QStringList MyLocalization::findTsFiles(const QString &thisFolder)
+{
+    QDir dir(thisFolder);
+    QStringList fileNames = dir.entryList(QStringList("*.ts"), QDir::Files, QDir::Name);
+    for (QString &fileName : fileNames)
+        { fileName = dir.filePath(fileName); }
+    return fileNames;
+}/************************************************
  * @brief get Localizer Code.
  * getLocalizerCode
  ***********************************************/

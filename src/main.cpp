@@ -86,30 +86,30 @@ void logEvents(const QString &thisMessage)
  ***********************************************/
 void myMessageHandler(QtMsgType thisType, const QMessageLogContext &thisContext, const QString &thisMsg)
 {
-    QByteArray localMsg = thisMsg.toLocal8Bit();
-    const char *file = thisContext.file ? thisContext.file : "";
-    const char *function = thisContext.function ? thisContext.function : "";
+    QByteArray theLocalMsg  = thisMsg.toLocal8Bit();
+    const char *theFile     = thisContext.file ? thisContext.file : "";
+    const char *theFunction = thisContext.function ? thisContext.function : "";
     switch (thisType)
     {
         case QtDebugMsg:
-            logEvents(QString("Debug: %1 (%2:%3, %4)\n").arg(thisMsg, thisContext.file ? thisContext.file : "", QString::number(thisContext.line), thisContext.function ? thisContext.function : ""));
-            fprintf(stderr, "Debug: %s (%s:%u, %s)\n", localMsg.constData(), file, thisContext.line, function);
+            logEvents(QString("Debug: %1 (%2:%3, %4)\n").arg(theLocalMsg.constData(), theFile, QString::number(thisContext.line), theFunction));
+            fprintf(stderr, "Debug: %s (%s:%u, %s)\n", theLocalMsg.constData(), theFile, thisContext.line, theFunction);
             break;
         case QtInfoMsg:
-            logEvents(QString("Info: %1 (%2:%3, %4)\n").arg(thisMsg, thisContext.file ? thisContext.file : "", QString::number(thisContext.line), thisContext.function ? thisContext.function : ""));
-            fprintf(stderr, "Info: %s (%s:%u, %s)\n", localMsg.constData(), file, thisContext.line, function);
+            logEvents(QString("Info: %1 (%2:%3, %4)\n").arg(theLocalMsg.constData(), theFile, QString::number(thisContext.line), theFunction));
+            fprintf(stderr, "Info: %s (%s:%u, %s)\n", theLocalMsg.constData(), theFile, thisContext.line, theFunction);
             break;
         case QtWarningMsg:
-            logEvents(QString("Warning: %1 (%2:%3, %4)\n").arg(thisMsg, thisContext.file ? thisContext.file : "", QString::number(thisContext.line), thisContext.function ? thisContext.function : ""));
-            fprintf(stderr, "Warning: %s (%s:%u, %s)\n", localMsg.constData(), file, thisContext.line, function);
+            logEvents(QString("Warning: %1 (%2:%3, %4)\n").arg(theLocalMsg.constData(), theFile, QString::number(thisContext.line), theFunction));
+            fprintf(stderr, "Warning: %s (%s:%u, %s)\n", theLocalMsg.constData(), theFile, thisContext.line, theFunction);
             break;
         case QtCriticalMsg:
-            logEvents(QString("Critical: %1 (%2:%3, %4)\n").arg(thisMsg, thisContext.file ? thisContext.file : "", QString::number(thisContext.line), thisContext.function ? thisContext.function : ""));
-            fprintf(stderr, "Critical: %s (%s:%u, %s)\n", localMsg.constData(), file, thisContext.line, function);
+            logEvents(QString("Critical: %1 (%2:%3, %4)\n").arg(theLocalMsg.constData(), theFile, QString::number(thisContext.line), theFunction));
+            fprintf(stderr, "Critical: %s (%s:%u, %s)\n", theLocalMsg.constData(), theFile, thisContext.line, theFunction);
             break;
         case QtFatalMsg:
-            logEvents(QString("Fatal: %1 (%2:%3, %4)\n").arg(thisMsg, thisContext.file ? thisContext.file : "", QString::number(thisContext.line), thisContext.function ? thisContext.function : ""));
-            fprintf(stderr, "Fatal: %s (%s:%u, %s)\n", localMsg.constData(), file, thisContext.line, function);
+            logEvents(QString("Fatal: %1 (%2:%3, %4)\n").arg(theLocalMsg.constData(), theFile, QString::number(thisContext.line), theFunction));
+            fprintf(stderr, "Fatal: %s (%s:%u, %s)\n", theLocalMsg.constData(), theFile, thisContext.line, theFunction);
             break;
     }
 }

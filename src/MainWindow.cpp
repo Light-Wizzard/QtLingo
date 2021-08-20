@@ -44,17 +44,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
     // Connect actions
-    connect(ui->actionExit,           &QAction::triggered, this, &MainWindow::close);
-    connect(ui->actionAbout,          &QAction::triggered, this, &MainWindow::onAbout);
-    connect(ui->actionHelp,           &QAction::triggered, this, &MainWindow::onHelp);
-    connect(ui->actionAuthor,         &QAction::triggered, this, &MainWindow::onAuthor);
-    connect(ui->actionClipboard,      &QAction::triggered, this, &MainWindow::onClipboard);
-    connect(ui->actionCompile,        &QAction::triggered, this, &MainWindow::onCompile);
-    connect(ui->actionSave,           &QAction::triggered, this, &MainWindow::onSave);
-    connect(ui->actionTranslate_Help, &QAction::triggered, this, &MainWindow::translateHelp);
-    //
+    connect(ui->actionExit,                 &QAction::triggered, this, &MainWindow::close);
+    connect(ui->actionAbout,                &QAction::triggered, this, &MainWindow::onAbout);
+    connect(ui->actionHelp,                 &QAction::triggered, this, &MainWindow::onHelp);
+    connect(ui->actionAuthor,               &QAction::triggered, this, &MainWindow::onAuthor);
+    connect(ui->actionClipboard,            &QAction::triggered, this, &MainWindow::onClipboard);
+    connect(ui->actionCompile,              &QAction::triggered, this, &MainWindow::onCompile);
+    connect(ui->actionSave,                 &QAction::triggered, this, &MainWindow::onSave);
+    connect(ui->actionTranslate_Help,       &QAction::triggered, this, &MainWindow::translateHelp);
+    connect(ui->actionAccept_Translations,  &QAction::triggered, this, &MainWindow::acceptTranslations);
+    // Progress bar
     connect(mySqlDb->mySqlModel->mySetting, &MyOrgSettings::sendInternetProgress, this, &MainWindow::onInternetProgress);
-    //
+    // Set UI Language Code
     ui->labelSettingsLanguageUI->setText(myQOnlineTranslator.languageCode(myQOnlineTranslator.language(QLocale())));
     // Set Window Title to Application Name
     setWindowTitle(QApplication::applicationName());
@@ -207,18 +208,60 @@ void MainWindow::loadLanguageComboBox()
     } // end for
     QTableView* theTableView = new QTableView(this);
     theTableView->setModel(theLangModel);
+    theTableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    theTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    theTableView->setAutoScroll(false);
     theTableView->verticalHeader()->setVisible(false);
     theTableView->horizontalHeader()->setVisible(false);
     theTableView->setColumnWidth (0, 196);
     theTableView->setColumnWidth (1, 196);
-    theTableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    theTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
-    theTableView->setAutoScroll(false);
     // Set comboBox
     ui->comboBoxSettingsLanguage->setMinimumWidth(400);
     ui->comboBoxSettingsLanguage->setModel(theLangModel);
     ui->comboBoxSettingsLanguage->setView(theTableView);
     ui->comboBoxSettingsLanguage->setCurrentIndex(theCurrentIndex);
+    isMainLoaded = lastIsMainLoaded;
+    myLocalization->setMainLoaded(lastIsMainLoaded);
+}
+/************************************************
+ * @brief set Project Combo.
+ * setProjectCombo
+ ***********************************************/
+void MainWindow::setQtProjectCombo()
+{
+    if (isDebugMessage && isMainLoaded) { qDebug() << "setQtProjectCombo"; }
+    bool lastIsMainLoaded = isMainLoaded;
+    isMainLoaded = false;
+    myLocalization->setMainLoaded(false);
+    ui->comboBoxSettingsProjects->clear();
+    QSqlQueryModel *theModalQtLingo = new QSqlQueryModel(this); //!< SQL Query Model
+    //  SELECT id, QtProjectName FROM Projects
+    const auto SELECTED_PROJECTS_SQL = QLatin1String(R"(%1)").arg(mySqlDb->getQtProjectNameSelectQuery());
+    theModalQtLingo->setQuery(SELECTED_PROJECTS_SQL);
+    if (theModalQtLingo->lastError().isValid()) { qWarning() << theModalQtLingo->lastError(); }
+    theModalQtLingo->setHeaderData(0,Qt::Horizontal, tr("ID"));
+    theModalQtLingo->setHeaderData(1, Qt::Horizontal, tr("Project"));
+    QTableView *theTableView = new QTableView;
+    theTableView->setModel(theModalQtLingo);
+    theTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    theTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    theTableView->verticalHeader()->setVisible(false);
+    theTableView->horizontalHeader()->setVisible(false);
+    theTableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    theTableView->setAutoScroll(false);
+    //theTableView->setColumnHidden(0, true);
+    theTableView->setColumnWidth (1, 296);
+    //ui->comboBoxSettingsProjects->setModel(nullptr);
+    ui->comboBoxSettingsProjects->setModel(theModalQtLingo);
+    ui->comboBoxSettingsProjects->setView(theTableView);
+    ui->comboBoxSettingsProjects->setMinimumWidth(300);
+    ui->comboBoxSettingsProjects->setModelColumn(1);
+    ui->comboBoxSettingsProjects->setCurrentIndex(0);
+    // Set by Project name or Index
+    QString theProjectName = mySqlDb->getProjectName();
+    ui->comboBoxSettingsProjects->setCurrentIndex(ui->comboBoxSettingsProjects->findText(theProjectName));
+    // int theProjectIndex = mySqlDb->getProjectID().toInt();
+    //  ui->comboBoxSettingsProjects->setCurrentIndex(theProjectIndex);
     isMainLoaded = lastIsMainLoaded;
     myLocalization->setMainLoaded(lastIsMainLoaded);
 }
@@ -395,48 +438,6 @@ void MainWindow::readSqlDatabaseInfo()
         { ui->lineEditSqlPassword->setText(thePassword); }
     else
         { ui->lineEditSqlPassword->setText(""); }
-}
-/************************************************
- * @brief set Project Combo.
- * setProjectCombo
- ***********************************************/
-void MainWindow::setQtProjectCombo()
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setQtProjectCombo"; }
-    bool lastIsMainLoaded = isMainLoaded;
-    isMainLoaded = false;
-    myLocalization->setMainLoaded(false);
-    ui->comboBoxSettingsProjects->clear();
-    QSqlQueryModel *theModalQtLingo = new QSqlQueryModel; //!< SQL Query Model
-    //  SELECT id, QtProjectName FROM Projects
-    const auto SELECTED_PROJECTS_SQL = QLatin1String(R"(%1)").arg(mySqlDb->getQtProjectNameSelectQuery());
-    theModalQtLingo->setQuery(SELECTED_PROJECTS_SQL);
-    if (theModalQtLingo->lastError().isValid()) { qWarning() << theModalQtLingo->lastError(); }
-    theModalQtLingo->setHeaderData(0,Qt::Horizontal, tr("ID"));
-    theModalQtLingo->setHeaderData(1, Qt::Horizontal, tr("Project"));
-    QTableView *theView = new QTableView;
-    theView->setSelectionBehavior(QAbstractItemView::SelectRows);
-    theView->setSelectionMode(QAbstractItemView::SingleSelection);
-    theView->verticalHeader()->setVisible(false);
-    theView->horizontalHeader()->setVisible(false);
-    theView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    theView->setAutoScroll(false);
-    theView->setColumnWidth (0, 10);
-    theView->setColumnWidth (1, 196);
-    theView->setColumnHidden(0, true);
-    //ui->comboBoxSettingsProjects->setModel(nullptr);
-    ui->comboBoxSettingsProjects->setModel(theModalQtLingo);
-    ui->comboBoxSettingsProjects->setView(theView);
-    ui->comboBoxSettingsProjects->setMinimumWidth(200);
-    ui->comboBoxSettingsProjects->setModelColumn(1);
-    ui->comboBoxSettingsProjects->setCurrentIndex(0);
-    // Set by Project name or Index
-    QString theProjectName = mySqlDb->getProjectName();
-    ui->comboBoxSettingsProjects->setCurrentIndex(ui->comboBoxSettingsProjects->findText(theProjectName));
-    // int theProjectIndex = mySqlDb->getProjectID().toInt();
-    //  ui->comboBoxSettingsProjects->setCurrentIndex(theProjectIndex);
-    isMainLoaded = lastIsMainLoaded;
-    myLocalization->setMainLoaded(lastIsMainLoaded);
 }
 /************************************************
  * @brief on Author.
@@ -2311,6 +2312,23 @@ QString MainWindow::checkTranslationErrors(const QString &thisTranslations, cons
     return myTranslation;
 }
 /************************************************
+ * @brief accept Translations.
+ * acceptTranslations
+ ***********************************************/
+void MainWindow::acceptTranslations()
+{
+    const QStringList theTsFiles =  myLocalization->findTsFiles(ui->lineEditTranslationsSource->text());
+    for (int i = 0; i < theTsFiles.size(); ++i)
+    {
+        if (!mySqlDb->mySqlModel->mySetting->isFileExists(theTsFiles.at(i)))
+            { mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Translation TS File not found"), QString("%1: %2").arg(tr("Translation TS File not found"), theTsFiles.at(i)), mySqlDb->mySqlModel->mySetting->Critical); }
+        QString theFileContent = mySqlDb->mySqlModel->mySetting->readFile(theTsFiles.at(i));
+        theFileContent.replace(QString(" type=\"unfinished\""), QString("")); // replace text in string
+        mySqlDb->mySqlModel->mySetting->writeFile(theTsFiles.at(i), theFileContent);
+    }
+    ui->statusbar->showMessage(tr("Accepted all Translations"));
+}
+/************************************************
  * @brief create Translation Job, I pass in the Name of the Language,
  *        and the language ID, I do not use the Name, but find it nice to have the info with it.
  * createTranslationJob
@@ -2640,30 +2658,30 @@ void MainWindow::createHelpTranslationJob(const QString &thisLanguageName, const
 QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang)
 {
     if (isDebugMessage && isMainLoaded) { qDebug() << "translateWithReturn(" << text << ", " << engine << ", " << translationLang << ", " << sourceLang << ", " << uiLang << ")"; }
-    //
-    myTranslation = "";
-    //
+    // Clear Translation
+    myTranslation.clear();
+    // Event Loop
     QEventLoop theEventLoop;
-    //
-    QOnlineTranslator translator;
-    //
-    translator.translate(text, engine, translationLang, sourceLang, uiLang);
-    //
-    QObject::connect(&translator, &QOnlineTranslator::finished, &theEventLoop, [&]
+    // Create Translator
+    QOnlineTranslator theTranslator;
+    // Call Translate on a thread
+    theTranslator.translate(text, engine, translationLang, sourceLang, uiLang);
+    // Connect to thread finished
+    QObject::connect(&theTranslator, &QOnlineTranslator::finished, &theEventLoop, [&]
     {
-        if (translator.error() == QOnlineTranslator::NoError)
+        if (theTranslator.error() == QOnlineTranslator::NoError)
         {
-            if (isTranslationLog) { qInfo() << translator.translation(); }
-            myTranslation = translator.translation();
-            isTranslationError = false;
-            myTranslationError = "";
+            if (isTranslationLog) { qInfo() << theTranslator.translation(); }
+            myTranslation = theTranslator.translation();
+            isTranslationError = false; // No Error
+            myTranslationError.clear(); // No Error Message
         }
         else
         {
-            qCritical() << translator.errorString();
-            myTranslationError = QString("%1 %2 %3").arg(tr("Error in Translation phrase"), text, translator.errorString());
+            qCritical() << theTranslator.errorString();
+            myTranslationError = QString("%1 %2 %3").arg(tr("Error in Translation phrase"), text, theTranslator.errorString());
             isTranslationError = true;
-            myTranslation = "";
+            myTranslation.clear();
         }
         theEventLoop.quit();
     });

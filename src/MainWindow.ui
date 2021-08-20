@@ -252,7 +252,7 @@
             <item>
              <widget class="QLabel" name="labelSettingsLanguageUI">
               <property name="text">
-               <string>English</string>
+               <string notr="true">English</string>
               </property>
              </widget>
             </item>
@@ -1846,6 +1846,7 @@
      <string>File</string>
     </property>
     <addaction name="actionCompile"/>
+    <addaction name="actionAccept_Translations"/>
     <addaction name="actionTranslate_Help"/>
     <addaction name="separator"/>
     <addaction name="actionClipboard"/>
@@ -1883,6 +1884,7 @@
    <addaction name="separator"/>
    <addaction name="actionCompile"/>
    <addaction name="actionTranslate_Help"/>
+   <addaction name="actionAccept_Translations"/>
    <addaction name="separator"/>
    <addaction name="actionClipboard"/>
    <addaction name="separator"/>
@@ -1963,6 +1965,15 @@
    </property>
    <property name="text">
     <string>Translate Help</string>
+   </property>
+  </action>
+  <action name="actionAccept_Translations">
+   <property name="icon">
+    <iconset resource="../QtLingo.qrc">
+     <normaloff>:/images/lock.png</normaloff>:/images/lock.png</iconset>
+   </property>
+   <property name="text">
+    <string>Accept Translations</string>
    </property>
   </action>
  </widget>

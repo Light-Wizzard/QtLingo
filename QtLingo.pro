@@ -6,7 +6,7 @@ TEMPLATE = "app"
 # Do not use Spaces in Target Name
 TARGET = "QtLingo"
 #
-QT += core gui sql network multimedia concurrent widgets printsupport
+QT += core gui sql widgets network multimedia concurrent printsupport
 #
 #CONFIG *= strict_c++
 #CONFIG *= "c++11"
@@ -70,10 +70,11 @@ CONFIG += lrelease
 CONFIG += embed_translations
 LRELEASE_DIR=./translations
 QM_FILES_RESOURCE_PREFIX=./translations
-# ar,de,en,fr,it,ja,no,ru,sv,zh-CN
+# ar,de,en,es,fr,it,ja,no,ru,sv,zh-CN
 TRANSLATIONS += translations/QtLingo_ar.ts \
                 translations/QtLingo_de.ts \
                 translations/QtLingo_en.ts \
+                translations/QtLingo_es.ts \
                 translations/QtLingo_fr.ts \
                 translations/QtLingo_it.ts \
                 translations/QtLingo_ja.ts \
@@ -89,6 +90,7 @@ DISTFILES += README.md CMakeLists.txt \
     help/About-Author_en.md \
     help/About_en.md \
     help/Help_en.md \
+    help/Language.txt \
     help/Languages.txt \
     help/images/settings.png \
     help/images/sql.png \

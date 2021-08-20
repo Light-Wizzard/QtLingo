@@ -4,6 +4,7 @@
         <file>help/Help_ar.md</file>
         <file>help/Help_de.md</file>
         <file>help/Help_en.md</file>
+        <file>help/Help_es.md</file>
         <file>help/Help_fr.md</file>
         <file>help/Help_it.md</file>
         <file>help/Help_ja.md</file>
@@ -14,6 +15,7 @@
         <file>help/About_ar.md</file>
         <file>help/About_de.md</file>
         <file>help/About_en.md</file>
+        <file>help/About_es.md</file>
         <file>help/About_fr.md</file>
         <file>help/About_it.md</file>
         <file>help/About_ja.md</file>
@@ -24,6 +26,7 @@
         <file>help/About-Author_ar.md</file>
         <file>help/About-Author_de.md</file>
         <file>help/About-Author_en.md</file>
+        <file>help/About-Author_es.md</file>
         <file>help/About-Author_fr.md</file>
         <file>help/About-Author_it.md</file>
         <file>help/About-Author_ja.md</file>
@@ -35,6 +38,7 @@
         <file>translations/QtLingo_ar.qm</file>
         <file>translations/QtLingo_de.qm</file>
         <file>translations/QtLingo_en.qm</file>
+        <file>translations/QtLingo_es.qm</file>
         <file>translations/QtLingo_fr.qm</file>
         <file>translations/QtLingo_it.qm</file>
         <file>translations/QtLingo_ja.qm</file>

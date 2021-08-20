@@ -53,7 +53,6 @@
         <translation>UI言語</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="255"/>
         <location filename="../src/MyLocalization.cpp" line="136"/>
         <source>English</source>
         <translation>英語</translation>
@@ -89,7 +88,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="360"/>
         <location filename="../src/MainWindow.ui" line="525"/>
-        <location filename="../src/MainWindow.ui" line="1956"/>
+        <location filename="../src/MainWindow.ui" line="1958"/>
         <source>Save</source>
         <translation>保存する</translation>
     </message>
@@ -155,7 +154,7 @@
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="613"/>
-        <location filename="../src/MainWindow.cpp" line="1974"/>
+        <location filename="../src/MainWindow.cpp" line="1975"/>
         <source>Source</source>
         <translation>ソース</translation>
     </message>
@@ -867,13 +866,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1929"/>
+        <location filename="../src/MainWindow.ui" line="1931"/>
         <source>Translate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1965"/>
+        <location filename="../src/MainWindow.ui" line="1967"/>
         <source>Translate Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1976"/>
+        <source>Accept Translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -886,14 +890,14 @@
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1799"/>
-        <location filename="../src/MainWindow.cpp" line="416"/>
+        <location filename="../src/MainWindow.cpp" line="243"/>
         <source>Project</source>
         <translation>計画</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1823"/>
-        <location filename="../src/MainWindow.ui" line="1859"/>
-        <location filename="../src/MainWindow.ui" line="1920"/>
+        <location filename="../src/MainWindow.ui" line="1860"/>
+        <location filename="../src/MainWindow.ui" line="1922"/>
         <source>Help</source>
         <translation>ヘルプ</translation>
     </message>
@@ -903,17 +907,17 @@
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1874"/>
+        <location filename="../src/MainWindow.ui" line="1875"/>
         <source>toolBar</source>
         <translation>toolBar</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1902"/>
+        <location filename="../src/MainWindow.ui" line="1904"/>
         <source>Exit</source>
         <translation>出口</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1911"/>
+        <location filename="../src/MainWindow.ui" line="1913"/>
         <source>About</source>
         <translation>約</translation>
     </message>
@@ -922,124 +926,149 @@
         <translation type="vanished">コンパイル</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1938"/>
+        <location filename="../src/MainWindow.ui" line="1940"/>
         <source>Clipboard</source>
         <translation>クリップボード</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1947"/>
+        <location filename="../src/MainWindow.ui" line="1949"/>
         <source>Author</source>
         <translation>著者</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="112"/>
+        <location filename="../src/MainWindow.cpp" line="113"/>
         <source>Internet is down, trying to reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="415"/>
+        <location filename="../src/MainWindow.cpp" line="242"/>
         <source>ID</source>
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="505"/>
+        <location filename="../src/MainWindow.cpp" line="506"/>
         <source>Translation Source Folder Location</source>
         <translation type="unfinished">翻訳元フォルダの場所</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="522"/>
+        <location filename="../src/MainWindow.cpp" line="523"/>
         <source>Translation Destination Folder Location</source>
         <translation type="unfinished">翻訳先フォルダの場所</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="538"/>
-        <location filename="../src/MainWindow.cpp" line="554"/>
+        <location filename="../src/MainWindow.cpp" line="539"/>
+        <location filename="../src/MainWindow.cpp" line="555"/>
         <source>Projects Folder Location</source>
         <translation type="unfinished">プロジェクトフォルダの場所</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="614"/>
+        <location filename="../src/MainWindow.cpp" line="615"/>
         <source>Sqlite Folder Location</source>
         <translation type="unfinished">Sqliteフォルダの場所</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="629"/>
+        <location filename="../src/MainWindow.cpp" line="630"/>
         <source>Failed to move Database</source>
         <translation type="unfinished">データベースの移動に失敗しました</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1544"/>
-        <location filename="../src/MainWindow.cpp" line="1549"/>
+        <location filename="../src/MainWindow.cpp" line="1545"/>
+        <location filename="../src/MainWindow.cpp" line="1550"/>
         <source>Unable to find record in database</source>
         <translation type="unfinished">データベースにレコードが見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1549"/>
+        <location filename="../src/MainWindow.cpp" line="1550"/>
         <source>Could not read from the Database</source>
         <translation type="unfinished">データベースから読み取ることができませんでした</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1974"/>
+        <location filename="../src/MainWindow.cpp" line="1975"/>
         <source>and Destination</source>
         <translation type="unfinished">と目的地</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1974"/>
+        <location filename="../src/MainWindow.cpp" line="1975"/>
         <source>cannot be the same</source>
         <translation type="unfinished">同じにすることはできません</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1980"/>
+        <location filename="../src/MainWindow.cpp" line="1981"/>
         <source>Project file not found</source>
         <translation type="unfinished">プロジェクトファイルが見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1986"/>
+        <location filename="../src/MainWindow.cpp" line="1987"/>
         <source>Error running lupdate</source>
         <translation type="unfinished">lupdateの実行中にエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1991"/>
+        <location filename="../src/MainWindow.cpp" line="1992"/>
         <source>Error could not make Translations Destination</source>
         <translation type="unfinished">エラーは翻訳先を作成できませんでした</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2167"/>
+        <location filename="../src/MainWindow.cpp" line="2168"/>
         <source>Can not remove file</source>
         <translation type="unfinished">ファイルを削除できません</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2176"/>
+        <location filename="../src/MainWindow.cpp" line="2177"/>
         <source>Can not find Txt file</source>
         <translation type="unfinished">Txtファイルが見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2242"/>
+        <location filename="../src/MainWindow.cpp" line="2243"/>
         <source>Error running lrelease</source>
         <translation type="unfinished">lreleaseの実行中にエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2520"/>
+        <location filename="../src/MainWindow.cpp" line="2324"/>
+        <source>Translation TS File not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="2329"/>
+        <source>Accepted all Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="2543"/>
         <source>Help File not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2526"/>
+        <location filename="../src/MainWindow.cpp" line="2549"/>
         <source>Help File is Empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2548"/>
+        <location filename="../src/MainWindow.cpp" line="2571"/>
         <source>Help File could not be created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2619"/>
+        <location filename="../src/MainWindow.cpp" line="2582"/>
+        <source>README File not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="2588"/>
+        <source>README File is Empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="2610"/>
+        <source>README File could not be created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="2682"/>
         <source>Error in Translation phrase</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2708"/>
+        <location filename="../src/MainWindow.cpp" line="2771"/>
         <source>Help Folder Location</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1083,12 +1112,12 @@
         <translation type="unfinished">暗号の失敗：MyOrgSettings :: onRunOnStartup（）</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="725"/>
+        <location filename="../src/MyOrgSettings.cpp" line="724"/>
         <source>This file was created to test if this folder is writeable by</source>
         <translation type="unfinished">このファイルは、このフォルダがによって書き込み可能かどうかをテストするために作成されました</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="746"/>
+        <location filename="../src/MyOrgSettings.cpp" line="745"/>
         <source>Error: cannot create file</source>
         <translation type="unfinished">エラー：ファイルを作成できません</translation>
     </message>
@@ -1125,12 +1154,12 @@
         <translation type="obsolete">ファイル：</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="649"/>
+        <location filename="../src/MyOrgSettings.cpp" line="648"/>
         <source>File not found</source>
         <translation type="unfinished">ファイルが見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="659"/>
+        <location filename="../src/MyOrgSettings.cpp" line="658"/>
         <source>Folder not found</source>
         <translation type="unfinished">フォルダが見つかりません</translation>
     </message>
@@ -1222,52 +1251,52 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/MainWindow.cpp" line="629"/>
+        <location filename="../src/MainWindow.cpp" line="630"/>
         <source>Database Move Failed</source>
         <translation type="unfinished">データベースの移動に失敗しました</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="653"/>
+        <location filename="../src/MainWindow.cpp" line="654"/>
         <source>Password Revieled</source>
         <translation type="unfinished">パスワードが復活しました</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1544"/>
+        <location filename="../src/MainWindow.cpp" line="1545"/>
         <source>Could not read from the Database</source>
         <translation type="unfinished">データベースから読み取ることができませんでした</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1974"/>
+        <location filename="../src/MainWindow.cpp" line="1975"/>
         <source>Error Source and Destination cannot be the same</source>
         <translation type="unfinished">エラーの送信元と宛先を同じにすることはできません</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1980"/>
+        <location filename="../src/MainWindow.cpp" line="1981"/>
         <source>Project file not found</source>
         <translation type="unfinished">プロジェクトファイルが見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1986"/>
+        <location filename="../src/MainWindow.cpp" line="1987"/>
         <source>Error running lupdate</source>
         <translation type="unfinished">lupdateの実行中にエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1991"/>
+        <location filename="../src/MainWindow.cpp" line="1992"/>
         <source>Error Translations Destination Folder</source>
         <translation type="unfinished">エラー変換先フォルダ</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2167"/>
+        <location filename="../src/MainWindow.cpp" line="2168"/>
         <source>Error trying to remove file</source>
         <translation type="unfinished">ファイルを削除しようとしてエラーが発生しました</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2176"/>
+        <location filename="../src/MainWindow.cpp" line="2177"/>
         <source>Could not find the Txt file</source>
         <translation type="unfinished">Txtファイルが見つかりませんでした</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2242"/>
+        <location filename="../src/MainWindow.cpp" line="2243"/>
         <source>Error running lrelease</source>
         <translation type="unfinished">lreleaseの実行中にエラーが発生しました</translation>
     </message>
@@ -1282,7 +1311,7 @@
         <translation type="unfinished">暗号の失敗</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="746"/>
+        <location filename="../src/MyOrgSettings.cpp" line="745"/>
         <source>File System Error</source>
         <translation type="unfinished">ファイルシステムエラー</translation>
     </message>

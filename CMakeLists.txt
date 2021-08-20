@@ -28,25 +28,23 @@ set(SOURCES
     third-party/ts_tool/ts_model.cpp
 )
 # UI
-set(UI_SOURCES
-    src/MainWindow.ui
-)
+set(UI_SOURCES src/MainWindow.ui)
 #
 qt5_add_resources(SOURCES QtLingo.qrc)
 add_subdirectory(src/third-party/qonlinetranslator)
 # https://github.com/pedrolcl/qt5-i18n
 # not sure if I need to add en since it is the default
 set(TS_FILES
-    translations/QtLingo_en.ts
+    translations/QtLingo_ar.ts
     translations/QtLingo_de.ts
+    translations/QtLingo_en.ts
+    translations/QtLingo_es.ts
     translations/QtLingo_fr.ts
     translations/QtLingo_it.ts
     translations/QtLingo_ja.ts
-    translations/QtLingo_ko.ts
     translations/QtLingo_no.ts
     translations/QtLingo_ru.ts
     translations/QtLingo_sv.ts
-    translations/QtLingo_ar.ts
     translations/QtLingo_zh-CN.ts
 )
 
@@ -58,7 +56,8 @@ endif()
 
 include(TranslationUtils)
 add_app_translations_resource(APP_RES ${QM_FILES})
-add_qt_translations_resource(QT_RES de fr it ja zh no ru sv ar)
+add_qt_translations_resource(QT_RES ar de en es fr it ja no ru sv zh-CN)
+#
 # The qm files are generated in the build tree, but the qrc file is inside the
 # source directory and the path to resources are relative to the location of
 # the qrc file itself. We use configure_file() to copy the qrc file in the build

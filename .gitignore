@@ -1,41 +1,59 @@
-# Directory settings for Plasma
-*.directory
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
 
-# Qt Creator project settings
-CMakeLists.txt.*
-QtLingo.pro.*
-
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+*~
+*.autosave
+*.moc
 *.o
 *.obj
+*.orig
+*.rej
+*_pch.h.cpp
+*_resource.rc
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Thumbs.db
+/.qmake.cache
+/.qmake.stash
 
-# Precompiled Headers
-*.gch
-*.pch
+# qtcreator generated files
+*.pro.user
+*.pro.user*
+# cmake user
+CMakeLists.txt.user
+CMakeLists.txt.user*
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# xemacs temporary files
+*.flc
 
-# Fortran module files
-*.mod
-*.smod
+# Vim temporary files
+.*.swp
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
 
-# Executables
-*.exe
-*.out
-*.app
+# MinGW generated files
+*.Debug
+*.Release
 
+# Python byte code
+*.pyc
 

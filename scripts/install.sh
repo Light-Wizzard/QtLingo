@@ -1,7 +1,6 @@
 #!/bin/bash
-# Qt AppVeyor
 #
-# Last Update: 27 July 2021
+# Last Update: 21 Auguest 2021
 #
 # shell?check -x scripts/install.sh
 #

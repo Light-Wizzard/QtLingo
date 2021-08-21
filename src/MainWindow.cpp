@@ -51,7 +51,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->actionClipboard,            &QAction::triggered, this, &MainWindow::onClipboard);
     connect(ui->actionCompile,              &QAction::triggered, this, &MainWindow::onCompile);
     connect(ui->actionSave,                 &QAction::triggered, this, &MainWindow::onSave);
-    connect(ui->actionTranslate_Help,       &QAction::triggered, this, &MainWindow::translateHelp);
+    connect(ui->actionTranslate_Help,       &QAction::triggered, this, &MainWindow::onTranslateHelp);
+    connect(ui->actionTranslate_ReadMe,     &QAction::triggered, this, &MainWindow::onTranslateReadMe);
     connect(ui->actionAccept_Translations,  &QAction::triggered, this, &MainWindow::acceptTranslations);
     // Progress bar
     connect(mySqlDb->mySqlModel->mySetting, &MyOrgSettings::sendInternetProgress, this, &MainWindow::onInternetProgress);
@@ -2359,7 +2360,7 @@ void MainWindow::createTranslationJob(const QString &thisLanguageName, const QSt
  * @brief translate Help files.
  * translateHelp
  ***********************************************/
-void MainWindow::translateHelp()
+void MainWindow::onTranslateHelp()
 {
     myLingoJob.clear();
     myHelpTranslationsFiles.clear();
@@ -2367,10 +2368,12 @@ void MainWindow::translateHelp()
     myTranslationQrc.clear();
     QString theHelpPath = ui->lineEditTranslationsHelp->text();
     QDir dir(theHelpPath);
-    QStringList fileNames = dir.entryList(QStringList("*.md"), QDir::Files, QDir::Name);
-    for (QString &fileName : fileNames)
+    QStringList theFileNames = dir.entryList(QStringList("*.md"), QDir::Files, QDir::Name);
+    for (QString &theFileName : theFileNames)
     {
-        myHelpTranslationsFiles.append(dir.filePath(fileName));
+        QString theLangCode = myLocalization->getLangCode(theFileName);
+        if (ui->labelTranslationsSourceLanguageCode->text() == theLangCode)
+            { myHelpTranslationsFiles.append(dir.filePath(theFileName)); }
     }
     for (QString &fileName : myHelpTranslationsFiles)
     {
@@ -2515,8 +2518,6 @@ void MainWindow::translateHelp()
     createHelpTranslationJob("Yoruba",              "yo" ,      ui->checkBoxTranslationsYO->isChecked());
     createHelpTranslationJob("YucatecMaya",         "yua",      ui->checkBoxTranslationsYO->isChecked());
     createHelpTranslationJob("Zulu",                "zu" ,      ui->checkBoxTranslationsZU->isChecked());
-    // Read Me
-    QString theReadMeFile = QString("%1%2%3").arg(ui->lineEditTranslationsProjectFolder->text(), QDir::separator(), "README.md");
     //
     ui->textEditProjects->setText(QString("%1\n").arg(myTranslationQrc));
     // Go to Tab
@@ -2527,15 +2528,16 @@ void MainWindow::translateHelp()
     ui->progressBarProjectsTranslations->show();
     ui->progressBarProjectsFiles->setMaximum(myLingoJob.count());
     ui->progressBarProjectsFiles->show();
-    // Now I can run the job with myLingoJob
+    /*
+     * Now I can run the job with myLingoJob
+     * Every Language has a Help_xx.md
+    */
     for( int i = 0; i < myLingoJob.count(); ++i )
     {
         ui->progressBarProjectsFiles->setValue(i);
         if (isDebugMessage && isMainLoaded) { qDebug() << "Translating..." << myLingoJob.at(i).getLanguageName(); }
         // Skip if current language is the same as source
         if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { continue; }
-#define MY_HELP_SYSTEM
-#ifdef MY_HELP_SYSTEM
         QString theHelpFile = myLingoJob.at(i).getTsFile();
         // Make sure Source file exists
         if (!mySqlDb->mySqlModel->mySetting->isFileExists(theHelpFile))
@@ -2574,8 +2576,184 @@ void MainWindow::translateHelp()
         ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theHelpFileContents.mid(0, 16), myTranslation));
         // Set a delay or you will be ban from Engine
         mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
-#endif
-        /* *********************************************************************************** */
+        // Set a delay or you will be ban from Engine
+        mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
+        ui->progressBarProjectsTranslations->setValue(i);
+    } // end for( int i = 0; i < myLingoJob.count(); ++i )
+    ui->progressBarProjectsTranslations->hide();
+    ui->progressBarProjectsFiles->hide();
+} // end translateHelp
+/************************************************
+ * @brief translate ReadMe.
+ * onTranslateReadMe
+ ***********************************************/
+void MainWindow::onTranslateReadMe()
+{
+    myLingoJob.clear();
+    myHelpTranslationsFiles.clear();
+    myHelpFileNames.clear();
+    myTranslationQrc.clear();
+    //
+    setProjectClass(TabAll);
+    //
+    createReadMeTranslationJob("Afrikaans",           "af" ,      ui->checkBoxTranslationsAF->isChecked());
+    createReadMeTranslationJob("Albanian",            "sq" ,      ui->checkBoxTranslationsSQ->isChecked());
+    createReadMeTranslationJob("Amharic",             "am" ,      ui->checkBoxTranslationsAM->isChecked());
+    createReadMeTranslationJob("Arabic",              "ar" ,      ui->checkBoxTranslationsAR->isChecked());
+    createReadMeTranslationJob("Armenian",            "hy" ,      ui->checkBoxTranslationsHY->isChecked());
+    createReadMeTranslationJob("Azerbaijani",         "az" ,      ui->checkBoxTranslationsAZ->isChecked());
+    createReadMeTranslationJob("Bashkir",             "ba" ,      ui->checkBoxTranslationsBA->isChecked());
+    createReadMeTranslationJob("Basque",              "eu" ,      ui->checkBoxTranslationsEU->isChecked());
+    createReadMeTranslationJob("Belarusian",          "be" ,      ui->checkBoxTranslationsBE->isChecked());
+    createReadMeTranslationJob("Bengali",             "bn" ,      ui->checkBoxTranslationsBN->isChecked());
+    createReadMeTranslationJob("Bosnian",             "bs" ,      ui->checkBoxTranslationsBS->isChecked());
+    createReadMeTranslationJob("Bulgarian",           "bg" ,      ui->checkBoxTranslationsBG->isChecked());
+    createReadMeTranslationJob("Cantonese",           "yue",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Catalan",             "ca" ,      ui->checkBoxTranslationsCA->isChecked());
+    createReadMeTranslationJob("Cebuano",             "ceb",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Chichewa",            "ny" ,      ui->checkBoxTranslationsNY->isChecked());
+    createReadMeTranslationJob("Corsican",            "co" ,      ui->checkBoxTranslationsCO->isChecked());
+    createReadMeTranslationJob("Croatian",            "hr" ,      ui->checkBoxTranslationsHR->isChecked());
+    createReadMeTranslationJob("Czech",               "cs" ,      ui->checkBoxTranslationsCS->isChecked());
+    createReadMeTranslationJob("SimplifiedChinese",   "zh-CN" ,   ui->checkBoxTranslationsZH_CN->isChecked());
+    createReadMeTranslationJob("TraditionalChinese",  "zh-TW" ,   ui->checkBoxTranslationsZH_TW->isChecked());
+    createReadMeTranslationJob("Danish",              "da" ,      ui->checkBoxTranslationsDA->isChecked());
+    createReadMeTranslationJob("Dutch",               "nl" ,      ui->checkBoxTranslationsNL->isChecked());
+    createReadMeTranslationJob("English",             "en" ,      ui->checkBoxTranslationsEN->isChecked());
+    createReadMeTranslationJob("Estonian",            "et" ,      ui->checkBoxTranslationsET->isChecked());
+    createReadMeTranslationJob("Esperanto",           "eo" ,      ui->checkBoxTranslationsEO->isChecked());
+    createReadMeTranslationJob("Faeroese",            "fo" ,      ui->checkBoxTranslationsFO->isChecked());
+    createReadMeTranslationJob("Farsi",               "fa" ,      ui->checkBoxTranslationsFA->isChecked());
+    createReadMeTranslationJob("Fijian",              "fj" ,      ui->checkBoxTranslationsFJ->isChecked());
+    createReadMeTranslationJob("Filipino",            "fil",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Finnish",             "fi" ,      ui->checkBoxTranslationsFI->isChecked());
+    createReadMeTranslationJob("French",              "fr" ,      ui->checkBoxTranslationsFR->isChecked());
+    createReadMeTranslationJob("Frisian",             "fy" ,      ui->checkBoxTranslationsFY->isChecked());
+    createReadMeTranslationJob("Gaelic",              "gd" ,      ui->checkBoxTranslationsGD->isChecked());
+    createReadMeTranslationJob("Galician",            "gl" ,      ui->checkBoxTranslationsGL->isChecked());
+    createReadMeTranslationJob("Georgian",            "ka" ,      ui->checkBoxTranslationsKA->isChecked());
+    createReadMeTranslationJob("German",              "de" ,      ui->checkBoxTranslationsDE->isChecked());
+    createReadMeTranslationJob("Greek",               "el" ,      ui->checkBoxTranslationsEL->isChecked());
+    createReadMeTranslationJob("Gujarati",            "gu" ,      ui->checkBoxTranslationsGU->isChecked());
+    createReadMeTranslationJob("Haitian",             "ht" ,      ui->checkBoxTranslationsHT->isChecked());
+    createReadMeTranslationJob("Hausa",               "ha" ,      ui->checkBoxTranslationsHA->isChecked());
+    createReadMeTranslationJob("Hawaiian",            "haw",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Hebrew",              "he" ,      ui->checkBoxTranslationsHE->isChecked());
+    createReadMeTranslationJob("HillMari",            "mrj",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Hindi",               "hi" ,      ui->checkBoxTranslationsHI->isChecked());
+    createReadMeTranslationJob("Hmong",               "hmn",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Hungarian",           "hu" ,      ui->checkBoxTranslationsHU->isChecked());
+    createReadMeTranslationJob("Icelandic",           "is" ,      ui->checkBoxTranslationsIS->isChecked());
+    createReadMeTranslationJob("Igbo",                "ig" ,      ui->checkBoxTranslationsIG->isChecked());
+    createReadMeTranslationJob("Indonesian",          "id" ,      ui->checkBoxTranslationsID->isChecked());
+    createReadMeTranslationJob("Irish",               "ga" ,      ui->checkBoxTranslationsGA->isChecked());
+    createReadMeTranslationJob("Italian",             "it" ,      ui->checkBoxTranslationsIT->isChecked());
+    createReadMeTranslationJob("Japanese",            "ja" ,      ui->checkBoxTranslationsJA->isChecked());
+    createReadMeTranslationJob("Javanese",            "jw" ,      ui->checkBoxTranslationsJW->isChecked());
+    createReadMeTranslationJob("Kannada",             "kn" ,      ui->checkBoxTranslationsKN->isChecked());
+    createReadMeTranslationJob("Kazakh",              "kk" ,      ui->checkBoxTranslationsKK->isChecked());
+    createReadMeTranslationJob("Khmer",               "km" ,      ui->checkBoxTranslationsKM->isChecked());
+    createReadMeTranslationJob("Kinyarwanda",         "rw" ,      ui->checkBoxTranslationsRW->isChecked());
+    createReadMeTranslationJob("Klingon",             "tlh",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("KlingonPlqaD",        "tlh-Qaak", ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Korean",              "ko" ,      ui->checkBoxTranslationsKO->isChecked());
+    createReadMeTranslationJob("Kurdish",             "ku" ,      ui->checkBoxTranslationsKU->isChecked());
+    createReadMeTranslationJob("Kyrgyz",              "ky" ,      ui->checkBoxTranslationsKY->isChecked());
+    createReadMeTranslationJob("Latvian",             "lv" ,      ui->checkBoxTranslationsLV->isChecked());
+    createReadMeTranslationJob("Lao",                 "lo" ,      ui->checkBoxTranslationsLO->isChecked());
+    createReadMeTranslationJob("Latin",               "la" ,      ui->checkBoxTranslationsLA->isChecked());
+    createReadMeTranslationJob("LevantineArabic",     "apc",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Lithuanian",          "lt" ,      ui->checkBoxTranslationsLT->isChecked());
+    createReadMeTranslationJob("Luxembourgish",       "lb" ,      ui->checkBoxTranslationsLB->isChecked());
+    createReadMeTranslationJob("Macedonian",          "mk" ,      ui->checkBoxTranslationsMK->isChecked());
+    createReadMeTranslationJob("Mari",                "mhr",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Maori",               "mi" ,      ui->checkBoxTranslationsMI->isChecked());
+    createReadMeTranslationJob("Marathi",             "mr" ,      ui->checkBoxTranslationsMR->isChecked());
+    createReadMeTranslationJob("Malagasy",            "mg" ,      ui->checkBoxTranslationsMG->isChecked());
+    createReadMeTranslationJob("Malayalam",           "ml" ,      ui->checkBoxTranslationsML->isChecked());
+    createReadMeTranslationJob("Malaysian",           "ms" ,      ui->checkBoxTranslationsMS->isChecked());
+    createReadMeTranslationJob("Maltese",             "mt" ,      ui->checkBoxTranslationsMT->isChecked());
+    createReadMeTranslationJob("Mongolian",           "mn" ,      ui->checkBoxTranslationsMN->isChecked());
+    createReadMeTranslationJob("Myanmar",             "my" ,      ui->checkBoxTranslationsMY->isChecked());
+    createReadMeTranslationJob("Norwegian",           "no" ,      ui->checkBoxTranslationsNO->isChecked());
+    createReadMeTranslationJob("Bokmal",              "nb" ,      ui->checkBoxTranslationsNB->isChecked());
+    createReadMeTranslationJob("Nepali",              "ne" ,      ui->checkBoxTranslationsNE->isChecked());
+    createReadMeTranslationJob("Nynorsk",             "nn" ,      ui->checkBoxTranslationsNN->isChecked());
+    createReadMeTranslationJob("Oriya",               "or" ,      ui->checkBoxTranslationsOR->isChecked());
+    createReadMeTranslationJob("Pashto",              "ps" ,      ui->checkBoxTranslationsPS->isChecked());
+    createReadMeTranslationJob("Papiamento",          "pap",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Polish",              "pl" ,      ui->checkBoxTranslationsPL->isChecked());
+    createReadMeTranslationJob("Portuguese",          "pt" ,      ui->checkBoxTranslationsPT->isChecked());
+    createReadMeTranslationJob("Punjabi",             "pa" ,      ui->checkBoxTranslationsPA->isChecked());
+    createReadMeTranslationJob("QueretaroOtomi",      "otq",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Rhaeto-Romanic",      "rm" ,      ui->checkBoxTranslationsRM->isChecked());
+    createReadMeTranslationJob("Romanian",            "ro" ,      ui->checkBoxTranslationsRO->isChecked());
+    createReadMeTranslationJob("Russian",             "ru" ,      ui->checkBoxTranslationsRU->isChecked());
+    createReadMeTranslationJob("Samoan",              "sm" ,      ui->checkBoxTranslationsSM->isChecked());
+    createReadMeTranslationJob("Serbian",             "sr" ,      ui->checkBoxTranslationsSR->isChecked());
+    createReadMeTranslationJob("SerbianLatin",        "sr-Latin", ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Slovak",              "sk" ,      ui->checkBoxTranslationsSK->isChecked());
+    createReadMeTranslationJob("Slovenian",           "sl" ,      ui->checkBoxTranslationsSL->isChecked());
+    createReadMeTranslationJob("Sesotho",             "st" ,      ui->checkBoxTranslationsST->isChecked());
+    createReadMeTranslationJob("Shona",               "sn" ,      ui->checkBoxTranslationsSN->isChecked());
+    createReadMeTranslationJob("Sindhi",              "sd" ,      ui->checkBoxTranslationsSD->isChecked());
+    createReadMeTranslationJob("Sinhala",             "si" ,      ui->checkBoxTranslationsSI->isChecked());
+    createReadMeTranslationJob("Somali",              "so" ,      ui->checkBoxTranslationsSO->isChecked());
+    createReadMeTranslationJob("Sorbian",             "sb" ,      ui->checkBoxTranslationsSB->isChecked());
+    createReadMeTranslationJob("Spanish",             "es" ,      ui->checkBoxTranslationsES->isChecked());
+    createReadMeTranslationJob("Sundanese",           "su" ,      ui->checkBoxTranslationsSU->isChecked());
+    createReadMeTranslationJob("Swahili",             "sw" ,      ui->checkBoxTranslationsSW->isChecked());
+    createReadMeTranslationJob("Swedish",             "sv" ,      ui->checkBoxTranslationsSV->isChecked());
+    createReadMeTranslationJob("Tagalog",             "tl" ,      ui->checkBoxTranslationsTL->isChecked());
+    createReadMeTranslationJob("Tahitian",            "ty" ,      ui->checkBoxTranslationsTY->isChecked());
+    createReadMeTranslationJob("Tajik",               "tg" ,      ui->checkBoxTranslationsTG->isChecked());
+    createReadMeTranslationJob("Tamil",               "ta" ,      ui->checkBoxTranslationsTA->isChecked());
+    createReadMeTranslationJob("Tatar",               "tt" ,      ui->checkBoxTranslationsTT->isChecked());
+    createReadMeTranslationJob("Telugu",              "te" ,      ui->checkBoxTranslationsTE->isChecked());
+    createReadMeTranslationJob("Thai",                "th" ,      ui->checkBoxTranslationsTH->isChecked());
+    createReadMeTranslationJob("Tongan",              "to" ,      ui->checkBoxTranslationsTO->isChecked());
+    createReadMeTranslationJob("Tsonga",              "ts" ,      ui->checkBoxTranslationsTS->isChecked());
+    createReadMeTranslationJob("Tswana",              "tn" ,      ui->checkBoxTranslationsTN->isChecked());
+    createReadMeTranslationJob("Turkish",             "tr" ,      ui->checkBoxTranslationsTR->isChecked());
+    createReadMeTranslationJob("Turkmen",             "tk" ,      ui->checkBoxTranslationsTK->isChecked());
+    createReadMeTranslationJob("Uighur",              "ub" ,      ui->checkBoxTranslationsUG->isChecked());
+    createReadMeTranslationJob("Ukrainian",           "uk" ,      ui->checkBoxTranslationsUK->isChecked());
+    createReadMeTranslationJob("Urdu",                "ur" ,      ui->checkBoxTranslationsUR->isChecked());
+    createReadMeTranslationJob("Udmurt",              "udm",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Uzbek",               "uz" ,      ui->checkBoxTranslationsUZ->isChecked());
+    createReadMeTranslationJob("Venda",               "ve" ,      ui->checkBoxTranslationsVE->isChecked());
+    createReadMeTranslationJob("Vietnamese",          "vi" ,      ui->checkBoxTranslationsVI->isChecked());
+    createReadMeTranslationJob("Welsh",               "cy" ,      ui->checkBoxTranslationsCY->isChecked());
+    createReadMeTranslationJob("Xhosa",               "xh" ,      ui->checkBoxTranslationsXH->isChecked());
+    createReadMeTranslationJob("Yiddish",             "yi" ,      ui->checkBoxTranslationsYI->isChecked());
+    createReadMeTranslationJob("Yoruba",              "yo" ,      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("YucatecMaya",         "yua",      ui->checkBoxTranslationsYO->isChecked());
+    createReadMeTranslationJob("Zulu",                "zu" ,      ui->checkBoxTranslationsZU->isChecked());
+    // Read Me
+    QString theReadMeFile = QString("%1%2%3").arg(ui->lineEditTranslationsProjectFolder->text(), QDir::separator(), "README.md");
+    //
+    ui->textEditProjects->setText(QString("%1\n").arg(myTranslationQrc));
+    // Go to Tab
+    ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabProject")));
+    //
+    ui->progressBarProjectsTranslations->setMaximum(myLingoJob.count());
+    ui->progressBarProjectsTranslations->setValue(0);
+    ui->progressBarProjectsTranslations->show();
+    ui->progressBarProjectsFiles->setMaximum(myLingoJob.count());
+    ui->progressBarProjectsFiles->show();
+    /*
+     * Now I can run the job with myLingoJob
+     * Every Language has a Help_xx.md and README_xx.md
+     * I mixed them in one Job and alternate between them.
+    */
+    for( int i = 0; i < myLingoJob.count(); ++i )
+    {
+        ui->progressBarProjectsFiles->setValue(i);
+        if (isDebugMessage && isMainLoaded) { qDebug() << "Translating..." << myLingoJob.at(i).getLanguageName(); }
+        // Skip if current language is the same as source
+        if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { continue; }
+        // The Default Languge will not have an under-score Language Code, i.e. README.md
+        if (!myLingoJob.at(i).getReadMe().contains("_")) { continue; }
         // Make sure Source file exists
         if (!mySqlDb->mySqlModel->mySetting->isFileExists(theReadMeFile))
         {
@@ -2617,7 +2795,7 @@ void MainWindow::translateHelp()
     } // end for( int i = 0; i < myLingoJob.count(); ++i )
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
-} // end translateHelp
+} // end translateReadMe
 /************************************************
  * @brief translate With Return Added by Light-Wizzard.
  * translateWithReturn
@@ -2629,27 +2807,57 @@ void MainWindow::createHelpTranslationJob(const QString &thisLanguageName, const
     if (!thisChecked) { return; }
     if (ui->labelTranslationsSourceLanguageCode->text() == theLangCode) { return; }
     //
-    for (QString &fileName : myHelpFileNames)
+    for (QString &theFileName : myHelpFileNames)
     {
         // Create Translation file names for configuration
-        QString theMdFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", theLangCode, ".md");
-        QString theQmFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", theLangCode, ".qm");
-        QString theHelpSource = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), fileName, "_", ui->labelTranslationsSourceLanguageCode->text(), ".md");
+        QString theMdFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), theFileName, "_", theLangCode, ".md");
+        QString theQmFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), theFileName, "_", theLangCode, ".qm");
+        // ReadMe
+        QString theHelpSource = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), theFileName, "_", ui->labelTranslationsSourceLanguageCode->text(), ".md");
         QString theReadMeFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsProjectFolder->text(), QDir::separator(), "README", "_", theLangCode, ".md");
         //
-        QString theTransMdFile = theMdFile;
         QString theTransQmFile = theQmFile;
-        theTransMdFile.remove(ui->lineEditTranslationsProjectFolder->text());
         theTransQmFile.remove(ui->lineEditTranslationsProjectFolder->text());
-        if (theTransMdFile.mid(0, 1) == "/" || theTransMdFile.mid(0, 1) == "\\") { theTransMdFile = theTransMdFile.mid(1); }
         if (theTransQmFile.mid(0, 1) == "/" || theTransQmFile.mid(0, 1) == "\\") { theTransQmFile = theTransQmFile.mid(1); }
         // for display
-        myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
+        if (!myTranslationQrc.contains(theTransQmFile))
+        {
+            myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
+        }
         // Create Job
         // to store a job I need the theSourcePath and Language
         MyLingoJobs theTranslationJobs(thisLanguageName, theLangCode, theHelpSource, theMdFile, theReadMeFile, QOnlineTranslator::language(theLangCode), QOnlineTranslator::language(ui->labelTranslationsSourceLanguageCode->text()));
         myLingoJob.append(theTranslationJobs);
     }
+}
+/************************************************
+ * @brief translate With Return Added by Light-Wizzard.
+ * translateWithReturn
+ ***********************************************/
+void MainWindow::createReadMeTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked)
+{
+    if (isDebugMessage && isMainLoaded) { qDebug() << "createHelpTranslationJob(" << thisLanguageName << ", " << theLangCode << ", " << thisChecked << ")"; }
+    //
+    if (!thisChecked) { return; }
+    if (ui->labelTranslationsSourceLanguageCode->text() == theLangCode) { return; }
+    //
+    // Create Translation file names for configuration
+    QString theFileName = "README";
+    QString theMdFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), theFileName, "_", theLangCode, ".md");
+    QString theQmFile     = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), theFileName, "_", theLangCode, ".qm");
+    // ReadMe
+    QString theHelpSource = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsHelp->text(), QDir::separator(), theFileName, "_", ui->labelTranslationsSourceLanguageCode->text(), ".md");
+    QString theReadMeFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsProjectFolder->text(), QDir::separator(), "README", "_", theLangCode, ".md");
+    //
+    QString theTransQmFile = theQmFile;
+    theTransQmFile.remove(ui->lineEditTranslationsProjectFolder->text());
+    if (theTransQmFile.mid(0, 1) == "/" || theTransQmFile.mid(0, 1) == "\\") { theTransQmFile = theTransQmFile.mid(1); }
+    // for display
+    myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
+    // Create Job
+    // to store a job I need the theSourcePath and Language
+    MyLingoJobs theTranslationJobs(thisLanguageName, theLangCode, theHelpSource, theMdFile, theReadMeFile, QOnlineTranslator::language(theLangCode), QOnlineTranslator::language(ui->labelTranslationsSourceLanguageCode->text()));
+    myLingoJob.append(theTranslationJobs);
 }
 /************************************************
  * @brief translate With Return Added by Light-Wizzard.

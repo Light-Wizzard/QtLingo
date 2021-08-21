@@ -240,8 +240,20 @@ QString MyLocalization::getLocalizerCode(const QString &thisPrefix, const QStrin
     return languageCodeToName(getLocalizedCodeFromFile(thisPrefix, thisQmFile));
 }
 /************************************************
- * languageNameToCode
+ * @brief get Lang Code.
+ * getLangCode
+ ***********************************************/
+QString MyLocalization::getLangCode(const QString &thisString)
+{
+    QString theLangCode = thisString;
+    if (theLangCode.indexOf('_') < 0) { return ""; }
+    if (theLangCode.indexOf('.') > 0)
+        { theLangCode = theLangCode.mid(0, theLangCode.indexOf('.')); }
+    return theLangCode.mid(theLangCode.indexOf('_') + 1);
+}
+/************************************************
  * @brief Added by Light-Wizzard language Name to Code.
+ * languageNameToCode
  ***********************************************/
 QString MyLocalization::languageNameToCode(const QString &lang)
 {

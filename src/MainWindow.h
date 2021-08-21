@@ -143,11 +143,10 @@ class MainWindow : public QMainWindow
         QString translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang); //!< translate With Return, note this is blocking
         QString checkTranslationErrors(const QString &thisTranslations, const QString &thisText, QOnlineTranslator::Engine thisEngine, QOnlineTranslator::Language thisTranslationLang, QOnlineTranslator::Language thisSourceLang, QOnlineTranslator::Language thisUiLang); //!< check Translation Errors
         void setTranslationErrorType(const QString &thisTranslations); //!< set Translation Error Type
-        // Translate Help
-        void translateHelp();                           //!< translate Help Files
         void createHelpTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create Help Translation Job
         void setLanguageCode();                         //!< set Language Code Lable in UI
         void acceptTranslations();                      //!< accept Translations
+        void createReadMeTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked);
 
     public slots:
         void onHelp();                                  //!< on Help
@@ -157,12 +156,16 @@ class MainWindow : public QMainWindow
         void onAuthor();                                //!< on Author
         void onSave();                                  //!< on Save
         void onInternetProgress();                      //!< on Internet Progress
+        // Translate Help
+        void onTranslateHelp();                         //!< translate Help Files
+        void onTranslateReadMe();                       //!<  Translate ReadMe
 
     private slots:
         // ComboBoxes
         void on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex);                //!< on comboBox Settings Projects current Index Changed
         void on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage);  //!< on comboBox Settings Language current Index Changed
         void on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType);    //!< on comboBox SQL Database Type current Index Changed
+        void on_comboBoxTranslationSourceLanguage_currentIndexChanged(const QString &arg1); //!< on comboBox Translation Source Language current Index Changed
         // Push Buttons Settings
         void on_pushButtonSettingsAdd_clicked();                                            //!< on pushButton Settings Add clicked
         void on_pushButtonSettingsSave_clicked();                                           //!< on pushButton Settings Save clicked
@@ -182,8 +185,6 @@ class MainWindow : public QMainWindow
         void on_checkBoxSettingsBing_stateChanged(int thisArg);                             //!< on checkBox Settings Bing state Changed
         void on_checkBoxSettingsYandex_stateChanged(int thisArg);                           //!< on checkBox Settings Yandex state Changed
         void on_checkBoxSettignsMessaging_stateChanged(int thisCheckState);                 //!< on checkBox Settigns Messaging state Changed
-
-        void on_comboBoxTranslationSourceLanguage_currentIndexChanged(const QString &arg1);
 
     protected:
         void closeEvent(QCloseEvent *event) override;           //!< close Event

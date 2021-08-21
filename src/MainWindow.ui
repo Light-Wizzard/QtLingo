@@ -1847,6 +1847,7 @@
     </property>
     <addaction name="actionCompile"/>
     <addaction name="actionAccept_Translations"/>
+    <addaction name="actionTranslate_ReadMe"/>
     <addaction name="actionTranslate_Help"/>
     <addaction name="separator"/>
     <addaction name="actionClipboard"/>
@@ -1884,6 +1885,7 @@
    <addaction name="separator"/>
    <addaction name="actionCompile"/>
    <addaction name="actionTranslate_Help"/>
+   <addaction name="actionTranslate_ReadMe"/>
    <addaction name="actionAccept_Translations"/>
    <addaction name="separator"/>
    <addaction name="actionClipboard"/>
@@ -1974,6 +1976,15 @@
    </property>
    <property name="text">
     <string>Accept Translations</string>
+   </property>
+  </action>
+  <action name="actionTranslate_ReadMe">
+   <property name="icon">
+    <iconset resource="../QtLingo.qrc">
+     <normaloff>:/images/lists.png</normaloff>:/images/lists.png</iconset>
+   </property>
+   <property name="text">
+    <string>Translate ReadMe</string>
    </property>
   </action>
  </widget>

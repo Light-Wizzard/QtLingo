@@ -55,14 +55,15 @@ class MyLocalization : public QObject
         void setDebugMessage(bool thisState);       //!< set Debug Message
         bool getDebugMessage();                     //!< get Debug Message
         // Localization
-        QStringList findQmFiles(const QString &thisFolder);                             //!< find Qm Files
-        QStringList findTsFiles(const QString &thisFolder);                             //!< find Ts Files
+        QStringList findQmFiles(const QString &thisFolder);                                 //!< find Qm Files
+        QStringList findTsFiles(const QString &thisFolder);                                 //!< find Ts Files
         bool        languageMatch(const QString &thisPrefix, const QString &thisLang, const QString &thisQmFile); //!< language Match
         QString     languageNameFromFile(const QString &thisTranslationFile);               //!< language Name From File
         QString     getLocalizerCode(const QString &thisPrefix, const QString &thisQmFile); //!< get Localizer Code
-        void removeArgs(const QString &thisString, const QString &thisTransFile);       //!< remove Args file creation
-        void fileRemoveArgs();                                                          //!< file Remove Args
-        void fixTranslationFile(const QString &thisFile);                               //!< fix Translation File
+        QString     getLangCode(const QString &thisString);      //!< get Lang Code
+        void removeArgs(const QString &thisString, const QString &thisTransFile);           //!< remove Args file creation
+        void fileRemoveArgs();                                                              //!< file Remove Args
+        void fixTranslationFile(const QString &thisFile);                                   //!< fix Translation File
         QString getLocalizedCodeFromFile(const QString &thisPrefix, const QString &thisQmFile); //!< get Localized Code From File
         // Added by Light-Wizzard
         QString languageNameToCode(const QString &lang);                //!< language Name to Code Added by Light-Wizzard

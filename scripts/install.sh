@@ -29,7 +29,7 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" = "Ubuntu" ]]; then
     sudo apt install -qqy libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev tk-dev flex bison checkinstall libsqlite3-dev;
     sudo apt install -qqy libreadline-dev libgl-dev libpulse-mainloop-glib0 libgles2-mesa-dev libglfw3-dev libgl1-mesa-dev;
     sudo apt install -qqy libfreetype6-dev libfontconfig1-dev libdbus-1-dev libxi-dev libgstreamer-plugins-base1.0-0;
-    sudo apt install -qqy libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libssl1.0.0;
+    sudo apt install -qqy libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libssl1.0.0 glibc patchelf;
     sudo apt install -qqy yasm git gfortran libjpeg8-dev libpng-dev libtiff-dev libavcodec-dev libavformat-dev;
     sudo apt install -qqy libswscale-dev libdc1394-22-dev libxine2-dev libv4l-dev libatlas-base-dev libfaac-dev libmp3lame-dev;
     sudo apt install -qqy libtheora-dev libvorbis-dev libxvidcore-dev libopencore-amrnb-dev libopencore-amrwb-dev libavresample-dev;

@@ -2246,6 +2246,7 @@ void MainWindow::onCompile()
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
     myLocalization->fileRemoveArgs();
+    ui->statusbar->showMessage("");
 } // end onCompile
 /************************************************
  * @brief check Translation Errors.
@@ -2582,6 +2583,7 @@ void MainWindow::onTranslateHelp()
     } // end for( int i = 0; i < myLingoJob.count(); ++i )
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
+    ui->statusbar->showMessage("");
 } // end translateHelp
 /************************************************
  * @brief translate ReadMe.
@@ -2795,6 +2797,7 @@ void MainWindow::onTranslateReadMe()
     } // end for( int i = 0; i < myLingoJob.count(); ++i )
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
+    ui->statusbar->showMessage("");
 } // end translateReadMe
 /************************************************
  * @brief translate With Return Added by Light-Wizzard.

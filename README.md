@@ -18,6 +18,7 @@ it is all done, nothing more to do.
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true)](https://ci.appveyor.com/project/Light-Wizzard/qtlingo)
 
 ### :package: **Downloads:**
+
  - :penguin: [Linux zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
  - :office: [Windows 64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/Windows64/QtLingo-Windows-x64.zip)
  - :apple: Currenty unavalible [Apple zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
@@ -37,9 +38,11 @@ and I used https://wiki.qt.io/Simple_encryption_with_SimpleCrypt#Versions.
 
 # Process
 
-First I will update your projects Translations files according to the Languages you have chosen,
-then I will translate all the Languages,
-then update the Translations files and compile them into .qm files for deployment.
+First click on Compile to update your projects Translations files according to the Languages you have chosen,
+I call it compile because these are all the files get compiled into your app, 
+then click on accept all or use Qt Lingustic to accet each translation,
+then click on update the Help and ReadMe and Translations those files, 
+creating files with a Language Code.
 
 # Doxygen
 

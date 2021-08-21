@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="360"/>
         <location filename="../src/MainWindow.ui" line="525"/>
-        <location filename="../src/MainWindow.ui" line="1958"/>
+        <location filename="../src/MainWindow.ui" line="1960"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
@@ -129,7 +129,7 @@
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="613"/>
-        <location filename="../src/MainWindow.cpp" line="1975"/>
+        <location filename="../src/MainWindow.cpp" line="1976"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
@@ -842,14 +842,14 @@
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1799"/>
-        <location filename="../src/MainWindow.cpp" line="243"/>
+        <location filename="../src/MainWindow.cpp" line="244"/>
         <source>Project</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1823"/>
-        <location filename="../src/MainWindow.ui" line="1860"/>
-        <location filename="../src/MainWindow.ui" line="1922"/>
+        <location filename="../src/MainWindow.ui" line="1861"/>
+        <location filename="../src/MainWindow.ui" line="1924"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -859,179 +859,184 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1875"/>
+        <location filename="../src/MainWindow.ui" line="1876"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1904"/>
+        <location filename="../src/MainWindow.ui" line="1906"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1913"/>
+        <location filename="../src/MainWindow.ui" line="1915"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1931"/>
+        <location filename="../src/MainWindow.ui" line="1933"/>
         <source>Translate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1940"/>
+        <location filename="../src/MainWindow.ui" line="1942"/>
         <source>Clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1949"/>
+        <location filename="../src/MainWindow.ui" line="1951"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1967"/>
+        <location filename="../src/MainWindow.ui" line="1969"/>
         <source>Translate Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1976"/>
+        <location filename="../src/MainWindow.ui" line="1978"/>
         <source>Accept Translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="113"/>
+        <location filename="../src/MainWindow.ui" line="1987"/>
+        <source>Translate ReadMe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="114"/>
         <source>Internet is down, trying to reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="242"/>
+        <location filename="../src/MainWindow.cpp" line="243"/>
         <source>ID</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="506"/>
+        <location filename="../src/MainWindow.cpp" line="507"/>
         <source>Translation Source Folder Location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="523"/>
+        <location filename="../src/MainWindow.cpp" line="524"/>
         <source>Translation Destination Folder Location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="539"/>
-        <location filename="../src/MainWindow.cpp" line="555"/>
+        <location filename="../src/MainWindow.cpp" line="540"/>
+        <location filename="../src/MainWindow.cpp" line="556"/>
         <source>Projects Folder Location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="615"/>
+        <location filename="../src/MainWindow.cpp" line="616"/>
         <source>Sqlite Folder Location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="630"/>
+        <location filename="../src/MainWindow.cpp" line="631"/>
         <source>Failed to move Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1545"/>
-        <location filename="../src/MainWindow.cpp" line="1550"/>
+        <location filename="../src/MainWindow.cpp" line="1546"/>
+        <location filename="../src/MainWindow.cpp" line="1551"/>
         <source>Unable to find record in database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1550"/>
+        <location filename="../src/MainWindow.cpp" line="1551"/>
         <source>Could not read from the Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1975"/>
+        <location filename="../src/MainWindow.cpp" line="1976"/>
         <source>and Destination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1975"/>
+        <location filename="../src/MainWindow.cpp" line="1976"/>
         <source>cannot be the same</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1981"/>
+        <location filename="../src/MainWindow.cpp" line="1982"/>
         <source>Project file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1987"/>
+        <location filename="../src/MainWindow.cpp" line="1988"/>
         <source>Error running lupdate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1992"/>
+        <location filename="../src/MainWindow.cpp" line="1993"/>
         <source>Error could not make Translations Destination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2168"/>
+        <location filename="../src/MainWindow.cpp" line="2169"/>
         <source>Can not remove file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2177"/>
+        <location filename="../src/MainWindow.cpp" line="2178"/>
         <source>Can not find Txt file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2243"/>
+        <location filename="../src/MainWindow.cpp" line="2244"/>
         <source>Error running lrelease</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2324"/>
+        <location filename="../src/MainWindow.cpp" line="2326"/>
         <source>Translation TS File not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2329"/>
+        <location filename="../src/MainWindow.cpp" line="2331"/>
         <source>Accepted all Translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2543"/>
+        <location filename="../src/MainWindow.cpp" line="2546"/>
         <source>Help File not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2549"/>
+        <location filename="../src/MainWindow.cpp" line="2552"/>
         <source>Help File is Empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2571"/>
+        <location filename="../src/MainWindow.cpp" line="2574"/>
         <source>Help File could not be created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2582"/>
+        <location filename="../src/MainWindow.cpp" line="2762"/>
         <source>README File not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2588"/>
+        <location filename="../src/MainWindow.cpp" line="2768"/>
         <source>README File is Empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2610"/>
+        <location filename="../src/MainWindow.cpp" line="2790"/>
         <source>README File could not be created</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2682"/>
+        <location filename="../src/MainWindow.cpp" line="2893"/>
         <source>Error in Translation phrase</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2771"/>
+        <location filename="../src/MainWindow.cpp" line="2982"/>
         <source>Help Folder Location</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1184,52 +1189,52 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/MainWindow.cpp" line="630"/>
+        <location filename="../src/MainWindow.cpp" line="631"/>
         <source>Database Move Failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="654"/>
+        <location filename="../src/MainWindow.cpp" line="655"/>
         <source>Password Revieled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1545"/>
+        <location filename="../src/MainWindow.cpp" line="1546"/>
         <source>Could not read from the Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1975"/>
+        <location filename="../src/MainWindow.cpp" line="1976"/>
         <source>Error Source and Destination cannot be the same</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1981"/>
+        <location filename="../src/MainWindow.cpp" line="1982"/>
         <source>Project file not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1987"/>
+        <location filename="../src/MainWindow.cpp" line="1988"/>
         <source>Error running lupdate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1992"/>
+        <location filename="../src/MainWindow.cpp" line="1993"/>
         <source>Error Translations Destination Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2168"/>
+        <location filename="../src/MainWindow.cpp" line="2169"/>
         <source>Error trying to remove file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2177"/>
+        <location filename="../src/MainWindow.cpp" line="2178"/>
         <source>Could not find the Txt file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2243"/>
+        <location filename="../src/MainWindow.cpp" line="2244"/>
         <source>Error running lrelease</source>
         <translation type="unfinished"></translation>
     </message>

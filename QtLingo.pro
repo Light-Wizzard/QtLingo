@@ -87,6 +87,11 @@ DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \
     .github/workflows/main.yml \
     Doxyfile \
+    desktop/CMakeLists.txt \
+    desktop/QtLingo.desktop \
+    desktop/QtLingo.ico \
+    desktop/QtLingo.png \
+    desktop/QtLingo.svg \
     help/About-Author_en.md \
     help/About_en.md \
     help/Help_en.md \

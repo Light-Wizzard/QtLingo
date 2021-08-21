@@ -1,7 +1,6 @@
 #!/bin/bash
-# QtLingo
 # 
-# Last Update: 20 July 2021
+# Last Update: 20 Auguest 2021
 #
 # I use shell check, delete the ? to run it, but leave that in this files so it does not fail when it sees it.
 # shell?check -x scripts/build_script.sh
@@ -70,10 +69,6 @@ OLD_CWD="$(readlink -f .)";
 # 
 # switch to build dir
 pushd "$BUILD_DIR";
-# make sure Qt plugin finds QML sources so it can deploy the imported files
-if [ -d "${REPO_ROOT}/qml" ]; then
-    export QML_SOURCES_PATHS="${REPO_ROOT}/qml";
-fi
 # x86 gcc_32? FIXME how to dox86
 if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x86" ]]; then
     export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/include:$PATH";
@@ -114,7 +109,7 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
     # 
     # build project and install files into AppDir
     make -j"$(nproc)";
-    make install INSTALL_ROOT="AppDir";
+    make install INSTALL_ROOT=AppDir;
     # bin ls AppDir/usr
     # does not exist ls AppDir/usr/lib
     #
@@ -125,6 +120,10 @@ if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
     # make them executable
     chmod +x linuxdeploy*.AppImage; 
     export LD_LIBRARY_PATH="${REPO_ROOT}/build/AppDir/usr/lib/";
+    # make sure Qt plugin finds QML sources so it can deploy the imported files
+    if [ -d "${REPO_ROOT}/qml" ]; then
+        export QML_SOURCES_PATHS="${REPO_ROOT}/qml";
+    fi
     # ${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage
     #export TARGET_APPIMAGE="${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage";
     # QtQuickApp does support "make install", but we don't use it because we want to show the manual packaging approach in this example

@@ -70,7 +70,7 @@ CONFIG += lrelease
 CONFIG += embed_translations
 LRELEASE_DIR=./translations
 QM_FILES_RESOURCE_PREFIX=./translations
-# ar,de,en,es,fr,it,ja,no,ru,sv,zh-CN
+# ar,de,en,es,fr,it,ja,no,ru,sv,zh_CN
 TRANSLATIONS += translations/QtLingo_ar.ts \
                 translations/QtLingo_de.ts \
                 translations/QtLingo_en.ts \
@@ -81,7 +81,7 @@ TRANSLATIONS += translations/QtLingo_ar.ts \
                 translations/QtLingo_no.ts \
                 translations/QtLingo_ru.ts \
                 translations/QtLingo_sv.ts \
-                translations/QtLingo_zh-CN.ts
+                translations/QtLingo_zh_CN.ts
 #
 DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \

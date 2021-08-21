@@ -1,6 +1,16 @@
 <RCC>
     <qresource prefix="/">
         <file>README.md</file>
+        <file>help/README_ar.md</file>
+        <file>help/README_de.md</file>
+        <file>help/README_es.md</file>
+        <file>help/README_fr.md</file>
+        <file>help/README_it.md</file>
+        <file>help/README_ja.md</file>
+        <file>help/README_no.md</file>
+        <file>help/README_ru.md</file>
+        <file>help/README_sv.md</file>
+        <file>help/README_zh_CN.md</file>        
         <file>help/Help_ar.md</file>
         <file>help/Help_de.md</file>
         <file>help/Help_en.md</file>
@@ -11,7 +21,7 @@
         <file>help/Help_no.md</file>
         <file>help/Help_ru.md</file>
         <file>help/Help_sv.md</file>
-        <file>help/Help_zh-CN.md</file>
+        <file>help/Help_zh_CN.md</file>
         <file>help/About_ar.md</file>
         <file>help/About_de.md</file>
         <file>help/About_en.md</file>
@@ -22,7 +32,7 @@
         <file>help/About_no.md</file>
         <file>help/About_ru.md</file>
         <file>help/About_sv.md</file>
-        <file>help/About_zh-CN.md</file>
+        <file>help/About_zh_CN.md</file>
         <file>help/About-Author_ar.md</file>
         <file>help/About-Author_de.md</file>
         <file>help/About-Author_en.md</file>
@@ -33,7 +43,7 @@
         <file>help/About-Author_no.md</file>
         <file>help/About-Author_ru.md</file>
         <file>help/About-Author_sv.md</file>
-        <file>help/About-Author_zh-CN.md</file>
+        <file>help/About-Author_zh_CN.md</file>
         <file>help/Language.txt</file>
         <file>translations/QtLingo_ar.qm</file>
         <file>translations/QtLingo_de.qm</file>
@@ -45,7 +55,7 @@
         <file>translations/QtLingo_no.qm</file>
         <file>translations/QtLingo_ru.qm</file>
         <file>translations/QtLingo_sv.qm</file>
-        <file>translations/QtLingo_zh-CN.qm</file>     
+        <file>translations/QtLingo_zh_CN.qm</file>     
         <file>images/google_translate.png</file>
         <file>images/microsoft_translator.png</file>
         <file>images/yandex_translate.png</file>

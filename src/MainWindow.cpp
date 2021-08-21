@@ -2331,33 +2331,6 @@ void MainWindow::acceptTranslations()
     ui->statusbar->showMessage(tr("Accepted all Translations"));
 }
 /************************************************
- * @brief create Translation Job, I pass in the Name of the Language,
- *        and the language ID, I do not use the Name, but find it nice to have the info with it.
- * createTranslationJob
- ***********************************************/
-void MainWindow::createTranslationJob(const QString &thisLanguageName, const QString &thisLanguage, const QString &thisSourceLanguage, bool thisChecked)
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "createTranslationJob(" << thisLanguageName << ", " << thisLanguage << ", " << thisSourceLanguage << ", " << thisChecked << ")"; }
-    //
-    if (!thisChecked) { return; }
-    // Create Translation file names for configuration
-    QString theTsFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", thisLanguage, ".ts");
-    QString theQmFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", thisLanguage, ".qm");
-    //
-    QString theTransFile = theTsFile;
-    QString theTransQmFile = theQmFile;
-    theTransFile.remove(ui->lineEditTranslationsProjectFolder->text());
-    theTransQmFile.remove(ui->lineEditTranslationsProjectFolder->text());
-    if (theTransFile.mid(0, 1)   == "/" || theTransFile.mid(0, 1)   == "\\") { theTransFile = theTransFile.mid(1); }
-    if (theTransQmFile.mid(0, 1) == "/" || theTransQmFile.mid(0, 1) == "\\") { theTransQmFile = theTransQmFile.mid(1); }
-    myTranslationConf.append(QString(" %1").arg(theTransFile));
-    myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
-    // Create Job
-    // to store a job I need the theSourcePath and Language
-    MyLingoJobs theTranslationJobs(thisLanguageName, thisLanguage, theTsFile, theTransQmFile, "", QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myLocalization->languageNameToCode(thisSourceLanguage)));
-    myLingoJob.append(theTranslationJobs);
-}
-/************************************************
  * @brief translate Help files.
  * translateHelp
  ***********************************************/
@@ -2799,6 +2772,35 @@ void MainWindow::onTranslateReadMe()
     ui->progressBarProjectsFiles->hide();
     ui->statusbar->showMessage("");
 } // end translateReadMe
+/************************************************
+ * @brief create Translation Job, I pass in the Name of the Language,
+ *        and the language ID, I do not use the Name, but find it nice to have the info with it.
+ * createTranslationJob
+ ***********************************************/
+void MainWindow::createTranslationJob(const QString &thisLanguageName, const QString &thisLanguage, const QString &thisSourceLanguage, bool thisChecked)
+{
+    if (isDebugMessage && isMainLoaded) { qDebug() << "createTranslationJob(" << thisLanguageName << ", " << thisLanguage << ", " << thisSourceLanguage << ", " << thisChecked << ")"; }
+    //
+    if (!thisChecked) { return; }
+    QString theLang = thisLanguage;
+    theLang = theLang.replace("-", "_");
+    // Create Translation file names for configuration
+    QString theTsFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", theLang, ".ts");
+    QString theQmFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", theLang, ".qm");
+    //
+    QString theTransFile = theTsFile;
+    QString theTransQmFile = theQmFile;
+    theTransFile.remove(ui->lineEditTranslationsProjectFolder->text());
+    theTransQmFile.remove(ui->lineEditTranslationsProjectFolder->text());
+    if (theTransFile.mid(0, 1)   == "/" || theTransFile.mid(0, 1)   == "\\") { theTransFile = theTransFile.mid(1); }
+    if (theTransQmFile.mid(0, 1) == "/" || theTransQmFile.mid(0, 1) == "\\") { theTransQmFile = theTransQmFile.mid(1); }
+    myTranslationConf.append(QString(" %1").arg(theTransFile));
+    myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
+    // Create Job
+    // to store a job I need the theSourcePath and Language
+    MyLingoJobs theTranslationJobs(thisLanguageName, thisLanguage, theTsFile, theTransQmFile, "", QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myLocalization->languageNameToCode(thisSourceLanguage)));
+    myLingoJob.append(theTranslationJobs);
+}
 /************************************************
  * @brief translate With Return Added by Light-Wizzard.
  * translateWithReturn

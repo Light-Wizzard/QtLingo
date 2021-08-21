@@ -22,7 +22,6 @@
 #define QONLINETTS_H
 
 #include "qonlinetranslator.h"
-
 #include <QMetaEnum>
 #include <QUrl>
 

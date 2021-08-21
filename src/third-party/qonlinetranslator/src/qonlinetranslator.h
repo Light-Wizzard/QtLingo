@@ -24,7 +24,6 @@
 #include <QMap>
 #include <QPointer>
 #include <QVector>
-#include <QtGlobal>
 #include <QCoreApplication>
 #include <QFinalState>
 #include <QJsonArray>
@@ -34,6 +33,10 @@
 #include <QNetworkReply>
 #include <QStateMachine>
 #include <QMediaContent>
+#include <QProcess>
+
+#include <QtGlobal>
+#include <QtNetwork/QNetworkSession>
 
 #include "qexample.h"
 #include "qoption.h"

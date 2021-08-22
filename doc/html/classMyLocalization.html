@@ -137,6 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af6a8d2575154e3c9dd05353aef4db5ff"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyLocalization.html#af6a8d2575154e3c9dd05353aef4db5ff">getLocalizerCode</a> (const QString &amp;thisPrefix, const QString &amp;thisQmFile)</td></tr>
 <tr class="memdesc:af6a8d2575154e3c9dd05353aef4db5ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">get Localizer Code  <a href="classMyLocalization.html#af6a8d2575154e3c9dd05353aef4db5ff">More...</a><br /></td></tr>
 <tr class="separator:af6a8d2575154e3c9dd05353aef4db5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae50df5bc23d26257f3c86ba079874d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyLocalization.html#a6ae50df5bc23d26257f3c86ba079874d">getLangCode</a> (const QString &amp;thisString)</td></tr>
+<tr class="memdesc:a6ae50df5bc23d26257f3c86ba079874d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get Lang Code  <a href="classMyLocalization.html#a6ae50df5bc23d26257f3c86ba079874d">More...</a><br /></td></tr>
+<tr class="separator:a6ae50df5bc23d26257f3c86ba079874d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e994f9e699b87f638d7e074c40f853a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyLocalization.html#a3e994f9e699b87f638d7e074c40f853a">removeArgs</a> (const QString &amp;thisString, const QString &amp;thisTransFile)</td></tr>
 <tr class="memdesc:a3e994f9e699b87f638d7e074c40f853a"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove Args file creation  <a href="classMyLocalization.html#a3e994f9e699b87f638d7e074c40f853a">More...</a><br /></td></tr>
 <tr class="separator:a3e994f9e699b87f638d7e074c40f853a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -502,6 +505,36 @@ Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a6ae50df5bc23d26257f3c86ba079874d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ae50df5bc23d26257f3c86ba079874d">&#9670;&nbsp;</a></span>getLangCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MyLocalization::getLangCode </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>thisString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get Lang Code </p>
+<p>get Lang Code. getLangCode </p>
+
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00246">246</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    QString theLangCode = thisString;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (theLangCode.indexOf(<span class="charliteral">&#39;_&#39;</span>) &lt; 0) { <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (theLangCode.indexOf(<span class="charliteral">&#39;.&#39;</span>) &gt; 0)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        { theLangCode = theLangCode.mid(0, theLangCode.indexOf(<span class="charliteral">&#39;.&#39;</span>)); }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span> theLangCode.mid(theLangCode.indexOf(<span class="charliteral">&#39;_&#39;</span>) + 1);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a51737e60ec459579bf7d0bb845f3544f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51737e60ec459579bf7d0bb845f3544f">&#9670;&nbsp;</a></span>getLanguageCode()</h2>
 
@@ -520,16 +553,16 @@ Public Attributes</h2></td></tr>
 <p>get Language Code </p>
 <p>get Debug Message. getDebugMessage </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00289">289</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">if</span> (myLanguageCode.isEmpty())</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        QString theLangCode = <a class="code" href="classMyLocalization.html#a94bf119caeab1979774a9e4674c57220">language</a>(QLocale());</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        myLanguageCode = <a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ae346ac4063c1501cdd835c77a5cca8e3">readSettings</a>(<a class="code" href="classMyLocalization.html#afaa0c63aa53c2571623fdb5e809db5e9">MY_LANG_CODE</a>, theLangCode);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">return</span> myLanguageCode;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;}</div>
-<div class="ttc" id="aclassMyLocalization_html_a94bf119caeab1979774a9e4674c57220"><div class="ttname"><a href="classMyLocalization.html#a94bf119caeab1979774a9e4674c57220">MyLocalization::language</a></div><div class="ttdeci">QString language(const QLocale &amp;thisLocale)</div><div class="ttdoc">language</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8cpp_source.html#l00319">MyLocalization.cpp:319</a></div></div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00301">301</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;{</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">if</span> (myLanguageCode.isEmpty())</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        QString theLangCode = <a class="code" href="classMyLocalization.html#a94bf119caeab1979774a9e4674c57220">language</a>(QLocale());</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        myLanguageCode = <a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ae346ac4063c1501cdd835c77a5cca8e3">readSettings</a>(<a class="code" href="classMyLocalization.html#afaa0c63aa53c2571623fdb5e809db5e9">MY_LANG_CODE</a>, theLangCode);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">return</span> myLanguageCode;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;}</div>
+<div class="ttc" id="aclassMyLocalization_html_a94bf119caeab1979774a9e4674c57220"><div class="ttname"><a href="classMyLocalization.html#a94bf119caeab1979774a9e4674c57220">MyLocalization::language</a></div><div class="ttdeci">QString language(const QLocale &amp;thisLocale)</div><div class="ttdoc">language</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8cpp_source.html#l00331">MyLocalization.cpp:331</a></div></div>
 <div class="ttc" id="aclassMyLocalization_html_afaa0c63aa53c2571623fdb5e809db5e9"><div class="ttname"><a href="classMyLocalization.html#afaa0c63aa53c2571623fdb5e809db5e9">MyLocalization::MY_LANG_CODE</a></div><div class="ttdeci">const QString MY_LANG_CODE</div><div class="ttdoc">MY_LANG_CODE</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8h_source.html#l00052">MyLocalization.h:52</a></div></div>
 <div class="ttc" id="aclassMyOrgSettings_html_ae346ac4063c1501cdd835c77a5cca8e3"><div class="ttname"><a href="classMyOrgSettings.html#ae346ac4063c1501cdd835c77a5cca8e3">MyOrgSettings::readSettings</a></div><div class="ttdeci">QString readSettings(const QString &amp;thisSetting, const QString &amp;thisDefault)</div><div class="ttdoc">readSettings</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00095">MyOrgSettings.cpp:95</a></div></div>
 </div><!-- fragment -->
@@ -698,7 +731,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMyLocalization.html#aaf086cc1012f87a02cc80412b2255513">languageCodeToName</a>(<a class="code" href="classMyLocalization.html#a9a3e6e133e556c663703e533df2dd595">getLocalizedCodeFromFile</a>(thisPrefix, thisQmFile));</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
 <div class="ttc" id="aclassMyLocalization_html_a9a3e6e133e556c663703e533df2dd595"><div class="ttname"><a href="classMyLocalization.html#a9a3e6e133e556c663703e533df2dd595">MyLocalization::getLocalizedCodeFromFile</a></div><div class="ttdeci">QString getLocalizedCodeFromFile(const QString &amp;thisPrefix, const QString &amp;thisQmFile)</div><div class="ttdoc">get Localized Code From File</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8cpp_source.html#l00142">MyLocalization.cpp:142</a></div></div>
-<div class="ttc" id="aclassMyLocalization_html_aaf086cc1012f87a02cc80412b2255513"><div class="ttname"><a href="classMyLocalization.html#aaf086cc1012f87a02cc80412b2255513">MyLocalization::languageCodeToName</a></div><div class="ttdeci">QString languageCodeToName(const QString &amp;lang)</div><div class="ttdoc">language Code to Name Added by Light-Wizzard</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8cpp_source.html#l00254">MyLocalization.cpp:254</a></div></div>
+<div class="ttc" id="aclassMyLocalization_html_aaf086cc1012f87a02cc80412b2255513"><div class="ttname"><a href="classMyLocalization.html#aaf086cc1012f87a02cc80412b2255513">MyLocalization::languageCodeToName</a></div><div class="ttdeci">QString languageCodeToName(const QString &amp;lang)</div><div class="ttdoc">language Code to Name Added by Light-Wizzard</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8cpp_source.html#l00266">MyLocalization.cpp:266</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -720,10 +753,10 @@ Public Attributes</h2></td></tr>
 <p>get Main Loaded </p>
 <p>get Main Loaded. getMainLoaded </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00310">310</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">return</span> isMainLoaded;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00322">322</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">return</span> isMainLoaded;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -807,137 +840,137 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00319">319</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;{</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">switch</span> (thisLocale.language())</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">case</span> QLocale::Afrikaans:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;af&quot;</span>);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">case</span> QLocale::Albanian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sq&quot;</span>);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">case</span> QLocale::Amharic:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;am&quot;</span>);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">case</span> QLocale::Arabic:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ar&quot;</span>);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">case</span> QLocale::Armenian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hy&quot;</span>);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">case</span> QLocale::Azerbaijani:      <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;az&quot;</span>);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">case</span> QLocale::Bashkir:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ba&quot;</span>);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">case</span> QLocale::Basque:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;eu&quot;</span>);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">case</span> QLocale::Belarusian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;be&quot;</span>);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">case</span> QLocale::Bengali:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;bn&quot;</span>);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">case</span> QLocale::Bosnian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;bs&quot;</span>);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">case</span> QLocale::Bulgarian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;bg&quot;</span>);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">case</span> QLocale::Catalan:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ca&quot;</span>);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">case</span> QLocale::Chinese:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;zh-CN&quot;</span>);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">case</span> QLocale::LiteraryChinese:  <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;zh-TW&quot;</span>);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">case</span> QLocale::Corsican:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;co&quot;</span>);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">case</span> QLocale::Croatian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hr&quot;</span>);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">case</span> QLocale::Czech:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;cs&quot;</span>);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">case</span> QLocale::Cantonese:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;yue&quot;</span>);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">case</span> QLocale::Cebuano:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ceb&quot;</span>);</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordflow">case</span> QLocale::Chickasaw:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ny&quot;</span>);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">case</span> QLocale::Danish:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;da&quot;</span>);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">case</span> QLocale::Dutch:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;nl&quot;</span>);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">case</span> QLocale::Esperanto:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;eo&quot;</span>);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">case</span> QLocale::Estonian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;et&quot;</span>);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">case</span> QLocale::Finnish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fi&quot;</span>);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">case</span> QLocale::French:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fr&quot;</span>);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">case</span> QLocale::Frisian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fy&quot;</span>);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">case</span> QLocale::Fijian:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fj&quot;</span>);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">case</span> QLocale::Galician:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gl&quot;</span>);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">case</span> QLocale::Georgian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ka&quot;</span>);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">case</span> QLocale::German:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;de&quot;</span>);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">case</span> QLocale::Greek:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;el&quot;</span>);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">case</span> QLocale::Gujarati:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gu&quot;</span>);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">case</span> QLocale::Haitian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ht&quot;</span>);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">case</span> QLocale::Hausa:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ha&quot;</span>);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">case</span> QLocale::Hawaiian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;haw&quot;</span>);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">case</span> QLocale::Hebrew:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;he&quot;</span>);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">case</span> QLocale::Hindi:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hi&quot;</span>);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">case</span> QLocale::Hungarian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hu&quot;</span>);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">//case QLocale::HillMari:       return QStringLiteral(&quot;mrj&quot;);</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="comment">//case QLocale::HmongNjua Hmong:return QStringLiteral(&quot;hmn&quot;);</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">case</span> QLocale::Icelandic:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;is&quot;</span>);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">case</span> QLocale::Igbo:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ig&quot;</span>);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">case</span> QLocale::Indonesian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;id&quot;</span>);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">case</span> QLocale::Irish:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ga&quot;</span>);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">case</span> QLocale::Italian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;it&quot;</span>);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">case</span> QLocale::Japanese:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ja&quot;</span>);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">case</span> QLocale::Javanese:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;jw&quot;</span>);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">case</span> QLocale::Kannada:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;kn&quot;</span>);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">case</span> QLocale::Kazakh:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;kk&quot;</span>);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">case</span> QLocale::Khmer:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;km&quot;</span>);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">case</span> QLocale::Kinyarwanda:      <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;rw&quot;</span>);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">case</span> QLocale::Korean:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ko&quot;</span>);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">case</span> QLocale::Kurdish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ku&quot;</span>);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="comment">//case QLocale::Klingon:        return QStringLiteral(&quot;tlh&quot;);</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="comment">//case QLocale::KlingonPlqaD:   return QStringLiteral(&quot;tlh-Qaak&quot;);</span></div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="comment">//case QLocale::Kyrgyzstan:     return QStringLiteral(&quot;ky&quot;); // Kyrgyz</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">case</span> QLocale::Lao:              <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lo&quot;</span>);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">case</span> QLocale::Latin:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;la&quot;</span>);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">case</span> QLocale::Latvian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lv&quot;</span>);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">case</span> QLocale::Lithuanian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lt&quot;</span>);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">case</span> QLocale::Luxembourgish:    <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lb&quot;</span>);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="comment">//case QLocale::LevantineArabic:return QStringLiteral(&quot;apc&quot;);</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="comment">//case QLocale::Mari:           return QStringLiteral(&quot;mhr&quot;);</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="comment">//case QLocale::Myanmar:        return QStringLiteral(&quot;my&quot;);</span></div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">case</span> QLocale::Papiamento:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pap&quot;</span>);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="keywordflow">case</span> QLocale::Macedonian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mk&quot;</span>);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">case</span> QLocale::Malagasy:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mg&quot;</span>);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">case</span> QLocale::Malay:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ms&quot;</span>);</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">case</span> QLocale::Malayalam:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ml&quot;</span>);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">case</span> QLocale::Maltese:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mt&quot;</span>);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">case</span> QLocale::Maori:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mi&quot;</span>);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">case</span> QLocale::Marathi:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mr&quot;</span>);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordflow">case</span> QLocale::Mongolian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mn&quot;</span>);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">case</span> QLocale::Nepali:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ne&quot;</span>);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">case</span> QLocale::NorwegianBokmal:  <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;no&quot;</span>);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">case</span> QLocale::Oriya:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;or&quot;</span>);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="comment">//case QLocale::QueretaroOtomi: return QStringLiteral(&quot;otq&quot;);</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">case</span> QLocale::Pashto:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ps&quot;</span>);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">case</span> QLocale::Persian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fa&quot;</span>);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="keywordflow">case</span> QLocale::Polish:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pl&quot;</span>);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">case</span> QLocale::Portuguese:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pt&quot;</span>);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">case</span> QLocale::Punjabi:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pa&quot;</span>);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keywordflow">case</span> QLocale::Romanian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ro&quot;</span>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keywordflow">case</span> QLocale::Russian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ru&quot;</span>);</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">case</span> QLocale::Samoan:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sm&quot;</span>);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">case</span> QLocale::Gaelic:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gd&quot;</span>);</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">case</span> QLocale::Serbian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sr&quot;</span>);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">case</span> QLocale::Shona:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sn&quot;</span>);</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">case</span> QLocale::Sindhi:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sd&quot;</span>);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordflow">case</span> QLocale::Sinhala:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;si&quot;</span>);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">case</span> QLocale::Slovak:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sk&quot;</span>);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">case</span> QLocale::Slovenian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sl&quot;</span>);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">case</span> QLocale::Somali:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;so&quot;</span>);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">case</span> QLocale::Spanish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;es&quot;</span>);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">case</span> QLocale::Sundanese:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;su&quot;</span>);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">case</span> QLocale::Swahili:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sw&quot;</span>);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">case</span> QLocale::Swedish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sv&quot;</span>);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="comment">//case QLocale::SerbianLatin:   return QStringLiteral(&quot;sr-Latin&quot;);</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="comment">//case QLocale::Sesotho:        return QStringLiteral(&quot;st&quot;);</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">case</span> QLocale::Filipino:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fil&quot;</span>);</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">case</span> QLocale::Tajik:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tg&quot;</span>);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">case</span> QLocale::Tamil:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ta&quot;</span>);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">case</span> QLocale::Tatar:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tt&quot;</span>);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">case</span> QLocale::Telugu:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;te&quot;</span>);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">case</span> QLocale::Thai:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;th&quot;</span>);</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">case</span> QLocale::Turkish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tr&quot;</span>);</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">case</span> QLocale::Turkmen:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tk&quot;</span>);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="comment">//case QLocale::Tagalog:        return QStringLiteral(&quot;tl&quot;);</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keywordflow">case</span> QLocale::Tahitian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ty&quot;</span>);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">case</span> QLocale::Tongan:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;to&quot;</span>);</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <span class="keywordflow">case</span> QLocale::Uighur:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ug&quot;</span>);</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="keywordflow">case</span> QLocale::Ukrainian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;uk&quot;</span>);</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">case</span> QLocale::Urdu:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ur&quot;</span>);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">case</span> QLocale::Uzbek:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;uz&quot;</span>);</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="comment">//case QLocale::Udmurt:         return QStringLiteral(&quot;udm&quot;);</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordflow">case</span> QLocale::Vietnamese:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;vi&quot;</span>);</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">case</span> QLocale::Welsh:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;cy&quot;</span>);</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">case</span> QLocale::Xhosa:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;xh&quot;</span>);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <span class="keywordflow">case</span> QLocale::Yiddish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;yi&quot;</span>);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordflow">case</span> QLocale::Yoruba:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;yo&quot;</span>);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="comment">//case QLocale::YucatecMaya:    return QStringLiteral(&quot;yua&quot;);</span></div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="keywordflow">case</span> QLocale::Zulu:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;zu&quot;</span>);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordflow">default</span>:                        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;en&quot;</span>);</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    }</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;} <span class="comment">// end language(const QLocale</span></div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00331">331</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;{</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">switch</span> (thisLocale.language())</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">case</span> QLocale::Afrikaans:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;af&quot;</span>);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">case</span> QLocale::Albanian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sq&quot;</span>);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordflow">case</span> QLocale::Amharic:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;am&quot;</span>);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">case</span> QLocale::Arabic:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ar&quot;</span>);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">case</span> QLocale::Armenian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hy&quot;</span>);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">case</span> QLocale::Azerbaijani:      <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;az&quot;</span>);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">case</span> QLocale::Bashkir:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ba&quot;</span>);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">case</span> QLocale::Basque:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;eu&quot;</span>);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordflow">case</span> QLocale::Belarusian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;be&quot;</span>);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">case</span> QLocale::Bengali:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;bn&quot;</span>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">case</span> QLocale::Bosnian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;bs&quot;</span>);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordflow">case</span> QLocale::Bulgarian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;bg&quot;</span>);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">case</span> QLocale::Catalan:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ca&quot;</span>);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">case</span> QLocale::Chinese:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;zh-CN&quot;</span>);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">case</span> QLocale::LiteraryChinese:  <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;zh-TW&quot;</span>);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">case</span> QLocale::Corsican:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;co&quot;</span>);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">case</span> QLocale::Croatian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hr&quot;</span>);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">case</span> QLocale::Czech:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;cs&quot;</span>);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">case</span> QLocale::Cantonese:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;yue&quot;</span>);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">case</span> QLocale::Cebuano:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ceb&quot;</span>);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">case</span> QLocale::Chickasaw:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ny&quot;</span>);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">case</span> QLocale::Danish:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;da&quot;</span>);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">case</span> QLocale::Dutch:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;nl&quot;</span>);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">case</span> QLocale::Esperanto:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;eo&quot;</span>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">case</span> QLocale::Estonian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;et&quot;</span>);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">case</span> QLocale::Finnish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fi&quot;</span>);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">case</span> QLocale::French:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fr&quot;</span>);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordflow">case</span> QLocale::Frisian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fy&quot;</span>);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">case</span> QLocale::Fijian:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fj&quot;</span>);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">case</span> QLocale::Galician:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gl&quot;</span>);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">case</span> QLocale::Georgian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ka&quot;</span>);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">case</span> QLocale::German:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;de&quot;</span>);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">case</span> QLocale::Greek:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;el&quot;</span>);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">case</span> QLocale::Gujarati:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gu&quot;</span>);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">case</span> QLocale::Haitian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ht&quot;</span>);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">case</span> QLocale::Hausa:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ha&quot;</span>);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">case</span> QLocale::Hawaiian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;haw&quot;</span>);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">case</span> QLocale::Hebrew:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;he&quot;</span>);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">case</span> QLocale::Hindi:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hi&quot;</span>);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">case</span> QLocale::Hungarian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;hu&quot;</span>);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="comment">//case QLocale::HillMari:       return QStringLiteral(&quot;mrj&quot;);</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="comment">//case QLocale::HmongNjua Hmong:return QStringLiteral(&quot;hmn&quot;);</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">case</span> QLocale::Icelandic:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;is&quot;</span>);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">case</span> QLocale::Igbo:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ig&quot;</span>);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">case</span> QLocale::Indonesian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;id&quot;</span>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">case</span> QLocale::Irish:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ga&quot;</span>);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">case</span> QLocale::Italian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;it&quot;</span>);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">case</span> QLocale::Japanese:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ja&quot;</span>);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">case</span> QLocale::Javanese:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;jw&quot;</span>);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordflow">case</span> QLocale::Kannada:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;kn&quot;</span>);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">case</span> QLocale::Kazakh:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;kk&quot;</span>);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">case</span> QLocale::Khmer:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;km&quot;</span>);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">case</span> QLocale::Kinyarwanda:      <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;rw&quot;</span>);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">case</span> QLocale::Korean:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ko&quot;</span>);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">case</span> QLocale::Kurdish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ku&quot;</span>);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        <span class="comment">//case QLocale::Klingon:        return QStringLiteral(&quot;tlh&quot;);</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="comment">//case QLocale::KlingonPlqaD:   return QStringLiteral(&quot;tlh-Qaak&quot;);</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="comment">//case QLocale::Kyrgyzstan:     return QStringLiteral(&quot;ky&quot;); // Kyrgyz</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">case</span> QLocale::Lao:              <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lo&quot;</span>);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">case</span> QLocale::Latin:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;la&quot;</span>);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">case</span> QLocale::Latvian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lv&quot;</span>);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">case</span> QLocale::Lithuanian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lt&quot;</span>);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <span class="keywordflow">case</span> QLocale::Luxembourgish:    <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;lb&quot;</span>);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="comment">//case QLocale::LevantineArabic:return QStringLiteral(&quot;apc&quot;);</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="comment">//case QLocale::Mari:           return QStringLiteral(&quot;mhr&quot;);</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="comment">//case QLocale::Myanmar:        return QStringLiteral(&quot;my&quot;);</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">case</span> QLocale::Papiamento:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pap&quot;</span>);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">case</span> QLocale::Macedonian:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mk&quot;</span>);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">case</span> QLocale::Malagasy:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mg&quot;</span>);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="keywordflow">case</span> QLocale::Malay:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ms&quot;</span>);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">case</span> QLocale::Malayalam:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ml&quot;</span>);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">case</span> QLocale::Maltese:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mt&quot;</span>);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keywordflow">case</span> QLocale::Maori:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mi&quot;</span>);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keywordflow">case</span> QLocale::Marathi:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mr&quot;</span>);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">case</span> QLocale::Mongolian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;mn&quot;</span>);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">case</span> QLocale::Nepali:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ne&quot;</span>);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">case</span> QLocale::NorwegianBokmal:  <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;no&quot;</span>);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">case</span> QLocale::Oriya:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;or&quot;</span>);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="comment">//case QLocale::QueretaroOtomi: return QStringLiteral(&quot;otq&quot;);</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordflow">case</span> QLocale::Pashto:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ps&quot;</span>);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">case</span> QLocale::Persian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fa&quot;</span>);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">case</span> QLocale::Polish:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pl&quot;</span>);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">case</span> QLocale::Portuguese:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pt&quot;</span>);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">case</span> QLocale::Punjabi:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;pa&quot;</span>);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">case</span> QLocale::Romanian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ro&quot;</span>);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">case</span> QLocale::Russian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ru&quot;</span>);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">case</span> QLocale::Samoan:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sm&quot;</span>);</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">case</span> QLocale::Gaelic:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gd&quot;</span>);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">case</span> QLocale::Serbian:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sr&quot;</span>);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">case</span> QLocale::Shona:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sn&quot;</span>);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">case</span> QLocale::Sindhi:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sd&quot;</span>);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">case</span> QLocale::Sinhala:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;si&quot;</span>);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">case</span> QLocale::Slovak:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sk&quot;</span>);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">case</span> QLocale::Slovenian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sl&quot;</span>);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">case</span> QLocale::Somali:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;so&quot;</span>);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">case</span> QLocale::Spanish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;es&quot;</span>);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">case</span> QLocale::Sundanese:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;su&quot;</span>);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">case</span> QLocale::Swahili:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sw&quot;</span>);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keywordflow">case</span> QLocale::Swedish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;sv&quot;</span>);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="comment">//case QLocale::SerbianLatin:   return QStringLiteral(&quot;sr-Latin&quot;);</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <span class="comment">//case QLocale::Sesotho:        return QStringLiteral(&quot;st&quot;);</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        <span class="keywordflow">case</span> QLocale::Filipino:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;fil&quot;</span>);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">case</span> QLocale::Tajik:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tg&quot;</span>);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        <span class="keywordflow">case</span> QLocale::Tamil:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ta&quot;</span>);</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">case</span> QLocale::Tatar:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tt&quot;</span>);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keywordflow">case</span> QLocale::Telugu:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;te&quot;</span>);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">case</span> QLocale::Thai:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;th&quot;</span>);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">case</span> QLocale::Turkish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tr&quot;</span>);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <span class="keywordflow">case</span> QLocale::Turkmen:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;tk&quot;</span>);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="comment">//case QLocale::Tagalog:        return QStringLiteral(&quot;tl&quot;);</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">case</span> QLocale::Tahitian:         <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ty&quot;</span>);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="keywordflow">case</span> QLocale::Tongan:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;to&quot;</span>);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordflow">case</span> QLocale::Uighur:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ug&quot;</span>);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">case</span> QLocale::Ukrainian:        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;uk&quot;</span>);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">case</span> QLocale::Urdu:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;ur&quot;</span>);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="keywordflow">case</span> QLocale::Uzbek:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;uz&quot;</span>);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        <span class="comment">//case QLocale::Udmurt:         return QStringLiteral(&quot;udm&quot;);</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        <span class="keywordflow">case</span> QLocale::Vietnamese:       <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;vi&quot;</span>);</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="keywordflow">case</span> QLocale::Welsh:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;cy&quot;</span>);</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <span class="keywordflow">case</span> QLocale::Xhosa:            <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;xh&quot;</span>);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="keywordflow">case</span> QLocale::Yiddish:          <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;yi&quot;</span>);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="keywordflow">case</span> QLocale::Yoruba:           <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;yo&quot;</span>);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="comment">//case QLocale::YucatecMaya:    return QStringLiteral(&quot;yua&quot;);</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        <span class="keywordflow">case</span> QLocale::Zulu:             <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;zu&quot;</span>);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <span class="keywordflow">default</span>:                        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;en&quot;</span>);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    }</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;} <span class="comment">// end language(const QLocale</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -961,10 +994,10 @@ Public Attributes</h2></td></tr>
 <p>Added by Light-Wizzard language Code to Name.</p>
 <p>languageCodeToName </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00254">254</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> s_genericLanguageCodeToName.value(lang);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;} <span class="comment">// end languageCodeToName</span></div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00266">266</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">return</span> s_genericLanguageCodeToName.value(lang);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;} <span class="comment">// end languageCodeToName</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1060,13 +1093,12 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>language Name to Code Added by Light-Wizzard </p>
-<p>Added by Light-Wizzard language Name to Code.</p>
-<p>languageNameToCode </p>
+<p>Added by Light-Wizzard language Name to Code. languageNameToCode. </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00246">246</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> s_genericLanguageNameToCode.value(lang);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;} <span class="comment">// end languageNameToCode</span></div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00258">258</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">return</span> s_genericLanguageNameToCode.value(lang);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;} <span class="comment">// end languageNameToCode</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1125,14 +1157,14 @@ Public Attributes</h2></td></tr>
 <p>read Language </p>
 <p>read Language. readLanguage </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00262">262</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    QString theCode = <a class="code" href="classMyLocalization.html#a94bf119caeab1979774a9e4674c57220">language</a>(QLocale());</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <a class="code" href="classMyLocalization.html#a441729642ce169a733f9ada49f428d8f">setLanguageCode</a>(<a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ae346ac4063c1501cdd835c77a5cca8e3">readSettings</a>(<a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a670417872e4050d1d501b87b876ed6a5">MY_LOCALE_LANG_CODE</a>, theCode));</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> myLanguageCode;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00274">274</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    QString theCode = <a class="code" href="classMyLocalization.html#a94bf119caeab1979774a9e4674c57220">language</a>(QLocale());</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="classMyLocalization.html#a441729642ce169a733f9ada49f428d8f">setLanguageCode</a>(<a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ae346ac4063c1501cdd835c77a5cca8e3">readSettings</a>(<a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a670417872e4050d1d501b87b876ed6a5">MY_LOCALE_LANG_CODE</a>, theCode));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> myLanguageCode;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 <div class="ttc" id="aclassMyConstants_html_a670417872e4050d1d501b87b876ed6a5"><div class="ttname"><a href="classMyConstants.html#a670417872e4050d1d501b87b876ed6a5">MyConstants::MY_LOCALE_LANG_CODE</a></div><div class="ttdeci">const QString MY_LOCALE_LANG_CODE</div><div class="ttdoc">MY_CURRENT_LANG_CODE</div><div class="ttdef"><b>Definition:</b> <a href="MyConstants_8h_source.html#l00037">MyConstants.h:37</a></div></div>
-<div class="ttc" id="aclassMyLocalization_html_a441729642ce169a733f9ada49f428d8f"><div class="ttname"><a href="classMyLocalization.html#a441729642ce169a733f9ada49f428d8f">MyLocalization::setLanguageCode</a></div><div class="ttdeci">void setLanguageCode(const QString &amp;thisLanguageCode)</div><div class="ttdoc">set Language Code</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8cpp_source.html#l00281">MyLocalization.cpp:281</a></div></div>
+<div class="ttc" id="aclassMyLocalization_html_a441729642ce169a733f9ada49f428d8f"><div class="ttname"><a href="classMyLocalization.html#a441729642ce169a733f9ada49f428d8f">MyLocalization::setLanguageCode</a></div><div class="ttdeci">void setLanguageCode(const QString &amp;thisLanguageCode)</div><div class="ttdoc">set Language Code</div><div class="ttdef"><b>Definition:</b> <a href="MyLocalization_8cpp_source.html#l00293">MyLocalization.cpp:293</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1244,10 +1276,10 @@ Public Attributes</h2></td></tr>
 <p>set Language Code </p>
 <p>set Debug Message. setDebugMessage </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00281">281</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    myLanguageCode = thisLanguageCode;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00293">293</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    myLanguageCode = thisLanguageCode;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1270,10 +1302,10 @@ Public Attributes</h2></td></tr>
 <p>set Main Loaded </p>
 <p>language. language </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00302">302</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;{</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    isMainLoaded = thisMainLoaded;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00314">314</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;{</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    isMainLoaded = thisMainLoaded;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1350,11 +1382,11 @@ Public Attributes</h2></td></tr>
 <p>write Language </p>
 <p>write Language. writeLanguage </p>
 
-<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00272">272</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <a class="code" href="classMyLocalization.html#a441729642ce169a733f9ada49f428d8f">setLanguageCode</a>(thisCurrentLanguageCode);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">writeSettings</a>(<a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a670417872e4050d1d501b87b876ed6a5">MY_LOCALE_LANG_CODE</a>, thisCurrentLanguageCode);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MyLocalization_8cpp_source.html#l00284">284</a> of file <a class="el" href="MyLocalization_8cpp_source.html">MyLocalization.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;{</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="classMyLocalization.html#a441729642ce169a733f9ada49f428d8f">setLanguageCode</a>(thisCurrentLanguageCode);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">writeSettings</a>(<a class="code" href="classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a670417872e4050d1d501b87b876ed6a5">MY_LOCALE_LANG_CODE</a>, thisCurrentLanguageCode);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 <div class="ttc" id="aclassMyOrgSettings_html_ac2b7c734e784998d2c8e470298395646"><div class="ttname"><a href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">MyOrgSettings::writeSettings</a></div><div class="ttdeci">void writeSettings(const QString &amp;thisSetting, const QString &amp;thisValue)</div><div class="ttdoc">writeSettings</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00134">MyOrgSettings.cpp:134</a></div></div>
 </div><!-- fragment -->
 </div>

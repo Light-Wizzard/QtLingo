@@ -13,6 +13,7 @@ var classMyLocalization =
     [ "fixTranslationFile", "classMyLocalization.html#adcf184a8310923e14182f86737c3e9eb", null ],
     [ "getDebugMessage", "classMyLocalization.html#a5912cfbcf87cef7764c242a9f678531e", null ],
     [ "getHelpSource", "classMyLocalization.html#ad395b101acc2467da6f0be6f39d188bc", null ],
+    [ "getLangCode", "classMyLocalization.html#a6ae50df5bc23d26257f3c86ba079874d", null ],
     [ "getLanguageCode", "classMyLocalization.html#a51737e60ec459579bf7d0bb845f3544f", null ],
     [ "getLanguageFile", "classMyLocalization.html#a7ba3b9eb4a9926b9476f1d366d5526db", null ],
     [ "getLanguageFromFile", "classMyLocalization.html#a59111d36298186b8775a4797551d4f6e", null ],

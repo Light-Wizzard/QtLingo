@@ -3,7 +3,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "test", "dir_120ed4da3e3217b1e7fc0b4f48568e79.html", "dir_120ed4da3e3217b1e7fc0b4f48568e79" ],
     [ "third-party", "dir_afd47efe7cb30516bfa146ac19a62883.html", "dir_afd47efe7cb30516bfa146ac19a62883" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "MainWindow.cpp", "MainWindow_8cpp.html", "MainWindow_8cpp" ],
+    [ "MainWindow.cpp", "MainWindow_8cpp.html", null ],
     [ "MainWindow.h", "MainWindow_8h.html", [
       [ "MyLingoJobs", "classMyLingoJobs.html", "classMyLingoJobs" ],
       [ "MainWindow", "classMainWindow.html", "classMainWindow" ]

@@ -1,3 +1,5 @@
+#
+# https://ci.appveyor.com/tools/validate-yaml
 # https://www.appveyor.com/docs/build-environment/#qt
 # https://download.qt.io/snapshots/ifw/installer-framework/30/
 #
@@ -26,7 +28,7 @@ for:
       - image: Visual Studio 2019
   environment:
     MY_BIN_PRO_RES_NAME: QtLingo
-    MY_QIF_PACKAGE_URI: 'packages/com.appveyor.qtlingo/data'
+    MY_QIF_PACKAGE_URI: 'packages\com.appveyor.qtlingo\data'
     MY_OS: Windows # No Spaces
     MY_COMPILER: "Qt"
     MY_QT_VERSION: 5.15.2
@@ -49,7 +51,6 @@ for:
     - ps: $env:MY_COMPILER="Qt"
     - ps: Invoke-Expression -Command scripts\install.ps1
   build_script:
-    - ps: Write-Host "build_script yaml"
     - ps: Invoke-Expression -Command scripts\build_script.ps1
   artifacts:
     - path: '*.zip'
@@ -61,7 +62,7 @@ for:
       - image: Ubuntu
   environment:
     MY_BIN_PRO_RES_NAME: QtLingo
-    MY_QIF_PACKAGE_URI: 'packages\com.appveyor.qtlingo\data'
+    MY_QIF_PACKAGE_URI: 'packages/com.appveyor.qtlingo/data'
     MY_OS: Ubuntu
     MY_COMPILER: "Qt"
     MY_QT_VERSION: 5.15.2

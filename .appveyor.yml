@@ -1,3 +1,5 @@
+# https://www.appveyor.com/docs/build-environment/#qt
+# https://download.qt.io/snapshots/ifw/installer-framework/30/
 #
 version: '{branch}-{build}'
 
@@ -23,9 +25,8 @@ for:
     only:
       - image: Visual Studio 2019
   environment:
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
     MY_BIN_PRO_RES_NAME: QtLingo
+    MY_QIF_PACKAGE_URI: 'packages/com.appveyor.qtlingo/data'
     MY_OS: Windows # No Spaces
     MY_COMPILER: "Qt"
     MY_QT_VERSION: 5.15.2
@@ -35,10 +36,11 @@ for:
     MY_QT_TOOLS_MINGW32: mingw810_32
     MY_QT_TOOLS_MINGW64: mingw810_32 # mingw810_64?
     MY_QT_IF_VERSION: '4.1.1'
-    MY_QIF_PACKAGE_URI: 'packages\com.appveyor.qtlingo\data'
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: false
     MY_RUN_DOXYFILE: false
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
@@ -58,19 +60,19 @@ for:
     only:
       - image: Ubuntu
   environment:
-    RUNTIME_LINKAGE: static
-    COVERITY_BUILD_CANDIDATE: True
     MY_BIN_PRO_RES_NAME: QtLingo
+    MY_QIF_PACKAGE_URI: 'packages\com.appveyor.qtlingo\data'
     MY_OS: Ubuntu
     MY_COMPILER: "Qt"
     MY_QT_VERSION: 5.15.2
     MY_VS_VERSION: 2019
     MY_QT_IF_VERSION: '4.1.1'
-    MY_QIF_PACKAGE_URI: 'packages/com.appveyor.qtlingo/data'
     MY_PYTHON_VER: 3.9
     MY_PYTHON_REQUIRED: false
     MY_UPGRADE_OS: false # apt-get upgrade: true or false only
     MY_RUN_DOXYFILE: false
+    RUNTIME_LINKAGE: static
+    COVERITY_BUILD_CANDIDATE: True
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)

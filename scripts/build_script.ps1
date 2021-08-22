@@ -17,7 +17,10 @@ If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
             Write-Host "build_script Windows QT x64 mingw32-make install"
             Invoke-Expression "mingw32-make.exe install"
             If ($?) {
-                $env:MY_BUILD_GOOD = true
+                Test-Path -Path AppDir\$env:MY_BIN_PRO_RES_NAME.exe -PathType Leaf
+                If ($?) {
+                    $env:MY_BUILD_GOOD = true
+                }
             }
         }
     }
@@ -40,7 +43,10 @@ ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
             Write-Host "build_script Windows QT x64 mingw32-make install"
             Invoke-Expression "mingw32-make.exe install"
             If ($?) {
-                $env:MY_BUILD_GOOD = true
+                Test-Path -Path AppDir\$env:MY_BIN_PRO_RES_NAME.exe -PathType Leaf
+                If ($?) {
+                    $env:MY_BUILD_GOOD = true
+                }
             }
         }
     }
@@ -61,7 +67,10 @@ ElseIf ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
             Write-Host "build_script Windows VS x64 mmake install INSTALL_ROOT=AppDir"
             Invoke-Expression "mmake install INSTALL_ROOT=AppDir"
             If ($?) {
-                $env:MY_BUILD_GOOD = true
+                Test-Path -Path AppDir\$env:MY_BIN_PRO_RES_NAME.exe -PathType Leaf
+                If ($?) {
+                    $env:MY_BUILD_GOOD = true
+                }
             }
         }
     }
@@ -82,7 +91,10 @@ ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
             Write-Host "build_script Windows VS x86 mmake install INSTALL_ROOT=AppDir"
             Invoke-Expression "mmake install INSTALL_ROOT=AppDir"
             If ($?) {
-                $env:MY_BUILD_GOOD = true
+                Test-Path -Path AppDir\$env:MY_BIN_PRO_RES_NAME.exe -PathType Leaf
+                If ($?) {
+                    $env:MY_BUILD_GOOD = true
+                }
             }
         }
     }

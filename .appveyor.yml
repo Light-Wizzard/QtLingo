@@ -38,21 +38,20 @@ for:
     MY_QIF_PACKAGE_URI: 'packages\com.appveyor.qtlingo\data'
     MY_PYTHON_VER: 3.8 # Last version Windows 7 can run
     MY_PYTHON_REQUIRED: false
-    MY_RUN_DOXYFILE: false;
-    install:
-      - ps: Write-Host "install_script yaml"
-      # Create our AppVeyor version
-      - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
-      - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
-      - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
-      - ps: $env:MY_COMPILER="Qt"
-      - ps: Invoke-Expression -Command scripts\install.ps1
-    build_script:
-      - ps: Write-Host "build_script yaml"
-      - ps: Invoke-Expression -Command scripts\build_script.ps1
-    artifacts:
-      - path: '*.zip'
-        name: 'ZipInstaller'
+    MY_RUN_DOXYFILE: false
+  install:
+    # Create our AppVeyor version
+    - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)
+    - ps: $env:package_version = ("$(git describe --tags --always --long)").trim()
+    - ps: Update-AppveyorBuild -Version "$env:package_version-$env:APPVEYOR_BUILD_NUMBER"
+    - ps: $env:MY_COMPILER="Qt"
+    - ps: Invoke-Expression -Command scripts\install.ps1
+  build_script:
+    - ps: Write-Host "build_script yaml"
+    - ps: Invoke-Expression -Command scripts\build_script.ps1
+  artifacts:
+    - path: '*.zip'
+      name: 'ZipInstaller'
 
 -
   matrix:
@@ -71,7 +70,7 @@ for:
     MY_PYTHON_VER: 3.9
     MY_PYTHON_REQUIRED: false
     MY_UPGRADE_OS: false # apt-get upgrade: true or false only
-    MY_RUN_DOXYFILE: false;
+    MY_RUN_DOXYFILE: false
   install:
     # Create our AppVeyor version
     - ps: $env:REPO_NAME =  $env:APPVEYOR_REPO_NAME.Substring($env:APPVEYOR_REPO_NAME.IndexOf('/') + 1)

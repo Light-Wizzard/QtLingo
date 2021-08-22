@@ -146,7 +146,8 @@ class MainWindow : public QMainWindow
         void createHelpTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create Help Translation Job
         void setLanguageCode();                         //!< set Language Code Lable in UI
         void acceptTranslations();                      //!< accept Translations
-        void createReadMeTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked);
+        void createReadMeTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create ReadMe Translation Job
+        void closeTransHelp();                          //!< close Trans Help
 
     public slots:
         void onHelp();                                  //!< on Help

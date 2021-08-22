@@ -38,7 +38,7 @@ die Quellcode für meine Trinary Math haben,
 sowie ein Galaxy-Rechner,
 Aus diesem Grund habe ich diese Anwendung geschrieben,
 bevor Sie zu 100 % behindert werden,
-Ich arbeitete für die EPA und die BLM,
+Ich habe für die EPA und die BLM gearbeitet,
 wo ich mehrere Auszeichnungen für Programme bekam, die ich für sie geschrieben habe.
 
 Ich habe Krebs und mein Santa Paws Welpe auch.

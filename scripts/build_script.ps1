@@ -1,75 +1,105 @@
-Write-Host "build_script Windows"
-#
-cd $APPVEYOR_BUILD_FOLDER
-mkdir build
-cd build
-mkdir AppDir
-# FIXME x86
-if ($Env:PLATFORM -eq "x64")
-{
-    qmake -v && qmake ..\$MY_BIN_PRO_RES_NAME.pro CONFIG+=$configuration CONFIG+=c++11 DESTDIR=$cd && mingw32-make && mingw32-make install INSTALL_ROOT=AppDir
+$env:MY_BUILD_GOOD = false
+If ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Qt") {
+    Write-Host "build_script Windows QT x64" -ForegroundColor Yellow
+    Set-Location -Path "$env:APPVEYOR_BUILD_FOLDER"
+    New-Item -Path 'build' -ItemType Directory
+    Set-Location -Path 'build'
+    $env:INSTALL_ROOT = 'AppDir'
+    $env:DESTDIR = 'AppDir'
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
+    $env:MY_QMAKE = "qmake.exe $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=x86_64"
+    Write-Host "qmake dbug: $env:MY_QMAKE"
+    Invoke-Expression $env:MY_QMAKE
+    If ($?) {
+        Write-Host "build_script Windows QT x64 mingw32-make"
+        Invoke-Expression "mingw32-make.exe"
+        If ($?) {
+            Write-Host "build_script Windows QT x64 mingw32-make install"
+            Invoke-Expression "mingw32-make.exe install"
+            If ($?) {
+                $env:MY_BUILD_GOOD = true
+            }
+        }
+    }
 }
-else
-{
-    qmake -v && qmake ..\$MY_BIN_PRO_RES_NAME.pro CONFIG+=$configuration CONFIG+=c++11 DESTDIR=$cd && mingw32-make && mingw32-make install INSTALL_ROOT=AppDir
+ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Qt") {
+    Write-Host "build_script Windows QT x86" -ForegroundColor Magenta
+    Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
+    New-Item -Path 'build' -ItemType Directory
+    Set-Location -Path build
+    $env:INSTALL_ROOT = 'AppDir'
+    $env:DESTDIR = 'AppDir'
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
+    $env:MY_QMAKE = "qmake.exe $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=x86"
+    Write-Host "qmake dbug: $env:MY_QMAKE"
+    Invoke-Expression $env:MY_QMAKE
+    If ($?) {
+        Write-Host "build_script Windows QT x64 mingw32-make"
+        Invoke-Expression "mingw32-make.exe"
+        If ($?) {
+            Write-Host "build_script Windows QT x64 mingw32-make install"
+            Invoke-Expression "mingw32-make.exe install"
+            If ($?) {
+                $env:MY_BUILD_GOOD = true
+            }
+        }
+    }
 }
-Write-Host "after_build Windows" -ForegroundColor Cyan
-dir
-#
-copy "$APPVEYOR_BUILD_FOLDER\build\$MY_BIN_PRO_RES_NAME.exe" "AppDir\$MY_BIN_PRO_RES_NAME-$MY_OS-$CONFIGURATION-$PLATFORM.exe"
-#
-windeployqt "AppDir/$MY_BIN_PRO_RES_NAME.exe" --verbose=2
-#
-#mv $MY_BIN_PRO_RES_NAME.exe $MY_BIN_PRO_RES_NAME-$PLATFORM.exe
-Copy-Item -Path "$MY_BIN_PRO_RES_NAME.exe" -Destination "$MY_BIN_PRO_RES_NAME-$PLATFORM.exe" -Force
-#
-# The packages/${MY_QIF_PACKAGE_URI}/meta/installscript.qs creates this: copy -v "desktop/${MY_BIN_PRO_RES_NAME}.desktop" "${MY_QIF_PACKAGE_URI}";
-
-Copy-Item -Path "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.png" -Destination "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data" -Force
-Copy-Item -Path "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.svg" -Destination "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data" -Force
-Copy-Item -Path "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.ico" -Destination "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data" -Force
-
-#copy -v "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.png" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-#copy -v "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.svg" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-#copy -v "${APPVEYOR_BUILD_FOLDER}/desktop/${MY_BIN_PRO_RES_NAME}.ico" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-
-Copy-Item -Path "${APPVEYOR_BUILD_FOLDER}/usr/share/icons" -Destination "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/icons" -recurse -Force
-#rsync -Ravr "${APPVEYOR_BUILD_FOLDER}/usr/share/icons" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/icons"
-
-ls "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-#
-Write-Host "Running Qt Installer Framework" -ForegroundColor Cyan
-if ($Env:PLATFORM -eq "x64")
-{
-    export ARTIFACT_APPIMAGE="${MY_BIN_PRO_RES_NAME}-x64.exe"
+ElseIf ($env:PLATFORM -eq "x64" -And $env:MY_COMPILER -eq "Vs") {
+    Write-Host "build_script Windows VS x64" -ForegroundColor DarkYellow
+    Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
+    New-Item -Path 'build' -ItemType Directory
+    Set-Location -Path build
+    $env:INSTALL_ROOT=AppDir
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
+    $env:MY_QT_MAKE="qmake $env:APPVEYOR_BUILD_FOLDER%\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=x86_64"
+    Invoke-Expression $env:MY_QT_MAKE
+    If ($?) {
+        Write-Host "build_script Windows VS x64 mmake"
+        Invoke-Expression "mmake"
+        If ($?) {
+            Write-Host "build_script Windows VS x64 mmake install INSTALL_ROOT=AppDir"
+            Invoke-Expression "mmake install INSTALL_ROOT=AppDir"
+            If ($?) {
+                $env:MY_BUILD_GOOD = true
+            }
+        }
+    }
 }
-else
-{
-    export ARTIFACT_APPIMAGE="${MY_BIN_PRO_RES_NAME}-x86.exe"
+ElseIf ($env:PLATFORM -eq "x86" -And $env:MY_COMPILER -eq "Vs") {
+    Write-Host "build_script Windows VS x86" -ForegroundColor DarkMagenta
+    Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
+    New-Item -Path 'build' -ItemType Directory
+    Set-Location -Path build
+    $env:INSTALL_ROOT=AppDir
+    $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
+    $env:MY_QT_MAKE="qmake -spec win32-g++ $env:APPVEYOR_BUILD_FOLDER\$env:MY_BIN_PRO_RES_NAME.pro CONFIG+=$env:CONFIGURATION CONFIG+=x86"
+    Invoke-Expression $env:MY_QT_MAKE
+    If ($?) {
+        Write-Host "build_script Windows VS x86 mmake"
+        Invoke-Expression "mmake"
+        If ($?) {
+            Write-Host "build_script Windows VS x86 mmake install INSTALL_ROOT=AppDir"
+            Invoke-Expression "mmake install INSTALL_ROOT=AppDir"
+            If ($?) {
+                $env:MY_BUILD_GOOD = true
+            }
+        }
+    }
 }
-#
-export ARTIFACT_QIF="${MY_BIN_PRO_RES_NAME}-Linux-Installer"
-#
-#7z a -tzip "$MY_BIN_PRO_RES_NAME-$MY_OS-$CONFIGURATION-$PLATFORM.zip" AppDir -r
 
-Copy-Item -Path "$APPVEYOR_BUILD_FOLDER\build\$MY_BIN_PRO_RES_NAME-$MY_OS-$CONFIGURATION-$PLATFORM.zip" -Destination "$APPVEYOR_BUILD_FOLDER" -recurse -Force
-#copy "$APPVEYOR_BUILD_FOLDER\build\$MY_BIN_PRO_RES_NAME-$MY_OS-$CONFIGURATION-$PLATFORM.zip" "$APPVEYOR_BUILD_FOLDER"
-
-Write-Host APPVEYOR_BUILD_FOLDER=$APPVEYOR_BUILD_FOLDER -ForegroundColor Cyan
-#
-Copy-Item -Path "$APPVEYOR_BUILD_FOLDER\build\AppDir" -Destination "$APPVEYOR_BUILD_FOLDER\$MY_QIF_PACKAGE_URI" -recurse -Force
-#xcopy /s /e /f "$APPVEYOR_BUILD_FOLDER\build\AppDir" "$APPVEYOR_BUILD_FOLDER\$MY_QIF_PACKAGE_URI"
-#C:\Qt\Tools\QtInstallerFramework\3.2\bin\binarycreator.exe --offline-only -c "$APPVEYOR_BUILD_FOLDER\config\config.xml" -p "$APPVEYOR_BUILD_FOLDER\packages" "$MY_BIN_PRO_RES_NAME-Windows-Installer.exe"
-#7z a -tzip "$MY_BIN_PRO_RES_NAME-Windows-$PLATFORM-Installer.zip" "$MY_BIN_PRO_RES_NAME-Windows-Installer.exe"
-#
-
-Copy-Item -Path "$MY_BIN_PRO_RES_NAME-Windows-$PLATFORM-Installer.zip" -Destination "$APPVEYOR_BUILD_FOLDER" -Force
-#copy *.zip $APPVEYOR_BUILD_FOLDER
-
-Copy-Item -Path "$MY_BIN_PRO_RES_NAME-$PLATFORM.exe" -Destination "$APPVEYOR_BUILD_FOLDER" -recurse -Force
-#copy *.exe $APPVEYOR_BUILD_FOLDER
-
-cd $APPVEYOR_BUILD_FOLDER
-#
-dir
-Write-Host "Completed-Build Windows" -ForegroundColor DarkGreen
+If ($env:MY_BUILD_GOOD -eq "true") {
+    $currentDirectory = [System.AppDomain]::CurrentDomain.BaseDirectory.TrimEnd('\')
+    If ($currentDirectory -eq $PSHOME.TrimEnd('\')) {
+        $currentDirectory = $PSScriptRoot
+    }
+    Write-Host "After Windows build $env:currentDirectory" -ForegroundColor DarkGreen
+    Get-ChildItem -Path AppDir
+    Copy-Item "C:\Qt\Tools\QtCreator\bin\plugins\platforms\*" -Destination "AppDir" -Recurse
+    Invoke-Expression "windeployqt AppDir\$env:MY_BIN_PRO_RES_NAME.exe --verbose=2"
+    Invoke-Expression "7z a -tzip $env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip AppDir -r"
+    Copy-Item "$env:APPVEYOR_BUILD_FOLDER\build\$env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
+    Copy-Item "*.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
+    Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
+    Write-Host "Completed-Build Windows" -ForegroundColor DarkGreen
+}

@@ -1,28 +1,28 @@
-# QtLingo About
+# QtLingo Acerca de
 
-QtLingo is an Application to make Qt Computer Translations easier,
-and something I have never seen before,
-so it is a new concept for Qt Translations.
+QtLingo es una aplicación para facilitar las traducciones de Qt Computer,
+y algo que nunca había visto antes,
+por lo que es un nuevo concepto para Qt Translations.
 
-The normal flow would have you edit files and replace words with their Translations,
-this is too much work for me to do,
-so I decided to make it easier,
-run this Application and set up a project by giving it the folder location and name of your project,
-give it the location for where you want the .ts files,
-and a destination for the .qm files,
-and compile it,
-and it will give you the configuration for qmake or cmake,
-and just update your files with that code,
-and deploy your project,
-it is all done, nothing more to do.
+El flujo normal le haría editar archivos y reemplazar palabras con sus Traducciones,
+esto es demasiado trabajo para mí,
+así que decidí hacérselo más fácil
+ejecute esta aplicación y configure un proyecto dándole la ubicación de la carpeta y el nombre de su proyecto,
+dale la ubicación donde quieres los archivos .ts,
+y un destino para los archivos .qm,
+y compilarlo,
+y te dará la configuración para qmake o cmake,
+y simplemente actualice sus archivos con ese código,
+y despliegue su proyecto,
+todo está hecho, nada más que hacer.
 
-I use to GitHub Applications for this,
-for Translations I use crow-translate at https://github.com/crow-translate/crow-translate,
-and QOnlineTranslator at https://github.com/crow-translate/QOnlineTranslator,
-and to parse the .ts files I use ts_tool at https://github.com/nen777w/ts_tool.
+Utilizo las aplicaciones de GitHub para esto,
+para traducciones utilizo crow-translate en https://github.com/crow-translate/crow-translate,
+y QOnlineTranslator en https://github.com/crow-translate/QOnlineTranslator,
+y para analizar los archivos .ts utilizo ts_tool en https://github.com/nen777w/ts_tool.
 
-First I will update your projects Translations files according to the Languages you have chosen,
-then I will translate all the Languages,
-then update the Translations files and compile them into .qm files for deployment.
+Primero actualizaré los archivos de traducción de sus proyectos de acuerdo con los idiomas que haya elegido,
+luego traduciré todos los idiomas,
+luego actualice los archivos de traducción y compílelos en archivos .qm para su implementación.
 
-Writen by Jeffrey Scott Flesher
+Escrito por Jeffrey Scott Flesher

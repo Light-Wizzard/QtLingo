@@ -98,12 +98,12 @@
         <message><location filename="../src/MainWindow.ui" line="396">
         </location>
             <source>Logging</source>
-            <translation type="unfinished">日志记录</translation>
+            <translation>日志记录</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="405">
         </location>
             <source>Debug Messages</source>
-            <translation type="unfinished">调试消息</translation>
+            <translation>调试消息</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="430">
         </location>
@@ -176,17 +176,17 @@
         <message><location filename="../src/MainWindow.ui" line="778">
         </location>
             <source>KlingonPlqaD - tlh-Qaak</source>
-            <translation type="unfinished">KlingonPlqaD - tlh-Qaak</translation>
+            <translation>KlingonPlqaD - tlh-Qaak</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="834">
         </location>
             <source>Levantine Arabic - apc</source>
-            <translation type="unfinished">黎凡特阿拉伯语 - apc</translation>
+            <translation>黎凡特阿拉伯语 - apc</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="925">
         </location>
             <source>Filipino - fil</source>
-            <translation type="unfinished">菲律宾语 - fil</translation>
+            <translation>菲律宾语 - fil</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="974">
         </location>
@@ -736,47 +736,47 @@
         <message><location filename="../src/MainWindow.ui" line="1093">
         </location>
             <source>Klingon - tlh</source>
-            <translation type="unfinished">克林贡 - tlh</translation>
+            <translation>克林贡 - tlh</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1121">
         </location>
             <source>Papiamento - pap</source>
-            <translation type="unfinished">帕皮亚门托 - pap</translation>
+            <translation>帕皮亚门托 - pap</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1156">
         </location>
             <source>Cebuano - ceb</source>
-            <translation type="unfinished">宿雾语 - ceb</translation>
+            <translation>宿雾语 - ceb</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1246">
         </location>
             <source>Hmong - hmn</source>
-            <translation type="unfinished">苗族 - 嗯</translation>
+            <translation>苗族 - 嗯</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1260">
         </location>
             <source>Hawaiian - haw</source>
-            <translation type="unfinished">夏威夷语 - haw</translation>
+            <translation>夏威夷语 - haw</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1281">
         </location>
             <source>Mari - mhr</source>
-            <translation type="unfinished">马里 - mhr</translation>
+            <translation>马里 - mhr</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1456">
         </location>
             <source>Cantonese - yue</source>
-            <translation type="unfinished">粤语-粤语</translation>
+            <translation>粤语-粤语</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1470">
         </location>
             <source>HillMari - mrj</source>
-            <translation type="unfinished">HillMari - mrj</translation>
+            <translation>HillMari - mrj</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1512">
         </location>
             <source>Queretaro Otomi - otq</source>
-            <translation type="unfinished">Queretaro Otomi - otq</translation>
+            <translation>Queretaro Otomi - otq</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1519">
         </location>
@@ -821,17 +821,17 @@
         <message><location filename="../src/MainWindow.ui" line="1603">
         </location>
             <source>Serbian Latin -sr-Latin</source>
-            <translation type="unfinished">塞尔维亚拉丁语 -sr-Latin</translation>
+            <translation>塞尔维亚拉丁语 -sr-Latin</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1638">
         </location>
             <source>Udmurt - udm</source>
-            <translation type="unfinished">乌德穆尔特 - udm</translation>
+            <translation>乌德穆尔特 - udm</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1645">
         </location>
             <source>Yucatec Maya - yua</source>
-            <translation type="unfinished">Yucatec Maya - yua</translation>
+            <translation>Yucatec Maya - yua</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1658">
         </location>
@@ -856,27 +856,27 @@
         <message><location filename="../src/MainWindow.ui" line="1765">
         </location>
             <source>Help Folder</source>
-            <translation type="unfinished">帮助文件夹</translation>
+            <translation>帮助文件夹</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1933">
         </location>
             <source>Translate</source>
-            <translation type="unfinished">翻译</translation>
+            <translation>翻译</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1969">
         </location>
             <source>Translate Help</source>
-            <translation type="unfinished">翻译帮助</translation>
+            <translation>翻译帮助</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1978">
         </location>
             <source>Accept Translations</source>
-            <translation type="unfinished">接受翻译</translation>
+            <translation>接受翻译</translation>
         </message>
         <message><location filename="../src/MainWindow.ui" line="1987">
         </location>
             <source>Translate ReadMe</source>
-            <translation type="unfinished">翻译自述文件</translation>
+            <translation>翻译自述文件</translation>
         </message>
         <message><source>qmake</source>
             <translation type="vanished">qmake</translation>
@@ -933,205 +933,205 @@
         <message><location filename="../src/MainWindow.cpp" line="114">
         </location>
             <source>Internet is down, trying to reconnect</source>
-            <translation type="unfinished">互联网已关闭，正在尝试重新连接</translation>
+            <translation>互联网已关闭，正在尝试重新连接</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="243">
         </location>
             <source>ID</source>
-            <translation type="unfinished">ID</translation>
+            <translation>ID</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="507">
         </location>
             <source>Translation Source Folder Location</source>
-            <translation type="unfinished">翻译源文件夹位置</translation>
+            <translation>翻译源文件夹位置</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="524">
         </location>
             <source>Translation Destination Folder Location</source>
-            <translation type="unfinished">翻译目标文件夹位置</translation>
+            <translation>翻译目标文件夹位置</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="540">
         </location>
             <location filename="../src/MainWindow.cpp" line="556"></location>
             <source>Projects Folder Location</source>
-            <translation type="unfinished">项目文件夹位置</translation>
+            <translation>项目文件夹位置</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="616">
         </location>
             <source>Sqlite Folder Location</source>
-            <translation type="unfinished">Sqlite文件夹位置</translation>
+            <translation>Sqlite文件夹位置</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="631">
         </location>
             <source>Failed to move Database</source>
-            <translation type="unfinished">无法移动数据库</translation>
+            <translation>无法移动数据库</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1546">
         </location>
             <location filename="../src/MainWindow.cpp" line="1551"></location>
             <source>Unable to find record in database</source>
-            <translation type="unfinished">无法在数据库中找到的记录</translation>
+            <translation>无法在数据库中找到的记录</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1551">
         </location>
             <source>Could not read from the Database</source>
-            <translation type="unfinished">无法从数据库读取</translation>
+            <translation>无法从数据库读取</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1976">
         </location>
             <source>and Destination</source>
-            <translation type="unfinished">和目的地</translation>
+            <translation>和目的地</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1976">
         </location>
             <source>cannot be the same</source>
-            <translation type="unfinished">不能相同</translation>
+            <translation>不能相同</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1982">
         </location>
             <source>Project file not found</source>
-            <translation type="unfinished">未找到项目文件</translation>
+            <translation>未找到项目文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1988">
         </location>
             <source>Error running lupdate</source>
-            <translation type="unfinished">运行lupdate 时出错</translation>
+            <translation>运行lupdate 时出错</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1993">
         </location>
             <source>Error could not make Translations Destination</source>
-            <translation type="unfinished">错误无法翻译的目标</translation>
+            <translation>错误无法翻译的目标</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2169">
         </location>
             <source>Can not remove file</source>
-            <translation type="unfinished">无法删除文件</translation>
+            <translation>无法删除文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2178">
         </location>
             <source>Can not find Txt file</source>
-            <translation type="unfinished">找不到txt文件</translation>
+            <translation>找不到txt文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2244">
         </location>
             <source>Error running lrelease</source>
-            <translation type="unfinished">运行 lrelease 时出错</translation>
+            <translation>运行 lrelease 时出错</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2326">
         </location>
             <source>Translation TS File not found</source>
-            <translation type="unfinished">未找到翻译 TS 文件</translation>
+            <translation>未找到翻译 TS 文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2331">
         </location>
             <source>Accepted all Translations</source>
-            <translation type="unfinished">接受所有翻译</translation>
+            <translation>接受所有翻译</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2546">
         </location>
             <source>Help File not found</source>
-            <translation type="unfinished">未找到帮助文件</translation>
+            <translation>未找到帮助文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2552">
         </location>
             <source>Help File is Empty</source>
-            <translation type="unfinished">帮助文件为空</translation>
+            <translation>帮助文件为空</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2574">
         </location>
             <source>Help File could not be created</source>
-            <translation type="unfinished">无法创建帮助文件</translation>
+            <translation>无法创建帮助文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2762">
         </location>
             <source>README File not found</source>
-            <translation type="unfinished">未找到自述文件</translation>
+            <translation>未找到自述文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2768">
         </location>
             <source>README File is Empty</source>
-            <translation type="unfinished">自述文件为空</translation>
+            <translation>自述文件为空</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2790">
         </location>
             <source>README File could not be created</source>
-            <translation type="unfinished">无法创建自述文件</translation>
+            <translation>无法创建自述文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2893">
         </location>
             <source>Error in Translation phrase</source>
-            <translation type="unfinished">翻译短语错误</translation>
+            <translation>翻译短语错误</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2982">
         </location>
             <source>Help Folder Location</source>
-            <translation type="unfinished">帮助文件夹位置</translation>
+            <translation>帮助文件夹位置</translation>
         </message>
     </context>
     <context><name>MyDatatables</name>
         <message><location filename="../src/MyDatatables.cpp" line="186">
         </location>
             <source>Not adding: Record found in database</source>
-            <translation type="unfinished">不添加：在数据库中找到的记录</translation>
+            <translation>不添加：在数据库中找到的记录</translation>
         </message>
     </context>
     <context><name>MyLocalization</name>
         <message><location filename="../src/MyLocalization.cpp" line="156">
         </location>
             <source>Remove Arguments that use Percent Sign x</source>
-            <translation type="unfinished">删除使用百分比号 x 的参数</translation>
+            <translation>删除使用百分比号 x 的参数</translation>
         </message>
         <message><location filename="../src/MyLocalization.cpp" line="168">
         </location>
             <source>Remove Args</source>
-            <translation type="unfinished">删除参数</translation>
+            <translation>删除参数</translation>
         </message>
         <message><location filename="../src/MyLocalization.cpp" line="168">
         </location>
             <source>File: </source>
-            <translation type="unfinished">文件：</translation>
+            <translation>文件：</translation>
         </message>
         <message><location filename="../src/MyLocalization.cpp" line="177">
         </location>
             <source>File not found</source>
-            <translation type="unfinished">文件未找到</translation>
+            <translation>文件未找到</translation>
         </message>
     </context>
     <context><name>MyOrgSettings</name>
         <message><location filename="../src/MyOrgSettings.cpp" line="55">
         </location>
             <source>Crypto Fail: MyOrgSettings::onRunOnStartup()</source>
-            <translation type="unfinished">洗失败：MyOrgSettings::onRunOnStartup()</translation>
+            <translation>洗失败：MyOrgSettings::onRunOnStartup()</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="724">
         </location>
             <source>This file was created to test if this folder is writeable by</source>
-            <translation type="unfinished">创建此文件是为了测试此文件夹</translation>
+            <translation>创建此文件是为了测试此文件夹</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="745">
         </location>
             <source>Error: cannot create file</source>
-            <translation type="unfinished">错误：无法创建文件</translation>
+            <translation>错误：无法创建文件</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="327">
         </location>
             <source>Error opening file for reading</source>
-            <translation type="unfinished">打开文件进行读取时出错</translation>
+            <translation>打开文件进行读取时出错</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="327">
         </location>
             <source>Could not open file for reading</source>
-            <translation type="unfinished">无法打开文件进行阅读</translation>
+            <translation>无法打开文件进行阅读</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="348">
         </location>
             <source>Error opening file for writing</source>
-            <translation type="unfinished">打开文件写入时出错</translation>
+            <translation>打开文件写入时出错</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="348">
         </location>
             <source>Could not open file for writing</source>
-            <translation type="unfinished">无法打开文件进行写入</translation>
+            <translation>无法打开文件进行写入</translation>
         </message>
         <message><source>Remove Arguments that use Percent Sign x</source>
             <translation type="obsolete">删除使用百分号 x 的参数</translation>
@@ -1145,71 +1145,71 @@
         <message><location filename="../src/MyOrgSettings.cpp" line="648">
         </location>
             <source>File not found</source>
-            <translation type="unfinished">文件未找到</translation>
+            <translation>文件未找到</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="658">
         </location>
             <source>Folder not found</source>
-            <translation type="unfinished">找不到文件夹</translation>
+            <translation>找不到文件夹</translation>
         </message>
     </context>
     <context><name>MySqlDbtModel</name>
         <message><location filename="../src/MySqlDbtModel.cpp" line="354">
         </location>
             <source>Database SQL Driver is missing</source>
-            <translation type="unfinished">缺少数据库 SQL 驱动程序</translation>
+            <translation>缺少数据库 SQL 驱动程序</translation>
         </message>
         <message><location filename="../src/MySqlDbtModel.cpp" line="354">
         </location>
             <source>Install SQL</source>
-            <translation type="unfinished">安装 SQL</translation>
+            <translation>安装 SQL</translation>
         </message>
         <message><location filename="../src/MySqlDbtModel.cpp" line="359">
         </location>
             <source>Cannot open database</source>
-            <translation type="unfinished">无法打开数据库</translation>
+            <translation>无法打开数据库</translation>
         </message>
         <message><location filename="../src/MySqlDbtModel.cpp" line="359">
         </location>
             <source>Unable to establish a database connection</source>
-            <translation type="unfinished">无法建立数据库连接</translation>
+            <translation>无法建立数据库连接</translation>
         </message>
         <message><location filename="../src/MySqlDbtModel.cpp" line="428">
         </location>
             <source>runProcces cannot start process</source>
-            <translation type="unfinished">runProcces 无法启动进程</translation>
+            <translation>runProcces 无法启动进程</translation>
         </message>
         <message><location filename="../src/MySqlDbtModel.cpp" line="432">
         </location>
             <source>runProcces timeout ..</source>
-            <translation type="unfinished">runProcces 超时..</translation>
+            <translation>runProcces 超时..</translation>
         </message>
     </context>
     <context><name>MyTranlatorParser</name>
         <message><location filename="../src/MyTranlatorParser.cpp" line="157">
         </location>
             <source>Unable to find Input file</source>
-            <translation type="unfinished">找不到输入文件</translation>
+            <translation>找不到输入文件</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="175">
         </location>
             <source>Can not create output directory OR directory is not empty</source>
-            <translation type="unfinished">无法创建输出目录或目录不为空</translation>
+            <translation>无法创建输出目录或目录不为空</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="216">
         </location>
             <source>Unable to find Input folder</source>
-            <translation type="unfinished">找不到输入文件夹</translation>
+            <translation>找不到输入文件夹</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="240">
         </location>
             <source>Input directory should contain only txt and ts file with same name</source>
-            <translation type="unfinished">输入目录应该只包含同名的txt和ts文件</translation>
+            <translation>输入目录应该只包含同名的txt和ts文件</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="253">
         </location>
             <source>Parsing errorr</source>
-            <translation type="unfinished">解析错误</translation>
+            <translation>解析错误</translation>
         </message>
     </context>
     <context><name>MyTranslationFiles</name>
@@ -1233,800 +1233,800 @@
         <message><location filename="../src/MainWindow.cpp" line="631">
         </location>
             <source>Database Move Failed</source>
-            <translation type="unfinished">数据库移动失败</translation>
+            <translation>数据库移动失败</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="655">
         </location>
             <source>Password Revieled</source>
-            <translation type="unfinished">密码审核</translation>
+            <translation>密码审核</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1546">
         </location>
             <source>Could not read from the Database</source>
-            <translation type="unfinished">无法从数据库读取</translation>
+            <translation>无法从数据库读取</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1976">
         </location>
             <source>Error Source and Destination cannot be the same</source>
-            <translation type="unfinished">错误源和目标不能相同</translation>
+            <translation>错误源和目标不能相同</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1982">
         </location>
             <source>Project file not found</source>
-            <translation type="unfinished">未找到项目文件</translation>
+            <translation>未找到项目文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1988">
         </location>
             <source>Error running lupdate</source>
-            <translation type="unfinished">运行lupdate 时出错</translation>
+            <translation>运行lupdate 时出错</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="1993">
         </location>
             <source>Error Translations Destination Folder</source>
-            <translation type="unfinished">错误的翻译目标文件夹</translation>
+            <translation>错误的翻译目标文件夹</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2169">
         </location>
             <source>Error trying to remove file</source>
-            <translation type="unfinished">尝试删除文件时出错</translation>
+            <translation>尝试删除文件时出错</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2178">
         </location>
             <source>Could not find the Txt file</source>
-            <translation type="unfinished">找不到txt文件</translation>
+            <translation>找不到txt文件</translation>
         </message>
         <message><location filename="../src/MainWindow.cpp" line="2244">
         </location>
             <source>Error running lrelease</source>
-            <translation type="unfinished">运行 lrelease 时出错</translation>
+            <translation>运行 lrelease 时出错</translation>
         </message>
         <message><location filename="../src/MyDatatables.cpp" line="186">
         </location>
             <source>Record found!</source>
-            <translation type="unfinished">记录找到！</translation>
+            <translation>记录找到！</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="55">
         </location>
             <source>Crypto Fail</source>
-            <translation type="unfinished">洗失败</translation>
+            <translation>洗失败</translation>
         </message>
         <message><location filename="../src/MyOrgSettings.cpp" line="745">
         </location>
             <source>File System Error</source>
-            <translation type="unfinished">文件系统错误</translation>
+            <translation>文件系统错误</translation>
         </message>
         <message><location filename="../src/MyLocalization.cpp" line="168">
         </location>
             <source>Remove Args file is created</source>
-            <translation type="unfinished">删除 Args 文件已创建</translation>
+            <translation>删除 Args 文件已创建</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="157">
         </location>
             <source>Input does file not exist!</source>
-            <translation type="unfinished">输入文件不存在！</translation>
+            <translation>输入文件不存在！</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="175">
         </location>
             <source>Check output Folder</source>
-            <translation type="unfinished">检查输出文件夹</translation>
+            <translation>检查输出文件夹</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="216">
         </location>
             <source>Input directory not exist!</source>
-            <translation type="unfinished">输入目录不存在！</translation>
+            <translation>输入目录不存在！</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="240">
         </location>
             <source>Check Input Folder</source>
-            <translation type="unfinished">检查输入文件夹</translation>
+            <translation>检查输入文件夹</translation>
         </message>
         <message><location filename="../src/MyTranlatorParser.cpp" line="253">
         </location>
             <source>Parsing errorr</source>
-            <translation type="unfinished">解析错误</translation>
+            <translation>解析错误</translation>
         </message>
         <message><location filename="../src/main.cpp" line="34">
         </location>
             <source>Failed to open log file</source>
-            <translation type="unfinished">无法打开文件</translation>
+            <translation>无法打开文件</translation>
         </message>
         <message><location filename="../src/main.cpp" line="55">
         </location>
             <source>Log File</source>
-            <translation type="unfinished">日志文件</translation>
+            <translation>日志文件</translation>
         </message>
     </context>
     <context><name>QOnlineTranslator</name>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="214">
         </location>
             <source>Selected source language</source>
-            <translation type="unfinished">选择的源语言</translation>
+            <translation>选择的源语言</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="214">
         </location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="221"></location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="228"></location>
             <source>is not supported for</source>
-            <translation type="unfinished">不支持</translation>
+            <translation>不支持</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="221">
         </location>
             <source>Selected translation language</source>
-            <translation type="unfinished">选择的翻译语言</translation>
+            <translation>选择的翻译语言</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="228">
         </location>
             <source>Selected ui language</source>
-            <translation type="unfinished">选择的用户界面语言</translation>
+            <translation>选择的用户界面语言</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="515">
         </location>
             <source>Automatically detect</source>
-            <translation type="unfinished">自动检测</translation>
+            <translation>自动检测</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="516">
         </location>
             <source>Afrikaans</source>
-            <translation type="unfinished">荷兰语</translation>
+            <translation>荷兰语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="517">
         </location>
             <source>Albanian</source>
-            <translation type="unfinished">阿尔巴尼亚语</translation>
+            <translation>阿尔巴尼亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="518">
         </location>
             <source>Amharic</source>
-            <translation type="unfinished">阿姆哈拉语</translation>
+            <translation>阿姆哈拉语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="519">
         </location>
             <source>Arabic</source>
-            <translation type="unfinished">阿拉伯</translation>
+            <translation>阿拉伯</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="520">
         </location>
             <source>Armenian</source>
-            <translation type="unfinished">亚美尼亚语</translation>
+            <translation>亚美尼亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="521">
         </location>
             <source>Azeerbaijani</source>
-            <translation type="unfinished">阿塞拜疆语</translation>
+            <translation>阿塞拜疆语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="522">
         </location>
             <source>Basque</source>
-            <translation type="unfinished">巴斯克</translation>
+            <translation>巴斯克</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="523">
         </location>
             <source>Bashkir</source>
-            <translation type="unfinished">巴什基尔</translation>
+            <translation>巴什基尔</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="524">
         </location>
             <source>Belarusian</source>
-            <translation type="unfinished">白俄罗斯语</translation>
+            <translation>白俄罗斯语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="525">
         </location>
             <source>Bengali</source>
-            <translation type="unfinished">孟加拉</translation>
+            <translation>孟加拉</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="526">
         </location>
             <source>Bosnian</source>
-            <translation type="unfinished">波斯尼亚语</translation>
+            <translation>波斯尼亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="527">
         </location>
             <source>Bulgarian</source>
-            <translation type="unfinished">关键词</translation>
+            <translation>关键词</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="528">
         </location>
             <source>Catalan</source>
-            <translation type="unfinished">加泰罗尼亚语</translation>
+            <translation>加泰罗尼亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="529">
         </location>
             <source>Cantonese</source>
-            <translation type="unfinished">广东话</translation>
+            <translation>广东话</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="530">
         </location>
             <source>Cebuano</source>
-            <translation type="unfinished">宿雾语</translation>
+            <translation>宿雾语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="531">
         </location>
             <source>Chinese (Simplified)</source>
-            <translation type="unfinished">简体中文）</translation>
+            <translation>简体中文）</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="532">
         </location>
             <source>Chinese (Traditional)</source>
-            <translation type="unfinished">中国传统的）</translation>
+            <translation>中国传统的）</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="533">
         </location>
             <source>Corsican</source>
-            <translation type="unfinished">科西嘉</translation>
+            <translation>科西嘉</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="534">
         </location>
             <source>Croatian</source>
-            <translation type="unfinished">马来语</translation>
+            <translation>马来语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="535">
         </location>
             <source>Czech</source>
-            <translation type="unfinished">捷克语</translation>
+            <translation>捷克语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="536">
         </location>
             <source>Danish</source>
-            <translation type="unfinished">德语 德语</translation>
+            <translation>德语 德语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="537">
         </location>
             <source>Dutch</source>
-            <translation type="unfinished">荷兰语</translation>
+            <translation>荷兰语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="538">
         </location>
             <source>English</source>
-            <translation type="unfinished">英语</translation>
+            <translation>英语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="539">
         </location>
             <source>Esperanto</source>
-            <translation type="unfinished">世界语</translation>
+            <translation>世界语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="540">
         </location>
             <source>Estonian</source>
-            <translation type="unfinished">爱沙尼亚语</translation>
+            <translation>爱沙尼亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="541">
         </location>
             <source>Fijian</source>
-            <translation type="unfinished">斐济</translation>
+            <translation>斐济</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="542">
         </location>
             <source>Filipino</source>
-            <translation type="unfinished">菲律宾语</translation>
+            <translation>菲律宾语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="543">
         </location>
             <source>Finnish</source>
-            <translation type="unfinished">芬兰</translation>
+            <translation>芬兰</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="544">
         </location>
             <source>French</source>
-            <translation type="unfinished">法语</translation>
+            <translation>法语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="545">
         </location>
             <source>Frisian</source>
-            <translation type="unfinished">弗里斯兰语</translation>
+            <translation>弗里斯兰语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="546">
         </location>
             <source>Galician</source>
-            <translation type="unfinished">加利西亚语</translation>
+            <translation>加利西亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="547">
         </location>
             <source>Georgian</source>
-            <translation type="unfinished">格鲁吉亚语</translation>
+            <translation>格鲁吉亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="548">
         </location>
             <source>German</source>
-            <translation type="unfinished">德国</translation>
+            <translation>德国</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="549">
         </location>
             <source>Greek</source>
-            <translation type="unfinished">希腊语</translation>
+            <translation>希腊语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="550">
         </location>
             <source>Gujarati</source>
-            <translation type="unfinished">古吉拉特语</translation>
+            <translation>古吉拉特语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="551">
         </location>
             <source>Haitian Creole</source>
-            <translation type="unfinished">海地克里奥尔语</translation>
+            <translation>海地克里奥尔语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="552">
         </location>
             <source>Hausa</source>
-            <translation type="unfinished">豪萨语</translation>
+            <translation>豪萨语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="553">
         </location>
             <source>Hawaiian</source>
-            <translation type="unfinished">夏威夷菜</translation>
+            <translation>夏威夷菜</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="554">
         </location>
             <source>Hebrew</source>
-            <translation type="unfinished">希伯来语</translation>
+            <translation>希伯来语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="555">
         </location>
             <source>Hill Mari</source>
-            <translation type="unfinished">希尔马里</translation>
+            <translation>希尔马里</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="556">
         </location>
             <source>Hindi</source>
-            <translation type="unfinished">印地语</translation>
+            <translation>印地语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="557">
         </location>
             <source>Hmong</source>
-            <translation type="unfinished">苗族</translation>
+            <translation>苗族</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="558">
         </location>
             <source>Hungarian</source>
-            <translation type="unfinished">美国</translation>
+            <translation>美国</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="559">
         </location>
             <source>Icelandic</source>
-            <translation type="unfinished">燕的</translation>
+            <translation>燕的</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="560">
         </location>
             <source>Igbo</source>
-            <translation type="unfinished">伊博语</translation>
+            <translation>伊博语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="561">
         </location>
             <source>Indonesian</source>
-            <translation type="unfinished">暂时</translation>
+            <translation>暂时</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="562">
         </location>
             <source>Irish</source>
-            <translation type="unfinished">爱尔兰语</translation>
+            <translation>爱尔兰语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="563">
         </location>
             <source>Italian</source>
-            <translation type="unfinished">意大利语</translation>
+            <translation>意大利语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="564">
         </location>
             <source>Japanese</source>
-            <translation type="unfinished">日本人</translation>
+            <translation>日本人</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="565">
         </location>
             <source>Javanese</source>
-            <translation type="unfinished">哇爪语</translation>
+            <translation>哇爪语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="566">
         </location>
             <source>Kannada</source>
-            <translation type="unfinished">卡纳达语</translation>
+            <translation>卡纳达语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="567">
         </location>
             <source>Kazakh</source>
-            <translation type="unfinished">哈萨克语</translation>
+            <translation>哈萨克语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="568">
         </location>
             <source>Khmer</source>
-            <translation type="unfinished">高棉语</translation>
+            <translation>高棉语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="569">
         </location>
             <source>Kinyarwanda</source>
-            <translation type="unfinished">基尼亚卢旺达语</translation>
+            <translation>基尼亚卢旺达语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="570">
         </location>
             <source>Klingon</source>
-            <translation type="unfinished">克林贡语</translation>
+            <translation>克林贡语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="571">
         </location>
             <source>Klingon (PlqaD)</source>
-            <translation type="unfinished">克林贡语 (PlqaD)</translation>
+            <translation>克林贡语 (PlqaD)</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="572">
         </location>
             <source>Korean</source>
-            <translation type="unfinished">韩国人</translation>
+            <translation>韩国人</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="573">
         </location>
             <source>Kurdish</source>
-            <translation type="unfinished">库尔德</translation>
+            <translation>库尔德</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="574">
         </location>
             <source>Kyrgyz</source>
-            <translation type="unfinished">吉尔吉斯语</translation>
+            <translation>吉尔吉斯语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="575">
         </location>
             <source>Lao</source>
-            <translation type="unfinished">用语</translation>
+            <translation>用语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="576">
         </location>
             <source>Latin</source>
-            <translation type="unfinished">拉丁</translation>
+            <translation>拉丁</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="577">
         </location>
             <source>Latvian</source>
-            <translation type="unfinished">拉脱维亚语</translation>
+            <translation>拉脱维亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="578">
         </location>
             <source>Levantine Arabic</source>
-            <translation type="unfinished">黎凡特阿拉伯语</translation>
+            <translation>黎凡特阿拉伯语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="579">
         </location>
             <source>Lithuanian</source>
-            <translation type="unfinished">立陶宛语</translation>
+            <translation>立陶宛语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="580">
         </location>
             <source>Luxembourgish</source>
-            <translation type="unfinished">深沉的语</translation>
+            <translation>深沉的语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="581">
         </location>
             <source>Macedonian</source>
-            <translation type="unfinished">马其顿语</translation>
+            <translation>马其顿语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="582">
         </location>
             <source>Malagasy</source>
-            <translation type="unfinished">马尔加什</translation>
+            <translation>马尔加什</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="583">
         </location>
             <source>Malay</source>
-            <translation type="unfinished">中国语</translation>
+            <translation>中国语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="584">
         </location>
             <source>Malayalam</source>
-            <translation type="unfinished">马拉雅拉姆语</translation>
+            <translation>马拉雅拉姆语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="585">
         </location>
             <source>Maltese</source>
-            <translation type="unfinished">马耳他语</translation>
+            <translation>马耳他语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="586">
         </location>
             <source>Maori</source>
-            <translation type="unfinished">毛利人</translation>
+            <translation>毛利人</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="587">
         </location>
             <source>Marathi</source>
-            <translation type="unfinished">马拉地语</translation>
+            <translation>马拉地语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="588">
         </location>
             <source>Mari</source>
-            <translation type="unfinished">马里</translation>
+            <translation>马里</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="589">
         </location>
             <source>Mongolian</source>
-            <translation type="unfinished">蒙</translation>
+            <translation>蒙</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="590">
         </location>
             <source>Myanmar</source>
-            <translation type="unfinished">缅甸</translation>
+            <translation>缅甸</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="591">
         </location>
             <source>Nepali</source>
-            <translation type="unfinished">那句</translation>
+            <translation>那句</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="592">
         </location>
             <source>Norwegian</source>
-            <translation type="unfinished">挪威</translation>
+            <translation>挪威</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="593">
         </location>
             <source>Oriya</source>
-            <translation type="unfinished">奥里亚</translation>
+            <translation>奥里亚</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="594">
         </location>
             <source>Chichewa</source>
-            <translation type="unfinished">奇切瓦</translation>
+            <translation>奇切瓦</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="595">
         </location>
             <source>Papiamento</source>
-            <translation type="unfinished">帕皮亚门托</translation>
+            <translation>帕皮亚门托</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="596">
         </location>
             <source>Pashto</source>
-            <translation type="unfinished">普什图语</translation>
+            <translation>普什图语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="597">
         </location>
             <source>Persian</source>
-            <translation type="unfinished">波斯语</translation>
+            <translation>波斯语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="598">
         </location>
             <source>Polish</source>
-            <translation type="unfinished">抛光</translation>
+            <translation>抛光</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="599">
         </location>
             <source>Portuguese</source>
-            <translation type="unfinished">葡萄牙语</translation>
+            <translation>葡萄牙语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="600">
         </location>
             <source>Punjabi</source>
-            <translation type="unfinished">旁遮普语</translation>
+            <translation>旁遮普语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="601">
         </location>
             <source>Queretaro Otomi</source>
-            <translation type="unfinished">克雷塔罗·乙见</translation>
+            <translation>克雷塔罗·乙见</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="602">
         </location>
             <source>Romanian</source>
-            <translation type="unfinished">对方语</translation>
+            <translation>对方语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="603">
         </location>
             <source>Russian</source>
-            <translation type="unfinished">俄语</translation>
+            <translation>俄语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="604">
         </location>
             <source>Samoan</source>
-            <translation type="unfinished">萨摩亚语</translation>
+            <translation>萨摩亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="605">
         </location>
             <source>Scots Gaelic</source>
-            <translation type="unfinished">苏格兰盖尔语</translation>
+            <translation>苏格兰盖尔语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="606">
         </location>
             <source>Serbian (Cyrillic)</source>
-            <translation type="unfinished">西里尔文</translation>
+            <translation>西里尔文</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="607">
         </location>
             <source>Serbian (Latin)</source>
-            <translation type="unfinished">强奸语（拉丁语）</translation>
+            <translation>强奸语（拉丁语）</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="608">
         </location>
             <source>Sesotho</source>
-            <translation type="unfinished">塞索托</translation>
+            <translation>塞索托</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="609">
         </location>
             <source>Shona</source>
-            <translation type="unfinished">绍纳</translation>
+            <translation>绍纳</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="610">
         </location>
             <source>Sindhi</source>
-            <translation type="unfinished">信德</translation>
+            <translation>信德</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="611">
         </location>
             <source>Sinhala</source>
-            <translation type="unfinished">僧伽罗语</translation>
+            <translation>僧伽罗语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="612">
         </location>
             <source>Slovak</source>
-            <translation type="unfinished">斯洛伐克语</translation>
+            <translation>斯洛伐克语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="613">
         </location>
             <source>Slovenian</source>
-            <translation type="unfinished">斯洛文尼亚语</translation>
+            <translation>斯洛文尼亚语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="614">
         </location>
             <source>Somali</source>
-            <translation type="unfinished">原创</translation>
+            <translation>原创</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="615">
         </location>
             <source>Spanish</source>
-            <translation type="unfinished">西班牙</translation>
+            <translation>西班牙</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="616">
         </location>
             <source>Sundanese</source>
-            <translation type="unfinished">巽他语</translation>
+            <translation>巽他语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="617">
         </location>
             <source>Swahili</source>
-            <translation type="unfinished">斯瓦希里语</translation>
+            <translation>斯瓦希里语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="618">
         </location>
             <source>Swedish</source>
-            <translation type="unfinished">瑞典</translation>
+            <translation>瑞典</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="619">
         </location>
             <source>Tagalog</source>
-            <translation type="unfinished">他加禄语</translation>
+            <translation>他加禄语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="620">
         </location>
             <source>Tahitian</source>
-            <translation type="unfinished">大溪地</translation>
+            <translation>大溪地</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="621">
         </location>
             <source>Tajik</source>
-            <translation type="unfinished">塔吉克</translation>
+            <translation>塔吉克</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="622">
         </location>
             <source>Tamil</source>
-            <translation type="unfinished">泰米尔语</translation>
+            <translation>泰米尔语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="623">
         </location>
             <source>Tatar</source>
-            <translation type="unfinished">鞑靼</translation>
+            <translation>鞑靼</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="624">
         </location>
             <source>Telugu</source>
-            <translation type="unfinished">泰卢固语</translation>
+            <translation>泰卢固语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="625">
         </location>
             <source>Thai</source>
-            <translation type="unfinished">泰国</translation>
+            <translation>泰国</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="626">
         </location>
             <source>Tongan</source>
-            <translation type="unfinished">同安</translation>
+            <translation>同安</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="627">
         </location>
             <source>Turkish</source>
-            <translation type="unfinished">北京</translation>
+            <translation>北京</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="628">
         </location>
             <source>Turkmen</source>
-            <translation type="unfinished">土库曼斯坦</translation>
+            <translation>土库曼斯坦</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="629">
         </location>
             <source>Udmurt</source>
-            <translation type="unfinished">乌德穆尔特</translation>
+            <translation>乌德穆尔特</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="630">
         </location>
             <source>Uighur</source>
-            <translation type="unfinished">维吾尔</translation>
+            <translation>维吾尔</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="631">
         </location>
             <source>Ukrainian</source>
-            <translation type="unfinished">独角兽</translation>
+            <translation>独角兽</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="632">
         </location>
             <source>Urdu</source>
-            <translation type="unfinished">乌尔都语</translation>
+            <translation>乌尔都语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="633">
         </location>
             <source>Uzbek</source>
-            <translation type="unfinished">乌兹别克语</translation>
+            <translation>乌兹别克语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="634">
         </location>
             <source>Vietnamese</source>
-            <translation type="unfinished">越南语</translation>
+            <translation>越南语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="635">
         </location>
             <source>Welsh</source>
-            <translation type="unfinished">威尔士语</translation>
+            <translation>威尔士语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="636">
         </location>
             <source>Xhosa</source>
-            <translation type="unfinished">科萨</translation>
+            <translation>科萨</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="637">
         </location>
             <source>Yiddish</source>
-            <translation type="unfinished">意第绪语</translation>
+            <translation>意第绪语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="638">
         </location>
             <source>Yoruba</source>
-            <translation type="unfinished">约鲁巴语</translation>
+            <translation>约鲁巴语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="639">
         </location>
             <source>Yucatec Maya</source>
-            <translation type="unfinished">尤卡泰克玛雅</translation>
+            <translation>尤卡泰克玛雅</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="640">
         </location>
             <source>Zulu</source>
-            <translation type="unfinished">祖鲁语</translation>
+            <translation>祖鲁语</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="963">
         </location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="973"></location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1072"></location>
             <source>Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.</source>
-            <translation type="unfinished">错误：引擎系统检测到来自您的计算机网络的流量。请稍后重试您的请求。</translation>
+            <translation>错误：引擎系统检测到来自您的计算机网络的流量。请稍后重试您的请求。</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="987">
         </location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1160"></location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1370"></location>
             <source>Error: Unable to parse autodetected language</source>
-            <translation type="unfinished">错误：无法解析自动检测到的语言</translation>
+            <translation>错误：无法解析自动检测到的语言</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1080">
         </location>
             <source>Error: Unable to find Yandex SID in web version.</source>
-            <translation type="unfinished">错误：无法在网页版中找到 Yandex SID。</translation>
+            <translation>错误：无法在网页版中找到 Yandex SID。</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1088">
         </location>
             <source>Error: Unable to extract Yandex SID from web version.</source>
-            <translation type="unfinished">错误：无法从网页版中提取 Yandex SID。</translation>
+            <translation>错误：无法从网页版中提取 Yandex SID。</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1305">
         </location>
             <source>Error: Unable to find Bing credentials in web version.</source>
-            <translation type="unfinished">错误：无法在 Web 版本中找到 Bing 正常。</translation>
+            <translation>错误：无法在 Web 版本中找到 Bing 正常。</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1313">
         </location>
             <source>Error: Unable to extract Bing key from web version.</source>
-            <translation type="unfinished">错误：无法从中提取 Bing 密钥。</translation>
+            <translation>错误：无法从中提取 Bing 密钥。</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1322">
         </location>
             <source>Error: Unable to extract Bing token from web version.</source>
-            <translation type="unfinished">错误：无法从中提取 Bing 令牌。</translation>
+            <translation>错误：无法从中提取 Bing 令牌。</translation>
         </message>
     </context>
     <context><name>QOnlineTts</name>
@@ -2034,44 +2034,44 @@
         </location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="73"></location>
             <source>Selected engine</source>
-            <translation type="unfinished">低于</translation>
+            <translation>低于</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="67">
         </location>
             <source>does not support voice settings</source>
-            <translation type="unfinished">不支持语音设置</translation>
+            <translation>不支持语音设置</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="73">
         </location>
             <source>does not support emotion settings</source>
-            <translation type="unfinished">不支持情感设置</translation>
+            <translation>不支持情感设置</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="137">
         </location>
             <source>engine does not support TTS</source>
-            <translation type="unfinished">引擎不支持TTS</translation>
+            <translation>引擎不支持TTS</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="234">
         </location>
             <source>Selected language</source>
-            <translation type="unfinished">选择的语言</translation>
+            <translation>选择的语言</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="234">
         </location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="250"></location>
             <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="266"></location>
             <source>is not supported for</source>
-            <translation type="unfinished">不支持</translation>
+            <translation>不支持</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="250">
         </location>
             <source>Selected voice</source>
-            <translation type="unfinished">选择的声音</translation>
+            <translation>选择的声音</translation>
         </message>
         <message><location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="266">
         </location>
             <source>Selected emotion</source>
-            <translation type="unfinished">选定的情感</translation>
+            <translation>选定的情感</translation>
         </message>
     </context>
 </TS>

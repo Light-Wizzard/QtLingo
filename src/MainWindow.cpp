@@ -2172,11 +2172,11 @@ void MainWindow::onCompile()
         }
         // Create Txt file
         myTranlatorParser->toTXT(myLingoJob.at(i).getTsFile(), ui->lineEditTranslationsDestination->text(), true, false, true);
-        // make sure txt file exist
+        // make sure txt file exist or continue because it might be translated, those it made no file
         if (!mySqlDb->mySqlModel->mySetting->isFileExists(theDestTxtFile))
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Could not find the Txt file").toLocal8Bit(), QString("%1: %2").arg(tr("Can not find Txt file"), theDestTxtFile).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
-            return;
+            //mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Could not find the Txt file").toLocal8Bit(), QString("%1: %2").arg(tr("Can not find Txt file"), theDestTxtFile).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+            continue;
         }
         bool isSameLanguage = false;
         if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { isSameLanguage = true; }
@@ -2517,12 +2517,14 @@ void MainWindow::onTranslateHelp()
         if (!mySqlDb->mySqlModel->mySetting->isFileExists(theHelpFile))
         {
             mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File not found"), QString("%1: %2").arg(tr("Help File not found"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            closeTransHelp();
             return;
         }
         QString theHelpFileContents = mySqlDb->mySqlModel->mySetting->readFile(theHelpFile);
         if (theHelpFileContents.isEmpty())
         {
             mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File is Empty"), QString("%1: %2").arg(tr("Help File is Empty"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            closeTransHelp();
             return;
         }
         // QString &text, Engine engine, Language translationLang, Language sourceLang, Language uiLang
@@ -2545,6 +2547,7 @@ void MainWindow::onTranslateHelp()
         if (!mySqlDb->mySqlModel->mySetting->isFileExists(myLingoJob.at(i).getDestinationFile()))
         {
             mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File could not be created"), QString("%1: %2").arg(tr("Help File could not be created"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            closeTransHelp();
             return;
         }
         ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theHelpFileContents.mid(0, 16), myTranslation));
@@ -2554,10 +2557,18 @@ void MainWindow::onTranslateHelp()
         mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
         ui->progressBarProjectsTranslations->setValue(i);
     } // end for( int i = 0; i < myLingoJob.count(); ++i )
+    closeTransHelp();
+} // end translateHelp
+/************************************************
+ * @brief translate ReadMe.
+ * onTranslateReadMe
+ ***********************************************/
+void MainWindow::closeTransHelp()
+{
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
     ui->statusbar->showMessage("");
-} // end translateHelp
+}
 /************************************************
  * @brief translate ReadMe.
  * onTranslateReadMe

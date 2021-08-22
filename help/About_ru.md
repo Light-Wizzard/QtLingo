@@ -19,7 +19,7 @@ QtLingo - это приложение, упрощающее компьютерн
 Я использую для этого приложения GitHub,
 для переводов я использую crow-translate на https://github.com/crow-translate/crow-translate,
 и QOnlineTranslator на https://github.com/crow-translate/QOnlineTranslator,
-и для анализа файлов .ts я использую ts_tool по адресу https://github.com/nen777w/ts_tool.
+а для анализа файлов .ts я использую ts_tool по адресу https://github.com/nen777w/ts_tool.
 
 Сначала я обновлю файлы переводов ваших проектов в соответствии с выбранными вами языками,
 тогда я переведу все языки,

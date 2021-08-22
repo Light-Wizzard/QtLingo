@@ -1,6 +1,6 @@
 # QtLingo À propos
 
-QtLingo est une application pour faciliter les traductions informatiques de Qt,
+QtLingo est une application pour rendre Qt Computer Translations plus facile,
 et quelque chose que je n'ai jamais vu auparavant,
 c'est donc un nouveau concept pour Qt Translations.
 
@@ -21,7 +21,7 @@ pour les traductions, j'utilise crow-translate sur https://github.com/crow-trans
 et QOnlineTranslator sur https://github.com/crow-translate/QOnlineTranslator,
 et pour analyser les fichiers .ts, j'utilise ts_tool sur https://github.com/nen777w/ts_tool.
 
-Dans un premier temps, je mettrai à jour les fichiers de traductions de vos projets en fonction des langues que vous avez choisies,
+Dans un premier temps, je mettrai à jour les fichiers de traduction de vos projets en fonction des langues que vous avez choisies,
 alors je traduirai toutes les langues,
 puis mettez à jour les fichiers de traduction et compilez-les dans des fichiers .qm pour le déploiement.
 

@@ -208,31 +208,4 @@ unix {
     INSTALLS           += data
     INSTALLS           += target
 }
-###############################################################################
-message("*******************************************************************************")
-message(Qt version: $$[QT_VERSION])
-message(Qt is installed in $$[QT_INSTALL_PREFIX])
-message(Qt resources can be found in the following locations:)
-message(Documentation: $$[QT_INSTALL_DOCS])
-message(Header files: $$[QT_INSTALL_HEADERS])
-message(Libraries: $$[QT_INSTALL_LIBS])
-message(Binary files (executables): $$[QT_INSTALL_BINS])
-message(Plugins: $$[QT_INSTALL_PLUGINS])
-message(Data files: $$[QT_INSTALL_DATA])
-message(Translation files: $$[QT_INSTALL_TRANSLATIONS])
-message(Settings: $$[QT_INSTALL_SETTINGS])
-message(Examples: $$[QT_INSTALL_EXAMPLES])
-message(Demonstrations: $$[QT_INSTALL_DEMOS])
-message(Demonstrations: $$[QT_INSTALL_DEMOS])
-message(OUT_PWD: $${OUT_PWD})
-message(DESTDIR: $${DESTDIR})
-message(OBJECTS_DIR: $${OBJECTS_DIR})
-message(MOC_DIR: $${MOC_DIR})
-message(UI_DIR: $${UI_DIR})
-message(RCC_DIR: $${RCC_DIR})
-message(INSTALLS: $${INSTALLS})
-message(RC_FILE: $${RC_FILE})
-message(DEFINES: $${DEFINES})
-message(QMAKE_CXXFLAGS: $${QMAKE_CXXFLAGS})
-message("*******************************************************************************")
 ################################ End of File ##################################

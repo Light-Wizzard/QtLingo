@@ -1,7 +1,6 @@
-# Qt Lingo Help
+# Ayuda de Qt Lingo
 
-QtLingo is a Qt Application written to help with Translation files.
+QtLingo es una aplicación Qt escrita para ayudar con los archivos de traducción.
 
-This Application requires a few things in order for it to work right,
-it assumes your Project file name is the same for your Translation files.
-
+Esta aplicación requiere algunas cosas para que funcione correctamente,
+asume que el nombre de su archivo de proyecto es el mismo para sus archivos de traducción.

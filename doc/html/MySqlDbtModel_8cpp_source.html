@@ -102,400 +102,410 @@ $(document).ready(function(){initNavTree('MySqlDbtModel_8cpp_source.html',''); i
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (myDb.isOpen()) { myDb.close(); }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b">MySqlDbtModel::setDebugMessage</a>(<span class="keywordtype">bool</span> thisState)</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a305c7886808ac37b91b15f3b8f743e74">   24</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#a305c7886808ac37b91b15f3b8f743e74">MySqlDbtModel::isDbTable</a>(<span class="keyword">const</span> QString &amp;thisTable)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    isDebugMessage = thisState;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#abce4872801f83111eaa0c53a535dcf24">   32</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#abce4872801f83111eaa0c53a535dcf24">MySqlDbtModel::getDebugMessage</a>()</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> isDebugMessage;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a305c7886808ac37b91b15f3b8f743e74">   40</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#a305c7886808ac37b91b15f3b8f743e74">MySqlDbtModel::isDbTable</a>(<span class="keyword">const</span> QString &amp;thisTable)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;isDatabase&quot;</span>; }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    QStringList theTables = myDb.tables();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (theTables.contains(thisTable, Qt::CaseInsensitive))  { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">else</span>                                                     { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e">MySqlDbtModel::setSqlDatabase</a>(QSqlDatabase thisDatabase)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setSqlDatabase&quot;</span>; }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    myDb = thisDatabase;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a0a528785d6c51ff66a5f93e8f89a2b57">   60</a></span>&#160;QSqlDatabase <a class="code" href="classMySqlDbtModel.html#a0a528785d6c51ff66a5f93e8f89a2b57">MySqlDbtModel::getSqlDatabase</a>()</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getSqlDatabase&quot;</span>; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> myDb;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af774dbe87b9e17270b44ad7478a159b7">   69</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#af774dbe87b9e17270b44ad7478a159b7">MySqlDbtModel::getSqlDriver</a>()</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getSqlDriver&quot;</span>; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> mySqlDriver;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a1da2027606bba16aa0a4ba46dadf921b">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a1da2027606bba16aa0a4ba46dadf921b">MySqlDbtModel::setSqlTableName</a>(<span class="keyword">const</span> QString &amp;thisTableName)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setSqlTableName&quot;</span>; }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    myTableName = thisTableName;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a13dc4e99cad86bec2c18f48f02228359">   87</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#a13dc4e99cad86bec2c18f48f02228359">MySqlDbtModel::getSqlTableName</a>()</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getSqlTableName&quot;</span>; }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> myTableName;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ab2a58202945a6ba8112f07cbf2db3387">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#ab2a58202945a6ba8112f07cbf2db3387">MySqlDbtModel::setSqlHostName</a>(<span class="keyword">const</span> QString &amp;thisHostName)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setSqlHostName&quot;</span>; }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    myHostName = thisHostName;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">  105</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">MySqlDbtModel::getSqlHostName</a>()</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getSqlHostName&quot;</span>; }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">return</span> myHostName;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a2724af9ac781006f2385538311f8d5ef">  114</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a2724af9ac781006f2385538311f8d5ef">MySqlDbtModel::setSqlUserName</a>(<span class="keyword">const</span> QString &amp;thisUserName)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setSqlUserName&quot;</span>; }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    myUserName = thisUserName;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">  123</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">MySqlDbtModel::getSqlUserName</a>()</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getSqlUserName&quot;</span>; }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> myUserName;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8">  132</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8">MySqlDbtModel::setSqlDatabaseName</a>(<span class="keyword">const</span> QString &amp;thisPassword)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setSqlDatabaseName&quot;</span>; }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    myDatabaseName = thisPassword;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">  141</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">MySqlDbtModel::getSqlDatabaseName</a>()</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getSqlDatabaseName&quot;</span>; }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> myDatabaseName;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ad464905c598c0cdb50348c73a301988c">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#ad464905c598c0cdb50348c73a301988c">MySqlDbtModel::setSqlPassword</a>(<span class="keyword">const</span> QString &amp;thisPassword)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setSqlPassword&quot;</span>; }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    myPassword = thisPassword;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">  159</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">MySqlDbtModel::getSqlPassword</a>()</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getSqlPassword&quot;</span>; }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> myPassword;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc">  168</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc">MySqlDbtModel::setConnectionName</a>(<span class="keyword">const</span> QString &amp;thisConnectionName)</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setConnectionName&quot;</span>; }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    myConnectionName = thisConnectionName;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;isDatabase&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QStringList theTables = myDb.tables();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (theTables.contains(thisTable, Qt::CaseInsensitive))  { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">else</span>                                                     { <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e">MySqlDbtModel::setSqlDatabase</a>(QSqlDatabase thisDatabase)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setSqlDatabase&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    myDb = thisDatabase;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a0a528785d6c51ff66a5f93e8f89a2b57">   44</a></span>&#160;QSqlDatabase <a class="code" href="classMySqlDbtModel.html#a0a528785d6c51ff66a5f93e8f89a2b57">MySqlDbtModel::getSqlDatabase</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getSqlDatabase&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> myDb;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af774dbe87b9e17270b44ad7478a159b7">   53</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#af774dbe87b9e17270b44ad7478a159b7">MySqlDbtModel::getSqlDriver</a>()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getSqlDriver&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> mySqlDriver;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a1da2027606bba16aa0a4ba46dadf921b">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a1da2027606bba16aa0a4ba46dadf921b">MySqlDbtModel::setSqlTableName</a>(<span class="keyword">const</span> QString &amp;thisTableName)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setSqlTableName&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    myTableName = thisTableName;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a13dc4e99cad86bec2c18f48f02228359">   71</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#a13dc4e99cad86bec2c18f48f02228359">MySqlDbtModel::getSqlTableName</a>()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getSqlTableName&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> myTableName;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ab2a58202945a6ba8112f07cbf2db3387">   80</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#ab2a58202945a6ba8112f07cbf2db3387">MySqlDbtModel::setSqlHostName</a>(<span class="keyword">const</span> QString &amp;thisHostName)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setSqlHostName&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    myHostName = thisHostName;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">   89</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">MySqlDbtModel::getSqlHostName</a>()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getSqlHostName&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> myHostName;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a2724af9ac781006f2385538311f8d5ef">   98</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a2724af9ac781006f2385538311f8d5ef">MySqlDbtModel::setSqlUserName</a>(<span class="keyword">const</span> QString &amp;thisUserName)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setSqlUserName&quot;</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    myUserName = thisUserName;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">  107</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">MySqlDbtModel::getSqlUserName</a>()</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getSqlUserName&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> myUserName;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8">MySqlDbtModel::setSqlDatabaseName</a>(<span class="keyword">const</span> QString &amp;thisPassword)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setSqlDatabaseName&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    myDatabaseName = thisPassword;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">  125</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">MySqlDbtModel::getSqlDatabaseName</a>()</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getSqlDatabaseName&quot;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> myDatabaseName;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ad464905c598c0cdb50348c73a301988c">  134</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#ad464905c598c0cdb50348c73a301988c">MySqlDbtModel::setSqlPassword</a>(<span class="keyword">const</span> QString &amp;thisPassword)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setSqlPassword&quot;</span>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    myPassword = thisPassword;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">  143</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">MySqlDbtModel::getSqlPassword</a>()</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getSqlPassword&quot;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> myPassword;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc">  152</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc">MySqlDbtModel::setConnectionName</a>(<span class="keyword">const</span> QString &amp;thisConnectionName)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setConnectionName&quot;</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    myConnectionName = thisConnectionName;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#aa16a239a6d787d61a5b4f13d45cc2174">  161</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#aa16a239a6d787d61a5b4f13d45cc2174">MySqlDbtModel::getRecordID</a>()</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> myInsertID;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">  169</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">MySqlDbtModel::setRecordID</a>(<span class="keyword">const</span> QString &amp;thisRecordID)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    myInsertID = thisRecordID;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#aa16a239a6d787d61a5b4f13d45cc2174">  177</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#aa16a239a6d787d61a5b4f13d45cc2174">MySqlDbtModel::getRecordID</a>()</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656">  177</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656">MySqlDbtModel::getConnectionName</a>()</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">return</span> myInsertID;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">  185</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">MySqlDbtModel::setRecordID</a>(<span class="keyword">const</span> QString &amp;thisRecordID)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;{</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    myInsertID = thisRecordID;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656">  193</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656">MySqlDbtModel::getConnectionName</a>()</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;{</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;getConnectionName&quot;</span>; }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> myConnectionName;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">  202</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">MySqlDbtModel::setSqlDriver</a>(<span class="keyword">const</span> QString &amp;thisDriver)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;{</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;setSqlDriver&quot;</span>; }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    QString theDriver = thisDriver;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (theDriver.length() == 0)  { theDriver = <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a673b33ba2dee738d64bcbfb3ea9e59fc">MY_SQL_DEFAULT</a>; }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// Check for Database memory setting</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">// ui-&gt;checkBoxSettingsMemory-&gt;isChecked() || combobox</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// Database Driver</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;:memory:&quot;</span>)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">// SQLite version 3 SQLite version 2 Note: obsolete since Qt 5.14</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QSQLITE&quot;</span> || theDriver == <span class="stringliteral">&quot;QSQLITE2&quot;</span>)</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="comment">// SQLite version 3 SQLite version 2 Note: obsolete since Qt 5.14</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QMYSQL&quot;</span> || theDriver == <span class="stringliteral">&quot;MARIADB&quot;</span>)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="comment">// MySQL or MariaDB (version 5.0 and above)</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QPSQL&quot;</span>)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="comment">// PostgreSQL (versions 7.3 and above)</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QDB2&quot;</span>)</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    {</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// IBM DB2 (version 7.1 and above)</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QIBASE&quot;</span>)</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">// Borland InterBase</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QOCI&quot;</span>)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="comment">// Oracle Call Interface Driver</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QTDS&quot;</span>)</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// Sybase Adaptive Server - Note: obsolete since Qt 4.7</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;getConnectionName&quot;</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> myConnectionName;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">  186</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">MySqlDbtModel::setSqlDriver</a>(<span class="keyword">const</span> QString &amp;thisDriver)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;setSqlDriver&quot;</span>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    QString theDriver = thisDriver;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (theDriver.length() == 0)  { theDriver = <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a673b33ba2dee738d64bcbfb3ea9e59fc">MY_SQL_DEFAULT</a>; }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// Check for Database memory setting</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// ui-&gt;checkBoxSettingsMemory-&gt;isChecked() || combobox</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// Database Driver</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;:memory:&quot;</span>)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">// SQLite version 3 SQLite version 2 Note: obsolete since Qt 5.14</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QSQLITE&quot;</span> || theDriver == <span class="stringliteral">&quot;QSQLITE2&quot;</span>)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="comment">// SQLite version 3 SQLite version 2 Note: obsolete since Qt 5.14</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QMYSQL&quot;</span> || theDriver == <span class="stringliteral">&quot;MARIADB&quot;</span>)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">// MySQL or MariaDB (version 5.0 and above)</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QPSQL&quot;</span>)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// PostgreSQL (versions 7.3 and above)</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QDB2&quot;</span>)</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="comment">// IBM DB2 (version 7.1 and above)</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QIBASE&quot;</span>)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="comment">// Borland InterBase</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QOCI&quot;</span>)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment">// Oracle Call Interface Driver</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (theDriver == <span class="stringliteral">&quot;QTDS&quot;</span>)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// Sybase Adaptive Server - Note: obsolete since Qt 4.7</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        mySqlDriver = theDriver;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;} <span class="comment">// end setSqlDriver</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">  243</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">MySqlDbtModel::createDataBaseConnection</a>()</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;{</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;createDataBaseConnection&quot;</span>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// Make sure Drive is set</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;NOTSET&quot;</span>) { <a class="code" href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">setSqlDriver</a>(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a673b33ba2dee738d64bcbfb3ea9e59fc">MY_SQL_DEFAULT</a>); }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    QString theDb = <a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="comment">// Database Driver</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;:memory:&quot;</span>)</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        mySqlDriver = theDriver;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;} <span class="comment">// end setSqlDriver</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">  259</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">MySqlDbtModel::createDataBaseConnection</a>()</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;{</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;createDataBaseConnection&quot;</span>; }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// Make sure Drive is set</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;NOTSET&quot;</span>) { <a class="code" href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">setSqlDriver</a>(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a673b33ba2dee738d64bcbfb3ea9e59fc">MY_SQL_DEFAULT</a>); }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    QString theDb = <a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// Database Driver</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;:memory:&quot;</span>)</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        myDb = QSqlDatabase::addDatabase(<span class="stringliteral">&quot;QSQLITE&quot;</span>); </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        myDb.setDatabaseName(<span class="stringliteral">&quot;:memory:&quot;</span>);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QSQLITE&quot;</span> || mySqlDriver == <span class="stringliteral">&quot;QSQLITE2&quot;</span>)</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        {   </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="comment">// SQLite version 3 and SQLite version 2 Note: obsolete since Qt 5.14</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">if</span> (theDb.contains(<span class="stringliteral">&quot;.db&quot;</span>))</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a1d0297815658142c555f7b2820f9aa86">isFileExists</a>(theDb))</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                    qCritical() &lt;&lt; <span class="stringliteral">&quot;createDataBaseConnection new DB: &quot;</span> &lt;&lt; theDb;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                theDb = QString(<span class="stringliteral">&quot;%1%2%3.db&quot;</span>).arg(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a4e8aa5e10c528d29515bc989adf778e7">getAppDataLocation</a>(), QDir::separator(), <a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver); </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            myDb.setDatabaseName(theDb);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="comment">//    myDb.setHostName(getSqlHostName());</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="comment">//    myDb.setUserName(getSqlUserName());</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="comment">//    myDb.setPassword(getSqlPassword());</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QDB2&quot;</span>)</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        {   </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="comment">// IBM DB2 (version 7.1 and above)</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QIBASE&quot;</span>)</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        {   </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="comment">// Borland InterBase</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QMYSQL&quot;</span> || mySqlDriver == <span class="stringliteral">&quot;MARIADB&quot;</span>)</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        {   </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="comment">// MySQL or MariaDB (version 5.0 and above)</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        }</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QOCI&quot;</span>)</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        {   </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="comment">// Oracle Call Interface Driver</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QPSQL&quot;</span>)</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        {   </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="comment">// PostgreSQL (versions 7.3 and above)</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QTDS&quot;</span>)</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        {   </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="comment">// Sybase Adaptive Server - Note: obsolete since Qt 4.7</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    } <span class="comment">// end ! if (:memory:)</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">if</span> (!myDb.open())</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">if</span>(!QSqlDatabase::isDriverAvailable(mySqlDriver))</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#aa6e1b0609dba865ade37e95f6200066f">showMessageBox</a>(tr(<span class="stringliteral">&quot;Database SQL Driver is missing&quot;</span>).toLocal8Bit(), tr(<span class="stringliteral">&quot;Install SQL&quot;</span>).toLocal8Bit(), <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23ea7f1a2fea930a25b2360bc1666493bc03">Critical</a>);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#aa6e1b0609dba865ade37e95f6200066f">showMessageBox</a>(QString(<span class="stringliteral">&quot;%1: %2&quot;</span>).arg(tr(<span class="stringliteral">&quot;Cannot open database&quot;</span>), myDb.lastError().text()).toLocal8Bit(), tr(<span class="stringliteral">&quot;Unable to establish a database connection&quot;</span>).toLocal8Bit(), <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23ea7f1a2fea930a25b2360bc1666493bc03">Critical</a>);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="comment">// Set Settings</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">writeSettings</a>(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a63ea17ac82f3396194888a58f7c4652c">MY_SQL_DB_NAME</a>, theDb);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">writeSettings</a>(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#aa8be0ef5ca07c113d47149208feb3477">MY_SQL_DB_TYPE</a>, <span class="stringliteral">&quot;QSQLITE&quot;</span>);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;} <span class="comment">// end createDataBaseConnection</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a7ca0bffbaea3dd3c990c47741cce0ce0">  372</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#a7ca0bffbaea3dd3c990c47741cce0ce0">MySqlDbtModel::runQuery</a>(<span class="keyword">const</span> QString &amp;thisQuery)</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;{</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;runQuery=&quot;</span> &lt;&lt; thisQuery; }</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    QSqlQuery theQuery; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">if</span> (theQuery.exec(thisQuery))</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    {</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <a class="code" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">setRecordID</a>(theQuery.lastInsertId().toString());</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    }</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        qCritical() &lt;&lt; <span class="stringliteral">&quot;Error running Query: &quot;</span> &lt;&lt; thisQuery &lt;&lt; theQuery.lastError().text() &lt;&lt; <span class="stringliteral">&quot;, SqLite error code:&quot;</span> &lt;&lt; theQuery.lastError();</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <a class="code" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">setRecordID</a>(<span class="stringliteral">&quot;-1&quot;</span>);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;}</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af567e23f51f88bd92684085e139e496c">  392</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#af567e23f51f88bd92684085e139e496c">MySqlDbtModel::moveDb</a>(<span class="keyword">const</span> QString &amp;thisSourceFile,<span class="keyword">const</span> QString &amp;thisSourcePath, <span class="keyword">const</span> QString &amp;thisDestinationFolder)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage) { qDebug() &lt;&lt; <span class="stringliteral">&quot;moveDb&quot;</span>; }</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    QFile file(QString(<span class="stringliteral">&quot;%1%2%3&quot;</span>).arg(thisSourcePath, QDir::separator(), thisSourceFile));</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    QString theNewDatabaseName = QString(<span class="stringliteral">&quot;%1%2%3&quot;</span>).arg(thisDestinationFolder, QDir::separator(), thisSourceFile);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a1d0297815658142c555f7b2820f9aa86">isFileExists</a>(theNewDatabaseName))</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a8a2eaabdc89025b2dfbde2485d43c971">questionYesNo</a>(<span class="stringliteral">&quot;Overwrite Database&quot;</span>, <span class="stringliteral">&quot;Are you sure you want to overwrite existing Database?&quot;</span>))</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> (myDb.isOpen()) { myDb.close(); }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordflow">if</span> (file.rename(theNewDatabaseName))</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    {</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        myDatabaseName = theNewDatabaseName;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">createDataBaseConnection</a>();</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">else</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00421"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ab246a85006d7606d2ba2d8e1a3abf0bc">  421</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#ab246a85006d7606d2ba2d8e1a3abf0bc">MySqlDbtModel::runProcces</a>(<span class="keyword">const</span> QString &amp;thisExePath, <span class="keyword">const</span> QString &amp;thisArgument, <span class="keywordtype">bool</span> isWait, <span class="keywordtype">int</span> thisWaitTimeSec)</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;{</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    QProcess *thisProcess = <span class="keyword">new</span> QProcess(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordflow">if</span> (isWait)</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    {</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        thisProcess-&gt;start(thisExePath, QStringList() &lt;&lt; thisArgument);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="comment">// default wait time 30 sec</span></div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">if</span>(!thisProcess-&gt;waitForStarted()) { qWarning() &lt;&lt; tr(<span class="stringliteral">&quot;runProcces cannot start process&quot;</span>); }</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="comment">// wait time</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordtype">int</span> waitTime = thisWaitTimeSec * 1000; <span class="comment">// 60000 = 60 sec divide by 1000</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="comment">// now wait</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">if</span> (!thisProcess-&gt;waitForFinished(waitTime)) { qWarning() &lt;&lt; tr(<span class="stringliteral">&quot;runProcces timeout ..&quot;</span>); }</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    }</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    {</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        thisProcess-&gt;start(thisExePath, QStringList() &lt;&lt; thisArgument);</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        thisProcess-&gt;waitForFinished();</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    }</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    thisProcess-&gt;setProcessChannelMode(QProcess::MergedChannels);</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    myRunReturnCode = thisProcess-&gt;exitCode();</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordflow">return</span> QString(thisProcess-&gt;readAllStandardOutput().simplified());</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        myDb = QSqlDatabase::addDatabase(<span class="stringliteral">&quot;QSQLITE&quot;</span>); </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        myDb.setDatabaseName(<span class="stringliteral">&quot;:memory:&quot;</span>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QSQLITE&quot;</span> || mySqlDriver == <span class="stringliteral">&quot;QSQLITE2&quot;</span>)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        {   </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="comment">// SQLite version 3 and SQLite version 2 Note: obsolete since Qt 5.14</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">if</span> (theDb.contains(<span class="stringliteral">&quot;.db&quot;</span>))</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a1d0297815658142c555f7b2820f9aa86">isFileExists</a>(theDb))</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                    qCritical() &lt;&lt; <span class="stringliteral">&quot;createDataBaseConnection new DB: &quot;</span> &lt;&lt; theDb;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                theDb = QString(<span class="stringliteral">&quot;%1%2%3.db&quot;</span>).arg(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a4e8aa5e10c528d29515bc989adf778e7">getAppDataLocation</a>(), QDir::separator(), <a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver); </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            myDb.setDatabaseName(theDb);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="comment">//    myDb.setHostName(getSqlHostName());</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="comment">//    myDb.setUserName(getSqlUserName());</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="comment">//    myDb.setPassword(getSqlPassword());</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QDB2&quot;</span>)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        {   </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="comment">// IBM DB2 (version 7.1 and above)</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QIBASE&quot;</span>)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        {   </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="comment">// Borland InterBase</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QMYSQL&quot;</span> || mySqlDriver == <span class="stringliteral">&quot;MARIADB&quot;</span>)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        {   </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="comment">// MySQL or MariaDB (version 5.0 and above)</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QOCI&quot;</span>)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        {   </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="comment">// Oracle Call Interface Driver</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QPSQL&quot;</span>)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        {   </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="comment">// PostgreSQL (versions 7.3 and above)</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mySqlDriver == <span class="stringliteral">&quot;QTDS&quot;</span>)</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        {   </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="comment">// Sybase Adaptive Server - Note: obsolete since Qt 4.7</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            myDb = QSqlDatabase::addDatabase(mySqlDriver, myConnectionName);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            myDb.setHostName(<a class="code" href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">getSqlHostName</a>());</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            myDb.setDatabaseName(<a class="code" href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">getSqlDatabaseName</a>());</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            myDb.setUserName(<a class="code" href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">getSqlUserName</a>());</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            myDb.setPassword(<a class="code" href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">getSqlPassword</a>());</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    } <span class="comment">// end ! if (:memory:)</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">if</span> (!myDb.open())</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span>(!QSqlDatabase::isDriverAvailable(mySqlDriver))</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a9393c71df338dbe47e24de1e728646d0">showMessageBox</a>(tr(<span class="stringliteral">&quot;Database SQL Driver is missing&quot;</span>).toLocal8Bit(), tr(<span class="stringliteral">&quot;Install SQL&quot;</span>).toLocal8Bit(), <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23ea7f1a2fea930a25b2360bc1666493bc03">Critical</a>);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a9393c71df338dbe47e24de1e728646d0">showMessageBox</a>(QString(<span class="stringliteral">&quot;%1: %2&quot;</span>).arg(tr(<span class="stringliteral">&quot;Cannot open database&quot;</span>), myDb.lastError().text()).toLocal8Bit(), tr(<span class="stringliteral">&quot;Unable to establish a database connection&quot;</span>).toLocal8Bit(), <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23ea7f1a2fea930a25b2360bc1666493bc03">Critical</a>);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// Set Settings</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">writeSettings</a>(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#a63ea17ac82f3396194888a58f7c4652c">MY_SQL_DB_NAME</a>, theDb);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">writeSettings</a>(<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">myConstants</a>-&gt;<a class="code" href="classMyConstants.html#aa8be0ef5ca07c113d47149208feb3477">MY_SQL_DB_TYPE</a>, <span class="stringliteral">&quot;QSQLITE&quot;</span>);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;} <span class="comment">// end createDataBaseConnection</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a7ca0bffbaea3dd3c990c47741cce0ce0">  356</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#a7ca0bffbaea3dd3c990c47741cce0ce0">MySqlDbtModel::runQuery</a>(<span class="keyword">const</span> QString &amp;thisQuery)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;{</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;runQuery=&quot;</span> + thisQuery);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    QSqlQuery theQuery; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">if</span> (theQuery.exec(thisQuery))</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">setRecordID</a>(theQuery.lastInsertId().toString());</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        qCritical() &lt;&lt; <span class="stringliteral">&quot;Error running Query: &quot;</span> &lt;&lt; thisQuery &lt;&lt; theQuery.lastError().text() &lt;&lt; <span class="stringliteral">&quot;, SqLite error code:&quot;</span> &lt;&lt; theQuery.lastError();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <a class="code" href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">setRecordID</a>(<span class="stringliteral">&quot;-1&quot;</span>);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#af567e23f51f88bd92684085e139e496c">  376</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#af567e23f51f88bd92684085e139e496c">MySqlDbtModel::moveDb</a>(<span class="keyword">const</span> QString &amp;thisSourceFile,<span class="keyword">const</span> QString &amp;thisSourcePath, <span class="keyword">const</span> QString &amp;thisDestinationFolder)</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">setMessage</a>(<span class="stringliteral">&quot;moveDb&quot;</span>);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    QFile file(QString(<span class="stringliteral">&quot;%1%2%3&quot;</span>).arg(thisSourcePath, QDir::separator(), thisSourceFile));</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    QString theNewDatabaseName = QString(<span class="stringliteral">&quot;%1%2%3&quot;</span>).arg(thisDestinationFolder, QDir::separator(), thisSourceFile);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a1d0297815658142c555f7b2820f9aa86">isFileExists</a>(theNewDatabaseName))</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">mySetting</a>-&gt;<a class="code" href="classMyOrgSettings.html#a59a90e7e9d20eb74c80349e61c079352">questionYesNo</a>(<span class="stringliteral">&quot;Overwrite Database&quot;</span>, <span class="stringliteral">&quot;Are you sure you want to overwrite existing Database?&quot;</span>))</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">if</span> (myDb.isOpen()) { myDb.close(); }</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">if</span> (file.rename(theNewDatabaseName))</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        myDatabaseName = theNewDatabaseName;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">createDataBaseConnection</a>();</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">else</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00405"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ab246a85006d7606d2ba2d8e1a3abf0bc">  405</a></span>&#160;QString <a class="code" href="classMySqlDbtModel.html#ab246a85006d7606d2ba2d8e1a3abf0bc">MySqlDbtModel::runProcces</a>(<span class="keyword">const</span> QString &amp;thisExePath, <span class="keyword">const</span> QString &amp;thisArgument, <span class="keywordtype">bool</span> isWait, <span class="keywordtype">int</span> thisWaitTimeSec)</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;{</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    QProcess *thisProcess = <span class="keyword">new</span> QProcess(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">if</span> (isWait)</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    {</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        thisProcess-&gt;start(thisExePath, QStringList() &lt;&lt; thisArgument);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="comment">// default wait time 30 sec</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">if</span>(!thisProcess-&gt;waitForStarted()) { qWarning() &lt;&lt; tr(<span class="stringliteral">&quot;runProcces cannot start process&quot;</span>); }</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="comment">// wait time</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordtype">int</span> waitTime = thisWaitTimeSec * 1000; <span class="comment">// 60000 = 60 sec divide by 1000</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="comment">// now wait</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">if</span> (!thisProcess-&gt;waitForFinished(waitTime)) { qWarning() &lt;&lt; tr(<span class="stringliteral">&quot;runProcces timeout ..&quot;</span>); }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    {</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        thisProcess-&gt;start(thisExePath, QStringList() &lt;&lt; thisArgument);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        thisProcess-&gt;waitForFinished();</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    thisProcess-&gt;setProcessChannelMode(QProcess::MergedChannels);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    myRunReturnCode = thisProcess-&gt;exitCode();</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordflow">return</span> QString(thisProcess-&gt;readAllStandardOutput().simplified());</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;}</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ae266befc6ccc680de597ee7329f131d8">  432</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classMySqlDbtModel.html#ae266befc6ccc680de597ee7329f131d8">MySqlDbtModel::getRunReturnCode</a>()</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;{</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">return</span> myRunReturnCode;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;}</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b">  440</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b">MySqlDbtModel::setDebugMessage</a>(<span class="keywordtype">bool</span> thisState)</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;{</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    isDebugMessage = thisState;</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;}</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
-<div class="line"><a name="l00448"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#ae266befc6ccc680de597ee7329f131d8">  448</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classMySqlDbtModel.html#ae266befc6ccc680de597ee7329f131d8">MySqlDbtModel::getRunReturnCode</a>()</div>
+<div class="line"><a name="l00448"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#abce4872801f83111eaa0c53a535dcf24">  448</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMySqlDbtModel.html#abce4872801f83111eaa0c53a535dcf24">MySqlDbtModel::getDebugMessage</a>()</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;{</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">return</span> myRunReturnCode;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">return</span> isDebugMessage;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno"><a class="line" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">  456</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">MySqlDbtModel::setMessage</a>(<span class="keyword">const</span> QString &amp;thisMessage)</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;{</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage)</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    {</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        qDebug() &lt;&lt; thisMessage;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        std::cout &lt;&lt; thisMessage.toStdString() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    }</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;}</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
 <div class="ttc" id="aMySqlDbtModel_8h_html"><div class="ttname"><a href="MySqlDbtModel_8h.html">MySqlDbtModel.h</a></div></div>
 <div class="ttc" id="aclassMyConstants_html_a63ea17ac82f3396194888a58f7c4652c"><div class="ttname"><a href="classMyConstants.html#a63ea17ac82f3396194888a58f7c4652c">MyConstants::MY_SQL_DB_NAME</a></div><div class="ttdeci">const QString MY_SQL_DB_NAME</div><div class="ttdoc">MY_SQL_DB_NAME</div><div class="ttdef"><b>Definition:</b> <a href="MyConstants_8h_source.html#l00029">MyConstants.h:29</a></div></div>
 <div class="ttc" id="aclassMyConstants_html_a673b33ba2dee738d64bcbfb3ea9e59fc"><div class="ttname"><a href="classMyConstants.html#a673b33ba2dee738d64bcbfb3ea9e59fc">MyConstants::MY_SQL_DEFAULT</a></div><div class="ttdeci">const QString MY_SQL_DEFAULT</div><div class="ttdoc">SQL_DEFAULT</div><div class="ttdef"><b>Definition:</b> <a href="MyConstants_8h_source.html#l00026">MyConstants.h:26</a></div></div>
 <div class="ttc" id="aclassMyConstants_html_aa8be0ef5ca07c113d47149208feb3477"><div class="ttname"><a href="classMyConstants.html#aa8be0ef5ca07c113d47149208feb3477">MyConstants::MY_SQL_DB_TYPE</a></div><div class="ttdeci">const QString MY_SQL_DB_TYPE</div><div class="ttdoc">MY_SQL_DB_TYPE</div><div class="ttdef"><b>Definition:</b> <a href="MyConstants_8h_source.html#l00030">MyConstants.h:30</a></div></div>
 <div class="ttc" id="aclassMyOrgSettings_html"><div class="ttname"><a href="classMyOrgSettings.html">MyOrgSettings</a></div><div class="ttdoc">My Org Settings.</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00031">MyOrgSettings.h:32</a></div></div>
-<div class="ttc" id="aclassMyOrgSettings_html_a1d0297815658142c555f7b2820f9aa86"><div class="ttname"><a href="classMyOrgSettings.html#a1d0297815658142c555f7b2820f9aa86">MyOrgSettings::isFileExists</a></div><div class="ttdeci">bool isFileExists(const QString &amp;thisFile)</div><div class="ttdoc">File Functions.</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00689">MyOrgSettings.cpp:689</a></div></div>
+<div class="ttc" id="aclassMyOrgSettings_html_a1d0297815658142c555f7b2820f9aa86"><div class="ttname"><a href="classMyOrgSettings.html#a1d0297815658142c555f7b2820f9aa86">MyOrgSettings::isFileExists</a></div><div class="ttdeci">bool isFileExists(const QString &amp;thisFile)</div><div class="ttdoc">File Functions.</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00681">MyOrgSettings.cpp:681</a></div></div>
 <div class="ttc" id="aclassMyOrgSettings_html_a2581082145269c6d97a03441ef55f23ea7f1a2fea930a25b2360bc1666493bc03"><div class="ttname"><a href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23ea7f1a2fea930a25b2360bc1666493bc03">MyOrgSettings::Critical</a></div><div class="ttdeci">@ Critical</div><div class="ttdoc">Critical</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00072">MyOrgSettings.h:72</a></div></div>
-<div class="ttc" id="aclassMyOrgSettings_html_a4e8aa5e10c528d29515bc989adf778e7"><div class="ttname"><a href="classMyOrgSettings.html#a4e8aa5e10c528d29515bc989adf778e7">MyOrgSettings::getAppDataLocation</a></div><div class="ttdeci">QString getAppDataLocation()</div><div class="ttdoc">getAppDataLocation</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00512">MyOrgSettings.cpp:512</a></div></div>
-<div class="ttc" id="aclassMyOrgSettings_html_a797b8a2459bca688b3e2e7ffb8d958d1"><div class="ttname"><a href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">MyOrgSettings::myConstants</a></div><div class="ttdeci">MyConstants * myConstants</div><div class="ttdoc">myConstants</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00077">MyOrgSettings.h:77</a></div></div>
-<div class="ttc" id="aclassMyOrgSettings_html_a8a2eaabdc89025b2dfbde2485d43c971"><div class="ttname"><a href="classMyOrgSettings.html#a8a2eaabdc89025b2dfbde2485d43c971">MyOrgSettings::questionYesNo</a></div><div class="ttdeci">bool questionYesNo(const char *thisTitle, const char *thisQuestion)</div><div class="ttdoc">questionYesNo</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00380">MyOrgSettings.cpp:380</a></div></div>
-<div class="ttc" id="aclassMyOrgSettings_html_aa6e1b0609dba865ade37e95f6200066f"><div class="ttname"><a href="classMyOrgSettings.html#aa6e1b0609dba865ade37e95f6200066f">MyOrgSettings::showMessageBox</a></div><div class="ttdeci">int showMessageBox(const QString &amp;thisTitle, const QString &amp;thisMessage, MyOrgSettings::MyMessageTypes thisMessageType)</div><div class="ttdoc">show Message Box information, question, warning, critica</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00407">MyOrgSettings.cpp:407</a></div></div>
-<div class="ttc" id="aclassMyOrgSettings_html_ac2b7c734e784998d2c8e470298395646"><div class="ttname"><a href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">MyOrgSettings::writeSettings</a></div><div class="ttdeci">void writeSettings(const QString &amp;thisSetting, const QString &amp;thisValue)</div><div class="ttdoc">writeSettings</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00134">MyOrgSettings.cpp:134</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a0a528785d6c51ff66a5f93e8f89a2b57"><div class="ttname"><a href="classMySqlDbtModel.html#a0a528785d6c51ff66a5f93e8f89a2b57">MySqlDbtModel::getSqlDatabase</a></div><div class="ttdeci">QSqlDatabase getSqlDatabase()</div><div class="ttdoc">get Sql Database</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00060">MySqlDbtModel.cpp:60</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a0cc4b9e5cf179b648f502ed0e5b053ed"><div class="ttname"><a href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">MySqlDbtModel::setRecordID</a></div><div class="ttdeci">void setRecordID(const QString &amp;thisRecordID)</div><div class="ttdoc">set RecordID</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00185">MySqlDbtModel.cpp:185</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a13dc4e99cad86bec2c18f48f02228359"><div class="ttname"><a href="classMySqlDbtModel.html#a13dc4e99cad86bec2c18f48f02228359">MySqlDbtModel::getSqlTableName</a></div><div class="ttdeci">QString getSqlTableName()</div><div class="ttdoc">getSqlTableName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00087">MySqlDbtModel.cpp:87</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a1da2027606bba16aa0a4ba46dadf921b"><div class="ttname"><a href="classMySqlDbtModel.html#a1da2027606bba16aa0a4ba46dadf921b">MySqlDbtModel::setSqlTableName</a></div><div class="ttdeci">void setSqlTableName(const QString &amp;thisTableName)</div><div class="ttdoc">setSqlTableName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00078">MySqlDbtModel.cpp:78</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a238ec9eee0d568aefb5efe4002f8a28e"><div class="ttname"><a href="classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e">MySqlDbtModel::setSqlDatabase</a></div><div class="ttdeci">void setSqlDatabase(QSqlDatabase thisDatabase)</div><div class="ttdoc">set Sql Database</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00051">MySqlDbtModel.cpp:51</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a244cd55fe4e04f3e39fb34a47b5f86bb"><div class="ttname"><a href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">MySqlDbtModel::createDataBaseConnection</a></div><div class="ttdeci">bool createDataBaseConnection()</div><div class="ttdoc">create DataBase Connection</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00259">MySqlDbtModel.cpp:259</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a2724af9ac781006f2385538311f8d5ef"><div class="ttname"><a href="classMySqlDbtModel.html#a2724af9ac781006f2385538311f8d5ef">MySqlDbtModel::setSqlUserName</a></div><div class="ttdeci">void setSqlUserName(const QString &amp;thisUserName)</div><div class="ttdoc">setSqlUserName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00114">MySqlDbtModel.cpp:114</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a305c7886808ac37b91b15f3b8f743e74"><div class="ttname"><a href="classMySqlDbtModel.html#a305c7886808ac37b91b15f3b8f743e74">MySqlDbtModel::isDbTable</a></div><div class="ttdeci">bool isDbTable(const QString &amp;thisTable)</div><div class="ttdoc">isDbTable</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00040">MySqlDbtModel.cpp:40</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a3e3f812a99f21f03727005e9eb1800fc"><div class="ttname"><a href="classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc">MySqlDbtModel::setConnectionName</a></div><div class="ttdeci">void setConnectionName(const QString &amp;thisConnectionName)</div><div class="ttdoc">set Connection Name</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00168">MySqlDbtModel.cpp:168</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a51eda5b172d9d8643618ad8e6ce8fa7b"><div class="ttname"><a href="classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b">MySqlDbtModel::setDebugMessage</a></div><div class="ttdeci">void setDebugMessage(bool thisState)</div><div class="ttdoc">set Debug Message</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00024">MySqlDbtModel.cpp:24</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a5511e449b4f2bf50b4f3e4435643065b"><div class="ttname"><a href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">MySqlDbtModel::getSqlDatabaseName</a></div><div class="ttdeci">QString getSqlDatabaseName()</div><div class="ttdoc">getSqlDatabaseName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00141">MySqlDbtModel.cpp:141</a></div></div>
+<div class="ttc" id="aclassMyOrgSettings_html_a4e8aa5e10c528d29515bc989adf778e7"><div class="ttname"><a href="classMyOrgSettings.html#a4e8aa5e10c528d29515bc989adf778e7">MyOrgSettings::getAppDataLocation</a></div><div class="ttdeci">QString getAppDataLocation()</div><div class="ttdoc">get AppData Location</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00496">MyOrgSettings.cpp:496</a></div></div>
+<div class="ttc" id="aclassMyOrgSettings_html_a59a90e7e9d20eb74c80349e61c079352"><div class="ttname"><a href="classMyOrgSettings.html#a59a90e7e9d20eb74c80349e61c079352">MyOrgSettings::questionYesNo</a></div><div class="ttdeci">bool questionYesNo(const char *thisTitle, const char *thisQuestion) const</div><div class="ttdoc">question Yes No</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00363">MyOrgSettings.cpp:363</a></div></div>
+<div class="ttc" id="aclassMyOrgSettings_html_a797b8a2459bca688b3e2e7ffb8d958d1"><div class="ttname"><a href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">MyOrgSettings::myConstants</a></div><div class="ttdeci">MyConstants * myConstants</div><div class="ttdoc">myConstants</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00078">MyOrgSettings.h:78</a></div></div>
+<div class="ttc" id="aclassMyOrgSettings_html_a9393c71df338dbe47e24de1e728646d0"><div class="ttname"><a href="classMyOrgSettings.html#a9393c71df338dbe47e24de1e728646d0">MyOrgSettings::showMessageBox</a></div><div class="ttdeci">int showMessageBox(const QString &amp;thisTitle, const QString &amp;thisMessage, MyOrgSettings::MyMessageTypes thisMessageType) const</div><div class="ttdoc">show Message Box information, question, warning, critica</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00390">MyOrgSettings.cpp:390</a></div></div>
+<div class="ttc" id="aclassMyOrgSettings_html_ac2b7c734e784998d2c8e470298395646"><div class="ttname"><a href="classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646">MyOrgSettings::writeSettings</a></div><div class="ttdeci">void writeSettings(const QString &amp;thisSetting, const QString &amp;thisValue)</div><div class="ttdoc">write Settings</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8cpp_source.html#l00117">MyOrgSettings.cpp:117</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a0a528785d6c51ff66a5f93e8f89a2b57"><div class="ttname"><a href="classMySqlDbtModel.html#a0a528785d6c51ff66a5f93e8f89a2b57">MySqlDbtModel::getSqlDatabase</a></div><div class="ttdeci">QSqlDatabase getSqlDatabase()</div><div class="ttdoc">get Sql Database</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00044">MySqlDbtModel.cpp:44</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a0cc4b9e5cf179b648f502ed0e5b053ed"><div class="ttname"><a href="classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed">MySqlDbtModel::setRecordID</a></div><div class="ttdeci">void setRecordID(const QString &amp;thisRecordID)</div><div class="ttdoc">set RecordID</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00169">MySqlDbtModel.cpp:169</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a13dc4e99cad86bec2c18f48f02228359"><div class="ttname"><a href="classMySqlDbtModel.html#a13dc4e99cad86bec2c18f48f02228359">MySqlDbtModel::getSqlTableName</a></div><div class="ttdeci">QString getSqlTableName()</div><div class="ttdoc">getSqlTableName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00071">MySqlDbtModel.cpp:71</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a1da2027606bba16aa0a4ba46dadf921b"><div class="ttname"><a href="classMySqlDbtModel.html#a1da2027606bba16aa0a4ba46dadf921b">MySqlDbtModel::setSqlTableName</a></div><div class="ttdeci">void setSqlTableName(const QString &amp;thisTableName)</div><div class="ttdoc">setSqlTableName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00062">MySqlDbtModel.cpp:62</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a238ec9eee0d568aefb5efe4002f8a28e"><div class="ttname"><a href="classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e">MySqlDbtModel::setSqlDatabase</a></div><div class="ttdeci">void setSqlDatabase(QSqlDatabase thisDatabase)</div><div class="ttdoc">set Sql Database</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00035">MySqlDbtModel.cpp:35</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a244cd55fe4e04f3e39fb34a47b5f86bb"><div class="ttname"><a href="classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb">MySqlDbtModel::createDataBaseConnection</a></div><div class="ttdeci">bool createDataBaseConnection()</div><div class="ttdoc">create DataBase Connection</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00243">MySqlDbtModel.cpp:243</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a2724af9ac781006f2385538311f8d5ef"><div class="ttname"><a href="classMySqlDbtModel.html#a2724af9ac781006f2385538311f8d5ef">MySqlDbtModel::setSqlUserName</a></div><div class="ttdeci">void setSqlUserName(const QString &amp;thisUserName)</div><div class="ttdoc">setSqlUserName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00098">MySqlDbtModel.cpp:98</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a305c7886808ac37b91b15f3b8f743e74"><div class="ttname"><a href="classMySqlDbtModel.html#a305c7886808ac37b91b15f3b8f743e74">MySqlDbtModel::isDbTable</a></div><div class="ttdeci">bool isDbTable(const QString &amp;thisTable)</div><div class="ttdoc">isDbTable</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00024">MySqlDbtModel.cpp:24</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a3e3f812a99f21f03727005e9eb1800fc"><div class="ttname"><a href="classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc">MySqlDbtModel::setConnectionName</a></div><div class="ttdeci">void setConnectionName(const QString &amp;thisConnectionName)</div><div class="ttdoc">set Connection Name</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00152">MySqlDbtModel.cpp:152</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a4c767a6a7a92c313120d1d30b00f8f22"><div class="ttname"><a href="classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22">MySqlDbtModel::setMessage</a></div><div class="ttdeci">void setMessage(const QString &amp;thisMessage)</div><div class="ttdoc">setMessage</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00456">MySqlDbtModel.cpp:456</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a51eda5b172d9d8643618ad8e6ce8fa7b"><div class="ttname"><a href="classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b">MySqlDbtModel::setDebugMessage</a></div><div class="ttdeci">void setDebugMessage(bool thisState)</div><div class="ttdoc">set Debug Message</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00440">MySqlDbtModel.cpp:440</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a5511e449b4f2bf50b4f3e4435643065b"><div class="ttname"><a href="classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b">MySqlDbtModel::getSqlDatabaseName</a></div><div class="ttdeci">QString getSqlDatabaseName()</div><div class="ttdoc">getSqlDatabaseName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00125">MySqlDbtModel.cpp:125</a></div></div>
 <div class="ttc" id="aclassMySqlDbtModel_html_a63dad1efad75e7acd44c0072f91be8b9"><div class="ttname"><a href="classMySqlDbtModel.html#a63dad1efad75e7acd44c0072f91be8b9">MySqlDbtModel::~MySqlDbtModel</a></div><div class="ttdeci">~MySqlDbtModel()</div><div class="ttdoc">~MySqlDbtModel</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00016">MySqlDbtModel.cpp:16</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a7593ee82a0f712fa784b1d48e86407f8"><div class="ttname"><a href="classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8">MySqlDbtModel::setSqlDatabaseName</a></div><div class="ttdeci">void setSqlDatabaseName(const QString &amp;thisPassword)</div><div class="ttdoc">setSqlDatabaseName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00132">MySqlDbtModel.cpp:132</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_a7ca0bffbaea3dd3c990c47741cce0ce0"><div class="ttname"><a href="classMySqlDbtModel.html#a7ca0bffbaea3dd3c990c47741cce0ce0">MySqlDbtModel::runQuery</a></div><div class="ttdeci">bool runQuery(const QString &amp;thisQuery)</div><div class="ttdoc">runQuery</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00372">MySqlDbtModel.cpp:372</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_aa16a239a6d787d61a5b4f13d45cc2174"><div class="ttname"><a href="classMySqlDbtModel.html#aa16a239a6d787d61a5b4f13d45cc2174">MySqlDbtModel::getRecordID</a></div><div class="ttdeci">QString getRecordID()</div><div class="ttdoc">get RecordID</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00177">MySqlDbtModel.cpp:177</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_ab246a85006d7606d2ba2d8e1a3abf0bc"><div class="ttname"><a href="classMySqlDbtModel.html#ab246a85006d7606d2ba2d8e1a3abf0bc">MySqlDbtModel::runProcces</a></div><div class="ttdeci">QString runProcces(const QString &amp;thisExePath, const QString &amp;thisArgument, bool isWait, int thisWaitTimeSec)</div><div class="ttdoc">run Procces</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00421">MySqlDbtModel.cpp:421</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_ab2a58202945a6ba8112f07cbf2db3387"><div class="ttname"><a href="classMySqlDbtModel.html#ab2a58202945a6ba8112f07cbf2db3387">MySqlDbtModel::setSqlHostName</a></div><div class="ttdeci">void setSqlHostName(const QString &amp;thisHostName)</div><div class="ttdoc">setSqlHostName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00096">MySqlDbtModel.cpp:96</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_abce4872801f83111eaa0c53a535dcf24"><div class="ttname"><a href="classMySqlDbtModel.html#abce4872801f83111eaa0c53a535dcf24">MySqlDbtModel::getDebugMessage</a></div><div class="ttdeci">bool getDebugMessage()</div><div class="ttdoc">get Debug Message</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00032">MySqlDbtModel.cpp:32</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_ac33cace25021417957742269bc4bf00d"><div class="ttname"><a href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">MySqlDbtModel::getSqlPassword</a></div><div class="ttdeci">QString getSqlPassword()</div><div class="ttdoc">getSqlPassword</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00159">MySqlDbtModel.cpp:159</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_ad01baa1e66551dc6239194f9c4955656"><div class="ttname"><a href="classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656">MySqlDbtModel::getConnectionName</a></div><div class="ttdeci">QString getConnectionName()</div><div class="ttdoc">get Connection Name</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00193">MySqlDbtModel.cpp:193</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_ad1d092a5dcbd001cda16cb8b39eff835"><div class="ttname"><a href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">MySqlDbtModel::setSqlDriver</a></div><div class="ttdeci">void setSqlDriver(const QString &amp;thisDriver)</div><div class="ttdoc">setSqlDriver</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00202">MySqlDbtModel.cpp:202</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a7593ee82a0f712fa784b1d48e86407f8"><div class="ttname"><a href="classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8">MySqlDbtModel::setSqlDatabaseName</a></div><div class="ttdeci">void setSqlDatabaseName(const QString &amp;thisPassword)</div><div class="ttdoc">setSqlDatabaseName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00116">MySqlDbtModel.cpp:116</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_a7ca0bffbaea3dd3c990c47741cce0ce0"><div class="ttname"><a href="classMySqlDbtModel.html#a7ca0bffbaea3dd3c990c47741cce0ce0">MySqlDbtModel::runQuery</a></div><div class="ttdeci">bool runQuery(const QString &amp;thisQuery)</div><div class="ttdoc">runQuery</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00356">MySqlDbtModel.cpp:356</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_aa16a239a6d787d61a5b4f13d45cc2174"><div class="ttname"><a href="classMySqlDbtModel.html#aa16a239a6d787d61a5b4f13d45cc2174">MySqlDbtModel::getRecordID</a></div><div class="ttdeci">QString getRecordID()</div><div class="ttdoc">get RecordID</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00161">MySqlDbtModel.cpp:161</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_ab246a85006d7606d2ba2d8e1a3abf0bc"><div class="ttname"><a href="classMySqlDbtModel.html#ab246a85006d7606d2ba2d8e1a3abf0bc">MySqlDbtModel::runProcces</a></div><div class="ttdeci">QString runProcces(const QString &amp;thisExePath, const QString &amp;thisArgument, bool isWait, int thisWaitTimeSec)</div><div class="ttdoc">run Procces</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00405">MySqlDbtModel.cpp:405</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_ab2a58202945a6ba8112f07cbf2db3387"><div class="ttname"><a href="classMySqlDbtModel.html#ab2a58202945a6ba8112f07cbf2db3387">MySqlDbtModel::setSqlHostName</a></div><div class="ttdeci">void setSqlHostName(const QString &amp;thisHostName)</div><div class="ttdoc">setSqlHostName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00080">MySqlDbtModel.cpp:80</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_abce4872801f83111eaa0c53a535dcf24"><div class="ttname"><a href="classMySqlDbtModel.html#abce4872801f83111eaa0c53a535dcf24">MySqlDbtModel::getDebugMessage</a></div><div class="ttdeci">bool getDebugMessage()</div><div class="ttdoc">get Debug Message</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00448">MySqlDbtModel.cpp:448</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_ac33cace25021417957742269bc4bf00d"><div class="ttname"><a href="classMySqlDbtModel.html#ac33cace25021417957742269bc4bf00d">MySqlDbtModel::getSqlPassword</a></div><div class="ttdeci">QString getSqlPassword()</div><div class="ttdoc">getSqlPassword</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00143">MySqlDbtModel.cpp:143</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_ad01baa1e66551dc6239194f9c4955656"><div class="ttname"><a href="classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656">MySqlDbtModel::getConnectionName</a></div><div class="ttdeci">QString getConnectionName()</div><div class="ttdoc">get Connection Name</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00177">MySqlDbtModel.cpp:177</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_ad1d092a5dcbd001cda16cb8b39eff835"><div class="ttname"><a href="classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835">MySqlDbtModel::setSqlDriver</a></div><div class="ttdeci">void setSqlDriver(const QString &amp;thisDriver)</div><div class="ttdoc">setSqlDriver</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00186">MySqlDbtModel.cpp:186</a></div></div>
 <div class="ttc" id="aclassMySqlDbtModel_html_ad27fbdfdc3c2929e707211c01c6a786e"><div class="ttname"><a href="classMySqlDbtModel.html#ad27fbdfdc3c2929e707211c01c6a786e">MySqlDbtModel::MySqlDbtModel</a></div><div class="ttdeci">MySqlDbtModel(QObject *parent=0)</div><div class="ttdoc">MySqlDbtModel.</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00007">MySqlDbtModel.cpp:7</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_ad464905c598c0cdb50348c73a301988c"><div class="ttname"><a href="classMySqlDbtModel.html#ad464905c598c0cdb50348c73a301988c">MySqlDbtModel::setSqlPassword</a></div><div class="ttdeci">void setSqlPassword(const QString &amp;thisPassword)</div><div class="ttdoc">setSqlPassword</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00150">MySqlDbtModel.cpp:150</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_ad464905c598c0cdb50348c73a301988c"><div class="ttname"><a href="classMySqlDbtModel.html#ad464905c598c0cdb50348c73a301988c">MySqlDbtModel::setSqlPassword</a></div><div class="ttdeci">void setSqlPassword(const QString &amp;thisPassword)</div><div class="ttdoc">setSqlPassword</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00134">MySqlDbtModel.cpp:134</a></div></div>
 <div class="ttc" id="aclassMySqlDbtModel_html_ad56b6ae71a80657ad169af0e443d23f4"><div class="ttname"><a href="classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4">MySqlDbtModel::mySetting</a></div><div class="ttdeci">MyOrgSettings * mySetting</div><div class="ttdoc">mySetting</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8h_source.html#l00023">MySqlDbtModel.h:23</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_ae266befc6ccc680de597ee7329f131d8"><div class="ttname"><a href="classMySqlDbtModel.html#ae266befc6ccc680de597ee7329f131d8">MySqlDbtModel::getRunReturnCode</a></div><div class="ttdeci">int getRunReturnCode()</div><div class="ttdoc">get Run Return Code</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00448">MySqlDbtModel.cpp:448</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_af1a7ac0bf0dedcc91f1b4d7faa2ae17a"><div class="ttname"><a href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">MySqlDbtModel::getSqlHostName</a></div><div class="ttdeci">QString getSqlHostName()</div><div class="ttdoc">getSqlHostName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00105">MySqlDbtModel.cpp:105</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_af567e23f51f88bd92684085e139e496c"><div class="ttname"><a href="classMySqlDbtModel.html#af567e23f51f88bd92684085e139e496c">MySqlDbtModel::moveDb</a></div><div class="ttdeci">bool moveDb(const QString &amp;thisSourceFile, const QString &amp;thisSourcePath, const QString &amp;thisDestinationFolder)</div><div class="ttdoc">Move Db.</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00392">MySqlDbtModel.cpp:392</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_af6c68752d931062c5068c920adc4afd1"><div class="ttname"><a href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">MySqlDbtModel::getSqlUserName</a></div><div class="ttdeci">QString getSqlUserName()</div><div class="ttdoc">getSqlUserName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00123">MySqlDbtModel.cpp:123</a></div></div>
-<div class="ttc" id="aclassMySqlDbtModel_html_af774dbe87b9e17270b44ad7478a159b7"><div class="ttname"><a href="classMySqlDbtModel.html#af774dbe87b9e17270b44ad7478a159b7">MySqlDbtModel::getSqlDriver</a></div><div class="ttdeci">QString getSqlDriver()</div><div class="ttdoc">getSqlDriver</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00069">MySqlDbtModel.cpp:69</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_ae266befc6ccc680de597ee7329f131d8"><div class="ttname"><a href="classMySqlDbtModel.html#ae266befc6ccc680de597ee7329f131d8">MySqlDbtModel::getRunReturnCode</a></div><div class="ttdeci">int getRunReturnCode()</div><div class="ttdoc">get Run Return Code</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00432">MySqlDbtModel.cpp:432</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_af1a7ac0bf0dedcc91f1b4d7faa2ae17a"><div class="ttname"><a href="classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a">MySqlDbtModel::getSqlHostName</a></div><div class="ttdeci">QString getSqlHostName()</div><div class="ttdoc">getSqlHostName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00089">MySqlDbtModel.cpp:89</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_af567e23f51f88bd92684085e139e496c"><div class="ttname"><a href="classMySqlDbtModel.html#af567e23f51f88bd92684085e139e496c">MySqlDbtModel::moveDb</a></div><div class="ttdeci">bool moveDb(const QString &amp;thisSourceFile, const QString &amp;thisSourcePath, const QString &amp;thisDestinationFolder)</div><div class="ttdoc">Move Db.</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00376">MySqlDbtModel.cpp:376</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_af6c68752d931062c5068c920adc4afd1"><div class="ttname"><a href="classMySqlDbtModel.html#af6c68752d931062c5068c920adc4afd1">MySqlDbtModel::getSqlUserName</a></div><div class="ttdeci">QString getSqlUserName()</div><div class="ttdoc">getSqlUserName</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00107">MySqlDbtModel.cpp:107</a></div></div>
+<div class="ttc" id="aclassMySqlDbtModel_html_af774dbe87b9e17270b44ad7478a159b7"><div class="ttname"><a href="classMySqlDbtModel.html#af774dbe87b9e17270b44ad7478a159b7">MySqlDbtModel::getSqlDriver</a></div><div class="ttdeci">QString getSqlDriver()</div><div class="ttdoc">getSqlDriver</div><div class="ttdef"><b>Definition:</b> <a href="MySqlDbtModel_8cpp_source.html#l00053">MySqlDbtModel.cpp:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

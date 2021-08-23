@@ -100,6 +100,19 @@ class MainWindow : public QMainWindow
             ErrorTransferring = 102,  //!< \c ErrorTransferring @brief Error Transferring: server replied: Too Many Requests, increase Delay time.
         }; // end enum TranslationsErrors
         Q_ENUM(TranslationsErrors)
+        /*!
+            \enum MyMessageTypes
+            @brief Message Types
+         */
+        enum MyMessageTypes
+        {
+            Information = 100, //!< \c Information  @brief Information
+            Warning     = 101, //!< \c Warning      @brief Warning
+            Critical    = 102, //!< \c Critical     @brief Critical
+            Debug       = 103, //!< \c Debug        @brief Debug
+        }; // end enum MyFileinfo
+        // Makes getting file Info easier
+        Q_ENUM(MyMessageTypes)
         //
         void onRunFirstOnStartup();                     //!< on Run First On Startup
         //
@@ -148,6 +161,7 @@ class MainWindow : public QMainWindow
         void acceptTranslations();                      //!< accept Translations
         void createReadMeTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create ReadMe Translation Job
         void closeTransHelp();                          //!< close Trans Help
+        void setMessage(const QString &thisMessage, MainWindow::MyMessageTypes thisMessageType); //!< set Message
 
     public slots:
         void onHelp();                                  //!< on Help

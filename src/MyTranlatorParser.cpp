@@ -270,4 +270,32 @@ void MyTranlatorParser::toTS(const QString &inputDir, const QString &outputFile,
     document_dump ddv(xmlWriter);
     root->visit(ddv);
 }
+/************************************************
+ * @brief set Debug Message.
+ * setDebugMessage
+ ***********************************************/
+void MyTranlatorParser::setDebugMessage(bool thisState)
+{
+    isDebugMessage = thisState;
+}
+/************************************************
+ * @brief get Debug Message.
+ * getDebugMessage
+ ***********************************************/
+bool MyTranlatorParser::getDebugMessage()
+{
+    return isDebugMessage;
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void MyTranlatorParser::setMessage(const QString &thisMessage)
+{
+    if (isDebugMessage)
+    {
+        qDebug() << thisMessage;
+        std::cout << thisMessage.toStdString() << std::endl;
+    }
+}
 /******************************* End of File *********************************/

@@ -20,6 +20,7 @@ var classMySqlDbtModel =
     [ "runQuery", "classMySqlDbtModel.html#a7ca0bffbaea3dd3c990c47741cce0ce0", null ],
     [ "setConnectionName", "classMySqlDbtModel.html#a3e3f812a99f21f03727005e9eb1800fc", null ],
     [ "setDebugMessage", "classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b", null ],
+    [ "setMessage", "classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22", null ],
     [ "setRecordID", "classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed", null ],
     [ "setSqlDatabase", "classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e", null ],
     [ "setSqlDatabaseName", "classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8", null ],

@@ -178,6 +178,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a42054a07699a5398de5c7024cefc771f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimpleCrypt.html#a42054a07699a5398de5c7024cefc771f">getDebugMessage</a> ()</td></tr>
 <tr class="memdesc:a42054a07699a5398de5c7024cefc771f"><td class="mdescLeft">&#160;</td><td class="mdescRight">get Debug Message  <a href="classSimpleCrypt.html#a42054a07699a5398de5c7024cefc771f">More...</a><br /></td></tr>
 <tr class="separator:a42054a07699a5398de5c7024cefc771f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42e4cf5dae2a57ea59696f89670d293"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimpleCrypt.html#aa42e4cf5dae2a57ea59696f89670d293">setMessage</a> (const QString &amp;thisMessage)</td></tr>
+<tr class="memdesc:aa42e4cf5dae2a57ea59696f89670d293"><td class="mdescLeft">&#160;</td><td class="mdescRight">set Message  <a href="classSimpleCrypt.html#aa42e4cf5dae2a57ea59696f89670d293">More...</a><br /></td></tr>
+<tr class="separator:aa42e4cf5dae2a57ea59696f89670d293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simple encryption and decryption of strings and byte arrays. </p>
@@ -187,7 +190,7 @@ Public Member Functions</h2></td></tr>
 <p>If you do not provide a key, or if something else is wrong, the encryption and decryption function will return an empty string or will return a string containing nonsense. <a class="el" href="classSimpleCrypt.html#acb412b13386bf2bcb31552bc40949b39">lastError()</a> will return a value indicating if the method was succesful, and if not, why not.</p>
 <p><a class="el" href="classSimpleCrypt.html" title="Simple encryption and decryption of strings and byte arrays.">SimpleCrypt</a> is prepared for the case that the encryption and decryption algorithm is changed in a later version, by prepending a version identifier to the cypertext. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00065">65</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00071">71</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a25298e746f175cf175a18f082092ca8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25298e746f175cf175a18f082092ca8e">&#9670;&nbsp;</a></span>CompressionMode</h2>
@@ -210,15 +213,15 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00071">71</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea8d04b76ed73553456ec87e88b18ddc66">CompressionAuto</a>,    </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea10aec29129f4e6d08c4f61d7008ec8f7">CompressionAlways</a>,  </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8eadc794d925e3af54dcef9a24ee3f60f6d">CompressionNever</a>    </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        };</div>
-<div class="ttc" id="aclassSimpleCrypt_html_a25298e746f175cf175a18f082092ca8ea10aec29129f4e6d08c4f61d7008ec8f7"><div class="ttname"><a href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea10aec29129f4e6d08c4f61d7008ec8f7">SimpleCrypt::CompressionAlways</a></div><div class="ttdeci">@ CompressionAlways</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00074">SimpleCrypt.h:74</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_a25298e746f175cf175a18f082092ca8ea8d04b76ed73553456ec87e88b18ddc66"><div class="ttname"><a href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea8d04b76ed73553456ec87e88b18ddc66">SimpleCrypt::CompressionAuto</a></div><div class="ttdeci">@ CompressionAuto</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00073">SimpleCrypt.h:73</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_a25298e746f175cf175a18f082092ca8eadc794d925e3af54dcef9a24ee3f60f6d"><div class="ttname"><a href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8eadc794d925e3af54dcef9a24ee3f60f6d">SimpleCrypt::CompressionNever</a></div><div class="ttdeci">@ CompressionNever</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00076">SimpleCrypt.h:75</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00077">77</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea8d04b76ed73553456ec87e88b18ddc66">CompressionAuto</a>,    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea10aec29129f4e6d08c4f61d7008ec8f7">CompressionAlways</a>,  </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8eadc794d925e3af54dcef9a24ee3f60f6d">CompressionNever</a>    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        };</div>
+<div class="ttc" id="aclassSimpleCrypt_html_a25298e746f175cf175a18f082092ca8ea10aec29129f4e6d08c4f61d7008ec8f7"><div class="ttname"><a href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea10aec29129f4e6d08c4f61d7008ec8f7">SimpleCrypt::CompressionAlways</a></div><div class="ttdeci">@ CompressionAlways</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00080">SimpleCrypt.h:80</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_a25298e746f175cf175a18f082092ca8ea8d04b76ed73553456ec87e88b18ddc66"><div class="ttname"><a href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8ea8d04b76ed73553456ec87e88b18ddc66">SimpleCrypt::CompressionAuto</a></div><div class="ttdeci">@ CompressionAuto</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00079">SimpleCrypt.h:79</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_a25298e746f175cf175a18f082092ca8eadc794d925e3af54dcef9a24ee3f60f6d"><div class="ttname"><a href="classSimpleCrypt.html#a25298e746f175cf175a18f082092ca8eadc794d925e3af54dcef9a24ee3f60f6d">SimpleCrypt::CompressionNever</a></div><div class="ttdeci">@ CompressionNever</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00082">SimpleCrypt.h:81</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -249,17 +252,17 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00198">198</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa864cfabe64952a96836e8a38095b07a6">CryptoFlagNone</a>        = 0,    </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa95c36ec5a646eb510fdcf1fc86324b1c">CryptoFlagCompression</a> = 0x01, </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa4744fff57dd691194bf85a133d3233cd">CryptoFlagChecksum</a>    = 0x02, </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aaa0e9bb23fc2f5dc4694efb3b98f24749">CryptoFlagHash</a>        = 0x04  </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        };</div>
-<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aa4744fff57dd691194bf85a133d3233cd"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa4744fff57dd691194bf85a133d3233cd">SimpleCrypt::CryptoFlagChecksum</a></div><div class="ttdeci">@ CryptoFlagChecksum</div><div class="ttdoc">CryptoFlagChecksum</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00202">SimpleCrypt.h:202</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aa864cfabe64952a96836e8a38095b07a6"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa864cfabe64952a96836e8a38095b07a6">SimpleCrypt::CryptoFlagNone</a></div><div class="ttdeci">@ CryptoFlagNone</div><div class="ttdoc">CryptoFlagNone</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00200">SimpleCrypt.h:200</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aa95c36ec5a646eb510fdcf1fc86324b1c"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa95c36ec5a646eb510fdcf1fc86324b1c">SimpleCrypt::CryptoFlagCompression</a></div><div class="ttdeci">@ CryptoFlagCompression</div><div class="ttdoc">CryptoFlagCompression</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00201">SimpleCrypt.h:201</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aaa0e9bb23fc2f5dc4694efb3b98f24749"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aaa0e9bb23fc2f5dc4694efb3b98f24749">SimpleCrypt::CryptoFlagHash</a></div><div class="ttdeci">@ CryptoFlagHash</div><div class="ttdoc">CryptoFlagHash</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00204">SimpleCrypt.h:203</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00204">204</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa864cfabe64952a96836e8a38095b07a6">CryptoFlagNone</a>        = 0,    </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa95c36ec5a646eb510fdcf1fc86324b1c">CryptoFlagCompression</a> = 0x01, </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa4744fff57dd691194bf85a133d3233cd">CryptoFlagChecksum</a>    = 0x02, </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <a class="code" href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aaa0e9bb23fc2f5dc4694efb3b98f24749">CryptoFlagHash</a>        = 0x04  </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        };</div>
+<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aa4744fff57dd691194bf85a133d3233cd"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa4744fff57dd691194bf85a133d3233cd">SimpleCrypt::CryptoFlagChecksum</a></div><div class="ttdeci">@ CryptoFlagChecksum</div><div class="ttdoc">CryptoFlagChecksum</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00208">SimpleCrypt.h:208</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aa864cfabe64952a96836e8a38095b07a6"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa864cfabe64952a96836e8a38095b07a6">SimpleCrypt::CryptoFlagNone</a></div><div class="ttdeci">@ CryptoFlagNone</div><div class="ttdoc">CryptoFlagNone</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00206">SimpleCrypt.h:206</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aa95c36ec5a646eb510fdcf1fc86324b1c"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aa95c36ec5a646eb510fdcf1fc86324b1c">SimpleCrypt::CryptoFlagCompression</a></div><div class="ttdeci">@ CryptoFlagCompression</div><div class="ttdoc">CryptoFlagCompression</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00207">SimpleCrypt.h:207</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_abc7918ae3afd91a98831fad119add27aaa0e9bb23fc2f5dc4694efb3b98f24749"><div class="ttname"><a href="classSimpleCrypt.html#abc7918ae3afd91a98831fad119add27aaa0e9bb23fc2f5dc4694efb3b98f24749">SimpleCrypt::CryptoFlagHash</a></div><div class="ttdeci">@ CryptoFlagHash</div><div class="ttdoc">CryptoFlagHash</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00210">SimpleCrypt.h:209</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -285,17 +288,17 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00090">90</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba77b7389ae8659e97df448c8fff79ca83">ErrorNoError</a>,         </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09bacfb6271ef5415fe5e6a0e5ee3094f3a7">ErrorNoKeySet</a>,        </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba4c43644f04a0eefc3ed2205223f19479">ErrorUnknownVersion</a>,  </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba8566157b59e4662d0400b34249918e88">ErrorIntegrityFailed</a>  </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        };</div>
-<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09ba4c43644f04a0eefc3ed2205223f19479"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba4c43644f04a0eefc3ed2205223f19479">SimpleCrypt::ErrorUnknownVersion</a></div><div class="ttdeci">@ ErrorUnknownVersion</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00094">SimpleCrypt.h:94</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09ba77b7389ae8659e97df448c8fff79ca83"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba77b7389ae8659e97df448c8fff79ca83">SimpleCrypt::ErrorNoError</a></div><div class="ttdeci">@ ErrorNoError</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00092">SimpleCrypt.h:92</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09ba8566157b59e4662d0400b34249918e88"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba8566157b59e4662d0400b34249918e88">SimpleCrypt::ErrorIntegrityFailed</a></div><div class="ttdeci">@ ErrorIntegrityFailed</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00096">SimpleCrypt.h:95</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09bacfb6271ef5415fe5e6a0e5ee3094f3a7"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09bacfb6271ef5415fe5e6a0e5ee3094f3a7">SimpleCrypt::ErrorNoKeySet</a></div><div class="ttdeci">@ ErrorNoKeySet</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00093">SimpleCrypt.h:93</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00096">96</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba77b7389ae8659e97df448c8fff79ca83">ErrorNoError</a>,         </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09bacfb6271ef5415fe5e6a0e5ee3094f3a7">ErrorNoKeySet</a>,        </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba4c43644f04a0eefc3ed2205223f19479">ErrorUnknownVersion</a>,  </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba8566157b59e4662d0400b34249918e88">ErrorIntegrityFailed</a>  </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        };</div>
+<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09ba4c43644f04a0eefc3ed2205223f19479"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba4c43644f04a0eefc3ed2205223f19479">SimpleCrypt::ErrorUnknownVersion</a></div><div class="ttdeci">@ ErrorUnknownVersion</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00100">SimpleCrypt.h:100</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09ba77b7389ae8659e97df448c8fff79ca83"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba77b7389ae8659e97df448c8fff79ca83">SimpleCrypt::ErrorNoError</a></div><div class="ttdeci">@ ErrorNoError</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00098">SimpleCrypt.h:98</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09ba8566157b59e4662d0400b34249918e88"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba8566157b59e4662d0400b34249918e88">SimpleCrypt::ErrorIntegrityFailed</a></div><div class="ttdeci">@ ErrorIntegrityFailed</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00102">SimpleCrypt.h:101</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_ab7f81049e78f021b55a36f7cfac5a09bacfb6271ef5415fe5e6a0e5ee3094f3a7"><div class="ttname"><a href="classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09bacfb6271ef5415fe5e6a0e5ee3094f3a7">SimpleCrypt::ErrorNoKeySet</a></div><div class="ttdeci">@ ErrorNoKeySet</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00099">SimpleCrypt.h:99</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,15 +323,15 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00083">83</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2da75547c41ccde1fb3d4db9f8c27164e4c">ProtectionNone</a>,    </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2dab6ccee9e9680f70c79213647c7814e5c">ProtectionChecksum</a>,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2daf915c42837795744edbc5254eb93154f">ProtectionHash</a>     </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        };</div>
-<div class="ttc" id="aclassSimpleCrypt_html_a42a5172e558d346b28421cc4e85feb2da75547c41ccde1fb3d4db9f8c27164e4c"><div class="ttname"><a href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2da75547c41ccde1fb3d4db9f8c27164e4c">SimpleCrypt::ProtectionNone</a></div><div class="ttdeci">@ ProtectionNone</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00085">SimpleCrypt.h:85</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_a42a5172e558d346b28421cc4e85feb2dab6ccee9e9680f70c79213647c7814e5c"><div class="ttname"><a href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2dab6ccee9e9680f70c79213647c7814e5c">SimpleCrypt::ProtectionChecksum</a></div><div class="ttdeci">@ ProtectionChecksum</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00086">SimpleCrypt.h:86</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html_a42a5172e558d346b28421cc4e85feb2daf915c42837795744edbc5254eb93154f"><div class="ttname"><a href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2daf915c42837795744edbc5254eb93154f">SimpleCrypt::ProtectionHash</a></div><div class="ttdeci">@ ProtectionHash</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00088">SimpleCrypt.h:87</a></div></div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00089">89</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2da75547c41ccde1fb3d4db9f8c27164e4c">ProtectionNone</a>,    </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2dab6ccee9e9680f70c79213647c7814e5c">ProtectionChecksum</a>,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2daf915c42837795744edbc5254eb93154f">ProtectionHash</a>     </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        };</div>
+<div class="ttc" id="aclassSimpleCrypt_html_a42a5172e558d346b28421cc4e85feb2da75547c41ccde1fb3d4db9f8c27164e4c"><div class="ttname"><a href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2da75547c41ccde1fb3d4db9f8c27164e4c">SimpleCrypt::ProtectionNone</a></div><div class="ttdeci">@ ProtectionNone</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00091">SimpleCrypt.h:91</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_a42a5172e558d346b28421cc4e85feb2dab6ccee9e9680f70c79213647c7814e5c"><div class="ttname"><a href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2dab6ccee9e9680f70c79213647c7814e5c">SimpleCrypt::ProtectionChecksum</a></div><div class="ttdeci">@ ProtectionChecksum</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00092">SimpleCrypt.h:92</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html_a42a5172e558d346b28421cc4e85feb2daf915c42837795744edbc5254eb93154f"><div class="ttname"><a href="classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2daf915c42837795744edbc5254eb93154f">SimpleCrypt::ProtectionHash</a></div><div class="ttdeci">@ ProtectionHash</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00094">SimpleCrypt.h:93</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -426,8 +429,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Returns the CompressionMode that is currently in use. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00124">124</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{<span class="keywordflow">return</span> myCompressionMode;}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00130">130</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{<span class="keywordflow">return</span> myCompressionMode;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -863,8 +866,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Returns true if <a class="el" href="classSimpleCrypt.html" title="Simple encryption and decryption of strings and byte arrays.">SimpleCrypt</a> has been initialized with a key. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00114">114</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{<span class="keywordflow">return</span> !myKeyParts.isEmpty();}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00120">120</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{<span class="keywordflow">return</span> !myKeyParts.isEmpty();}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -891,8 +894,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00132">132</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{<span class="keywordflow">return</span> myProtectionMode;}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00138">138</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{<span class="keywordflow">return</span> myProtectionMode;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -919,8 +922,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00135">135</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{<span class="keywordflow">return</span> myLastError;}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00141">141</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{<span class="keywordflow">return</span> myLastError;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -978,8 +981,8 @@ Public Member Functions</h2></td></tr>
 <p>Sets the compression mode to use when encrypting data. The default mode is Auto.</p>
 <p>Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00120">120</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{myCompressionMode = mode;}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00126">126</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{myCompressionMode = mode;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1035,8 +1038,8 @@ Public Member Functions</h2></td></tr>
 <p>Sets the integrity mode to use when encrypting data. The default mode is Checksum.</p>
 <p>Note that decryption is not influenced by this mode, as the decryption recognizes what mode was used when encrypting. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00130">130</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{myProtectionMode = mode;}</div>
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8h_source.html#l00136">136</a> of file <a class="el" href="SimpleCrypt_8h_source.html">SimpleCrypt.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{myProtectionMode = mode;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1066,6 +1069,36 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    myKey = key;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    splitKey();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa42e4cf5dae2a57ea59696f89670d293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42e4cf5dae2a57ea59696f89670d293">&#9670;&nbsp;</a></span>setMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SimpleCrypt::setMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>thisMessage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set Message </p>
+<p>set Message. setMessage </p>
+
+<p class="definition">Definition at line <a class="el" href="SimpleCrypt_8cpp_source.html#l00320">320</a> of file <a class="el" href="SimpleCrypt_8cpp_source.html">SimpleCrypt.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        qDebug() &lt;&lt; thisMessage;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        std::cout &lt;&lt; thisMessage.toStdString() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

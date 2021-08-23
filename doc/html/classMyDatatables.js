@@ -19,6 +19,7 @@ var classMyDatatables =
     [ "saveQtProject", "classMyDatatables.html#a73cb7e754846022d1c4edc35683a5e10", null ],
     [ "setComboBoxSqlValue", "classMyDatatables.html#a5696aa9cea1cd4204f88fb3dd09a69ff", null ],
     [ "setDebugMessage", "classMyDatatables.html#a2bdd34b2e594351c4df2210421869c64", null ],
+    [ "setMessage", "classMyDatatables.html#ad0ddb5c02f3dabfbcb55dc1393505ceb", null ],
     [ "setProject", "classMyDatatables.html#a370d222a8757bf470f139b9ad899e8eb", null ],
     [ "setProjectFolder", "classMyDatatables.html#aab6ff8980df638ac7edcecfa43e0be42", null ],
     [ "setProjectID", "classMyDatatables.html#aaeae472900aa50ed69513836d11b60de", null ],

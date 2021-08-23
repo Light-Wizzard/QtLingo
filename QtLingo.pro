@@ -16,12 +16,13 @@ QT += core gui sql widgets network multimedia concurrent printsupport
 #CONFIG *= "c++2a"
 #CONFIG *= "c++latest"
 #
-win32:CONFIG += static
-win32:DEFINES+= STATIC
+win32:CONFIG       += static
+win32:DEFINES      += STATIC
 win32:QMAKE_LFLAGS += -static
 #
-win32:CONFIG   *= windeployqt
-win32:CONFIG   *= windows
+win32:CONFIG    *= windeployqt windows
+win32:QMAKE_CC  += "C:\Qt\Tools\$env:MY_QT_TOOLS_MINGW64\bin\gcc.exe"
+win32:QMAKE_CXX += "C:\Qt\Tools\$env:MY_QT_TOOLS_MINGW64\bin\g++.exe"
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 # DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0

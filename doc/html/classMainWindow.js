@@ -8,6 +8,12 @@ var classMainWindow =
       [ "TabTabHelp", "classMainWindow.html#a6e8dd0e44f3fccecac008d4db0c6ed53acfaa727b94014db5fc8c53f71754601e", null ],
       [ "TabAll", "classMainWindow.html#a6e8dd0e44f3fccecac008d4db0c6ed53accd80924188b8ffef87975906371b340", null ]
     ] ],
+    [ "MyMessageTypes", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3f", [
+      [ "Information", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3fa215c89d34475e8b7c37ecb7f644df6c9", null ],
+      [ "Warning", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3fa039ddb5d60f5c11fdf7752a698af171f", null ],
+      [ "Critical", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3facd8307f72a26babe2b00140582084880", null ],
+      [ "Debug", "classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3fa7de28d53b76495b83fee8bba71173ca1", null ]
+    ] ],
     [ "TranslationsErrors", "classMainWindow.html#a5f1f83b1eb7f7424cfcb43dc387aae1f", [
       [ "NoError", "classMainWindow.html#a5f1f83b1eb7f7424cfcb43dc387aae1fa688e640f03519369201b09d6bd4da72e", null ],
       [ "HostNotFound", "classMainWindow.html#a5f1f83b1eb7f7424cfcb43dc387aae1faba602780b4f0bc6cccf1ecf55fd68e27", null ],
@@ -51,6 +57,7 @@ var classMainWindow =
     [ "retranslate", "classMainWindow.html#ae8662ae2ae5fc1d7921a9b18ec38ae9d", null ],
     [ "setDebugMessage", "classMainWindow.html#a2840366f8c8c4231f80fb6da0714f7d5", null ],
     [ "setLanguageCode", "classMainWindow.html#a6496edeec307cf86d1976f8b9f601e65", null ],
+    [ "setMessage", "classMainWindow.html#aeec603ae3eb953cb71ddfd213e59a93d", null ],
     [ "setMessagingStates", "classMainWindow.html#acaf4f4d06b8b4263e5628b4d0b035df9", null ],
     [ "setPrograms", "classMainWindow.html#afa2858e06ca124a4f261f4e1d4d43c89", null ],
     [ "setProjectClass", "classMainWindow.html#abd03666209196bf8bdece81045ca3b75", null ],

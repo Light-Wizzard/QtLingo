@@ -42,18 +42,20 @@ class MyLocalization : public QObject
             Question    = 101, //!< \c Question     @brief Question
             Warning     = 102, //!< \c Warning      @brief Warning
             Critical    = 103, //!< \c Critical     @brief Critical
+            Debug       = 104, //!< \c Debug        @brief Debug
         }; // end enum MyFileinfo
         // Makes getting file Info easier
         Q_ENUM(MyMessageTypes)
-//
+        //
         // Public
-        MyOrgSettings  *mySetting;                       //!< \c mySetting @brief Domain Settings
+        MyOrgSettings  *mySetting;                   //!< \c mySetting @brief Domain Settings
         // Constants
         const QString MY_LANG_CODE = "LanguageCode"; //!< \c MY_LANG_CODE @brief Field Name for Language Code
         const QString MY_LANG_NAME = "LanguageName"; //!< \c MY_LANG_NAME @brief Field Name for Language Name
         // Is Debug Message
-        void setDebugMessage(bool thisState);       //!< set Debug Message
-        bool getDebugMessage();                     //!< get Debug Message
+        void setDebugMessage(bool thisState);        //!< set Debug Message
+        bool getDebugMessage();                      //!< get Debug Message
+        void setMessage(const QString &thisMessage, MyLocalization::MyMessageTypes thisMessageType); //!< set Message
         // Localization
         QStringList findQmFiles(const QString &thisFolder);                                 //!< find Qm Files
         QStringList findTsFiles(const QString &thisFolder);                                 //!< find Ts Files

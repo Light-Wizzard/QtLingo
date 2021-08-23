@@ -313,4 +313,16 @@ QByteArray SimpleCrypt::decryptToByteArray(QByteArray cypher)
     myLastError = ErrorNoError;
     return ba;
 }
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void SimpleCrypt::setMessage(const QString &thisMessage)
+{
+    if (isDebugMessage)
+    {
+        qDebug() << thisMessage;
+        std::cout << thisMessage.toStdString() << std::endl;
+    }
+}
 /******************************* End of File *********************************/

@@ -25,7 +25,7 @@ MyDatatables::~MyDatatables()
 void MyDatatables::setDebugMessage(bool thisState)
 {
     isDebugMessage = thisState;
-    if (isDebugMessage) { qDebug() << "setDebugMessage"; }
+    setMessage("setDebugMessage");
 }
 /************************************************
  * @brief get Debug Message.
@@ -33,7 +33,7 @@ void MyDatatables::setDebugMessage(bool thisState)
  ***********************************************/
 bool MyDatatables::getDebugMessage()
 {
-    if (isDebugMessage) { qDebug() << "getDebugMessage"; }
+    setMessage("getDebugMessage");
     return isDebugMessage;
 }
 /************************************************
@@ -42,7 +42,7 @@ bool MyDatatables::getDebugMessage()
  ***********************************************/
 void MyDatatables::setProjectFolder(const QString &thisProjectFolder)
 {
-    if (isDebugMessage) { qDebug() << "setProjectFolder"; }
+    setMessage("setProjectFolder");
     myProjectFolder = thisProjectFolder;
 }
 /************************************************
@@ -51,7 +51,7 @@ void MyDatatables::setProjectFolder(const QString &thisProjectFolder)
  ***********************************************/
 QString MyDatatables::getProjectFolder()
 {
-    if (isDebugMessage) { qDebug() << "getProjectFolder"; }
+    setMessage("getProjectFolder");
     return myProjectFolder;
 }
 /************************************************
@@ -60,7 +60,7 @@ QString MyDatatables::getProjectFolder()
  ***********************************************/
 void MyDatatables::setProjectName(const QString &thisProjectName)
 {
-    if (isDebugMessage) { qDebug() << "setProjectName"; }
+    setMessage("setProjectName");
     myProjectName = thisProjectName;
 }
 /************************************************
@@ -69,7 +69,7 @@ void MyDatatables::setProjectName(const QString &thisProjectName)
  ***********************************************/
 QString MyDatatables::getProjectName()
 {
-    if (isDebugMessage) { qDebug() << "getProjectName"; }
+    setMessage("getProjectName");
     return myProjectName;
 }
 /************************************************
@@ -78,7 +78,7 @@ QString MyDatatables::getProjectName()
  ***********************************************/
 void MyDatatables::setProjectID(const QString &thisProjectID)
 {
-    if (isDebugMessage) { qDebug() << "setProjectID"; }
+    setMessage("setProjectID");
     myProjectID = thisProjectID;
 }
 /************************************************
@@ -87,7 +87,7 @@ void MyDatatables::setProjectID(const QString &thisProjectID)
  ***********************************************/
 QString MyDatatables::getProjectID()
 {
-    if (isDebugMessage) { qDebug() << "getProjectID"; }
+    setMessage("getProjectID");
     return myProjectID;
 }
 /************************************************
@@ -96,7 +96,7 @@ QString MyDatatables::getProjectID()
  ***********************************************/
 void MyDatatables::setComboBoxSqlValue(const QString &thisComboBoxSqlValue)
 {
-    if (isDebugMessage) { qDebug() << "setComboBoxSqlValue"; }
+    setMessage("setComboBoxSqlValue");
     myComboBoxSqlValue = thisComboBoxSqlValue;
 }
 /************************************************
@@ -105,7 +105,7 @@ void MyDatatables::setComboBoxSqlValue(const QString &thisComboBoxSqlValue)
  ***********************************************/
 QString MyDatatables::getComboBoxSqlValue()
 {
-    if (isDebugMessage) { qDebug() << "getComboBoxSqlValue"; }
+    setMessage("getComboBoxSqlValue");
     return myComboBoxSqlValue;
 }
 /************************************************
@@ -114,7 +114,7 @@ QString MyDatatables::getComboBoxSqlValue()
  ***********************************************/
 bool MyDatatables::checkDatabase()
 {
-    if (isDebugMessage) { qDebug() << "checkDatabase"; }
+    setMessage("checkDatabase");
     // Database
     mySqlModel->setSqlDriver(myComboBoxSqlValue);
     if (!mySqlModel->createDataBaseConnection()) { return false; }
@@ -160,10 +160,10 @@ bool MyDatatables::checkDatabase()
  ***********************************************/
 bool MyDatatables::insertQtProjects()
 {
-    if (isDebugMessage) { qDebug() << "insertProjects"; }
+    setMessage("insertProjects");
     // QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, LanguageIDs, Make
     QString theQuery = QLatin1String(R"(INSERT INTO Projects (QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, SourceLanguage, LanguageIDs, Make) values('%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8'))").arg(myProject->getQtProjectName(), myProject->getQtProjectFolder(), myProject->getSourceFolder(), myProject->getDestinationFolder(), myProject->getHelpFolder(), myProject->getSourceLanguage(), myProject->getLanguageIDs(), myProject->getMake());
-    if (isDebugMessage) { qDebug() << "insertProjects: " << theQuery; }
+    setMessage("insertProjects: " + theQuery);
     //
     if (!mySqlModel->runQuery(theQuery))
     {
@@ -179,7 +179,7 @@ bool MyDatatables::insertQtProjects()
  ***********************************************/
 bool MyDatatables::addQtProject()
 {
-    if (isDebugMessage) { qDebug() << "addQtProject"; }
+    setMessage("addQtProject");
     // SELECT id, QtProjectName FROM Projects WHERE QtProject =
     if (isQtProjectNameQuery(myProject->getQtProjectName()))
     {
@@ -194,10 +194,10 @@ bool MyDatatables::addQtProject()
  ***********************************************/
 void MyDatatables::deleteQtProject(const QString &thisID)
 {
-    if (isDebugMessage) { qDebug() << "deleteQtProject"; }
+    setMessage("deleteQtProject");
     QSqlQuery query; //!< SQL Query
     QString theQuery = QString("DELETE FROM Projects WHERE id = ").append(thisID);
-    if (isDebugMessage) { qDebug() << "thisQuery: " << theQuery; }
+    setMessage("thisQuery: " + theQuery);
     if (!query.exec(theQuery))
     {
         qCritical() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
@@ -209,7 +209,7 @@ void MyDatatables::deleteQtProject(const QString &thisID)
  ***********************************************/
 QString MyDatatables::getQtProjectNameSelectQuery()
 {
-    if (isDebugMessage) { qDebug() << "getQtProjectNameSelectQuery"; }
+    setMessage("getQtProjectNameSelectQuery");
     return QString("SELECT id, QtProjectName FROM Projects");
 }
 /************************************************
@@ -218,7 +218,7 @@ QString MyDatatables::getQtProjectNameSelectQuery()
  ***********************************************/
 QString MyDatatables::getQtProjectNameByNameQuery(const QString &thisProject)
 {
-    if (isDebugMessage) { qDebug() << "getQtProjectNameByNameQuery"; }
+    setMessage("getQtProjectNameByNameQuery");
     return QString("SELECT id, QtProjectName FROM Projects WHERE QtProjectName = '%1'").arg(thisProject);
 }
 /************************************************
@@ -227,7 +227,7 @@ QString MyDatatables::getQtProjectNameByNameQuery(const QString &thisProject)
  ***********************************************/
 bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
 {
-    if (isDebugMessage) { qDebug() << "isQtProjectNameQuery"; }
+    setMessage("isQtProjectNameQuery");
     QSqlQuery theQuery; //!< SQL Query
     QString theQueryCommand = getQtProjectNameByNameQuery(thisProjectName);
     if (theQuery.exec(theQueryCommand))
@@ -247,7 +247,7 @@ bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
  ***********************************************/
 QString MyDatatables::getQtProjectFullSelectQueryID(const QString &thisWhereID)
 {
-    if (isDebugMessage) { qDebug() << "getProjectFolderFullSelectQueryID"; }
+    setMessage("getProjectFolderFullSelectQueryID");
     return QString("SELECT * FROM Projects WHERE id = ").append(thisWhereID);
 }
 /************************************************
@@ -256,7 +256,7 @@ QString MyDatatables::getQtProjectFullSelectQueryID(const QString &thisWhereID)
  ***********************************************/
 QString MyDatatables::getQtProjectNameSelectQueryID(const QString &thisWhereID)
 {
-    if (isDebugMessage) { qDebug() << "getQtProjectNameSelectQueryID"; }
+    setMessage("getQtProjectNameSelectQueryID");
     return QString("SELECT id, QtProjectName FROM Projects WHERE id = ").append(thisWhereID);
 }
 /************************************************
@@ -265,10 +265,10 @@ QString MyDatatables::getQtProjectNameSelectQueryID(const QString &thisWhereID)
  ***********************************************/
 void MyDatatables::saveQtProject()
 {
-    if (isDebugMessage) { qDebug() << "saveProject"; }
+    setMessage("saveProject");
     QSqlQuery theQuery; //!< SQL Query
     QString theQueryString = QString("UPDATE Projects set QtProjectName = '%1', QtProjectFolder = '%2', SourceFolder = '%3', DestinationFolder = '%4', HelpFolder = '%5', SourceLanguage = '%6', LanguageIDs = '%7', Make = '%8' WHERE id = %9").arg(myProject->getQtProjectName(), myProject->getQtProjectFolder(), myProject->getSourceFolder(), myProject->getDestinationFolder(), myProject->getHelpFolder(), myProject->getSourceLanguage(), myProject->getLanguageIDs(), myProject->getMake(), myProject->getID());
-    if (isDebugMessage) { qDebug() << "thisQuery: |" << theQueryString << "|  getQtProjectName = " << myProject->getQtProjectName() << "|  getQtProjectFolder = " << myProject->getQtProjectFolder() << "| getSourceFolder=" << myProject->getSourceFolder() << "| getDestinationFolder=" << myProject->getDestinationFolder() << "| getHelpFolder=" << myProject->getHelpFolder() << "| getSourceLanguage=" << myProject->getSourceLanguage() << "| getLanguageIDs=" << myProject->getLanguageIDs() << "| getMake=" << myProject->getMake() << "| ID=" << myProject->getID() << "|"; }
+    setMessage("thisQuery: |" + theQueryString + "|  getQtProjectName = " + myProject->getQtProjectName() + "|  getQtProjectFolder = " + myProject->getQtProjectFolder() + "| getSourceFolder=" + myProject->getSourceFolder() + "| getDestinationFolder=" + myProject->getDestinationFolder() + "| getHelpFolder=" + myProject->getHelpFolder() + "| getSourceLanguage=" + myProject->getSourceLanguage() + "| getLanguageIDs=" + myProject->getLanguageIDs() + "| getMake=" + myProject->getMake() + "| ID=" + myProject->getID() + "|");
     if (!theQuery.exec(theQueryString))
     {
         qCritical() << "SqLite error saveProject:" << theQuery.lastError().text() << ", SqLite error code:" << theQuery.lastError();
@@ -282,7 +282,7 @@ void MyDatatables::saveQtProject()
  ***********************************************/
 void MyDatatables::setProject(const QString &thisQtProjectName, const QString &thisQtProjectFolder, const QString &thisSourceFolder, const QString &thisDestinationFolder,  const QString &thisHelpFolder, const QString &thisSourceLanguage, const QString &thisLanguageIDs, const QString &thisMake)
 {
-    if (isDebugMessage) { qDebug() << "setProject"; }
+    setMessage("setProject");
     myProject->setQtProjectName(thisQtProjectName);
     myProject->setQtProjectFolder(thisQtProjectFolder);
     myProject->setSourceFolder(thisSourceFolder);
@@ -291,5 +291,17 @@ void MyDatatables::setProject(const QString &thisQtProjectName, const QString &t
     myProject->setSourceLanguage(thisSourceLanguage);
     myProject->setLanguageIDs(thisLanguageIDs);
     myProject->setMake(thisMake);
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void MyDatatables::setMessage(const QString &thisMessage)
+{
+    if (isDebugMessage)
+    {
+        qDebug() << thisMessage;
+        std::cout << thisMessage.toStdString() << std::endl;
+    }
 }
 /*** ************************* End of File ***********************************/

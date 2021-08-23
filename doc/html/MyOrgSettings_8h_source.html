@@ -148,102 +148,104 @@ $(document).ready(function(){initNavTree('MyOrgSettings_8h_source.html',''); ini
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23eaa5e91bf50f267feeda648c5004014b61">   70</a></span>&#160;            Question    = 101, </div>
 <div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23eae6055be2e73f288a4acc8b2c1e70dfdc">   71</a></span>&#160;            Warning     = 102, </div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23ea7f1a2fea930a25b2360bc1666493bc03">   72</a></span>&#160;            Critical    = 103, </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }; <span class="comment">// end enum MyFileinfo</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// Makes getting file Info easier</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        Q_ENUM(MyMessageTypes)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">   77</a></span>&#160;        <a class="code" href="classMyConstants.html">MyConstants</a> *myConstants; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a4fce6b725705c594dcc27712e49a3943">   78</a></span>&#160;        <a class="code" href="classSimpleCrypt.html">SimpleCrypt</a> *myCrypto;    </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// Not added to above Constants, these need to FIXME</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a9f4382d60724eb35290f6078d7dffaaf">   80</a></span>&#160;        const QPoint  ConstDefaultGeometryPos  = QPoint(10, 10);   </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a123e9a4170412ce647f25575152d0fdf">   81</a></span>&#160;        const QSize   ConstDefaultGeometrySize = QSize(1134, 817); </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> onRunOnStartup();                                                          </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// Read</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        QString readSettings(const QString &amp;thisSetting, const QString &amp;thisDefault);   </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">bool</span>    readSettingsBool(const QString &amp;thisSetting, <span class="keywordtype">bool</span> thisDefault);         </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">int</span>     readSettingsInt(const QString &amp;thisSetting, <span class="keywordtype">int</span> thisDefault);           </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Write</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> writeSettings(const QString &amp;thisSetting, const QString &amp;thisValue);       </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// Getter/Setter</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        QSettings *getSettings();                                                       </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        QString getDataPath(const QString &amp;thisFileName);                               </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// Org Name</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        QString getOrgName();                                                           </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span>    setOrgName(const QString &amp;thisOrgName);                                 </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Org Domain</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        QString getOrgDomain();                                                         </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span>    setOrgDomain(const QString &amp;thisOrgDomain);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Application Name</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        QString getAppName();                                                           </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span>    setAppName(const QString &amp;thisAppName);                                 </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// File Utilities</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        QString readFile(const QString &amp;thisFileName);                                  </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        QString combinePathFileName(const QString &amp;thisPath, const QString &amp;thisFileName); </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">bool</span> isFileExists(const QString &amp;thisFile);                                     </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">bool</span> isFileMake(const QString &amp;thisPath, const QString &amp;thisFileName);          </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">bool</span> isPathExists(const QString &amp;thisPath);                                     </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">bool</span> isMakeDir(const QString &amp;thisPath);                                        </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">bool</span> removeFile(const QString &amp;thisFile);                                       </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">bool</span> writeFile(const QString &amp;thisFileName, const QString &amp;thisContent);        </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        QString getFileInfo(<a class="code" href="classMyOrgSettings.html">MyOrgSettings</a>::<a class="code" href="classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456a">MyFileinfo</a> thisInfo, const QString &amp;thisFileFolder); </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">int</span> fileNumberLines(const QString &amp;thisFile);                                   </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">void</span> removeAllFiles(const QString &amp;thisFolder);                                 </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        QString getLastApplicationPath();                                               </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">void</span>    setLastApplicationPath(const QString &amp;thisPath);                        </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        QString <a class="code" href="main_8cpp.html#a7b1c1837f85f381e0e0f817c53211a1b">getAppDataLocation</a>();                                                   </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">bool</span>    isAppDataLocationGood(const QString &amp;thisFolder);                       </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">bool</span>   isSetting(const QString &amp;thisFieldName);                                 </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">// Screen Geometry</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">void</span>   setGeometry(QPoint thisPos, QSize thisSize, <span class="keywordtype">bool</span> isMax, <span class="keywordtype">bool</span> isMin);     </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">void</span>   getGeometry();                                                           </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        QPoint getGeometryPos();                                                        </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        QSize  getGeometrySize();                                                       </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordtype">bool</span>   getGeometryMax();                                                        </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">bool</span>   getGeometryMin();                                                        </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">// Crypto for Password</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        QString encryptThis(const QString &amp;thisSecret);                                 </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        QString decryptThis(const QString &amp;thisSecret);                                 </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordtype">bool</span>    questionYesNo(const <span class="keywordtype">char</span> *thisTitle, const <span class="keywordtype">char</span> *thisQuestion);         </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">int</span>     showMessageBox(const QString &amp;thisTitle, const QString &amp;thisMessage, <a class="code" href="classMyOrgSettings.html">MyOrgSettings</a>::<a class="code" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23e">MyMessageTypes</a> thisMessageType); </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        QString getEnvironmentVar(const QString &amp;thisVar, const QString &amp;thisDefault);  </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordtype">bool</span> isWord(const QString &amp;thisString) const;                                   </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">void</span> delay(<span class="keywordtype">int</span> thisSeconds);                                                    </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// Is Debug Message</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">void</span> setDebugMessage(<span class="keywordtype">bool</span> thisState);                       </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">bool</span> getDebugMessage();                                     </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// Internet with Wait</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">bool</span> getInternetWait();                                     </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a88878ce48b7a897b133f5f0855af4a68">  141</a></span>&#160;        <span class="keywordtype">bool</span> pingInternet();                                        </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">bool</span> connectInternet();                                     </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    signals:</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">void</span> sendInternetProgress();                                </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    private:</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        QSettings          *mySettings              = <span class="keywordtype">nullptr</span>;      </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        QString             myOrganizationName      = &quot;&quot;;           </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        QString             myOrganizationDomain    = &quot;&quot;;           </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        QString             myApplicationName       = &quot;&quot;;           </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        QString             myLastApplicationFolder = &quot;&quot;;           </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        QPoint              myGeometryPos;                          </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        QSize               myGeometrySize;                         </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordtype">bool</span>                myGeometryMax           = false;        </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordtype">bool</span>                myGeometryMin           = false;        </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">bool</span>                isDebugMessage          = false;        </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">bool</span>                isCreated               = false;        </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MY_ORG_SETTINGS_H</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23eae97546c444b231727d08f727f0990328">   73</a></span>&#160;            Debug       = 104, </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }; <span class="comment">// end enum MyFileinfo</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// Makes getting file Info easier</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        Q_ENUM(MyMessageTypes)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a797b8a2459bca688b3e2e7ffb8d958d1">   78</a></span>&#160;        <a class="code" href="classMyConstants.html">MyConstants</a> *myConstants; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a4fce6b725705c594dcc27712e49a3943">   79</a></span>&#160;        <a class="code" href="classSimpleCrypt.html">SimpleCrypt</a> *myCrypto;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// Not added to above Constants, these need to FIXME</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a9f4382d60724eb35290f6078d7dffaaf">   81</a></span>&#160;        const QPoint  ConstDefaultGeometryPos  = QPoint(10, 10);   </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a123e9a4170412ce647f25575152d0fdf">   82</a></span>&#160;        const QSize   ConstDefaultGeometrySize = QSize(1134, 817); </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> onRunOnStartup();                                                          </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// Read</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        QString readSettings(const QString &amp;thisSetting, const QString &amp;thisDefault);   </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">bool</span>    readSettingsBool(const QString &amp;thisSetting, <span class="keywordtype">bool</span> thisDefault);         </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">int</span>     readSettingsInt(const QString &amp;thisSetting, <span class="keywordtype">int</span> thisDefault);           </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// Write</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> writeSettings(const QString &amp;thisSetting, const QString &amp;thisValue);       </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// Getter/Setter</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        QSettings *getSettings();                                                       </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        QString getDataPath(const QString &amp;thisFileName);                               </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">// Org Name</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        QString getOrgName();                                                           </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span>    setOrgName(const QString &amp;thisOrgName);                                 </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// Org Domain</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        QString getOrgDomain();                                                         </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span>    setOrgDomain(const QString &amp;thisOrgDomain);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// Application Name</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        QString getAppName();                                                           </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span>    setAppName(const QString &amp;thisAppName);                                 </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// File Utilities</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        QString readFile(const QString &amp;thisFileName);                                  </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        QString combinePathFileName(const QString &amp;thisPath, const QString &amp;thisFileName); </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">bool</span> isFileExists(const QString &amp;thisFile);                                     </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">bool</span> isFileMake(const QString &amp;thisPath, const QString &amp;thisFileName);          </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">bool</span> isPathExists(const QString &amp;thisPath);                                     </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">bool</span> isMakeDir(const QString &amp;thisPath);                                        </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">bool</span> removeFile(const QString &amp;thisFile);                                       </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">bool</span> writeFile(const QString &amp;thisFileName, const QString &amp;thisContent);        </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        QString getFileInfo(<a class="code" href="classMyOrgSettings.html">MyOrgSettings</a>::<a class="code" href="classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456a">MyFileinfo</a> thisInfo, const QString &amp;thisFileFolder); </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">int</span> fileNumberLines(const QString &amp;thisFile);                                   </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">void</span> removeAllFiles(const QString &amp;thisFolder);                                 </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        QString getLastApplicationPath();                                               </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordtype">void</span>    setLastApplicationPath(const QString &amp;thisPath);                        </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        QString <a class="code" href="main_8cpp.html#a7b1c1837f85f381e0e0f817c53211a1b">getAppDataLocation</a>();                                                   </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">bool</span>    isAppDataLocationGood(const QString &amp;thisFolder);                       </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">bool</span>   isSetting(const QString &amp;thisFieldName);                                 </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// Screen Geometry</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">void</span>   setGeometry(QPoint thisPos, QSize thisSize, <span class="keywordtype">bool</span> isMax, <span class="keywordtype">bool</span> isMin);     </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordtype">void</span>   getGeometry();                                                           </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        QPoint getGeometryPos();                                                        </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        QSize  getGeometrySize();                                                       </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">bool</span>   getGeometryMax();                                                        </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">bool</span>   getGeometryMin();                                                        </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="comment">// Crypto for Password</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        QString encryptThis(const QString &amp;thisSecret);                                 </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        QString decryptThis(const QString &amp;thisSecret);                                 </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">bool</span>    questionYesNo(const <span class="keywordtype">char</span> *thisTitle, const <span class="keywordtype">char</span> *thisQuestion) const;   </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">int</span>     showMessageBox(const QString &amp;thisTitle, const QString &amp;thisMessage, <a class="code" href="classMyOrgSettings.html">MyOrgSettings</a>::<a class="code" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23e">MyMessageTypes</a> thisMessageType) const; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        QString getEnvironmentVar(const QString &amp;thisVar, const QString &amp;thisDefault);  </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">bool</span> isWord(const QString &amp;thisString) const;                                   </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">void</span> delay(<span class="keywordtype">int</span> thisSeconds);                                                    </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">// Is Debug Message</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">void</span> setDebugMessage(<span class="keywordtype">bool</span> thisState);                       </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordtype">bool</span> getDebugMessage();                                     </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">void</span> setMessage(const QString &amp;thisMessage, <a class="code" href="classMyOrgSettings.html">MyOrgSettings</a>::<a class="code" href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23e">MyMessageTypes</a> thisMessageType) const; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment">// Internet with Wait</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">bool</span> getInternetWait();                                     </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classMyOrgSettings.html#a88878ce48b7a897b133f5f0855af4a68">  143</a></span>&#160;        <span class="keywordtype">bool</span> pingInternet();                                        </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordtype">bool</span> connectInternet();                                     </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    signals:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">void</span> sendInternetProgress();                                </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    private:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        QSettings          *mySettings              = <span class="keywordtype">nullptr</span>;      </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        QString             myOrganizationName      = &quot;&quot;;           </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        QString             myOrganizationDomain    = &quot;&quot;;           </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        QString             myApplicationName       = &quot;&quot;;           </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        QString             myLastApplicationFolder = &quot;&quot;;           </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        QPoint              myGeometryPos;                          </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        QSize               myGeometrySize;                         </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">bool</span>                myGeometryMax           = false;        </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">bool</span>                myGeometryMin           = false;        </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordtype">bool</span>                isDebugMessage          = false;        </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordtype">bool</span>                isCreated               = false;        </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MY_ORG_SETTINGS_H</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
 <div class="ttc" id="aMyConstants_8h_html"><div class="ttname"><a href="MyConstants_8h.html">MyConstants.h</a></div></div>
 <div class="ttc" id="aSimpleCrypt_8h_html"><div class="ttname"><a href="SimpleCrypt_8h.html">SimpleCrypt.h</a></div></div>
 <div class="ttc" id="aclassMyConstants_html"><div class="ttname"><a href="classMyConstants.html">MyConstants</a></div><div class="ttdoc">Constants are defined as const QString, starting with MY_ all capps.</div><div class="ttdef"><b>Definition:</b> <a href="MyConstants_8h_source.html#l00019">MyConstants.h:20</a></div></div>
 <div class="ttc" id="aclassMyOrgSettings_html"><div class="ttname"><a href="classMyOrgSettings.html">MyOrgSettings</a></div><div class="ttdoc">My Org Settings.</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00031">MyOrgSettings.h:32</a></div></div>
 <div class="ttc" id="aclassMyOrgSettings_html_a2581082145269c6d97a03441ef55f23e"><div class="ttname"><a href="classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23e">MyOrgSettings::MyMessageTypes</a></div><div class="ttdeci">MyMessageTypes</div><div class="ttdoc">Message Types.</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00067">MyOrgSettings.h:68</a></div></div>
 <div class="ttc" id="aclassMyOrgSettings_html_ae15f93ab25f49cfe0f5fdf7ede15456a"><div class="ttname"><a href="classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456a">MyOrgSettings::MyFileinfo</a></div><div class="ttdeci">MyFileinfo</div><div class="ttdoc">File Information.</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00041">MyOrgSettings.h:42</a></div></div>
-<div class="ttc" id="aclassSimpleCrypt_html"><div class="ttname"><a href="classSimpleCrypt.html">SimpleCrypt</a></div><div class="ttdoc">Simple encryption and decryption of strings and byte arrays.</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00065">SimpleCrypt.h:66</a></div></div>
+<div class="ttc" id="aclassSimpleCrypt_html"><div class="ttname"><a href="classSimpleCrypt.html">SimpleCrypt</a></div><div class="ttdoc">Simple encryption and decryption of strings and byte arrays.</div><div class="ttdef"><b>Definition:</b> <a href="SimpleCrypt_8h_source.html#l00071">SimpleCrypt.h:72</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a7b1c1837f85f381e0e0f817c53211a1b"><div class="ttname"><a href="main_8cpp.html#a7b1c1837f85f381e0e0f817c53211a1b">getAppDataLocation</a></div><div class="ttdeci">QString getAppDataLocation()</div><div class="ttdoc">get App Data Location, Linux: $HOME/.local/share/AppName, Windows:.</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00006">main.cpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -41,5 +41,6 @@ var classSimpleCrypt =
     [ "setCompressionMode", "classSimpleCrypt.html#adc6c6355aa276c0d3516f7ad273f063b", null ],
     [ "setDebugMessage", "classSimpleCrypt.html#a9784a769f26a683a330ee594c25dfb18", null ],
     [ "setIntegrityProtectionMode", "classSimpleCrypt.html#a4fef5e6d3246ee57d6a7b68475b12b8b", null ],
-    [ "setKey", "classSimpleCrypt.html#aa7aad9ed2e88b883ba9214c7d9928745", null ]
+    [ "setKey", "classSimpleCrypt.html#aa7aad9ed2e88b883ba9214c7d9928745", null ],
+    [ "setMessage", "classSimpleCrypt.html#aa42e4cf5dae2a57ea59696f89670d293", null ]
 ];

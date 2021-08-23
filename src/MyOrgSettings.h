@@ -32,8 +32,8 @@ class MyOrgSettings : public QObject
 {
         Q_OBJECT
     public:
-         explicit MyOrgSettings(QObject *parent = nullptr);  //!< MySettings Constructor
-        ~MyOrgSettings();                                    //!< MySettings Destructor
+         explicit MyOrgSettings(QObject *parent = nullptr);  //!< MyOrgSettings Constructor
+        ~MyOrgSettings();                                    //!< MyOrgSettings Destructor
         /*!
             \enum MyFileinfo
             @brief File Information
@@ -70,65 +70,66 @@ class MyOrgSettings : public QObject
             Question    = 101, //!< \c Question     @brief Question
             Warning     = 102, //!< \c Warning      @brief Warning
             Critical    = 103, //!< \c Critical     @brief Critical
+            Debug       = 104, //!< \c Debug        @brief Debug
         }; // end enum MyFileinfo
         // Makes getting file Info easier
         Q_ENUM(MyMessageTypes)
         //
         MyConstants *myConstants; //!< \c myConstants @brief All Constants in one class
-        SimpleCrypt *myCrypto;    //!< \c myCrypto    @brief myCrypto
+        SimpleCrypt *myCrypto;    //!< \c myCrypto    @brief my Crypto
         // Not added to above Constants, these need to FIXME
         const QPoint  ConstDefaultGeometryPos  = QPoint(10, 10);   //!< \c ConstDefaultGeometryPos     @brief Top, Left.
         const QSize   ConstDefaultGeometrySize = QSize(1134, 817); //!< \c ConstDefaultGeometrySize    @brief Width x Height.
         //
         void onRunOnStartup();                                                          //!< Run On Startup
         // Read
-        QString readSettings(const QString &thisSetting, const QString &thisDefault);   //!< readSettings
-        bool    readSettingsBool(const QString &thisSetting, bool thisDefault);         //!< readSettingsBool
-        int     readSettingsInt(const QString &thisSetting, int thisDefault);           //!< readSettingsInt
+        QString readSettings(const QString &thisSetting, const QString &thisDefault);   //!< read Settings
+        bool    readSettingsBool(const QString &thisSetting, bool thisDefault);         //!< read Settings Bool
+        int     readSettingsInt(const QString &thisSetting, int thisDefault);           //!< read Settings Int
         // Write
-        void writeSettings(const QString &thisSetting, const QString &thisValue);       //!< writeSettings
+        void writeSettings(const QString &thisSetting, const QString &thisValue);       //!< write Settings
         // Getter/Setter
-        QSettings *getSettings();                                                       //!< getSettings
-        QString getDataPath(const QString &thisFileName);                               //!< GetDataPath
+        QSettings *getSettings();                                                       //!< get Settings
+        QString getDataPath(const QString &thisFileName);                               //!< Get Data Path
         // Org Name
-        QString getOrgName();                                                           //!< getOrgName
-        void    setOrgName(const QString &thisOrgName);                                 //!< setOrgName
+        QString getOrgName();                                                           //!< get Org Name
+        void    setOrgName(const QString &thisOrgName);                                 //!< set Org Name
         // Org Domain
-        QString getOrgDomain();                                                         //!<  myOrganizationDomain
+        QString getOrgDomain();                                                         //!<  my Organization Domain
         void    setOrgDomain(const QString &thisOrgDomain);
         // Application Name
-        QString getAppName();                                                           //!< myApplicationName
-        void    setAppName(const QString &thisAppName);                                 //!< setAppName
+        QString getAppName();                                                           //!< my Application Name
+        void    setAppName(const QString &thisAppName);                                 //!< set AppName
         // File Utilities
-        QString readFile(const QString &thisFileName);                                  //!< readFile
-        QString combinePathFileName(const QString &thisPath, const QString &thisFileName); //!< combinePathFileName
+        QString readFile(const QString &thisFileName);                                  //!< read File
+        QString combinePathFileName(const QString &thisPath, const QString &thisFileName); //!< combine Path File Name
         bool isFileExists(const QString &thisFile);                                     //!< File Functions
-        bool isFileMake(const QString &thisPath, const QString &thisFileName);          //!< isFileMake
-        bool isPathExists(const QString &thisPath);                                     //!< isPathExists
-        bool isMakeDir(const QString &thisPath);                                        //!< isMakeDir
+        bool isFileMake(const QString &thisPath, const QString &thisFileName);          //!< is File Make
+        bool isPathExists(const QString &thisPath);                                     //!< is Path Exists
+        bool isMakeDir(const QString &thisPath);                                        //!< is Make Dir
         bool removeFile(const QString &thisFile);                                       //!< remove File
         bool writeFile(const QString &thisFileName, const QString &thisContent);        //!< write File
-        QString getFileInfo(MyOrgSettings::MyFileinfo thisInfo, const QString &thisFileFolder); //!< getFileInfo
+        QString getFileInfo(MyOrgSettings::MyFileinfo thisInfo, const QString &thisFileFolder); //!< get File Info
         int fileNumberLines(const QString &thisFile);                                   //!< file Number Lines
         void removeAllFiles(const QString &thisFolder);                                 //!< remove All Files
         QString getLastApplicationPath();                                               //!< get Last Application Path
         void    setLastApplicationPath(const QString &thisPath);                        //!< set Last Application Path
-        QString getAppDataLocation();                                                   //!< getAppDataLocation
-        bool    isAppDataLocationGood(const QString &thisFolder);                       //!< isAppDataLocationGood
+        QString getAppDataLocation();                                                   //!< get AppData Location
+        bool    isAppDataLocationGood(const QString &thisFolder);                       //!< is AppData Location Good
         //
-        bool   isSetting(const QString &thisFieldName);                                 //!< isSetting
+        bool   isSetting(const QString &thisFieldName);                                 //!< is Setting
         // Screen Geometry
         void   setGeometry(QPoint thisPos, QSize thisSize, bool isMax, bool isMin);     //!< Screen Geometry
-        void   getGeometry();                                                           //!< getGeometry
-        QPoint getGeometryPos();                                                        //!< getGeometryPos
-        QSize  getGeometrySize();                                                       //!< getGeometrySize
-        bool   getGeometryMax();                                                        //!< getGeometryMax
-        bool   getGeometryMin();                                                        //!< getGeometryMin
+        void   getGeometry();                                                           //!< get Geometry
+        QPoint getGeometryPos();                                                        //!< get Geometry Pos
+        QSize  getGeometrySize();                                                       //!< get Geometry Size
+        bool   getGeometryMax();                                                        //!< get Geometry Max
+        bool   getGeometryMin();                                                        //!< get Geometry Min
         // Crypto for Password
-        QString encryptThis(const QString &thisSecret);                                 //!< encryptThis
-        QString decryptThis(const QString &thisSecret);                                 //!< decryptThis
-        bool    questionYesNo(const char *thisTitle, const char *thisQuestion);         //!< questionYesNo
-        int     showMessageBox(const QString &thisTitle, const QString &thisMessage, MyOrgSettings::MyMessageTypes thisMessageType); //!< show Message Box information, question, warning, critica
+        QString encryptThis(const QString &thisSecret);                                 //!< encrypt This
+        QString decryptThis(const QString &thisSecret);                                 //!< decrypt This
+        bool    questionYesNo(const char *thisTitle, const char *thisQuestion) const;   //!< question Yes No
+        int     showMessageBox(const QString &thisTitle, const QString &thisMessage, MyOrgSettings::MyMessageTypes thisMessageType) const; //!< show Message Box information, question, warning, critica
         //
         QString getEnvironmentVar(const QString &thisVar, const QString &thisDefault);  //!< get Windows Environment Var
         bool isWord(const QString &thisString) const;                                   //!< is Word
@@ -136,6 +137,7 @@ class MyOrgSettings : public QObject
         // Is Debug Message
         void setDebugMessage(bool thisState);                       //!< set Debug Message
         bool getDebugMessage();                                     //!< get Debug Message
+        void setMessage(const QString &thisMessage, MyOrgSettings::MyMessageTypes thisMessageType) const; //!< set Message
         // Internet with Wait
         bool getInternetWait();                                     //!< get Internet Wait
         bool pingInternet();                                        //!< ping Internet
@@ -154,8 +156,8 @@ class MyOrgSettings : public QObject
         QSize               myGeometrySize;                         //!< \c myGeometrySize          @brief Windows Geometry Size
         bool                myGeometryMax           = false;        //!< \c myGeometryMax           @brief Windows Geometry Max
         bool                myGeometryMin           = false;        //!< \c myGeometryMin           @brief Windows Geometry Min
-        bool                isDebugMessage          = false;        //!< \c isDebugMessage          @brief true of false
-        bool                isCreated               = false;        //!< \c isCreated               @brief true of false if file is created
+        bool                isDebugMessage          = false;        //!< \c isDebugMessage          @brief Debug Message
+        bool                isCreated               = false;        //!< \c isCreated               @brief if file is created
 };
 #endif // MY_ORG_SETTINGS_H
 /*** ************************* End of File ***********************************/

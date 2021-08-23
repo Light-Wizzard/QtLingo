@@ -18,28 +18,12 @@ MySqlDbtModel::~MySqlDbtModel()
     if (myDb.isOpen()) { myDb.close(); }
 }
 /************************************************
- * @brief set Debug Message.
- * setDebugMessage
- ***********************************************/
-void MySqlDbtModel::setDebugMessage(bool thisState)
-{
-    isDebugMessage = thisState;
-}
-/************************************************
- * @brief get Debug Message.
- * getDebugMessage
- ***********************************************/
-bool MySqlDbtModel::getDebugMessage()
-{
-    return isDebugMessage;
-}
-/************************************************
  * @brief is Db Table.
  * isDbTable
  ***********************************************/
 bool MySqlDbtModel::isDbTable(const QString &thisTable)
 {
-    if (isDebugMessage) { qDebug() << "isDatabase"; }
+    setMessage("isDatabase");
     QStringList theTables = myDb.tables();
     if (theTables.contains(thisTable, Qt::CaseInsensitive))  { return true; }
     else                                                     { return false; }
@@ -50,7 +34,7 @@ bool MySqlDbtModel::isDbTable(const QString &thisTable)
  ***********************************************/
 void MySqlDbtModel::setSqlDatabase(QSqlDatabase thisDatabase)
 {
-    if (isDebugMessage) { qDebug() << "setSqlDatabase"; }
+    setMessage("setSqlDatabase");
     myDb = thisDatabase;
 }
 /************************************************
@@ -59,7 +43,7 @@ void MySqlDbtModel::setSqlDatabase(QSqlDatabase thisDatabase)
  ***********************************************/
 QSqlDatabase MySqlDbtModel::getSqlDatabase()
 {
-    if (isDebugMessage) { qDebug() << "getSqlDatabase"; }
+    setMessage("getSqlDatabase");
     return myDb;
 }
 /************************************************
@@ -68,7 +52,7 @@ QSqlDatabase MySqlDbtModel::getSqlDatabase()
  ***********************************************/
 QString MySqlDbtModel::getSqlDriver()
 {
-    if (isDebugMessage) { qDebug() << "getSqlDriver"; }
+    setMessage("getSqlDriver");
     return mySqlDriver;
 }
 /************************************************
@@ -77,7 +61,7 @@ QString MySqlDbtModel::getSqlDriver()
  ***********************************************/
 void MySqlDbtModel::setSqlTableName(const QString &thisTableName)
 {
-    if (isDebugMessage) { qDebug() << "setSqlTableName"; }
+    setMessage("setSqlTableName");
     myTableName = thisTableName;
 }
 /************************************************
@@ -86,7 +70,7 @@ void MySqlDbtModel::setSqlTableName(const QString &thisTableName)
  ***********************************************/
 QString MySqlDbtModel::getSqlTableName()
 {
-    if (isDebugMessage) { qDebug() << "getSqlTableName"; }
+    setMessage("getSqlTableName");
     return myTableName;
 }
 /************************************************
@@ -95,7 +79,7 @@ QString MySqlDbtModel::getSqlTableName()
  ***********************************************/
 void MySqlDbtModel::setSqlHostName(const QString &thisHostName)
 {
-    if (isDebugMessage) { qDebug() << "setSqlHostName"; }
+    setMessage("setSqlHostName");
     myHostName = thisHostName;
 }
 /************************************************
@@ -104,7 +88,7 @@ void MySqlDbtModel::setSqlHostName(const QString &thisHostName)
  ***********************************************/
 QString MySqlDbtModel::getSqlHostName()
 {
-    if (isDebugMessage) { qDebug() << "getSqlHostName"; }
+    setMessage("getSqlHostName");
     return myHostName;
 }
 /************************************************
@@ -113,7 +97,7 @@ QString MySqlDbtModel::getSqlHostName()
  ***********************************************/
 void MySqlDbtModel::setSqlUserName(const QString &thisUserName)
 {
-    if (isDebugMessage) { qDebug() << "setSqlUserName"; }
+    setMessage("setSqlUserName");
     myUserName = thisUserName;
 }
 /************************************************
@@ -122,7 +106,7 @@ void MySqlDbtModel::setSqlUserName(const QString &thisUserName)
  ***********************************************/
 QString MySqlDbtModel::getSqlUserName()
 {
-    if (isDebugMessage) { qDebug() << "getSqlUserName"; }
+    setMessage("getSqlUserName");
     return myUserName;
 }
 /************************************************
@@ -131,7 +115,7 @@ QString MySqlDbtModel::getSqlUserName()
  ***********************************************/
 void MySqlDbtModel::setSqlDatabaseName(const QString &thisPassword)
 {
-    if (isDebugMessage) { qDebug() << "setSqlDatabaseName"; }
+    setMessage("setSqlDatabaseName");
     myDatabaseName = thisPassword;
 }
 /************************************************
@@ -140,7 +124,7 @@ void MySqlDbtModel::setSqlDatabaseName(const QString &thisPassword)
  ***********************************************/
 QString MySqlDbtModel::getSqlDatabaseName()
 {
-    if (isDebugMessage) { qDebug() << "getSqlDatabaseName"; }
+    setMessage("getSqlDatabaseName");
     return myDatabaseName;
 }
 /************************************************
@@ -149,7 +133,7 @@ QString MySqlDbtModel::getSqlDatabaseName()
  ***********************************************/
 void MySqlDbtModel::setSqlPassword(const QString &thisPassword)
 {
-    if (isDebugMessage) { qDebug() << "setSqlPassword"; }
+    setMessage("setSqlPassword");
     myPassword = thisPassword;
 }
 /************************************************
@@ -158,7 +142,7 @@ void MySqlDbtModel::setSqlPassword(const QString &thisPassword)
  ***********************************************/
 QString MySqlDbtModel::getSqlPassword()
 {
-    if (isDebugMessage) { qDebug() << "getSqlPassword"; }
+    setMessage("getSqlPassword");
     return myPassword;
 }
 /************************************************
@@ -167,7 +151,7 @@ QString MySqlDbtModel::getSqlPassword()
  ***********************************************/
 void MySqlDbtModel::setConnectionName(const QString &thisConnectionName)
 {
-    if (isDebugMessage) { qDebug() << "setConnectionName"; }
+    setMessage("setConnectionName");
     myConnectionName = thisConnectionName;
 }
 /************************************************
@@ -192,7 +176,7 @@ void MySqlDbtModel::setRecordID(const QString &thisRecordID)
  ***********************************************/
 QString MySqlDbtModel::getConnectionName()
 {
-    if (isDebugMessage) { qDebug() << "getConnectionName"; }
+    setMessage("getConnectionName");
     return myConnectionName;
 }
 /************************************************
@@ -201,7 +185,7 @@ QString MySqlDbtModel::getConnectionName()
  ***********************************************/
 void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
 {
-    if (isDebugMessage) { qDebug() << "setSqlDriver"; }
+    setMessage("setSqlDriver");
     QString theDriver = thisDriver;
     if (theDriver.length() == 0)  { theDriver = mySetting->myConstants->MY_SQL_DEFAULT; }
     // Check for Database memory setting
@@ -258,7 +242,7 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
  ***********************************************/
 bool MySqlDbtModel::createDataBaseConnection()
 {
-    if (isDebugMessage) { qDebug() << "createDataBaseConnection"; }
+    setMessage("createDataBaseConnection");
     // Make sure Drive is set
     if (mySqlDriver == "NOTSET") { setSqlDriver(mySetting->myConstants->MY_SQL_DEFAULT); }
     QString theDb = getSqlDatabaseName();
@@ -371,7 +355,7 @@ bool MySqlDbtModel::createDataBaseConnection()
  ***********************************************/
 bool MySqlDbtModel::runQuery(const QString &thisQuery)
 {
-    if (isDebugMessage) { qDebug() << "runQuery=" << thisQuery; }
+    setMessage("runQuery=" + thisQuery);
     QSqlQuery theQuery; //!< SQL Query
     if (theQuery.exec(thisQuery))
     {
@@ -391,7 +375,7 @@ bool MySqlDbtModel::runQuery(const QString &thisQuery)
  ***********************************************/
 bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSourcePath, const QString &thisDestinationFolder)
 {
-    if (isDebugMessage) { qDebug() << "moveDb"; }
+    setMessage("moveDb");
 
     QFile file(QString("%1%2%3").arg(thisSourcePath, QDir::separator(), thisSourceFile));
     //
@@ -448,5 +432,33 @@ QString MySqlDbtModel::runProcces(const QString &thisExePath, const QString &thi
 int MySqlDbtModel::getRunReturnCode()
 {
     return myRunReturnCode;
+}
+/************************************************
+ * @brief set Debug Message.
+ * setDebugMessage
+ ***********************************************/
+void MySqlDbtModel::setDebugMessage(bool thisState)
+{
+    isDebugMessage = thisState;
+}
+/************************************************
+ * @brief get Debug Message.
+ * getDebugMessage
+ ***********************************************/
+bool MySqlDbtModel::getDebugMessage()
+{
+    return isDebugMessage;
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void MySqlDbtModel::setMessage(const QString &thisMessage)
+{
+    if (isDebugMessage)
+    {
+        qDebug() << thisMessage;
+        std::cout << thisMessage.toStdString() << std::endl;
+    }
 }
 /*** ************************* End of File ***********************************/

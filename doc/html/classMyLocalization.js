@@ -4,7 +4,8 @@ var classMyLocalization =
       [ "Information", "classMyLocalization.html#a9648f5963c992ae32686a48421fe2248aea2efef610e2a8256c87f52c5af2d0e7", null ],
       [ "Question", "classMyLocalization.html#a9648f5963c992ae32686a48421fe2248a4f3a282c4030813a8dbe4f2987d93667", null ],
       [ "Warning", "classMyLocalization.html#a9648f5963c992ae32686a48421fe2248a27736c6119f90358a4061df1c17efb36", null ],
-      [ "Critical", "classMyLocalization.html#a9648f5963c992ae32686a48421fe2248ad0f534745d8a32a0cc199ec37db0c167", null ]
+      [ "Critical", "classMyLocalization.html#a9648f5963c992ae32686a48421fe2248ad0f534745d8a32a0cc199ec37db0c167", null ],
+      [ "Debug", "classMyLocalization.html#a9648f5963c992ae32686a48421fe2248a6f00f01b9e5f175a43dfede508f018aa", null ]
     ] ],
     [ "MyLocalization", "classMyLocalization.html#a2189eab712dc563c68eaf24711059eff", null ],
     [ "fileRemoveArgs", "classMyLocalization.html#a707ef0e94584626e94d6ad2493500b61", null ],
@@ -34,6 +35,7 @@ var classMyLocalization =
     [ "setHelpSource", "classMyLocalization.html#a71b12ceda0abc95156b36137e3dd5310", null ],
     [ "setLanguageCode", "classMyLocalization.html#a441729642ce169a733f9ada49f428d8f", null ],
     [ "setMainLoaded", "classMyLocalization.html#a3ea02f3f933568d4fda171b4d8e08b1f", null ],
+    [ "setMessage", "classMyLocalization.html#aef8d805be1c0c2a6c305c80d430b441f", null ],
     [ "setTransFilePrefix", "classMyLocalization.html#a9c2de7ababeb8c023923d8d39c160476", null ],
     [ "setTranslationSource", "classMyLocalization.html#a97fcfb2552839cc2b07884b70fd66a39", null ],
     [ "writeLanguage", "classMyLocalization.html#a0c698c62e65e31ad4de5b5cbc2c18018", null ],

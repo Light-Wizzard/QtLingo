@@ -82,6 +82,7 @@ class MyDatatables : public QObject
         // Is Debug Message
         void setDebugMessage(bool thisState);                               //!< set Debug Message
         bool getDebugMessage();                                             //!< get Debug Message
+        void setMessage(const QString &thisMessage);                        //!< set Message
 
     private:
         QString          myProjectID        = "-1";          //!< \c myProjectID         @brief Project ID

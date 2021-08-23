@@ -27,6 +27,10 @@ class MyTranlatorParser : public QObject
         bool parse_txt_file(const QString &inputFile, visitors::map_QStringQString &strings);     //!< parse_txt_file
         void toTXT(const QString &inputFile, const QString &outputDir, bool with_unfinished, bool with_vanished, bool unfinished_only);  //!< toTXT
         void toTS(const QString &inputDir, const QString &outputFile, const QString &langid);     //!< toTS
+        // Is Debug Message
+        void setDebugMessage(bool thisState);        //!< set Debug Message
+        bool getDebugMessage();                      //!< get Debug Message
+        void setMessage(const QString &thisMessage);     //!< set Message
 
     private:
         MyOrgSettings  *mySetting;             //!< \c mySetting      @brief Domain Settings

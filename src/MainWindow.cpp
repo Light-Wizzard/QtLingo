@@ -71,7 +71,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
  ***********************************************/
 MainWindow::~MainWindow()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "~MainWindow"; }
+    setMessage("~MainWindow", Debug);
     Q_CLEANUP_RESOURCE(QtLingo);
     delete ui;
 }
@@ -81,7 +81,7 @@ MainWindow::~MainWindow()
  ***********************************************/
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "closeEvent"; }
+    setMessage("closeEvent", Debug);
     if (isSaveSettings) onSave();
     mySqlDb->mySqlModel->mySetting->setGeometry(pos(), size(), isMaximized(), isMinimized());
     writeAllSettings();
@@ -94,7 +94,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
  ***********************************************/
 void MainWindow::changeEvent(QEvent *event)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "changeEvent"; }
+    setMessage("changeEvent", Debug);
     if (event ->type() == QEvent::LanguageChange && isMainLoaded)
     {
         // retranslate designer form (single inheritance approach)
@@ -119,7 +119,7 @@ void MainWindow::onInternetProgress()
  ***********************************************/
 void MainWindow::retranslate()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "retranslate"; }
+    setMessage("retranslate", Debug);
     // FIXME
     loadLanguageComboBox();
     loadLanguageComboBoxSource();
@@ -130,7 +130,7 @@ void MainWindow::retranslate()
  ***********************************************/
 void MainWindow::loadLanguageComboBoxSource()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "loadLanguageComboBoxSource"; }
+    setMessage("loadLanguageComboBoxSource", Debug);
     //
     QMetaEnum e = QMetaEnum::fromType<QOnlineTranslator::Language>();
     bool lastIsMainLoaded = isMainLoaded;
@@ -189,7 +189,7 @@ void MainWindow::setLanguageCode()
  ***********************************************/
 void MainWindow::loadLanguageComboBox()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "loadLanguageComboBox"; }
+    setMessage("loadLanguageComboBox", Debug);
     bool lastIsMainLoaded = isMainLoaded;
     myLocalization->setMainLoaded(false);
     isMainLoaded = false;
@@ -230,7 +230,7 @@ void MainWindow::loadLanguageComboBox()
  ***********************************************/
 void MainWindow::setQtProjectCombo()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setQtProjectCombo"; }
+    setMessage("setQtProjectCombo", Debug);
     bool lastIsMainLoaded = isMainLoaded;
     isMainLoaded = false;
     myLocalization->setMainLoaded(false);
@@ -289,7 +289,7 @@ void MainWindow::onRunFirstOnStartup()
     loadLanguageComboBox();
     ui->comboBoxSettingsLanguage->setCurrentIndex(ui->comboBoxSettingsLanguage->findText(theLastLanguage));
     //
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onRunFirstOnStartup"; }
+    setMessage("onRunFirstOnStartup", Debug);
     //
     if (!mySqlDb->checkDatabase()) close();
     setQtProjectCombo();
@@ -321,7 +321,7 @@ void MainWindow::readSettingsFirst()
  ***********************************************/
 void MainWindow::readAllSettings()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readAllSettings"; }
+    setMessage("readAllSettings", Debug);
     //resize(myMySettings->getGeometrySize());
     //move(myMySettings->getGeometryPos());
     //
@@ -338,7 +338,7 @@ void MainWindow::readAllSettings()
  ***********************************************/
 void MainWindow::writeAllSettings()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "writeAllSettings"; }
+    setMessage("writeAllSettings", Debug);
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage ? "true" : "false");
     //
     writeStateChanges();
@@ -350,7 +350,7 @@ void MainWindow::writeAllSettings()
  ***********************************************/
 void MainWindow::readStatesChanges()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readStatesChanges"; }
+    setMessage("readStatesChanges", Debug);
     // SQL Memory option Chech
     // default set to myProjectID="-1"
     QString theProjectID = mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, mySqlDb->getProjectID());
@@ -375,7 +375,7 @@ void MainWindow::readStatesChanges()
  ***********************************************/
 void MainWindow::writeStateChanges()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "writeStateChanges"; }
+    setMessage("writeStateChanges", Debug);
     // Project ID
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, ui->labelRecordIdSettings->text());
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_NAME, ui->comboBoxSettingsProjects->currentText());
@@ -400,7 +400,7 @@ void MainWindow::writeStateChanges()
  ***********************************************/
 void MainWindow::writeSqlDatabaseInfo()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "writeSqlDatabaseInfo"; }
+    setMessage("writeSqlDatabaseInfo", Debug);
     // SQL Database Type Index
     mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, QString::number(ui->comboBoxSqlDatabaseType->currentIndex()));
     // SQL Database Type Value
@@ -421,7 +421,7 @@ void MainWindow::writeSqlDatabaseInfo()
  ***********************************************/
 void MainWindow::readSqlDatabaseInfo()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "readSqlDatabaseInfo"; }
+    setMessage("readSqlDatabaseInfo", Debug);
     QString theDb = QString("%1%2%3.db").arg(mySqlDb->mySqlModel->mySetting->getAppDataLocation(), QDir::separator(), mySqlDb->mySqlModel->getSqlDatabaseName());
     // SQL Database Name
     ui->lineEditSqlDatabaseName->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_NAME, theDb));
@@ -446,7 +446,7 @@ void MainWindow::readSqlDatabaseInfo()
  ***********************************************/
 void MainWindow::onAuthor()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onAuthor"; }
+    setMessage("onAuthor", Debug);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
@@ -461,7 +461,7 @@ void MainWindow::onAuthor()
  ***********************************************/
 void MainWindow::onAbout()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onAbout"; }
+    setMessage("onAbout", Debug);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
@@ -476,7 +476,7 @@ void MainWindow::onAbout()
  ***********************************************/
 void MainWindow::onHelp()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onHelp"; }
+    setMessage("onHelp", Debug);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
@@ -485,7 +485,7 @@ void MainWindow::onHelp()
         { theFileName = QString(":help/Help_%1.md").arg(mySqlDb->mySqlModel->mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
     QString theFileContent = mySqlDb->mySqlModel->mySetting->readFile(theFileName);
     // Do not translate this file
-    QString theLanguageFileName = QString(":help/Language.txt").arg(myLocalization->getLanguageCode());
+    QString theLanguageFileName = ":help/Language.txt";
     if (mySqlDb->mySqlModel->mySetting->isFileExists(theLanguageFileName))
     {
         theFileContent.append(mySqlDb->mySqlModel->mySetting->readFile(theLanguageFileName));
@@ -498,7 +498,7 @@ void MainWindow::onHelp()
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsSourceBrowse_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonTranslationsSourceBrowse_clicked"; }
+    setMessage("on_pushButtonTranslationsSourceBrowse_clicked", Debug);
     QFileDialog dialogTranslationFolder;
     dialogTranslationFolder.setFileMode(QFileDialog::Directory);
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
@@ -515,7 +515,7 @@ void MainWindow::on_pushButtonTranslationsSourceBrowse_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsDestinationBrowse_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonTranslationsDestinationBrowse_clicked"; }
+    setMessage("on_pushButtonTranslationsDestinationBrowse_clicked", Debug);
     QFileDialog dialogTranslationFolder;
     dialogTranslationFolder.setFileMode(QFileDialog::Directory);
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
@@ -531,7 +531,7 @@ void MainWindow::on_pushButtonTranslationsDestinationBrowse_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSettingsProjectsBrowser_clicked"; }
+    setMessage("on_pushButtonSettingsProjectsBrowser_clicked", Debug);
     QFileDialog dialogTranslationFolder;
     dialogTranslationFolder.setFileMode(QFileDialog::Directory);
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
@@ -547,7 +547,7 @@ void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsProjectFolderBrowse_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonTranslationsProjectFolderBrowse_clicked"; }
+    setMessage("on_pushButtonTranslationsProjectFolderBrowse_clicked", Debug);
     QFileDialog dialogTranslationFolder;
     dialogTranslationFolder.setFileMode(QFileDialog::Directory);
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
@@ -564,7 +564,7 @@ void MainWindow::on_pushButtonTranslationsProjectFolderBrowse_clicked()
 void MainWindow::on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage)
 {
     if (!isMainLoaded) { return; }
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_comboBoxSettingsLanguage_currentIndexChanged"; }
+    setMessage("on_comboBoxSettingsLanguage_currentIndexChanged", Debug);
     myLocalization->writeLanguage(myLocalization->languageNameToCode(thisLanguage));
     myLocalization->loadLanguage(myLocalization->getLanguageFile(myLocalization->languageNameToCode(thisLanguage), myLocalization->getTranslationSource(), myLocalization->getTransFilePrefix()));
 }
@@ -576,7 +576,7 @@ void MainWindow::on_checkBoxSettingsGoogle_stateChanged(int thisArg)
 {
     Q_UNUSED(thisArg)
     if (!isMainLoaded) { return; }
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_checkBoxSettingsGoogle_stateChanged"; }
+    setMessage("on_checkBoxSettingsGoogle_stateChanged", Debug);
     writeStateChanges();
 }
 /************************************************
@@ -587,7 +587,7 @@ void MainWindow::on_checkBoxSettingsBing_stateChanged(int thisArg)
 {
     Q_UNUSED(thisArg)
     if (!isMainLoaded) { return; }
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_checkBoxSettingsBing_stateChanged"; }
+    setMessage("on_checkBoxSettingsBing_stateChanged", Debug);
     writeStateChanges();
 }
 /************************************************
@@ -598,7 +598,7 @@ void MainWindow::on_checkBoxSettingsYandex_stateChanged(int thisArg)
 {
     Q_UNUSED(thisArg)
     if (!isMainLoaded) { return; }
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_checkBoxSettingsYandex_stateChanged"; }
+    setMessage("on_checkBoxSettingsYandex_stateChanged", Debug);
     writeStateChanges();
 }
 /************************************************
@@ -607,7 +607,7 @@ void MainWindow::on_checkBoxSettingsYandex_stateChanged(int thisArg)
  ***********************************************/
 void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSqlDatabaseNameBrowse_clicked"; }
+    setMessage("on_pushButtonSqlDatabaseNameBrowse_clicked", Debug);
     QFileDialog dialogSqlDbFolder;
     dialogSqlDbFolder.setFileMode(QFileDialog::Directory);
     dialogSqlDbFolder.setOption(QFileDialog::ShowDirsOnly);
@@ -642,7 +642,7 @@ void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
     Q_UNUSED(thisIndex) // not the same as theIndex
     if (!isMainLoaded) { return; }
     QString theIndex = ui->comboBoxSettingsProjects->model()->data(ui->comboBoxSettingsProjects->model()->index(ui->comboBoxSettingsProjects->currentIndex(), 0)).toString();
-    if (isDebugMessage) { qDebug() << "on_comboBoxSettingsProjects_currentIndexChanged = " << thisIndex << " and thisIndex = " << theIndex; }
+    setMessage("on_comboBoxSettingsProjects_currentIndexChanged = " + QString::number(thisIndex) + " and thisIndex = " + theIndex, Debug);
     fillForms(theIndex);
 }
 /************************************************
@@ -651,7 +651,7 @@ void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
  ***********************************************/
 void MainWindow::on_pushButtonSqlPasswordShow_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSqlPasswordShow_clicked"; }
+    setMessage("on_pushButtonSqlPasswordShow_clicked", Debug);
     mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Password Revieled").toLocal8Bit(), ui->lineEditSqlPassword->text().toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Information);
 }
 /************************************************
@@ -660,7 +660,7 @@ void MainWindow::on_pushButtonSqlPasswordShow_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSqlSave_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSqlSave_clicked"; }
+    setMessage("on_pushButtonSqlSave_clicked", Debug);
     writeStateChanges();
 }
 /************************************************
@@ -669,7 +669,7 @@ void MainWindow::on_pushButtonSqlSave_clicked()
  ***********************************************/
 void MainWindow::onSave()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onSave"; }
+    setMessage("onSave", Debug);
     setProjectClass(TabAll);
     mySqlDb->saveQtProject();
 }
@@ -679,7 +679,7 @@ void MainWindow::onSave()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsSave_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSettingsSave_clicked"; }
+    setMessage("on_pushButtonSettingsSave_clicked", Debug);
     onSave();
 }
 /************************************************
@@ -688,7 +688,7 @@ void MainWindow::on_pushButtonSettingsSave_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsAdd_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSettingsAdd_clicked"; }
+    setMessage("on_pushButtonSettingsAdd_clicked", Debug);
     setProjectClass(TabAll);
     mySqlDb->addQtProject();
     setQtProjectCombo();
@@ -699,7 +699,7 @@ void MainWindow::on_pushButtonSettingsAdd_clicked()
  ***********************************************/
 void MainWindow::on_pushButtonSettingsDelete_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonSettingsDelete_clicked"; }
+    setMessage("on_pushButtonSettingsDelete_clicked", Debug);
     setProjectClass(TabAll);
     mySqlDb->deleteQtProject(ui->labelRecordIdSettings->text());
 }
@@ -709,7 +709,7 @@ void MainWindow::on_pushButtonSettingsDelete_clicked()
  ***********************************************/
 void MainWindow::setPrograms()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setPrograms"; }
+    setMessage("setPrograms", Debug);
     QString theLupdatePath  = "/usr/bin/lupdate";
     QString theLreleasePath = "/usr/bin/lrelease";
 
@@ -767,7 +767,7 @@ void MainWindow::setPrograms()
  ***********************************************/
 void MainWindow::setSqlBrowseButton()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "settingsButtons"; }
+    setMessage("settingsButtons", Debug);
     ui->pushButtonSqlDatabaseNameBrowse->setEnabled(ui->comboBoxSqlDatabaseType->currentText() == mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT || ui->comboBoxSqlDatabaseType->currentText() == ":memory:");
 }
 /************************************************
@@ -777,7 +777,7 @@ void MainWindow::setSqlBrowseButton()
 void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType)
 {
     if (!isMainLoaded) { return; }
-    if (isDebugMessage) { qDebug() << "on_comboBoxSqlDatabaseType_currentIndexChanged=" << thisSqlType; }
+    setMessage("on_comboBoxSqlDatabaseType_currentIndexChanged=" + thisSqlType, Debug);
     mySqlDb->mySqlModel->setSqlDriver(thisSqlType);
     writeStateChanges();
     setSqlBrowseButton();
@@ -788,7 +788,7 @@ void MainWindow::on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &t
  ***********************************************/
 QString MainWindow::languageChecked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "languageChecked"; }
+    setMessage("languageChecked", Debug);
     myLanguages = "";
     checkLanguage("Amharic",        "am" , ui->checkBoxTranslationsAM->isChecked());
     checkLanguage("Afrikaans",      "af" , ui->checkBoxTranslationsAF->isChecked());
@@ -932,7 +932,7 @@ QString MainWindow::languageChecked()
  ***********************************************/
 void MainWindow::checkLanguage(const QString &thisName, const QString &thisLanguage, bool thisChecked)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "checkLanguage"; }
+    setMessage("checkLanguage", Debug);
     QString theLangagesIDs = myLanguages;
     myLanguageName = thisName;
     if (thisChecked)
@@ -972,14 +972,14 @@ void MainWindow::checkLanguage(const QString &thisName, const QString &thisLangu
  ***********************************************/
 void MainWindow::fillForms(const QString &thisProjectID)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "fillForms=" << thisProjectID; }
+    setMessage("fillForms=" + thisProjectID, Debug);
     clearForms(TabAll);
     ui->labelRecordIdSettings->setText(thisProjectID); // Project id and Configuration ProjectID
     // Declare all variable in function scope
     QString theDbValve;
     QSqlQuery query; //!< SQL Query
     QString myConfigurationSelectQuery = mySqlDb->getQtProjectFullSelectQueryID(thisProjectID);
-    if (isDebugMessage && isMainLoaded) { qDebug() << " myConfigurationSelectQuery=|" << myConfigurationSelectQuery << "|"; }
+    setMessage("myConfigurationSelectQuery=|" + myConfigurationSelectQuery + "|", Debug);
     /*
      * id, QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, LanguageIDs
     */
@@ -987,7 +987,7 @@ void MainWindow::fillForms(const QString &thisProjectID)
     {
         if (query.first())
         {
-            if (isDebugMessage && isMainLoaded) { qDebug() << " QtProjectName=|" << query.value("QtProjectName").toString() << "| SourceFolder=|" << query.value("SourceFolder").toString() << "| QtProjectFolder=|" << query.value("QtProjectFolder").toString() << "| DestinationFolder=|" << query.value("DestinationFolder").toString() << "| HelpFolder=|" << query.value("HelpFolder").toString() << "| LanguageIDs=|" << query.value("LanguageIDs").toString() << "|"; }
+            setMessage(" QtProjectName=|" + query.value("QtProjectName").toString() + "| SourceFolder=|" + query.value("SourceFolder").toString() + "| QtProjectFolder=|" + query.value("QtProjectFolder").toString() + "| DestinationFolder=|" + query.value("DestinationFolder").toString() + "| HelpFolder=|" + query.value("HelpFolder").toString() + "| LanguageIDs=|" + query.value("LanguageIDs").toString() + "|", Debug);
             // Set Record ID
             myRecordID = query.value("id").toInt();
             ui->labelRecordIdSettings->setText(query.value("id").toString());
@@ -1559,7 +1559,7 @@ void MainWindow::fillForms(const QString &thisProjectID)
  ***********************************************/
 void MainWindow::clearTabSettings()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "clearTabSettings"; }
+    setMessage("clearTabSettings", Debug);
     // Defaults
     ui->labelRecordIdSettings->setText("0");
 }
@@ -1569,7 +1569,7 @@ void MainWindow::clearTabSettings()
  ***********************************************/
 void MainWindow::clearTabTranslations()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "clearTabTranslations"; }
+    setMessage("clearTabTranslations", Debug);
     // Defaults
     //#define TEST_FORM
     #ifdef TEST_FORM
@@ -1855,7 +1855,7 @@ void MainWindow::clearTabTranslations()
  ***********************************************/
 void MainWindow::clearTabProject()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "clearTabProject"; }
+    setMessage("clearTabProject", Debug);
     ui->textEditProjects->setText("");
 }
 /************************************************
@@ -1864,7 +1864,7 @@ void MainWindow::clearTabProject()
  ***********************************************/
 void MainWindow::clearTabHelp()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "clearTabHelp"; }
+    setMessage("clearTabHelp", Debug);
     ui->textEditHelp->setText("");
 }
 /************************************************
@@ -1873,7 +1873,7 @@ void MainWindow::clearTabHelp()
  ***********************************************/
 void MainWindow::clearForms(int tabNumber)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "clearForms"; }
+    setMessage("clearForms", Debug);
     switch (tabNumber)
     {
         case TabSettings:     clearTabSettings();     break;
@@ -1943,7 +1943,7 @@ void MainWindow::setTabAll()
  ***********************************************/
 void MainWindow::setProjectClass(int tabNumber)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setProjectClass"; }
+    setMessage("setProjectClass", Debug);
     switch (tabNumber)
     {
         case TabSettings:
@@ -1970,7 +1970,7 @@ void MainWindow::setProjectClass(int tabNumber)
  ***********************************************/
 void MainWindow::onCompile()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onCompile"; }
+    setMessage("onCompile", Debug);
     if (ui->lineEditTranslationsDestination->text() == ui->lineEditTranslationsSource->text())
     {
         mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Error Source and Destination cannot be the same").toLocal8Bit(), QString("%1: %2 %3: %4 %5").arg(tr("Source"), ui->lineEditTranslationsSource->text(), tr("and Destination"), ui->lineEditTranslationsDestination->text(), tr("cannot be the same")).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
@@ -2155,7 +2155,7 @@ void MainWindow::onCompile()
         ui->progressBarProjectsFiles->setValue(i);
         // Made sure they know this gets deleted in status bar and tool tip
         mySqlDb->mySqlModel->mySetting->removeAllFiles(ui->lineEditTranslationsDestination->text());
-        if (isDebugMessage && isMainLoaded) { qDebug() << "Translating..." << myLingoJob.at(i).getLanguageName(); }
+        setMessage("Translating..." + myLingoJob.at(i).getLanguageName(), Debug);
         // check for files existance make sure source and destination are not the same is done at the beginning
         QString theDestTxtFile = QString("%1%2%3_%4.txt").arg(ui->lineEditTranslationsDestination->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), myLingoJob.at(i).getLangName());
         // Make sure to delete txt file before trying to create it, it will bomb
@@ -2509,7 +2509,7 @@ void MainWindow::onTranslateHelp()
     for( int i = 0; i < myLingoJob.count(); ++i )
     {
         ui->progressBarProjectsFiles->setValue(i);
-        if (isDebugMessage && isMainLoaded) { qDebug() << "Translating..." << myLingoJob.at(i).getLanguageName(); }
+        setMessage("Translating..." + myLingoJob.at(i).getLanguageName(), Debug);
         // Skip if current language is the same as source
         if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { continue; }
         QString theHelpFile = myLingoJob.at(i).getTsFile();
@@ -2735,7 +2735,7 @@ void MainWindow::onTranslateReadMe()
     for( int i = 0; i < myLingoJob.count(); ++i )
     {
         ui->progressBarProjectsFiles->setValue(i);
-        if (isDebugMessage && isMainLoaded) { qDebug() << "Translating..." << myLingoJob.at(i).getLanguageName(); }
+        setMessage("Translating..." + myLingoJob.at(i).getLanguageName(), Debug);
         // Skip if current language is the same as source
         if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { continue; }
         // The Default Languge will not have an under-score Language Code, i.e. README.md
@@ -2790,7 +2790,7 @@ void MainWindow::onTranslateReadMe()
  ***********************************************/
 void MainWindow::createTranslationJob(const QString &thisLanguageName, const QString &thisLanguage, const QString &thisSourceLanguage, bool thisChecked)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "createTranslationJob(" << thisLanguageName << ", " << thisLanguage << ", " << thisSourceLanguage << ", " << thisChecked << ")"; }
+    setMessage("createTranslationJob(" + thisLanguageName + ", " + thisLanguage + ", " + thisSourceLanguage + ", " + thisChecked + ")", Debug);
     //
     if (!thisChecked) { return; }
     QString theLang = thisLanguage;
@@ -2818,7 +2818,7 @@ void MainWindow::createTranslationJob(const QString &thisLanguageName, const QSt
  ***********************************************/
 void MainWindow::createHelpTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "createHelpTranslationJob(" << thisLanguageName << ", " << theLangCode << ", " << thisChecked << ")"; }
+    setMessage("createHelpTranslationJob(" + thisLanguageName + ", " + theLangCode + ", " + thisChecked + ")", Debug);
     //
     if (!thisChecked) { return; }
     if (ui->labelTranslationsSourceLanguageCode->text() == theLangCode) { return; }
@@ -2852,7 +2852,7 @@ void MainWindow::createHelpTranslationJob(const QString &thisLanguageName, const
  ***********************************************/
 void MainWindow::createReadMeTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "createHelpTranslationJob(" << thisLanguageName << ", " << theLangCode << ", " << thisChecked << ")"; }
+    setMessage("createHelpTranslationJob(" + thisLanguageName + ", " + theLangCode + ", " + thisChecked + ")", Debug);
     //
     if (!thisChecked) { return; }
     if (ui->labelTranslationsSourceLanguageCode->text() == theLangCode) { return; }
@@ -2881,7 +2881,7 @@ void MainWindow::createReadMeTranslationJob(const QString &thisLanguageName, con
  ***********************************************/
 QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang)
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "translateWithReturn(" << text << ", " << engine << ", " << translationLang << ", " << sourceLang << ", " << uiLang << ")"; }
+    setMessage("translateWithReturn(" + text + ", " + engine + ", " + translationLang + ", " + sourceLang + ", " + uiLang + ")", Debug);
     // Clear Translation
     myTranslation.clear();
     // Event Loop
@@ -2913,30 +2913,12 @@ QString MainWindow::translateWithReturn(const QString &text, QOnlineTranslator::
     return myTranslation;
 } // end translateWithReturn
 /************************************************
- * @brief set Debug Message.
- * setDebugMessage
- ***********************************************/
-void MainWindow::setDebugMessage(bool thisState)
-{
-    isDebugMessage = thisState;
-    if (isDebugMessage && isMainLoaded) { qDebug() << "setDebugMessage"; }
-}
-/************************************************
- * @brief get Debug Message.
- * getDebugMessage
- ***********************************************/
-bool MainWindow::getDebugMessage()
-{
-    if (isDebugMessage && isMainLoaded) { qDebug() << "getDebugMessage"; }
-    return isDebugMessage;
-}
-/************************************************
  * @brief Clipboard.
  * onClipboard
  ***********************************************/
 void MainWindow::onClipboard()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "onClipboard"; }
+    setMessage("onClipboard", Debug);
     //if (!isQtSettingsLoaded) { onCreate();}
     clipboard->setText(ui->textEditProjects->toPlainText());
 }
@@ -2947,7 +2929,7 @@ void MainWindow::onClipboard()
 void MainWindow::on_checkBoxSettignsMessaging_stateChanged(int thisCheckState)
 {
     if (!isMainLoaded) { return; }
-    if (isDebugMessage) { qDebug() << "on_checkBoxSettignsMessaging_stateChanged"; }
+    setMessage("on_checkBoxSettignsMessaging_stateChanged", Debug);
     if (thisCheckState == Qt::Checked)
         { setMessagingStates(true); }
     else
@@ -2986,7 +2968,7 @@ void MainWindow::setMessagingStates(bool thisMessageState)
  ***********************************************/
 void MainWindow::on_pushButtonTranslationsHelp_clicked()
 {
-    if (isDebugMessage && isMainLoaded) { qDebug() << "on_pushButtonTranslationsHelp_clicked"; }
+    setMessage("on_pushButtonTranslationsHelp_clicked", Debug);
     QFileDialog dialogTranslationFolder;
     dialogTranslationFolder.setFileMode(QFileDialog::Directory);
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
@@ -3006,6 +2988,48 @@ void MainWindow::on_comboBoxTranslationSourceLanguage_currentIndexChanged(const 
 {
     Q_UNUSED(arg1)
     setLanguageCode();
+}
+/************************************************
+ * @brief set Message.
+ * setMessage
+ ***********************************************/
+void MainWindow::setMessage(const QString &thisMessage, MainWindow::MyMessageTypes thisMessageType)
+{
+    if (isDebugMessage && isMainLoaded) { return; }
+    switch (thisMessageType)
+    {
+        case Information:
+            mySqlDb->mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlDb->mySqlModel->mySetting->Information);
+            break;
+        case Warning:
+            mySqlDb->mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlDb->mySqlModel->mySetting->Warning);
+            break;
+        case Critical:
+            mySqlDb->mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlDb->mySqlModel->mySetting->Critical);
+            break;
+        case Debug:
+            qDebug() << thisMessage;
+            std::cout << thisMessage.toStdString() << std::endl;
+            break;
+    }
+}
+/************************************************
+ * @brief set Debug Message.
+ * setDebugMessage
+ ***********************************************/
+void MainWindow::setDebugMessage(bool thisState)
+{
+    isDebugMessage = thisState;
+    setMessage("setDebugMessage", Debug);
+}
+/************************************************
+ * @brief get Debug Message.
+ * getDebugMessage
+ ***********************************************/
+bool MainWindow::getDebugMessage()
+{
+    setMessage("getDebugMessage", Debug);
+    return isDebugMessage;
 }
 /* ******************************* End of File ***************************** */
 

@@ -346,11 +346,33 @@ $(document).ready(function(){initNavTree('MyTranlatorParser_8cpp_source.html',''
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    root-&gt;visit(ddv);</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;}</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMyTranlatorParser.html#a227bf53d936664522314e9104e5f4a0b">MyTranlatorParser::setDebugMessage</a>(<span class="keywordtype">bool</span> thisState)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    isDebugMessage = thisState;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classMyTranlatorParser.html#a23cb694d7528f1bc66865d08df182a82">MyTranlatorParser::getDebugMessage</a>()</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;{</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">return</span> isDebugMessage;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMyTranlatorParser.html#ac12487f45224cdd1702b87f7fb2c1db7">MyTranlatorParser::setMessage</a>(<span class="keyword">const</span> QString &amp;thisMessage)</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">if</span> (isDebugMessage)</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        qDebug() &lt;&lt; thisMessage;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        std::cout &lt;&lt; thisMessage.toStdString() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="ttc" id="aMyTranlatorParser_8h_html"><div class="ttname"><a href="MyTranlatorParser_8h.html">MyTranlatorParser.h</a></div></div>
 <div class="ttc" id="aclassMyOrgSettings_html"><div class="ttname"><a href="classMyOrgSettings.html">MyOrgSettings</a></div><div class="ttdoc">My Org Settings.</div><div class="ttdef"><b>Definition:</b> <a href="MyOrgSettings_8h_source.html#l00031">MyOrgSettings.h:32</a></div></div>
 <div class="ttc" id="aclassMyTranlatorParser_html_a202cec10749484303b0e571ab4608783"><div class="ttname"><a href="classMyTranlatorParser.html#a202cec10749484303b0e571ab4608783">MyTranlatorParser::toTS</a></div><div class="ttdeci">void toTS(const QString &amp;inputDir, const QString &amp;outputFile, const QString &amp;langid)</div><div class="ttdoc">toTS</div></div>
+<div class="ttc" id="aclassMyTranlatorParser_html_a227bf53d936664522314e9104e5f4a0b"><div class="ttname"><a href="classMyTranlatorParser.html#a227bf53d936664522314e9104e5f4a0b">MyTranlatorParser::setDebugMessage</a></div><div class="ttdeci">void setDebugMessage(bool thisState)</div><div class="ttdoc">set Debug Message</div></div>
+<div class="ttc" id="aclassMyTranlatorParser_html_a23cb694d7528f1bc66865d08df182a82"><div class="ttname"><a href="classMyTranlatorParser.html#a23cb694d7528f1bc66865d08df182a82">MyTranlatorParser::getDebugMessage</a></div><div class="ttdeci">bool getDebugMessage()</div><div class="ttdoc">get Debug Message</div></div>
 <div class="ttc" id="aclassMyTranlatorParser_html_a5a7088900f13e26907ba7422ab42a137"><div class="ttname"><a href="classMyTranlatorParser.html#a5a7088900f13e26907ba7422ab42a137">MyTranlatorParser::MyTranlatorParser</a></div><div class="ttdeci">MyTranlatorParser(QObject *parent=nullptr, MyOrgSettings *thisSetting=nullptr)</div><div class="ttdoc">Translation Files Constructor. MyTranslationFiles.</div><div class="ttdef"><b>Definition:</b> <a href="MyTranlatorParser_8cpp_source.html#l00007">MyTranlatorParser.cpp:7</a></div></div>
 <div class="ttc" id="aclassMyTranlatorParser_html_abc254aa24978b3ed365d9f131ecf51c5"><div class="ttname"><a href="classMyTranlatorParser.html#abc254aa24978b3ed365d9f131ecf51c5">MyTranlatorParser::parse_txt_file</a></div><div class="ttdeci">bool parse_txt_file(const QString &amp;inputFile, visitors::map_QStringQString &amp;strings)</div><div class="ttdoc">parse_txt_file</div><div class="ttdef"><b>Definition:</b> <a href="MyTranlatorParser_8cpp_source.html#l00114">MyTranlatorParser.cpp:114</a></div></div>
+<div class="ttc" id="aclassMyTranlatorParser_html_ac12487f45224cdd1702b87f7fb2c1db7"><div class="ttname"><a href="classMyTranlatorParser.html#ac12487f45224cdd1702b87f7fb2c1db7">MyTranlatorParser::setMessage</a></div><div class="ttdeci">void setMessage(const QString &amp;thisMessage)</div><div class="ttdoc">set Message</div></div>
 <div class="ttc" id="aclassMyTranlatorParser_html_addda277ce2b1f695634c21d4f2980902"><div class="ttname"><a href="classMyTranlatorParser.html#addda277ce2b1f695634c21d4f2980902">MyTranlatorParser::parse_ts_file</a></div><div class="ttdeci">base_node::base_node_ptr parse_ts_file(const QString &amp;inputFile)</div><div class="ttdoc">parse_ts_file</div><div class="ttdef"><b>Definition:</b> <a href="MyTranlatorParser_8cpp_source.html#l00015">MyTranlatorParser.cpp:15</a></div></div>
 <div class="ttc" id="aclassMyTranlatorParser_html_ae2d6c665aecb56bcc15f22f9cd233dbe"><div class="ttname"><a href="classMyTranlatorParser.html#ae2d6c665aecb56bcc15f22f9cd233dbe">MyTranlatorParser::toTXT</a></div><div class="ttdeci">void toTXT(const QString &amp;inputFile, const QString &amp;outputDir, bool with_unfinished, bool with_vanished, bool unfinished_only)</div><div class="ttdoc">toTXT</div></div>
 <div class="ttc" id="anamespacevisitors_html"><div class="ttname"><a href="namespacevisitors.html">visitors</a></div><div class="ttdoc">visitors/</div></div>

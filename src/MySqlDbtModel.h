@@ -57,10 +57,11 @@ class MySqlDbtModel : public QObject
         bool moveDb(const QString &thisSourceFile, const QString &thisSourcePath, const QString &thisDestinationFolder); //!<  Move Db
         QString runProcces(const QString &thisExePath, const QString &thisArgument, bool isWait, int thisWaitTimeSec);   //!< run Procces
         // Run Return Code
-        int getRunReturnCode();                     //!< get Run Return Code
+        int getRunReturnCode();                      //!< get Run Return Code
         // Is Debug Message
-        void setDebugMessage(bool thisState);       //!< set Debug Message
-        bool getDebugMessage();                     //!< get Debug Message
+        void setDebugMessage(bool thisState);        //!< set Debug Message
+        bool getDebugMessage();                      //!< get Debug Message
+        void setMessage(const QString &thisMessage); //!< setMessage
 
     private:
         QSqlDatabase myDb;                              //!< \c myDb               @brief Database

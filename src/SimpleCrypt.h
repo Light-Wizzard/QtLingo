@@ -38,7 +38,13 @@
 #include <QCryptographicHash>
 #include <QDataStream>
 #include <QRandomGenerator>
-
+// STD
+#include <iostream>
+#include <assert.h>
+#include <algorithm>
+#include <sstream>
+#include <stdio.h>
+#include <stdlib.h>
 /************************************************
  * @brief @short Simple encryption and decryption of strings and byte arrays
  *
@@ -204,8 +210,9 @@ class SimpleCrypt
         };
         Q_DECLARE_FLAGS(CryptoFlags, CryptoFlag);
         // Is Debug Message
-        void setDebugMessage(bool thisState);       //!< set Debug Message
-        bool getDebugMessage();                     //!< get Debug Message
+        void setDebugMessage(bool thisState);        //!< set Debug Message
+        bool getDebugMessage();                      //!< get Debug Message
+        void setMessage(const QString &thisMessage); //!< set Message
 
     private:
 

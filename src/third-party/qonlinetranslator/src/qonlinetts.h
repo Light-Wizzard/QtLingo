@@ -21,9 +21,9 @@
 #ifndef QONLINETTS_H
 #define QONLINETTS_H
 
-#include "qonlinetranslator.h"
 #include <QMetaEnum>
 #include <QUrl>
+#include "qonlinetranslator.h"
 
 /************************************************
  * @brief Q Online Tts.

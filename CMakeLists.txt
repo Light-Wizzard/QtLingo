@@ -11,9 +11,27 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
     set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 #
-find_package(Qt5 COMPONENTS Core Widgets LinguistTools PrintSupport Sql LinguistTools Concurrent REQUIRED)
+find_package(Qt5${QT_VERSION_MAJOR} COMPONENTS REQUIRED Core Gui Widgets Sql PrintSupport Network Multimedia LinguistTools LinguistTools Concurrent)
+#3DAnimation             Help                    QuickWidgets
+#3DCore                  LinguistTools           RemoteObjects
+#3DExtras                Location                RepParser
+#3DInput                 Multimedia              Scxml
+#3DLogic                 MultimediaWidgets       Sensors
+#3DQuick                 Network                 SerialPort
+#3DQuickAnimation        Nfc                     Sql
+#3DQuickExtras           OpenGL                  Svg
+#3DQuickInput            OpenGLExtensions        Test
+#3DQuickRender           Positioning             TextToSpeech
+#3DQuickScene2D          PositioningQuick        UiPlugin
+#3DRender                PrintSupport            UiTools
+#AndroidExtras           Qml                     WebChannel
+#Bluetooth               Quick                   WebSockets
+#Concurrent              QuickCompiler           WebView
+#Core                    QuickControls2          Widgets
+#Gamepad                 QuickTemplates2         Xml
+#Gui                     QuickTest               XmlPatterns
 # Libraries
-set(QT5_LIBRARIES Qt5::Widgets Qt5::PrintSupport Qt5::Sql)
+set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::PrintSupport Qt5::Network Qt5::Multimedia)
 #
 set(TARGET ${CMAKE_PROJECT_NAME})
 # Source
@@ -21,17 +39,22 @@ set(SOURCES
     src/main.cpp
     src/MainWindow.cpp
     src/MyDatatables.cpp
+    src/MyLocalization.cpp
     src/MyOrgSettings.cpp
-    src/MySimpleCrypt.cpp
     src/MySqlDbtModel.cpp
-    src/MyTranslationFiles.cpp
-    third-party/ts_tool/ts_model.cpp
+    src/MyTranlatorParser.cpp
+    src/SimpleCrypt.cpp
+    src/third-party/ts_tool/ts_model.cpp
+    src/third-party/qonlinetranslator/src/qonlinetranslator.cpp
+    src/third-party/qonlinetranslator/src/qonlinetts.cpp
+    src/third-party/qonlinetranslator/src/qexample.cpp
+    src/third-party/qonlinetranslator/src/qoption.cpp
 )
 # UI
 set(UI_SOURCES src/MainWindow.ui)
 #
 qt5_add_resources(SOURCES QtLingo.qrc)
-add_subdirectory(src/third-party/qonlinetranslator)
+#add_subdirectory(src/third-party/qonlinetranslator)
 # https://github.com/pedrolcl/qt5-i18n
 # not sure if I need to add en since it is the default
 set(TS_FILES
@@ -45,18 +68,32 @@ set(TS_FILES
     translations/QtLingo_no.ts
     translations/QtLingo_ru.ts
     translations/QtLingo_sv.ts
-    translations/QtLingo_zh-CN.ts
+    translations/QtLingo_zh_CN.ts
 )
 
+set (TRANSLATION_QM
+    translations/QtLingo_ar.qm
+    translations/QtLingo_de.qm
+    translations/QtLingo_en.qm
+    translations/QtLingo_es.qm
+    translations/QtLingo_fr.qm
+    translations/QtLingo_it.qm
+    translations/QtLingo_ja.qm
+    translations/QtLingo_no.qm
+    translations/QtLingo_ru.qm
+    translations/QtLingo_sv.qm
+    translations/QtLingo_zh_CN.qm
+)
+#
 if (QT_VERSION VERSION_LESS 5.15.0)
     qt5_add_translation(QM_FILES ${TS_FILES})
 else()
     qt_add_translation(QM_FILES ${TS_FILES})
 endif()
-
-include(TranslationUtils)
-add_app_translations_resource(APP_RES ${QM_FILES})
-add_qt_translations_resource(QT_RES ar de en es fr it ja no ru sv zh-CN)
+# install
+if (UNIX AND NOT APPLE)
+        install (FILES ${TRANSLATION_QM} DESTINATION ${SCC_DATA_DIR}/translations)
+endif (UNIX AND NOT APPLE)
 #
 # The qm files are generated in the build tree, but the qrc file is inside the
 # source directory and the path to resources are relative to the location of

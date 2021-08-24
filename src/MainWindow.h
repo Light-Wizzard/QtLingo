@@ -18,9 +18,9 @@
 #include "MyDatatables.h"
 #include "MyLocalization.h"
 // QOnlineTranslator
-#include "qexample.h"
-#include "qoption.h"
-#include "qonlinetranslator.h"
+#include "third-party/qonlinetranslator/src/qexample.h"
+#include "third-party/qonlinetranslator/src/qoption.h"
+#include "third-party/qonlinetranslator/src/qonlinetranslator.h"
 //
 #include "MyTranlatorParser.h"
 //

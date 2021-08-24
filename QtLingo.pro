@@ -45,7 +45,9 @@ HEADERS += src/MainWindow.h \
     src/third-party/ts_tool/ts_model.h
 #
 #
-SOURCES += src/main.cpp src/MainWindow.cpp \
+SOURCES += \
+    src/main.cpp \
+    src/MainWindow.cpp \
     src/MyDatatables.cpp \
     src/MyLocalization.cpp \
     src/MyOrgSettings.cpp \
@@ -83,6 +85,9 @@ TRANSLATIONS += translations/QtLingo_ar.ts \
                 translations/QtLingo_ru.ts \
                 translations/QtLingo_sv.ts \
                 translations/QtLingo_zh_CN.ts
+#
+LCONVERT_LANGS=ar de en es fr it ja no ru sv zh_CN
+include(lconvert.pri)
 #
 DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \

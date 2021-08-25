@@ -26,7 +26,7 @@ if(QT_PREFIX_PATH)
 endif()
 #
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets
-    Sql PrintSupport Network LinguistTools LinguistTools Concurrent)
+    Sql PrintSupport Network LinguistTools Multimedia LinguistTools Concurrent)
 #3DAnimation             Help                    QuickWidgets
 #3DCore                  LinguistTools           RemoteObjects
 #3DExtras                Location                RepParser
@@ -47,7 +47,7 @@ find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets
 #Gui                     QuickTest               XmlPatterns
 # Libraries
 set(QT5_LIBRARIES Qt5::Core Qt5::Gui Qt5::Widgets
-    Qt5::Sql Qt5::PrintSupport Qt5::Network)
+    Qt5::Sql Qt5::PrintSupport Qt5::Network Qt5::Multimedia)
 # Source
 set(SOURCES
     src/main.cpp

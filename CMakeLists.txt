@@ -59,6 +59,10 @@ set(SOURCES
     src/MyTranlatorParser.cpp
     src/SimpleCrypt.cpp
     src/third-party/ts_tool/ts_model.cpp
+    src/third-party/qonlinetranslator/src/qonlinetranslator.cpp
+    src/third-party/qonlinetranslator/src/qonlinetts.cpp
+    src/third-party/qonlinetranslator/src/qexample.cpp
+    src/third-party/qonlinetranslator/src/qoption.cpp
 )
 # UI
 set(UI_SOURCES src/MainWindow.ui)

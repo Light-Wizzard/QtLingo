@@ -57,7 +57,7 @@ ElseIf ($env:PLATFORM -eq "x86") {
     $env:BUILD_ROOT = "$env:APPVEYOR_BUILD_FOLDER\build"
     $env:CC="C:\Qt\Tools\$env:MY_QT_TOOLS_MINGW32\bin\gcc.exe"
     $env:CXX="C:\Qt\Tools\$env:MY_QT_TOOLS_MINGW32\bin\g++.exe"
-    cmd /c cmake .. -G "MinGW Makefiles" -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=-DCMAKE_INSTALL_PREFIX="$env:APPVEYOR_BUILD_FOLDER/install"
+    cmd /c cmake .. -G "MinGW Makefiles" -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=-DCMAKE_INSTALL_PREFIX="$env:APPVEYOR_BUILD_FOLDER/AppDir"
     If ($?) {
         mingw32-make -j2
         Get-ChildItem -File
@@ -67,11 +67,11 @@ ElseIf ($env:PLATFORM -eq "x86") {
             If ($?) {
                 Test-Path -Path "$env:APPVEYOR_BUILD_FOLDER\build\$env:MY_BIN_PRO_RES_NAME.exe" -PathType Leaf
                 If ($?) {
-                    Write-Host "File exist copying to install folder"
-                    New-Item -Path "$env:APPVEYOR_BUILD_FOLDER" -Name "install" -ItemType Directory
+                    Write-Host "File exist copying to AppDir folder"
+                    New-Item -Path "$env:APPVEYOR_BUILD_FOLDER" -Name "AppDir" -ItemType Directory
                     Get-ChildItem -Path "$env:APPVEYOR_BUILD_FOLDER" -Directory
-                    Copy-Item "$env:APPVEYOR_BUILD_FOLDER\build\$env:MY_BIN_PRO_RES_NAME.exe" -Destination "$env:APPVEYOR_BUILD_FOLDER\install"
-                    Get-ChildItem -Path "$env:APPVEYOR_BUILD_FOLDER\install" -File
+                    Copy-Item "$env:APPVEYOR_BUILD_FOLDER\build\$env:MY_BIN_PRO_RES_NAME.exe" -Destination "$env:APPVEYOR_BUILD_FOLDER\AppDir"
+                    Get-ChildItem -Path "$env:APPVEYOR_BUILD_FOLDER\AppDir" -File
                     $env:MY_BUILD_GOOD = "true"
                 }
             }
@@ -85,10 +85,10 @@ If ($env:MY_BUILD_GOOD -eq "true") {
         $currentDirectory = $PSScriptRoot
     }
     Write-Host "After Windows build $env:currentDirectory"
-    #Get-ChildItem -Path "$env:APPVEYOR_BUILD_FOLDER\install"
-    Copy-Item "C:\Qt\Tools\QtCreator\bin\plugins\platforms\*" -Destination "$env:APPVEYOR_BUILD_FOLDER\install" -Recurse
-    Invoke-Expression "windeployqt $env:APPVEYOR_BUILD_FOLDER\install\$env:MY_BIN_PRO_RES_NAME.exe --verbose=2"
-    Invoke-Expression "7z a -tzip $env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip $env:APPVEYOR_BUILD_FOLDER\install -r"
+    #Get-ChildItem -Path "$env:APPVEYOR_BUILD_FOLDER\AppDir"
+    Copy-Item "C:\Qt\Tools\QtCreator\bin\plugins\platforms\*" -Destination "$env:APPVEYOR_BUILD_FOLDER\AppDir" -Recurse
+    Invoke-Expression "windeployqt $env:APPVEYOR_BUILD_FOLDER\AppDir\$env:MY_BIN_PRO_RES_NAME.exe --verbose=2"
+    Invoke-Expression "7z a -tzip $env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip $env:APPVEYOR_BUILD_FOLDER\AppDir -r"
     Copy-Item "$env:APPVEYOR_BUILD_FOLDER\build\$env:MY_BIN_PRO_RES_NAME-$env:MY_OS-$env:CONFIGURATION-$env:PLATFORM.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
     Copy-Item "*.zip" -Destination "$env:APPVEYOR_BUILD_FOLDER\"
     Set-Location -Path "$env:APPVEYOR_BUILD_FOLDER"

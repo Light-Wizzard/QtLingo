@@ -322,7 +322,7 @@ void SimpleCrypt::setMessage(const QString &thisMessage)
     if (isDebugMessage)
     {
         qDebug() << thisMessage;
-        std::cout << thisMessage.toStdString() << std::endl;
+        //std::cout << thisMessage.toStdString() << std::endl;
     }
 }
 /******************************* End of File *********************************/

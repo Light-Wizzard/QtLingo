@@ -11,6 +11,10 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
     set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 #
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+#
 find_package(Qt5${QT_VERSION_MAJOR} COMPONENTS REQUIRED Core Gui Widgets Sql PrintSupport Network Multimedia LinguistTools LinguistTools Concurrent)
 #3DAnimation             Help                    QuickWidgets
 #3DCore                  LinguistTools           RemoteObjects
@@ -54,9 +58,7 @@ set(SOURCES
 set(UI_SOURCES src/MainWindow.ui)
 #
 qt5_add_resources(SOURCES QtLingo.qrc)
-#add_subdirectory(src/third-party/qonlinetranslator)
-# https://github.com/pedrolcl/qt5-i18n
-# not sure if I need to add en since it is the default
+# Translation TS Files
 set(TS_FILES
     translations/QtLingo_ar.ts
     translations/QtLingo_de.ts
@@ -70,7 +72,7 @@ set(TS_FILES
     translations/QtLingo_sv.ts
     translations/QtLingo_zh_CN.ts
 )
-
+# Translation QM Files
 set (TRANSLATION_QM
     translations/QtLingo_ar.qm
     translations/QtLingo_de.qm
@@ -92,7 +94,7 @@ else()
 endif()
 # install
 if (UNIX AND NOT APPLE)
-        install (FILES ${TRANSLATION_QM} DESTINATION ${SCC_DATA_DIR}/translations)
+        install (FILES ${TRANSLATION_QM} DESTINATION ${CMAKE_SOURCE_DIR}/translations)
 endif (UNIX AND NOT APPLE)
 #
 # The qm files are generated in the build tree, but the qrc file is inside the

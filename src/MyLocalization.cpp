@@ -767,7 +767,7 @@ void MyLocalization::setMessage(const QString &thisMessage, MyMessageTypes thisM
         case Question:
         case Debug:
             qDebug() << thisMessage;
-            std::cout << thisMessage.toStdString() << std::endl;
+            //std::cout << thisMessage.toStdString() << std::endl;
             break;
     }
 }

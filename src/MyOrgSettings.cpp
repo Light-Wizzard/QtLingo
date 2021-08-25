@@ -778,7 +778,7 @@ void MyOrgSettings::setMessage(const QString &thisMessage, MyOrgSettings::MyMess
         case Question:
         case Debug:
             qDebug() << thisMessage;
-            std::cout << thisMessage.toStdString() << std::endl;
+            //std::cout << thisMessage.toStdString() << std::endl;
             break;
     }
 }

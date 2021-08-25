@@ -3009,7 +3009,7 @@ void MainWindow::setMessage(const QString &thisMessage, MainWindow::MyMessageTyp
             break;
         case Debug:
             qDebug() << thisMessage;
-            std::cout << thisMessage.toStdString() << std::endl;
+            //std::cout << thisMessage.toStdString() << std::endl;
             break;
     }
 }

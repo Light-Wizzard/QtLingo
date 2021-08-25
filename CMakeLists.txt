@@ -130,12 +130,11 @@ set(CMAKE_SHARED_LINKER_FLAGS "-z noexecstack -z relro -z now")
 # The Qt5Widgets_INCLUDES also includes the include directories
 # for dependencies QtCore and QtGui
 include_directories(${Qt5Widgets_INCLUDES})
-# We need add -DQT_WIDGETS_LIB when using QtWidgets in Qt 5.
+# Add the include directories for the Qt 5 Widgets module to
+# the compile lines.
+include_directories(${Qt5Widgets_INCLUDE_DIRS})
+# Use the compile definitions defined in the Qt 5 Widgets module
 add_definitions(${Qt5Widgets_DEFINITIONS})
-add_definitions(${Qt5Core_DEFINITIONS})
-add_definitions(${Qt5Gui_DEFINITIONS})
-add_definitions(${Qt5Sql_DEFINITIONS})
-add_definitions(${Qt5Network_DEFINITIONS})
 #
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 # Executables fail to build with Qt 5 in the
@@ -165,8 +164,6 @@ add_executable(${TARGET} ${SOURCES} ${UI_GENERATED_HEADERS}
 # cmake-qt5-qt5-wrap-ui-not-generating-ui-header-files)
 #
 target_link_libraries(${TARGET} ${QT5_LIBRARIES})
-# libQt5Sql.so.5 missing tried this with and without lib changes
-# tried /usr/bin no help
 install(TARGETS ${TARGET}
   RUNTIME DESTINATION /usr/bin
   LIBRARY DESTINATION /usr/lib

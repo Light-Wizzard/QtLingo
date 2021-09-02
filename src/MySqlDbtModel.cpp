@@ -4,10 +4,8 @@
  * @brief Constructor.
  * MySqlDbtModel
  ***********************************************/
-MySqlDbtModel::MySqlDbtModel(QObject *parent)
+MySqlDbtModel::MySqlDbtModel(QObject *parent, MyOrgSettings *thisSetting) : QObject(parent), mySetting(thisSetting)
 {
-    // MySettings Settings
-    mySetting = new MyOrgSettings(parent);
 }
 /************************************************
  * @brief Deconstructor.
@@ -15,7 +13,9 @@ MySqlDbtModel::MySqlDbtModel(QObject *parent)
  ***********************************************/
 MySqlDbtModel::~MySqlDbtModel()
 {
+    #ifdef USE_SQL_FLAG
     if (myDb.isOpen()) { myDb.close(); }
+    #endif
 }
 /************************************************
  * @brief is Db Table.
@@ -24,10 +24,15 @@ MySqlDbtModel::~MySqlDbtModel()
 bool MySqlDbtModel::isDbTable(const QString &thisTable)
 {
     setMessage("isDatabase");
+    #ifdef USE_SQL_FLAG
     QStringList theTables = myDb.tables();
     if (theTables.contains(thisTable, Qt::CaseInsensitive))  { return true; }
     else                                                     { return false; }
+    #else
+    return true;
+    #endif
 }
+#ifdef USE_SQL_FLAG
 /************************************************
  * @brief set Sql Database.
  * setSqlDatabase
@@ -46,6 +51,7 @@ QSqlDatabase MySqlDbtModel::getSqlDatabase()
     setMessage("getSqlDatabase");
     return myDb;
 }
+#endif
 /************************************************
  * @brief get Sql Driver.
  * getSqlDriver
@@ -186,6 +192,7 @@ QString MySqlDbtModel::getConnectionName()
 void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
 {
     setMessage("setSqlDriver");
+#ifdef USE_SQL_FLAG
     QString theDriver = thisDriver;
     if (theDriver.length() == 0)  { theDriver = mySetting->myConstants->MY_SQL_DEFAULT; }
     // Check for Database memory setting
@@ -235,6 +242,7 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
     {
         mySqlDriver = theDriver;
     }
+#endif
 } // end setSqlDriver
 /************************************************
  * @brief create DataBase Connection.
@@ -243,6 +251,7 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
 bool MySqlDbtModel::createDataBaseConnection()
 {
     setMessage("createDataBaseConnection");
+#ifdef USE_SQL_FLAG
     // Make sure Drive is set
     if (mySqlDriver == "NOTSET") { setSqlDriver(mySetting->myConstants->MY_SQL_DEFAULT); }
     QString theDb = getSqlDatabaseName();
@@ -347,6 +356,7 @@ bool MySqlDbtModel::createDataBaseConnection()
     // Set Settings
     mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_NAME, theDb);
     mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_TYPE, "QSQLITE");
+#endif
     return true;
 } // end createDataBaseConnection
 /************************************************
@@ -356,6 +366,7 @@ bool MySqlDbtModel::createDataBaseConnection()
 bool MySqlDbtModel::runQuery(const QString &thisQuery)
 {
     setMessage("runQuery=" + thisQuery);
+    #ifdef USE_SQL_FLAG
     QSqlQuery theQuery; //!< SQL Query
     if (theQuery.exec(thisQuery))
     {
@@ -368,6 +379,9 @@ bool MySqlDbtModel::runQuery(const QString &thisQuery)
         setRecordID("-1");
         return false;
     }
+    #else
+    return true;
+    #endif
 }
 /************************************************
  * moveDb
@@ -376,7 +390,7 @@ bool MySqlDbtModel::runQuery(const QString &thisQuery)
 bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSourcePath, const QString &thisDestinationFolder)
 {
     setMessage("moveDb");
-
+#ifdef USE_SQL_FLAG
     QFile file(QString("%1%2%3").arg(thisSourcePath, QDir::separator(), thisSourceFile));
     //
     QString theNewDatabaseName = QString("%1%2%3").arg(thisDestinationFolder, QDir::separator(), thisSourceFile);
@@ -396,6 +410,9 @@ bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSour
         return createDataBaseConnection();
     }
     else { return true; }
+#else
+    return true;
+#endif
 }
 /************************************************
  * @brief run Procces given exe path, argument, and if you want to wait and how long,

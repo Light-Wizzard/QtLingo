@@ -45,17 +45,17 @@
         <file>help/About-Author_sv.md</file>
         <file>help/About-Author_zh_CN.md</file>
         <file>help/Language.txt</file>
-        <file>translations/QtLingo_ar.qm</file>
-        <file>translations/QtLingo_de.qm</file>
-        <file>translations/QtLingo_en.qm</file>
-        <file>translations/QtLingo_es.qm</file>
-        <file>translations/QtLingo_fr.qm</file>
-        <file>translations/QtLingo_it.qm</file>
-        <file>translations/QtLingo_ja.qm</file>
-        <file>translations/QtLingo_no.qm</file>
-        <file>translations/QtLingo_ru.qm</file>
-        <file>translations/QtLingo_sv.qm</file>
-        <file>translations/QtLingo_zh_CN.qm</file>     
+        <file>translations/QtLingo_ar_AR.qm</file>
+        <file>translations/QtLingo_de_DE.qm</file>
+        <file>translations/QtLingo_en_US.qm</file>
+        <file>translations/QtLingo_es_ES.qm</file>
+        <file>translations/QtLingo_fr_FR.qm</file>
+        <file>translations/QtLingo_it_IT.qm</file>
+        <file>translations/QtLingo_ja_JA.qm</file>
+        <file>translations/QtLingo_no_NO.qm</file>
+        <file>translations/QtLingo_ru_RU.qm</file>
+        <file>translations/QtLingo_sv_SV.qm</file>
+        <file>translations/QtLingo_zh_CN.qm</file>
         <file>images/google_translate.png</file>
         <file>images/microsoft_translator.png</file>
         <file>images/yandex_translate.png</file>

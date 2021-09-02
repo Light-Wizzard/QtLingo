@@ -4,9 +4,9 @@
  * @brief My Datatables Constructor.
  * MyDatatables
  ***********************************************/
-MyDatatables::MyDatatables(QObject *parent) : QObject(parent)
+MyDatatables::MyDatatables(QObject *parent, MyOrgSettings *thisSetting) : QObject(parent), mySetting(thisSetting)
 {
-    mySqlModel = new MySqlDbtModel(this);
+    mySqlModel = new MySqlDbtModel(this, thisSetting);
     // Create Variable Trackers and Set to Empty
     myProject = new MyProjectClass("", "", "", "", "", "", "", "", "");
 }
@@ -115,6 +115,7 @@ QString MyDatatables::getComboBoxSqlValue()
 bool MyDatatables::checkDatabase()
 {
     setMessage("checkDatabase");
+    #ifdef USE_SQL_FLAG
     // Database
     mySqlModel->setSqlDriver(myComboBoxSqlValue);
     if (!mySqlModel->createDataBaseConnection()) { return false; }
@@ -152,6 +153,7 @@ bool MyDatatables::checkDatabase()
         //
     } // end if (!isDbTable("Projects"))
     //
+    #endif
     return true;
 }
 /************************************************
@@ -180,6 +182,7 @@ bool MyDatatables::insertQtProjects()
 bool MyDatatables::addQtProject()
 {
     setMessage("addQtProject");
+    #ifdef USE_SQL_FLAG
     // SELECT id, QtProjectName FROM Projects WHERE QtProject =
     if (isQtProjectNameQuery(myProject->getQtProjectName()))
     {
@@ -187,6 +190,9 @@ bool MyDatatables::addQtProject()
         return false;
     }
     return insertQtProjects();
+    #else
+    return true;
+    #endif
 }
 /************************************************
  * @brief delete Project.
@@ -195,6 +201,7 @@ bool MyDatatables::addQtProject()
 void MyDatatables::deleteQtProject(const QString &thisID)
 {
     setMessage("deleteQtProject");
+    #ifdef USE_SQL_FLAG
     QSqlQuery query; //!< SQL Query
     QString theQuery = QString("DELETE FROM Projects WHERE id = ").append(thisID);
     setMessage("thisQuery: " + theQuery);
@@ -202,6 +209,7 @@ void MyDatatables::deleteQtProject(const QString &thisID)
     {
         qCritical() << "SqLite error:" << query.lastError().text() << ", SqLite error code:" << query.lastError();
     }
+    #endif
 }
 /************************************************
  * @brief get Qt Project Name Select Query SELECT id, QtProjectName FROM Projects.
@@ -228,6 +236,7 @@ QString MyDatatables::getQtProjectNameByNameQuery(const QString &thisProject)
 bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
 {
     setMessage("isQtProjectNameQuery");
+    #ifdef USE_SQL_FLAG
     QSqlQuery theQuery; //!< SQL Query
     QString theQueryCommand = getQtProjectNameByNameQuery(thisProjectName);
     if (theQuery.exec(theQueryCommand))
@@ -239,6 +248,7 @@ bool MyDatatables::isQtProjectNameQuery(const QString &thisProjectName)
     {
         qCritical() << "SqLite error isProjectQuery:" << theQuery.lastError().text() << ", SqLite error code:" << theQuery.lastError();
     }
+    #endif
     return false;
 }
 /************************************************
@@ -266,6 +276,7 @@ QString MyDatatables::getQtProjectNameSelectQueryID(const QString &thisWhereID)
 void MyDatatables::saveQtProject()
 {
     setMessage("saveProject");
+    #ifdef USE_SQL_FLAG
     QSqlQuery theQuery; //!< SQL Query
     QString theQueryString = QString("UPDATE Projects set QtProjectName = '%1', QtProjectFolder = '%2', SourceFolder = '%3', DestinationFolder = '%4', HelpFolder = '%5', SourceLanguage = '%6', LanguageIDs = '%7', Make = '%8' WHERE id = %9").arg(myProject->getQtProjectName(), myProject->getQtProjectFolder(), myProject->getSourceFolder(), myProject->getDestinationFolder(), myProject->getHelpFolder(), myProject->getSourceLanguage(), myProject->getLanguageIDs(), myProject->getMake(), myProject->getID());
     setMessage("thisQuery: |" + theQueryString + "|  getQtProjectName = " + myProject->getQtProjectName() + "|  getQtProjectFolder = " + myProject->getQtProjectFolder() + "| getSourceFolder=" + myProject->getSourceFolder() + "| getDestinationFolder=" + myProject->getDestinationFolder() + "| getHelpFolder=" + myProject->getHelpFolder() + "| getSourceLanguage=" + myProject->getSourceLanguage() + "| getLanguageIDs=" + myProject->getLanguageIDs() + "| getMake=" + myProject->getMake() + "| ID=" + myProject->getID() + "|");
@@ -274,6 +285,7 @@ void MyDatatables::saveQtProject()
         qCritical() << "SqLite error saveProject:" << theQuery.lastError().text() << ", SqLite error code:" << theQuery.lastError();
     }
     isSaveSettings = false;
+    #endif
 }
 /************************************************
  * @brief set Project Sets all Variables used in the Configuarion Database in one Place:

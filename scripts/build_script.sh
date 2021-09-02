@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Last Update: 24 Auguest 2021
+# Last Update: 26 Auguest 2021
 #
 # I use shell check, delete the ? to run it, but leave that in this files so it does not fail when it sees it.
 # shell?check -x scripts/build_script.sh
@@ -10,7 +10,7 @@
 # This file is Open Source and I tried my best to make it cut and paste,
 # so I am adding the Environment Variables here as well as the OS installer.
 #
-echo "build_script Unix";
+echo "build_script Linux Ubuntu";
 #
 # Debug Information, not always a good idea when not debugging, and thanks to the TheAssassin, this is now working.
 # These are the setting you might want to change
@@ -43,7 +43,7 @@ export ARTIFACT_QIF="${MY_BIN_PRO_RES_NAME}-Linux-Installer";
 declare TEMP_BASE;
 if [ "$CI" == "" ] && [ -d "/dev/shm" ]; then TEMP_BASE="/dev/shm"; else TEMP_BASE="/tmp"; fi
 #
-echo -e "Make Temp Foler";
+echo -e "Make Temp Folder";
 #
 # building in temporary directory to keep system clean
 BUILD_DIR="$(mktemp -d -p "$TEMP_BASE" "${MY_BIN_PRO_RES_NAME}-build-XXXXXX")";
@@ -65,9 +65,9 @@ OLD_CWD="$(readlink -f .)";
 pushd "$BUILD_DIR";
 # Make AppDir folder at the BUILD_DIR level, I should not need to do this normally, but I am not able to get cmake to work
 if [ -d "AppDir" ]; then rm -r AppDir; fi
-mkdir -p AppDir;
+mkdir AppDir;
 # x86
-if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x86" ]]; then
+if [[ "$PLATFORM" == "x86" ]]; then
     # Matrix does not show a gcc_32 or 86
     # https://www.appveyor.com/docs/linux-images-software/
     export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/include:$PATH";
@@ -86,7 +86,7 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x86"
     fi
 fi
 # x64
-if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x64" ]]; then
+if [[ "$PLATFORM" == "x64" ]]; then
     export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/include:$PATH";
     export PATH="${HOME}/Qt/${MY_QT_VERSION}/gcc_64/bin:${HOME}/Qt/${MY_QT_VERSION}/clang_64/bin:$PATH";
     # Check Qt
@@ -102,40 +102,39 @@ if [[ "$APPVEYOR_BUILD_WORKER_IMAGE" == "${MY_OS}" ]] && [[ "$PLATFORM" == "x64"
     fi
 fi
 #
-if [[ $APPVEYOR_BUILD_WORKER_IMAGE == "${MY_OS}" ]]; then
-    if [ "${SHOW_PATH}" -eq 1 ]; then echo "PATH=$PATH"; fi
-    #
-    echo "cmake build";
-    DESTDIR=AppDir;
-    # tired this without -DCMAKE_BUILD_TYPE=${CONFIGURATION} -DBUILD_SHARED_LIBS=OFF
-    cmake "${REPO_ROOT}" -G "Unix Makefiles" -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE="${CONFIGURATION}" -DCMAKE_INSTALL_PREFIX="/usr";
-    #
-    # build project and install files into AppDir
-    make -j"$(nproc)";
-    make install DESTDIR=AppDir
-    # now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt
-    # download linuxdeploy and its Qt plugin
-    wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage;
-    wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage;
-    # make them executable
-    chmod +x linuxdeploy*.AppImage;
-    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:AppDir";
-    # make sure Qt plugin finds QML sources so it can deploy the imported files
-    if [ -d "${REPO_ROOT}/qml" ]; then
-        export QML_SOURCES_PATHS="${REPO_ROOT}/qml";
-    fi
-    # ${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage
-    #export TARGET_APPIMAGE="${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage";
-    # QtQuickApp does support "make install", but we don't use it because we want to show the manual packaging approach in this example
-    # initialize AppDir, bundle shared libraries, add desktop file and icon, use Qt plugin to bundle additional resources, and build AppImage, all in one command
-    # env TARGET_APPIMAGE="${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage" APPIMAGE_EXTRACT_AND_RUN=1
-    ./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
-    chmod +x "${MY_BIN_PRO_RES_NAME}"*.AppImage*;
-    cp -v "${MY_BIN_PRO_RES_NAME}"*.AppImage* AppDir/usr/bin/;
-    cp -v "${APPVEYOR_BUILD_FOLDER}/README.md" AppDir/usr/bin/;
-    7z a -tzip -r "${MY_BIN_PRO_RES_NAME}-${MY_OS}-${CONFIGURATION}-${PLATFORM}.zip" AppDir;
-    cp "${MY_BIN_PRO_RES_NAME}-${MY_OS}-${CONFIGURATION}-${PLATFORM}.zip" "${OLD_CWD}";
+if [ "${SHOW_PATH}" -eq 1 ]; then echo "PATH=$PATH"; fi
+#
+echo "cmake build";
+declare -gx DESTDIR;
+DESTDIR=AppDir;
+# tired this without -DCMAKE_BUILD_TYPE=${CONFIGURATION} -DBUILD_SHARED_LIBS=OFF
+cmake "${REPO_ROOT}" -G "Unix Makefiles" -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE="${CONFIGURATION}" -DCMAKE_INSTALL_PREFIX="/usr";
+#
+# build project and install files into AppDir
+make -j"$(nproc)";
+make install DESTDIR=AppDir
+# now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt
+# download linuxdeploy and its Qt plugin
+wget -c -nv https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage;
+wget -c -nv https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage;
+# make them executable
+chmod +x linuxdeploy*.AppImage;
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${HOME}/Qt/${MY_QT_VERSION}/gcc_64/lib:AppDir";
+# make sure Qt plugin finds QML sources so it can deploy the imported files
+if [ -d "${REPO_ROOT}/qml" ]; then
+    export QML_SOURCES_PATHS="${REPO_ROOT}/qml";
 fi
+# ${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage
+#export TARGET_APPIMAGE="${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage";
+# QtQuickApp does support "make install", but we don't use it because we want to show the manual packaging approach in this example
+# initialize AppDir, bundle shared libraries, add desktop file and icon, use Qt plugin to bundle additional resources, and build AppImage, all in one command
+# env TARGET_APPIMAGE="${MY_BIN_PRO_RES_NAME}-$PLATFORM.AppImage" APPIMAGE_EXTRACT_AND_RUN=1
+./linuxdeploy-x86_64.AppImage --appdir=AppDir -i "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.svg" -d "${REPO_ROOT}/desktop/${MY_BIN_PRO_RES_NAME}.desktop" --plugin qt --output appimage;
+chmod +x "${MY_BIN_PRO_RES_NAME}"*.AppImage*;
+cp -v "${MY_BIN_PRO_RES_NAME}"*.AppImage* AppDir/usr/bin/;
+cp -v "${APPVEYOR_BUILD_FOLDER}/README.md" AppDir/usr/bin/;
+7z a -tzip -r "${MY_BIN_PRO_RES_NAME}-${MY_OS}-${CONFIGURATION}-${PLATFORM}.zip" AppDir;
+cp "${MY_BIN_PRO_RES_NAME}-${MY_OS}-${CONFIGURATION}-${PLATFORM}.zip" "${OLD_CWD}";
 #
 # AppImage move to Artifacts
 mv "${MY_BIN_PRO_RES_NAME}"*.AppImage* "$OLD_CWD";
@@ -143,28 +142,28 @@ mv "${MY_BIN_PRO_RES_NAME}"*.AppImage* "$OLD_CWD";
 # Pop Directory for Qt Installer Framework
 popd;
 #
-echo "Preparing for Qt Installer Framework";
+#echo "Preparing for Qt Installer Framework";
 #
 #
 # Copy all the files that Qt Installer Framework needs
-ls "${APPVEYOR_BUILD_FOLDER}";
+#ls "${APPVEYOR_BUILD_FOLDER}";
 #
 # Copy both AppImages to where Qt Installer Framework needs them
 # MY_QIF_PACKAGE_URI='packages/com.url.qtappveyor/data'
-if [ -f "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_APPIMAGE}" ]; then
-    cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_APPIMAGE}" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-    #cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_ZSYNC}" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-else
-    echo -e "Missing ${BUILD_DIR}/${ARTIFACT_APPIMAGE} ";
-fi
+#if [ -f "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_APPIMAGE}" ]; then
+#    cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_APPIMAGE}" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
+#    #cp -pv "${APPVEYOR_BUILD_FOLDER}/${ARTIFACT_ZSYNC}" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
+#else
+#    echo -e "Missing ${BUILD_DIR}/${ARTIFACT_APPIMAGE} ";
+#fi
 # The packages/${MY_QIF_PACKAGE_URI}/meta/installscript.qs creates this: cp -v "desktop/${MY_BIN_PRO_RES_NAME}.desktop" "${MY_QIF_PACKAGE_URI}";
-cp -v "${APPVEYOR_BUILD_FOLDER}/README.md" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
-ls "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
+#cp -v "${APPVEYOR_BUILD_FOLDER}/README.md" "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
+#ls "${APPVEYOR_BUILD_FOLDER}/${MY_QIF_PACKAGE_URI}/data";
 #
 # I use Qt Installer Framework
 # https://download.qt.io/official_releases/qt-installer-framework
 #
-echo "Running Qt Installer Framework";
+#echo "Running Qt Installer Framework";
 #"${APPVEYOR_BUILD_FOLDER}/scripts/QtInstallerFramework-linux.run" -c "${APPVEYOR_BUILD_FOLDER}/config/config.xml" -p "${APPVEYOR_BUILD_FOLDER}/packages" "${ARTIFACT_QIF}";
 #declare -i BINARY_CREATOR_INSTALLED; BINARY_CREATOR_INSTALLED=0;
 #declare MyQtInstallerFramework; MyQtInstallerFramework="binarycreator";

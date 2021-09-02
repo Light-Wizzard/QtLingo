@@ -48,11 +48,12 @@ class MyDatatables : public QObject
 {
         Q_OBJECT
     public:
-        explicit MyDatatables(QObject *parent = nullptr);
+        explicit MyDatatables(QObject *parent = nullptr, MyOrgSettings *thisSetting = nullptr);
         ~MyDatatables();
         //
         MyProjectClass *myProject;                   //!< \c myProject  @brief My Project Variables
         MySqlDbtModel  *mySqlModel;                  //!< \c mySqlModel @brief Pointer to DataTable
+        MyOrgSettings  *mySetting;                   //!< \c mySetting @brief Domain Settings
         //
         bool checkDatabase();                        //!< check Database
         bool insertQtProjects();                     //!< insert Qt Project

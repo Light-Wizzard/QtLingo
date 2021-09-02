@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1290</width>
-    <height>684</height>
+    <width>1415</width>
+    <height>686</height>
    </rect>
   </property>
   <property name="font">
@@ -425,7 +425,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabSql">
+      <widget class="QWidget" name="tabSQL">
        <attribute name="title">
         <string>SQL</string>
        </attribute>
@@ -695,8 +695,8 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1157</width>
-               <height>1202</height>
+               <width>1212</width>
+               <height>1310</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridLayout_2">
@@ -1837,8 +1837,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1290</width>
-     <height>26</height>
+     <width>1415</width>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1891,8 +1891,8 @@
    <addaction name="actionClipboard"/>
    <addaction name="separator"/>
    <addaction name="actionAbout"/>
-   <addaction name="actionHelp"/>
    <addaction name="actionAuthor"/>
+   <addaction name="actionHelp"/>
    <addaction name="separator"/>
    <addaction name="actionExit"/>
    <addaction name="separator"/>

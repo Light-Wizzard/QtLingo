@@ -12,9 +12,8 @@
 #include <QTranslator>
 #include <QVector>
 #include <QtGlobal>
-// UI
-#include "ui_MainWindow.h"
 //
+#include "MyOrgSettings.h"
 #include "MyDatatables.h"
 #include "MyLocalization.h"
 // QOnlineTranslator
@@ -208,6 +207,7 @@ class MainWindow : public QMainWindow
         virtual void changeEvent(QEvent * event) override;      //!< change Event
 
     private:
+        MyOrgSettings      *mySetting;                          //!< \c mySetting @brief Domain Settings
         Ui::MainWindow     *ui;                                 //!< \c ui                      @brief ui.
         MyDatatables       *mySqlDb;                            //!< \c mySqlDb                 @brief SQL Datatables.
         MyLocalization     *myLocalization;                     //!< \c myLocalization          @brief Localization.

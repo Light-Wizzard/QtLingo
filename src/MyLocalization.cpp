@@ -61,7 +61,6 @@ void MyLocalization::setHelpSource(const QString &thisHelpSource)
 QString MyLocalization::getTransFilePrefix()
 {
     setMessage("getTransFilePrefix", Debug);
-    if (myTransFilePrefix.isEmpty()) { myTransFilePrefix = mySetting->myConstants->MY_TRANSLATION_PREFIX; }
     return myTransFilePrefix;
 }
 /************************************************
@@ -99,11 +98,16 @@ void MyLocalization::loadLanguage(const QString &thisQmLanguageFile)
 QString MyLocalization::getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix)
 {
     setMessage("getLanguageFile", Debug);
+    QString theLang = thisLanguage;
+    if (theLang.contains("-"))
+    { theLang = theLang.replace("-", "_"); }
     const QStringList theQmFiles = findQmFiles(thisPath);
     for (int i = 0; i < theQmFiles.size(); ++i)
     {
-        if (languageMatch(thisPrefix, thisLanguage, theQmFiles.at(i)))
-            { return theQmFiles.at(i); }
+        if (languageMatch(thisPrefix, theLang, theQmFiles.at(i)))
+        {
+            return theQmFiles.at(i);
+        }
     }
     return "";
 }
@@ -147,7 +151,15 @@ QString MyLocalization::getLocalizedCodeFromFile(const QString &thisPrefix, cons
     QFileInfo theFileInfo(thisQmFile);
 
     QString theFileName = theFileInfo.baseName();
-    return theFileName.remove(QString("%1_").arg(thisPrefix));
+    theFileName = theFileName.remove(QString("%1_").arg(thisPrefix));
+    if (theFileName.contains("_"))
+    {
+        if (!theFileName.contains("zh"))
+        {
+            theFileName = theFileName.section("_", 0, 0);
+        }
+    }
+    return theFileName;
 }
 /************************************************
  * @brief remove Args like "String %1" list.
@@ -210,8 +222,13 @@ bool MyLocalization::languageMatch(const QString &thisPrefix, const QString &thi
 {
     setMessage("languageMatch", Debug);
     // qmFile: ProjectName_xx.qm
-    QString thisLocalizer = getLocalizedCodeFromFile(thisPrefix, thisQmFile);
-    return thisLocalizer == thisLang;
+    QString theLang = thisLang;
+    QString theLocalizer = getLocalizedCodeFromFile(thisPrefix, thisQmFile);
+    if (theLocalizer.contains("_"))
+    { theLocalizer = theLocalizer.section("_", 0, 0); }
+    if (thisLang.contains("_"))
+    { theLang = thisLang.section("_", 0, 0); }
+    return theLocalizer == theLang;
 }
 /************************************************
  * @brief find Qm Files.
@@ -223,7 +240,9 @@ QStringList MyLocalization::findQmFiles(const QString &thisFolder)
     QDir dir(QString(":/%1").arg(thisFolder));
     QStringList fileNames = dir.entryList(QStringList("*.qm"), QDir::Files, QDir::Name);
     for (QString &fileName : fileNames)
-        { fileName = dir.filePath(fileName); }
+    {
+        fileName = dir.filePath(fileName);
+    }
     return fileNames;
 }
 /************************************************
@@ -245,7 +264,10 @@ QStringList MyLocalization::findTsFiles(const QString &thisFolder)
 QString MyLocalization::getLocalizerCode(const QString &thisPrefix, const QString &thisQmFile)
 {
     setMessage("getLocalizerCode", Debug);
-    return languageCodeToName(getLocalizedCodeFromFile(thisPrefix, thisQmFile));
+    QString theQmLang = getLocalizedCodeFromFile(thisPrefix, thisQmFile);
+    if (theQmLang.contains("_"))
+    { theQmLang = theQmLang.replace("_", "-"); }
+    return languageCodeToName(theQmLang);
 }
 /************************************************
  * @brief get Lang Code.
@@ -279,14 +301,21 @@ QString MyLocalization::languageCodeToName(const QString &lang)
     return s_genericLanguageCodeToName.value(lang);
 } // end languageCodeToName
 /************************************************
+ * languageCodeToName
+ * @brief Added by Light-Wizzard language Code to Name.
+ ***********************************************/
+QString MyLocalization::getDefaultLanguageCode()
+{
+    return language(QLocale());
+}
+/************************************************
  * @brief read Language.
  * readLanguage
  ***********************************************/
 QString MyLocalization::readLanguage()
 {
     setMessage("readLanguage", Debug);
-    QString theCode = language(QLocale());
-    setLanguageCode(mySetting->readSettings(mySetting->myConstants->MY_LOCALE_LANG_CODE, theCode));
+    setLanguageCode(mySetting->readSettings(MY_LOCALE_LANG_CODE, getDefaultLanguageCode()));
     return myLanguageCode;
 }
 /************************************************
@@ -297,7 +326,7 @@ void MyLocalization::writeLanguage(const QString &thisCurrentLanguageCode)
 {
     setMessage("writeLanguage", Debug);
     setLanguageCode(thisCurrentLanguageCode);
-    mySetting->writeSettings(mySetting->myConstants->MY_LOCALE_LANG_CODE, thisCurrentLanguageCode);
+    mySetting->writeSettings(MY_LOCALE_LANG_CODE, thisCurrentLanguageCode);
 }
 /************************************************
  * @brief set Debug Message.

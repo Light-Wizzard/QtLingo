@@ -11,6 +11,8 @@
 * QtLingo is designed to parse TS files and Translate them using Computer Translations.
  ***********************************************/
 #include "MainWindow.h"
+// UI
+#include "ui_MainWindow.h"
 /************************************************
  * @brief MainWindow Constructor.
  * MainWindow
@@ -22,15 +24,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // Set up UI
     ui->setupUi(this);
     // Create table model:
-    mySqlDb           = new MyDatatables(this);
-    myLocalization    = new MyLocalization(this, mySqlDb->mySqlModel->mySetting);
-    myTranlatorParser = new MyTranlatorParser(this, mySqlDb->mySqlModel->mySetting);
+    // MySettings Settings
+    mySetting         = new MyOrgSettings(parent);
+    mySqlDb           = new MyDatatables(this, mySetting);
+    myLocalization    = new MyLocalization(this, mySetting);
+    myTranlatorParser = new MyTranlatorParser(this, mySetting);
     // Read in Settings First
     readSettingsFirst();
     // Set to defaults
     myLocalization->setTransFilePrefix("QtLingo");          //!< Prefix of Translation files
     myLocalization->setTranslationSource("translations");   //!< Relative Folder for Translation files
     myLocalization->setHelpSource("help");                  //!< Relative Folder for Help files
+    #ifdef USE_SQL_FLAG
     // SQL Database Types Do not Translate these
     ui->comboBoxSqlDatabaseType->addItem(":memory:");
     ui->comboBoxSqlDatabaseType->addItem("QSQLITE");
@@ -40,6 +45,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->comboBoxSqlDatabaseType->addItem("QIBASE");
     ui->comboBoxSqlDatabaseType->addItem("QOCI");
     ui->comboBoxSqlDatabaseType->addItem("QTDS");
+    #else
+    ui->comboBoxSqlDatabaseType->setHidden(true);
+    ui->comboBoxSettingsProjects->setHidden(true);
+    ui->pushButtonSettingsAdd->setHidden(true);
+    ui->pushButtonSettingsDelete->setHidden(true);
+    ui->pushButtonSettingsSave->setHidden(true);
+    ui->pushButtonSettingsProjectsBrowser->setHidden(true);
+    ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabSQL")));
+    ui->toolBar->actions().at(0)->setVisible(false); // Set Save hidden
+    ui->toolBar->actions().at(1)->setVisible(false); // Set divider hidden
+    ui->labelSettingsOptions->setHidden(true);
+    #endif
     // Hide Progress
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
@@ -55,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->actionTranslate_ReadMe,     &QAction::triggered, this, &MainWindow::onTranslateReadMe);
     connect(ui->actionAccept_Translations,  &QAction::triggered, this, &MainWindow::acceptTranslations);
     // Progress bar
-    connect(mySqlDb->mySqlModel->mySetting, &MyOrgSettings::sendInternetProgress, this, &MainWindow::onInternetProgress);
+    connect(mySetting, &MyOrgSettings::sendInternetProgress, this, &MainWindow::onInternetProgress);
     // Set UI Language Code
     ui->labelSettingsLanguageUI->setText(myQOnlineTranslator.languageCode(myQOnlineTranslator.language(QLocale())));
     // Set Window Title to Application Name
@@ -83,7 +100,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
     setMessage("closeEvent", Debug);
     if (isSaveSettings) onSave();
-    mySqlDb->mySqlModel->mySetting->setGeometry(pos(), size(), isMaximized(), isMinimized());
+    mySetting->setGeometry(pos(), size(), isMaximized(), isMinimized());
     writeAllSettings();
     QMainWindow::closeEvent(event);
     close();
@@ -231,6 +248,7 @@ void MainWindow::loadLanguageComboBox()
 void MainWindow::setQtProjectCombo()
 {
     setMessage("setQtProjectCombo", Debug);
+    #ifdef USE_SQL_FLAG
     bool lastIsMainLoaded = isMainLoaded;
     isMainLoaded = false;
     myLocalization->setMainLoaded(false);
@@ -265,6 +283,7 @@ void MainWindow::setQtProjectCombo()
     //  ui->comboBoxSettingsProjects->setCurrentIndex(theProjectIndex);
     isMainLoaded = lastIsMainLoaded;
     myLocalization->setMainLoaded(lastIsMainLoaded);
+    #endif
 }
 /************************************************
  * @brief on Run First On Startup.
@@ -308,7 +327,7 @@ void MainWindow::onRunFirstOnStartup()
  ***********************************************/
 void MainWindow::readSettingsFirst()
 {
-    isDebugMessage = mySqlDb->mySqlModel->mySetting->readSettingsBool(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage);
+    isDebugMessage = mySetting->readSettingsBool(mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage);
     if (isDebugMessage)
         { ui->checkBoxSettignsMessaging->setCheckState(Qt::CheckState::Checked); }
     else
@@ -339,7 +358,7 @@ void MainWindow::readAllSettings()
 void MainWindow::writeAllSettings()
 {
     setMessage("writeAllSettings", Debug);
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage ? "true" : "false");
+    mySetting->writeSettings(mySetting->myConstants->MY_IS_DEBUG_MESSAGE, isDebugMessage ? "true" : "false");
     //
     writeStateChanges();
     writeSqlDatabaseInfo();
@@ -353,21 +372,21 @@ void MainWindow::readStatesChanges()
     setMessage("readStatesChanges", Debug);
     // SQL Memory option Chech
     // default set to myProjectID="-1"
-    QString theProjectID = mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, mySqlDb->getProjectID());
+    QString theProjectID = mySetting->readSettings(mySetting->myConstants->MY_SQL_PROJECT_ID, mySqlDb->getProjectID());
     // We cannot read from the database yet, we are only getting the last states we know of
     if (theProjectID != "-1") { mySqlDb->setProjectID(theProjectID); } else { mySqlDb->setProjectID("1"); }
-    mySqlDb->setProjectName(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_NAME, mySqlDb->getProjectName()));
+    mySqlDb->setProjectName(mySetting->readSettings(mySetting->myConstants->MY_SQL_PROJECT_NAME, mySqlDb->getProjectName()));
     // Project ID
     ui->labelRecordIdSettings->setText(mySqlDb->getProjectID());
     // Trans Engine
     // Google
-    ui->checkBoxSettingsGoogle->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+    ui->checkBoxSettingsGoogle->setCheckState((mySetting->readSettings(mySetting->myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
     // Bing
-    ui->checkBoxSettingsBing->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_BING_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+    ui->checkBoxSettingsBing->setCheckState((mySetting->readSettings(mySetting->myConstants->MY_TRANS_ENGINE_BING_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
     // Yandex
-    ui->checkBoxSettingsYandex->setCheckState((mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_YANDEX_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+    ui->checkBoxSettingsYandex->setCheckState((mySetting->readSettings(mySetting->myConstants->MY_TRANS_ENGINE_YANDEX_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
     // Delay
-    ui->spinBoxSettingsDelay->setValue(mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY_VALUE, mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY));
+    ui->spinBoxSettingsDelay->setValue(mySetting->readSettingsInt(mySetting->myConstants->MY_TRANS_DELAY_VALUE, mySetting->myConstants->MY_TRANS_DELAY));
 }
 /************************************************
  * @brief write States Changes.
@@ -377,19 +396,19 @@ void MainWindow::writeStateChanges()
 {
     setMessage("writeStateChanges", Debug);
     // Project ID
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, ui->labelRecordIdSettings->text());
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_NAME, ui->comboBoxSettingsProjects->currentText());
+    mySetting->writeSettings(mySetting->myConstants->MY_SQL_PROJECT_ID, ui->labelRecordIdSettings->text());
+    mySetting->writeSettings(mySetting->myConstants->MY_SQL_PROJECT_NAME, ui->comboBoxSettingsProjects->currentText());
     // Trans Engines
     // Google
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, (ui->checkBoxSettingsGoogle->isChecked()) ? "true" : "false" );
+    mySetting->writeSettings(mySetting->myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, (ui->checkBoxSettingsGoogle->isChecked()) ? "true" : "false" );
     // Bing
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_BING_VALUE, (ui->checkBoxSettingsBing->isChecked()) ? "true" : "false" );
+    mySetting->writeSettings(mySetting->myConstants->MY_TRANS_ENGINE_BING_VALUE, (ui->checkBoxSettingsBing->isChecked()) ? "true" : "false" );
     // Yandex
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_ENGINE_YANDEX_VALUE, (ui->checkBoxSettingsYandex->isChecked()) ? "true" : "false" );
+    mySetting->writeSettings(mySetting->myConstants->MY_TRANS_ENGINE_YANDEX_VALUE, (ui->checkBoxSettingsYandex->isChecked()) ? "true" : "false" );
     // Language
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_LANGUAGE_COMBO_STATE, QString::number(ui->comboBoxSettingsLanguage->currentIndex()));
+    mySetting->writeSettings(mySetting->myConstants->MY_LANGUAGE_COMBO_STATE, QString::number(ui->comboBoxSettingsLanguage->currentIndex()));
     // Delay
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANS_DELAY_VALUE, ui->spinBoxSettingsDelay->text());
+    mySetting->writeSettings(mySetting->myConstants->MY_TRANS_DELAY_VALUE, ui->spinBoxSettingsDelay->text());
     // Language ComboBox
     myLocalization->setLanguageCode(myLocalization->languageNameToCode(ui->comboBoxSettingsLanguage->currentText()));
     myLocalization->writeLanguage(myLocalization->getLanguageCode());
@@ -402,18 +421,18 @@ void MainWindow::writeSqlDatabaseInfo()
 {
     setMessage("writeSqlDatabaseInfo", Debug);
     // SQL Database Type Index
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, QString::number(ui->comboBoxSqlDatabaseType->currentIndex()));
+    mySetting->writeSettings(mySetting->myConstants->MY_SQL_COMBO_STATE, QString::number(ui->comboBoxSqlDatabaseType->currentIndex()));
     // SQL Database Type Value
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_TYPE, ui->comboBoxSqlDatabaseType->currentText());
+    mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_TYPE, ui->comboBoxSqlDatabaseType->currentText());
     // SQL Database Name
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_NAME,  ui->lineEditSqlDatabaseName->text());
+    mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_NAME,  ui->lineEditSqlDatabaseName->text());
     // SQL Database Type Host
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_HOST,  ui->lineEditSqlHostName->text());
+    mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_HOST,  ui->lineEditSqlHostName->text());
     // SQL Database Type User
-    mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_USER,  ui->lineEditSqlUserName->text());
+    mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_USER,  ui->lineEditSqlUserName->text());
     // SQL Encrypted Password, it is saved in Ini file
     if (!ui->lineEditSqlPassword->text().isEmpty())
-        { mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_PASS, mySqlDb->mySqlModel->mySetting->encryptThis(ui->lineEditSqlPassword->text())); }
+        { mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_PASS, mySetting->encryptThis(ui->lineEditSqlPassword->text())); }
 }
 /************************************************
  * @brief read SQL Database Info Uses SimpleCrypt to encrypt and decrypt Password.
@@ -422,19 +441,19 @@ void MainWindow::writeSqlDatabaseInfo()
 void MainWindow::readSqlDatabaseInfo()
 {
     setMessage("readSqlDatabaseInfo", Debug);
-    QString theDb = QString("%1%2%3.db").arg(mySqlDb->mySqlModel->mySetting->getAppDataLocation(), QDir::separator(), mySqlDb->mySqlModel->getSqlDatabaseName());
+    QString theDb = QString("%1%2%3.db").arg(mySetting->getAppDataLocation(), QDir::separator(), mySqlDb->mySqlModel->getSqlDatabaseName());
     // SQL Database Name
-    ui->lineEditSqlDatabaseName->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_NAME, theDb));
+    ui->lineEditSqlDatabaseName->setText(mySetting->readSettings(mySetting->myConstants->MY_SQL_DB_NAME, theDb));
     // Set ComboBox for SQL
-    ui->comboBoxSqlDatabaseType->setCurrentIndex(mySqlDb->mySqlModel->mySetting->readSettingsInt(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_COMBO_STATE, 1));
+    ui->comboBoxSqlDatabaseType->setCurrentIndex(mySetting->readSettingsInt(mySetting->myConstants->MY_SQL_COMBO_STATE, 1));
     // SQL Type Value
-    mySqlDb->setComboBoxSqlValue(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_TYPE, mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT));
+    mySqlDb->setComboBoxSqlValue(mySetting->readSettings(mySetting->myConstants->MY_SQL_DB_TYPE, mySetting->myConstants->MY_SQL_DEFAULT));
     // SQL Host
-    ui->lineEditSqlHostName->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_HOST, "")); // No Default
+    ui->lineEditSqlHostName->setText(mySetting->readSettings(mySetting->myConstants->MY_SQL_DB_HOST, "")); // No Default
     // SQL User
-    ui->lineEditSqlUserName->setText(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_USER, "")); // No Default
+    ui->lineEditSqlUserName->setText(mySetting->readSettings(mySetting->myConstants->MY_SQL_DB_USER, "")); // No Default
     // SQL Decrypt Password, it is saved in Ini file
-    QString thePassword = mySqlDb->mySqlModel->mySetting->decryptThis(mySqlDb->mySqlModel->mySetting->readSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DB_PASS, ""));
+    QString thePassword = mySetting->decryptThis(mySetting->readSettings(mySetting->myConstants->MY_SQL_DB_PASS, ""));
     if (!thePassword.isEmpty())
         { ui->lineEditSqlPassword->setText(thePassword); }
     else
@@ -451,9 +470,9 @@ void MainWindow::onAuthor()
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
     QString theFileName = QString(":help/About-Author_%1.md").arg(myLocalization->getLanguageCode());
-    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theFileName))
-        { theFileName = QString(":help/About-Author_%1.md").arg(mySqlDb->mySqlModel->mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
-    ui->textEditHelp->setMarkdown(mySqlDb->mySqlModel->mySetting->readFile(theFileName));
+    if (!mySetting->isFileExists(theFileName))
+        { theFileName = QString(":help/About-Author_%1.md").arg(mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
+    ui->textEditHelp->setMarkdown(mySetting->readFile(theFileName));
 }
 /************************************************
  * @brief Main Window Destructor.
@@ -466,9 +485,9 @@ void MainWindow::onAbout()
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
     QString theFileName = QString(":help/About_%1.md").arg(myLocalization->getLanguageCode());
-    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theFileName))
-        { theFileName = QString(":help/About_%1.md").arg(mySqlDb->mySqlModel->mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
-    ui->textEditHelp->setMarkdown(mySqlDb->mySqlModel->mySetting->readFile(theFileName));
+    if (!mySetting->isFileExists(theFileName))
+        { theFileName = QString(":help/About_%1.md").arg(mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
+    ui->textEditHelp->setMarkdown(mySetting->readFile(theFileName));
 }
 /************************************************
  * @brief Help.
@@ -481,14 +500,14 @@ void MainWindow::onHelp()
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabHelp")));
     //
     QString theFileName = QString(":help/Help_%1.md").arg(myLocalization->getLanguageCode());
-    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theFileName))
-        { theFileName = QString(":help/Help_%1.md").arg(mySqlDb->mySqlModel->mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
-    QString theFileContent = mySqlDb->mySqlModel->mySetting->readFile(theFileName);
+    if (!mySetting->isFileExists(theFileName))
+        { theFileName = QString(":help/Help_%1.md").arg(mySetting->myConstants->MY_DEFAULT_LANGUAGE_CODE); }
+    QString theFileContent = mySetting->readFile(theFileName);
     // Do not translate this file
     QString theLanguageFileName = ":help/Language.txt";
-    if (mySqlDb->mySqlModel->mySetting->isFileExists(theLanguageFileName))
+    if (mySetting->isFileExists(theLanguageFileName))
     {
-        theFileContent.append(mySqlDb->mySqlModel->mySetting->readFile(theLanguageFileName));
+        theFileContent.append(mySetting->readFile(theLanguageFileName));
     }
     ui->textEditHelp->setMarkdown(theFileContent);
 }
@@ -504,8 +523,8 @@ void MainWindow::on_pushButtonTranslationsSourceBrowse_clicked()
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
     dialogTranslationFolder.setOption(QFileDialog::DontResolveSymlinks);
     //
-    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Source Folder Location"), mySqlDb->mySqlModel->mySetting->myConstants->MY_TRANSLATION_FOLDER);
-    //QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Source Folder Location"), mySqlDb->mySqlModel->mySetting->getQtProjectPath());
+    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Source Folder Location"), mySetting->myConstants->MY_TRANSLATION_FOLDER);
+    //QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Source Folder Location"), mySetting->getQtProjectPath());
     if (!theTranslationFolder.isEmpty())
         { ui->lineEditTranslationsSource->setText(theTranslationFolder); }
 }
@@ -521,7 +540,7 @@ void MainWindow::on_pushButtonTranslationsDestinationBrowse_clicked()
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
     dialogTranslationFolder.setOption(QFileDialog::DontResolveSymlinks);
     //
-    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Destination Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
+    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Translation Destination Folder Location"), mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
         { ui->lineEditTranslationsDestination->setText(theTranslationFolder); }
 }
@@ -537,7 +556,7 @@ void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
     dialogTranslationFolder.setOption(QFileDialog::DontResolveSymlinks);
     //
-    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Projects Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
+    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Projects Folder Location"), mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
         { ui->lineEditSettingsQtProjectName->setText(theTranslationFolder); }
 }
@@ -553,7 +572,7 @@ void MainWindow::on_pushButtonTranslationsProjectFolderBrowse_clicked()
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
     dialogTranslationFolder.setOption(QFileDialog::DontResolveSymlinks);
     //
-    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Projects Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
+    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Projects Folder Location"), mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
         { ui->lineEditTranslationsProjectFolder->setText(theTranslationFolder); }
 }
@@ -613,7 +632,7 @@ void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
     dialogSqlDbFolder.setOption(QFileDialog::ShowDirsOnly);
     dialogSqlDbFolder.setOption(QFileDialog::DontResolveSymlinks);
     //
-    QString theSqlFolder = dialogSqlDbFolder.getExistingDirectory(this, tr("Sqlite Folder Location"), mySqlDb->mySqlModel->mySetting->getAppDataLocation());
+    QString theSqlFolder = dialogSqlDbFolder.getExistingDirectory(this, tr("Sqlite Folder Location"), mySetting->getAppDataLocation());
     if (!theSqlFolder.isEmpty())
     {
         QString theDbLocation = ui->lineEditSqlDatabaseName->text();
@@ -621,14 +640,14 @@ void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
         if (theDbLocation != theDbNewLocation)
         {
             //
-            if (mySqlDb->mySqlModel->mySetting->getFileInfo(MyOrgSettings::IsFile, ui->lineEditSqlDatabaseName->text()) == "true")
+            if (mySetting->getFileInfo(MyOrgSettings::IsFile, ui->lineEditSqlDatabaseName->text()) == "true")
             {
-                QString thePath = mySqlDb->mySqlModel->mySetting->getFileInfo(MyOrgSettings::CanonicalFilePath, ui->lineEditSqlDatabaseName->text());
+                QString thePath = mySetting->getFileInfo(MyOrgSettings::CanonicalFilePath, ui->lineEditSqlDatabaseName->text());
                 // moveDb
                 if (mySqlDb->mySqlModel->moveDb(theDbNewLocation, thePath, theDbNewLocation))
                 { ui->lineEditSqlDatabaseName->setText(theDbNewLocation); }
                 else
-                { mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Database Move Failed").toLocal8Bit(), QString("%1: %2").arg(tr("Failed to move Database"), ui->lineEditSqlDatabaseName->text()).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical); }
+                { mySetting->showMessageBox(QObject::tr("Database Move Failed").toLocal8Bit(), QString("%1: %2").arg(tr("Failed to move Database"), ui->lineEditSqlDatabaseName->text()).toLocal8Bit(), mySetting->Critical); }
             }
         }
     }
@@ -652,7 +671,7 @@ void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
 void MainWindow::on_pushButtonSqlPasswordShow_clicked()
 {
     setMessage("on_pushButtonSqlPasswordShow_clicked", Debug);
-    mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Password Revieled").toLocal8Bit(), ui->lineEditSqlPassword->text().toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Information);
+    mySetting->showMessageBox(QObject::tr("Password Revieled").toLocal8Bit(), ui->lineEditSqlPassword->text().toLocal8Bit(), mySetting->Information);
 }
 /************************************************
  * on_pushButtonSqlSave_clicked
@@ -719,7 +738,7 @@ void MainWindow::setPrograms()
 //    theLupdatePath = mySqlDb->mySqlModel->runProcces("where", "lupdate.exe", true, 60);
 //    if (theLupdatePath.isEmpty())
 //    {
-//        theQtEnv = mySqlDb->mySqlModel->mySetting->getEnvironmentVar("Qt");
+//        theQtEnv = mySetting->getEnvironmentVar("Qt");
 //        if (theQtEnv.isEmpty())
 //        {
 //            theLupdatePath = QString("%1/lupdate.exe").arg(theQtEnv);
@@ -732,7 +751,7 @@ void MainWindow::setPrograms()
 //    theLreleasePath = mySqlDb->mySqlModel->runProcces("where", "lrelease.exe", true, 60);
 //    if (theLreleasePath.isEmpty())
 //    {
-//        theQtEnv = mySqlDb->mySqlModel->mySetting->getEnvironmentVar("Qt");
+//        theQtEnv = mySetting->getEnvironmentVar("Qt");
 //        if (theQtEnv.isEmpty())
 //        {
 //            theLreleasePath = QString("%1/lrelease.exe").arg(theQtEnv);
@@ -745,13 +764,13 @@ void MainWindow::setPrograms()
 //    ui->lineEditSettingsLupdate->setText(theLupdatePath);
 //    ui->lineEditSettingsLrelease->setText(theLreleasePath);
 //    #else
-    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theLupdatePath))
+    if (!mySetting->isFileExists(theLupdatePath))
     {
         theLupdatePath = mySqlDb->mySqlModel->runProcces("which", "lupdate", true, 60);
         if (theLupdatePath.isEmpty())
         { theLupdatePath = mySqlDb->mySqlModel->runProcces("type -P", "lupdate", true, 60); }
     }
-    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theLreleasePath))
+    if (!mySetting->isFileExists(theLreleasePath))
     {
         theLreleasePath = mySqlDb->mySqlModel->runProcces("which", "lrelease", true, 60);
         if (theLreleasePath.isEmpty())
@@ -768,7 +787,7 @@ void MainWindow::setPrograms()
 void MainWindow::setSqlBrowseButton()
 {
     setMessage("settingsButtons", Debug);
-    ui->pushButtonSqlDatabaseNameBrowse->setEnabled(ui->comboBoxSqlDatabaseType->currentText() == mySqlDb->mySqlModel->mySetting->myConstants->MY_SQL_DEFAULT || ui->comboBoxSqlDatabaseType->currentText() == ":memory:");
+    ui->pushButtonSqlDatabaseNameBrowse->setEnabled(ui->comboBoxSqlDatabaseType->currentText() == mySetting->myConstants->MY_SQL_DEFAULT || ui->comboBoxSqlDatabaseType->currentText() == ":memory:");
 }
 /************************************************
  * @brief on comboBox SQL Database Type current Index Changed.
@@ -973,6 +992,7 @@ void MainWindow::checkLanguage(const QString &thisName, const QString &thisLangu
 void MainWindow::fillForms(const QString &thisProjectID)
 {
     setMessage("fillForms=" + thisProjectID, Debug);
+    #ifdef USE_SQL_FLAG
     clearForms(TabAll);
     ui->labelRecordIdSettings->setText(thisProjectID); // Project id and Configuration ProjectID
     // Declare all variable in function scope
@@ -1543,15 +1563,18 @@ void MainWindow::fillForms(const QString &thisProjectID)
         }
         else
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Could not read from the Database").toLocal8Bit(), QString("%1 %2").arg(tr("Unable to find record in database"), myConfigurationSelectQuery).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(QObject::tr("Could not read from the Database").toLocal8Bit(), QString("%1 %2").arg(tr("Unable to find record in database"), myConfigurationSelectQuery).toLocal8Bit(), mySetting->Critical);
         }
     }
     else
     {
-        mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Could not read from the Database").toLocal8Bit(), QString("%1 %2").arg(tr("Unable to find record in database"), myConfigurationSelectQuery).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+        mySetting->showMessageBox(tr("Could not read from the Database").toLocal8Bit(), QString("%1 %2").arg(tr("Unable to find record in database"), myConfigurationSelectQuery).toLocal8Bit(), mySetting->Critical);
         return;
     }
     isSaveSettings = false;
+    #else
+    // FIXME
+    #endif
 }
 /************************************************
  * @brief clear Tab Settings.
@@ -1973,24 +1996,24 @@ void MainWindow::onCompile()
     setMessage("onCompile", Debug);
     if (ui->lineEditTranslationsDestination->text() == ui->lineEditTranslationsSource->text())
     {
-        mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Error Source and Destination cannot be the same").toLocal8Bit(), QString("%1: %2 %3: %4 %5").arg(tr("Source"), ui->lineEditTranslationsSource->text(), tr("and Destination"), ui->lineEditTranslationsDestination->text(), tr("cannot be the same")).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+        mySetting->showMessageBox(QObject::tr("Error Source and Destination cannot be the same").toLocal8Bit(), QString("%1: %2 %3: %4 %5").arg(tr("Source"), ui->lineEditTranslationsSource->text(), tr("and Destination"), ui->lineEditTranslationsDestination->text(), tr("cannot be the same")).toLocal8Bit(), mySetting->Critical);
         return;
     }
-    QString theProject = mySqlDb->mySqlModel->mySetting->combinePathFileName(ui->lineEditTranslationsProjectFolder->text(), QString("%1%2").arg(ui->lineEditSettingsQtProjectName->text(), ui->radioButtonTranslationsQmake->isChecked() ? ".pro" : ".cmake"));
-    if (!mySqlDb->mySqlModel->mySetting->isFileExists(theProject))
+    QString theProject = mySetting->combinePathFileName(ui->lineEditTranslationsProjectFolder->text(), QString("%1%2").arg(ui->lineEditSettingsQtProjectName->text(), ui->radioButtonTranslationsQmake->isChecked() ? ".pro" : ".cmake"));
+    if (!mySetting->isFileExists(theProject))
     {
-        mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Project file not found").toLocal8Bit(), QString("%1: %2").arg(tr("Project file not found"), theProject).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+        mySetting->showMessageBox(QObject::tr("Project file not found").toLocal8Bit(), QString("%1: %2").arg(tr("Project file not found"), theProject).toLocal8Bit(), mySetting->Critical);
         return;
     }
     QString theLupdateResult  = mySqlDb->mySqlModel->runProcces(ui->lineEditSettingsLupdate->text(), theProject, true, 60);
     if (mySqlDb->mySqlModel->getRunReturnCode() != 0)
     {
-        mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Error running lupdate").toLocal8Bit(), QString("%1: %2").arg(tr("Error running lupdate"), theLupdateResult).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+        mySetting->showMessageBox(QObject::tr("Error running lupdate").toLocal8Bit(), QString("%1: %2").arg(tr("Error running lupdate"), theLupdateResult).toLocal8Bit(), mySetting->Critical);
         return;
     }
-    if (!mySqlDb->mySqlModel->mySetting->isMakeDir(ui->lineEditTranslationsDestination->text()))
+    if (!mySetting->isMakeDir(ui->lineEditTranslationsDestination->text()))
     {
-        mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Error Translations Destination Folder").toLocal8Bit(), QString("%1: %2").arg(tr("Error could not make Translations Destination"), ui->lineEditTranslationsDestination->text()).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+        mySetting->showMessageBox(QObject::tr("Error Translations Destination Folder").toLocal8Bit(), QString("%1: %2").arg(tr("Error could not make Translations Destination"), ui->lineEditTranslationsDestination->text()).toLocal8Bit(), mySetting->Critical);
         return;
     }
     setProjectClass(TabAll);
@@ -2154,28 +2177,28 @@ void MainWindow::onCompile()
     {
         ui->progressBarProjectsFiles->setValue(i);
         // Made sure they know this gets deleted in status bar and tool tip
-        mySqlDb->mySqlModel->mySetting->removeAllFiles(ui->lineEditTranslationsDestination->text());
+        mySetting->removeAllFiles(ui->lineEditTranslationsDestination->text());
         setMessage("Translating..." + myLingoJob.at(i).getLanguageName(), Debug);
         // check for files existance make sure source and destination are not the same is done at the beginning
         QString theDestTxtFile = QString("%1%2%3_%4.txt").arg(ui->lineEditTranslationsDestination->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), myLingoJob.at(i).getLangName());
         // Make sure to delete txt file before trying to create it, it will bomb
-        if (mySqlDb->mySqlModel->mySetting->isFileExists(theDestTxtFile))
+        if (mySetting->isFileExists(theDestTxtFile))
         {
-            if (!mySqlDb->mySqlModel->mySetting->removeFile(theDestTxtFile))
+            if (!mySetting->removeFile(theDestTxtFile))
             {
-                if (mySqlDb->mySqlModel->mySetting->isFileExists(theDestTxtFile))
+                if (mySetting->isFileExists(theDestTxtFile))
                 {
                     // ts_tool --src translations/QtAppVeyor_en.ts  --dst translations_new/ --mode TXT --unfinished-only
-                    mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Error trying to remove file").toLocal8Bit(), QString("%1: %2").arg(tr("Can not remove file"), theDestTxtFile).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+                    mySetting->showMessageBox(QObject::tr("Error trying to remove file").toLocal8Bit(), QString("%1: %2").arg(tr("Can not remove file"), theDestTxtFile).toLocal8Bit(), mySetting->Critical);
                 }
             }
         }
         // Create Txt file
         myTranlatorParser->toTXT(myLingoJob.at(i).getTsFile(), ui->lineEditTranslationsDestination->text(), true, false, true);
         // make sure txt file exist or continue because it might be translated, those it made no file
-        if (!mySqlDb->mySqlModel->mySetting->isFileExists(theDestTxtFile))
+        if (!mySetting->isFileExists(theDestTxtFile))
         {
-            //mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Could not find the Txt file").toLocal8Bit(), QString("%1: %2").arg(tr("Can not find Txt file"), theDestTxtFile).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+            //mySetting->showMessageBox(QObject::tr("Could not find the Txt file").toLocal8Bit(), QString("%1: %2").arg(tr("Can not find Txt file"), theDestTxtFile).toLocal8Bit(), mySetting->Critical);
             continue;
         }
         bool isSameLanguage = false;
@@ -2187,7 +2210,7 @@ void MainWindow::onCompile()
         if (theInputTxtFile.open(QIODevice::ReadOnly))
         {
             int theTranslastionsCounter = 1;
-            ui->progressBarProjectsTranslations->setMaximum(mySqlDb->mySqlModel->mySetting->fileNumberLines(theDestTxtFile));
+            ui->progressBarProjectsTranslations->setMaximum(mySetting->fileNumberLines(theDestTxtFile));
             QTextStream theTxtFileStream(&theInputTxtFile);
             while (!theTxtFileStream.atEnd())
             {
@@ -2199,7 +2222,7 @@ void MainWindow::onCompile()
                 // Find what is in between "?"
                 QString theMatch = theLine.section('"', 1, 1);
                 // Check to see if it has any Letters in it
-                if (mySqlDb->mySqlModel->mySetting->isWord(theMatch))
+                if (mySetting->isWord(theMatch))
                 {
                     if (theMatch.contains("%")) { myLocalization->removeArgs(theMatch, myLingoJob.at(i).getTsFile()); }
                     if (isSameLanguage)
@@ -2226,11 +2249,11 @@ void MainWindow::onCompile()
                 theTxtFileContent.append(QString(" \"%1\"\n").arg(myTranslation));
                 ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theMatch, myTranslation));
                 // Set a delay or you will be ban from Engine
-                if (!isSameLanguage) { mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value()); }
+                if (!isSameLanguage) { mySetting->delay(ui->spinBoxSettingsDelay->value()); }
             }
             theInputTxtFile.close();
-            mySqlDb->mySqlModel->mySetting->writeFile(theDestTxtFile, theTxtFileContent);
-            if (mySqlDb->mySqlModel->mySetting->isFileExists(theDestTxtFile))
+            mySetting->writeFile(theDestTxtFile, theTxtFileContent);
+            if (mySetting->isFileExists(theDestTxtFile))
             {
                 myLocalization->fixTranslationFile(theDestTxtFile);
                 // Create Txt file
@@ -2241,7 +2264,7 @@ void MainWindow::onCompile()
     QString theLreleaseResult = mySqlDb->mySqlModel->runProcces(ui->lineEditSettingsLrelease->text(), theProject, true, 60);
     if (mySqlDb->mySqlModel->getRunReturnCode() != 0)
     {
-        mySqlDb->mySqlModel->mySetting->showMessageBox(QObject::tr("Error running lrelease").toLocal8Bit(), QString("%1: %2").arg(tr("Error running lrelease"), theLreleaseResult).toLocal8Bit(), mySqlDb->mySqlModel->mySetting->Critical);
+        mySetting->showMessageBox(QObject::tr("Error running lrelease").toLocal8Bit(), QString("%1: %2").arg(tr("Error running lrelease"), theLreleaseResult).toLocal8Bit(), mySetting->Critical);
     }
     ui->progressBarProjectsTranslations->hide();
     ui->progressBarProjectsFiles->hide();
@@ -2297,13 +2320,13 @@ QString MainWindow::checkTranslationErrors(const QString &thisTranslations, cons
     switch (myTranslationErrorType)
     {
         case HostNotFound:
-            mySqlDb->mySqlModel->mySetting->getInternetWait();
+            mySetting->getInternetWait();
             myTranslation = translateWithReturn(thisText, thisEngine, thisTranslationLang, thisSourceLang, thisUiLang);
             break;
         case ErrorTransferring:
             // Increase delay, wait, and retry
             ui->spinBoxSettingsDelay->setValue(ui->spinBoxSettingsDelay->value() + myIncreameantValue);
-            mySqlDb->mySqlModel->mySetting->delay(myDelayValue + myIncreameantValue);
+            mySetting->delay(myDelayValue + myIncreameantValue);
             myTranslation = translateWithReturn(thisText, thisEngine, thisTranslationLang, thisSourceLang, thisUiLang);
             break;
         case NoError:
@@ -2322,11 +2345,11 @@ void MainWindow::acceptTranslations()
     const QStringList theTsFiles =  myLocalization->findTsFiles(ui->lineEditTranslationsSource->text());
     for (int i = 0; i < theTsFiles.size(); ++i)
     {
-        if (!mySqlDb->mySqlModel->mySetting->isFileExists(theTsFiles.at(i)))
-            { mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Translation TS File not found"), QString("%1: %2").arg(tr("Translation TS File not found"), theTsFiles.at(i)), mySqlDb->mySqlModel->mySetting->Critical); }
-        QString theFileContent = mySqlDb->mySqlModel->mySetting->readFile(theTsFiles.at(i));
+        if (!mySetting->isFileExists(theTsFiles.at(i)))
+            { mySetting->showMessageBox(tr("Translation TS File not found"), QString("%1: %2").arg(tr("Translation TS File not found"), theTsFiles.at(i)), mySetting->Critical); }
+        QString theFileContent = mySetting->readFile(theTsFiles.at(i));
         theFileContent.replace(QString(" type=\"unfinished\""), QString("")); // replace text in string
-        mySqlDb->mySqlModel->mySetting->writeFile(theTsFiles.at(i), theFileContent);
+        mySetting->writeFile(theTsFiles.at(i), theFileContent);
     }
     ui->statusbar->showMessage(tr("Accepted all Translations"));
 }
@@ -2351,7 +2374,7 @@ void MainWindow::onTranslateHelp()
     }
     for (QString &fileName : myHelpTranslationsFiles)
     {
-        QString theFileName = mySqlDb->mySqlModel->mySetting->getFileInfo(mySqlDb->mySqlModel->mySetting->BaseName, fileName);
+        QString theFileName = mySetting->getFileInfo(mySetting->BaseName, fileName);
         int theIndex = theFileName.indexOf("_");
         theFileName = theFileName.mid(0, theIndex);
         myHelpFileNames.append(theFileName);
@@ -2514,16 +2537,16 @@ void MainWindow::onTranslateHelp()
         if (myLingoJob.at(i).getLanguageName() == ui->comboBoxTranslationSourceLanguage->currentText()) { continue; }
         QString theHelpFile = myLingoJob.at(i).getTsFile();
         // Make sure Source file exists
-        if (!mySqlDb->mySqlModel->mySetting->isFileExists(theHelpFile))
+        if (!mySetting->isFileExists(theHelpFile))
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File not found"), QString("%1: %2").arg(tr("Help File not found"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(tr("Help File not found"), QString("%1: %2").arg(tr("Help File not found"), myLingoJob.at(i).getTsFile()), mySetting->Critical);
             closeTransHelp();
             return;
         }
-        QString theHelpFileContents = mySqlDb->mySqlModel->mySetting->readFile(theHelpFile);
+        QString theHelpFileContents = mySetting->readFile(theHelpFile);
         if (theHelpFileContents.isEmpty())
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File is Empty"), QString("%1: %2").arg(tr("Help File is Empty"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(tr("Help File is Empty"), QString("%1: %2").arg(tr("Help File is Empty"), myLingoJob.at(i).getTsFile()), mySetting->Critical);
             closeTransHelp();
             return;
         }
@@ -2543,18 +2566,18 @@ void MainWindow::onTranslateHelp()
         }
         // Make sure Translation string has content
         if (myTranslation.isEmpty()) { myTranslation = theHelpFileContents; }
-        mySqlDb->mySqlModel->mySetting->writeFile(myLingoJob.at(i).getDestinationFile(), myTranslation);
-        if (!mySqlDb->mySqlModel->mySetting->isFileExists(myLingoJob.at(i).getDestinationFile()))
+        mySetting->writeFile(myLingoJob.at(i).getDestinationFile(), myTranslation);
+        if (!mySetting->isFileExists(myLingoJob.at(i).getDestinationFile()))
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("Help File could not be created"), QString("%1: %2").arg(tr("Help File could not be created"), myLingoJob.at(i).getTsFile()), mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(tr("Help File could not be created"), QString("%1: %2").arg(tr("Help File could not be created"), myLingoJob.at(i).getTsFile()), mySetting->Critical);
             closeTransHelp();
             return;
         }
         ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theHelpFileContents.mid(0, 16), myTranslation));
         // Set a delay or you will be ban from Engine
-        mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
+        mySetting->delay(ui->spinBoxSettingsDelay->value());
         // Set a delay or you will be ban from Engine
-        mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
+        mySetting->delay(ui->spinBoxSettingsDelay->value());
         ui->progressBarProjectsTranslations->setValue(i);
     } // end for( int i = 0; i < myLingoJob.count(); ++i )
     closeTransHelp();
@@ -2741,15 +2764,15 @@ void MainWindow::onTranslateReadMe()
         // The Default Languge will not have an under-score Language Code, i.e. README.md
         if (!myLingoJob.at(i).getReadMe().contains("_")) { continue; }
         // Make sure Source file exists
-        if (!mySqlDb->mySqlModel->mySetting->isFileExists(theReadMeFile))
+        if (!mySetting->isFileExists(theReadMeFile))
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("README File not found"), QString("%1: %2").arg(tr("README File not found"), myLingoJob.at(i).getReadMe()), mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(tr("README File not found"), QString("%1: %2").arg(tr("README File not found"), myLingoJob.at(i).getReadMe()), mySetting->Critical);
             return;
         }
-        QString theReadMeFileContents = mySqlDb->mySqlModel->mySetting->readFile(theReadMeFile);
+        QString theReadMeFileContents = mySetting->readFile(theReadMeFile);
         if (theReadMeFileContents.isEmpty())
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("README File is Empty"), QString("%1: %2").arg(tr("README File is Empty"), myLingoJob.at(i).getReadMe()), mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(tr("README File is Empty"), QString("%1: %2").arg(tr("README File is Empty"), myLingoJob.at(i).getReadMe()), mySetting->Critical);
             return;
         }
         // QString &text, Engine engine, Language translationLang, Language sourceLang, Language uiLang
@@ -2768,15 +2791,15 @@ void MainWindow::onTranslateReadMe()
         }
         // Make sure Translation string has content
         if (myTranslation.isEmpty()) { myTranslation = theReadMeFileContents; }
-        mySqlDb->mySqlModel->mySetting->writeFile(myLingoJob.at(i).getReadMe(), myTranslation);
-        if (!mySqlDb->mySqlModel->mySetting->isFileExists(myLingoJob.at(i).getReadMe()))
+        mySetting->writeFile(myLingoJob.at(i).getReadMe(), myTranslation);
+        if (!mySetting->isFileExists(myLingoJob.at(i).getReadMe()))
         {
-            mySqlDb->mySqlModel->mySetting->showMessageBox(tr("README File could not be created"), QString("%1: %2").arg(tr("README File could not be created"), myLingoJob.at(i).getReadMe()), mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(tr("README File could not be created"), QString("%1: %2").arg(tr("README File could not be created"), myLingoJob.at(i).getReadMe()), mySetting->Critical);
             return;
         }
         ui->statusbar->showMessage(QString("%1: %2 = %3").arg(myLingoJob.at(i).getLanguageName(), theReadMeFileContents.mid(0, 16), myTranslation));
         // Set a delay or you will be ban from Engine
-        mySqlDb->mySqlModel->mySetting->delay(ui->spinBoxSettingsDelay->value());
+        mySetting->delay(ui->spinBoxSettingsDelay->value());
         ui->progressBarProjectsTranslations->setValue(i);
     } // end for( int i = 0; i < myLingoJob.count(); ++i )
     ui->progressBarProjectsTranslations->hide();
@@ -2809,7 +2832,7 @@ void MainWindow::createTranslationJob(const QString &thisLanguageName, const QSt
     myTranslationQrc.append(QString("<file>%1</file>\n").arg(theTransQmFile));
     // Create Job
     // to store a job I need the theSourcePath and Language
-    MyLingoJobs theTranslationJobs(thisLanguageName, thisLanguage, theTsFile, theTransQmFile, "", QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myLocalization->languageNameToCode(thisSourceLanguage)));
+    MyLingoJobs theTranslationJobs(thisLanguageName, theLang, theTsFile, theTransQmFile, "", QOnlineTranslator::language(thisLanguage), QOnlineTranslator::language(myLocalization->languageNameToCode(thisSourceLanguage)));
     myLingoJob.append(theTranslationJobs);
 }
 /************************************************
@@ -2943,23 +2966,23 @@ void MainWindow::setMessagingStates(bool thisMessageState)
 {
     if (thisMessageState)
     {
-        mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, "true");
+        mySetting->writeSettings(mySetting->myConstants->MY_IS_DEBUG_MESSAGE, "true");
         isDebugMessage = true;
         mySqlDb->setDebugMessage(true);
         mySqlDb->mySqlModel->setDebugMessage(true);
-        mySqlDb->mySqlModel->mySetting->setDebugMessage(true);
+        mySetting->setDebugMessage(true);
         myLocalization->setDebugMessage(true);
-        mySqlDb->mySqlModel->mySetting->myCrypto->setDebugMessage(true);
+        mySetting->myCrypto->setDebugMessage(true);
     }
     else
     {
-        mySqlDb->mySqlModel->mySetting->writeSettings(mySqlDb->mySqlModel->mySetting->myConstants->MY_IS_DEBUG_MESSAGE, "false");
+        mySetting->writeSettings(mySetting->myConstants->MY_IS_DEBUG_MESSAGE, "false");
         isDebugMessage = false;
         mySqlDb->setDebugMessage(false);
         mySqlDb->mySqlModel->setDebugMessage(false);
-        mySqlDb->mySqlModel->mySetting->setDebugMessage(false);
+        mySetting->setDebugMessage(false);
         myLocalization->setDebugMessage(false);
-        mySqlDb->mySqlModel->mySetting->myCrypto->setDebugMessage(false);
+        mySetting->myCrypto->setDebugMessage(false);
     }
 }
 /************************************************
@@ -2974,7 +2997,7 @@ void MainWindow::on_pushButtonTranslationsHelp_clicked()
     dialogTranslationFolder.setOption(QFileDialog::ShowDirsOnly);
     dialogTranslationFolder.setOption(QFileDialog::DontResolveSymlinks);
     //
-    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Help Folder Location"), mySqlDb->mySqlModel->mySetting->getLastApplicationPath());
+    QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Help Folder Location"), mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
         { ui->lineEditTranslationsHelp->setText(theTranslationFolder); }
     else
@@ -2999,13 +3022,13 @@ void MainWindow::setMessage(const QString &thisMessage, MainWindow::MyMessageTyp
     switch (thisMessageType)
     {
         case Information:
-            mySqlDb->mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlDb->mySqlModel->mySetting->Information);
+            mySetting->showMessageBox(thisMessage, thisMessage, mySetting->Information);
             break;
         case Warning:
-            mySqlDb->mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlDb->mySqlModel->mySetting->Warning);
+            mySetting->showMessageBox(thisMessage, thisMessage, mySetting->Warning);
             break;
         case Critical:
-            mySqlDb->mySqlModel->mySetting->showMessageBox(thisMessage, thisMessage, mySqlDb->mySqlModel->mySetting->Critical);
+            mySetting->showMessageBox(thisMessage, thisMessage, mySetting->Critical);
             break;
         case Debug:
             qDebug() << thisMessage;

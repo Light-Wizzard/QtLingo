@@ -19,9 +19,9 @@ it is all done, nothing more to do.
 
 ### :package: **Downloads:**
 
-- :penguin: [Linux x64 zip  ](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip) [Linux x86 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
-- :office:  [Windows x64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip) [Windows x86 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x86.zip)
-- :apple:   [Apple x64 zip  ](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip) [Apple x86 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x86.zip)
+- :penguin: [Linux x64 zip  ](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip)
+- :office:  [Windows x64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
+- :apple:   [Apple x64 zip  ](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
 
 Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, 
 and run the file QtLingo.exe inside of the deploy AppDir folder.

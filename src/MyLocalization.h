@@ -52,6 +52,7 @@ class MyLocalization : public QObject
         // Constants
         const QString MY_LANG_CODE = "LanguageCode"; //!< \c MY_LANG_CODE @brief Field Name for Language Code
         const QString MY_LANG_NAME = "LanguageName"; //!< \c MY_LANG_NAME @brief Field Name for Language Name
+        const QString MY_LOCALE_LANG_CODE = "LocaleLanguageCode"; //!< \c MY_CURRENT_LANG_CODE    @brief Field Name for Current Language Code.
         // Is Debug Message
         void setDebugMessage(bool thisState);        //!< set Debug Message
         bool getDebugMessage();                      //!< get Debug Message
@@ -70,7 +71,8 @@ class MyLocalization : public QObject
         // Added by Light-Wizzard
         QString languageNameToCode(const QString &lang);                //!< language Name to Code Added by Light-Wizzard
         QString languageCodeToName(const QString &lang);                //!< language Code to Name Added by Light-Wizzard
-
+        QString getDefaultLanguageCode();
+        //
         void loadLanguage(const QString &thisQmLanguageFile); //!< load Language
         QString getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix); //!< get Language File
         QString getLanguageFromFile(const QString &thisPrefix, const QString &thisQmLanguageFile); //!< getLanguageFromFile

@@ -3,7 +3,9 @@
 
 #include <QObject>
 #include <QtWidgets>
-#include <QtSql>
+#ifdef USE_SQL_FLAG
+    #include <QtSql>
+#endif
 #include <QtDebug>
 #include <QDir>
 //
@@ -17,10 +19,10 @@ class MySqlDbtModel : public QObject
 {
         Q_OBJECT
     public:
-        MySqlDbtModel(QObject *parent = 0);                         //!< MySqlDbtModel
+        MySqlDbtModel(QObject *parent = 0, MyOrgSettings *thisSetting = nullptr); //!< MySqlDbtModel
         ~MySqlDbtModel();                                           //!< ~MySqlDbtModel
         // Public
-        MyOrgSettings  *mySetting;                                  //!< \c mySetting @brief Domain Settings
+        MyOrgSettings *mySetting;                                   //!< \c mySetting @brief Domain Settings
         // DataBase Connection
         bool createDataBaseConnection();                            //!< create DataBase Connection
         bool isDbTable(const QString &thisTable);                   //!< isDbTable
@@ -42,9 +44,11 @@ class MySqlDbtModel : public QObject
         // Sql Database Name
         void setSqlDatabaseName(const QString &thisPassword);       //!< setSqlDatabaseName
         QString getSqlDatabaseName();                               //!< getSqlDatabaseName
+        #ifdef USE_SQL_FLAG
         // Sql Database
         void setSqlDatabase(QSqlDatabase thisDatabase);             //!< set Sql Database
         QSqlDatabase getSqlDatabase();                              //!< get Sql Database
+        #endif
         // Connection Name
         QString getConnectionName();                                //!< get Connection Name
         void setConnectionName(const QString &thisConnectionName);  //!< set Connection Name
@@ -64,7 +68,9 @@ class MySqlDbtModel : public QObject
         void setMessage(const QString &thisMessage); //!< setMessage
 
     private:
+        #ifdef USE_SQL_FLAG
         QSqlDatabase myDb;                              //!< \c myDb               @brief Database
+        #endif
         QString      myDatabaseName   = "QtLingo";      //!< \c myDatabaseName     @brief Sql Driver DatabaseName with extention for Sqlite
         QString      myTableName      = "QtLingo" ;     //!< \c myTableName        @brief Table Name
         QString      mySqlDriver      = "NOTSET";       //!< \c mySqlDriver        @brief Sql Driver NOTSET

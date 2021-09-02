@@ -6,17 +6,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="19"/>
         <source>MainWindow</source>
-        <translation>Ventana principal</translation>
+        <translation>MainWindow</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="30"/>
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="38"/>
         <source>Projects</source>
-        <translation>Proyectos</translation>
+        <translation>Projects</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="105"/>
@@ -27,65 +27,65 @@
         <location filename="../src/MainWindow.ui" line="675"/>
         <location filename="../src/MainWindow.ui" line="1787"/>
         <source>Browse</source>
-        <translation>Navegar</translation>
+        <translation>Browse</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="114"/>
         <source>Change Language</source>
-        <translation>Cambiar idioma</translation>
+        <translation>Change Language</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="209"/>
         <source>lrelease</source>
-        <translation>libere</translation>
+        <translation>lrelease</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="246"/>
         <source>UI Language</source>
-        <translation>Idioma de la interfaz de usuario</translation>
+        <translation>UI Language</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="264"/>
         <source>Translation Engines</source>
-        <translation>Motores de traducción</translation>
+        <translation>Translation Engines</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="324"/>
         <source>Delay in Seconds</source>
-        <translation>Retraso en segundos</translation>
+        <translation>Delay in Seconds</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="351"/>
         <location filename="../src/MainWindow.ui" line="516"/>
         <source>Options</source>
-        <translation>Opciones</translation>
+        <translation>Options</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="360"/>
         <location filename="../src/MainWindow.ui" line="525"/>
         <location filename="../src/MainWindow.ui" line="1960"/>
         <source>Save</source>
-        <translation>Salvar</translation>
+        <translation>Save</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="367"/>
         <source>Add</source>
-        <translation>Agregar</translation>
+        <translation>Add</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="374"/>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation>Delete</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="396"/>
         <source>Logging</source>
-        <translation>Inicio sesión</translation>
+        <translation>Logging</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="405"/>
         <source>Debug Messages</source>
-        <translation>Mensajes de depuración</translation>
+        <translation>Debug Messages</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="430"/>
@@ -95,70 +95,70 @@
     <message>
         <location filename="../src/MainWindow.ui" line="438"/>
         <source>SQL Type</source>
-        <translation>Tipo de SQL</translation>
+        <translation>SQL Type</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="445"/>
         <source>Host Name</source>
-        <translation>Nombre de host</translation>
+        <translation>Host Name</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="465"/>
         <source>User Name</source>
-        <translation>Nombre de usuario</translation>
+        <translation>User Name</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="485"/>
         <source>Password</source>
-        <translation>Clave</translation>
+        <translation>Password</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="507"/>
         <source>Show</source>
-        <translation>Espectáculo</translation>
+        <translation>Show</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="571"/>
         <source>Database Name</source>
-        <translation>Nombre de la base de datos</translation>
+        <translation>Database Name</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="605"/>
         <source>Translations</source>
-        <translation>Traducciones</translation>
+        <translation>Translations</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="613"/>
-        <location filename="../src/MainWindow.cpp" line="1976"/>
+        <location filename="../src/MainWindow.cpp" line="1999"/>
         <source>Source</source>
-        <translation>Fuente</translation>
+        <translation>Source</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="644"/>
         <location filename="../src/MainWindow.ui" line="647"/>
         <location filename="../src/MainWindow.ui" line="659"/>
         <source>Tempoary Folder contents gets deleted</source>
-        <translation>El contenido de la carpeta temporal se elimina</translation>
+        <translation>Tempoary Folder contents gets deleted</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="650"/>
         <source>Destination</source>
-        <translation>Destino</translation>
+        <translation>Destination</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="684"/>
         <source>Country Codes</source>
-        <translation>Códigos de país</translation>
+        <translation>Country Codes</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="708"/>
         <source>Tongan - to</source>
-        <translation>Tongano - a</translation>
+        <translation>Tongan - to</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="715"/>
         <source>Frisian - fy</source>
-        <translation>Frisón - fy</translation>
+        <translation>Frisian - fy</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="722"/>
@@ -168,27 +168,27 @@
     <message>
         <location filename="../src/MainWindow.ui" line="729"/>
         <source>Tatar - tt</source>
-        <translation>Tártaro - tt</translation>
+        <translation>Tatar - tt</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="736"/>
         <source>Latvian - lv</source>
-        <translation>Letón - lv</translation>
+        <translation>Latvian - lv</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="743"/>
         <source>Czech - cs</source>
-        <translation>Checo - cs</translation>
+        <translation>Czech - cs</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="750"/>
         <source>Kyrgyz - ky</source>
-        <translation>Kirguistán - ky</translation>
+        <translation>Kyrgyz - ky</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="757"/>
         <source>Zulu - zu</source>
-        <translation>Zulú - zu</translation>
+        <translation>Zulu - zu</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="764"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="771"/>
         <source>Hindi - hi</source>
-        <translation>Hindi - hola</translation>
+        <translation>Hindi - hi</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="778"/>
@@ -208,17 +208,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="785"/>
         <source>Luxembourgish - lb</source>
-        <translation>Luxemburgués - lb</translation>
+        <translation>Luxembourgish - lb</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="792"/>
         <source>Haitian - ht</source>
-        <translation>Haitiano - ht</translation>
+        <translation>Haitian - ht</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="799"/>
         <source>English - en</source>
-        <translation>Inglés - en</translation>
+        <translation>English - en</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="806"/>
@@ -228,37 +228,37 @@
     <message>
         <location filename="../src/MainWindow.ui" line="813"/>
         <source>Polish - pl</source>
-        <translation>Polaco - pl</translation>
+        <translation>Polish - pl</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="820"/>
         <source>Dutch - nl</source>
-        <translation>Holandés - nl</translation>
+        <translation>Dutch - nl</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="827"/>
         <source>Samoan - sm</source>
-        <translation>Samoano - sm</translation>
+        <translation>Samoan - sm</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="834"/>
         <source>Levantine Arabic - apc</source>
-        <translation>Árabe levantino - apc</translation>
+        <translation>Levantine Arabic - apc</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="841"/>
         <source>Thai - th</source>
-        <translation>Tailandés - th</translation>
+        <translation>Thai - th</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="848"/>
         <source>Chichewa - ny</source>
-        <translation>Chichewa - Nueva York</translation>
+        <translation>Chichewa - ny</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="855"/>
         <source>Malaysian - ms</source>
-        <translation>Malayo - ms</translation>
+        <translation>Malaysian - ms</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="862"/>
@@ -268,42 +268,42 @@
     <message>
         <location filename="../src/MainWindow.ui" line="869"/>
         <source>Vietnamese - vi</source>
-        <translation>Vietnamita - vi</translation>
+        <translation>Vietnamese - vi</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="876"/>
         <source>Faeroese - fo</source>
-        <translation>Islas Feroe - fo</translation>
+        <translation>Faeroese - fo</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="883"/>
         <source>Amharic - am</source>
-        <translation>Amárico - am</translation>
+        <translation>Amharic - am</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="890"/>
         <source>Irish - ga</source>
-        <translation>Irlandés - ga</translation>
+        <translation>Irish - ga</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="897"/>
         <source>Albanian - sq</source>
-        <translation>Albanés - sq</translation>
+        <translation>Albanian - sq</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="904"/>
         <source>Oriya - or</source>
-        <translation>Oriya - o</translation>
+        <translation>Oriya - or</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="911"/>
         <source>French - fr</source>
-        <translation>Francés - fr</translation>
+        <translation>French - fr</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="918"/>
         <source>Hungarian - hu</source>
-        <translation>Húngaro - hu</translation>
+        <translation>Hungarian - hu</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="925"/>
@@ -313,12 +313,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="932"/>
         <source>Gaelic - gd</source>
-        <translation>Gaélico - gd</translation>
+        <translation>Gaelic - gd</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="939"/>
         <source>Indonesian - id</source>
-        <translation>Indonesio - id</translation>
+        <translation>Indonesian - id</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="946"/>
@@ -328,32 +328,32 @@
     <message>
         <location filename="../src/MainWindow.ui" line="953"/>
         <source>Russian - ru</source>
-        <translation>Ruso - ru</translation>
+        <translation>Russian - ru</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="960"/>
         <source>Romanian - ro</source>
-        <translation>Rumano - ro</translation>
+        <translation>Romanian - ro</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="967"/>
         <source>Malagasy - mg</source>
-        <translation>Malgache - mg</translation>
+        <translation>Malagasy - mg</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="974"/>
         <source>Tagalog - tl</source>
-        <translation>Tagalo - tl</translation>
+        <translation>Tagalog - tl</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="981"/>
         <source>Mongolian - mn</source>
-        <translation>Mongol - mn</translation>
+        <translation>Mongolian - mn</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="988"/>
         <source>Portuguese - pt</source>
-        <translation>Portugués - pt</translation>
+        <translation>Portuguese - pt</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="995"/>
@@ -368,12 +368,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1009"/>
         <source>Nepali - ne</source>
-        <translation>Nepalí - ne</translation>
+        <translation>Nepali - ne</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1016"/>
         <source>Finnish - fi</source>
-        <translation>Finlandés - fi</translation>
+        <translation>Finnish - fi</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1023"/>
@@ -388,12 +388,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1037"/>
         <source>Arabic - ar</source>
-        <translation>Árabe - ar</translation>
+        <translation>Arabic - ar</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1044"/>
         <source>Georgian - ka</source>
-        <translation>Georgiano - ka</translation>
+        <translation>Georgian - ka</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1051"/>
@@ -403,17 +403,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1058"/>
         <source>Latin - la</source>
-        <translation>Latín - la</translation>
+        <translation>Latin - la</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1065"/>
         <source>Fijian - fj</source>
-        <translation>Fiyiano - fj</translation>
+        <translation>Fijian - fj</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1072"/>
         <source>Greek - el</source>
-        <translation>Griego - el</translation>
+        <translation>Greek - el</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1079"/>
@@ -423,7 +423,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1086"/>
         <source>Corsican - co</source>
-        <translation>Córcega - co</translation>
+        <translation>Corsican - co</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1093"/>
@@ -433,17 +433,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1100"/>
         <source>Bengali - bn</source>
-        <translation>Bengalí - bn</translation>
+        <translation>Bengali - bn</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1107"/>
         <source>Tahitian - ty</source>
-        <translation>Tahitiano - ty</translation>
+        <translation>Tahitian - ty</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1114"/>
         <source>Estonian - et</source>
-        <translation>Estonio - et</translation>
+        <translation>Estonian - et</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1121"/>
@@ -458,17 +458,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1135"/>
         <source>Danish - da</source>
-        <translation>Danés - da</translation>
+        <translation>Danish - da</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1142"/>
         <source>Norwegian - no</source>
-        <translation>Noruego - no</translation>
+        <translation>Norwegian - no</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1149"/>
         <source>German - de</source>
-        <translation>Alemán - de</translation>
+        <translation>German - de</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1156"/>
@@ -483,12 +483,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1183"/>
         <source>Marathi - mr</source>
-        <translation>Marathi - señor</translation>
+        <translation>Marathi - mr</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1190"/>
         <source>Welsh - cy</source>
-        <translation>Galés - cy</translation>
+        <translation>Welsh - cy</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1197"/>
@@ -498,7 +498,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1204"/>
         <source>Korean - ko</source>
-        <translation>Coreano - ko</translation>
+        <translation>Korean - ko</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1211"/>
@@ -523,7 +523,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1239"/>
         <source>Bosnian - bs</source>
-        <translation>Bosnio - bs</translation>
+        <translation>Bosnian - bs</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1246"/>
@@ -533,22 +533,22 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1253"/>
         <source>Galician - gl</source>
-        <translation>Gallego - gl</translation>
+        <translation>Galician - gl</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1260"/>
         <source>Hawaiian - haw</source>
-        <translation>Hawaiano - haw</translation>
+        <translation>Hawaiian - haw</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1267"/>
         <source>Myanmar - my</source>
-        <translation>Myanmar - mi</translation>
+        <translation>Myanmar - my</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1274"/>
         <source>Afrikaans - af</source>
-        <translation>Afrikáans - af</translation>
+        <translation>Afrikaans - af</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1281"/>
@@ -563,7 +563,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1295"/>
         <source>Catalan - ca</source>
-        <translation>Catalán - ca</translation>
+        <translation>Catalan - ca</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1302"/>
@@ -573,27 +573,27 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1309"/>
         <source>Japanese - ja</source>
-        <translation>Japonés - ja</translation>
+        <translation>Japanese - ja</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1316"/>
         <source>Javanese - jw</source>
-        <translation>Javanés - jw</translation>
+        <translation>Javanese - jw</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1323"/>
         <source>Bulgarian - bg</source>
-        <translation>Búlgaro - bg</translation>
+        <translation>Bulgarian - bg</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1330"/>
         <source>Serbian - sr</source>
-        <translation>Serbio - sr</translation>
+        <translation>Serbian - sr</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1337"/>
         <source>Turkish - tr</source>
-        <translation>Turco - tr</translation>
+        <translation>Turkish - tr</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1344"/>
@@ -603,12 +603,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1351"/>
         <source>Maori - mi</source>
-        <translation>Maorí - mi</translation>
+        <translation>Maori - mi</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1358"/>
         <source>Croatian - hr</source>
-        <translation>Croata - hr</translation>
+        <translation>Croatian - hr</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1365"/>
@@ -618,7 +618,7 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1372"/>
         <source>Armenian - hy</source>
-        <translation>Armenio - hy</translation>
+        <translation>Armenian - hy</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1379"/>
@@ -628,62 +628,62 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1386"/>
         <source>Kurdish - ku</source>
-        <translation>Kurdo - ku</translation>
+        <translation>Kurdish - ku</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1393"/>
         <source>Hebrew - he</source>
-        <translation>Hebreo</translation>
+        <translation>Hebrew - he</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1400"/>
         <source>Maltese - mt</source>
-        <translation>Maltés - mt</translation>
+        <translation>Maltese - mt</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1407"/>
         <source>Italian - it</source>
-        <translation>Italiano - es</translation>
+        <translation>Italian - it</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1414"/>
         <source>Basque - eu</source>
-        <translation>Vasco - UE</translation>
+        <translation>Basque - eu</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1421"/>
         <source>Tajik - tg</source>
-        <translation>Tayiko - tg</translation>
+        <translation>Tajik - tg</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1428"/>
         <source>Azerbaijani - az</source>
-        <translation>Azerbaiyano - az</translation>
+        <translation>Azerbaijani - az</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1435"/>
         <source>Turkmen - tk</source>
-        <translation>Turkmenistán - tk</translation>
+        <translation>Turkmen - tk</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1442"/>
         <source>Hausa - ha</source>
-        <translation>Hausa - ja</translation>
+        <translation>Hausa - ha</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1449"/>
         <source>Icelandic - is</source>
-        <translation>Islandés - es</translation>
+        <translation>Icelandic - is</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1456"/>
         <source>Cantonese - yue</source>
-        <translation>Cantonés - yue</translation>
+        <translation>Cantonese - yue</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1463"/>
         <source>Belarusian - be</source>
-        <translation>Bielorruso - be</translation>
+        <translation>Belarusian - be</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1470"/>
@@ -693,17 +693,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1477"/>
         <source>Kazakh - kk</source>
-        <translation>Kazajo - kk</translation>
+        <translation>Kazakh - kk</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1484"/>
         <source>Rhaeto-Romanic - rm </source>
-        <translation>Rhaeto-Romanic - rm</translation>
+        <translation>Rhaeto-Romanic - rm </translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1491"/>
         <source>Macedonian - mk</source>
-        <translation>Macedonio - mk</translation>
+        <translation>Macedonian - mk</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1498"/>
@@ -713,12 +713,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1505"/>
         <source>Lithuanian - lt</source>
-        <translation>Lituano - lt</translation>
+        <translation>Lithuanian - lt</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1512"/>
         <source>Queretaro Otomi - otq</source>
-        <translation>Querétaro otomí - otq</translation>
+        <translation>Queretaro Otomi - otq</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1519"/>
@@ -728,17 +728,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1526"/>
         <source>Sundanese - su</source>
-        <translation>Sundanés - su</translation>
+        <translation>Sundanese - su</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1533"/>
         <source>Somali - so</source>
-        <translation>Somalí - entonces</translation>
+        <translation>Somali - so</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1540"/>
         <source>Sinhala - si</source>
-        <translation>Cingalés - si</translation>
+        <translation>Sinhala - si</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1547"/>
@@ -748,17 +748,17 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1554"/>
         <source>Spanish - es</source>
-        <translation>Español - es</translation>
+        <translation>Spanish - es</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1561"/>
         <source>Sorbian - sb</source>
-        <translation>Sorabo - sb</translation>
+        <translation>Sorbian - sb</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1568"/>
         <source>Swedish - sv</source>
-        <translation>Sueco - sv</translation>
+        <translation>Swedish - sv</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1575"/>
@@ -768,12 +768,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1582"/>
         <source>Slovenian - sl</source>
-        <translation>Esloveno - sl</translation>
+        <translation>Slovenian - sl</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1589"/>
         <source>Slovak - sk</source>
-        <translation>Eslovaco - sk</translation>
+        <translation>Slovak - sk</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1596"/>
@@ -783,12 +783,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1603"/>
         <source>Serbian Latin -sr-Latin</source>
-        <translation>Serbio latín -sr-latín</translation>
+        <translation>Serbian Latin -sr-Latin</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1610"/>
         <source>Uzbek - uz</source>
-        <translation>Uzbeko - uz</translation>
+        <translation>Uzbek - uz</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1617"/>
@@ -798,12 +798,12 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1624"/>
         <source>Uighur - ug</source>
-        <translation>Uigur - ug</translation>
+        <translation>Uighur - ug</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1631"/>
         <source>Ukrainian - uk</source>
-        <translation>Ucraniano - reino unido</translation>
+        <translation>Ukrainian - uk</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1638"/>
@@ -813,349 +813,354 @@
     <message>
         <location filename="../src/MainWindow.ui" line="1645"/>
         <source>Yucatec Maya - yua</source>
-        <translation>Maya Yucateco - yua</translation>
+        <translation>Yucatec Maya - yua</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1658"/>
         <source>Project Folder</source>
-        <translation>Carpeta de proyecto</translation>
+        <translation>Project Folder</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1680"/>
         <source>Browes</source>
-        <translation>Cejas</translation>
+        <translation>Browes</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1689"/>
         <source>Source Language</source>
-        <translation>Lenguaje fuente</translation>
+        <translation>Source Language</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1727"/>
         <source>Type make</source>
-        <translation>Tipo de marca</translation>
+        <translation>Type make</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1765"/>
         <source>Help Folder</source>
-        <translation>Carpeta de ayuda</translation>
+        <translation>Help Folder</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1799"/>
-        <location filename="../src/MainWindow.cpp" line="244"/>
+        <location filename="../src/MainWindow.cpp" line="262"/>
         <source>Project</source>
-        <translation>Proyecto</translation>
+        <translation>Project</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1823"/>
         <location filename="../src/MainWindow.ui" line="1861"/>
         <location filename="../src/MainWindow.ui" line="1924"/>
         <source>Help</source>
-        <translation>Ayuda</translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1846"/>
         <source>File</source>
-        <translation>Expediente</translation>
+        <translation>File</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1876"/>
         <source>toolBar</source>
-        <translation>barra de herramientas</translation>
+        <translation>toolBar</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1906"/>
         <source>Exit</source>
-        <translation>Salida</translation>
+        <translation>Exit</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1915"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>About</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1933"/>
         <source>Translate</source>
-        <translation>Traducir</translation>
+        <translation>Translate</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1942"/>
         <source>Clipboard</source>
-        <translation>Portapapeles</translation>
+        <translation>Clipboard</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1951"/>
         <source>Author</source>
-        <translation>Autor</translation>
+        <translation>Author</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1969"/>
         <source>Translate Help</source>
-        <translation>Ayuda de traducción</translation>
+        <translation>Translate Help</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1978"/>
         <source>Accept Translations</source>
-        <translation>Aceptar traducciones</translation>
+        <translation>Accept Translations</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1987"/>
         <source>Translate ReadMe</source>
-        <translation>Traducir Léame</translation>
+        <translation>Translate ReadMe</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="114"/>
+        <location filename="../src/MainWindow.cpp" line="131"/>
         <source>Internet is down, trying to reconnect</source>
-        <translation>Internet está caído, intentando volver a conectarse</translation>
+        <translation>Internet is down, trying to reconnect</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="243"/>
+        <location filename="../src/MainWindow.cpp" line="261"/>
         <source>ID</source>
-        <translation>IDENTIFICACIÓN</translation>
+        <translation>ID</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="507"/>
+        <location filename="../src/MainWindow.cpp" line="526"/>
         <source>Translation Source Folder Location</source>
-        <translation>Ubicación de la carpeta de origen de traducción</translation>
+        <translation>Translation Source Folder Location</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="524"/>
+        <location filename="../src/MainWindow.cpp" line="543"/>
         <source>Translation Destination Folder Location</source>
-        <translation>Ubicación de la carpeta de destino de traducción</translation>
+        <translation>Translation Destination Folder Location</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="540"/>
-        <location filename="../src/MainWindow.cpp" line="556"/>
+        <location filename="../src/MainWindow.cpp" line="559"/>
+        <location filename="../src/MainWindow.cpp" line="575"/>
         <source>Projects Folder Location</source>
-        <translation>Ubicación de la carpeta de proyectos</translation>
+        <translation>Projects Folder Location</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="616"/>
+        <location filename="../src/MainWindow.cpp" line="635"/>
         <source>Sqlite Folder Location</source>
-        <translation>Ubicación de la carpeta Sqlite</translation>
+        <translation>Sqlite Folder Location</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="631"/>
+        <location filename="../src/MainWindow.cpp" line="650"/>
         <source>Failed to move Database</source>
-        <translation>No se pudo mover la base de datos</translation>
+        <translation>Failed to move Database</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1546"/>
-        <location filename="../src/MainWindow.cpp" line="1551"/>
+        <location filename="../src/MainWindow.cpp" line="1566"/>
+        <location filename="../src/MainWindow.cpp" line="1571"/>
         <source>Unable to find record in database</source>
-        <translation>No se pudo encontrar el registro en la base de datos</translation>
+        <translation>Unable to find record in database</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1551"/>
+        <location filename="../src/MainWindow.cpp" line="1571"/>
         <source>Could not read from the Database</source>
-        <translation>No se pudo leer de la base de datos</translation>
+        <translation>Could not read from the Database</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1976"/>
+        <location filename="../src/MainWindow.cpp" line="1999"/>
         <source>and Destination</source>
-        <translation>y Destino</translation>
+        <translation>and Destination</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1976"/>
+        <location filename="../src/MainWindow.cpp" line="1999"/>
         <source>cannot be the same</source>
-        <translation>no puede ser el mismo</translation>
+        <translation>cannot be the same</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1982"/>
+        <location filename="../src/MainWindow.cpp" line="2005"/>
         <source>Project file not found</source>
-        <translation>Archivo de proyecto no encontrado</translation>
+        <translation>Project file not found</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1988"/>
+        <location filename="../src/MainWindow.cpp" line="2011"/>
         <source>Error running lupdate</source>
-        <translation>Error al ejecutar lupdate</translation>
+        <translation>Error running lupdate</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1993"/>
+        <location filename="../src/MainWindow.cpp" line="2016"/>
         <source>Error could not make Translations Destination</source>
-        <translation>Error no pudo hacer las traducciones Destino</translation>
+        <translation>Error could not make Translations Destination</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2169"/>
+        <location filename="../src/MainWindow.cpp" line="2192"/>
         <source>Can not remove file</source>
-        <translation>No se puede eliminar el archivo</translation>
+        <translation>Can not remove file</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2178"/>
-        <source>Can not find Txt file</source>
-        <translation>No se puede encontrar el archivo Txt</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.cpp" line="2244"/>
+        <location filename="../src/MainWindow.cpp" line="2267"/>
         <source>Error running lrelease</source>
-        <translation>Error al ejecutar lrelease</translation>
+        <translation>Error running lrelease</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2326"/>
+        <location filename="../src/MainWindow.cpp" line="2349"/>
         <source>Translation TS File not found</source>
-        <translation>Traducción TS Archivo no encontrado</translation>
+        <translation>Translation TS File not found</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2331"/>
+        <location filename="../src/MainWindow.cpp" line="2354"/>
         <source>Accepted all Translations</source>
-        <translation>Aceptado todas las traducciones</translation>
+        <translation>Accepted all Translations</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2519"/>
+        <location filename="../src/MainWindow.cpp" line="2542"/>
         <source>Help File not found</source>
-        <translation>Archivo de ayuda no encontrado</translation>
+        <translation>Help File not found</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2525"/>
+        <location filename="../src/MainWindow.cpp" line="2549"/>
         <source>Help File is Empty</source>
-        <translation>El archivo de ayuda está vacío</translation>
+        <translation>Help File is Empty</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2547"/>
+        <location filename="../src/MainWindow.cpp" line="2572"/>
         <source>Help File could not be created</source>
-        <translation>No se pudo crear el archivo de ayuda</translation>
+        <translation>Help File could not be created</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2735"/>
+        <location filename="../src/MainWindow.cpp" line="2769"/>
         <source>README File not found</source>
-        <translation>Archivo LÉAME no encontrado</translation>
+        <translation>README File not found</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2741"/>
+        <location filename="../src/MainWindow.cpp" line="2775"/>
         <source>README File is Empty</source>
-        <translation>El archivo README está vacío</translation>
+        <translation>README File is Empty</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2763"/>
+        <location filename="../src/MainWindow.cpp" line="2797"/>
         <source>README File could not be created</source>
-        <translation>No se pudo crear el archivo README</translation>
+        <translation>README File could not be created</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2895"/>
+        <location filename="../src/MainWindow.cpp" line="2929"/>
         <source>Error in Translation phrase</source>
-        <translation>Error en la frase de traducción</translation>
+        <translation>Error in Translation phrase</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2984"/>
+        <location filename="../src/MainWindow.cpp" line="3000"/>
         <source>Help Folder Location</source>
-        <translation>Ubicación de la carpeta de ayuda</translation>
+        <translation>Help Folder Location</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="136"/>
+        <location filename="../src/MyLocalization.cpp" line="142"/>
         <source>English</source>
-        <translation>inglés</translation>
+        <translation>English</translation>
     </message>
 </context>
 <context>
     <name>MyDatatables</name>
     <message>
-        <location filename="../src/MyDatatables.cpp" line="186"/>
+        <location filename="../src/MyDatatables.cpp" line="189"/>
         <source>Not adding: Record found in database</source>
-        <translation>Sin agregar: registro encontrado en la base de datos</translation>
+        <translation>Not adding: Record found in database</translation>
     </message>
 </context>
 <context>
     <name>MyLocalization</name>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="156"/>
+        <location filename="../src/MyLocalization.cpp" line="171"/>
         <source>Remove Arguments that use Percent Sign x</source>
-        <translation>Quitar argumentos que usan el signo de porcentaje x</translation>
+        <translation>Remove Arguments that use Percent Sign x</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="168"/>
+        <location filename="../src/MyLocalization.cpp" line="184"/>
         <source>Remove Args</source>
-        <translation>Eliminar Args</translation>
+        <translation>Remove Args</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="168"/>
+        <location filename="../src/MyLocalization.cpp" line="184"/>
         <source>File: </source>
-        <translation>Archivo:</translation>
+        <translation>File: </translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="177"/>
+        <location filename="../src/MyLocalization.cpp" line="194"/>
         <source>File not found</source>
-        <translation>Archivo no encontrado</translation>
+        <translation>File not found</translation>
     </message>
 </context>
 <context>
     <name>MyOrgSettings</name>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="55"/>
+        <location filename="../src/MyOrgSettings.cpp" line="38"/>
         <source>Crypto Fail: MyOrgSettings::onRunOnStartup()</source>
-        <translation>Fallo de cifrado: MyOrgSettings :: onRunOnStartup ()</translation>
+        <translation>Crypto Fail: MyOrgSettings::onRunOnStartup()</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="327"/>
+        <location filename="../src/MyOrgSettings.cpp" line="310"/>
         <source>Error opening file for reading</source>
-        <translation>Error al abrir el archivo para leerlo</translation>
+        <translation>Error opening file for reading</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="327"/>
+        <location filename="../src/MyOrgSettings.cpp" line="310"/>
         <source>Could not open file for reading</source>
-        <translation>No se pudo abrir el archivo para leerlo</translation>
+        <translation>Could not open file for reading</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="348"/>
+        <location filename="../src/MyOrgSettings.cpp" line="331"/>
         <source>Error opening file for writing</source>
-        <translation>Error al abrir el archivo para escribir</translation>
+        <translation>Error opening file for writing</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="348"/>
+        <location filename="../src/MyOrgSettings.cpp" line="331"/>
         <source>Could not open file for writing</source>
-        <translation>No se pudo abrir el archivo para escribir</translation>
+        <translation>Could not open file for writing</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="648"/>
+        <location filename="../src/MyOrgSettings.cpp" line="374"/>
+        <source>Yes was clicked</source>
+        <translation>Yes was clicked</translation>
+    </message>
+    <message>
+        <location filename="../src/MyOrgSettings.cpp" line="379"/>
+        <source>Yes was not clicked</source>
+        <translation>Yes was not clicked</translation>
+    </message>
+    <message>
+        <location filename="../src/MyOrgSettings.cpp" line="639"/>
         <source>File not found</source>
-        <translation>Archivo no encontrado</translation>
+        <translation>File not found</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="658"/>
+        <location filename="../src/MyOrgSettings.cpp" line="650"/>
         <source>Folder not found</source>
-        <translation>Carpeta no encontrada</translation>
+        <translation>Folder not found</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="724"/>
+        <location filename="../src/MyOrgSettings.cpp" line="716"/>
         <source>This file was created to test if this folder is writeable by</source>
-        <translation>Este archivo fue creado para probar si esta carpeta se puede escribir por</translation>
+        <translation>This file was created to test if this folder is writeable by</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="745"/>
+        <location filename="../src/MyOrgSettings.cpp" line="737"/>
         <source>Error: cannot create file</source>
-        <translation>Error: no se puede crear el archivo</translation>
+        <translation>Error: cannot create file</translation>
     </message>
 </context>
 <context>
     <name>MySqlDbtModel</name>
     <message>
-        <location filename="../src/MySqlDbtModel.cpp" line="354"/>
+        <location filename="../src/MySqlDbtModel.cpp" line="347"/>
         <source>Database SQL Driver is missing</source>
-        <translation>Falta el controlador SQL de la base de datos</translation>
+        <translation>Database SQL Driver is missing</translation>
     </message>
     <message>
-        <location filename="../src/MySqlDbtModel.cpp" line="354"/>
+        <location filename="../src/MySqlDbtModel.cpp" line="347"/>
         <source>Install SQL</source>
-        <translation>Instalar SQL</translation>
+        <translation>Install SQL</translation>
     </message>
     <message>
-        <location filename="../src/MySqlDbtModel.cpp" line="359"/>
+        <location filename="../src/MySqlDbtModel.cpp" line="352"/>
         <source>Cannot open database</source>
-        <translation>No se puede abrir la base de datos</translation>
+        <translation>Cannot open database</translation>
     </message>
     <message>
-        <location filename="../src/MySqlDbtModel.cpp" line="359"/>
+        <location filename="../src/MySqlDbtModel.cpp" line="352"/>
         <source>Unable to establish a database connection</source>
-        <translation>No se puede establecer una conexión a la base de datos</translation>
+        <translation>Unable to establish a database connection</translation>
     </message>
     <message>
-        <location filename="../src/MySqlDbtModel.cpp" line="428"/>
+        <location filename="../src/MySqlDbtModel.cpp" line="429"/>
         <source>runProcces cannot start process</source>
-        <translation>runProcces no puede iniciar el proceso</translation>
+        <translation>runProcces cannot start process</translation>
     </message>
     <message>
-        <location filename="../src/MySqlDbtModel.cpp" line="432"/>
+        <location filename="../src/MySqlDbtModel.cpp" line="433"/>
         <source>runProcces timeout ..</source>
-        <translation>tiempo de espera de runProcces ...</translation>
+        <translation>runProcces timeout ..</translation>
     </message>
 </context>
 <context>
@@ -1163,135 +1168,130 @@
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="157"/>
         <source>Unable to find Input file</source>
-        <translation>No se puede encontrar el archivo de entrada</translation>
+        <translation>Unable to find Input file</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="175"/>
         <source>Can not create output directory OR directory is not empty</source>
-        <translation>No se puede crear el directorio de salida O el directorio no está vacío</translation>
+        <translation>Can not create output directory OR directory is not empty</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="216"/>
         <source>Unable to find Input folder</source>
-        <translation>No se puede encontrar la carpeta de entrada</translation>
+        <translation>Unable to find Input folder</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="240"/>
         <source>Input directory should contain only txt and ts file with same name</source>
-        <translation>El directorio de entrada debe contener solo archivos txt y ts con el mismo nombre</translation>
+        <translation>Input directory should contain only txt and ts file with same name</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="253"/>
         <source>Parsing errorr</source>
-        <translation>Analizando errorr</translation>
+        <translation>Parsing errorr</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/MainWindow.cpp" line="631"/>
+        <location filename="../src/MainWindow.cpp" line="650"/>
         <source>Database Move Failed</source>
-        <translation>Error al mover la base de datos</translation>
+        <translation>Database Move Failed</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="655"/>
+        <location filename="../src/MainWindow.cpp" line="674"/>
         <source>Password Revieled</source>
-        <translation>Contraseña revisada</translation>
+        <translation>Password Revieled</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1546"/>
+        <location filename="../src/MainWindow.cpp" line="1566"/>
         <source>Could not read from the Database</source>
-        <translation>No se pudo leer de la base de datos</translation>
+        <translation>Could not read from the Database</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1976"/>
+        <location filename="../src/MainWindow.cpp" line="1999"/>
         <source>Error Source and Destination cannot be the same</source>
-        <translation>El origen y el destino del error no pueden ser el mismo</translation>
+        <translation>Error Source and Destination cannot be the same</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1982"/>
+        <location filename="../src/MainWindow.cpp" line="2005"/>
         <source>Project file not found</source>
-        <translation>Archivo de proyecto no encontrado</translation>
+        <translation>Project file not found</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1988"/>
+        <location filename="../src/MainWindow.cpp" line="2011"/>
         <source>Error running lupdate</source>
-        <translation>Error al ejecutar lupdate</translation>
+        <translation>Error running lupdate</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1993"/>
+        <location filename="../src/MainWindow.cpp" line="2016"/>
         <source>Error Translations Destination Folder</source>
-        <translation>Carpeta de destino de traducciones de errores</translation>
+        <translation>Error Translations Destination Folder</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2169"/>
+        <location filename="../src/MainWindow.cpp" line="2192"/>
         <source>Error trying to remove file</source>
-        <translation>Error al intentar eliminar el archivo</translation>
+        <translation>Error trying to remove file</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2178"/>
-        <source>Could not find the Txt file</source>
-        <translation>No se pudo encontrar el archivo Txt</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.cpp" line="2244"/>
+        <location filename="../src/MainWindow.cpp" line="2267"/>
         <source>Error running lrelease</source>
-        <translation>Error al ejecutar lrelease</translation>
+        <translation>Error running lrelease</translation>
     </message>
     <message>
-        <location filename="../src/MyDatatables.cpp" line="186"/>
+        <location filename="../src/MyDatatables.cpp" line="189"/>
         <source>Record found!</source>
-        <translation>Registro encontrado!</translation>
+        <translation>Record found!</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="168"/>
+        <location filename="../src/MyLocalization.cpp" line="184"/>
         <source>Remove Args file is created</source>
-        <translation>Se crea el archivo Eliminar Args</translation>
+        <translation>Remove Args file is created</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="55"/>
+        <location filename="../src/MyOrgSettings.cpp" line="38"/>
         <source>Crypto Fail</source>
-        <translation>Fallo criptográfico</translation>
+        <translation>Crypto Fail</translation>
     </message>
     <message>
-        <location filename="../src/MyOrgSettings.cpp" line="745"/>
+        <location filename="../src/MyOrgSettings.cpp" line="737"/>
         <source>File System Error</source>
-        <translation>Error del sistema de archivos</translation>
+        <translation>File System Error</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="157"/>
         <source>Input does file not exist!</source>
-        <translation>¡El archivo de entrada no existe!</translation>
+        <translation>Input does file not exist!</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="175"/>
         <source>Check output Folder</source>
-        <translation>Verificar carpeta de salida</translation>
+        <translation>Check output Folder</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="216"/>
         <source>Input directory not exist!</source>
-        <translation>¡El directorio de entrada no existe!</translation>
+        <translation>Input directory not exist!</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="240"/>
         <source>Check Input Folder</source>
-        <translation>Verificar carpeta de entrada</translation>
+        <translation>Check Input Folder</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="253"/>
         <source>Parsing errorr</source>
-        <translation>Analizando errorr</translation>
+        <translation>Parsing errorr</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="34"/>
         <source>Failed to open log file</source>
-        <translation>No se pudo abrir el archivo de registro</translation>
+        <translation>Failed to open log file</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="55"/>
         <source>Log File</source>
-        <translation>Archivo de registro</translation>
+        <translation>Log File</translation>
     </message>
 </context>
 <context>
@@ -1299,64 +1299,64 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="214"/>
         <source>Selected source language</source>
-        <translation>Idioma de origen seleccionado</translation>
+        <translation>Selected source language</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="214"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="221"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="228"/>
         <source>is not supported for</source>
-        <translation>no es compatible con</translation>
+        <translation>is not supported for</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="221"/>
         <source>Selected translation language</source>
-        <translation>Idioma de traducción seleccionado</translation>
+        <translation>Selected translation language</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="228"/>
         <source>Selected ui language</source>
-        <translation>Idioma de interfaz de usuario seleccionado</translation>
+        <translation>Selected ui language</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="515"/>
         <source>Automatically detect</source>
-        <translation>Detectar automáticamente</translation>
+        <translation>Automatically detect</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="516"/>
         <source>Afrikaans</source>
-        <translation>africaans</translation>
+        <translation>Afrikaans</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="517"/>
         <source>Albanian</source>
-        <translation>albanés</translation>
+        <translation>Albanian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="518"/>
         <source>Amharic</source>
-        <translation>Amárico</translation>
+        <translation>Amharic</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="519"/>
         <source>Arabic</source>
-        <translation>Arábica</translation>
+        <translation>Arabic</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="520"/>
         <source>Armenian</source>
-        <translation>armenio</translation>
+        <translation>Armenian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="521"/>
         <source>Azeerbaijani</source>
-        <translation>Azerbaiyano</translation>
+        <translation>Azeerbaijani</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="522"/>
         <source>Basque</source>
-        <translation>vasco</translation>
+        <translation>Basque</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="523"/>
@@ -1366,32 +1366,32 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="524"/>
         <source>Belarusian</source>
-        <translation>Bielorruso</translation>
+        <translation>Belarusian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="525"/>
         <source>Bengali</source>
-        <translation>bengalí</translation>
+        <translation>Bengali</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="526"/>
         <source>Bosnian</source>
-        <translation>bosnio</translation>
+        <translation>Bosnian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="527"/>
         <source>Bulgarian</source>
-        <translation>búlgaro</translation>
+        <translation>Bulgarian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="528"/>
         <source>Catalan</source>
-        <translation>catalán</translation>
+        <translation>Catalan</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="529"/>
         <source>Cantonese</source>
-        <translation>Cantonés</translation>
+        <translation>Cantonese</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="530"/>
@@ -1401,57 +1401,57 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="531"/>
         <source>Chinese (Simplified)</source>
-        <translation>Chino simplificado)</translation>
+        <translation>Chinese (Simplified)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="532"/>
         <source>Chinese (Traditional)</source>
-        <translation>Chino tradicional)</translation>
+        <translation>Chinese (Traditional)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="533"/>
         <source>Corsican</source>
-        <translation>corso</translation>
+        <translation>Corsican</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="534"/>
         <source>Croatian</source>
-        <translation>croata</translation>
+        <translation>Croatian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="535"/>
         <source>Czech</source>
-        <translation>checo</translation>
+        <translation>Czech</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="536"/>
         <source>Danish</source>
-        <translation>danés</translation>
+        <translation>Danish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="537"/>
         <source>Dutch</source>
-        <translation>holandés</translation>
+        <translation>Dutch</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="538"/>
         <source>English</source>
-        <translation>inglés</translation>
+        <translation>English</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="539"/>
         <source>Esperanto</source>
-        <translation>esperanto</translation>
+        <translation>Esperanto</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="540"/>
         <source>Estonian</source>
-        <translation>Estonio</translation>
+        <translation>Estonian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="541"/>
         <source>Fijian</source>
-        <translation>Fiyiano</translation>
+        <translation>Fijian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="542"/>
@@ -1461,37 +1461,37 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="543"/>
         <source>Finnish</source>
-        <translation>finlandés</translation>
+        <translation>Finnish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="544"/>
         <source>French</source>
-        <translation>francés</translation>
+        <translation>French</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="545"/>
         <source>Frisian</source>
-        <translation>frisio</translation>
+        <translation>Frisian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="546"/>
         <source>Galician</source>
-        <translation>gallego</translation>
+        <translation>Galician</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="547"/>
         <source>Georgian</source>
-        <translation>georgiano</translation>
+        <translation>Georgian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="548"/>
         <source>German</source>
-        <translation>alemán</translation>
+        <translation>German</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="549"/>
         <source>Greek</source>
-        <translation>griego</translation>
+        <translation>Greek</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="550"/>
@@ -1501,7 +1501,7 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="551"/>
         <source>Haitian Creole</source>
-        <translation>Criollo haitiano</translation>
+        <translation>Haitian Creole</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="552"/>
@@ -1511,12 +1511,12 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="553"/>
         <source>Hawaiian</source>
-        <translation>hawaiano</translation>
+        <translation>Hawaiian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="554"/>
         <source>Hebrew</source>
-        <translation>hebreo</translation>
+        <translation>Hebrew</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="555"/>
@@ -1526,7 +1526,7 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="556"/>
         <source>Hindi</source>
-        <translation>hindi</translation>
+        <translation>Hindi</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="557"/>
@@ -1536,12 +1536,12 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="558"/>
         <source>Hungarian</source>
-        <translation>húngaro</translation>
+        <translation>Hungarian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="559"/>
         <source>Icelandic</source>
-        <translation>islandés</translation>
+        <translation>Icelandic</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="560"/>
@@ -1551,42 +1551,42 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="561"/>
         <source>Indonesian</source>
-        <translation>indonesio</translation>
+        <translation>Indonesian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="562"/>
         <source>Irish</source>
-        <translation>irlandesa</translation>
+        <translation>Irish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="563"/>
         <source>Italian</source>
-        <translation>italiano</translation>
+        <translation>Italian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="564"/>
         <source>Japanese</source>
-        <translation>japonés</translation>
+        <translation>Japanese</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="565"/>
         <source>Javanese</source>
-        <translation>javanés</translation>
+        <translation>Javanese</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="566"/>
         <source>Kannada</source>
-        <translation>Canarés</translation>
+        <translation>Kannada</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="567"/>
         <source>Kazakh</source>
-        <translation>Kazajo</translation>
+        <translation>Kazakh</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="568"/>
         <source>Khmer</source>
-        <translation>Jemer</translation>
+        <translation>Khmer</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="569"/>
@@ -1606,17 +1606,17 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="572"/>
         <source>Korean</source>
-        <translation>coreano</translation>
+        <translation>Korean</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="573"/>
         <source>Kurdish</source>
-        <translation>kurdo</translation>
+        <translation>Kurdish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="574"/>
         <source>Kyrgyz</source>
-        <translation>Kirguís</translation>
+        <translation>Kyrgyz</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="575"/>
@@ -1626,42 +1626,42 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="576"/>
         <source>Latin</source>
-        <translation>latín</translation>
+        <translation>Latin</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="577"/>
         <source>Latvian</source>
-        <translation>letón</translation>
+        <translation>Latvian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="578"/>
         <source>Levantine Arabic</source>
-        <translation>Árabe levantino</translation>
+        <translation>Levantine Arabic</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="579"/>
         <source>Lithuanian</source>
-        <translation>lituano</translation>
+        <translation>Lithuanian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="580"/>
         <source>Luxembourgish</source>
-        <translation>Luxemburgués</translation>
+        <translation>Luxembourgish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="581"/>
         <source>Macedonian</source>
-        <translation>macedónio</translation>
+        <translation>Macedonian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="582"/>
         <source>Malagasy</source>
-        <translation>madagascarí</translation>
+        <translation>Malagasy</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="583"/>
         <source>Malay</source>
-        <translation>malayo</translation>
+        <translation>Malay</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="584"/>
@@ -1671,12 +1671,12 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="585"/>
         <source>Maltese</source>
-        <translation>maltés</translation>
+        <translation>Maltese</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="586"/>
         <source>Maori</source>
-        <translation>maorí</translation>
+        <translation>Maori</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="587"/>
@@ -1691,7 +1691,7 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="589"/>
         <source>Mongolian</source>
-        <translation>mongol</translation>
+        <translation>Mongolian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="590"/>
@@ -1701,12 +1701,12 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="591"/>
         <source>Nepali</source>
-        <translation>Nepalí</translation>
+        <translation>Nepali</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="592"/>
         <source>Norwegian</source>
-        <translation>noruego</translation>
+        <translation>Norwegian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="593"/>
@@ -1731,57 +1731,57 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="597"/>
         <source>Persian</source>
-        <translation>persa</translation>
+        <translation>Persian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="598"/>
         <source>Polish</source>
-        <translation>polaco</translation>
+        <translation>Polish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="599"/>
         <source>Portuguese</source>
-        <translation>portugués</translation>
+        <translation>Portuguese</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="600"/>
         <source>Punjabi</source>
-        <translation>punjabi</translation>
+        <translation>Punjabi</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="601"/>
         <source>Queretaro Otomi</source>
-        <translation>Querétaro otomí</translation>
+        <translation>Queretaro Otomi</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="602"/>
         <source>Romanian</source>
-        <translation>rumano</translation>
+        <translation>Romanian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="603"/>
         <source>Russian</source>
-        <translation>ruso</translation>
+        <translation>Russian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="604"/>
         <source>Samoan</source>
-        <translation>Samoano</translation>
+        <translation>Samoan</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="605"/>
         <source>Scots Gaelic</source>
-        <translation>Gaélico escocés</translation>
+        <translation>Scots Gaelic</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="606"/>
         <source>Serbian (Cyrillic)</source>
-        <translation>Serbio (cirílico)</translation>
+        <translation>Serbian (Cyrillic)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="607"/>
         <source>Serbian (Latin)</source>
-        <translation>Serbio (latino)</translation>
+        <translation>Serbian (Latin)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="608"/>
@@ -1801,57 +1801,57 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="611"/>
         <source>Sinhala</source>
-        <translation>Cingalés</translation>
+        <translation>Sinhala</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="612"/>
         <source>Slovak</source>
-        <translation>eslovaco</translation>
+        <translation>Slovak</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="613"/>
         <source>Slovenian</source>
-        <translation>esloveno</translation>
+        <translation>Slovenian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="614"/>
         <source>Somali</source>
-        <translation>somalí</translation>
+        <translation>Somali</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="615"/>
         <source>Spanish</source>
-        <translation>Español</translation>
+        <translation>Spanish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="616"/>
         <source>Sundanese</source>
-        <translation>Sundanés</translation>
+        <translation>Sundanese</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="617"/>
         <source>Swahili</source>
-        <translation>swahili</translation>
+        <translation>Swahili</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="618"/>
         <source>Swedish</source>
-        <translation>sueco</translation>
+        <translation>Swedish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="619"/>
         <source>Tagalog</source>
-        <translation>Tagalo</translation>
+        <translation>Tagalog</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="620"/>
         <source>Tahitian</source>
-        <translation>Tahitiano</translation>
+        <translation>Tahitian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="621"/>
         <source>Tajik</source>
-        <translation>Tayiko</translation>
+        <translation>Tajik</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="622"/>
@@ -1861,7 +1861,7 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="623"/>
         <source>Tatar</source>
-        <translation>Tártaro</translation>
+        <translation>Tatar</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="624"/>
@@ -1871,22 +1871,22 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="625"/>
         <source>Thai</source>
-        <translation>tailandés</translation>
+        <translation>Thai</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="626"/>
         <source>Tongan</source>
-        <translation>Tongano</translation>
+        <translation>Tongan</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="627"/>
         <source>Turkish</source>
-        <translation>turco</translation>
+        <translation>Turkish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="628"/>
         <source>Turkmen</source>
-        <translation>Turcomano</translation>
+        <translation>Turkmen</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="629"/>
@@ -1896,12 +1896,12 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="630"/>
         <source>Uighur</source>
-        <translation>Uigur</translation>
+        <translation>Uighur</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="631"/>
         <source>Ukrainian</source>
-        <translation>ucranio</translation>
+        <translation>Ukrainian</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="632"/>
@@ -1911,17 +1911,17 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="633"/>
         <source>Uzbek</source>
-        <translation>Uzbeko</translation>
+        <translation>Uzbek</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="634"/>
         <source>Vietnamese</source>
-        <translation>vietnamita</translation>
+        <translation>Vietnamese</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="635"/>
         <source>Welsh</source>
-        <translation>galés</translation>
+        <translation>Welsh</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="636"/>
@@ -1931,7 +1931,7 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="637"/>
         <source>Yiddish</source>
-        <translation>yídish</translation>
+        <translation>Yiddish</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="638"/>
@@ -1941,51 +1941,51 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="639"/>
         <source>Yucatec Maya</source>
-        <translation>Maya yucateco</translation>
+        <translation>Yucatec Maya</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="640"/>
         <source>Zulu</source>
-        <translation>zulú</translation>
+        <translation>Zulu</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="963"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="973"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1072"/>
         <source>Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.</source>
-        <translation>Error: los sistemas del motor han detectado tráfico sospechoso de su red informática. Inténtalo de nuevo más tarde.</translation>
+        <translation>Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="987"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1160"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1370"/>
         <source>Error: Unable to parse autodetected language</source>
-        <translation>Error: no se puede analizar el idioma detectado automáticamente</translation>
+        <translation>Error: Unable to parse autodetected language</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1080"/>
         <source>Error: Unable to find Yandex SID in web version.</source>
-        <translation>Error: no se puede encontrar Yandex SID en la versión web.</translation>
+        <translation>Error: Unable to find Yandex SID in web version.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1088"/>
         <source>Error: Unable to extract Yandex SID from web version.</source>
-        <translation>Error: no se puede extraer Yandex SID de la versión web.</translation>
+        <translation>Error: Unable to extract Yandex SID from web version.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1305"/>
         <source>Error: Unable to find Bing credentials in web version.</source>
-        <translation>Error: no se pueden encontrar las credenciales de Bing en la versión web.</translation>
+        <translation>Error: Unable to find Bing credentials in web version.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1313"/>
         <source>Error: Unable to extract Bing key from web version.</source>
-        <translation>Error: no se puede extraer la clave Bing de la versión web.</translation>
+        <translation>Error: Unable to extract Bing key from web version.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1322"/>
         <source>Error: Unable to extract Bing token from web version.</source>
-        <translation>Error: no se puede extraer el token de Bing de la versión web.</translation>
+        <translation>Error: Unable to extract Bing token from web version.</translation>
     </message>
 </context>
 <context>
@@ -1994,44 +1994,44 @@
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="67"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="73"/>
         <source>Selected engine</source>
-        <translation>Motor seleccionado</translation>
+        <translation>Selected engine</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="67"/>
         <source>does not support voice settings</source>
-        <translation>no es compatible con la configuración de voz</translation>
+        <translation>does not support voice settings</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="73"/>
         <source>does not support emotion settings</source>
-        <translation>no es compatible con la configuración de emociones</translation>
+        <translation>does not support emotion settings</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="137"/>
         <source>engine does not support TTS</source>
-        <translation>el motor no es compatible con TTS</translation>
+        <translation>engine does not support TTS</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="234"/>
         <source>Selected language</source>
-        <translation>Idioma seleccionado</translation>
+        <translation>Selected language</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="234"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="250"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="266"/>
         <source>is not supported for</source>
-        <translation>no es compatible con</translation>
+        <translation>is not supported for</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="250"/>
         <source>Selected voice</source>
-        <translation>Voz seleccionada</translation>
+        <translation>Selected voice</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="266"/>
         <source>Selected emotion</source>
-        <translation>Emoción seleccionada</translation>
+        <translation>Selected emotion</translation>
     </message>
 </context>
 </TS>

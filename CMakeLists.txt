@@ -12,30 +12,30 @@ option(USE_SQL_FLAG "Feature description" ON)
 add_compile_definitions(USE_SQL_FLAG)
 # TS Files
 set(MY_TS_FILES
-    translations/${MY_TARGET}_ar_AR.ts
-    translations/${MY_TARGET}_de_DE.ts
-    translations/${MY_TARGET}_en_US.ts
-    translations/${MY_TARGET}_es_ES.ts
-    translations/${MY_TARGET}_fr_FR.ts
-    translations/${MY_TARGET}_it_IT.ts
-    translations/${MY_TARGET}_ja_JA.ts
-    translations/${MY_TARGET}_no_NO.ts
-    translations/${MY_TARGET}_ru_RU.ts
-    translations/${MY_TARGET}_sv_SV.ts
+    translations/${MY_TARGET}_ar.ts
+    translations/${MY_TARGET}_de.ts
+    translations/${MY_TARGET}_en.ts
+    translations/${MY_TARGET}_es.ts
+    translations/${MY_TARGET}_fr.ts
+    translations/${MY_TARGET}_it.ts
+    translations/${MY_TARGET}_ja.ts
+    translations/${MY_TARGET}_no.ts
+    translations/${MY_TARGET}_ru.ts
+    translations/${MY_TARGET}_sv.ts
     translations/${MY_TARGET}_zh_CN.ts
 )
 # QM Files
 set(MY_QM_FILES
-    translations/${MY_TARGET}_ar_AR.qm
-    translations/${MY_TARGET}_de_DE.qm
-    translations/${MY_TARGET}_en_US.qm
-    translations/${MY_TARGET}_es_ES.qm
-    translations/${MY_TARGET}_fr_FR.qm
-    translations/${MY_TARGET}_it_IT.qm
-    translations/${MY_TARGET}_ja_JA.qm
-    translations/${MY_TARGET}_no_NO.qm
-    translations/${MY_TARGET}_ru_RU.qm
-    translations/${MY_TARGET}_sv_SV.qm
+    translations/${MY_TARGET}_ar.qm
+    translations/${MY_TARGET}_de.qm
+    translations/${MY_TARGET}_en.qm
+    translations/${MY_TARGET}_es.qm
+    translations/${MY_TARGET}_fr.qm
+    translations/${MY_TARGET}_it.qm
+    translations/${MY_TARGET}_ja.qm
+    translations/${MY_TARGET}_no.qm
+    translations/${MY_TARGET}_ru.qm
+    translations/${MY_TARGET}_sv.qm
     translations/${MY_TARGET}_zh_CN.qm
 )
 # Header Files

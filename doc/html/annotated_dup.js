@@ -4,9 +4,9 @@ var annotated_dup =
       [ "MainWindow", "classUi_1_1MainWindow.html", null ]
     ] ],
     [ "visitors", "namespacevisitors.html", [
+      [ "back_string_replacer", "structvisitors_1_1back__string__replacer.html", "structvisitors_1_1back__string__replacer" ],
       [ "document_dump", "structvisitors_1_1document__dump.html", "structvisitors_1_1document__dump" ],
-      [ "string_extractor_replacer", "structvisitors_1_1string__extractor__replacer.html", "structvisitors_1_1string__extractor__replacer" ],
-      [ "back_string_replacer", "structvisitors_1_1back__string__replacer.html", "structvisitors_1_1back__string__replacer" ]
+      [ "string_extractor_replacer", "structvisitors_1_1string__extractor__replacer.html", "structvisitors_1_1string__extractor__replacer" ]
     ] ],
     [ "back_string_replacer", "structback__string__replacer.html", null ],
     [ "base_node", "structbase__node.html", "structbase__node" ],

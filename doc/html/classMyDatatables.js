@@ -1,6 +1,6 @@
 var classMyDatatables =
 [
-    [ "MyDatatables", "classMyDatatables.html#abb4be128bc3720c930892218ca2adc8b", null ],
+    [ "MyDatatables", "classMyDatatables.html#a6910dee376e64104668f8449932e264a", null ],
     [ "~MyDatatables", "classMyDatatables.html#afddeb9099481eb82a8eb91367f316eef", null ],
     [ "addQtProject", "classMyDatatables.html#af47dfd6d5a5c156aec819a541e2b642b", null ],
     [ "checkDatabase", "classMyDatatables.html#a516b4215e83b918b52bfadc366452cfb", null ],
@@ -25,5 +25,6 @@ var classMyDatatables =
     [ "setProjectID", "classMyDatatables.html#aaeae472900aa50ed69513836d11b60de", null ],
     [ "setProjectName", "classMyDatatables.html#a0df58c4391f7931b3bc61aafef9b31c4", null ],
     [ "myProject", "classMyDatatables.html#a3077b5e07e3b2bf897aae22bbcc64579", null ],
+    [ "mySetting", "classMyDatatables.html#ac6d75d7e3e748913513b3d963f93f6a5", null ],
     [ "mySqlModel", "classMyDatatables.html#a6cb2fc2336744cb67f33bc98b477fb95", null ]
 ];

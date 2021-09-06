@@ -31,11 +31,11 @@ var NAVTREE =
       [ "Public Functions", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md3", null ],
       [ "Detailed Description", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md4", null ],
       [ "Members Documentation", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md6", [
-        [ "<a id='example'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QExample::example", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md7", null ],
-        [ "<a id='description'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QExample::description", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md9", null ]
+        [ "<a id='example'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QExample::example", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md7", null ],
+        [ "<a id='description'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QExample::description", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md9", null ]
       ] ],
       [ "Member Function Documentation", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md10", [
-        [ "<a id='tojson'/> <a href=\"https://doc.qt.io/qt-5/qjsonobject.html\" title=\"Qt Documentation\">QJsonObject</a> QExample::toJson()", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md11", null ]
+        [ "<a id='tojson'/> <a href=\"https://doc.qt.io/qt-5/qjsonobject.html\" title=\"Qt Documentation\" >QJsonObject</a> QExample::toJson()", "md_src_third_party_qonlinetranslator_docs_QExample.html#autotoc_md11", null ]
       ] ]
     ] ],
     [ "QOnlineTranslator", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html", [
@@ -55,21 +55,21 @@ var NAVTREE =
         [ "<a id='detect-language'/> void QOnlineTranslator::detectLanguage(<em>const QString &text, Engine engine = Google</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md27", null ],
         [ "<a id='abort'/> void QOnlineTranslator::abort()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md29", null ],
         [ "<a id='is-running'/> bool QOnlineTranslator::isRunning()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md31", null ],
-        [ "<a id='tojson'/> <a href=\"https://doc.qt.io/qt-5/qjsonobject.html\" title=\"Qt Documentation\">QJsonDocument</a> QOnlineTranslator::toJson()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md33", null ],
-        [ "<a id='source'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::source()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md35", null ],
-        [ "<a id='source-transliteration'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::sourceTranslit()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md37", null ],
+        [ "<a id='tojson'/> <a href=\"https://doc.qt.io/qt-5/qjsonobject.html\" title=\"Qt Documentation\" >QJsonDocument</a> QOnlineTranslator::toJson()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md33", null ],
+        [ "<a id='source'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::source()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md35", null ],
+        [ "<a id='source-transliteration'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::sourceTranslit()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md37", null ],
         [ "<a id='finished-signal'/> void QOnlineTranslator::finished()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md39", null ],
-        [ "<a id='source-language-name'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::sourceLanguageName()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md41", null ],
+        [ "<a id='source-language-name'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::sourceLanguageName()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md41", null ],
         [ "<a id='source-language'/> Language QOnlineTranslator::sourceLanguage()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md43", null ],
-        [ "<a id='translation'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::translation()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md45", null ],
-        [ "<a id='translation-translit'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::translationTranslit()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md47", null ],
-        [ "<a id='source-transcription'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::sourceTranscription()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md49", null ],
-        [ "<a id='translation-language-name'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::translationLanguageName()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md51", null ],
+        [ "<a id='translation'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::translation()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md45", null ],
+        [ "<a id='translation-translit'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::translationTranslit()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md47", null ],
+        [ "<a id='source-transcription'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::sourceTranscription()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md49", null ],
+        [ "<a id='translation-language-name'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::translationLanguageName()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md51", null ],
         [ "<a id='translation-language'/> Language QOnlineTranslator::translationLanguage()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md53", null ],
-        [ "<a id='translation-options'/> <a href=\"https://doc.qt.io/qt-5/qmap.html\" title=\"Qt Documentation\">QMap</a><<a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a>, <a href=\"https://doc.qt.io/qt-5/qvector.html\" title=\"Qt Documentation\">QVector</a><@ref /home/jflesher/workspace/QtLingo/QtLingo/src/third-party/qonlinetranslator/docs/QOption.md \"QOption\">> QOnlineTranslator::translationOptions()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md55", null ],
-        [ "<a id='examples'/> <a href=\"https://doc.qt.io/qt-5/qmap.html\" title=\"Qt Documentation\">QMap</a><<a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a>, <a href=\"https://doc.qt.io/qt-5/qvector.html\" title=\"Qt Documentation\">QVector</a><@ref /home/jflesher/workspace/QtLingo/QtLingo/src/third-party/qonlinetranslator/docs/QExample.md \"QExample\">> QOnlineTranslator::examples()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md57", null ],
+        [ "<a id='translation-options'/> <a href=\"https://doc.qt.io/qt-5/qmap.html\" title=\"Qt Documentation\" >QMap</a><<a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a>, <a href=\"https://doc.qt.io/qt-5/qvector.html\" title=\"Qt Documentation\" >QVector</a><@ref /home/jflesher/workspace/QtLingo/QtLingo/src/third-party/qonlinetranslator/docs/QOption.md \"QOption\">> QOnlineTranslator::translationOptions()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md55", null ],
+        [ "<a id='examples'/> <a href=\"https://doc.qt.io/qt-5/qmap.html\" title=\"Qt Documentation\" >QMap</a><<a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a>, <a href=\"https://doc.qt.io/qt-5/qvector.html\" title=\"Qt Documentation\" >QVector</a><@ref /home/jflesher/workspace/QtLingo/QtLingo/src/third-party/qonlinetranslator/docs/QExample.md \"QExample\">> QOnlineTranslator::examples()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md57", null ],
         [ "<a id='error'/> TranslationError QOnlineTranslator::error()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md59", null ],
-        [ "<a id='error-string'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::errorString()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md61", null ],
+        [ "<a id='error-string'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::errorString()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md61", null ],
         [ "<a id='is-source-translit-enabled'/> bool QOnlineTranslator::isSourceTranslitEnabled()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md63", null ],
         [ "<a id='set-source-translit-enabled'/> void QOnlineTranslator::setSourceTranslitEnabled(<em>bool enable</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md65", null ],
         [ "<a id='is-translation-translit-enabled'/> bool QOnlineTranslator::isTranslationTranslitEnabled()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md67", null ],
@@ -80,8 +80,8 @@ var NAVTREE =
         [ "<a id='set-dictionary-enabled'/> void QOnlineTranslator::setDictionaryEnabled(<em>bool enable</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md77", null ],
         [ "<a id='is-definitions-enabled'/> bool QOnlineTranslator::isDefinitionsEnabled()", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md79", null ],
         [ "<a id='set-definitions-enabled'/> void QOnlineTranslator::setDefinitionsEnabled(<em>bool enable</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md81", null ],
-        [ "<a id='language-name'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::languageName(<em>Language language</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md83", null ],
-        [ "<a id='language-code'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTranslator::languageCode(<em>Language language</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md85", null ],
+        [ "<a id='language-name'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::languageName(<em>Language language</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md83", null ],
+        [ "<a id='language-code'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTranslator::languageCode(<em>Language language</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md85", null ],
         [ "<a id='language-1'/> static Language QOnlineTranslator::language(<em>const QLocale &locale</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md87", null ],
         [ "<a id='language-2'/> static Language QOnlineTranslator::language(<em>const QString &languageCode</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md89", null ],
         [ "<a id='is-support-translation'/> static bool QOnlineTranslator::isSupportTranslation(<em>Engine engine, Language lang</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTranslator.html#autotoc_md91", null ]
@@ -101,9 +101,9 @@ var NAVTREE =
         [ "<a id='constructor'/> QOnlineTts::QOnlineTts(<em>QObject *parent = nullptr</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md102", null ],
         [ "<a id='generate-urls'/> void QOnlineTts::generateUrls(<em>const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language lang, Voice voice = DefaultVoice, Emotion emotion = DefaultEmotion</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md104", null ],
         [ "<a id='error'/> TranslationError QOnlineTts::error()", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md106", null ],
-        [ "<a id='error-string'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTts::errorString()", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md108", null ],
-        [ "<a id='voice-code'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTts::voiceCode(<em>Voice voice</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md110", null ],
-        [ "<a id='emotion-code'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOnlineTts::emotionCode(<em>Emotion emotion</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md112", null ],
+        [ "<a id='error-string'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTts::errorString()", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md108", null ],
+        [ "<a id='voice-code'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTts::voiceCode(<em>Voice voice</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md110", null ],
+        [ "<a id='emotion-code'/> static <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOnlineTts::emotionCode(<em>Emotion emotion</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md112", null ],
         [ "<a id='emotion'/> static Emotion QOnlineTts::emotion(<em>const QString &emotionCode</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md114", null ],
         [ "<a id='voice'/> static Voice QOnlineTts::voice(<em>const QString &voiceCode</em>)", "md_src_third_party_qonlinetranslator_docs_QOnlineTts.html#autotoc_md116", null ]
       ] ]
@@ -114,12 +114,12 @@ var NAVTREE =
       [ "Public Functions", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md120", null ],
       [ "Detailed Description", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md121", null ],
       [ "Members Documentation", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md123", [
-        [ "<a id='word'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOption::word", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md124", null ],
-        [ "<a id='gender'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\">QString</a> QOption::gender", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md126", null ],
-        [ "<a id='translations'/> <a href=\"https://doc.qt.io/qt-5/qstringlist.html\" title=\"Qt Documentation\">QStringList</a> QOption::translations", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md128", null ]
+        [ "<a id='word'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOption::word", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md124", null ],
+        [ "<a id='gender'/> <a href=\"https://doc.qt.io/qt-5/qstring.html\" title=\"Qt Documentation\" >QString</a> QOption::gender", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md126", null ],
+        [ "<a id='translations'/> <a href=\"https://doc.qt.io/qt-5/qstringlist.html\" title=\"Qt Documentation\" >QStringList</a> QOption::translations", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md128", null ]
       ] ],
       [ "Member Function Documentation", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md129", [
-        [ "<a id='tojson'/> <a href=\"https://doc.qt.io/qt-5/qjsonobject.html\" title=\"Qt Documentation\">QJsonObject</a> QOption::toJson()", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md130", null ]
+        [ "<a id='tojson'/> <a href=\"https://doc.qt.io/qt-5/qjsonobject.html\" title=\"Qt Documentation\" >QJsonObject</a> QOption::toJson()", "md_src_third_party_qonlinetranslator_docs_QOption.html#autotoc_md130", null ]
       ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
@@ -158,12 +158,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "MainWindow_8cpp.html",
-"classMyOrgSettings.html#a38f02a4365f602af430a8a9f879f97f9",
-"classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73daaa3053268d3010e60b2afab40b10185f",
-"classUi__MainWindow.html#a89019c509e15793e6aa4ccdc8254e0ad",
-"globals_g.html",
-"moc__predefs_8h.html#a4e8a5398566f8b2666a8a71b2dbcf3ca",
-"moc__predefs_8h.html#adeff56b51aead6443852cacac294d464"
+"classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23eae97546c444b231727d08f727f0990328",
+"classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73daa96fb82b352ff44143166059154dd9d3",
+"classUi__MainWindow.html#a87d9efce9e074ce57ff61c896a9ee71a",
+"globals_defs_v.html",
+"moc__predefs_8h.html#a4d4e419b93a42fbd34e0f4ae3640c4a9",
+"moc__predefs_8h.html#ade7aebdae6e8389a450aac653544c33f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,13 +1,12 @@
 var classMySqlDbtModel =
 [
-    [ "MySqlDbtModel", "classMySqlDbtModel.html#ad27fbdfdc3c2929e707211c01c6a786e", null ],
+    [ "MySqlDbtModel", "classMySqlDbtModel.html#a059a33e7aac424453f2ceee0fdc363ee", null ],
     [ "~MySqlDbtModel", "classMySqlDbtModel.html#a63dad1efad75e7acd44c0072f91be8b9", null ],
     [ "createDataBaseConnection", "classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb", null ],
     [ "getConnectionName", "classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656", null ],
     [ "getDebugMessage", "classMySqlDbtModel.html#abce4872801f83111eaa0c53a535dcf24", null ],
     [ "getRecordID", "classMySqlDbtModel.html#aa16a239a6d787d61a5b4f13d45cc2174", null ],
     [ "getRunReturnCode", "classMySqlDbtModel.html#ae266befc6ccc680de597ee7329f131d8", null ],
-    [ "getSqlDatabase", "classMySqlDbtModel.html#a0a528785d6c51ff66a5f93e8f89a2b57", null ],
     [ "getSqlDatabaseName", "classMySqlDbtModel.html#a5511e449b4f2bf50b4f3e4435643065b", null ],
     [ "getSqlDriver", "classMySqlDbtModel.html#af774dbe87b9e17270b44ad7478a159b7", null ],
     [ "getSqlHostName", "classMySqlDbtModel.html#af1a7ac0bf0dedcc91f1b4d7faa2ae17a", null ],
@@ -22,7 +21,6 @@ var classMySqlDbtModel =
     [ "setDebugMessage", "classMySqlDbtModel.html#a51eda5b172d9d8643618ad8e6ce8fa7b", null ],
     [ "setMessage", "classMySqlDbtModel.html#a4c767a6a7a92c313120d1d30b00f8f22", null ],
     [ "setRecordID", "classMySqlDbtModel.html#a0cc4b9e5cf179b648f502ed0e5b053ed", null ],
-    [ "setSqlDatabase", "classMySqlDbtModel.html#a238ec9eee0d568aefb5efe4002f8a28e", null ],
     [ "setSqlDatabaseName", "classMySqlDbtModel.html#a7593ee82a0f712fa784b1d48e86407f8", null ],
     [ "setSqlDriver", "classMySqlDbtModel.html#ad1d092a5dcbd001cda16cb8b39eff835", null ],
     [ "setSqlHostName", "classMySqlDbtModel.html#ab2a58202945a6ba8112f07cbf2db3387", null ],

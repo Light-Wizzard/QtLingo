@@ -13,6 +13,7 @@ var classMyLocalization =
     [ "findTsFiles", "classMyLocalization.html#ac2519ea073c86d87cbb3720ff39d848f", null ],
     [ "fixTranslationFile", "classMyLocalization.html#adcf184a8310923e14182f86737c3e9eb", null ],
     [ "getDebugMessage", "classMyLocalization.html#a5912cfbcf87cef7764c242a9f678531e", null ],
+    [ "getDefaultLanguageCode", "classMyLocalization.html#a4f5283926e835cdb03fac727370476fb", null ],
     [ "getHelpSource", "classMyLocalization.html#ad395b101acc2467da6f0be6f39d188bc", null ],
     [ "getLangCode", "classMyLocalization.html#a6ae50df5bc23d26257f3c86ba079874d", null ],
     [ "getLanguageCode", "classMyLocalization.html#a51737e60ec459579bf7d0bb845f3544f", null ],
@@ -26,6 +27,7 @@ var classMyLocalization =
     [ "language", "classMyLocalization.html#a94bf119caeab1979774a9e4674c57220", null ],
     [ "languageCodeToName", "classMyLocalization.html#aaf086cc1012f87a02cc80412b2255513", null ],
     [ "languageMatch", "classMyLocalization.html#ac9ab668d0e6d0b2f5bfacf01a95387dd", null ],
+    [ "languageName", "classMyLocalization.html#af10ab8a2720b55998c4d82ede6302bbd", null ],
     [ "languageNameFromFile", "classMyLocalization.html#a41ef0aa870654686e58210b0b00dad85", null ],
     [ "languageNameToCode", "classMyLocalization.html#a4853140f0a82bb18e69a3b11bdddd05d", null ],
     [ "loadLanguage", "classMyLocalization.html#ae4db2b67adec0bc1d4857375e2a399a1", null ],
@@ -41,5 +43,6 @@ var classMyLocalization =
     [ "writeLanguage", "classMyLocalization.html#a0c698c62e65e31ad4de5b5cbc2c18018", null ],
     [ "MY_LANG_CODE", "classMyLocalization.html#afaa0c63aa53c2571623fdb5e809db5e9", null ],
     [ "MY_LANG_NAME", "classMyLocalization.html#a4e568604185a4dd87166257389a987fd", null ],
+    [ "MY_LOCALE_LANG_CODE", "classMyLocalization.html#afa1609411bf1207ae91ed192f6aa21e5", null ],
     [ "mySetting", "classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe", null ]
 ];

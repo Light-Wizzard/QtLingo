@@ -5,12 +5,13 @@ var searchData=
   ['languagecode_2',['languageCode',['../classQOnlineTranslator.html#a0bce8a584713a201f3437319dfce44b8',1,'QOnlineTranslator']]],
   ['languagecodetoname_3',['languageCodeToName',['../classMyLocalization.html#aaf086cc1012f87a02cc80412b2255513',1,'MyLocalization']]],
   ['languagematch_4',['languageMatch',['../classMyLocalization.html#ac9ab668d0e6d0b2f5bfacf01a95387dd',1,'MyLocalization']]],
-  ['languagename_5',['languageName',['../classQOnlineTranslator.html#a658c059d04fd4ea3f46d0a9dc83a44fe',1,'QOnlineTranslator::languageName(Language lang)'],['../classQOnlineTranslator.html#ab9e9f9ca315aa4a5048e744f476951cc',1,'QOnlineTranslator::languageName(const QString &amp;lang)'],['../classMyLocalization.html#af10ab8a2720b55998c4d82ede6302bbd',1,'MyLocalization::languageName(const QLocale &amp;locale)']]],
+  ['languagename_5',['languageName',['../classQOnlineTranslator.html#ab9e9f9ca315aa4a5048e744f476951cc',1,'QOnlineTranslator::languageName(const QString &amp;lang)'],['../classQOnlineTranslator.html#a658c059d04fd4ea3f46d0a9dc83a44fe',1,'QOnlineTranslator::languageName(Language lang)'],['../classMyLocalization.html#a0184a5c4411dbc89947d4ccd95d0640e',1,'MyLocalization::languageName(const QLocale &amp;thisLocale)']]],
   ['languagenamefromfile_6',['languageNameFromFile',['../classMyLocalization.html#a41ef0aa870654686e58210b0b00dad85',1,'MyLocalization']]],
   ['languagenametocode_7',['languageNameToCode',['../classMyLocalization.html#a4853140f0a82bb18e69a3b11bdddd05d',1,'MyLocalization']]],
   ['lasterror_8',['lastError',['../classSimpleCrypt.html#acb412b13386bf2bcb31552bc40949b39',1,'SimpleCrypt']]],
   ['loadlanguage_9',['loadLanguage',['../classMyLocalization.html#ae4db2b67adec0bc1d4857375e2a399a1',1,'MyLocalization']]],
   ['loadlanguagecombobox_10',['loadLanguageComboBox',['../classMainWindow.html#a30c84325abab7d85524ddedb058b6a3d',1,'MainWindow']]],
   ['loadlanguagecomboboxsource_11',['loadLanguageComboBoxSource',['../classMainWindow.html#a30ebfa7acdb51591325833c328308c71',1,'MainWindow']]],
-  ['logevents_12',['logEvents',['../main_8cpp.html#ac40c3b334072f51c5b90ab79250c3cfa',1,'main.cpp']]]
+  ['loadqtprojectcombo_12',['loadQtProjectCombo',['../classMainWindow.html#ad2398e7292d4c15543057284e40fbf69',1,'MainWindow']]],
+  ['logevents_13',['logEvents',['../main_8cpp.html#ac40c3b334072f51c5b90ab79250c3cfa',1,'main.cpp']]]
 ];

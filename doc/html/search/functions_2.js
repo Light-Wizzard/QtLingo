@@ -15,7 +15,7 @@ var searchData=
   ['compressionmode_12',['compressionMode',['../classSimpleCrypt.html#ac0a68b3ef5441aaf7724f11376e036bd',1,'SimpleCrypt']]],
   ['connectinternet_13',['connectInternet',['../classMyOrgSettings.html#a1d18eadc933e8b990555c589abaaa797',1,'MyOrgSettings']]],
   ['createdatabaseconnection_14',['createDataBaseConnection',['../classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb',1,'MySqlDbtModel']]],
-  ['createhelptranslationjob_15',['createHelpTranslationJob',['../classMainWindow.html#ae41e3ff88173502c98bdf9a353a77c6c',1,'MainWindow']]],
-  ['createreadmetranslationjob_16',['createReadMeTranslationJob',['../classMainWindow.html#a0ed9940551a41d890e20f7b934fd49fb',1,'MainWindow']]],
-  ['createtranslationjob_17',['createTranslationJob',['../classMainWindow.html#a6a99424fc195787c07d14ca24db7c083',1,'MainWindow']]]
+  ['createhelptranslationjob_15',['createHelpTranslationJob',['../classMainWindow.html#ac4b7dc1a9a6338f56b8b7a50996caa16',1,'MainWindow']]],
+  ['createreadmetranslationjob_16',['createReadMeTranslationJob',['../classMainWindow.html#a53348cbaba06ce737d10318e7bac6ec8',1,'MainWindow']]],
+  ['createtranslationjob_17',['createTranslationJob',['../classMainWindow.html#a0ff2cc9b54fd3090d633b52a10221ada',1,'MainWindow']]]
 ];

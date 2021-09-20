@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['language_0',['Language',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73d',1,'QOnlineTranslator']]]
+  ['integrityprotectionmode_0',['IntegrityProtectionMode',['../classSimpleCrypt.html#a42a5172e558d346b28421cc4e85feb2d',1,'SimpleCrypt']]]
 ];

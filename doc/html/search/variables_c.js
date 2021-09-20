@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['tabhelp_0',['tabHelp',['../classUi__MainWindow.html#a6c23edcd500a6f85a80e58a05e890087',1,'Ui_MainWindow']]],
-  ['tabproject_1',['tabProject',['../classUi__MainWindow.html#aa065176c77c9683064588a059136bbf9',1,'Ui_MainWindow']]],
-  ['tabsettings_2',['tabSettings',['../classUi__MainWindow.html#aa6177a42deac664a30dc3fcd8b2affb9',1,'Ui_MainWindow']]],
+  ['tabhelp_0',['tabHelp',['../classUi__MainWindow.html#a284ddf187e16c9421cfa768281f4e390',1,'Ui_MainWindow']]],
+  ['tabproject_1',['tabProject',['../classUi__MainWindow.html#abfa8e1ccfbd6ec034a6ae3912539de4e',1,'Ui_MainWindow']]],
+  ['tabsettings_2',['tabSettings',['../classUi__MainWindow.html#ab9784b2d00f480c20f6c5aa9effa5d8c',1,'Ui_MainWindow']]],
   ['tabsql_3',['tabSql',['../classUi__MainWindow.html#a682b3dd484f30f9244ef18bd84a9b0a5',1,'Ui_MainWindow']]],
-  ['tabtranslations_4',['tabTranslations',['../classUi__MainWindow.html#a4db828400869d1d61fb45a0283906a5e',1,'Ui_MainWindow']]],
-  ['tabwidget_5',['tabWidget',['../classUi__MainWindow.html#a3260b943854b841c986f47c4726ee7f9',1,'Ui_MainWindow']]],
-  ['textedithelp_6',['textEditHelp',['../classUi__MainWindow.html#a8143ea04d150321f78d7fe5ee6e8170e',1,'Ui_MainWindow']]],
-  ['texteditprojects_7',['textEditProjects',['../classUi__MainWindow.html#a76edc01f12d882acf84e3031e32d7849',1,'Ui_MainWindow']]],
-  ['toolbar_8',['toolBar',['../classUi__MainWindow.html#ab84dc49349f514d7b7d3fe8e78de069b',1,'Ui_MainWindow']]],
-  ['translations_9',['translations',['../structQOption.html#a35fd2dacd8b452b6b2540a30d835756d',1,'QOption']]]
+  ['tabsql_4',['tabSQL',['../classUi__MainWindow.html#a57f17f10665babb46a2f4a112932b186',1,'Ui_MainWindow']]],
+  ['tabtranslations_5',['tabTranslations',['../classUi__MainWindow.html#a010a293b362906e83c577c0f2cd8f555',1,'Ui_MainWindow']]],
+  ['tabwidget_6',['tabWidget',['../classUi__MainWindow.html#a13404ee3b30e38230383dd765a5eec4a',1,'Ui_MainWindow']]],
+  ['textedithelp_7',['textEditHelp',['../classUi__MainWindow.html#a068d14e079b565cc0d4f8bd793cd2c8e',1,'Ui_MainWindow']]],
+  ['texteditprojects_8',['textEditProjects',['../classUi__MainWindow.html#a419715556ba33fad6d1cbaf2701d5201',1,'Ui_MainWindow']]],
+  ['toolbar_9',['toolBar',['../classUi__MainWindow.html#aa5995b25981cecee563973a0e5de1739',1,'Ui_MainWindow']]],
+  ['translations_10',['translations',['../structQOption.html#a35fd2dacd8b452b6b2540a30d835756d',1,'QOption']]]
 ];

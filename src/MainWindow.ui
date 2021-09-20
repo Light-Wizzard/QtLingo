@@ -33,89 +33,13 @@
         <item>
          <layout class="QFormLayout" name="formLayoutSettings">
           <item row="0" column="0">
-           <widget class="QLabel" name="labelSettingsProjext">
-            <property name="text">
-             <string>Projects</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutSettingsProject">
-            <item>
-             <widget class="QComboBox" name="comboBoxSettingsProjects">
-              <property name="accessibleName">
-               <string notr="true"/>
-              </property>
-              <property name="accessibleDescription">
-               <string notr="true"/>
-              </property>
-              <property name="currentText">
-               <string notr="true"/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="lineEditSettingsQtProjectName">
-              <property name="accessibleName">
-               <string/>
-              </property>
-              <property name="accessibleDescription">
-               <string/>
-              </property>
-              <property name="inputMask">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string notr="true"/>
-              </property>
-              <property name="placeholderText">
-               <string notr="true"/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelRecordIdSettings">
-              <property name="accessibleName">
-               <string/>
-              </property>
-              <property name="accessibleDescription">
-               <string/>
-              </property>
-              <property name="text">
-               <string notr="true">Record #</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacerSettingsProject">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButtonSettingsProjectsBrowser">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="1" column="0">
            <widget class="QLabel" name="labelSettingsLanguage">
             <property name="text">
              <string>Change Language</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="0" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsLanguage">
             <item>
              <widget class="QComboBox" name="comboBoxSettingsLanguage">
@@ -145,7 +69,7 @@
             </item>
            </layout>
           </item>
-          <item row="2" column="0">
+          <item row="1" column="0">
            <widget class="QLabel" name="labelSettingLupdate">
             <property name="toolTip">
              <string notr="true"/>
@@ -167,7 +91,7 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="1" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsLupdate">
             <item>
              <widget class="QLineEdit" name="lineEditSettingsLupdate">
@@ -203,14 +127,14 @@
             </item>
            </layout>
           </item>
-          <item row="3" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="labelSettingsLrelease">
             <property name="text">
              <string>lrelease</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="2" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsLrelease">
             <item>
              <widget class="QLineEdit" name="lineEditSettingsLrelease">
@@ -240,14 +164,14 @@
             </item>
            </layout>
           </item>
-          <item row="4" column="0">
+          <item row="3" column="0">
            <widget class="QLabel" name="labelSettingsUiLanguage">
             <property name="text">
              <string>UI Language</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="3" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsUI">
             <item>
              <widget class="QLabel" name="labelSettingsLanguageUI">
@@ -258,14 +182,14 @@
             </item>
            </layout>
           </item>
-          <item row="5" column="0">
+          <item row="4" column="0">
            <widget class="QLabel" name="labelSettingsTranslationEngine">
             <property name="text">
              <string>Translation Engines</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="4" column="1">
            <layout class="QGridLayout" name="gridLayoutSettingsTransEngine">
             <item row="0" column="0">
              <widget class="QCheckBox" name="checkBoxSettingsGoogle">
@@ -318,14 +242,14 @@
             </item>
            </layout>
           </item>
-          <item row="6" column="0">
+          <item row="5" column="0">
            <widget class="QLabel" name="labelSettingsDelay">
             <property name="text">
              <string>Delay in Seconds</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
+          <item row="5" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsDelay">
             <item>
              <widget class="QSpinBox" name="spinBoxSettingsDelay">
@@ -349,19 +273,57 @@
             </item>
            </layout>
           </item>
-          <item row="8" column="0">
+          <item row="6" column="0">
+           <widget class="QLabel" name="labelSettignsMessaging">
+            <property name="text">
+             <string>Logging</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutSettignsMessaging">
+            <item>
+             <widget class="QCheckBox" name="checkBoxSettignsMessaging">
+              <property name="text">
+               <string>Debug Messages</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerSettignsMessaging">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="7" column="0">
            <widget class="QLabel" name="labelSettingsOptions">
             <property name="text">
              <string>Options</string>
             </property>
            </widget>
           </item>
-          <item row="8" column="1">
+          <item row="7" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsOptions">
             <item>
              <widget class="QPushButton" name="pushButtonSettingsSave">
               <property name="text">
                <string>Save</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonSettingsClear">
+              <property name="text">
+               <string>Clear</string>
               </property>
              </widget>
             </item>
@@ -381,37 +343,6 @@
             </item>
             <item>
              <spacer name="horizontalSpacerSettingsOptions">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="labelSettignsMessaging">
-            <property name="text">
-             <string>Logging</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutSettignsMessaging">
-            <item>
-             <widget class="QCheckBox" name="checkBoxSettignsMessaging">
-              <property name="text">
-               <string>Debug Messages</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacerSettignsMessaging">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -611,14 +542,83 @@
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <layout class="QFormLayout" name="formLayoutTranslations">
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelTranslationsProjectFolder">
+            <property name="text">
+             <string>Project Folder</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLineEdit" name="lineEditTranslationsProjectFolder">
+              <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <property name="placeholderText">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonTranslationsProjectFolderBrowse">
+              <property name="text">
+               <string>Browes</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
           <item row="2" column="0">
+           <widget class="QLabel" name="labelTranslationMake">
+            <property name="text">
+             <string>Type make</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutTranslationsMake">
+            <item>
+             <widget class="QRadioButton" name="radioButtonTranslationsQmake">
+              <property name="text">
+               <string notr="true">qmake</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioButtonTranslationsCmake">
+              <property name="text">
+               <string notr="true">cmake</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerTranslationMake">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
            <widget class="QLabel" name="labelTranslationsSource">
             <property name="text">
              <string>Source</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="3" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutTranslationsSource">
             <item>
              <widget class="QLineEdit" name="lineEditTranslationsSource">
@@ -642,7 +642,7 @@
             </item>
            </layout>
           </item>
-          <item row="3" column="0">
+          <item row="4" column="0">
            <widget class="QLabel" name="labelTranslationsDoxyfile">
             <property name="toolTip">
              <string>Tempoary Folder contents gets deleted</string>
@@ -655,7 +655,7 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="4" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutTranslationsDestination">
             <item>
              <widget class="QLineEdit" name="lineEditTranslationsDoxyfile">
@@ -682,14 +682,83 @@
             </item>
            </layout>
           </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="labelTranslationSourceLanguage">
+            <property name="text">
+             <string>Source Language</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutTranslationSourceLang">
+            <item>
+             <widget class="QComboBox" name="comboBoxTranslationSourceLanguage">
+              <property name="currentText">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelTranslationsSourceLanguageCode">
+              <property name="text">
+               <string notr="true">en</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacerTranslationsSourceLang">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
           <item row="6" column="0">
+           <widget class="QLabel" name="labelTranslationsHelp">
+            <property name="text">
+             <string>Help Folder</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutTranslationsHelp">
+            <item>
+             <widget class="QLineEdit" name="lineEditTranslationsHelp">
+              <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <property name="placeholderText">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonTranslationsHelp">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="7" column="0">
            <widget class="QLabel" name="labelTranslationsCountryCode">
             <property name="text">
              <string>Country Codes</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
+          <item row="7" column="1">
            <widget class="QScrollArea" name="scrollArea">
             <property name="widgetResizable">
              <bool>true</bool>
@@ -1657,61 +1726,29 @@
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="labelTranslationsProjectFolder">
+           <widget class="QLabel" name="labelProjectName">
             <property name="text">
-             <string>Project Folder</string>
+             <string>Project Name</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QLineEdit" name="lineEditTranslationsProjectFolder">
-              <property name="inputMask">
-               <string notr="true"/>
-              </property>
+             <widget class="QComboBox" name="comboBoxProjectNames"/>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEditProjectName"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelRecordIdProject">
               <property name="text">
-               <string notr="true"/>
-              </property>
-              <property name="placeholderText">
-               <string notr="true"/>
+               <string notr="true">#</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonTranslationsProjectFolderBrowse">
-              <property name="text">
-               <string>Browes</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="labelTranslationSourceLanguage">
-            <property name="text">
-             <string>Source Language</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutTranslationSourceLang">
-            <item>
-             <widget class="QComboBox" name="comboBoxTranslationSourceLanguage">
-              <property name="currentText">
-               <string notr="true"/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelTranslationsSourceLanguageCode">
-              <property name="text">
-               <string notr="true">en</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacerTranslationsSourceLang">
+             <spacer name="horizontalSpacer_2">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -1723,70 +1760,8 @@
               </property>
              </spacer>
             </item>
-           </layout>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="labelTranslationMake">
-            <property name="text">
-             <string>Type make</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutTranslationsMake">
             <item>
-             <widget class="QRadioButton" name="radioButtonTranslationsQmake">
-              <property name="text">
-               <string notr="true">qmake</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioButtonTranslationsCmake">
-              <property name="text">
-               <string notr="true">cmake</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacerTranslationMake">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="labelTranslationsHelp">
-            <property name="text">
-             <string>Help Folder</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutTranslationsHelp">
-            <item>
-             <widget class="QLineEdit" name="lineEditTranslationsHelp">
-              <property name="inputMask">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string notr="true"/>
-              </property>
-              <property name="placeholderText">
-               <string notr="true"/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButtonTranslationsHelp">
+             <widget class="QPushButton" name="pushButtonProjectBrowser">
               <property name="text">
                <string>Browse</string>
               </property>

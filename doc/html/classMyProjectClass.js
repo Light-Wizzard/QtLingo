@@ -1,7 +1,7 @@
 var classMyProjectClass =
 [
     [ "MyProjectClass", "classMyProjectClass.html#abead93ac1857a77e864d2b3200751913", null ],
-    [ "getDestinationFolder", "classMyProjectClass.html#a3210d3d5b009fa6b8689c4715f9de505", null ],
+    [ "getDoxyfileFolder", "classMyProjectClass.html#aedefa304653dad4e70349ea7f85ddb31", null ],
     [ "getHelpFolder", "classMyProjectClass.html#a4c28c594d1bb6c4d808ef3ac7116eb6e", null ],
     [ "getID", "classMyProjectClass.html#a9ec21cb8b21fed09537b4a2614ff7936", null ],
     [ "getLanguageIDs", "classMyProjectClass.html#a6598b4950657a1ebf504348f8f1dec0f", null ],
@@ -10,7 +10,7 @@ var classMyProjectClass =
     [ "getQtProjectName", "classMyProjectClass.html#a004fb9cbccec87677dd3b6d79bcf320c", null ],
     [ "getSourceFolder", "classMyProjectClass.html#a9855d5339ffebf280de07c8604161013", null ],
     [ "getSourceLanguage", "classMyProjectClass.html#a087af6a5241ceada1bb2c63d8bec2e89", null ],
-    [ "setDestinationFolder", "classMyProjectClass.html#adb0b2d34675baee7dcce5a289434c737", null ],
+    [ "setDoxyfileFolder", "classMyProjectClass.html#adf331ac127e166caaf086c6aae6f15d5", null ],
     [ "setHelpFolder", "classMyProjectClass.html#a79c0fbcd76aeeadf057b27acbb400ed0", null ],
     [ "setID", "classMyProjectClass.html#a06d84bd57f6a85ae9278342d3dc2889e", null ],
     [ "setLanguageIDs", "classMyProjectClass.html#aefa99843434474fe7f3cf057750ad371", null ],

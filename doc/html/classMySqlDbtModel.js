@@ -1,6 +1,6 @@
 var classMySqlDbtModel =
 [
-    [ "MySqlDbtModel", "classMySqlDbtModel.html#a059a33e7aac424453f2ceee0fdc363ee", null ],
+    [ "MySqlDbtModel", "classMySqlDbtModel.html#ae25206d74899f956205bfb3b23145ba8", null ],
     [ "~MySqlDbtModel", "classMySqlDbtModel.html#a63dad1efad75e7acd44c0072f91be8b9", null ],
     [ "createDataBaseConnection", "classMySqlDbtModel.html#a244cd55fe4e04f3e39fb34a47b5f86bb", null ],
     [ "getConnectionName", "classMySqlDbtModel.html#ad01baa1e66551dc6239194f9c4955656", null ],
@@ -27,5 +27,6 @@ var classMySqlDbtModel =
     [ "setSqlPassword", "classMySqlDbtModel.html#ad464905c598c0cdb50348c73a301988c", null ],
     [ "setSqlTableName", "classMySqlDbtModel.html#a1da2027606bba16aa0a4ba46dadf921b", null ],
     [ "setSqlUserName", "classMySqlDbtModel.html#a2724af9ac781006f2385538311f8d5ef", null ],
+    [ "myConstants", "classMySqlDbtModel.html#a1b2e0738fcd4e2c150d731e4c8cbfadb", null ],
     [ "mySetting", "classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4", null ]
 ];

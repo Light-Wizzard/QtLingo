@@ -4,11 +4,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "third-party", "dir_afd47efe7cb30516bfa146ac19a62883.html", "dir_afd47efe7cb30516bfa146ac19a62883" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "MainWindow.cpp", "MainWindow_8cpp.html", null ],
-    [ "MainWindow.h", "MainWindow_8h.html", [
-      [ "MyLingoJobs", "classMyLingoJobs.html", "classMyLingoJobs" ],
-      [ "MainWindow", "classMainWindow.html", "classMainWindow" ]
+    [ "MainWindow.h", "MainWindow_8h.html", "MainWindow_8h" ],
+    [ "MyConstants.h", "MyConstants_8h.html", [
+      [ "MyConstants", "classMyConstants.html", "classMyConstants" ]
     ] ],
-    [ "MyConstants.h", "MyConstants_8h.html", "MyConstants_8h" ],
     [ "MyDatatables.cpp", "MyDatatables_8cpp.html", null ],
     [ "MyDatatables.h", "MyDatatables_8h.html", [
       [ "MyProjectClass", "classMyProjectClass.html", "classMyProjectClass" ],
@@ -19,9 +18,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "MyLocalization", "classMyLocalization.html", "classMyLocalization" ]
     ] ],
     [ "MyOrgSettings.cpp", "MyOrgSettings_8cpp.html", null ],
-    [ "MyOrgSettings.h", "MyOrgSettings_8h.html", [
-      [ "MyOrgSettings", "classMyOrgSettings.html", "classMyOrgSettings" ]
-    ] ],
+    [ "MyOrgSettings.h", "MyOrgSettings_8h.html", "MyOrgSettings_8h" ],
     [ "MySqlDbtModel.cpp", "MySqlDbtModel_8cpp.html", null ],
     [ "MySqlDbtModel.h", "MySqlDbtModel_8h.html", [
       [ "MySqlDbtModel", "classMySqlDbtModel.html", "classMySqlDbtModel" ]

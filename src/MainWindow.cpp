@@ -52,7 +52,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->comboBoxSqlDatabaseType->addItem("QTDS");
     #else
     ui->comboBoxSqlDatabaseType->setHidden(true);
-    ui->comboBoxSettingsProjects->setHidden(true);
+    ui->comboBoxProjectNames->setHidden(true);
     ui->pushButtonSettingsAdd->setHidden(true);
     ui->pushButtonSettingsDelete->setHidden(true);
     ui->pushButtonSettingsSave->setHidden(true);
@@ -146,6 +146,15 @@ void MainWindow::retranslate()
     loadLanguageComboBoxSource();
 }
 /************************************************
+ * @brief retranslate.
+ * retranslate
+ ***********************************************/
+void MainWindow::setMainLoaded(bool thisState)
+{
+    isMainLoaded = thisState;
+    myLocalization->setMainLoaded(thisState);
+}
+/************************************************
  * @brief load Language ComboBox Source.
  * loadLanguageComboBoxSource
  ***********************************************/
@@ -155,8 +164,7 @@ void MainWindow::loadLanguageComboBoxSource()
     //
     QMetaEnum theEnum = QMetaEnum::fromType<QOnlineTranslator::Language>();
     bool lastIsMainLoaded = isMainLoaded;
-    isMainLoaded = false;
-    myLocalization->setMainLoaded(false);
+    setMainLoaded(false);
     int theCurrentIndex = ui->comboBoxTranslationSourceLanguage->currentIndex();
     if (theCurrentIndex < 0)
     {
@@ -193,8 +201,7 @@ void MainWindow::loadLanguageComboBoxSource()
     else
     { ui->comboBoxTranslationSourceLanguage->setCurrentIndex(theCurrentIndex); }
     setLanguageCode();
-    isMainLoaded = lastIsMainLoaded;
-    myLocalization->setMainLoaded(lastIsMainLoaded);
+    setMainLoaded(lastIsMainLoaded);
 }
 /************************************************
  * @brief set Language Code.
@@ -212,8 +219,7 @@ void MainWindow::loadLanguageComboBox()
 {
     setMessage("loadLanguageComboBox", Debug);
     bool lastIsMainLoaded = isMainLoaded;
-    myLocalization->setMainLoaded(false);
-    isMainLoaded = false;
+    setMainLoaded(false);
     int theCurrentIndex = ui->comboBoxSettingsLanguage->currentIndex();
     ui->comboBoxSettingsLanguage->clear();
     const QStringList theQmFiles =  myLocalization->getQmFiles(myLocalization->getTranslationSource());
@@ -241,8 +247,7 @@ void MainWindow::loadLanguageComboBox()
     ui->comboBoxSettingsLanguage->setModel(theLangModel);
     ui->comboBoxSettingsLanguage->setView(theTableView);
     ui->comboBoxSettingsLanguage->setCurrentIndex(theCurrentIndex);
-    isMainLoaded = lastIsMainLoaded;
-    myLocalization->setMainLoaded(lastIsMainLoaded);
+    setMainLoaded(lastIsMainLoaded);
 }
 /************************************************
  * @brief load Qt Project Combo.
@@ -255,7 +260,7 @@ void MainWindow::loadQtProjectCombo()
     bool lastIsMainLoaded = isMainLoaded;
     isMainLoaded = false;
     myLocalization->setMainLoaded(false);
-    ui->comboBoxSettingsProjects->clear();
+    ui->comboBoxProjectNames->clear();
     QSqlQueryModel *theModalQtLingo = new QSqlQueryModel(this); //!< SQL Query Model
     //  SELECT id, QtProjectName FROM Projects
     const auto SELECTED_PROJECTS_SQL = QLatin1String(R"(%1)").arg(mySqlDb->getQtProjectNameSelectQuery());
@@ -273,17 +278,17 @@ void MainWindow::loadQtProjectCombo()
     theTableView->setAutoScroll(false);
     //theTableView->setColumnHidden(0, true);
     theTableView->setColumnWidth (1, 296);
-    //ui->comboBoxSettingsProjects->setModel(nullptr);
-    ui->comboBoxSettingsProjects->setModel(theModalQtLingo);
-    ui->comboBoxSettingsProjects->setView(theTableView);
-    ui->comboBoxSettingsProjects->setMinimumWidth(300);
-    ui->comboBoxSettingsProjects->setModelColumn(1);
-    ui->comboBoxSettingsProjects->setCurrentIndex(0);
+    //ui->comboBoxProjectNames->setModel(nullptr);
+    ui->comboBoxProjectNames->setModel(theModalQtLingo);
+    ui->comboBoxProjectNames->setView(theTableView);
+    ui->comboBoxProjectNames->setMinimumWidth(300);
+    ui->comboBoxProjectNames->setModelColumn(1);
+    ui->comboBoxProjectNames->setCurrentIndex(0);
     // Set by Project name or Index
     QString theProjectName = mySqlDb->getProjectName();
-    ui->comboBoxSettingsProjects->setCurrentIndex(ui->comboBoxSettingsProjects->findText(theProjectName));
+    ui->comboBoxProjectNames->setCurrentIndex(ui->comboBoxProjectNames->findText(theProjectName));
     // int theProjectIndex = mySqlDb->getProjectID().toInt();
-    //  ui->comboBoxSettingsProjects->setCurrentIndex(theProjectIndex);
+    //  ui->comboBoxProjectNames->setCurrentIndex(theProjectIndex);
     isMainLoaded = lastIsMainLoaded;
     myLocalization->setMainLoaded(lastIsMainLoaded);
     #endif
@@ -294,8 +299,7 @@ void MainWindow::loadQtProjectCombo()
  ***********************************************/
 void MainWindow::onRunFirstOnStartup()
 {
-    isMainLoaded = false;
-    myLocalization->setMainLoaded(false);
+    setMainLoaded(false);
     clearForms(TabAll);
     // Go to Tab
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabWidget->findChild<QWidget*>("tabSettings")));
@@ -316,13 +320,15 @@ void MainWindow::onRunFirstOnStartup()
     if (!mySqlDb->checkDatabase()) close();
     loadQtProjectCombo();
     //
-    fillForms(mySqlDb->getProjectID());
+    if (!fillForms(mySqlDb->getProjectID()))
+    {
+        fillForms(getComboBoxProjectsID(0));
+    }
     loadLanguageComboBoxSource();
     //
     setSqlBrowseButton();
     //
-    isMainLoaded = true;
-    myLocalization->setMainLoaded(true);
+    setMainLoaded(true);
 }
 /************************************************
  * @brief read Settings First.
@@ -385,7 +391,7 @@ void MainWindow::readStatesChanges()
     if (theProjectID != "-1") { mySqlDb->setProjectID(theProjectID); } else { mySqlDb->setProjectID("1"); }
     mySqlDb->setProjectName(mySetting->readSettings(myConstants->MY_SQL_PROJECT_NAME, mySqlDb->getProjectName()));
     // Project ID
-    ui->labelRecordIdSettings->setText(mySqlDb->getProjectID());
+    ui->labelRecordIdProject->setText(mySqlDb->getProjectID());
     // Trans Engine
     // Google
     ui->checkBoxSettingsGoogle->setCheckState((mySetting->readSettings(myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, "true")) == "true" ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
@@ -404,8 +410,8 @@ void MainWindow::writeStateChanges()
 {
     setMessage("writeStateChanges", Debug);
     // Project ID
-    mySetting->writeSettings(myConstants->MY_SQL_PROJECT_ID, ui->labelRecordIdSettings->text());
-    mySetting->writeSettings(myConstants->MY_SQL_PROJECT_NAME, ui->comboBoxSettingsProjects->currentText());
+    mySetting->writeSettings(myConstants->MY_SQL_PROJECT_ID, ui->labelRecordIdProject->text());
+    mySetting->writeSettings(myConstants->MY_SQL_PROJECT_NAME, ui->comboBoxProjectNames->currentText());
     // Trans Engines
     // Google
     mySetting->writeSettings(myConstants->MY_TRANS_ENGINE_GOOGLE_VALUE, (ui->checkBoxSettingsGoogle->isChecked()) ? "true" : "false" );
@@ -566,7 +572,7 @@ void MainWindow::on_pushButtonSettingsProjectsBrowser_clicked()
     //
     QString theTranslationFolder = dialogTranslationFolder.getExistingDirectory(this, tr("Projects Folder Location"), mySetting->getLastApplicationPath());
     if (!theTranslationFolder.isEmpty())
-        { ui->lineEditSettingsQtProjectName->setText(theTranslationFolder); }
+        { ui->lineEditProjectName->setText(theTranslationFolder); }
 }
 /************************************************
  * @brief on pushButton Translations Project Folder Browse clicked.
@@ -662,15 +668,25 @@ void MainWindow::on_pushButtonSqlDatabaseNameBrowse_clicked()
 }
 /************************************************
  * @brief on comboBox Settings Projects current Index Changed.
- * on_comboBoxSettingsProjects_currentIndexChanged
+ * on_comboBoxProjectNames_currentIndexChanged
  ***********************************************/
-void MainWindow::on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex)
+void MainWindow::on_comboBoxProjectNames_currentIndexChanged(int thisIndex)
 {
     Q_UNUSED(thisIndex) // not the same as theIndex
     if (!isMainLoaded) { return; }
-    QString theIndex = ui->comboBoxSettingsProjects->model()->data(ui->comboBoxSettingsProjects->model()->index(ui->comboBoxSettingsProjects->currentIndex(), 0)).toString();
-    setMessage("on_comboBoxSettingsProjects_currentIndexChanged = " + QString::number(thisIndex) + " and thisIndex = " + theIndex, Debug);
+    QString theIndex = ui->comboBoxProjectNames->model()->data(ui->comboBoxProjectNames->model()->index(ui->comboBoxProjectNames->currentIndex(), 0)).toString();
+    setMessage("on_comboBoxProjectNames_currentIndexChanged = " + QString::number(thisIndex) + " and thisIndex = " + theIndex, Debug);
     fillForms(theIndex);
+}
+/************************************************
+ * @brief get ComboBox Projects ID.
+ * getComboBoxProjectsID
+ ***********************************************/
+QString MainWindow::getComboBoxProjectsID(int thisIndex)
+{
+    QAbstractItemModel *theModel = ui->comboBoxProjectNames->model();
+    QModelIndex theIndex = theModel->index(thisIndex, 0); // 0 Refers to the first item or ID
+    return theModel->data(theIndex).toString().trimmed(); // Returns 'Item 0'
 }
 /************************************************
  * @brief on pushButton SQL Password Show clicked.
@@ -729,7 +745,7 @@ void MainWindow::on_pushButtonSettingsDelete_clicked()
 {
     setMessage("on_pushButtonSettingsDelete_clicked", Debug);
     setProjectClass(TabAll);
-    mySqlDb->deleteQtProject(ui->labelRecordIdSettings->text());
+    mySqlDb->deleteQtProject(ui->labelRecordIdProject->text());
 }
 /************************************************
  * @brief set Programs.
@@ -995,15 +1011,557 @@ void MainWindow::checkLanguage(const QString &thisName, const QString &thisLangu
     myLanguages = theLangagesIDs;
 }
 /************************************************
+ * @brief set Check Marks Translation.
+ * setCheckMarksTranslation
+ ***********************************************/
+void MainWindow::setCheckMarksTranslation(const QString &thisDbValve)
+{
+    // set check boxes
+    if (thisDbValve.contains("af", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsAF->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsAF->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("am", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsAM->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsAM->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ar", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsAR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsAR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("az", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsAZ->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsAZ->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ba", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsBA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsBA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("bn", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsBN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsBN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("bs", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsBS->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsBS->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("be", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsBE->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsBE->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("bg", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsBG->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsBG->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ca", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsCA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsCA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("cs", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsCS->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsCS->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("co", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsCO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsCO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("cy", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsCY->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsCY->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ceb", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("da", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsDA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsDA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("de", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsDE->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsDE->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("el", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsEL->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsEL->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("eo", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsEO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsEO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("en", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsEN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsEN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("et", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsET->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsET->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("es", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsES->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsES->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("eu", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsEU->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsEU->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("fo", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsFO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsFO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("fa", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsFA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsFA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("fi", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsFI->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsFI->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("fr", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsFR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsFR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("fil", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("fj", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsFJ->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsFJ->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("fy", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsFY->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsFY->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("gd", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsGD->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsGD->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ga", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsGA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsGA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("gl", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsGL->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsGL->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("GU", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsGU->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsGU->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("hr", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("haw", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("he", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHE->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHE->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("hi", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHI->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHI->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("hu", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHU->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHU->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("HT", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHT->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHT->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ha", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("hy", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHY->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHY->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("id", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsID->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsID->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ig", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsIG->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsIG->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("is", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsIS->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsIS->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("jw", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsJW->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsJW->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ka", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsKA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsKA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("kn", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsKN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsKN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("kk", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsKK->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsKK->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("km", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsKM->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsKM->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ky", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsKY->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsKY->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("lo", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsLO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsLO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("la", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsLA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsLA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("lb", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsLB->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsLB->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("nl", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsNL->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsNL->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("it", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsIT->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsIT->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ja", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsJA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsJA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ko", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsKO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsKO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ku", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsKU->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsKU->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("lv", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsLV->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsLV->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("lt", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsLT->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsLT->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mk", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMK->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMK->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ml", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsML->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsML->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ms", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMS->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMS->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mt", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMT->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMT->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mg", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMG->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMG->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mi", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMI->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMI->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mr", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mn", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("my", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMY->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMY->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mrj", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("hmn", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("apc", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("mhr", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("no", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsNO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsNO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("nb", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsNB->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsNB->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("nn", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsNN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsNN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ny", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsNY->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsNY->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ne", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsNE->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsNE->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("or", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsOR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsOR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("otq", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("pap", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ps", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsPS->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsPS->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("pl", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsPL->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsPL->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("pt", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsPT->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsPT->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("pa", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsPA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsPA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("rm", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsRM->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsRM->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ro", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsRO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsRO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ru", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsRU->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsRU->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("rw", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsRW->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsRW->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sq", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSQ->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSQ->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sr", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sk", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSK->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSK->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sl", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSL->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSL->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sb", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSB->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSB->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sm", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSM->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSM->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("st", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsST->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsST->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sn", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sd", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSD->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSD->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("si", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSI->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSI->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("so", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("su", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSU->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSU->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sw", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSW->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSW->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sr-Latin", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("sv", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsSV->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsSV->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tlh", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tlh-Qaak", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tl", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTL->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTL->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ty", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTY->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTY->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tg", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTG->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTG->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ta", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tt", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTT->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTT->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("te", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTE->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTE->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("to", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tk", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTK->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTK->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("th", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTH->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTH->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ts", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTS->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTS->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tn", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("tr", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsTR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsTR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("uk", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsUK->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsUK->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ur", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsUR->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsUR->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ug", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsUG->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsUG->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("uz", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsUZ->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsUZ->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("ve", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsVE->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsVE->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("udm", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("vi", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsVI->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsVI->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("xh", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsXH->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsXH->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("yi", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsYI->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsYI->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("yo", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("yue", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("yua", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("zu", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsZU->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsZU->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("zh-CN", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsZH_CN->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsZH_CN->setCheckState(Qt::CheckState::Unchecked); }
+    if (thisDbValve.contains("zh-TW", Qt::CaseInsensitive))
+        { ui->checkBoxTranslationsZH_TW->setCheckState(Qt::CheckState::Checked); }
+    else
+        { ui->checkBoxTranslationsZH_TW->setCheckState(Qt::CheckState::Unchecked); }
+}
+/************************************************
  * @brief fill Forms.
  * fillForms
  ***********************************************/
-void MainWindow::fillForms(const QString &thisProjectID)
+bool MainWindow::fillForms(const QString &thisProjectID)
 {
     setMessage("fillForms=" + thisProjectID, Debug);
+    bool theReturn = true;
     #ifdef USE_SQL_FLAG
+    setMainLoaded(false);
     clearForms(TabAll);
-    ui->labelRecordIdSettings->setText(thisProjectID); // Project id and Configuration ProjectID
+    ui->labelRecordIdProject->setText(thisProjectID); // Project id and Configuration ProjectID
     // Declare all variable in function scope
     QString theDbValve;
     QSqlQuery query; //!< SQL Query
@@ -1019,8 +1577,9 @@ void MainWindow::fillForms(const QString &thisProjectID)
             setMessage(" QtProjectName=|" + query.value("QtProjectName").toString() + "| SourceFolder=|" + query.value("SourceFolder").toString() + "| QtProjectFolder=|" + query.value("QtProjectFolder").toString() + "| DoxyfileFolder=|" + query.value("DoxyfileFolder").toString() + "| HelpFolder=|" + query.value("HelpFolder").toString() + "| LanguageIDs=|" + query.value("LanguageIDs").toString() + "|", Debug);
             // Set Record ID
             myRecordID = query.value("id").toInt();
-            ui->labelRecordIdSettings->setText(query.value("id").toString());
-            ui->lineEditSettingsQtProjectName->setText(query.value("QtProjectName").toString());
+            ui->labelRecordIdProject->setText(query.value("id").toString());
+            ui->lineEditProjectName->setText(query.value("QtProjectName").toString());
+            ui->comboBoxProjectNames->setCurrentIndex(ui->comboBoxProjectNames->findText(query.value("QtProjectName").toString()));
             ui->lineEditTranslationsProjectFolder->setText(query.value("QtProjectFolder").toString());
             ui->lineEditTranslationsSource->setText(query.value("SourceFolder").toString());
             ui->lineEditTranslationsDoxyfile->setText(query.value("DoxyfileFolder").toString());
@@ -1034,556 +1593,25 @@ void MainWindow::fillForms(const QString &thisProjectID)
             setLanguageCode();
             // en,de,fr,it,ja,zh,no,ru,sv,ar
             theDbValve = query.value("LanguageIDs").toString();
-            // set check boxes
-            if (theDbValve.contains("af", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsAF->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsAF->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sq", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSQ->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSQ->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ar", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsAR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsAR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("eu", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsEU->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsEU->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("be", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsBE->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsBE->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("bg", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsBG->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsBG->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ca", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsCA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsCA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("zh-CN", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsZH_CN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsZH_CN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("zh-TW", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsZH_TW->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsZH_TW->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("hr", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("cs", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsCS->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsCS->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("da", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsDA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsDA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("nl", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsNL->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsNL->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("en", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsEN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsEN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("et", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsET->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsET->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("fo", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsFO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsFO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("fa", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsFA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsFA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("fi", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsFI->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsFI->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("fr", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsFR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsFR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("gd", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsGD->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsGD->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("de", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsDE->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsDE->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("el", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsEL->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsEL->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("he", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHE->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHE->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("hi", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHI->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHI->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("hu", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHU->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHU->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("is", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsIS->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsIS->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("id", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsID->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsID->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ga", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsGA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsGA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("it", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsIT->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsIT->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ja", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsJA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsJA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ko", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsKO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsKO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ku", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsKU->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsKU->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("lv", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsLV->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsLV->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("lt", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsLT->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsLT->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mk", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMK->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMK->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ml", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsML->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsML->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ms", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMS->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMS->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mt", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMT->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMT->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("no", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsNO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsNO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("nb", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsNB->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsNB->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("nn", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsNN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsNN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("pl", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsPL->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsPL->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("pt", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsPT->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsPT->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("pa", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsPA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsPA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("rm", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsRM->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsRM->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ro", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsRO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsRO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ru", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsRU->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsRU->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sr", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sk", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSK->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSK->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sl", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSL->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSL->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sb", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSB->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSB->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("es", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsES->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsES->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sv", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSV->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSV->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("th", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTH->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTH->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ts", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTS->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTS->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tn", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tr", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("uk", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsUK->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsUK->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ur", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsUR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsUR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ve", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsVE->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsVE->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("vi", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsVI->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsVI->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("cy", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsCY->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsCY->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("xh", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsXH->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsXH->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("yi", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsYI->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsYI->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("zu", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsZU->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsZU->setCheckState(Qt::CheckState::Unchecked); }
-
-
-            if (theDbValve.contains("am", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsAM->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsAM->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("hy", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHY->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHY->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("az", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsAZ->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsAZ->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ba", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsBA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsBA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("bn", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsBN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsBN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("bs", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsBS->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsBS->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ny", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsNY->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsNY->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("co", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsCO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsCO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("eo", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsEO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsEO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("fj", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsFJ->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsFJ->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("fy", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsFY->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsFY->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("gl", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsGL->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsGL->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ka", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsKA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsKA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("GU", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsGU->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsGU->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("HT", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHT->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHT->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ha", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ig", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsIG->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsIG->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("jw", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsJW->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsJW->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("kn", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsKN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsKN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("kk", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsKK->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsKK->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("km", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsKM->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsKM->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("rw", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsRW->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsRW->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ky", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsKY->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsKY->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("lo", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsLO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsLO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("la", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsLA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsLA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("lb", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsLB->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsLB->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mg", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMG->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMG->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mi", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMI->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMI->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mr", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mn", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("my", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMY->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMY->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ne", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsNE->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsNE->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("or", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsOR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsOR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ps", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsPS->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsPS->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sm", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSM->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSM->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("st", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsST->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsST->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sn", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sd", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSD->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSD->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("si", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSI->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSI->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("so", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("su", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSU->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSU->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sw", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSW->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSW->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tl", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTL->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTL->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ty", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTY->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTY->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tg", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTG->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTG->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ta", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTA->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tt", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTT->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTT->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("te", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTE->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTE->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("to", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tk", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTK->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTK->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ug", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsUG->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsUG->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("uz", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsUZ->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsUZ->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("yo", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsYO->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tlh", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTLH->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("tlh-Qaak", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsTLH_QAAK->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("yue", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsYUE->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("ceb", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsCEB->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("fil", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsFIL->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("haw", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHAW->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mrj", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMRJ->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("hmn", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsHMN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("apc", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsAPC->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("mhr", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsMHR->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("pap", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsPAP->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("otq", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsOTQ->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("sr-Latin", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsSR_LATIN->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("udm", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Unchecked); }
-            if (theDbValve.contains("yua", Qt::CaseInsensitive))
-            { ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Checked); }
-            else
-            { ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Unchecked); }
+            setCheckMarksTranslation(theDbValve);
         }
         else
         {
-            mySetting->showMessageBox(QObject::tr("Could not read from the Database").toLocal8Bit(), QString("%1 %2").arg(tr("Unable to find record in database"), myConfigurationSelectQuery).toLocal8Bit(), mySetting->Critical);
+            //mySetting->showMessageBox(QObject::tr("Could not read from the Database").toLocal8Bit(), QString("%1 %2").arg(tr("Unable to find record in database"), myConfigurationSelectQuery).toLocal8Bit(), mySetting->Critical);
+            theReturn = false;
         }
     }
     else
     {
         mySetting->showMessageBox(tr("Could not read from the Database").toLocal8Bit(), QString("%1 %2").arg(tr("Unable to find record in database"), myConfigurationSelectQuery).toLocal8Bit(), mySetting->Critical);
-        return;
+        theReturn = false;
     }
     isSaveSettings = false;
+    setMainLoaded(true);
     #else
     // FIXME
     #endif
+    return theReturn;
 }
 /************************************************
  * @brief clear Tab Settings.
@@ -1593,7 +1621,9 @@ void MainWindow::clearTabSettings()
 {
     setMessage("clearTabSettings", Debug);
     // Defaults
-    ui->labelRecordIdSettings->setText("0");
+    ui->labelRecordIdProject->setText("0");
+    ui->lineEditProjectName->clear();
+    ui->comboBoxProjectNames->setCurrentIndex(-1);
 }
 /************************************************
  * @brief clear Tab Translations.
@@ -1742,9 +1772,10 @@ void MainWindow::clearTabTranslations()
     ui->checkBoxTranslationsUDM->setCheckState(Qt::CheckState::Checked);
     ui->checkBoxTranslationsYUA->setCheckState(Qt::CheckState::Checked);
     #else
-    ui->lineEditTranslationsDoxyfile->setText("");
-    ui->lineEditTranslationsSource->setText("");
-    ui->lineEditTranslationsProjectFolder->setText("");
+    ui->lineEditTranslationsDoxyfile->clear();
+    ui->lineEditTranslationsSource->clear();
+    ui->lineEditTranslationsProjectFolder->clear();
+    ui->lineEditTranslationsHelp->clear();
     ui->checkBoxTranslationsAF->setCheckState(Qt::CheckState::Unchecked);
     ui->checkBoxTranslationsSQ->setCheckState(Qt::CheckState::Unchecked);
     ui->checkBoxTranslationsAR->setCheckState(Qt::CheckState::Unchecked);
@@ -1900,7 +1931,7 @@ void MainWindow::clearTabHelp()
     ui->textEditHelp->setText("");
 }
 /************************************************
- * @brief clear Forms.
+ * @brief clear Forms clearForms(TabAll).
  * clearForms
  ***********************************************/
 void MainWindow::clearForms(int tabNumber)
@@ -1913,7 +1944,7 @@ void MainWindow::clearForms(int tabNumber)
         case TabProject:      clearTabProject();      break;
         case TabTabHelp:      clearTabHelp();      break;
         case TabAll:
-            ui->labelRecordIdSettings->setText("");
+            ui->labelRecordIdProject->setText("");
             clearTabSettings();
             clearTabTranslations();
             clearTabProject();
@@ -1927,15 +1958,17 @@ void MainWindow::clearForms(int tabNumber)
  ***********************************************/
 void MainWindow::setTabSettings()
 {
-    mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
-    mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
+    mySqlDb->myProject->setLanguageIDs(languageChecked());
+    mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+    //
+    mySqlDb->myProject->setID(ui->labelRecordIdProject->text());
+    mySqlDb->myProject->setQtProjectName(ui->lineEditProjectName->text());
     mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
     mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
     mySqlDb->myProject->setDoxyfileFolder(ui->lineEditTranslationsDoxyfile->text());
     mySqlDb->myProject->setHelpFolder(ui->lineEditTranslationsHelp->text());
     mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
-    mySqlDb->myProject->setLanguageIDs(languageChecked());
-    mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+    mySqlDb->setProjectName(ui->lineEditProjectName->text());
 }
 /************************************************
  * @brief set Tab Translations.
@@ -1943,8 +1976,8 @@ void MainWindow::setTabSettings()
  ***********************************************/
 void MainWindow::setTabTranslations()
 {
-    mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
-    mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
+    mySqlDb->myProject->setID(ui->labelRecordIdProject->text());
+    mySqlDb->myProject->setQtProjectName(ui->lineEditProjectName->text());
     mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
     mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
     mySqlDb->myProject->setDoxyfileFolder(ui->lineEditTranslationsDoxyfile->text());
@@ -1952,6 +1985,7 @@ void MainWindow::setTabTranslations()
     mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
     mySqlDb->myProject->setLanguageIDs(languageChecked());
     mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+    mySqlDb->setProjectName(ui->lineEditProjectName->text());
 }
 /************************************************
  * @brief set Tab All.
@@ -1959,15 +1993,8 @@ void MainWindow::setTabTranslations()
  ***********************************************/
 void MainWindow::setTabAll()
 {
-    mySqlDb->myProject->setID(ui->labelRecordIdSettings->text());
-    mySqlDb->myProject->setQtProjectName(ui->lineEditSettingsQtProjectName->text());
-    mySqlDb->myProject->setQtProjectFolder(ui->lineEditTranslationsProjectFolder->text());
-    mySqlDb->myProject->setSourceFolder(ui->lineEditTranslationsSource->text());
-    mySqlDb->myProject->setDoxyfileFolder(ui->lineEditTranslationsDoxyfile->text());
-    mySqlDb->myProject->setHelpFolder(ui->lineEditTranslationsHelp->text());
-    mySqlDb->myProject->setSourceLanguage(ui->comboBoxTranslationSourceLanguage->currentText());
-    mySqlDb->myProject->setLanguageIDs(languageChecked());
-    mySqlDb->myProject->setMake(ui->radioButtonTranslationsQmake->isChecked() ? "qmake" : "cmake");
+    setTabTranslations();
+    setTabSettings();
 }
 /************************************************
  * @brief set Project Class.
@@ -2003,11 +2030,11 @@ void MainWindow::setProjectClass(int tabNumber)
 void MainWindow::onCompile()
 {
     setMessage("onCompile", Debug);
-    QString theProject = mySetting->combinePathFileName(ui->lineEditTranslationsProjectFolder->text(), QString("%1%2").arg(ui->lineEditSettingsQtProjectName->text(), ui->radioButtonTranslationsQmake->isChecked() ? ".pro" : ".cmake"));
+    QString theProject = mySetting->combinePathFileName(ui->lineEditTranslationsProjectFolder->text(), QString("%1%2").arg(ui->lineEditProjectName->text(), ui->radioButtonTranslationsQmake->isChecked() ? ".pro" : ".cmake"));
     if (ui->radioButtonTranslationsQmake->isChecked())
     {
         // qmake
-        theProject = mySetting->combinePathFileName(ui->lineEditTranslationsProjectFolder->text(), QString("%1%2").arg(ui->lineEditSettingsQtProjectName->text(), ".pro"));
+        theProject = mySetting->combinePathFileName(ui->lineEditTranslationsProjectFolder->text(), QString("%1%2").arg(ui->lineEditProjectName->text(), ".pro"));
     }
     else
     {
@@ -2204,7 +2231,7 @@ void MainWindow::onCompile()
             mySetting->showMessageBox(QObject::tr("Error trying to remove all files").toLocal8Bit(), QString("%1: %2").arg(tr("Can not remove all files"), theTempFoler).toLocal8Bit(), mySetting->Critical);
         }
 
-        QString theDestTxtFile = QString("%1%2%3%4%5_%6.txt").arg(mySetting->getAppDataLocation(), QDir::separator(), "temp", QDir::separator(), ui->lineEditSettingsQtProjectName->text(), myLingoJob.at(i).getLangName());
+        QString theDestTxtFile = QString("%1%2%3%4%5_%6.txt").arg(mySetting->getAppDataLocation(), QDir::separator(), "temp", QDir::separator(), ui->lineEditProjectName->text(), myLingoJob.at(i).getLangName());
         // Create Txt file
         myTranlatorParser->toTXT(myLingoJob.at(i).getTsFile(), theTempFoler, true, false, true);
         // make sure txt file exist or continue because it might be translated, those it made no file
@@ -2347,7 +2374,7 @@ QString MainWindow::checkTranslationErrors(const QString &thisTranslations, cons
             myTranslation = translateWithReturn(thisText, thisEngine, thisTranslationLang, thisSourceLang, thisUiLang);
             break;
         case NoError:
-            qCritical() << "Translation Error not found: " << thisTranslations;
+            mySetting->showMessageBox(tr("Translation Error not found"), QString("%1: %2").arg(tr("Translation Error not found"), thisTranslations), mySetting->Critical);
             myTranslation = thisTranslations;
             break;
     }
@@ -2845,8 +2872,8 @@ void MainWindow::createTranslationJob(const QString &thisLanguageName, const QSt
     if (theLangCode.contains("-"))
         { theLangCode = theLangCode.replace("-", "_"); }
     // Create Translation file names for configuration
-    QString theTsFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", theLangCode, ".ts");
-    QString theQmFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditSettingsQtProjectName->text(), "_", theLangCode, ".qm");
+    QString theTsFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditProjectName->text(), "_", theLangCode, ".ts");
+    QString theQmFile = QString("%1%2%3%4%5%6").arg(ui->lineEditTranslationsSource->text(), QDir::separator(), ui->lineEditProjectName->text(), "_", theLangCode, ".qm");
     //
     QString theTransFile = theTsFile;
     QString theTransQmFile = theQmFile;
@@ -3114,5 +3141,40 @@ void MainWindow::setActionsDisabled(ActionStatesManager thisAction, bool thisSta
         break;
     }
 }
+/************************************************
+ * @brief on pushButton Settings Clear clicked.
+ * on_pushButtonSettingsClear_clicked
+ ***********************************************/
+void MainWindow::on_pushButtonSettingsClear_clicked()
+{
+    setMainLoaded(false);
+    clearForms(TabAll);
+    setMainLoaded(true);
+}
+/************************************************
+ * @brief on_tabWidget_currentChanged.
+ * on_tabWidget_currentChanged
+ ***********************************************/
+void MainWindow::on_tabWidget_currentChanged(int index)
+{
+    switch (index)
+    {
+    case TabSettings:
+        break;
+    case TabSql:
+        break;
+    case TabTranslations:
+        break;
+    case TabProject:
+        break;
+    case TabTabHelp:
+        if (ui->textEditHelp->toMarkdown().isEmpty())
+        {
+            onHelp();
+        }
+        break;
+    case TabAll:
+        break;
+    }
+}
 /* ******************************* End of File ***************************** */
-

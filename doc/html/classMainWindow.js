@@ -1,5 +1,10 @@
 var classMainWindow =
 [
+    [ "ActionStatesManager", "classMainWindow.html#a211d41df858e44186e7a1438e7883312", [
+      [ "Translations", "classMainWindow.html#a211d41df858e44186e7a1438e7883312a21b4604ed7a0b73030d6c8965115e6a6", null ],
+      [ "TranslationHelp", "classMainWindow.html#a211d41df858e44186e7a1438e7883312a5b4ddbd1859853800ac00bdb83444790", null ],
+      [ "TranslationReadMe", "classMainWindow.html#a211d41df858e44186e7a1438e7883312a78589d1619aeb21c2953d91fe83516ab", null ]
+    ] ],
     [ "MainTabs", "classMainWindow.html#a6e8dd0e44f3fccecac008d4db0c6ed53", [
       [ "TabSettings", "classMainWindow.html#a6e8dd0e44f3fccecac008d4db0c6ed53ac26a471bd4fb81ab05dd3099a4cc3d1a", null ],
       [ "TabSql", "classMainWindow.html#a6e8dd0e44f3fccecac008d4db0c6ed53af211b6f18f25f55ae839d39e424a0f81", null ],
@@ -32,14 +37,16 @@ var classMainWindow =
     [ "clearTabTranslations", "classMainWindow.html#a6e60c337fa45dfb29624ff5fb0e9004a", null ],
     [ "closeEvent", "classMainWindow.html#a05fb9d72c044aa3bb7d187b994704e2f", null ],
     [ "closeTransHelp", "classMainWindow.html#a35b954a807f4001c33b25171c8f1f8fd", null ],
-    [ "createHelpTranslationJob", "classMainWindow.html#ae41e3ff88173502c98bdf9a353a77c6c", null ],
-    [ "createReadMeTranslationJob", "classMainWindow.html#a0ed9940551a41d890e20f7b934fd49fb", null ],
-    [ "createTranslationJob", "classMainWindow.html#a6a99424fc195787c07d14ca24db7c083", null ],
-    [ "fillForms", "classMainWindow.html#a5a5b29ba7968e9666019077d807161e8", null ],
+    [ "createHelpTranslationJob", "classMainWindow.html#ac4b7dc1a9a6338f56b8b7a50996caa16", null ],
+    [ "createReadMeTranslationJob", "classMainWindow.html#a53348cbaba06ce737d10318e7bac6ec8", null ],
+    [ "createTranslationJob", "classMainWindow.html#a0ff2cc9b54fd3090d633b52a10221ada", null ],
+    [ "fillForms", "classMainWindow.html#adc7ab1f3f282e10eb0bb24fe04e5905f", null ],
+    [ "getComboBoxProjectsID", "classMainWindow.html#ac4bc95df2021a793f24eead4935862be", null ],
     [ "getDebugMessage", "classMainWindow.html#a77cfc5fce06d86502dfd983553767c24", null ],
     [ "languageChecked", "classMainWindow.html#aa83f60c4078cd4413be430b2220675ad", null ],
     [ "loadLanguageComboBox", "classMainWindow.html#a30c84325abab7d85524ddedb058b6a3d", null ],
     [ "loadLanguageComboBoxSource", "classMainWindow.html#a30ebfa7acdb51591325833c328308c71", null ],
+    [ "loadQtProjectCombo", "classMainWindow.html#ad2398e7292d4c15543057284e40fbf69", null ],
     [ "onAbout", "classMainWindow.html#ada07f1501d5aa1ee3c67f4986ba8b153", null ],
     [ "onAuthor", "classMainWindow.html#ab6c80d15f60ef6292b468c5e1e3c6d38", null ],
     [ "onClipboard", "classMainWindow.html#ac7ae689dcc5e8321b3dfb054d9cd7288", null ],
@@ -55,13 +62,15 @@ var classMainWindow =
     [ "readSqlDatabaseInfo", "classMainWindow.html#ab9196b2547d09289a1fb9cb068afb7d4", null ],
     [ "readStatesChanges", "classMainWindow.html#a42b32b087bb8b6c1601144ec513e8f12", null ],
     [ "retranslate", "classMainWindow.html#ae8662ae2ae5fc1d7921a9b18ec38ae9d", null ],
+    [ "setActionsDisabled", "classMainWindow.html#a8eaf6271898f82512edf6b56e1268e16", null ],
+    [ "setCheckMarksTranslation", "classMainWindow.html#a921137999b4510641d0de36fae108db6", null ],
     [ "setDebugMessage", "classMainWindow.html#a2840366f8c8c4231f80fb6da0714f7d5", null ],
     [ "setLanguageCode", "classMainWindow.html#a6496edeec307cf86d1976f8b9f601e65", null ],
+    [ "setMainLoaded", "classMainWindow.html#a842235fe4468ea29aa035b99d8238f70", null ],
     [ "setMessage", "classMainWindow.html#aeec603ae3eb953cb71ddfd213e59a93d", null ],
     [ "setMessagingStates", "classMainWindow.html#acaf4f4d06b8b4263e5628b4d0b035df9", null ],
     [ "setPrograms", "classMainWindow.html#afa2858e06ca124a4f261f4e1d4d43c89", null ],
     [ "setProjectClass", "classMainWindow.html#abd03666209196bf8bdece81045ca3b75", null ],
-    [ "setQtProjectCombo", "classMainWindow.html#af2d12ad8eaf234c3cd56598629199a07", null ],
     [ "setSqlBrowseButton", "classMainWindow.html#af9daaab4379f824f789a7bb5440a253e", null ],
     [ "setTabAll", "classMainWindow.html#ab3fdf82ec070680b0a81f9d1232c9823", null ],
     [ "setTabSettings", "classMainWindow.html#a340565c14b0faa32aadc5591637a3e4c", null ],
@@ -70,5 +79,6 @@ var classMainWindow =
     [ "translateWithReturn", "classMainWindow.html#a223b7c655dd3016d1a1ae7a9a9bece5b", null ],
     [ "writeAllSettings", "classMainWindow.html#a178dad7b39117611cb0d9da56f9476e9", null ],
     [ "writeSqlDatabaseInfo", "classMainWindow.html#ae81fdd40d2735e75581c5bf8ccc26380", null ],
-    [ "writeStateChanges", "classMainWindow.html#a4b19b2ca806d7674b2a4cf1ff307b9ea", null ]
+    [ "writeStateChanges", "classMainWindow.html#a4b19b2ca806d7674b2a4cf1ff307b9ea", null ],
+    [ "myConstants", "classMainWindow.html#a02dd9c95d1f49e437e26dfb2bf379d58", null ]
 ];

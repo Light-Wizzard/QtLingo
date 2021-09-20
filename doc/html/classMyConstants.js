@@ -5,7 +5,7 @@ var classMyConstants =
     [ "MY_DEFAULT_DOMAIN", "classMyConstants.html#a9df3bff1d5bb2935c3701a93adc5898d", null ],
     [ "MY_DEFAULT_LANGUAGE_CODE", "classMyConstants.html#acc51bf1d8ee542aad5883a0f7711ae5f", null ],
     [ "MY_DEFAULT_ORG_DOMAIN", "classMyConstants.html#a9d2007766143afaa032c8002818222c2", null ],
-    [ "MY_DESTINATION_FOLDER", "classMyConstants.html#ae95b7cde50ec9655e0604de079b2e071", null ],
+    [ "MY_DOXYFILE_FOLDER", "classMyConstants.html#a987ce16eb67c739daed15cdeeff4f142", null ],
     [ "MY_ERROR_MESSAGE_DB_RECORD_NOT_FOUND_1", "classMyConstants.html#ae42cdc17d6f33b34812cd75eae193542", null ],
     [ "MY_ERROR_MESSAGE_DB_RECORD_NOT_FOUND_2", "classMyConstants.html#a65f395958a34d38b58e697fca03399b3", null ],
     [ "MY_GEOMETRY_MAX", "classMyConstants.html#adf18e280e0c0f58e53a0c07a90790606", null ],

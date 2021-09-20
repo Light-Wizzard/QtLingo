@@ -147,7 +147,7 @@ class MainWindow : public QMainWindow
         //
         void setSqlBrowseButton();                      //!< set SQL Browse Button
         //
-        void fillForms(const QString &thisProjectID);   //!< fill Forms
+        bool fillForms(const QString &thisProjectID);   //!< fill Forms
         //
         void clearForms(int tabNumber);                 //!< clear Forms
         void clearTabSettings();                        //!< clear Tab Settings
@@ -181,8 +181,11 @@ class MainWindow : public QMainWindow
         void createReadMeTranslationJob(const QString &thisLanguageName, const QString &thisLangCode, bool thisChecked); //!< create ReadMe Translation Job
         void closeTransHelp();                          //!< close Trans Help
         void setMessage(const QString &thisMessage, MainWindow::MyMessageTypes thisMessageType); //!< set Message
+        void setActionsDisabled(ActionStatesManager thisAction, bool thisState); //!< set Actions Disabled
+        void setMainLoaded(bool thisState); //!< set Main Loaded
+        void setCheckMarksTranslation(const QString &thisDbValve); //!< set Check Marks Translation
 
-        void setActionsDisabled(ActionStatesManager thisAction, bool thisState);
+        QString getComboBoxProjectsID(int thisIndex); //!< get ComboBox Projects ID
 
     public slots:
         void onHelp();                                  //!< on Help
@@ -194,11 +197,11 @@ class MainWindow : public QMainWindow
         void onInternetProgress();                      //!< on Internet Progress
         // Translate Help
         void onTranslateHelp();                         //!< translate Help Files
-        void onTranslateReadMe();                       //!<  Translate ReadMe
+        void onTranslateReadMe();                       //!< Translate ReadMe
 
     private slots:
         // ComboBoxes
-        void on_comboBoxSettingsProjects_currentIndexChanged(int thisIndex);                //!< on comboBox Settings Projects current Index Changed
+        void on_comboBoxProjectNames_currentIndexChanged(int thisIndex);                //!< on comboBox Settings Projects current Index Changed
         void on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage);  //!< on comboBox Settings Language current Index Changed
         void on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType);    //!< on comboBox SQL Database Type current Index Changed
         void on_comboBoxTranslationSourceLanguage_currentIndexChanged(const QString &arg1); //!< on comboBox Translation Source Language current Index Changed
@@ -213,16 +216,19 @@ class MainWindow : public QMainWindow
         void on_pushButtonSqlSave_clicked();                                                //!< on pushButton SQL Save clicked
         // Push Buttons Translations
         void on_pushButtonTranslationsSourceBrowse_clicked();                               //!< on pushButton Translations Source Browse clicked
-        void on_pushButtonTranslationsDoxyfileBrowse_clicked();                          //!< on pushButton Translations Doxyfile Browse clicked
+        void on_pushButtonTranslationsDoxyfileBrowse_clicked();                             //!< on pushButton Translations Doxyfile Browse clicked
         void on_pushButtonTranslationsProjectFolderBrowse_clicked();                        //!< on pushButton Translations ProjectFolder Browse clicked
         void on_pushButtonTranslationsHelp_clicked();                                       //!< on pushButton Translations Help clicked
+        void on_pushButtonSettingsClear_clicked();                                          //!< on pushButton Settings Clear clicked
         // Checkboxes Settings
         void on_checkBoxSettingsGoogle_stateChanged(int thisArg);                           //!< on checkBox Settings Google state Changed
         void on_checkBoxSettingsBing_stateChanged(int thisArg);                             //!< on checkBox Settings Bing state Changed
         void on_checkBoxSettingsYandex_stateChanged(int thisArg);                           //!< on checkBox Settings Yandex state Changed
         void on_checkBoxSettignsMessaging_stateChanged(int thisCheckState);                 //!< on checkBox Settigns Messaging state Changed
 
-    protected:
+        void on_tabWidget_currentChanged(int index);
+
+        protected:
         void closeEvent(QCloseEvent *event) override;           //!< close Event
 
     protected slots:

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['translationerror_0',['TranslationError',['../classQOnlineTranslator.html#a8992762fdc20d45a1a507d59e1e90fbd',1,'QOnlineTranslator']]],
-  ['translationserrors_1',['TranslationsErrors',['../classMainWindow.html#a5f1f83b1eb7f7424cfcb43dc387aae1f',1,'MainWindow']]],
-  ['ttserror_2',['TtsError',['../classQOnlineTts.html#af99b4dc7142d628a0245679d634c6e58',1,'QOnlineTts']]]
+  ['maintabs_0',['MainTabs',['../classMainWindow.html#a6e8dd0e44f3fccecac008d4db0c6ed53',1,'MainWindow']]],
+  ['myfileinfo_1',['MyFileinfo',['../classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456a',1,'MyOrgSettings']]],
+  ['mymessagetypes_2',['MyMessageTypes',['../classMainWindow.html#a8d1c07e240f8ea1adf445996b75ffd3f',1,'MainWindow::MyMessageTypes()'],['../classMyLocalization.html#a9648f5963c992ae32686a48421fe2248',1,'MyLocalization::MyMessageTypes()'],['../classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23e',1,'MyOrgSettings::MyMessageTypes()']]]
 ];

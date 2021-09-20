@@ -158,12 +158,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "MainWindow_8cpp.html",
-"classMyOrgSettings.html#a2581082145269c6d97a03441ef55f23eae97546c444b231727d08f727f0990328",
-"classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73daa96fb82b352ff44143166059154dd9d3",
-"classUi__MainWindow.html#a87d9efce9e074ce57ff61c896a9ee71a",
-"globals_defs_v.html",
-"moc__predefs_8h.html#a4d4e419b93a42fbd34e0f4ae3640c4a9",
-"moc__predefs_8h.html#ade7aebdae6e8389a450aac653544c33f"
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a726a020189392103a9404da070536e07",
+"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__MyDatatables_8cpp_source.html",
+"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__predefs_8h.html#a87b7ceac2198cab045e40c9a64b11679",
+"classMainWindow.html#a84a272c6f581b39d5eafd2e1387fabc6",
+"classMyOrgSettings.html#ab18f63a3d476d6dc3b61396e1ef42b80",
+"classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73dae21c39ffaaa746c98dc547318050afc8",
+"classUi__MainWindow.html#a950e631e76b8a84e50d5c9c122cd978d",
+"main_8cpp.html#ad068b8e95a5c93bd1df5f2e4d9ff0fdc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

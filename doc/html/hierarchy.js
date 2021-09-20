@@ -44,6 +44,7 @@ var hierarchy =
     [ "visitors::string_extractor_replacer", "structvisitors_1_1string__extractor__replacer.html", null ],
     [ "TranslationFiles", "classTranslationFiles.html", null ],
     [ "Ui_MainWindow", "classUi__MainWindow.html", [
+      [ "Ui::MainWindow", "classUi_1_1MainWindow.html", null ],
       [ "Ui::MainWindow", "classUi_1_1MainWindow.html", null ]
     ] ]
 ];

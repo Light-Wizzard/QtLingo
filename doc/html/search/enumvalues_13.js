@@ -15,6 +15,9 @@ var searchData=
   ['thai_12',['Thai',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da46e0af013c88ed178c965d2c7051fdeb',1,'QOnlineTranslator']]],
   ['tongan_13',['Tongan',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da6ea7fba1ec2a79cf4d44989b390f2fc6',1,'QOnlineTranslator']]],
   ['traditionalchinese_14',['TraditionalChinese',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da36dc0b5d90ccf7d9674ab87d72bc37eb',1,'QOnlineTranslator']]],
-  ['turkish_15',['Turkish',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73daf4da215169a8a0b6f1920c0105434fe3',1,'QOnlineTranslator']]],
-  ['turkmen_16',['Turkmen',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73dacd560da7a4ba029e2e6a9cac8d10dd8f',1,'QOnlineTranslator']]]
+  ['translationhelp_15',['TranslationHelp',['../classMainWindow.html#a211d41df858e44186e7a1438e7883312a5b4ddbd1859853800ac00bdb83444790',1,'MainWindow']]],
+  ['translationreadme_16',['TranslationReadMe',['../classMainWindow.html#a211d41df858e44186e7a1438e7883312a78589d1619aeb21c2953d91fe83516ab',1,'MainWindow']]],
+  ['translations_17',['Translations',['../classMainWindow.html#a211d41df858e44186e7a1438e7883312a21b4604ed7a0b73030d6c8965115e6a6',1,'MainWindow']]],
+  ['turkish_18',['Turkish',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73daf4da215169a8a0b6f1920c0105434fe3',1,'QOnlineTranslator']]],
+  ['turkmen_19',['Turkmen',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73dacd560da7a4ba029e2e6a9cac8d10dd8f',1,'QOnlineTranslator']]]
 ];

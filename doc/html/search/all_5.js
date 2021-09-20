@@ -29,7 +29,8 @@ var searchData=
   ['errorunknownversion_26',['ErrorUnknownVersion',['../classSimpleCrypt.html#ab7f81049e78f021b55a36f7cfac5a09ba4c43644f04a0eefc3ed2205223f19479',1,'SimpleCrypt']]],
   ['esperanto_27',['Esperanto',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da034433f3c919913e7b69a930c87601d5',1,'QOnlineTranslator']]],
   ['estonian_28',['Estonian',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da541da964c49f331f0587615090de99f0',1,'QOnlineTranslator']]],
-  ['evil_29',['Evil',['../classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4',1,'QOnlineTts']]],
-  ['example_30',['example',['../structQExample.html#a17c5517efe60bb971a5f1b99895b0e51',1,'QExample']]],
-  ['examples_31',['examples',['../classQOnlineTranslator.html#aa6c547e380882ddf9a3d6df0e3af1270',1,'QOnlineTranslator']]]
+  ['etlanguagefile_29',['etLanguageFile',['../classMyLocalization.html#a5d4e848cf6843c2660a0969e9b6e90b5',1,'MyLocalization']]],
+  ['evil_30',['Evil',['../classQOnlineTts.html#a6cc0b62943e55ea05c6d50b9b85a9ddbafc25f651b5ef1a4c1d199ba3ddebc4b4',1,'QOnlineTts']]],
+  ['example_31',['example',['../structQExample.html#a17c5517efe60bb971a5f1b99895b0e51',1,'QExample']]],
+  ['examples_32',['examples',['../classQOnlineTranslator.html#aa6c547e380882ddf9a3d6df0e3af1270',1,'QOnlineTranslator']]]
 ];

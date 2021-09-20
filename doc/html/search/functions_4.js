@@ -10,5 +10,6 @@ var searchData=
   ['encrypttostring_7',['encryptToString',['../classSimpleCrypt.html#af26a3d3c6cef9732190c1d2c6a53a5b5',1,'SimpleCrypt::encryptToString(const QString &amp;plaintext)'],['../classSimpleCrypt.html#aa25e9da97add8a9a31ba61723003a366',1,'SimpleCrypt::encryptToString(const QByteArray &amp;plaintext)']]],
   ['error_8',['error',['../classQOnlineTranslator.html#af1c49492b85901b6c275b804cceb5106',1,'QOnlineTranslator::error()'],['../classQOnlineTts.html#aa93adeb3ba354f240c7752f50686f370',1,'QOnlineTts::error()']]],
   ['errorstring_9',['errorString',['../classQOnlineTranslator.html#a2afc5015536f921e3ab514ba8c35c5d2',1,'QOnlineTranslator::errorString()'],['../classQOnlineTts.html#a18ff8fc000c3b8461f919d5a70f24f07',1,'QOnlineTts::errorString()']]],
-  ['examples_10',['examples',['../classQOnlineTranslator.html#aa6c547e380882ddf9a3d6df0e3af1270',1,'QOnlineTranslator']]]
+  ['etlanguagefile_10',['etLanguageFile',['../classMyLocalization.html#a5d4e848cf6843c2660a0969e9b6e90b5',1,'MyLocalization']]],
+  ['examples_11',['examples',['../classQOnlineTranslator.html#aa6c547e380882ddf9a3d6df0e3af1270',1,'QOnlineTranslator']]]
 ];

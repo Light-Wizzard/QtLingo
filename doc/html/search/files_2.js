@@ -12,5 +12,5 @@ var searchData=
   ['qoption_2ecpp_9',['qoption.cpp',['../qoption_8cpp.html',1,'']]],
   ['qoption_2eh_10',['qoption.h',['../qoption_8h.html',1,'']]],
   ['qoption_2emd_11',['QOption.md',['../QOption_8md.html',1,'']]],
-  ['qrc_5fqtlingo_2ecpp_12',['qrc_QtLingo.cpp',['../qrc__QtLingo_8cpp.html',1,'']]]
+  ['qrc_5fqtlingo_2ecpp_12',['qrc_QtLingo.cpp',['../build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp.html',1,'(Global Namespace)'],['../build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2qrc__QtLingo_8cpp.html',1,'(Global Namespace)']]]
 ];

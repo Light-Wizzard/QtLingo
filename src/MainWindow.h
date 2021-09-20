@@ -13,6 +13,7 @@
 #include <QVector>
 #include <QtGlobal>
 //
+#include "MyConstants.h"
 #include "MyOrgSettings.h"
 #include "MyDatatables.h"
 #include "MyLocalization.h"
@@ -24,12 +25,18 @@
 #include "MyTranlatorParser.h"
 //
 namespace Ui { class MainWindow; }
+//
+#if Q_OS_MSDOS || defined(Q_OS_WIN32) || defined(Q_OS_WINCE)
+    #define VERSION "1.0.0"
+#else
+    #define VERSION "1.0"
+#endif
 /************************************************
  * @brief My Lingo Jobs.
  * @param thisLanguageName    QString Full Name: English
  * @param thisLangName        QString Language code of file: en
  * @param thisTsFile          QString Full path to Translation File
- * @param thisDestinationFile QString Destination File
+ * @param thisDoxyFile QString Doxy File
  * @param thisReadMe          QString README_xx.md file
  * @param thisLang            QOnlineTranslator::Language Translate to
  * @param thisSourceLang      QOnlineTranslator::Language Translate from
@@ -39,13 +46,13 @@ namespace Ui { class MainWindow; }
 class MyLingoJobs
 {
     public:
-        MyLingoJobs(const QString &thisLanguageName, const QString &thisLangName, const QString &thisTsFile, const QString &thisDestinationFile, const QString &thisReadMe, QOnlineTranslator::Language thisLang, QOnlineTranslator::Language thisSourceLang)
-            : myLanguageName{thisLanguageName}, myLangName{thisLangName}, myTsFile{thisTsFile}, myDestinationFile{thisDestinationFile}, myReadMe{thisReadMe}, myLang{thisLang}, mySourceLang{thisSourceLang} {}
+        MyLingoJobs(const QString &thisLanguageName, const QString &thisLangName, const QString &thisTsFile, const QString &thisDoxyFile, const QString &thisReadMe, QOnlineTranslator::Language thisLang, QOnlineTranslator::Language thisSourceLang)
+            : myLanguageName{thisLanguageName}, myLangName{thisLangName}, myTsFile{thisTsFile}, myDoxyFile{thisDoxyFile}, myReadMe{thisReadMe}, myLang{thisLang}, mySourceLang{thisSourceLang} {}
         // Getters
         QString getLanguageName()                   const { return myLanguageName;    }
         QString getLangName()                       const { return myLangName;        }
         QString getTsFile()                         const { return myTsFile;          }
-        QString getDestinationFile()                const { return myDestinationFile; }
+        QString getDoxyFile()                       const { return myDoxyFile;        }
         QString getReadMe()                         const { return myReadMe;          }
         QOnlineTranslator::Language getLang()       const { return myLang;            }
         QOnlineTranslator::Language getSourceLang() const { return mySourceLang;      }
@@ -53,13 +60,13 @@ class MyLingoJobs
         void setLanguageName(const QString &s)            { myLanguageName    = s; }
         void setLangName(const QString &s)                { myLangName        = s; }
         void setTsFile(const QString &s)                  { myTsFile          = s; }
-        void setDestinationFile(const QString &s)         { myDestinationFile = s; }
+        void setDoxyFile(const QString &s)                { myDoxyFile        = s; }
         void setReadMe(const QString &s)                  { myReadMe          = s; }
         void setSourceLang(QOnlineTranslator::Language s) { mySourceLang      = s; }
         void setLang(QOnlineTranslator::Language s)       { myLang            = s; }
 
     private:
-        QString myLanguageName, myLangName, myTsFile, myDestinationFile, myReadMe;
+        QString myLanguageName, myLangName, myTsFile, myDoxyFile, myReadMe;
         QOnlineTranslator::Language myLang, mySourceLang;
 };
 /************************************************
@@ -96,7 +103,7 @@ class MainWindow : public QMainWindow
         {
             NoError           = 100,  //!< \c NoError           @brief No Error.
             HostNotFound      = 101,  //!< \c HostNotFound      @brief Host Not Found: Internet Down, wait till it comes back up.
-            ErrorTransferring = 102,  //!< \c ErrorTransferring @brief Error Transferring: server replied: Too Many Requests, increase Delay time.
+            ErrorTransferring = 102   //!< \c ErrorTransferring @brief Error Transferring: server replied: Too Many Requests, increase Delay time.
         }; // end enum TranslationsErrors
         Q_ENUM(TranslationsErrors)
         /*!
@@ -108,14 +115,27 @@ class MainWindow : public QMainWindow
             Information = 100, //!< \c Information  @brief Information
             Warning     = 101, //!< \c Warning      @brief Warning
             Critical    = 102, //!< \c Critical     @brief Critical
-            Debug       = 103, //!< \c Debug        @brief Debug
-        }; // end enum MyFileinfo
-        // Makes getting file Info easier
+            Debug       = 103  //!< \c Debug        @brief Debug
+        }; // end enum MyMessageTypes
+        // Makes Messaging easier
         Q_ENUM(MyMessageTypes)
+        /*!
+            @brief Action States Manager.
+            \enum ActionStatesManager
+         */
+        enum ActionStatesManager
+        {
+            Translations      = 100,  //!< \c Translations      @brief Translations On Compile.
+            TranslationHelp   = 101,  //!< \c TranslationHelp   @brief Translation Help
+            TranslationReadMe = 102   //!< \c TranslationReadMe @brief Translation ReadMe.
+        }; // end enum ActionStatesManager
+        Q_ENUM(ActionStatesManager)
+        //
+        MyConstants *myConstants;                       //!< \c myConstants @brief All Constants in one class
         //
         void onRunFirstOnStartup();                     //!< on Run First On Startup
         //
-        void setQtProjectCombo();                       //!< set Qt Project Combo
+        void loadQtProjectCombo();                       //!< set Qt Project Combo
         // Read
         void readAllSettings();                         //!< read Settings
         void readStatesChanges();                       //!< read States Changes
@@ -137,7 +157,7 @@ class MainWindow : public QMainWindow
         void checkLanguage(const QString &thisName, const QString &thisLanguage, bool thisChecked); //!< check Language
         QString languageChecked();                      //!< language Checked
         void setProjectClass(int tabNumber);            //!< set Project Class
-        void createTranslationJob(const QString &thisTranslate, const QString &thisLanguage, const QString &thisSourceLanguage, bool thisChecked); //!< get Translation String
+        void createTranslationJob(const QString &thisTranslate, const QString &thisLangCode, const QString &thisSourceLanguage, bool thisChecked); //!< get Translation String
         void setPrograms();                             //!< set Programs
         // Is Debug Message
         void setDebugMessage(bool thisState);           //!< set Debug Message
@@ -155,12 +175,14 @@ class MainWindow : public QMainWindow
         QString translateWithReturn(const QString &text, QOnlineTranslator::Engine engine, QOnlineTranslator::Language translationLang, QOnlineTranslator::Language sourceLang, QOnlineTranslator::Language uiLang); //!< translate With Return, note this is blocking
         QString checkTranslationErrors(const QString &thisTranslations, const QString &thisText, QOnlineTranslator::Engine thisEngine, QOnlineTranslator::Language thisTranslationLang, QOnlineTranslator::Language thisSourceLang, QOnlineTranslator::Language thisUiLang); //!< check Translation Errors
         void setTranslationErrorType(const QString &thisTranslations); //!< set Translation Error Type
-        void createHelpTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create Help Translation Job
+        void createHelpTranslationJob(const QString &thisLanguageName, const QString &thisLangCode, bool thisChecked); //!< create Help Translation Job
         void setLanguageCode();                         //!< set Language Code Lable in UI
         void acceptTranslations();                      //!< accept Translations
-        void createReadMeTranslationJob(const QString &thisLanguageName, const QString &theLangCode, bool thisChecked); //!< create ReadMe Translation Job
+        void createReadMeTranslationJob(const QString &thisLanguageName, const QString &thisLangCode, bool thisChecked); //!< create ReadMe Translation Job
         void closeTransHelp();                          //!< close Trans Help
         void setMessage(const QString &thisMessage, MainWindow::MyMessageTypes thisMessageType); //!< set Message
+
+        void setActionsDisabled(ActionStatesManager thisAction, bool thisState);
 
     public slots:
         void onHelp();                                  //!< on Help
@@ -191,7 +213,7 @@ class MainWindow : public QMainWindow
         void on_pushButtonSqlSave_clicked();                                                //!< on pushButton SQL Save clicked
         // Push Buttons Translations
         void on_pushButtonTranslationsSourceBrowse_clicked();                               //!< on pushButton Translations Source Browse clicked
-        void on_pushButtonTranslationsDestinationBrowse_clicked();                          //!< on pushButton Translations Destination Browse clicked
+        void on_pushButtonTranslationsDoxyfileBrowse_clicked();                          //!< on pushButton Translations Doxyfile Browse clicked
         void on_pushButtonTranslationsProjectFolderBrowse_clicked();                        //!< on pushButton Translations ProjectFolder Browse clicked
         void on_pushButtonTranslationsHelp_clicked();                                       //!< on pushButton Translations Help clicked
         // Checkboxes Settings

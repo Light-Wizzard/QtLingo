@@ -23,7 +23,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tabSettings">
        <attribute name="title">
@@ -328,7 +328,11 @@
           <item row="6" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsDelay">
             <item>
-             <widget class="QSpinBox" name="spinBoxSettingsDelay"/>
+             <widget class="QSpinBox" name="spinBoxSettingsDelay">
+              <property name="maximum">
+               <number>66666</number>
+              </property>
+             </widget>
             </item>
             <item>
              <spacer name="horizontalSpacerSettingsDelay">
@@ -639,7 +643,7 @@
            </layout>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="labelTranslationsDestination">
+           <widget class="QLabel" name="labelTranslationsDoxyfile">
             <property name="toolTip">
              <string>Tempoary Folder contents gets deleted</string>
             </property>
@@ -647,14 +651,14 @@
              <string>Tempoary Folder contents gets deleted</string>
             </property>
             <property name="text">
-             <string>Destination</string>
+             <string>Doxyfile</string>
             </property>
            </widget>
           </item>
           <item row="3" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutTranslationsDestination">
             <item>
-             <widget class="QLineEdit" name="lineEditTranslationsDestination">
+             <widget class="QLineEdit" name="lineEditTranslationsDoxyfile">
               <property name="statusTip">
                <string>Tempoary Folder contents gets deleted</string>
               </property>
@@ -670,7 +674,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonTranslationsDestinationBrowse">
+             <widget class="QPushButton" name="pushButtonTranslationsDoxyfileBrowse">
               <property name="text">
                <string>Browse</string>
               </property>
@@ -1900,7 +1904,7 @@
   <action name="actionExit">
    <property name="icon">
     <iconset resource="../QtLingo.qrc">
-     <normaloff>:/images/exit_button.png</normaloff>:/images/exit_button.png</iconset>
+     <normaloff>:/images/exit.png</normaloff>:/images/exit.png</iconset>
    </property>
    <property name="text">
     <string>Exit</string>

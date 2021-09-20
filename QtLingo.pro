@@ -86,9 +86,6 @@ TRANSLATIONS += translations/QtLingo_ar.ts \
                 translations/QtLingo_sv.ts \
                 translations/QtLingo_zh_CN.ts
 #
-LCONVERT_LANGS=ar de en es fr it ja no ru sv zh_CN
-include(lconvert.pri)
-#
 DISTFILES += README.md CMakeLists.txt \
     .appveyor.yml \
     .github/workflows/main.yml \

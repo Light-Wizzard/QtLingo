@@ -1,4 +1,4 @@
-# Informazioni sull'autore originale
+# Circa l'autore
 
 Mi chiamo Jeffrey Scott Flesher, sono un programmatore informatico dell'aeronautica militare statunitense in pensione,
 e capo dell'equipaggio di elicotteri,
@@ -7,6 +7,7 @@ dove ho ricevuto una medaglia per averlo migliorato del 30%,
 e portalo online con un anno di anticipo,
 e giusto in tempo per la Guerra dei Guld,
 dove se volasse oltre il 96% di tutte le missioni,
+utilizzando il Terrain Following Computer che mi sono specializzato nella riparazione,
 dopo la guerra del Golfo del 1991,
 poi sono passato a diventare capo equipaggio di elicotteri per il 66<sup>esimo</sup> RQS Air Rescue,
 dove sono tornato in Kuwait per vivere e lavorare nel luogo che abbiamo protetto durante la guerra,

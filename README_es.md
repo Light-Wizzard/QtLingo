@@ -19,9 +19,14 @@ todo está hecho, nada más que hacer.
 
 ###: paquete: ** Descargas: **
 
- -: pingüino: [zip de Linux] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
- -: oficina: [zip de Windows 64] (https://github.com/Light-Wizzard/QtLingo/releases/download/Windows64/QtLingo-Windows-x64.zip)
- -: apple: Actualmente no disponible [Apple zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
+-: pingüino: [Linux x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip)
+-: oficina: [Windows x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
+-: manzana: [Apple x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
+
+Windows (probado en 7 y 10, avíseme si 8 funciona): descargue zip y extráigalo,
+y ejecute el archivo QtLingo.exe dentro de la carpeta de implementación de AppDir.
+
+Apple no prueba porque no tengo uno.
 
 # Documentación
 
@@ -46,7 +51,7 @@ creando archivos con un código de idioma.
 
 # Doxygen
 
-Traté de documentar usando Doxygen, puede ejecutarlo desde los siguientes comandos.
+Yo uso Doxygen, puedes ejecutarlo desde los siguientes comandos.
 
 `` bash
 doxygen Doxyfile
@@ -55,6 +60,8 @@ o
 
 doxywizard
 ''
+
+Tengo documentos de Doxygen en docs.
 
 # Problemas
 

@@ -95,13 +95,13 @@ void MyLocalization::loadLanguage(const QString &thisQmLanguageFile)
  * @brief get Language File.
  * getLanguageFile
  ***********************************************/
-QString MyLocalization::getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix)
+QString MyLocalization::getLanguageFile(const QString &thisLanguageCode, const QString &thisPath, const QString &thisPrefix)
 {
     setMessage("getLanguageFile", Debug);
-    QString theLang = thisLanguage;
+    QString theLang = thisLanguageCode;
     if (theLang.contains("-"))
     { theLang = theLang.replace("-", "_"); }
-    const QStringList theQmFiles = findQmFiles(thisPath);
+    const QStringList theQmFiles = getQmFiles(thisPath);
     for (int i = 0; i < theQmFiles.size(); ++i)
     {
         if (languageMatch(thisPrefix, theLang, theQmFiles.at(i)))
@@ -234,7 +234,7 @@ bool MyLocalization::languageMatch(const QString &thisPrefix, const QString &thi
  * @brief find Qm Files.
  * findQmFiles
  ***********************************************/
-QStringList MyLocalization::findQmFiles(const QString &thisFolder)
+QStringList MyLocalization::getQmFiles(const QString &thisFolder)
 {
     setMessage("findQmFiles", Debug);
     QDir dir(QString(":/%1").arg(thisFolder));
@@ -436,7 +436,7 @@ QString MyLocalization::language(const QLocale &thisLocale)
         case QLocale::Kurdish:          return QStringLiteral("ku");
         //case QLocale::Klingon:        return QStringLiteral("tlh");
         //case QLocale::KlingonPlqaD:   return QStringLiteral("tlh-Qaak");
-        //case QLocale::Kyrgyzstan:     return QStringLiteral("ky"); // Kyrgyz
+        //case QLocale::Kyrgyzstan:     return QStringLiteral("ky");
         case QLocale::Lao:              return QStringLiteral("lo");
         case QLocale::Latin:            return QStringLiteral("la");
         case QLocale::Latvian:          return QStringLiteral("lv");
@@ -503,7 +503,44 @@ QString MyLocalization::language(const QLocale &thisLocale)
         case QLocale::Yoruba:           return QStringLiteral("yo");
         //case QLocale::YucatecMaya:    return QStringLiteral("yua");
         case QLocale::Zulu:             return QStringLiteral("zu");
-        default:                        return QStringLiteral("en");
+        default:
+            if (thisLocale.name() == "HaitianCreole")
+                { return QStringLiteral("ht"); }
+            else if (thisLocale.name() == "HillMari")
+                { return QStringLiteral("mrj"); }
+            else if (thisLocale.name() == "Hmong")
+                { return QStringLiteral("hmn"); }
+            else if (thisLocale.name() == "Klingon")
+                { return QStringLiteral("tlh"); }
+            else if (thisLocale.name() == "KlingonPlqaD")
+                { return QStringLiteral("tlh-Qaak"); }
+            else if (thisLocale.name() == "Kyrgyz")
+                { return QStringLiteral("ky"); }
+            else if (thisLocale.name() == "LevantineArabic")
+                { return QStringLiteral("apc"); }
+            else if (thisLocale.name() == "Mari")
+                { return QStringLiteral("mhr"); }
+            else if (thisLocale.name() == "Myanmar")
+                { return QStringLiteral("my"); }
+            else if (thisLocale.name() == "Chichewa")
+                { return QStringLiteral("ny"); }
+            else if (thisLocale.name() == "QueretaroOtomi")
+                { return QStringLiteral("otq"); }
+            else if (thisLocale.name() == "ScotsGaelic")
+                { return QStringLiteral("gd"); }
+            else if (thisLocale.name() == "SerbianCyrillic")
+                { return QStringLiteral("sr"); }
+            else if (thisLocale.name() == "SerbianLatin")
+                { return QStringLiteral("sr-Latin"); }
+            else if (thisLocale.name() == "Sesotho")
+                { return QStringLiteral("st"); }
+            else if (thisLocale.name() == "Tagalog")
+                { return QStringLiteral("tl"); }
+            else if (thisLocale.name() == "Udmurt")
+                { return QStringLiteral("udm"); }
+            else if (thisLocale.name() == "YucatecMaya")
+                { return QStringLiteral("yua"); }
+            return QStringLiteral("en");
     }
 } // end language(const QLocale
 /************************************************
@@ -779,9 +816,9 @@ const QMap<QString, QString> MyLocalization::s_genericLanguageCodeToName =
  * @brief language Name.
  * languageName
  ***********************************************/
-QString MyLocalization::languageName(const QLocale &locale)
+QString MyLocalization::languageName(const QLocale &thisLocale)
 {
-    switch (locale.language())
+    switch (thisLocale.language())
     {
     case QLocale::Afrikaans:             return tr("Afrikaans");
     case QLocale::Albanian:              return tr("Albanian");
@@ -818,13 +855,13 @@ QString MyLocalization::languageName(const QLocale &locale)
     case QLocale::German:                return tr("German");
     case QLocale::Greek:                 return tr("Greek");
     case QLocale::Gujarati:              return tr("Gujarati");
-    //case QLocale::HaitianCreole:         return tr("Haitian Creole");
+    //case QLocale::HaitianCreole:       return tr("Haitian Creole");
     case QLocale::Hausa:                 return tr("Hausa");
     case QLocale::Hawaiian:              return tr("Hawaiian");
     case QLocale::Hebrew:                return tr("Hebrew");
-    //case QLocale::HillMari:              return tr("Hill Mari");
+    //case QLocale::HillMari:            return tr("Hill Mari");
     case QLocale::Hindi:                 return tr("Hindi");
-    //case QLocale::Hmong:                 return tr("Hmong");
+    //case QLocale::Hmong:               return tr("Hmong");
     case QLocale::Hungarian:             return tr("Hungarian");
     case QLocale::Icelandic:             return tr("Icelandic");
     case QLocale::Igbo:                  return tr("Igbo");
@@ -837,15 +874,15 @@ QString MyLocalization::languageName(const QLocale &locale)
     case QLocale::Kazakh:                return tr("Kazakh");
     case QLocale::Khmer:                 return tr("Khmer");
     case QLocale::Kinyarwanda:           return tr("Kinyarwanda");
-    //case QLocale::Klingon:               return tr("Klingon");
-    //case QLocale::KlingonPlqaD:          return tr("Klingon (PlqaD)");
+    //case QLocale::Klingon:             return tr("Klingon");
+    //case QLocale::KlingonPlqaD:        return tr("Klingon (PlqaD)");
     case QLocale::Korean:                return tr("Korean");
     case QLocale::Kurdish:               return tr("Kurdish");
-    //case QLocale::Kyrgyz:                return tr("Kyrgyz");
+    //case QLocale::Kyrgyz:              return tr("Kyrgyz");
     case QLocale::Lao:                   return tr("Lao");
     case QLocale::Latin:                 return tr("Latin");
     case QLocale::Latvian:               return tr("Latvian");
-    //case QLocale::LevantineArabic:       return tr("Levantine Arabic");
+    //case QLocale::LevantineArabic:     return tr("Levantine Arabic");
     case QLocale::Lithuanian:            return tr("Lithuanian");
     case QLocale::Luxembourgish:         return tr("Luxembourgish");
     case QLocale::Macedonian:            return tr("Macedonian");
@@ -855,27 +892,27 @@ QString MyLocalization::languageName(const QLocale &locale)
     case QLocale::Maltese:               return tr("Maltese");
     case QLocale::Maori:                 return tr("Maori");
     case QLocale::Marathi:               return tr("Marathi");
-    //case QLocale::Mari:                  return tr("Mari");
+    //case QLocale::Mari:                return tr("Mari");
     case QLocale::Mongolian:             return tr("Mongolian");
-    //case QLocale::Myanmar:               return tr("Myanmar");
+    //case QLocale::Myanmar:             return tr("Myanmar");
     case QLocale::Nepali:                return tr("Nepali");
-    //case QLocale::Norwegian:             return tr("Norwegian");
+    //case QLocale::Norwegian:           return tr("Norwegian");
     case QLocale::Oriya:                 return tr("Oriya");
-    //case QLocale::Chichewa:              return tr("Chichewa");
+    //case QLocale::Chichewa:            return tr("Chichewa");
     case QLocale::Papiamento:            return tr("Papiamento");
     case QLocale::Pashto:                return tr("Pashto");
     case QLocale::Persian:               return tr("Persian");
     case QLocale::Polish:                return tr("Polish");
     case QLocale::Portuguese:            return tr("Portuguese");
     case QLocale::Punjabi:               return tr("Punjabi");
-    //case QLocale::QueretaroOtomi:        return tr("Queretaro Otomi");
+    //case QLocale::QueretaroOtomi:      return tr("Queretaro Otomi");
     case QLocale::Romanian:              return tr("Romanian");
     case QLocale::Russian:               return tr("Russian");
     case QLocale::Samoan:                return tr("Samoan");
-    //case QLocale::ScotsGaelic:           return tr("Scots Gaelic");
-    //case QLocale::SerbianCyrillic:       return tr("Serbian (Cyrillic)");
-    //case QLocale::SerbianLatin:          return tr("Serbian (Latin)");
-    //case QLocale::Sesotho:               return tr("Sesotho");
+    //case QLocale::ScotsGaelic:         return tr("Scots Gaelic");
+    //case QLocale::SerbianCyrillic:     return tr("Serbian (Cyrillic)");
+    //case QLocale::SerbianLatin:        return tr("Serbian (Latin)");
+    //case QLocale::Sesotho:             return tr("Sesotho");
     case QLocale::Shona:                 return tr("Shona");
     case QLocale::Sindhi:                return tr("Sindhi");
     case QLocale::Sinhala:               return tr("Sinhala");
@@ -886,7 +923,7 @@ QString MyLocalization::languageName(const QLocale &locale)
     case QLocale::Sundanese:             return tr("Sundanese");
     case QLocale::Swahili:               return tr("Swahili");
     case QLocale::Swedish:               return tr("Swedish");
-    //case QLocale::Tagalog:               return tr("Tagalog");
+    //case QLocale::Tagalog:             return tr("Tagalog");
     case QLocale::Tahitian:              return tr("Tahitian");
     case QLocale::Tajik:                 return tr("Tajik");
     case QLocale::Tamil:                 return tr("Tamil");
@@ -896,7 +933,7 @@ QString MyLocalization::languageName(const QLocale &locale)
     case QLocale::Tongan:                return tr("Tongan");
     case QLocale::Turkish:               return tr("Turkish");
     case QLocale::Turkmen:               return tr("Turkmen");
-    //case QLocale::Udmurt:                return tr("Udmurt");
+    //case QLocale::Udmurt:              return tr("Udmurt");
     case QLocale::Uighur:                return tr("Uighur");
     case QLocale::Ukrainian:             return tr("Ukrainian");
     case QLocale::Urdu:                  return tr("Urdu");
@@ -906,9 +943,46 @@ QString MyLocalization::languageName(const QLocale &locale)
     case QLocale::Xhosa:                 return tr("Xhosa");
     case QLocale::Yiddish:               return tr("Yiddish");
     case QLocale::Yoruba:                return tr("Yoruba");
-    //case QLocale::YucatecMaya:           return tr("Yucatec Maya");
+    //case QLocale::YucatecMaya:         return tr("Yucatec Maya");
     case QLocale::Zulu:                  return tr("Zulu");
-    default:                         return QString();
+    default:
+        if (thisLocale.name() == "HaitianCreole")
+            { return tr("Haitian Creole"); }
+        else if (thisLocale.name() == "HillMari")
+            { return tr("Hill Mari"); }
+        else if (thisLocale.name() == "Hmong")
+            { return tr("Hmong"); }
+        else if (thisLocale.name() == "Klingon")
+            { return tr("Klingon"); }
+        else if (thisLocale.name() == "KlingonPlqaD")
+            { return tr("Klingon (PlqaD)"); }
+        else if (thisLocale.name() == "Kyrgyz")
+            { return tr("Kyrgyz"); }
+        else if (thisLocale.name() == "LevantineArabic")
+            { return tr("Levantine Arabic"); }
+        else if (thisLocale.name() == "Mari")
+            { return tr("Mari"); }
+        else if (thisLocale.name() == "Myanmar")
+            { return tr("Myanmar"); }
+        else if (thisLocale.name() == "Chichewa")
+            { return tr("Chichewa"); }
+        else if (thisLocale.name() == "QueretaroOtomi")
+            { return tr("Queretaro Otomi"); }
+        else if (thisLocale.name() == "ScotsGaelic")
+            { return tr("Scots Gaelic"); }
+        else if (thisLocale.name() == "SerbianCyrillic")
+            { return tr("Serbian (Cyrillic)"); }
+        else if (thisLocale.name() == "SerbianLatin")
+            { return tr("Serbian (Latin)"); }
+        else if (thisLocale.name() == "Sesotho")
+            { return tr("Sesotho"); }
+        else if (thisLocale.name() == "Tagalog")
+            { return tr("Tagalog"); }
+        else if (thisLocale.name() == "Udmurt")
+            { return tr("Udmurt"); }
+        else if (thisLocale.name() == "YucatecMaya")
+            { return tr("Yucatec Maya"); }
+        return QString();
     } // end switch (lang)
 } // end languageName(Language lang)
 /************************************************
@@ -931,8 +1005,11 @@ void MyLocalization::setMessage(const QString &thisMessage, MyMessageTypes thisM
             break;
         case Question:
         case Debug:
-            qDebug() << thisMessage;
-            //std::cout << thisMessage.toStdString() << std::endl;
+            if (isDebugMessage)
+            {
+                qDebug() << thisMessage;
+                //std::cout << thisMessage.toStdString() << std::endl;
+            }
             break;
     }
 }

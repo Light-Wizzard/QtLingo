@@ -19,9 +19,14 @@ QtLingo هو تطبيق لتسهيل ترجمة Qt ،
 
 ###: الحزمة: ** التنزيلات: **
 
- -: penguin: [Linux zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
- -: المكتب: [Windows 64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/Windows64/QtLingo-Windows-x64.zip)
- -: apple: Currenty unavalible [Apple zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
+-: penguin: [Linux x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip)
+-: المكتب: [Windows x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
+-: apple: [Apple x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
+
+Windows (تم اختباره في 7 و 10 ، أخبرني إذا كان 8 يعمل): قم بتنزيل zip واستخرجه ،
+وقم بتشغيل الملف QtLingo.exe داخل مجلد نشر AppDir.
+
+أبل لا تختبر لأنني لا أملك واحدة.
 
 # التوثيق
 
@@ -46,7 +51,7 @@ QtLingo هو تطبيق لتسهيل ترجمة Qt ،
 
 # دوكسجين
 
-حاولت توثيق استخدام Doxygen ، يمكنك تشغيله من الأوامر أدناه.
+أنا أستخدم Doxygen ، يمكنك تشغيله من الأوامر أدناه.
 
 "" باش
 دوكسجين Doxyfile
@@ -55,6 +60,8 @@ QtLingo هو تطبيق لتسهيل ترجمة Qt ،
 
 دوكسيويارد
 ""
+
+لدي مستندات Doxygen ضمن المستندات.
 
 # مشاكل
 

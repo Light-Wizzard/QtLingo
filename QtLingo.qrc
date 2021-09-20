@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>README.md</file>
+        <file>help/Help_en.md</file>
+        <file>help/About_en.md</file>
         <file>README_ar.md</file>
         <file>README_de.md</file>
         <file>README_es.md</file>
@@ -13,7 +15,6 @@
         <file>README_zh_CN.md</file>        
         <file>help/Help_ar.md</file>
         <file>help/Help_de.md</file>
-        <file>help/Help_en.md</file>
         <file>help/Help_es.md</file>
         <file>help/Help_fr.md</file>
         <file>help/Help_it.md</file>
@@ -24,7 +25,6 @@
         <file>help/Help_zh_CN.md</file>
         <file>help/About_ar.md</file>
         <file>help/About_de.md</file>
-        <file>help/About_en.md</file>
         <file>help/About_es.md</file>
         <file>help/About_fr.md</file>
         <file>help/About_it.md</file>

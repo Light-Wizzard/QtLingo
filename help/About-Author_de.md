@@ -1,4 +1,4 @@
-# Über den ursprünglichen Autor
+# Über den Autor
 
 Mein Name ist Jeffrey Scott Flesher, ich bin ein medizinisch pensionierter Computerprogrammierer der US Air Force,
 und Hubschrauber-Crew-Chef,
@@ -7,6 +7,7 @@ wo ich eine Medaille für die Verbesserung um 30% bekommen habe,
 und bringen Sie es ein Jahr im Voraus online,
 und gerade rechtzeitig zum Guldkrieg,
 wo wenn über 96% aller Missionen geflogen sind,
+mit dem Terrain-Following-Computer, auf den ich mich spezialisiert habe,
 nach dem Golfkrieg 1991
 dann wurde ich Helikopter Crew Chief für die 66<sup>te</sup> RQS Air Rescue,
 wo ich nach Kuwait zurückkehrte, um an dem Ort zu leben und zu arbeiten, den wir während des Krieges beschützten,
@@ -38,7 +39,7 @@ die Quellcode für meine Trinary Math haben,
 sowie ein Galaxy-Rechner,
 Aus diesem Grund habe ich diese Anwendung geschrieben,
 bevor Sie zu 100 % behindert werden,
-Ich habe für die EPA und die BLM gearbeitet,
+Ich arbeitete für die EPA und die BLM,
 wo ich mehrere Auszeichnungen für Programme bekam, die ich für sie geschrieben habe.
 
 Ich habe Krebs und mein Santa Paws Welpe auch.

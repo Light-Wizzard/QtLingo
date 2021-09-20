@@ -1,4 +1,4 @@
-# À propos de l'auteur original
+# A propos de l'auteur
 
 Je m'appelle Jeffrey Scott Flesher, je suis un programmeur informatique de l'US Air Force à la retraite médicale,
 et chef d'équipage d'hélicoptère,
@@ -7,6 +7,7 @@ où j'ai obtenu une médaille pour l'avoir amélioré de 30%,
 et le mettre en ligne un an à l'avance,
 et juste à temps pour la guerre de Guld,
 où s'il a survolé 96% de toutes les missions,
+en utilisant le Terrain Follow Computer que je me suis spécialisé dans la réparation,
 après la guerre du Golfe en 1991,
 puis je suis devenu chef d'équipage d'hélicoptère pour le 66<sup>ème</sup> sauvetage aérien RQS,
 où je suis retourné au Koweït pour vivre et travailler dans l'endroit que nous avons protégé pendant la guerre,
@@ -20,7 +21,7 @@ Johannes Kepler, Sir Isaac Newton et Nicola Tesla,
 et j'ai inclus mon doctorat en physique dans ce manuel de 666 pages,
 sur les mathématiques trinaires, et la fin du temps calculée par Sir Isaac Newton serait terminée en 2061,
 et ce livre prouve que notre pôle Nord magnétique se dirige vers notre équateur,
-et le traversera en l'an 2033,
+et le traversera en 2033,
 et comme tous les champs électromagnétiques,
 notre magnétosphère va s'effondrer,
 et notre Atomosphère s'évacuera dans l'Espace,

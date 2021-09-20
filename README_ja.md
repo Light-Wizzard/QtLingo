@@ -15,13 +15,18 @@ QtLingoは、Qtの翻訳を簡単にするアプリケーションです。
 
 ＃＃ 状態
 
-[！[Appveyorビルドステータス]（https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true）]（https://ci.appveyor.com/project/Light-Wizzard/qtlingo）
+[！[Appveyor Build Status]（https://ci.appveyor.com/api/projects/status/j7htumuwfx31elf6?svg=true）]（https://ci.appveyor.com/project/Light-Wizzard/qtlingo）
 
 ###：パッケージ：**ダウンロード：**
 
- -：penguin：[Linux zip]（https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip）
- -：office：[Windows 64 zip]（https://github.com/Light-Wizzard/QtLingo/releases/download/Windows64/QtLingo-Windows-x64.zip）
- -：apple：現在利用できない[Apple zip]（https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip）
+-：penguin：[Linux x64 zip]（https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip）
+-：office：[Windows x64 zip]（https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip）
+-：apple：[Apple x64 zip]（https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip）
+
+Windows（7および10でテスト済み）：zipをダウンロードして解凍し、
+そして、デプロイAppDirフォルダー内のファイルQtLingo.exeを実行します。
+
+私は持っていないので、Appleはテストしません。
 
 ＃ドキュメンテーション
 
@@ -46,7 +51,7 @@ https://wiki.qt.io/Simple_encryption_with_SimpleCrypt#Versionsを使用しまし
 
 ＃Doxygen
 
-私はusignDoxygenを文書化しようとしました、あなたはそれを以下のコマンドから実行することができます。
+私はDoxygenを使用していますが、以下のコマンドから実行できます。
 
 `` `bash
 doxygen Doxyfile
@@ -55,6 +60,8 @@ doxygen Doxyfile
 
 ドキシウィザード
 `` `
+
+ドキュメントの下にDoxygenドキュメントがあります。
 
 ＃問題
 

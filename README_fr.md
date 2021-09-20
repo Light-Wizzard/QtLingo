@@ -19,9 +19,14 @@ tout est fait, plus rien à faire.
 
 ### :package : **Téléchargements :**
 
- - :pingouin : [Linux zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
- - :office : [Windows 64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/Windows64/QtLingo-Windows-x64.zip)
- - :apple : actuellement indisponible [Apple zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
+- :pingouin: [Linux x64 zip ](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip)
+- :office : [Windows x64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
+- :apple: [Apple x64 zip ](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
+
+Windows (Testé sur 7 et 10, dites-moi si 8 fonctionne) : Téléchargez le zip et extrayez-le,
+et exécutez le fichier QtLingo.exe dans le dossier deploy AppDir.
+
+Apple ne teste pas car je n'en ai pas.
 
 # Documentation
 
@@ -46,7 +51,7 @@ créer des fichiers avec un code de langue.
 
 # Doxygène
 
-J'ai essayé de documenter l'utilisation de Doxygen, vous pouvez l'exécuter à partir des commandes ci-dessous.
+J'utilise Doxygen, vous pouvez l'exécuter à partir des commandes ci-dessous.
 
 ```bash
 doxygen Doxyfile
@@ -55,6 +60,8 @@ ou
 
 magicien doxy
 ```
+
+J'ai des documents Doxygen sous docs.
 
 # Problèmes
 

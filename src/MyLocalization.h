@@ -58,7 +58,7 @@ class MyLocalization : public QObject
         bool getDebugMessage();                      //!< get Debug Message
         void setMessage(const QString &thisMessage, MyLocalization::MyMessageTypes thisMessageType); //!< set Message
         // Localization
-        QStringList findQmFiles(const QString &thisFolder);                                 //!< find Qm Files
+        QStringList getQmFiles(const QString &thisFolder);                                 //!< find Qm Files
         QStringList findTsFiles(const QString &thisFolder);                                 //!< find Ts Files
         bool        languageMatch(const QString &thisPrefix, const QString &thisLang, const QString &thisQmFile); //!< language Match
         QString     languageNameFromFile(const QString &thisTranslationFile);               //!< language Name From File
@@ -74,7 +74,7 @@ class MyLocalization : public QObject
         QString getDefaultLanguageCode();
         //
         void loadLanguage(const QString &thisQmLanguageFile); //!< load Language
-        QString getLanguageFile(const QString &thisLanguage, const QString &thisPath, const QString &thisPrefix); //!< get Language File
+        QString etLanguageFile(const QString &thisLanguageCode, const QString &thisPath, const QString &thisPrefix); //!< get Language File
         QString getLanguageFromFile(const QString &thisPrefix, const QString &thisQmLanguageFile); //!< getLanguageFromFile
         // Translation Source
         QString getTranslationSource();                                     //!< get Translation Source
@@ -96,7 +96,8 @@ class MyLocalization : public QObject
         void setMainLoaded(bool thisMainLoaded);                            //!< set Main Loaded
         bool getMainLoaded();                                               //!< get Main Loaded
 
-        QString languageName(const QLocale &locale);                        //!< language Name
+        QString languageName(const QLocale &thisLocale);                    //!< language Name
+        QString getLanguageFile(const QString &thisLanguageCode, const QString &thisPath, const QString &thisPrefix);
 
     private:
         static const QMap<QString, QString>  s_genericLanguageNameToCode; //!< \c s_genericLanguageNameToCode @brief generic Language Name to Code
@@ -109,7 +110,7 @@ class MyLocalization : public QObject
         bool            isMainLoaded         = false;   //!< \c isMainLoaded         @brief Set true after one shot time loads
         QTranslator    *myTranslator;                   //!< \c myTranslator         @brief Translator
         QTranslator    *myLastTranslator     = nullptr; //!< \c myLastTranslator     @brief Last Translator
-        QString         myLanguageCode       = "en";    //!< \c myLanguageCode       @brief Two Digit Language Code
+        QString         myLanguageCode       = "";      //!< \c myLanguageCode       @brief Two Digit Language Code
 
 };
 #endif // MY_LOCALIZATION_H

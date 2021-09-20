@@ -1,4 +1,4 @@
-# Acerca del autor original
+# Sobre el Autor
 
 Mi nombre es Jeffrey Scott Flesher, soy un programador informático de la Fuerza Aérea de los EE. UU. Jubilado por motivos médicos,
 y Cheif de tripulación de helicópteros,
@@ -7,8 +7,9 @@ donde obtuve una medalla por mejorarlo en un 30%,
 y ponerlo en línea con un año de anticipación,
 y justo a tiempo para la Guerra de Guld,
 donde si voló más del 96% de todas las misiones,
+usando la computadora de seguimiento del terreno que me especialicé en arreglar,
 después de la Guerra del Golfo en 1991,
-luego me convertí en un jefe de tripulación de helicópteros para el 66 <sup> th </sup> RQS Air Rescue,
+luego pasé a convertirme en un jefe de tripulación de helicópteros para el 66 <sup> th </sup> RQS Air Rescue,
 donde volví a Kuwait para vivir y trabajar en el lugar que protegimos durante la guerra,
 y luego al 31 <sup> st </sup> Escuadrón de Operaciones Especiales,
 en Koria, donde obtuve una segunda medalla por un premio de mantenimiento.

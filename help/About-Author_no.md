@@ -1,4 +1,4 @@
-# Om den originale forfatteren
+# Om forfatteren
 
 Mitt navn er Jeffrey Scott Flesher, jeg er en medisinsk pensjonert amerikansk flyvåpen datamaskinprogrammerer,
 og Helikopter Crew Cheif,
@@ -7,8 +7,9 @@ hvor jeg fikk en medalje for å forbedre den med 30%,
 og ta den med på nettet et år i forveien,
 og akkurat i tide til Guld -krigen,
 hvor hvis fløy over 96% av alle oppdragene,
+bruke terrengfølge -datamaskinen som jeg spesialiserte meg på å fikse,
 etter Golfkrigen i 1991,
-så fortsatte jeg med å bli Helikopter Crew Cheif for 66 <sup> th </sup> RQS Air Rescue,
+så fortsatte jeg med å bli en Helikopter Crew Cheif for 66 <sup> th </sup> RQS Air Rescue,
 hvor jeg dro tilbake til Kuwait for å bo og arbeide på stedet vi beskyttet under krigen,
 og deretter videre til 31 <sup> st </sup> Special Operations Squadron,
 i Koria, hvor jeg fikk en andre medalje for en vedlikeholdspris.
@@ -20,7 +21,7 @@ Johannes Kepler, Sir Isaac Newton og Nicola Tesla,
 og jeg inkluderte min doktorgrad i fysikk i denne læreboken på 666 sider,
 om Trinary Math, and the End of Time Sir Isaac Newton Calculated ville være over i 2061,
 og denne boken beviser at vår nordmagnetpol beveger seg mot vår ekvator,
-og vil krysse den i 2033,
+og vil krysse den i år 2033,
 og som alle elektromagniske felt,
 Magnetosfæren vår vil kollapse,
 og atomosfæren vår kommer ut i verdensrommet,
@@ -41,11 +42,11 @@ før du blir 100% ufør,
 Jeg jobbet for EPA og BLM,
 hvor jeg fikk flere priser for programmer jeg skrev for dem.
 
-Jeg har kreft, og det samme gjør min julenissevalp,
+Jeg har kreft, og det samme har min julenissevalp,
 snødronningen på dyreplaneter for søte,
 du kan finne videoen på FaceBook -kontoen min,
 bare søk etter navn, jeg har en Light Wizzard,
-og en veterinærs brukerstøtte -konto,
+og en veterinærhjelp -konto,
 og jeg tror begge har den videoen på den,
 Jeg har også en Light Wizzard You Tube -konto.
 og min kone og jeg er begge medisinsk pensjonerte amerikanske luftvåpen,

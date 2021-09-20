@@ -1,15 +1,32 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.16)
 # I tried to put stuff you need to exit at the top
 project(QtLingo VERSION 0.1.0.0 DESCRIPTION "QtLingo" LANGUAGES C CXX)
 # Set this to your URL
 set(MY_URL "light-wizzard.github.io")
-# ON OFF
+# If QML set to ON otherwise OFF
 set(MY_QML OFF)
+# If you have a project that has an SQL verion for Desktops, and No SQL for WebAssempy set to ON OFF
+set(USE_SQL_FLAG ON)
+# If Check Internet with Ping set to ON otherwise OFF
+set(MY_INTERNET_CHECK_PING OFF)
 # Set Target Name
 set(MY_TARGET ${CMAKE_PROJECT_NAME})
-# If you have a project that has an SQL verion for Desktops, and No SQL for WebAssempy set both below comments
-option(USE_SQL_FLAG "Feature description" ON)
-add_compile_definitions(USE_SQL_FLAG)
+# QML
+if(MY_QML)
+    add_compile_definitions(MY_QML)
+endif()
+# SQL
+if(USE_SQL_FLAG)
+    add_compile_definitions(USE_SQL_FLAG)
+endif()
+# Check Internet with Ping
+if(MY_INTERNET_CHECK_PING)
+    add_compile_definitions(MY_INTERNET_CHECK_PING)
+endif()
+#
+if(NOT MY_QML)
+    set(PROJECT_UI src/MainWindow.ui)
+endif()
 # TS Files
 set(MY_TS_FILES
     translations/${MY_TARGET}_ar.ts
@@ -69,6 +86,7 @@ set(PROJECT_SOURCES
     ${MY_TARGET}.qrc
     ${MY_TS_FILES}
     ${HEADERS}
+    ${PROJECT_UI}
 )
 # All Qt includes
 #3DAnimation             Help                    QuickWidgets
@@ -125,6 +143,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+# Define DEBUG
+add_compile_options("$<$<CONFIG:DEBUG>:-DDEBUG>")
 # C++ Standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

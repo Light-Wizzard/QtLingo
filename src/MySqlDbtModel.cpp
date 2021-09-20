@@ -4,7 +4,7 @@
  * @brief Constructor.
  * MySqlDbtModel
  ***********************************************/
-MySqlDbtModel::MySqlDbtModel(QObject *parent, MyOrgSettings *thisSetting) : QObject(parent), mySetting(thisSetting)
+MySqlDbtModel::MySqlDbtModel(MyOrgSettings *thisSetting, MyConstants *thisConstant, QObject *parent) : QObject(parent), mySetting(thisSetting), myConstants(thisConstant)
 {
 }
 /************************************************
@@ -194,7 +194,7 @@ void MySqlDbtModel::setSqlDriver(const QString &thisDriver)
     setMessage("setSqlDriver");
 #ifdef USE_SQL_FLAG
     QString theDriver = thisDriver;
-    if (theDriver.length() == 0)  { theDriver = mySetting->myConstants->MY_SQL_DEFAULT; }
+    if (theDriver.length() == 0)  { theDriver = myConstants->MY_SQL_DEFAULT; }
     // Check for Database memory setting
     // ui->checkBoxSettingsMemory->isChecked() || combobox
     // Database Driver
@@ -253,7 +253,7 @@ bool MySqlDbtModel::createDataBaseConnection()
     setMessage("createDataBaseConnection");
 #ifdef USE_SQL_FLAG
     // Make sure Drive is set
-    if (mySqlDriver == "NOTSET") { setSqlDriver(mySetting->myConstants->MY_SQL_DEFAULT); }
+    if (mySqlDriver == "NOTSET") { setSqlDriver(myConstants->MY_SQL_DEFAULT); }
     QString theDb = getSqlDatabaseName();
     // Database Driver
     if (mySqlDriver == ":memory:")
@@ -354,8 +354,8 @@ bool MySqlDbtModel::createDataBaseConnection()
         }
     }
     // Set Settings
-    mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_NAME, theDb);
-    mySetting->writeSettings(mySetting->myConstants->MY_SQL_DB_TYPE, "QSQLITE");
+    mySetting->writeSettings(myConstants->MY_SQL_DB_NAME, theDb);
+    mySetting->writeSettings(myConstants->MY_SQL_DB_TYPE, "QSQLITE");
 #endif
     return true;
 } // end createDataBaseConnection

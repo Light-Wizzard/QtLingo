@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QtDebug>
+#include "MyConstants.h"
 #include "MySqlDbtModel.h"
 /************************************************
  * @brief Project Class.
@@ -13,14 +14,14 @@ class MyProjectClass
 {
     public:
         MyProjectClass(const QString &thisID, const QString &thisQtProjectName, const QString &thisQtProjectFolder, const QString &thisSourceFolder, const QString &thisDestinationFolder,  const QString &thisHelpFolder, const QString &thisSourceLanguage, const QString &thisLanguageIDs, const QString &thisMake)
-            : myID{thisID}, myQtProjectName{thisQtProjectName}, myQtProjectFolder{thisQtProjectFolder}, mySourceFolder{thisSourceFolder}, myDestinationFolder{thisDestinationFolder}, myHelpFolder{thisHelpFolder}, mySourceLanguage{thisSourceLanguage}, myLanguageIDs{thisLanguageIDs}, myMake{thisMake} {}
+            : myID{thisID}, myQtProjectName{thisQtProjectName}, myQtProjectFolder{thisQtProjectFolder}, mySourceFolder{thisSourceFolder}, myDoxyfileFolder{thisDestinationFolder}, myHelpFolder{thisHelpFolder}, mySourceLanguage{thisSourceLanguage}, myLanguageIDs{thisLanguageIDs}, myMake{thisMake} {}
         // Getters
         QString getID()                const { return myID;                } //!< ID
         QString getQtProjectName()     const { return myQtProjectName;     } //!< Project Name of .pro file
         QString getQtProjectFolder()   const { return myQtProjectFolder;   } //!< Base Project Folder
         QString getSourceFolder()      const { return mySourceFolder;      } //!< Source Folder
-        QString getDestinationFolder() const { return myDestinationFolder; } //!< Destination Folder
-        QString getHelpFolder()        const { return myHelpFolder;        } //!< Destination Folder
+        QString getDoxyfileFolder()    const { return myDoxyfileFolder;    } //!< Doxyfile Folder
+        QString getHelpFolder()        const { return myHelpFolder;        } //!< Help Folder
         QString getSourceLanguage()    const { return mySourceLanguage;    } //!< ComboBox of Languages
         QString getLanguageIDs()       const { return myLanguageIDs;       } //!< Sum of Checkboxes
         QString getMake()              const { return myMake;              } //!< qmake or cmake
@@ -29,14 +30,14 @@ class MyProjectClass
         void setQtProjectName(const QString &s)     { myQtProjectName     = s; }
         void setQtProjectFolder(const QString &s)   { myQtProjectFolder   = s; }
         void setSourceFolder(const QString &s)      { mySourceFolder      = s; }
-        void setDestinationFolder(const QString &s) { myDestinationFolder = s; }
+        void setDoxyfileFolder(const QString &s)    { myDoxyfileFolder    = s; }
         void setHelpFolder(const QString &s)        { myHelpFolder        = s; }
         void setSourceLanguage(const QString &s)    { mySourceLanguage    = s; }
         void setLanguageIDs(const QString &s)       { myLanguageIDs       = s; }
         void setMake(const QString &s)              { myMake              = s; }
 
     private:
-        QString myID, myQtProjectName, myQtProjectFolder, mySourceFolder, myDestinationFolder, myHelpFolder;
+        QString myID, myQtProjectName, myQtProjectFolder, mySourceFolder, myDoxyfileFolder, myHelpFolder;
         QString mySourceLanguage, myLanguageIDs, myMake;
 };
 /************************************************
@@ -48,12 +49,13 @@ class MyDatatables : public QObject
 {
         Q_OBJECT
     public:
-        explicit MyDatatables(QObject *parent = nullptr, MyOrgSettings *thisSetting = nullptr);
+        explicit MyDatatables(MyOrgSettings *thisSetting = nullptr, MyConstants *thisConstant = nullptr, QObject *parent = nullptr);
         ~MyDatatables();
         //
         MyProjectClass *myProject;                   //!< \c myProject  @brief My Project Variables
         MySqlDbtModel  *mySqlModel;                  //!< \c mySqlModel @brief Pointer to DataTable
         MyOrgSettings  *mySetting;                   //!< \c mySetting @brief Domain Settings
+        MyConstants    *myConstants;                 //!< \c myConstants @brief All Constants in one class
         //
         bool checkDatabase();                        //!< check Database
         bool insertQtProjects();                     //!< insert Qt Project

@@ -3,14 +3,6 @@
 // Includes
 #include <QObject>
 #include <QtGlobal>
-//
-#define MY_CRYPTO_SEED (Q_UINT64_C(0x0c6add66acdcf066)) //!< \c MY_CRYPTO_SEED      @brief Ini File Name
-//
-#if Q_OS_MSDOS || defined(Q_OS_WIN32) || defined(Q_OS_WINCE)
-    #define VERSION "1.0.0"
-#else
-    #define VERSION "1.0"
-#endif
 /************************************************
  * @brief Constants are defined as const QString, starting with MY_ all capps.
  * \class MyConstants
@@ -48,7 +40,7 @@ class MyConstants
         const QString MY_QT_PROJECT_NAME        = "QtLingo";           //!< \c MY_QT_PROJECT_NAME    @brief Qt Project Name.
         const QString MY_QT_PROJECT_FOLDER      = "QtLingo";           //!< \c MY_QT_PROJECT_FOLDER  @brief Qt Project Folder.
         const QString MY_SOURCE_FOLDER          = "translations";      //!< \c MY_SOURCE_FOLDER      @brief Source Folder.
-        const QString MY_DESTINATION_FOLDER     = "translations";      //!< \c MY_DESTINATION_FOLDER @brief Destination folder.
+        const QString MY_DOXYFILE_FOLDER        = "doc";               //!< \c MY_DOXYFILE_FOLDER    @brief Doxyfile folder.
         const QString MY_HELP_FOLDER            = "help";              //!< \c MY_HELP_FOLDER        @brief Help folder.
         const QString MY_SOURCE_LANGUAGE        = "English";           //!< \c MY_SOURCE_LANGUAGE    @brief Source Language.
         const QString MY_MAKE                   = "qmake";             //!< \c MY_MAKE               @brief Default Make Type: qmake or cmake.

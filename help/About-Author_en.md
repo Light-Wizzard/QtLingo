@@ -1,4 +1,4 @@
-# About the Orginal Author
+# About the Author
 
 My Name is Jeffrey Scott Flesher, I am a Medically Retired U.S. Air Force Computer Programmer,
 and Helicopter Crew Cheif,
@@ -7,6 +7,7 @@ where I got a Medal for improving it by 30%,
 and bring it online a year in advance,
 and just in time for the Guld War,
 where if flew over 96% of all the missions,
+using the Terrain Following Computer that I specialized in fixing,
 after the Gulf War in 1991,
 then I moved on to become a Helicopter Crew Cheif for the 66<sup>th</sup> RQS Air Rescue,
 where I went back to Kuwait to live and work in the place we protected during the War,

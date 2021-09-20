@@ -26,7 +26,7 @@ it is all done, nothing more to do.
 Windows (Tested on 7 and 10 let me know if 8 works): Download zip and extract it, 
 and run the file QtLingo.exe inside of the deploy AppDir folder.
 
-Apple not test since I do not have one.
+Apple not test because I do not have one.
 
 # Documentaion
 
@@ -51,7 +51,7 @@ creating files with a Language Code.
 
 # Doxygen
 
-I tried to document usign Doxygen, you can run it from the commands below.
+I use Doxygen, you can run it from the commands below.
 
 ```bash
 doxygen Doxyfile 
@@ -60,6 +60,8 @@ or
 
 doxywizard
 ```
+
+I have Doxygen Documents under docs.
 
 # Problems
 

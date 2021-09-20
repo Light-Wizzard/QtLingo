@@ -4,9 +4,9 @@
  * @brief My Datatables Constructor.
  * MyDatatables
  ***********************************************/
-MyDatatables::MyDatatables(QObject *parent, MyOrgSettings *thisSetting) : QObject(parent), mySetting(thisSetting)
+MyDatatables::MyDatatables(MyOrgSettings *thisSetting, MyConstants *thisConstant, QObject *parent) : QObject(parent), mySetting(thisSetting), myConstants(thisConstant)
 {
-    mySqlModel = new MySqlDbtModel(this, thisSetting);
+    mySqlModel = new MySqlDbtModel(thisSetting, thisConstant, this);
     // Create Variable Trackers and Set to Empty
     myProject = new MyProjectClass("", "", "", "", "", "", "", "", "");
 }
@@ -127,23 +127,23 @@ bool MyDatatables::checkDatabase()
         /*
          * Table Projects holds the name of the Qt Project
          * id integer PRIMARY KEY autoincrement,
-         * id, QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, SourceLanguage, LanguageIDs, Make
+         * id, QtProjectName, QtProjectFolder, SourceFolder, DoxyfileFolder, HelpFolder, SourceLanguage, LanguageIDs, Make
         */
-        if (mySqlModel->runQuery(QLatin1String(R"(CREATE TABLE Projects(id integer PRIMARY KEY autoincrement, QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, SourceLanguage, LanguageIDs, Make))")))
+        if (mySqlModel->runQuery(QLatin1String(R"(CREATE TABLE Projects(id integer PRIMARY KEY autoincrement, QtProjectName, QtProjectFolder, SourceFolder, DoxyfileFolder, HelpFolder, SourceLanguage, LanguageIDs, Make))")))
         {
-            QString theQtProjectName    = mySqlModel->mySetting->myConstants->MY_QT_PROJECT_NAME;
-            QString theQtProjectFolder  = mySqlModel->mySetting->myConstants->MY_QT_PROJECT_FOLDER;
-            QString theSource           = mySqlModel->mySetting->myConstants->MY_SOURCE_FOLDER;
-            QString theDestination      = mySqlModel->mySetting->myConstants->MY_DESTINATION_FOLDER;
-            QString theHelpFolder       = mySqlModel->mySetting->myConstants->MY_HELP_FOLDER;
-            QString theSourceLanguage   = mySqlModel->mySetting->myConstants->MY_SOURCE_LANGUAGE;
-            QString theMake             = mySqlModel->mySetting->myConstants->MY_MAKE;
-            QString theLanguageIDs      = mySqlModel->mySetting->myConstants->MY_LANGUAGE_IDs;
-            setProject(theQtProjectName, theQtProjectFolder, theSource, theDestination, theHelpFolder, theSourceLanguage, theLanguageIDs, theMake);
+            QString theQtProjectName    = myConstants->MY_QT_PROJECT_NAME;
+            QString theQtProjectFolder  = myConstants->MY_QT_PROJECT_FOLDER;
+            QString theSource           = myConstants->MY_SOURCE_FOLDER;
+            QString theDoxyfile         = myConstants->MY_DOXYFILE_FOLDER;
+            QString theHelpFolder       = myConstants->MY_HELP_FOLDER;
+            QString theSourceLanguage   = myConstants->MY_SOURCE_LANGUAGE;
+            QString theMake             = myConstants->MY_MAKE;
+            QString theLanguageIDs      = myConstants->MY_LANGUAGE_IDs;
+            setProject(theQtProjectName, theQtProjectFolder, theSource, theDoxyfile, theHelpFolder, theSourceLanguage, theLanguageIDs, theMake);
             if (insertQtProjects())
             {
                 myProjectID = mySqlModel->getRecordID();
-                mySqlModel->mySetting->writeSettings(mySqlModel->mySetting->myConstants->MY_SQL_PROJECT_ID, myProjectID);
+                mySqlModel->mySetting->writeSettings(myConstants->MY_SQL_PROJECT_ID, myProjectID);
             }
             else
             {
@@ -163,8 +163,8 @@ bool MyDatatables::checkDatabase()
 bool MyDatatables::insertQtProjects()
 {
     setMessage("insertProjects");
-    // QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, LanguageIDs, Make
-    QString theQuery = QLatin1String(R"(INSERT INTO Projects (QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, SourceLanguage, LanguageIDs, Make) values('%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8'))").arg(myProject->getQtProjectName(), myProject->getQtProjectFolder(), myProject->getSourceFolder(), myProject->getDestinationFolder(), myProject->getHelpFolder(), myProject->getSourceLanguage(), myProject->getLanguageIDs(), myProject->getMake());
+    // QtProjectName, QtProjectFolder, SourceFolder, DoxyfileFolder, HelpFolder, LanguageIDs, Make
+    QString theQuery = QLatin1String(R"(INSERT INTO Projects (QtProjectName, QtProjectFolder, SourceFolder, DoxyfileFolder, HelpFolder, SourceLanguage, LanguageIDs, Make) values('%1', '%2', '%3', '%4', '%5', '%6', '%7', '%8'))").arg(myProject->getQtProjectName(), myProject->getQtProjectFolder(), myProject->getSourceFolder(), myProject->getDoxyfileFolder(), myProject->getHelpFolder(), myProject->getSourceLanguage(), myProject->getLanguageIDs(), myProject->getMake());
     setMessage("insertProjects: " + theQuery);
     //
     if (!mySqlModel->runQuery(theQuery))
@@ -176,7 +176,7 @@ bool MyDatatables::insertQtProjects()
     return true;
 }
 /************************************************
- * @brief addQtProject Assumes you have ran setProject: QtProjectName, QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, LanguageIDs.
+ * @brief addQtProject Assumes you have ran setProject: QtProjectName, QtProjectFolder, SourceFolder, DoxyfileFolder, HelpFolder, LanguageIDs.
  * addQtProject
  ***********************************************/
 bool MyDatatables::addQtProject()
@@ -270,7 +270,7 @@ QString MyDatatables::getQtProjectNameSelectQueryID(const QString &thisWhereID)
     return QString("SELECT id, QtProjectName FROM Projects WHERE id = ").append(thisWhereID);
 }
 /************************************************
- * @brief save Project Projects: id, QtProjectName QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, SourceLanguage, LanguageIDs, Make
+ * @brief save Project Projects: id, QtProjectName QtProjectFolder, SourceFolder, DoxyfileFolder, HelpFolder, SourceLanguage, LanguageIDs, Make
  * saveProject
  ***********************************************/
 void MyDatatables::saveQtProject()
@@ -278,8 +278,8 @@ void MyDatatables::saveQtProject()
     setMessage("saveProject");
     #ifdef USE_SQL_FLAG
     QSqlQuery theQuery; //!< SQL Query
-    QString theQueryString = QString("UPDATE Projects set QtProjectName = '%1', QtProjectFolder = '%2', SourceFolder = '%3', DestinationFolder = '%4', HelpFolder = '%5', SourceLanguage = '%6', LanguageIDs = '%7', Make = '%8' WHERE id = %9").arg(myProject->getQtProjectName(), myProject->getQtProjectFolder(), myProject->getSourceFolder(), myProject->getDestinationFolder(), myProject->getHelpFolder(), myProject->getSourceLanguage(), myProject->getLanguageIDs(), myProject->getMake(), myProject->getID());
-    setMessage("thisQuery: |" + theQueryString + "|  getQtProjectName = " + myProject->getQtProjectName() + "|  getQtProjectFolder = " + myProject->getQtProjectFolder() + "| getSourceFolder=" + myProject->getSourceFolder() + "| getDestinationFolder=" + myProject->getDestinationFolder() + "| getHelpFolder=" + myProject->getHelpFolder() + "| getSourceLanguage=" + myProject->getSourceLanguage() + "| getLanguageIDs=" + myProject->getLanguageIDs() + "| getMake=" + myProject->getMake() + "| ID=" + myProject->getID() + "|");
+    QString theQueryString = QString("UPDATE Projects set QtProjectName = '%1', QtProjectFolder = '%2', SourceFolder = '%3', DoxyfileFolder = '%4', HelpFolder = '%5', SourceLanguage = '%6', LanguageIDs = '%7', Make = '%8' WHERE id = %9").arg(myProject->getQtProjectName(), myProject->getQtProjectFolder(), myProject->getSourceFolder(), myProject->getDoxyfileFolder(), myProject->getHelpFolder(), myProject->getSourceLanguage(), myProject->getLanguageIDs(), myProject->getMake(), myProject->getID());
+    setMessage("thisQuery: |" + theQueryString + "|  getQtProjectName = " + myProject->getQtProjectName() + "|  getQtProjectFolder = " + myProject->getQtProjectFolder() + "| getSourceFolder=" + myProject->getSourceFolder() + "| getDoxyfileFolder=" + myProject->getDoxyfileFolder() + "| getHelpFolder=" + myProject->getHelpFolder() + "| getSourceLanguage=" + myProject->getSourceLanguage() + "| getLanguageIDs=" + myProject->getLanguageIDs() + "| getMake=" + myProject->getMake() + "| ID=" + myProject->getID() + "|");
     if (!theQuery.exec(theQueryString))
     {
         qCritical() << "SqLite error saveProject:" << theQuery.lastError().text() << ", SqLite error code:" << theQuery.lastError();
@@ -289,16 +289,16 @@ void MyDatatables::saveQtProject()
 }
 /************************************************
  * @brief set Project Sets all Variables used in the Configuarion Database in one Place:
- *        QtProjectFolder, SourceFolder, DestinationFolder, HelpFolder, SourceLanguage, LanguageIDs, Make.
+ *        QtProjectFolder, SourceFolder, DoxyfileFolder, HelpFolder, SourceLanguage, LanguageIDs, Make.
  * setProject
  ***********************************************/
-void MyDatatables::setProject(const QString &thisQtProjectName, const QString &thisQtProjectFolder, const QString &thisSourceFolder, const QString &thisDestinationFolder,  const QString &thisHelpFolder, const QString &thisSourceLanguage, const QString &thisLanguageIDs, const QString &thisMake)
+void MyDatatables::setProject(const QString &thisQtProjectName, const QString &thisQtProjectFolder, const QString &thisSourceFolder, const QString &thisDoxyfileFolder,  const QString &thisHelpFolder, const QString &thisSourceLanguage, const QString &thisLanguageIDs, const QString &thisMake)
 {
     setMessage("setProject");
     myProject->setQtProjectName(thisQtProjectName);
     myProject->setQtProjectFolder(thisQtProjectFolder);
     myProject->setSourceFolder(thisSourceFolder);
-    myProject->setDestinationFolder(thisDestinationFolder);
+    myProject->setDoxyfileFolder(thisDoxyfileFolder);
     myProject->setHelpFolder(thisHelpFolder);
     myProject->setSourceLanguage(thisSourceLanguage);
     myProject->setLanguageIDs(thisLanguageIDs);

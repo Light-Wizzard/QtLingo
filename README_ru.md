@@ -19,9 +19,14 @@ QtLingo - это приложение, упрощающее перевод Qt,
 
 ###: package: ** Загрузки: **
 
- -: penguin: [Linux zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
- -: office: [Windows 64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/Windows64/QtLingo-Windows-x64.zip)
- -: apple: В настоящее время недоступен [Apple zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
+-: penguin: [Linux x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip)
+-: office: [Windows x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
+-: apple: [Apple x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
+
+Windows (проверено на 7 и 10, дайте мне знать, работает ли 8): загрузите zip и распакуйте его,
+и запустите файл QtLingo.exe внутри папки развертывания AppDir.
+
+Apple не тестирует, потому что у меня его нет.
 
 # Documentaion
 
@@ -46,7 +51,7 @@ QtLingo - это приложение, упрощающее перевод Qt,
 
 # Doxygen
 
-Я пытался задокументировать использование Doxygen, вы можете запустить его с помощью команд ниже.
+Я использую Doxygen, вы можете запустить его с помощью команд ниже.
 
 Баш
 doxygen Doxyfile
@@ -55,6 +60,8 @@ doxygen Doxyfile
 
 doxywizard
 `` ''
+
+У меня есть документы Doxygen в разделе docs.
 
 # Проблемы
 

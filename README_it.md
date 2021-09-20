@@ -19,9 +19,14 @@ e distribuisci il tuo progetto,
 
 ### :pacchetto: **Download:**
 
- - :penguin: [Zip Linux](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x86.zip)
- - :office: [Windows 64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/Windows64/QtLingo-Windows-x64.zip)
- - :apple: Attualmente non disponibile [Apple zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo.zip)
+- :penguin: [Zip Linux x64](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Ubuntu-Release-x64.zip)
+- :office: [Windows x64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
+- :apple: [Apple x64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
+
+Windows (testato su 7 e 10 fammi sapere se 8 funziona): scarica zip ed estrailo,
+ed esegui il file QtLingo.exe all'interno della cartella deploy AppDir.
+
+Apple non prova perché non ne ho uno.
 
 # Documentazione
 
@@ -39,14 +44,14 @@ e ho usato https://wiki.qt.io/Simple_encryption_with_SimpleCrypt#Versions.
 # Processi
 
 Per prima cosa fai clic su Compila per aggiornare i file di traduzione dei tuoi progetti in base alle lingue che hai scelto,
-Lo chiamo compile perché questi sono tutti i file che vengono compilati nella tua app,
+Lo chiamo compilazione perché questi sono tutti i file che vengono compilati nella tua app,
 quindi fai clic su accetta tutto o usa Qt Lingustic per accettare ogni traduzione,
 quindi fai clic su aggiorna i file di Aiuto e Leggimi e Traduzioni,
 creazione di file con un codice lingua.
 
 # Doxygen
 
-Ho provato a documentare l'uso di Doxygen, puoi eseguirlo dai comandi seguenti.
+Uso Doxygen, puoi eseguirlo dai comandi seguenti.
 
 ```bash
 doxygen Doxyfile
@@ -55,6 +60,8 @@ o
 
 doxywizard
 ```
+
+Ho documenti Doxygen sotto docs.
 
 # I problemi
 

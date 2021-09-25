@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['scrollarea_0',['scrollArea',['../classUi__MainWindow.html#a5f80e22900f6e658019f6c50cbffea81',1,'Ui_MainWindow']]],
+  ['scrollareawidgetcontents_1',['scrollAreaWidgetContents',['../classUi__MainWindow.html#a694297757b3ebe48e07d6fc3f97abdd5',1,'Ui_MainWindow']]],
+  ['spinboxsettingsdelay_2',['spinBoxSettingsDelay',['../classUi__MainWindow.html#a3378b23b5758760ad18e161f107ba085',1,'Ui_MainWindow']]],
+  ['statusbar_3',['statusbar',['../classUi__MainWindow.html#a07519bbb9a350befd6feb4e84ef299fd',1,'Ui_MainWindow']]],
+  ['stringdata0_4',['stringdata0',['../structqt__meta__stringdata__MainWindow__t.html#a2bed47de13b1f2ba7b4b8d402824f573',1,'qt_meta_stringdata_MainWindow_t::stringdata0()'],['../structqt__meta__stringdata__MyDatatables__t.html#a49faa4d1c1cbdd90bc2527f19f0d027a',1,'qt_meta_stringdata_MyDatatables_t::stringdata0()'],['../structqt__meta__stringdata__MyLocalization__t.html#ad8fc032fc0cbcf7969d5c2291d8ec1db',1,'qt_meta_stringdata_MyLocalization_t::stringdata0()'],['../structqt__meta__stringdata__MyOrgSettings__t.html#a992fe14e396b616941cfa9bdf7573bf5',1,'qt_meta_stringdata_MyOrgSettings_t::stringdata0()'],['../structqt__meta__stringdata__MySqlDbtModel__t.html#af991ca0548759bda71d407fe2fec1155',1,'qt_meta_stringdata_MySqlDbtModel_t::stringdata0()'],['../structqt__meta__stringdata__MyTranlatorParser__t.html#abd9f00f6146ccba53d64d5a2611f3192',1,'qt_meta_stringdata_MyTranlatorParser_t::stringdata0()'],['../structqt__meta__stringdata__QOnlineTranslator__t.html#aba1b83928ab16fc7dab83fd519409985',1,'qt_meta_stringdata_QOnlineTranslator_t::stringdata0()'],['../structqt__meta__stringdata__QOnlineTts__t.html#a2e2d7cfa910b745a8b2282034ffa9e7e',1,'qt_meta_stringdata_QOnlineTts_t::stringdata0()']]]
+];

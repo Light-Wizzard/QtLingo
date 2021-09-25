@@ -4,7 +4,7 @@
  * @brief Constructor.
  * MySqlDbtModel
  ***********************************************/
-MySqlDbtModel::MySqlDbtModel(MyOrgSettings *thisSetting, MyConstants *thisConstant, QObject *parent) : QObject(parent), mySetting(thisSetting), myConstants(thisConstant)
+MySqlDbtModel::MySqlDbtModel(MyLanguageModel *thisLanguageModel, MyConstants *thisConstant, QObject *parent) : QObject(parent), myLanguageModel(thisLanguageModel), myConstants(thisConstant)
 {
 }
 /************************************************
@@ -268,14 +268,14 @@ bool MySqlDbtModel::createDataBaseConnection()
             // SQLite version 3 and SQLite version 2 Note: obsolete since Qt 5.14
             if (theDb.contains(".db"))
             {
-                if (!mySetting->isFileExists(theDb))
+                if (!myLanguageModel->mySetting->isFileExists(theDb))
                 {
                     qCritical() << "createDataBaseConnection new DB: " << theDb;
                 }
             }
             else
             {
-                theDb = QString("%1%2%3.db").arg(mySetting->getAppDataLocation(), QDir::separator(), getSqlDatabaseName());
+                theDb = QString("%1%2%3.db").arg(myLanguageModel->mySetting->getAppDataLocation(), QDir::separator(), getSqlDatabaseName());
             }
             //
             myDb = QSqlDatabase::addDatabase(mySqlDriver); //!< set myDb SQLite
@@ -344,18 +344,18 @@ bool MySqlDbtModel::createDataBaseConnection()
     {
         if(!QSqlDatabase::isDriverAvailable(mySqlDriver))
         {
-            mySetting->showMessageBox(tr("Database SQL Driver is missing").toLocal8Bit(), tr("Install SQL").toLocal8Bit(), mySetting->Critical);
+            myLanguageModel->mySetting->showMessageBox(tr("Database SQL Driver is missing").toLocal8Bit(), tr("Install SQL").toLocal8Bit(), myLanguageModel->mySetting->Critical);
             return false;
         }
         else
         {
-            mySetting->showMessageBox(QString("%1: %2").arg(tr("Cannot open database"), myDb.lastError().text()).toLocal8Bit(), tr("Unable to establish a database connection").toLocal8Bit(), mySetting->Critical);
+            myLanguageModel->mySetting->showMessageBox(QString("%1: %2").arg(tr("Cannot open database"), myDb.lastError().text()).toLocal8Bit(), tr("Unable to establish a database connection").toLocal8Bit(), myLanguageModel->mySetting->Critical);
             return false;
         }
     }
     // Set Settings
-    mySetting->writeSettings(myConstants->MY_SQL_DB_NAME, theDb);
-    mySetting->writeSettings(myConstants->MY_SQL_DB_TYPE, "QSQLITE");
+    myLanguageModel->mySetting->writeSettings(myConstants->MY_SQL_DB_NAME, theDb);
+    myLanguageModel->mySetting->writeSettings(myConstants->MY_SQL_DB_TYPE, "QSQLITE");
 #endif
     return true;
 } // end createDataBaseConnection
@@ -395,9 +395,9 @@ bool MySqlDbtModel::moveDb(const QString &thisSourceFile,const QString &thisSour
     //
     QString theNewDatabaseName = QString("%1%2%3").arg(thisDestinationFolder, QDir::separator(), thisSourceFile);
     //
-    if (mySetting->isFileExists(theNewDatabaseName))
+    if (myLanguageModel->mySetting->isFileExists(theNewDatabaseName))
     {
-        if (!mySetting->questionYesNo("Overwrite Database", "Are you sure you want to overwrite existing Database?"))
+        if (!myLanguageModel->mySetting->questionYesNo("Overwrite Database", "Are you sure you want to overwrite existing Database?"))
         {
             return true;
         }

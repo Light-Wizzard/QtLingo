@@ -23,8 +23,8 @@ alt er gjort, ingenting mer å gjøre.
 -: office: [Windows x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
 -: apple: [Apple x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
 
-Windows (Testet på 7 og 10, gi meg beskjed om 8 fungerer): Last ned zip og trekk det ut,
-og kjør filen QtLingo.exe inne i AppDir -mappen.
+Windows (Testet på 7 og 10, gi meg beskjed om 8 fungerer): Last ned zip og pakk det ut,
+og kjør filen QtLingo.exe inne i implementeringsmappen AppDir.
 
 Apple tester ikke fordi jeg ikke har en.
 

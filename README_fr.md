@@ -58,7 +58,7 @@ doxygen Doxyfile
 
 ou
 
-magicien doxy
+doxysorcier
 ```
 
 J'ai des documents Doxygen sous docs.

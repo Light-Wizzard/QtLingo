@@ -14,9 +14,8 @@
 #include <QtGlobal>
 //
 #include "MyConstants.h"
-#include "MyOrgSettings.h"
 #include "MyDatatables.h"
-#include "MyLocalization.h"
+#include "MyLanguageModel.h"
 // QOnlineTranslator
 #include "third-party/qonlinetranslator/src/qexample.h"
 #include "third-party/qonlinetranslator/src/qoption.h"
@@ -87,12 +86,12 @@ class MainWindow : public QMainWindow
          */
         enum MainTabs
         {
-            TabSettings     = 100,  //!< \c TabSettings     @brief Tab Settings.
-            TabSql          = 101,  //!< \c TabSql          @brief Tab SQL
-            TabTranslations = 102,  //!< \c TabTranslations @brief Tab Ubuntu.
-            TabProject      = 103,  //!< \c TabProject      @brief Tab Project.
-            TabTabHelp      = 104,  //!< \c TabHelp         @brief Tab Help.
-            TabAll          = 200   //!< \c TabAll          @brief Tab All used for Actions on all Tabs.
+            TabSettings     = 0,  //!< \c TabSettings     @brief Tab Settings.
+            TabSql          = 1,  //!< \c TabSql          @brief Tab SQL
+            TabTranslations = 2,  //!< \c TabTranslations @brief Tab Ubuntu.
+            TabProject      = 3,  //!< \c TabProject      @brief Tab Project.
+            TabTabHelp      = 4,  //!< \c TabHelp         @brief Tab Help.
+            TabAll          = 9   //!< \c TabAll          @brief Tab All used for Actions on all Tabs.
         }; // end enum MainTabs
         Q_ENUM(MainTabs)
         /*!
@@ -182,10 +181,23 @@ class MainWindow : public QMainWindow
         void closeTransHelp();                          //!< close Trans Help
         void setMessage(const QString &thisMessage, MainWindow::MyMessageTypes thisMessageType); //!< set Message
         void setActionsDisabled(ActionStatesManager thisAction, bool thisState); //!< set Actions Disabled
-        void setMainLoaded(bool thisState); //!< set Main Loaded
-        void setCheckMarksTranslation(const QString &thisDbValve); //!< set Check Marks Translation
+        void setMainLoaded(bool thisState);                             //!< set Main Loaded
+        void setCheckMarksTranslation(const QString &thisDbValve);      //!< set Check Marks Translation
 
-        QString getComboBoxProjectsID(int thisIndex); //!< get ComboBox Projects ID
+        QString getComboBoxProjectsID(int thisIndex);                   //!< get ComboBox Projects ID
+
+        void loadLanguage(const QString &thisLanguage);                 //!< loadLanguage
+
+        void setLastLanguageName(const QString &thisLastLanguageName);  //!< setLastLanguageName
+        QString getLastLanguageName();                                  //!< getLastLanguageName
+        void setDatabaseModel();                                        //!< setDatabaseModel
+
+        void setLanguageModel(MyLanguageModel *thisLanguageModel);      //!< set Language Model
+
+        bool getMainLoaded(); //!<
+        void removeArgs(const QString &thisString, const QString &thisTransFile); //!<
+        void fileRemoveArgs(); //!<
+        void fixTranslationFile(const QString &thisFile); //!<
 
     public slots:
         void onHelp();                                  //!< on Help
@@ -201,44 +213,46 @@ class MainWindow : public QMainWindow
 
     private slots:
         // ComboBoxes
-        void on_comboBoxProjectNames_currentIndexChanged(int thisIndex);                //!< on comboBox Settings Projects current Index Changed
-        void on_comboBoxSettingsLanguage_currentIndexChanged(const QString &thisLanguage);  //!< on comboBox Settings Language current Index Changed
+        void on_comboBoxTranslationsProjectNames_currentIndexChanged(int thisIndex);                    //!< on comboBox Settings Projects current Index Changed
+        void on_comboBoxLanguage_currentIndexChanged(const QString &thisLanguage);          //!< on comboBox Language current Index Changed
         void on_comboBoxSqlDatabaseType_currentIndexChanged(const QString &thisSqlType);    //!< on comboBox SQL Database Type current Index Changed
         void on_comboBoxTranslationSourceLanguage_currentIndexChanged(const QString &arg1); //!< on comboBox Translation Source Language current Index Changed
         // Push Buttons Settings
-        void on_pushButtonSettingsAdd_clicked();                                            //!< on pushButton Settings Add clicked
-        void on_pushButtonSettingsSave_clicked();                                           //!< on pushButton Settings Save clicked
-        void on_pushButtonSettingsDelete_clicked();                                         //!< on pushButton Settings Delete clicked
-        void on_pushButtonSettingsProjectsBrowser_clicked();                                //!< on pushButton Settings Projects Browser clicked
+        void on_pushButtonSettingsLupdate_clicked();
+        void on_pushButtonSettingsLrelease_clicked();
         // Push Buttons SQL
         void on_pushButtonSqlDatabaseNameBrowse_clicked();                                  //!< on pushButton SQL Database Name Browse clicked
         void on_pushButtonSqlPasswordShow_clicked();                                        //!< on pushButton SQL Password Show clicked
         void on_pushButtonSqlSave_clicked();                                                //!< on pushButton SQL Save clicked
         // Push Buttons Translations
+        void on_pushButtonTranslationsAdd_clicked();                                        //!< on pushButton Translations Add clicked
+        void on_pushButtonTranslationsSave_clicked();                                       //!< on pushButton Translations Save clicked
+        void on_pushButtonTranslationsDelete_clicked();                                     //!< on pushButton Translations Delete clicked
+        void on_pushButtonTranslationsProjectsBrowser_clicked();                            //!< on pushButton Translations Projects Browser clicked
         void on_pushButtonTranslationsSourceBrowse_clicked();                               //!< on pushButton Translations Source Browse clicked
         void on_pushButtonTranslationsDoxyfileBrowse_clicked();                             //!< on pushButton Translations Doxyfile Browse clicked
         void on_pushButtonTranslationsProjectFolderBrowse_clicked();                        //!< on pushButton Translations ProjectFolder Browse clicked
         void on_pushButtonTranslationsHelp_clicked();                                       //!< on pushButton Translations Help clicked
-        void on_pushButtonSettingsClear_clicked();                                          //!< on pushButton Settings Clear clicked
+        void on_pushButtonTranslationsClear_clicked();                                      //!< on pushButton Translations Clear clicked
         // Checkboxes Settings
         void on_checkBoxSettingsGoogle_stateChanged(int thisArg);                           //!< on checkBox Settings Google state Changed
         void on_checkBoxSettingsBing_stateChanged(int thisArg);                             //!< on checkBox Settings Bing state Changed
         void on_checkBoxSettingsYandex_stateChanged(int thisArg);                           //!< on checkBox Settings Yandex state Changed
         void on_checkBoxSettignsMessaging_stateChanged(int thisCheckState);                 //!< on checkBox Settigns Messaging state Changed
+        // Tab
+        void on_tabWidget_currentChanged(int index);                                        //!< on tabWidget current Changed
 
-        void on_tabWidget_currentChanged(int index);
 
-        protected:
+    protected:
         void closeEvent(QCloseEvent *event) override;           //!< close Event
 
     protected slots:
         virtual void changeEvent(QEvent * event) override;      //!< change Event
 
     private:
-        MyOrgSettings      *mySetting;                          //!< \c mySetting @brief Domain Settings
         Ui::MainWindow     *ui;                                 //!< \c ui                      @brief ui.
-        MyDatatables       *mySqlDb;                            //!< \c mySqlDb                 @brief SQL Datatables.
-        MyLocalization     *myLocalization;                     //!< \c myLocalization          @brief Localization.
+        MyDatatables       *myDbModel;                          //!< \c myDbModel               @brief SQL Datatables Model.
+        MyLanguageModel    *myLanguageModel;                    //!< \c myLanguageModel         @brief Localization Model.
         MyTranlatorParser  *myTranlatorParser;                  //!< \c myDelayValue            @brief Delay Value.
         QOnlineTranslator   myQOnlineTranslator;                //!< \c myQOnlineTranslator     @brief QOnlineTranslator.
         QClipboard         *clipboard;                          //!< \c clipboard               @brief clipboard.
@@ -250,6 +264,9 @@ class MainWindow : public QMainWindow
         QString             myTranslation         = "";         //!< \c myTranslation           @brief Translation.
         QString             myTranslationError    = "";         //!< \c myTranslationError      @brief Translation Error.
         QString             mySourceLanguage      = "";         //!< \c mySourceLanguage        @brief Source Language.
+        QString             myLastLanguageName    = "";         //!< \c myLastLanguageName      @brief Last Language Name
+        QString             myUiLanguageName      = "";         //!< \c myUiLanguageName        @brief UI Language Name.
+        QString             myRemoveTransArgs;                  //!< \c myRemoveTransArgs       @brief List of Remove Trans Args
         QList<MyLingoJobs>  myLingoJob;                         //!< \c myLingoJob              @brief Lingo Job.
         QStringList         myHelpTranslationsFiles;            //!< \c myHelpTranslationsFiles @brief Help Translations Files
         QStringList         myHelpFileNames;                    //!< \c myHelpFileNames         @brief Help File Names

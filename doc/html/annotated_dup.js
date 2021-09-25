@@ -17,6 +17,8 @@ var annotated_dup =
     [ "MainWindow", "classMainWindow.html", "classMainWindow" ],
     [ "MyConstants", "classMyConstants.html", "classMyConstants" ],
     [ "MyDatatables", "classMyDatatables.html", "classMyDatatables" ],
+    [ "MyLanguageData", "classMyLanguageData.html", "classMyLanguageData" ],
+    [ "MyLanguageModel", "classMyLanguageModel.html", "classMyLanguageModel" ],
     [ "MyLingoJobs", "classMyLingoJobs.html", "classMyLingoJobs" ],
     [ "MyLocalization", "classMyLocalization.html", "classMyLocalization" ],
     [ "MyOrgSettings", "classMyOrgSettings.html", "classMyOrgSettings" ],
@@ -40,5 +42,6 @@ var annotated_dup =
     [ "string_extractor_replacer", "structstring__extractor__replacer.html", null ],
     [ "TranslationFiles", "classTranslationFiles.html", null ],
     [ "TS_node", "structTS__node.html", "structTS__node" ],
-    [ "Ui_MainWindow", "classUi__MainWindow.html", "classUi__MainWindow" ]
+    [ "Ui_MainWindow", "classUi__MainWindow.html", "classUi__MainWindow" ],
+    [ "Utils", "classUtils.html", "classUtils" ]
 ];

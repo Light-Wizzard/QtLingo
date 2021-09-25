@@ -12,7 +12,7 @@
 //model
 #include "third-party/ts_tool/ts_model.h"
 // Local
-#include "MyOrgSettings.h"
+#include "MyLanguageModel.h"
 /************************************************
  * @brief Tranlator Parser.
  * \class MyTranlatorParser
@@ -21,7 +21,7 @@ class MyTranlatorParser : public QObject
 {
         Q_OBJECT
     public:
-        explicit MyTranlatorParser(QObject *parent = nullptr, MyOrgSettings *thisSetting = nullptr);
+        explicit MyTranlatorParser(MyLanguageModel *thisLanguageModel = nullptr, QObject *parent = nullptr);
         //
         base_node::base_node_ptr parse_ts_file(const QString &inputFile);                         //!< parse_ts_file
         bool parse_txt_file(const QString &inputFile, visitors::map_QStringQString &strings);     //!< parse_txt_file
@@ -33,8 +33,8 @@ class MyTranlatorParser : public QObject
         void setMessage(const QString &thisMessage);     //!< set Message
 
     private:
-        MyOrgSettings  *mySetting;             //!< \c mySetting      @brief Domain Settings
-        bool            isDebugMessage = true; //!< \c isDebugMessage @brief is Debug Message
+        MyLanguageModel *myLanguageModel;      //!< \c myLanguageModel @brief Localization Model.
+        bool            isDebugMessage = true; //!< \c isDebugMessage  @brief is Debug Message
 
 };
 #endif // MYTRANLATORPARSER_H

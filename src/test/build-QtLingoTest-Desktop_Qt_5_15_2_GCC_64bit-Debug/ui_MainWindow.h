@@ -57,16 +57,9 @@ public:
     QWidget *tabSettings;
     QVBoxLayout *verticalLayout_3;
     QFormLayout *formLayoutSettings;
-    QLabel *labelSettingsProjext;
-    QHBoxLayout *horizontalLayoutSettingsProject;
-    QComboBox *comboBoxSettingsProjects;
-    QLineEdit *lineEditSettingsQtProjectName;
-    QLabel *labelRecordIdSettings;
-    QSpacerItem *horizontalSpacerSettingsProject;
-    QPushButton *pushButtonSettingsProjectsBrowser;
     QLabel *labelSettingsLanguage;
     QHBoxLayout *horizontalLayoutSettingsLanguage;
-    QComboBox *comboBoxSettingsLanguage;
+    QComboBox *comboBoxLanguage;
     QSpacerItem *horizontalSpacerSettingsLanguage;
     QLabel *labelSettingLupdate;
     QHBoxLayout *horizontalLayoutSettingsLupdate;
@@ -89,12 +82,6 @@ public:
     QHBoxLayout *horizontalLayoutSettingsDelay;
     QSpinBox *spinBoxSettingsDelay;
     QSpacerItem *horizontalSpacerSettingsDelay;
-    QLabel *labelSettingsOptions;
-    QHBoxLayout *horizontalLayoutSettingsOptions;
-    QPushButton *pushButtonSettingsSave;
-    QPushButton *pushButtonSettingsAdd;
-    QPushButton *pushButtonSettingsDelete;
-    QSpacerItem *horizontalSpacerSettingsOptions;
     QLabel *labelSettignsMessaging;
     QHBoxLayout *horizontalLayoutSettignsMessaging;
     QCheckBox *checkBoxSettignsMessaging;
@@ -102,7 +89,11 @@ public:
     QWidget *tabSQL;
     QVBoxLayout *verticalLayout_2;
     QFormLayout *formLayoutSql;
-    QLabel *labelSqlSqlType;
+    QLabel *labelSqlDatabaseName;
+    QHBoxLayout *horizontalLayoutSqlDatabaseName;
+    QComboBox *comboBoxSqlDatabaseType;
+    QLineEdit *lineEditSqlDatabaseName;
+    QPushButton *pushButtonSqlDatabaseNameBrowse;
     QLabel *labelSqlHostName;
     QLineEdit *lineEditSqlHostName;
     QLabel *labelSqlUserName;
@@ -115,24 +106,35 @@ public:
     QHBoxLayout *horizontalLayoutSqlOptions;
     QPushButton *pushButtonSqlSave;
     QSpacerItem *horizontalSpacer;
-    QHBoxLayout *horizontalLayoutSqlDatabaseName;
-    QLineEdit *lineEditSqlDatabaseName;
-    QPushButton *pushButtonSqlDatabaseNameBrowse;
-    QLabel *labelSqlDatabaseName;
-    QHBoxLayout *horizontalLayoutSqlType;
-    QComboBox *comboBoxSqlDatabaseType;
-    QSpacerItem *horizontalSpacerSqlType;
     QWidget *tabTranslations;
     QVBoxLayout *verticalLayout_4;
     QFormLayout *formLayoutTranslations;
+    QLabel *labelTranslationsProjectFolder;
+    QHBoxLayout *horizontalLayout;
+    QLineEdit *lineEditTranslationsProjectFolder;
+    QPushButton *pushButtonTranslationsProjectFolderBrowse;
+    QLabel *labelTranslationMake;
+    QHBoxLayout *horizontalLayoutTranslationsMake;
+    QRadioButton *radioButtonTranslationsQmake;
+    QRadioButton *radioButtonTranslationsCmake;
+    QSpacerItem *horizontalSpacerTranslationMake;
     QLabel *labelTranslationsSource;
     QHBoxLayout *horizontalLayoutTranslationsSource;
     QLineEdit *lineEditTranslationsSource;
     QPushButton *pushButtonTranslationsSourceBrowse;
-    QLabel *labelTranslationsDestination;
+    QLabel *labelTranslationsDoxyfile;
     QHBoxLayout *horizontalLayoutTranslationsDestination;
-    QLineEdit *lineEditTranslationsDestination;
-    QPushButton *pushButtonTranslationsDestinationBrowse;
+    QLineEdit *lineEditTranslationsDoxyfile;
+    QPushButton *pushButtonTranslationsDoxyfileBrowse;
+    QLabel *labelTranslationSourceLanguage;
+    QHBoxLayout *horizontalLayoutTranslationSourceLang;
+    QComboBox *comboBoxTranslationSourceLanguage;
+    QLabel *labelTranslationsSourceLanguageCode;
+    QSpacerItem *horizontalSpacerTranslationsSourceLang;
+    QLabel *labelTranslationsHelp;
+    QHBoxLayout *horizontalLayoutTranslationsHelp;
+    QLineEdit *lineEditTranslationsHelp;
+    QPushButton *pushButtonTranslationsHelp;
     QLabel *labelTranslationsCountryCode;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
@@ -272,24 +274,20 @@ public:
     QCheckBox *checkBoxTranslationsUK;
     QCheckBox *checkBoxTranslationsUDM;
     QCheckBox *checkBoxTranslationsYUA;
-    QLabel *labelTranslationsProjectFolder;
-    QHBoxLayout *horizontalLayout;
-    QLineEdit *lineEditTranslationsProjectFolder;
-    QPushButton *pushButtonTranslationsProjectFolderBrowse;
-    QLabel *labelTranslationSourceLanguage;
-    QHBoxLayout *horizontalLayoutTranslationSourceLang;
-    QComboBox *comboBoxTranslationSourceLanguage;
-    QLabel *labelTranslationsSourceLanguageCode;
-    QSpacerItem *horizontalSpacerTranslationsSourceLang;
-    QLabel *labelTranslationMake;
-    QHBoxLayout *horizontalLayoutTranslationsMake;
-    QRadioButton *radioButtonTranslationsQmake;
-    QRadioButton *radioButtonTranslationsCmake;
-    QSpacerItem *horizontalSpacerTranslationMake;
-    QLabel *labelTranslationsHelp;
-    QHBoxLayout *horizontalLayoutTranslationsHelp;
-    QLineEdit *lineEditTranslationsHelp;
-    QPushButton *pushButtonTranslationsHelp;
+    QLabel *labelProjectName;
+    QHBoxLayout *horizontalLayout_2;
+    QComboBox *comboBoxTranslationsProjectNames;
+    QLineEdit *lineEditProjectName;
+    QLabel *labelRecordIdProject;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *pushButtonTranslationsProjectBrowser;
+    QLabel *labelTranslationsOptions;
+    QHBoxLayout *horizontalLayoutTranslationsOptions;
+    QPushButton *pushButtonTranslationsSave;
+    QPushButton *pushButtonTranslationsClear;
+    QPushButton *pushButtonTranslationsAdd;
+    QPushButton *pushButtonTranslationsDelete;
+    QSpacerItem *horizontalSpacer_3;
     QWidget *tabProject;
     QVBoxLayout *verticalLayout_5;
     QTextEdit *textEditProjects;
@@ -315,7 +313,7 @@ public:
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/images/exit_button.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/images/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionExit->setIcon(icon);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
@@ -374,70 +372,25 @@ public:
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         formLayoutSettings = new QFormLayout();
         formLayoutSettings->setObjectName(QString::fromUtf8("formLayoutSettings"));
-        labelSettingsProjext = new QLabel(tabSettings);
-        labelSettingsProjext->setObjectName(QString::fromUtf8("labelSettingsProjext"));
-
-        formLayoutSettings->setWidget(0, QFormLayout::LabelRole, labelSettingsProjext);
-
-        horizontalLayoutSettingsProject = new QHBoxLayout();
-        horizontalLayoutSettingsProject->setObjectName(QString::fromUtf8("horizontalLayoutSettingsProject"));
-        comboBoxSettingsProjects = new QComboBox(tabSettings);
-        comboBoxSettingsProjects->setObjectName(QString::fromUtf8("comboBoxSettingsProjects"));
-#if QT_CONFIG(accessibility)
-        comboBoxSettingsProjects->setAccessibleName(QString::fromUtf8(""));
-#endif // QT_CONFIG(accessibility)
-#if QT_CONFIG(accessibility)
-        comboBoxSettingsProjects->setAccessibleDescription(QString::fromUtf8(""));
-#endif // QT_CONFIG(accessibility)
-        comboBoxSettingsProjects->setCurrentText(QString::fromUtf8(""));
-
-        horizontalLayoutSettingsProject->addWidget(comboBoxSettingsProjects);
-
-        lineEditSettingsQtProjectName = new QLineEdit(tabSettings);
-        lineEditSettingsQtProjectName->setObjectName(QString::fromUtf8("lineEditSettingsQtProjectName"));
-        lineEditSettingsQtProjectName->setInputMask(QString::fromUtf8(""));
-        lineEditSettingsQtProjectName->setText(QString::fromUtf8(""));
-        lineEditSettingsQtProjectName->setPlaceholderText(QString::fromUtf8(""));
-
-        horizontalLayoutSettingsProject->addWidget(lineEditSettingsQtProjectName);
-
-        labelRecordIdSettings = new QLabel(tabSettings);
-        labelRecordIdSettings->setObjectName(QString::fromUtf8("labelRecordIdSettings"));
-        labelRecordIdSettings->setText(QString::fromUtf8("Record #"));
-
-        horizontalLayoutSettingsProject->addWidget(labelRecordIdSettings);
-
-        horizontalSpacerSettingsProject = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayoutSettingsProject->addItem(horizontalSpacerSettingsProject);
-
-        pushButtonSettingsProjectsBrowser = new QPushButton(tabSettings);
-        pushButtonSettingsProjectsBrowser->setObjectName(QString::fromUtf8("pushButtonSettingsProjectsBrowser"));
-
-        horizontalLayoutSettingsProject->addWidget(pushButtonSettingsProjectsBrowser);
-
-
-        formLayoutSettings->setLayout(0, QFormLayout::FieldRole, horizontalLayoutSettingsProject);
-
         labelSettingsLanguage = new QLabel(tabSettings);
         labelSettingsLanguage->setObjectName(QString::fromUtf8("labelSettingsLanguage"));
 
-        formLayoutSettings->setWidget(1, QFormLayout::LabelRole, labelSettingsLanguage);
+        formLayoutSettings->setWidget(0, QFormLayout::LabelRole, labelSettingsLanguage);
 
         horizontalLayoutSettingsLanguage = new QHBoxLayout();
         horizontalLayoutSettingsLanguage->setObjectName(QString::fromUtf8("horizontalLayoutSettingsLanguage"));
-        comboBoxSettingsLanguage = new QComboBox(tabSettings);
-        comboBoxSettingsLanguage->setObjectName(QString::fromUtf8("comboBoxSettingsLanguage"));
-        comboBoxSettingsLanguage->setCurrentText(QString::fromUtf8(""));
+        comboBoxLanguage = new QComboBox(tabSettings);
+        comboBoxLanguage->setObjectName(QString::fromUtf8("comboBoxLanguage"));
+        comboBoxLanguage->setCurrentText(QString::fromUtf8(""));
 
-        horizontalLayoutSettingsLanguage->addWidget(comboBoxSettingsLanguage);
+        horizontalLayoutSettingsLanguage->addWidget(comboBoxLanguage);
 
         horizontalSpacerSettingsLanguage = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayoutSettingsLanguage->addItem(horizontalSpacerSettingsLanguage);
 
 
-        formLayoutSettings->setLayout(1, QFormLayout::FieldRole, horizontalLayoutSettingsLanguage);
+        formLayoutSettings->setLayout(0, QFormLayout::FieldRole, horizontalLayoutSettingsLanguage);
 
         labelSettingLupdate = new QLabel(tabSettings);
         labelSettingLupdate->setObjectName(QString::fromUtf8("labelSettingLupdate"));
@@ -458,7 +411,7 @@ public:
 #endif // QT_CONFIG(accessibility)
         labelSettingLupdate->setText(QString::fromUtf8("lupdate"));
 
-        formLayoutSettings->setWidget(2, QFormLayout::LabelRole, labelSettingLupdate);
+        formLayoutSettings->setWidget(1, QFormLayout::LabelRole, labelSettingLupdate);
 
         horizontalLayoutSettingsLupdate = new QHBoxLayout();
         horizontalLayoutSettingsLupdate->setObjectName(QString::fromUtf8("horizontalLayoutSettingsLupdate"));
@@ -488,12 +441,12 @@ public:
         horizontalLayoutSettingsLupdate->addWidget(pushButtonSettingsLupdate);
 
 
-        formLayoutSettings->setLayout(2, QFormLayout::FieldRole, horizontalLayoutSettingsLupdate);
+        formLayoutSettings->setLayout(1, QFormLayout::FieldRole, horizontalLayoutSettingsLupdate);
 
         labelSettingsLrelease = new QLabel(tabSettings);
         labelSettingsLrelease->setObjectName(QString::fromUtf8("labelSettingsLrelease"));
 
-        formLayoutSettings->setWidget(3, QFormLayout::LabelRole, labelSettingsLrelease);
+        formLayoutSettings->setWidget(2, QFormLayout::LabelRole, labelSettingsLrelease);
 
         horizontalLayoutSettingsLrelease = new QHBoxLayout();
         horizontalLayoutSettingsLrelease->setObjectName(QString::fromUtf8("horizontalLayoutSettingsLrelease"));
@@ -517,12 +470,12 @@ public:
         horizontalLayoutSettingsLrelease->addWidget(pushButtonSettingsLrelease);
 
 
-        formLayoutSettings->setLayout(3, QFormLayout::FieldRole, horizontalLayoutSettingsLrelease);
+        formLayoutSettings->setLayout(2, QFormLayout::FieldRole, horizontalLayoutSettingsLrelease);
 
         labelSettingsUiLanguage = new QLabel(tabSettings);
         labelSettingsUiLanguage->setObjectName(QString::fromUtf8("labelSettingsUiLanguage"));
 
-        formLayoutSettings->setWidget(4, QFormLayout::LabelRole, labelSettingsUiLanguage);
+        formLayoutSettings->setWidget(3, QFormLayout::LabelRole, labelSettingsUiLanguage);
 
         horizontalLayoutSettingsUI = new QHBoxLayout();
         horizontalLayoutSettingsUI->setObjectName(QString::fromUtf8("horizontalLayoutSettingsUI"));
@@ -533,12 +486,12 @@ public:
         horizontalLayoutSettingsUI->addWidget(labelSettingsLanguageUI);
 
 
-        formLayoutSettings->setLayout(4, QFormLayout::FieldRole, horizontalLayoutSettingsUI);
+        formLayoutSettings->setLayout(3, QFormLayout::FieldRole, horizontalLayoutSettingsUI);
 
         labelSettingsTranslationEngine = new QLabel(tabSettings);
         labelSettingsTranslationEngine->setObjectName(QString::fromUtf8("labelSettingsTranslationEngine"));
 
-        formLayoutSettings->setWidget(5, QFormLayout::LabelRole, labelSettingsTranslationEngine);
+        formLayoutSettings->setWidget(4, QFormLayout::LabelRole, labelSettingsTranslationEngine);
 
         gridLayoutSettingsTransEngine = new QGridLayout();
         gridLayoutSettingsTransEngine->setObjectName(QString::fromUtf8("gridLayoutSettingsTransEngine"));
@@ -574,17 +527,18 @@ public:
         gridLayoutSettingsTransEngine->addItem(horizontalSpacerSettingsTransEng, 0, 3, 1, 1);
 
 
-        formLayoutSettings->setLayout(5, QFormLayout::FieldRole, gridLayoutSettingsTransEngine);
+        formLayoutSettings->setLayout(4, QFormLayout::FieldRole, gridLayoutSettingsTransEngine);
 
         labelSettingsDelay = new QLabel(tabSettings);
         labelSettingsDelay->setObjectName(QString::fromUtf8("labelSettingsDelay"));
 
-        formLayoutSettings->setWidget(6, QFormLayout::LabelRole, labelSettingsDelay);
+        formLayoutSettings->setWidget(5, QFormLayout::LabelRole, labelSettingsDelay);
 
         horizontalLayoutSettingsDelay = new QHBoxLayout();
         horizontalLayoutSettingsDelay->setObjectName(QString::fromUtf8("horizontalLayoutSettingsDelay"));
         spinBoxSettingsDelay = new QSpinBox(tabSettings);
         spinBoxSettingsDelay->setObjectName(QString::fromUtf8("spinBoxSettingsDelay"));
+        spinBoxSettingsDelay->setMaximum(66666);
 
         horizontalLayoutSettingsDelay->addWidget(spinBoxSettingsDelay);
 
@@ -593,41 +547,12 @@ public:
         horizontalLayoutSettingsDelay->addItem(horizontalSpacerSettingsDelay);
 
 
-        formLayoutSettings->setLayout(6, QFormLayout::FieldRole, horizontalLayoutSettingsDelay);
-
-        labelSettingsOptions = new QLabel(tabSettings);
-        labelSettingsOptions->setObjectName(QString::fromUtf8("labelSettingsOptions"));
-
-        formLayoutSettings->setWidget(8, QFormLayout::LabelRole, labelSettingsOptions);
-
-        horizontalLayoutSettingsOptions = new QHBoxLayout();
-        horizontalLayoutSettingsOptions->setObjectName(QString::fromUtf8("horizontalLayoutSettingsOptions"));
-        pushButtonSettingsSave = new QPushButton(tabSettings);
-        pushButtonSettingsSave->setObjectName(QString::fromUtf8("pushButtonSettingsSave"));
-
-        horizontalLayoutSettingsOptions->addWidget(pushButtonSettingsSave);
-
-        pushButtonSettingsAdd = new QPushButton(tabSettings);
-        pushButtonSettingsAdd->setObjectName(QString::fromUtf8("pushButtonSettingsAdd"));
-
-        horizontalLayoutSettingsOptions->addWidget(pushButtonSettingsAdd);
-
-        pushButtonSettingsDelete = new QPushButton(tabSettings);
-        pushButtonSettingsDelete->setObjectName(QString::fromUtf8("pushButtonSettingsDelete"));
-
-        horizontalLayoutSettingsOptions->addWidget(pushButtonSettingsDelete);
-
-        horizontalSpacerSettingsOptions = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayoutSettingsOptions->addItem(horizontalSpacerSettingsOptions);
-
-
-        formLayoutSettings->setLayout(8, QFormLayout::FieldRole, horizontalLayoutSettingsOptions);
+        formLayoutSettings->setLayout(5, QFormLayout::FieldRole, horizontalLayoutSettingsDelay);
 
         labelSettignsMessaging = new QLabel(tabSettings);
         labelSettignsMessaging->setObjectName(QString::fromUtf8("labelSettignsMessaging"));
 
-        formLayoutSettings->setWidget(7, QFormLayout::LabelRole, labelSettignsMessaging);
+        formLayoutSettings->setWidget(6, QFormLayout::LabelRole, labelSettignsMessaging);
 
         horizontalLayoutSettignsMessaging = new QHBoxLayout();
         horizontalLayoutSettignsMessaging->setObjectName(QString::fromUtf8("horizontalLayoutSettignsMessaging"));
@@ -641,7 +566,7 @@ public:
         horizontalLayoutSettignsMessaging->addItem(horizontalSpacerSettignsMessaging);
 
 
-        formLayoutSettings->setLayout(7, QFormLayout::FieldRole, horizontalLayoutSettignsMessaging);
+        formLayoutSettings->setLayout(6, QFormLayout::FieldRole, horizontalLayoutSettignsMessaging);
 
 
         verticalLayout_3->addLayout(formLayoutSettings);
@@ -653,15 +578,39 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         formLayoutSql = new QFormLayout();
         formLayoutSql->setObjectName(QString::fromUtf8("formLayoutSql"));
-        labelSqlSqlType = new QLabel(tabSQL);
-        labelSqlSqlType->setObjectName(QString::fromUtf8("labelSqlSqlType"));
+        labelSqlDatabaseName = new QLabel(tabSQL);
+        labelSqlDatabaseName->setObjectName(QString::fromUtf8("labelSqlDatabaseName"));
 
-        formLayoutSql->setWidget(1, QFormLayout::LabelRole, labelSqlSqlType);
+        formLayoutSql->setWidget(0, QFormLayout::LabelRole, labelSqlDatabaseName);
+
+        horizontalLayoutSqlDatabaseName = new QHBoxLayout();
+        horizontalLayoutSqlDatabaseName->setObjectName(QString::fromUtf8("horizontalLayoutSqlDatabaseName"));
+        comboBoxSqlDatabaseType = new QComboBox(tabSQL);
+        comboBoxSqlDatabaseType->setObjectName(QString::fromUtf8("comboBoxSqlDatabaseType"));
+        comboBoxSqlDatabaseType->setCurrentText(QString::fromUtf8(""));
+
+        horizontalLayoutSqlDatabaseName->addWidget(comboBoxSqlDatabaseType);
+
+        lineEditSqlDatabaseName = new QLineEdit(tabSQL);
+        lineEditSqlDatabaseName->setObjectName(QString::fromUtf8("lineEditSqlDatabaseName"));
+        lineEditSqlDatabaseName->setInputMask(QString::fromUtf8(""));
+        lineEditSqlDatabaseName->setText(QString::fromUtf8(""));
+        lineEditSqlDatabaseName->setPlaceholderText(QString::fromUtf8(""));
+
+        horizontalLayoutSqlDatabaseName->addWidget(lineEditSqlDatabaseName);
+
+        pushButtonSqlDatabaseNameBrowse = new QPushButton(tabSQL);
+        pushButtonSqlDatabaseNameBrowse->setObjectName(QString::fromUtf8("pushButtonSqlDatabaseNameBrowse"));
+
+        horizontalLayoutSqlDatabaseName->addWidget(pushButtonSqlDatabaseNameBrowse);
+
+
+        formLayoutSql->setLayout(0, QFormLayout::FieldRole, horizontalLayoutSqlDatabaseName);
 
         labelSqlHostName = new QLabel(tabSQL);
         labelSqlHostName->setObjectName(QString::fromUtf8("labelSqlHostName"));
 
-        formLayoutSql->setWidget(2, QFormLayout::LabelRole, labelSqlHostName);
+        formLayoutSql->setWidget(1, QFormLayout::LabelRole, labelSqlHostName);
 
         lineEditSqlHostName = new QLineEdit(tabSQL);
         lineEditSqlHostName->setObjectName(QString::fromUtf8("lineEditSqlHostName"));
@@ -669,12 +618,12 @@ public:
         lineEditSqlHostName->setText(QString::fromUtf8(""));
         lineEditSqlHostName->setPlaceholderText(QString::fromUtf8(""));
 
-        formLayoutSql->setWidget(2, QFormLayout::FieldRole, lineEditSqlHostName);
+        formLayoutSql->setWidget(1, QFormLayout::FieldRole, lineEditSqlHostName);
 
         labelSqlUserName = new QLabel(tabSQL);
         labelSqlUserName->setObjectName(QString::fromUtf8("labelSqlUserName"));
 
-        formLayoutSql->setWidget(3, QFormLayout::LabelRole, labelSqlUserName);
+        formLayoutSql->setWidget(2, QFormLayout::LabelRole, labelSqlUserName);
 
         lineEditSqlUserName = new QLineEdit(tabSQL);
         lineEditSqlUserName->setObjectName(QString::fromUtf8("lineEditSqlUserName"));
@@ -682,12 +631,12 @@ public:
         lineEditSqlUserName->setText(QString::fromUtf8(""));
         lineEditSqlUserName->setPlaceholderText(QString::fromUtf8(""));
 
-        formLayoutSql->setWidget(3, QFormLayout::FieldRole, lineEditSqlUserName);
+        formLayoutSql->setWidget(2, QFormLayout::FieldRole, lineEditSqlUserName);
 
         labelSqlPassword = new QLabel(tabSQL);
         labelSqlPassword->setObjectName(QString::fromUtf8("labelSqlPassword"));
 
-        formLayoutSql->setWidget(4, QFormLayout::LabelRole, labelSqlPassword);
+        formLayoutSql->setWidget(3, QFormLayout::LabelRole, labelSqlPassword);
 
         horizontalLayoutSqlPassword = new QHBoxLayout();
         horizontalLayoutSqlPassword->setObjectName(QString::fromUtf8("horizontalLayoutSqlPassword"));
@@ -705,12 +654,12 @@ public:
         horizontalLayoutSqlPassword->addWidget(pushButtonSqlPasswordShow);
 
 
-        formLayoutSql->setLayout(4, QFormLayout::FieldRole, horizontalLayoutSqlPassword);
+        formLayoutSql->setLayout(3, QFormLayout::FieldRole, horizontalLayoutSqlPassword);
 
         labelSqlOptions = new QLabel(tabSQL);
         labelSqlOptions->setObjectName(QString::fromUtf8("labelSqlOptions"));
 
-        formLayoutSql->setWidget(5, QFormLayout::LabelRole, labelSqlOptions);
+        formLayoutSql->setWidget(4, QFormLayout::LabelRole, labelSqlOptions);
 
         horizontalLayoutSqlOptions = new QHBoxLayout();
         horizontalLayoutSqlOptions->setObjectName(QString::fromUtf8("horizontalLayoutSqlOptions"));
@@ -724,45 +673,7 @@ public:
         horizontalLayoutSqlOptions->addItem(horizontalSpacer);
 
 
-        formLayoutSql->setLayout(5, QFormLayout::FieldRole, horizontalLayoutSqlOptions);
-
-        horizontalLayoutSqlDatabaseName = new QHBoxLayout();
-        horizontalLayoutSqlDatabaseName->setObjectName(QString::fromUtf8("horizontalLayoutSqlDatabaseName"));
-        lineEditSqlDatabaseName = new QLineEdit(tabSQL);
-        lineEditSqlDatabaseName->setObjectName(QString::fromUtf8("lineEditSqlDatabaseName"));
-        lineEditSqlDatabaseName->setInputMask(QString::fromUtf8(""));
-        lineEditSqlDatabaseName->setText(QString::fromUtf8(""));
-        lineEditSqlDatabaseName->setPlaceholderText(QString::fromUtf8(""));
-
-        horizontalLayoutSqlDatabaseName->addWidget(lineEditSqlDatabaseName);
-
-        pushButtonSqlDatabaseNameBrowse = new QPushButton(tabSQL);
-        pushButtonSqlDatabaseNameBrowse->setObjectName(QString::fromUtf8("pushButtonSqlDatabaseNameBrowse"));
-
-        horizontalLayoutSqlDatabaseName->addWidget(pushButtonSqlDatabaseNameBrowse);
-
-
-        formLayoutSql->setLayout(0, QFormLayout::FieldRole, horizontalLayoutSqlDatabaseName);
-
-        labelSqlDatabaseName = new QLabel(tabSQL);
-        labelSqlDatabaseName->setObjectName(QString::fromUtf8("labelSqlDatabaseName"));
-
-        formLayoutSql->setWidget(0, QFormLayout::LabelRole, labelSqlDatabaseName);
-
-        horizontalLayoutSqlType = new QHBoxLayout();
-        horizontalLayoutSqlType->setObjectName(QString::fromUtf8("horizontalLayoutSqlType"));
-        comboBoxSqlDatabaseType = new QComboBox(tabSQL);
-        comboBoxSqlDatabaseType->setObjectName(QString::fromUtf8("comboBoxSqlDatabaseType"));
-        comboBoxSqlDatabaseType->setCurrentText(QString::fromUtf8(""));
-
-        horizontalLayoutSqlType->addWidget(comboBoxSqlDatabaseType);
-
-        horizontalSpacerSqlType = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayoutSqlType->addItem(horizontalSpacerSqlType);
-
-
-        formLayoutSql->setLayout(1, QFormLayout::FieldRole, horizontalLayoutSqlType);
+        formLayoutSql->setLayout(4, QFormLayout::FieldRole, horizontalLayoutSqlOptions);
 
 
         verticalLayout_2->addLayout(formLayoutSql);
@@ -774,10 +685,59 @@ public:
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         formLayoutTranslations = new QFormLayout();
         formLayoutTranslations->setObjectName(QString::fromUtf8("formLayoutTranslations"));
+        labelTranslationsProjectFolder = new QLabel(tabTranslations);
+        labelTranslationsProjectFolder->setObjectName(QString::fromUtf8("labelTranslationsProjectFolder"));
+
+        formLayoutTranslations->setWidget(1, QFormLayout::LabelRole, labelTranslationsProjectFolder);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        lineEditTranslationsProjectFolder = new QLineEdit(tabTranslations);
+        lineEditTranslationsProjectFolder->setObjectName(QString::fromUtf8("lineEditTranslationsProjectFolder"));
+        lineEditTranslationsProjectFolder->setInputMask(QString::fromUtf8(""));
+        lineEditTranslationsProjectFolder->setText(QString::fromUtf8(""));
+        lineEditTranslationsProjectFolder->setPlaceholderText(QString::fromUtf8(""));
+
+        horizontalLayout->addWidget(lineEditTranslationsProjectFolder);
+
+        pushButtonTranslationsProjectFolderBrowse = new QPushButton(tabTranslations);
+        pushButtonTranslationsProjectFolderBrowse->setObjectName(QString::fromUtf8("pushButtonTranslationsProjectFolderBrowse"));
+
+        horizontalLayout->addWidget(pushButtonTranslationsProjectFolderBrowse);
+
+
+        formLayoutTranslations->setLayout(1, QFormLayout::FieldRole, horizontalLayout);
+
+        labelTranslationMake = new QLabel(tabTranslations);
+        labelTranslationMake->setObjectName(QString::fromUtf8("labelTranslationMake"));
+
+        formLayoutTranslations->setWidget(2, QFormLayout::LabelRole, labelTranslationMake);
+
+        horizontalLayoutTranslationsMake = new QHBoxLayout();
+        horizontalLayoutTranslationsMake->setObjectName(QString::fromUtf8("horizontalLayoutTranslationsMake"));
+        radioButtonTranslationsQmake = new QRadioButton(tabTranslations);
+        radioButtonTranslationsQmake->setObjectName(QString::fromUtf8("radioButtonTranslationsQmake"));
+        radioButtonTranslationsQmake->setText(QString::fromUtf8("qmake"));
+
+        horizontalLayoutTranslationsMake->addWidget(radioButtonTranslationsQmake);
+
+        radioButtonTranslationsCmake = new QRadioButton(tabTranslations);
+        radioButtonTranslationsCmake->setObjectName(QString::fromUtf8("radioButtonTranslationsCmake"));
+        radioButtonTranslationsCmake->setText(QString::fromUtf8("cmake"));
+
+        horizontalLayoutTranslationsMake->addWidget(radioButtonTranslationsCmake);
+
+        horizontalSpacerTranslationMake = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayoutTranslationsMake->addItem(horizontalSpacerTranslationMake);
+
+
+        formLayoutTranslations->setLayout(2, QFormLayout::FieldRole, horizontalLayoutTranslationsMake);
+
         labelTranslationsSource = new QLabel(tabTranslations);
         labelTranslationsSource->setObjectName(QString::fromUtf8("labelTranslationsSource"));
 
-        formLayoutTranslations->setWidget(2, QFormLayout::LabelRole, labelTranslationsSource);
+        formLayoutTranslations->setWidget(3, QFormLayout::LabelRole, labelTranslationsSource);
 
         horizontalLayoutTranslationsSource = new QHBoxLayout();
         horizontalLayoutTranslationsSource->setObjectName(QString::fromUtf8("horizontalLayoutTranslationsSource"));
@@ -795,35 +755,84 @@ public:
         horizontalLayoutTranslationsSource->addWidget(pushButtonTranslationsSourceBrowse);
 
 
-        formLayoutTranslations->setLayout(2, QFormLayout::FieldRole, horizontalLayoutTranslationsSource);
+        formLayoutTranslations->setLayout(3, QFormLayout::FieldRole, horizontalLayoutTranslationsSource);
 
-        labelTranslationsDestination = new QLabel(tabTranslations);
-        labelTranslationsDestination->setObjectName(QString::fromUtf8("labelTranslationsDestination"));
+        labelTranslationsDoxyfile = new QLabel(tabTranslations);
+        labelTranslationsDoxyfile->setObjectName(QString::fromUtf8("labelTranslationsDoxyfile"));
 
-        formLayoutTranslations->setWidget(3, QFormLayout::LabelRole, labelTranslationsDestination);
+        formLayoutTranslations->setWidget(4, QFormLayout::LabelRole, labelTranslationsDoxyfile);
 
         horizontalLayoutTranslationsDestination = new QHBoxLayout();
         horizontalLayoutTranslationsDestination->setObjectName(QString::fromUtf8("horizontalLayoutTranslationsDestination"));
-        lineEditTranslationsDestination = new QLineEdit(tabTranslations);
-        lineEditTranslationsDestination->setObjectName(QString::fromUtf8("lineEditTranslationsDestination"));
-        lineEditTranslationsDestination->setInputMask(QString::fromUtf8(""));
-        lineEditTranslationsDestination->setText(QString::fromUtf8(""));
-        lineEditTranslationsDestination->setPlaceholderText(QString::fromUtf8(""));
+        lineEditTranslationsDoxyfile = new QLineEdit(tabTranslations);
+        lineEditTranslationsDoxyfile->setObjectName(QString::fromUtf8("lineEditTranslationsDoxyfile"));
+        lineEditTranslationsDoxyfile->setInputMask(QString::fromUtf8(""));
+        lineEditTranslationsDoxyfile->setText(QString::fromUtf8(""));
+        lineEditTranslationsDoxyfile->setPlaceholderText(QString::fromUtf8(""));
 
-        horizontalLayoutTranslationsDestination->addWidget(lineEditTranslationsDestination);
+        horizontalLayoutTranslationsDestination->addWidget(lineEditTranslationsDoxyfile);
 
-        pushButtonTranslationsDestinationBrowse = new QPushButton(tabTranslations);
-        pushButtonTranslationsDestinationBrowse->setObjectName(QString::fromUtf8("pushButtonTranslationsDestinationBrowse"));
+        pushButtonTranslationsDoxyfileBrowse = new QPushButton(tabTranslations);
+        pushButtonTranslationsDoxyfileBrowse->setObjectName(QString::fromUtf8("pushButtonTranslationsDoxyfileBrowse"));
 
-        horizontalLayoutTranslationsDestination->addWidget(pushButtonTranslationsDestinationBrowse);
+        horizontalLayoutTranslationsDestination->addWidget(pushButtonTranslationsDoxyfileBrowse);
 
 
-        formLayoutTranslations->setLayout(3, QFormLayout::FieldRole, horizontalLayoutTranslationsDestination);
+        formLayoutTranslations->setLayout(4, QFormLayout::FieldRole, horizontalLayoutTranslationsDestination);
+
+        labelTranslationSourceLanguage = new QLabel(tabTranslations);
+        labelTranslationSourceLanguage->setObjectName(QString::fromUtf8("labelTranslationSourceLanguage"));
+
+        formLayoutTranslations->setWidget(5, QFormLayout::LabelRole, labelTranslationSourceLanguage);
+
+        horizontalLayoutTranslationSourceLang = new QHBoxLayout();
+        horizontalLayoutTranslationSourceLang->setObjectName(QString::fromUtf8("horizontalLayoutTranslationSourceLang"));
+        comboBoxTranslationSourceLanguage = new QComboBox(tabTranslations);
+        comboBoxTranslationSourceLanguage->setObjectName(QString::fromUtf8("comboBoxTranslationSourceLanguage"));
+        comboBoxTranslationSourceLanguage->setCurrentText(QString::fromUtf8(""));
+
+        horizontalLayoutTranslationSourceLang->addWidget(comboBoxTranslationSourceLanguage);
+
+        labelTranslationsSourceLanguageCode = new QLabel(tabTranslations);
+        labelTranslationsSourceLanguageCode->setObjectName(QString::fromUtf8("labelTranslationsSourceLanguageCode"));
+        labelTranslationsSourceLanguageCode->setText(QString::fromUtf8("en"));
+
+        horizontalLayoutTranslationSourceLang->addWidget(labelTranslationsSourceLanguageCode);
+
+        horizontalSpacerTranslationsSourceLang = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayoutTranslationSourceLang->addItem(horizontalSpacerTranslationsSourceLang);
+
+
+        formLayoutTranslations->setLayout(5, QFormLayout::FieldRole, horizontalLayoutTranslationSourceLang);
+
+        labelTranslationsHelp = new QLabel(tabTranslations);
+        labelTranslationsHelp->setObjectName(QString::fromUtf8("labelTranslationsHelp"));
+
+        formLayoutTranslations->setWidget(6, QFormLayout::LabelRole, labelTranslationsHelp);
+
+        horizontalLayoutTranslationsHelp = new QHBoxLayout();
+        horizontalLayoutTranslationsHelp->setObjectName(QString::fromUtf8("horizontalLayoutTranslationsHelp"));
+        lineEditTranslationsHelp = new QLineEdit(tabTranslations);
+        lineEditTranslationsHelp->setObjectName(QString::fromUtf8("lineEditTranslationsHelp"));
+        lineEditTranslationsHelp->setInputMask(QString::fromUtf8(""));
+        lineEditTranslationsHelp->setText(QString::fromUtf8(""));
+        lineEditTranslationsHelp->setPlaceholderText(QString::fromUtf8(""));
+
+        horizontalLayoutTranslationsHelp->addWidget(lineEditTranslationsHelp);
+
+        pushButtonTranslationsHelp = new QPushButton(tabTranslations);
+        pushButtonTranslationsHelp->setObjectName(QString::fromUtf8("pushButtonTranslationsHelp"));
+
+        horizontalLayoutTranslationsHelp->addWidget(pushButtonTranslationsHelp);
+
+
+        formLayoutTranslations->setLayout(6, QFormLayout::FieldRole, horizontalLayoutTranslationsHelp);
 
         labelTranslationsCountryCode = new QLabel(tabTranslations);
         labelTranslationsCountryCode->setObjectName(QString::fromUtf8("labelTranslationsCountryCode"));
 
-        formLayoutTranslations->setWidget(6, QFormLayout::LabelRole, labelTranslationsCountryCode);
+        formLayoutTranslations->setWidget(8, QFormLayout::LabelRole, labelTranslationsCountryCode);
 
         scrollArea = new QScrollArea(tabTranslations);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
@@ -1509,105 +1518,76 @@ public:
 
         scrollArea->setWidget(scrollAreaWidgetContents);
 
-        formLayoutTranslations->setWidget(6, QFormLayout::FieldRole, scrollArea);
+        formLayoutTranslations->setWidget(8, QFormLayout::FieldRole, scrollArea);
 
-        labelTranslationsProjectFolder = new QLabel(tabTranslations);
-        labelTranslationsProjectFolder->setObjectName(QString::fromUtf8("labelTranslationsProjectFolder"));
+        labelProjectName = new QLabel(tabTranslations);
+        labelProjectName->setObjectName(QString::fromUtf8("labelProjectName"));
 
-        formLayoutTranslations->setWidget(0, QFormLayout::LabelRole, labelTranslationsProjectFolder);
+        formLayoutTranslations->setWidget(0, QFormLayout::LabelRole, labelProjectName);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        lineEditTranslationsProjectFolder = new QLineEdit(tabTranslations);
-        lineEditTranslationsProjectFolder->setObjectName(QString::fromUtf8("lineEditTranslationsProjectFolder"));
-        lineEditTranslationsProjectFolder->setInputMask(QString::fromUtf8(""));
-        lineEditTranslationsProjectFolder->setText(QString::fromUtf8(""));
-        lineEditTranslationsProjectFolder->setPlaceholderText(QString::fromUtf8(""));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        comboBoxTranslationsProjectNames = new QComboBox(tabTranslations);
+        comboBoxTranslationsProjectNames->setObjectName(QString::fromUtf8("comboBoxTranslationsProjectNames"));
 
-        horizontalLayout->addWidget(lineEditTranslationsProjectFolder);
+        horizontalLayout_2->addWidget(comboBoxTranslationsProjectNames);
 
-        pushButtonTranslationsProjectFolderBrowse = new QPushButton(tabTranslations);
-        pushButtonTranslationsProjectFolderBrowse->setObjectName(QString::fromUtf8("pushButtonTranslationsProjectFolderBrowse"));
+        lineEditProjectName = new QLineEdit(tabTranslations);
+        lineEditProjectName->setObjectName(QString::fromUtf8("lineEditProjectName"));
 
-        horizontalLayout->addWidget(pushButtonTranslationsProjectFolderBrowse);
+        horizontalLayout_2->addWidget(lineEditProjectName);
 
+        labelRecordIdProject = new QLabel(tabTranslations);
+        labelRecordIdProject->setObjectName(QString::fromUtf8("labelRecordIdProject"));
+        labelRecordIdProject->setText(QString::fromUtf8("#"));
 
-        formLayoutTranslations->setLayout(0, QFormLayout::FieldRole, horizontalLayout);
+        horizontalLayout_2->addWidget(labelRecordIdProject);
 
-        labelTranslationSourceLanguage = new QLabel(tabTranslations);
-        labelTranslationSourceLanguage->setObjectName(QString::fromUtf8("labelTranslationSourceLanguage"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        formLayoutTranslations->setWidget(4, QFormLayout::LabelRole, labelTranslationSourceLanguage);
+        horizontalLayout_2->addItem(horizontalSpacer_2);
 
-        horizontalLayoutTranslationSourceLang = new QHBoxLayout();
-        horizontalLayoutTranslationSourceLang->setObjectName(QString::fromUtf8("horizontalLayoutTranslationSourceLang"));
-        comboBoxTranslationSourceLanguage = new QComboBox(tabTranslations);
-        comboBoxTranslationSourceLanguage->setObjectName(QString::fromUtf8("comboBoxTranslationSourceLanguage"));
-        comboBoxTranslationSourceLanguage->setCurrentText(QString::fromUtf8(""));
+        pushButtonTranslationsProjectBrowser = new QPushButton(tabTranslations);
+        pushButtonTranslationsProjectBrowser->setObjectName(QString::fromUtf8("pushButtonTranslationsProjectBrowser"));
 
-        horizontalLayoutTranslationSourceLang->addWidget(comboBoxTranslationSourceLanguage);
-
-        labelTranslationsSourceLanguageCode = new QLabel(tabTranslations);
-        labelTranslationsSourceLanguageCode->setObjectName(QString::fromUtf8("labelTranslationsSourceLanguageCode"));
-        labelTranslationsSourceLanguageCode->setText(QString::fromUtf8("en"));
-
-        horizontalLayoutTranslationSourceLang->addWidget(labelTranslationsSourceLanguageCode);
-
-        horizontalSpacerTranslationsSourceLang = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayoutTranslationSourceLang->addItem(horizontalSpacerTranslationsSourceLang);
+        horizontalLayout_2->addWidget(pushButtonTranslationsProjectBrowser);
 
 
-        formLayoutTranslations->setLayout(4, QFormLayout::FieldRole, horizontalLayoutTranslationSourceLang);
+        formLayoutTranslations->setLayout(0, QFormLayout::FieldRole, horizontalLayout_2);
 
-        labelTranslationMake = new QLabel(tabTranslations);
-        labelTranslationMake->setObjectName(QString::fromUtf8("labelTranslationMake"));
+        labelTranslationsOptions = new QLabel(tabTranslations);
+        labelTranslationsOptions->setObjectName(QString::fromUtf8("labelTranslationsOptions"));
 
-        formLayoutTranslations->setWidget(1, QFormLayout::LabelRole, labelTranslationMake);
+        formLayoutTranslations->setWidget(7, QFormLayout::LabelRole, labelTranslationsOptions);
 
-        horizontalLayoutTranslationsMake = new QHBoxLayout();
-        horizontalLayoutTranslationsMake->setObjectName(QString::fromUtf8("horizontalLayoutTranslationsMake"));
-        radioButtonTranslationsQmake = new QRadioButton(tabTranslations);
-        radioButtonTranslationsQmake->setObjectName(QString::fromUtf8("radioButtonTranslationsQmake"));
-        radioButtonTranslationsQmake->setText(QString::fromUtf8("qmake"));
+        horizontalLayoutTranslationsOptions = new QHBoxLayout();
+        horizontalLayoutTranslationsOptions->setObjectName(QString::fromUtf8("horizontalLayoutTranslationsOptions"));
+        pushButtonTranslationsSave = new QPushButton(tabTranslations);
+        pushButtonTranslationsSave->setObjectName(QString::fromUtf8("pushButtonTranslationsSave"));
 
-        horizontalLayoutTranslationsMake->addWidget(radioButtonTranslationsQmake);
+        horizontalLayoutTranslationsOptions->addWidget(pushButtonTranslationsSave);
 
-        radioButtonTranslationsCmake = new QRadioButton(tabTranslations);
-        radioButtonTranslationsCmake->setObjectName(QString::fromUtf8("radioButtonTranslationsCmake"));
-        radioButtonTranslationsCmake->setText(QString::fromUtf8("cmake"));
+        pushButtonTranslationsClear = new QPushButton(tabTranslations);
+        pushButtonTranslationsClear->setObjectName(QString::fromUtf8("pushButtonTranslationsClear"));
 
-        horizontalLayoutTranslationsMake->addWidget(radioButtonTranslationsCmake);
+        horizontalLayoutTranslationsOptions->addWidget(pushButtonTranslationsClear);
 
-        horizontalSpacerTranslationMake = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        pushButtonTranslationsAdd = new QPushButton(tabTranslations);
+        pushButtonTranslationsAdd->setObjectName(QString::fromUtf8("pushButtonTranslationsAdd"));
 
-        horizontalLayoutTranslationsMake->addItem(horizontalSpacerTranslationMake);
+        horizontalLayoutTranslationsOptions->addWidget(pushButtonTranslationsAdd);
 
+        pushButtonTranslationsDelete = new QPushButton(tabTranslations);
+        pushButtonTranslationsDelete->setObjectName(QString::fromUtf8("pushButtonTranslationsDelete"));
 
-        formLayoutTranslations->setLayout(1, QFormLayout::FieldRole, horizontalLayoutTranslationsMake);
+        horizontalLayoutTranslationsOptions->addWidget(pushButtonTranslationsDelete);
 
-        labelTranslationsHelp = new QLabel(tabTranslations);
-        labelTranslationsHelp->setObjectName(QString::fromUtf8("labelTranslationsHelp"));
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        formLayoutTranslations->setWidget(5, QFormLayout::LabelRole, labelTranslationsHelp);
-
-        horizontalLayoutTranslationsHelp = new QHBoxLayout();
-        horizontalLayoutTranslationsHelp->setObjectName(QString::fromUtf8("horizontalLayoutTranslationsHelp"));
-        lineEditTranslationsHelp = new QLineEdit(tabTranslations);
-        lineEditTranslationsHelp->setObjectName(QString::fromUtf8("lineEditTranslationsHelp"));
-        lineEditTranslationsHelp->setInputMask(QString::fromUtf8(""));
-        lineEditTranslationsHelp->setText(QString::fromUtf8(""));
-        lineEditTranslationsHelp->setPlaceholderText(QString::fromUtf8(""));
-
-        horizontalLayoutTranslationsHelp->addWidget(lineEditTranslationsHelp);
-
-        pushButtonTranslationsHelp = new QPushButton(tabTranslations);
-        pushButtonTranslationsHelp->setObjectName(QString::fromUtf8("pushButtonTranslationsHelp"));
-
-        horizontalLayoutTranslationsHelp->addWidget(pushButtonTranslationsHelp);
+        horizontalLayoutTranslationsOptions->addItem(horizontalSpacer_3);
 
 
-        formLayoutTranslations->setLayout(5, QFormLayout::FieldRole, horizontalLayoutTranslationsHelp);
+        formLayoutTranslations->setLayout(7, QFormLayout::FieldRole, horizontalLayoutTranslationsOptions);
 
 
         verticalLayout_4->addLayout(formLayoutTranslations);
@@ -1700,7 +1680,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1719,26 +1699,12 @@ public:
         actionTranslate_Help->setText(QCoreApplication::translate("MainWindow", "Translate Help", nullptr));
         actionAccept_Translations->setText(QCoreApplication::translate("MainWindow", "Accept Translations", nullptr));
         actionTranslate_ReadMe->setText(QCoreApplication::translate("MainWindow", "Translate ReadMe", nullptr));
-        labelSettingsProjext->setText(QCoreApplication::translate("MainWindow", "Projects", nullptr));
-#if QT_CONFIG(accessibility)
-        lineEditSettingsQtProjectName->setAccessibleName(QString());
-#endif // QT_CONFIG(accessibility)
-#if QT_CONFIG(accessibility)
-        lineEditSettingsQtProjectName->setAccessibleDescription(QString());
-#endif // QT_CONFIG(accessibility)
-#if QT_CONFIG(accessibility)
-        labelRecordIdSettings->setAccessibleName(QString());
-#endif // QT_CONFIG(accessibility)
-#if QT_CONFIG(accessibility)
-        labelRecordIdSettings->setAccessibleDescription(QString());
-#endif // QT_CONFIG(accessibility)
-        pushButtonSettingsProjectsBrowser->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
         labelSettingsLanguage->setText(QCoreApplication::translate("MainWindow", "Change Language", nullptr));
 #if QT_CONFIG(accessibility)
-        comboBoxSettingsLanguage->setAccessibleName(QString());
+        comboBoxLanguage->setAccessibleName(QString());
 #endif // QT_CONFIG(accessibility)
 #if QT_CONFIG(accessibility)
-        comboBoxSettingsLanguage->setAccessibleDescription(QString());
+        comboBoxLanguage->setAccessibleDescription(QString());
 #endif // QT_CONFIG(accessibility)
         pushButtonSettingsLupdate->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
         labelSettingsLrelease->setText(QCoreApplication::translate("MainWindow", "lrelease", nullptr));
@@ -1746,36 +1712,37 @@ public:
         labelSettingsUiLanguage->setText(QCoreApplication::translate("MainWindow", "UI Language", nullptr));
         labelSettingsTranslationEngine->setText(QCoreApplication::translate("MainWindow", "Translation Engines", nullptr));
         labelSettingsDelay->setText(QCoreApplication::translate("MainWindow", "Delay in Seconds", nullptr));
-        labelSettingsOptions->setText(QCoreApplication::translate("MainWindow", "Options", nullptr));
-        pushButtonSettingsSave->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        pushButtonSettingsAdd->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
-        pushButtonSettingsDelete->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
         labelSettignsMessaging->setText(QCoreApplication::translate("MainWindow", "Logging", nullptr));
         checkBoxSettignsMessaging->setText(QCoreApplication::translate("MainWindow", "Debug Messages", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabSettings), QCoreApplication::translate("MainWindow", "Settings", nullptr));
-        labelSqlSqlType->setText(QCoreApplication::translate("MainWindow", "SQL Type", nullptr));
+        labelSqlDatabaseName->setText(QCoreApplication::translate("MainWindow", "Database Name", nullptr));
+        pushButtonSqlDatabaseNameBrowse->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
         labelSqlHostName->setText(QCoreApplication::translate("MainWindow", "Host Name", nullptr));
         labelSqlUserName->setText(QCoreApplication::translate("MainWindow", "User Name", nullptr));
         labelSqlPassword->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         pushButtonSqlPasswordShow->setText(QCoreApplication::translate("MainWindow", "Show", nullptr));
         labelSqlOptions->setText(QCoreApplication::translate("MainWindow", "Options", nullptr));
         pushButtonSqlSave->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        pushButtonSqlDatabaseNameBrowse->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
-        labelSqlDatabaseName->setText(QCoreApplication::translate("MainWindow", "Database Name", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabSQL), QCoreApplication::translate("MainWindow", "SQL", nullptr));
+        labelTranslationsProjectFolder->setText(QCoreApplication::translate("MainWindow", "Project Folder", nullptr));
+        pushButtonTranslationsProjectFolderBrowse->setText(QCoreApplication::translate("MainWindow", "Browes", nullptr));
+        labelTranslationMake->setText(QCoreApplication::translate("MainWindow", "Type make", nullptr));
         labelTranslationsSource->setText(QCoreApplication::translate("MainWindow", "Source", nullptr));
         pushButtonTranslationsSourceBrowse->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
 #if QT_CONFIG(tooltip)
-        labelTranslationsDestination->setToolTip(QCoreApplication::translate("MainWindow", "Tempoary Folder contents gets deleted", nullptr));
+        labelTranslationsDoxyfile->setToolTip(QCoreApplication::translate("MainWindow", "Tempoary Folder contents gets deleted", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(statustip)
-        labelTranslationsDestination->setStatusTip(QCoreApplication::translate("MainWindow", "Tempoary Folder contents gets deleted", nullptr));
+        labelTranslationsDoxyfile->setStatusTip(QCoreApplication::translate("MainWindow", "Tempoary Folder contents gets deleted", nullptr));
 #endif // QT_CONFIG(statustip)
-        labelTranslationsDestination->setText(QCoreApplication::translate("MainWindow", "Destination", nullptr));
+        labelTranslationsDoxyfile->setText(QCoreApplication::translate("MainWindow", "Doxyfile", nullptr));
 #if QT_CONFIG(statustip)
-        lineEditTranslationsDestination->setStatusTip(QCoreApplication::translate("MainWindow", "Tempoary Folder contents gets deleted", nullptr));
+        lineEditTranslationsDoxyfile->setStatusTip(QCoreApplication::translate("MainWindow", "Tempoary Folder contents gets deleted", nullptr));
 #endif // QT_CONFIG(statustip)
-        pushButtonTranslationsDestinationBrowse->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
+        pushButtonTranslationsDoxyfileBrowse->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
+        labelTranslationSourceLanguage->setText(QCoreApplication::translate("MainWindow", "Source Language", nullptr));
+        labelTranslationsHelp->setText(QCoreApplication::translate("MainWindow", "Help Folder", nullptr));
+        pushButtonTranslationsHelp->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
         labelTranslationsCountryCode->setText(QCoreApplication::translate("MainWindow", "Country Codes", nullptr));
         checkBoxTranslationsTO->setText(QCoreApplication::translate("MainWindow", "Tongan - to", nullptr));
         checkBoxTranslationsFY->setText(QCoreApplication::translate("MainWindow", "Frisian - fy", nullptr));
@@ -1910,12 +1877,13 @@ public:
         checkBoxTranslationsUK->setText(QCoreApplication::translate("MainWindow", "Ukrainian - uk", nullptr));
         checkBoxTranslationsUDM->setText(QCoreApplication::translate("MainWindow", "Udmurt - udm", nullptr));
         checkBoxTranslationsYUA->setText(QCoreApplication::translate("MainWindow", "Yucatec Maya - yua", nullptr));
-        labelTranslationsProjectFolder->setText(QCoreApplication::translate("MainWindow", "Project Folder", nullptr));
-        pushButtonTranslationsProjectFolderBrowse->setText(QCoreApplication::translate("MainWindow", "Browes", nullptr));
-        labelTranslationSourceLanguage->setText(QCoreApplication::translate("MainWindow", "Source Language", nullptr));
-        labelTranslationMake->setText(QCoreApplication::translate("MainWindow", "Type make", nullptr));
-        labelTranslationsHelp->setText(QCoreApplication::translate("MainWindow", "Help Folder", nullptr));
-        pushButtonTranslationsHelp->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
+        labelProjectName->setText(QCoreApplication::translate("MainWindow", "Project Name", nullptr));
+        pushButtonTranslationsProjectBrowser->setText(QCoreApplication::translate("MainWindow", "Browse", nullptr));
+        labelTranslationsOptions->setText(QCoreApplication::translate("MainWindow", "Options", nullptr));
+        pushButtonTranslationsSave->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        pushButtonTranslationsClear->setText(QCoreApplication::translate("MainWindow", "Clear", nullptr));
+        pushButtonTranslationsAdd->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
+        pushButtonTranslationsDelete->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabTranslations), QCoreApplication::translate("MainWindow", "Translations", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabProject), QCoreApplication::translate("MainWindow", "Project", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabHelp), QCoreApplication::translate("MainWindow", "Help", nullptr));

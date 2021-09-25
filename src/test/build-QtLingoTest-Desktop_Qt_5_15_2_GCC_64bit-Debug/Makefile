@@ -285,6 +285,7 @@ DIST          = /home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		../QtLingoTest/.qmake.stash \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -535,6 +536,7 @@ Makefile: ../QtLingoTest/QtLingoTest.pro /home/jflesher/Qt/5.15.2/gcc_64/mkspecs
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -751,6 +753,7 @@ Makefile: ../QtLingoTest/QtLingoTest.pro /home/jflesher/Qt/5.15.2/gcc_64/mkspecs
 /home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/qt_config.prf:
 /home/jflesher/Qt/5.15.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/toolchain.prf:
 /home/jflesher/Qt/5.15.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -1089,46 +1092,16 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtGlobal \
 		../../MyConstants.h \
-		../../MyOrgSettings.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		../../MyDatatables.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
+		../../MySqlDbtModel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgets \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgetsDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractproxymodel.h \
@@ -1144,6 +1117,7 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcalendar.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcborarray.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcborcommon.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qregularexpression.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/quuid.h \
@@ -1155,7 +1129,9 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcollator.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcommandlineoption.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdeadlinetimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdiriterator.h \
@@ -1241,17 +1217,6 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qwineventnotifier.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qxmlstream.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtcoreversion.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
-		../../SimpleCrypt.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCryptographicHash \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDataStream \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRandomGenerator \
-		../../MyDatatables.h \
-		../../MySqlDbtModel.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgets \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgetsDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QtGui \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QtGuiDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
@@ -1312,6 +1277,7 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglframebufferobject.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglpaintdevice.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglpixeltransferoptions.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglshaderprogram.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopengltexture.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopengltextureblitter.h \
@@ -1379,6 +1345,7 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcalendarwidget.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcheckbox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcolordialog.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcolormap.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcolumnview.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcombobox.h \
@@ -1436,6 +1403,7 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmdisubwindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenu.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmouseeventtransition.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qopenglwidget.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -1451,6 +1419,8 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointF \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollerProperties \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qscrollerproperties.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qshortcut.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qsizegrip.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qspinbox.h \
@@ -1499,13 +1469,71 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qsqlresult.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qtsqlversion.h \
-		../../MyLocalization.h \
+		../../MyLanguageModel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QLocale \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRegularExpression \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamReader \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamWriter \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTextStream \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../MyLanguageData.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		../../MyOrgSettings.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		../../SimpleCrypt.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCryptographicHash \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDataStream \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRandomGenerator \
 		../../third-party/qonlinetranslator/src/qexample.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QJsonObject \
 		../../third-party/qonlinetranslator/src/qoption.h \
@@ -1532,6 +1560,8 @@ moc_MainWindow.cpp: ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkinterface.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qhostaddress.h \
 		../../MyTranlatorParser.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRegularExpression \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTextStream \
 		../../third-party/ts_tool/ts_model.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamAttributes \
 		../../third-party/ts_tool/efl_hash.h \
@@ -2031,18 +2061,55 @@ moc_MyDatatables.cpp: ../../MyDatatables.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qsqlresult.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qtsqlversion.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDir \
-		../../MyOrgSettings.h \
+		../../MyLanguageModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFile \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMap \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTranslator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../MyLanguageData.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
@@ -2059,6 +2126,7 @@ moc_MyDatatables.cpp: ../../MyDatatables.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../SimpleCrypt.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
@@ -2198,9 +2266,6 @@ moc_MyLocalization.cpp: ../../MyLocalization.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTextStream \
 		../../MyOrgSettings.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
@@ -2229,6 +2294,9 @@ moc_MyLocalization.cpp: ../../MyLocalization.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
@@ -2420,6 +2488,47 @@ moc_MyOrgSettings.cpp: ../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qiodevice.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qshareddata.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QObject \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -2448,8 +2557,6 @@ moc_MyOrgSettings.cpp: ../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
@@ -2457,47 +2564,8 @@ moc_MyOrgSettings.cpp: ../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qcursor.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qevent.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QObject \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
@@ -3122,18 +3190,55 @@ moc_MySqlDbtModel.cpp: ../../MySqlDbtModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDir \
 		../../MyConstants.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtGlobal \
-		../../MyOrgSettings.h \
+		../../MyLanguageModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFile \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMap \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTranslator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../MyLanguageData.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
@@ -3150,6 +3255,7 @@ moc_MySqlDbtModel.cpp: ../../MySqlDbtModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../SimpleCrypt.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
@@ -3240,39 +3346,58 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamAttributes \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qxmlstream.h \
 		../../third-party/ts_tool/efl_hash.h \
-		../../MyOrgSettings.h \
+		../../MyLanguageModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QStringList \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qstandarditemmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qcolor.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qrgb.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qrgba64.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qmatrix.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qregion.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatastream.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qline.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtransform.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qicon.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDir \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdir.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMap \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpointer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTranslator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
@@ -3283,6 +3408,83 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtableview.h \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qaction.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcheckbox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qformlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextformat.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpen.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenu.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qprogressbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qradiobutton.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qspinbox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextdocument.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtoolbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
+		../../MyLanguageData.h \
+		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
@@ -3290,8 +3492,6 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
@@ -3311,11 +3511,13 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractstate.h \
@@ -3323,7 +3525,6 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qanimationgroup.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qarraydataops.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qarraydatapointer.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbitarray.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbuffer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbytearraymatcher.h \
@@ -3344,7 +3545,6 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdeadlinetimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdir.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdiriterator.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeasingcurve.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qendian.h \
@@ -3352,7 +3552,6 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qexception.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfactoryinterface.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfileselector.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QStringList \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfinalstate.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfuture.h \
@@ -3364,7 +3563,6 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qhistorystate.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qidentityproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qisenum.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qjsonarray.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qjsonvalue.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qjsondocument.h \
@@ -3386,7 +3584,6 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpauseanimation.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qplugin.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpointer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpluginloader.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qprocess.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpropertyanimation.h \
@@ -3421,9 +3618,7 @@ moc_MyTranlatorParser.cpp: ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qthreadpool.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qthreadstorage.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimeline.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimezone.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtranslator.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtypetraits.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qwaitcondition.h \
@@ -4057,10 +4252,10 @@ tst_qtlingocase.moc: ../QtLingoTest/tst_qtlingocase.cpp \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
 		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtGlobal \
 		../../SimpleCrypt.h \
@@ -4402,10 +4597,10 @@ tst_qtlingocase.o: ../QtLingoTest/tst_qtlingocase.cpp /home/jflesher/Qt/5.15.2/g
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
 		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtGlobal \
 		../../SimpleCrypt.h \
@@ -4541,46 +4736,16 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtGlobal \
 		../../MyConstants.h \
-		../../MyOrgSettings.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		../../MyDatatables.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
+		../../MySqlDbtModel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgets \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgetsDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractproxymodel.h \
@@ -4596,6 +4761,7 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcalendar.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcborarray.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcborcommon.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qregularexpression.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/quuid.h \
@@ -4607,7 +4773,9 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcollator.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcommandlineoption.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdeadlinetimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdiriterator.h \
@@ -4693,17 +4861,6 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qwineventnotifier.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qxmlstream.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtcoreversion.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
-		../../SimpleCrypt.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCryptographicHash \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDataStream \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRandomGenerator \
-		../../MyDatatables.h \
-		../../MySqlDbtModel.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgets \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QtWidgetsDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QtGui \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QtGuiDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
@@ -4764,6 +4921,7 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglframebufferobject.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglpaintdevice.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglpixeltransferoptions.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopenglshaderprogram.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopengltexture.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qopengltextureblitter.h \
@@ -4831,6 +4989,7 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcalendarwidget.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcheckbox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcolordialog.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcolormap.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcolumnview.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcombobox.h \
@@ -4888,6 +5047,7 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmdisubwindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenu.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmouseeventtransition.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qopenglwidget.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
@@ -4903,6 +5063,8 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointF \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollerProperties \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qscrollerproperties.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qshortcut.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qsizegrip.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qspinbox.h \
@@ -4951,13 +5113,71 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qsqltablemodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qsqlresult.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qtsqlversion.h \
-		../../MyLocalization.h \
+		../../MyLanguageModel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QLocale \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRegularExpression \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamReader \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamWriter \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTextStream \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../MyLanguageData.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		../../MyOrgSettings.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		../../SimpleCrypt.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCryptographicHash \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDataStream \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRandomGenerator \
 		../../third-party/qonlinetranslator/src/qexample.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QJsonObject \
 		../../third-party/qonlinetranslator/src/qoption.h \
@@ -4984,10 +5204,11 @@ MainWindow.o: ../../MainWindow.cpp ../../MainWindow.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkinterface.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qhostaddress.h \
 		../../MyTranlatorParser.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QRegularExpression \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTextStream \
 		../../third-party/ts_tool/ts_model.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamAttributes \
-		../../third-party/ts_tool/efl_hash.h \
-		ui_MainWindow.h
+		../../third-party/ts_tool/efl_hash.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../../MainWindow.cpp
 
 MyDatatables.o: ../../MyDatatables.cpp ../../MyDatatables.h \
@@ -5482,18 +5703,55 @@ MyDatatables.o: ../../MyDatatables.cpp ../../MyDatatables.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qsqlresult.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtSql/qtsqlversion.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDir \
-		../../MyOrgSettings.h \
+		../../MyLanguageModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFile \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMap \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTranslator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../MyLanguageData.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
@@ -5510,6 +5768,7 @@ MyDatatables.o: ../../MyDatatables.cpp ../../MyDatatables.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../SimpleCrypt.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
@@ -5647,9 +5906,6 @@ MyLocalization.o: ../../MyLocalization.cpp ../../MyLocalization.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtDebug \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTextStream \
 		../../MyOrgSettings.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
@@ -5678,6 +5934,9 @@ MyLocalization.o: ../../MyLocalization.cpp ../../MyLocalization.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
@@ -5867,6 +6126,47 @@ MyOrgSettings.o: ../../MyOrgSettings.cpp ../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qiodevice.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qshareddata.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qhash.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QObject \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -5895,8 +6195,6 @@ MyOrgSettings.o: ../../MyOrgSettings.cpp ../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
@@ -5904,47 +6202,8 @@ MyOrgSettings.o: ../../MyOrgSettings.cpp ../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qcursor.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qkeysequence.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qevent.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qvariant.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmap.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdebug.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtextstream.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qlocale.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qset.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurl.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QObject \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtcpsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qabstractsocket.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslerror.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslcertificate.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcryptographichash.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatetime.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qssl.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFlags \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMetaType \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkReply \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkreply.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
@@ -6567,18 +6826,55 @@ MySqlDbtModel.o: ../../MySqlDbtModel.cpp ../../MySqlDbtModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDir \
 		../../MyConstants.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtGlobal \
-		../../MyOrgSettings.h \
+		../../MyLanguageModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFile \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMap \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTranslator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../MyLanguageData.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
+		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QFileInfo \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QString \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
@@ -6595,6 +6891,7 @@ MySqlDbtModel.o: ../../MySqlDbtModel.cpp ../../MySqlDbtModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
 		../../SimpleCrypt.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QByteArray \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDateTime \
@@ -6683,39 +6980,58 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QXmlStreamAttributes \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qxmlstream.h \
 		../../third-party/ts_tool/efl_hash.h \
-		../../MyOrgSettings.h \
+		../../MyLanguageModel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QCoreApplication \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qcoreapplication.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeventloop.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QStringList \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QListIterator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QStandardItemModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qstandarditemmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtguiglobal.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtgui-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qcolor.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qrgb.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qrgba64.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qbrush.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qmatrix.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qrect.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qmargins.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qsize.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qregion.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qwindowdefs_win.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdatastream.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qline.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtransform.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qimage.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpaintdevice.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixelformat.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpixmap.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfont.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qicon.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QAbstractListModel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QDir \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdir.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QMap \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QPointer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpointer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTimer \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTranslator \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAbstractItemView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpalette.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontmetrics.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qfontinfo.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qsizepolicy.h \
@@ -6726,6 +7042,83 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qurlquery.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qvector2d.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtouchdevice.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHeaderView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qheaderview.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTableView \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtableview.h \
+		ui_MainWindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/QIcon \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QAction \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qaction.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qactiongroup.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QApplication \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcheckbox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QComboBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QFormLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qformlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLabel \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextcursor.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextformat.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qpen.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextoption.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenu \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenu.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMenuBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmenubar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QProgressBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qprogressbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QRadioButton \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qradiobutton.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QScrollArea \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpacerItem \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qspinbox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTabWidget \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QTextEdit \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtGui/qtextdocument.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QToolBar \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qtoolbar.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QWidget \
+		../../MyLanguageData.h \
+		../../MyOrgSettings.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkAccessManager \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qtnetworkglobal.h \
@@ -6733,8 +7126,6 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qnetworkrequest.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QSharedDataPointer \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QUrl \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVariant \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QVector \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QSslConfiguration \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslconfiguration.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/qsslsocket.h \
@@ -6754,11 +7145,13 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QIODevice \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtNetwork/QNetworkRequest \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QTime \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jflesher/Qt/5.15.2/gcc_64/include/QtWidgets/qdialog.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCore \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QtCoreDepends \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractanimation.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qabstractstate.h \
@@ -6766,7 +7159,6 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qanimationgroup.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qarraydataops.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qarraydatapointer.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbasictimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbitarray.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbuffer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qbytearraymatcher.h \
@@ -6787,7 +7179,6 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdeadlinetimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qelapsedtimer.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdir.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qdiriterator.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qeasingcurve.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qendian.h \
@@ -6795,7 +7186,6 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qexception.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfactoryinterface.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfileselector.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/QStringList \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfinalstate.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qfuture.h \
@@ -6807,7 +7197,6 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qhistorystate.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qidentityproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qisenum.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qitemselectionmodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qjsonarray.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qjsonvalue.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qjsondocument.h \
@@ -6829,7 +7218,6 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpauseanimation.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qplugin.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpointer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpluginloader.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qprocess.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qpropertyanimation.h \
@@ -6864,9 +7252,7 @@ MyTranlatorParser.o: ../../MyTranlatorParser.cpp ../../MyTranlatorParser.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qthreadpool.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qthreadstorage.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimeline.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimer.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtimezone.h \
-		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtranslator.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qtypetraits.h \
 		/home/jflesher/Qt/5.15.2/gcc_64/include/QtCore/qwaitcondition.h \

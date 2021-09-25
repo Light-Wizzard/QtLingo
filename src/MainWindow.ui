@@ -42,7 +42,7 @@
           <item row="0" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSettingsLanguage">
             <item>
-             <widget class="QComboBox" name="comboBoxSettingsLanguage">
+             <widget class="QComboBox" name="comboBoxLanguage">
               <property name="accessibleName">
                <string/>
               </property>
@@ -304,58 +304,6 @@
             </item>
            </layout>
           </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="labelSettingsOptions">
-            <property name="text">
-             <string>Options</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutSettingsOptions">
-            <item>
-             <widget class="QPushButton" name="pushButtonSettingsSave">
-              <property name="text">
-               <string>Save</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButtonSettingsClear">
-              <property name="text">
-               <string>Clear</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButtonSettingsAdd">
-              <property name="text">
-               <string>Add</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButtonSettingsDelete">
-              <property name="text">
-               <string>Delete</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacerSettingsOptions">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
          </layout>
         </item>
        </layout>
@@ -367,21 +315,52 @@
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <layout class="QFormLayout" name="formLayoutSql">
-          <item row="1" column="0">
-           <widget class="QLabel" name="labelSqlSqlType">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelSqlDatabaseName">
             <property name="text">
-             <string>SQL Type</string>
+             <string>Database Name</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item row="0" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutSqlDatabaseName">
+            <item>
+             <widget class="QComboBox" name="comboBoxSqlDatabaseType">
+              <property name="currentText">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEditSqlDatabaseName">
+              <property name="inputMask">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <property name="placeholderText">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonSqlDatabaseNameBrowse">
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
            <widget class="QLabel" name="labelSqlHostName">
             <property name="text">
              <string>Host Name</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="1" column="1">
            <widget class="QLineEdit" name="lineEditSqlHostName">
             <property name="inputMask">
              <string notr="true"/>
@@ -394,14 +373,14 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="labelSqlUserName">
             <property name="text">
              <string>User Name</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="2" column="1">
            <widget class="QLineEdit" name="lineEditSqlUserName">
             <property name="inputMask">
              <string notr="true"/>
@@ -414,14 +393,14 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
+          <item row="3" column="0">
            <widget class="QLabel" name="labelSqlPassword">
             <property name="text">
              <string>Password</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="3" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSqlPassword">
             <item>
              <widget class="QLineEdit" name="lineEditSqlPassword">
@@ -445,14 +424,14 @@
             </item>
            </layout>
           </item>
-          <item row="5" column="0">
+          <item row="4" column="0">
            <widget class="QLabel" name="labelSqlOptions">
             <property name="text">
              <string>Options</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="4" column="1">
            <layout class="QHBoxLayout" name="horizontalLayoutSqlOptions">
             <item>
              <widget class="QPushButton" name="pushButtonSqlSave">
@@ -463,61 +442,6 @@
             </item>
             <item>
              <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutSqlDatabaseName">
-            <item>
-             <widget class="QLineEdit" name="lineEditSqlDatabaseName">
-              <property name="inputMask">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string notr="true"/>
-              </property>
-              <property name="placeholderText">
-               <string notr="true"/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButtonSqlDatabaseNameBrowse">
-              <property name="text">
-               <string>Browse</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="labelSqlDatabaseName">
-            <property name="text">
-             <string>Database Name</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayoutSqlType">
-            <item>
-             <widget class="QComboBox" name="comboBoxSqlDatabaseType">
-              <property name="currentText">
-               <string notr="true"/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacerSqlType">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -751,14 +675,14 @@
             </item>
            </layout>
           </item>
-          <item row="7" column="0">
+          <item row="8" column="0">
            <widget class="QLabel" name="labelTranslationsCountryCode">
             <property name="text">
              <string>Country Codes</string>
             </property>
            </widget>
           </item>
-          <item row="7" column="1">
+          <item row="8" column="1">
            <widget class="QScrollArea" name="scrollArea">
             <property name="widgetResizable">
              <bool>true</bool>
@@ -1735,7 +1659,7 @@
           <item row="0" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QComboBox" name="comboBoxProjectNames"/>
+             <widget class="QComboBox" name="comboBoxTranslationsProjectNames"/>
             </item>
             <item>
              <widget class="QLineEdit" name="lineEditProjectName"/>
@@ -1761,11 +1685,63 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonProjectBrowser">
+             <widget class="QPushButton" name="pushButtonTranslationsProjectBrowser">
               <property name="text">
                <string>Browse</string>
               </property>
              </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="labelTranslationsOptions">
+            <property name="text">
+             <string>Options</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayoutTranslationsOptions">
+            <item>
+             <widget class="QPushButton" name="pushButtonTranslationsSave">
+              <property name="text">
+               <string>Save</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonTranslationsClear">
+              <property name="text">
+               <string>Clear</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonTranslationsAdd">
+              <property name="text">
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButtonTranslationsDelete">
+              <property name="text">
+               <string>Delete</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
             </item>
            </layout>
           </item>

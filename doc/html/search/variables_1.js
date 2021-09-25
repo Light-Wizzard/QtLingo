@@ -138,10 +138,12 @@ var searchData=
   ['checkboxtranslationszh_5fcn_135',['checkBoxTranslationsZH_CN',['../classUi__MainWindow.html#a3d63c448f2f1c1d6ddfbc2ae8bad78cb',1,'Ui_MainWindow']]],
   ['checkboxtranslationszh_5ftw_136',['checkBoxTranslationsZH_TW',['../classUi__MainWindow.html#a30cacdb1fe5927cd8dab0a39c9ae049b',1,'Ui_MainWindow']]],
   ['checkboxtranslationszu_137',['checkBoxTranslationsZU',['../classUi__MainWindow.html#adc6f55fe7f18459d05f81dac3475b70c',1,'Ui_MainWindow']]],
-  ['comboboxsettingslanguage_138',['comboBoxSettingsLanguage',['../classUi__MainWindow.html#aae35ae66553c307a5d7bcd23913ada78',1,'Ui_MainWindow']]],
-  ['comboboxsettingsprojects_139',['comboBoxSettingsProjects',['../classUi__MainWindow.html#af0bc78a49f7ed52a7bac52a4217a417d',1,'Ui_MainWindow']]],
-  ['comboboxsqldatabasetype_140',['comboBoxSqlDatabaseType',['../classUi__MainWindow.html#a8e2f3d37e7daaa9564f7c7512636c881',1,'Ui_MainWindow']]],
-  ['comboboxtranslationsourcelanguage_141',['comboBoxTranslationSourceLanguage',['../classUi__MainWindow.html#a0f6f947edf71009116dee8fb39167cfe',1,'Ui_MainWindow']]],
-  ['constdefaultgeometrypos_142',['ConstDefaultGeometryPos',['../classMyOrgSettings.html#a9f4382d60724eb35290f6078d7dffaaf',1,'MyOrgSettings']]],
-  ['constdefaultgeometrysize_143',['ConstDefaultGeometrySize',['../classMyOrgSettings.html#a123e9a4170412ce647f25575152d0fdf',1,'MyOrgSettings']]]
+  ['comboboxlanguage_138',['comboBoxLanguage',['../classUi__MainWindow.html#a684202e253aeef291dfb00e304d33a8d',1,'Ui_MainWindow']]],
+  ['comboboxsettingslanguage_139',['comboBoxSettingsLanguage',['../classUi__MainWindow.html#a4eda18c4b0eeb7d38133cac6bb7d1d69',1,'Ui_MainWindow']]],
+  ['comboboxsettingsprojects_140',['comboBoxSettingsProjects',['../classUi__MainWindow.html#a149eb018f3e88e3d762fce8471faad67',1,'Ui_MainWindow']]],
+  ['comboboxsqldatabasetype_141',['comboBoxSqlDatabaseType',['../classUi__MainWindow.html#a8e2f3d37e7daaa9564f7c7512636c881',1,'Ui_MainWindow']]],
+  ['comboboxtranslationsourcelanguage_142',['comboBoxTranslationSourceLanguage',['../classUi__MainWindow.html#a0f6f947edf71009116dee8fb39167cfe',1,'Ui_MainWindow']]],
+  ['comboboxtranslationsprojectnames_143',['comboBoxTranslationsProjectNames',['../classUi__MainWindow.html#a597d1355036106e6a4625f64963e9a58',1,'Ui_MainWindow']]],
+  ['constdefaultgeometrypos_144',['ConstDefaultGeometryPos',['../classMyOrgSettings.html#a9f4382d60724eb35290f6078d7dffaaf',1,'MyOrgSettings']]],
+  ['constdefaultgeometrysize_145',['ConstDefaultGeometrySize',['../classMyOrgSettings.html#a123e9a4170412ce647f25575152d0fdf',1,'MyOrgSettings']]]
 ];

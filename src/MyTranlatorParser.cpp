@@ -4,7 +4,7 @@
  * @brief Translation Files Constructor.
  * MyTranslationFiles
  ***********************************************/
-MyTranlatorParser::MyTranlatorParser(QObject *parent, MyOrgSettings *thisSetting) : QObject(parent), mySetting(thisSetting)
+MyTranlatorParser::MyTranlatorParser(MyLanguageModel *thisLanguageModel, QObject *parent) : QObject(parent), myLanguageModel(thisLanguageModel)
 {
 
 }
@@ -154,7 +154,7 @@ void MyTranlatorParser::toTXT(const QString &inputFile, const QString &outputDir
     QFileInfo fiI(inputFile);
     if(!fiI.exists())
     {
-        mySetting->showMessageBox(QObject::tr("Input does file not exist!").toLocal8Bit(), QString("%1: %2").arg(tr("Unable to find Input file"), inputFile).toLocal8Bit(), mySetting->Critical);
+        myLanguageModel->mySetting->showMessageBox(QObject::tr("Input does file not exist!").toLocal8Bit(), QString("%1: %2").arg(tr("Unable to find Input file"), inputFile).toLocal8Bit(), myLanguageModel->mySetting->Critical);
         return;
     }
 
@@ -172,7 +172,7 @@ void MyTranlatorParser::toTXT(const QString &inputFile, const QString &outputDir
     if( !fiO.exists() || 2 < files_in_out_dir || (2 == files_in_out_dir && !QFileInfo::exists(outputXmlFileName) && !QFileInfo::exists(outputTextFile)) )
     {
         // FIXME question delete
-        mySetting->showMessageBox(QObject::tr("Check output Folder").toLocal8Bit(), QString("%1!: %2").arg(tr("Can not create output directory OR directory is not empty"), inputFile).toLocal8Bit(), mySetting->Critical);
+        myLanguageModel->mySetting->showMessageBox(QObject::tr("Check output Folder").toLocal8Bit(), QString("%1!: %2").arg(tr("Can not create output directory OR directory is not empty"), inputFile).toLocal8Bit(), myLanguageModel->mySetting->Critical);
         return;
     }
 
@@ -213,7 +213,7 @@ void MyTranlatorParser::toTS(const QString &inputDir, const QString &outputFile,
     QFileInfo fiI(inputDir);
     if(!fiI.exists())
     {
-        mySetting->showMessageBox(QObject::tr("Input directory not exist!").toLocal8Bit(), QString("%1: %2").arg(tr("Unable to find Input folder"), inputDir).toLocal8Bit(), mySetting->Critical);
+        myLanguageModel->mySetting->showMessageBox(QObject::tr("Input directory not exist!").toLocal8Bit(), QString("%1: %2").arg(tr("Unable to find Input folder"), inputDir).toLocal8Bit(), myLanguageModel->mySetting->Critical);
         return;
         // FIXME Error
     }
@@ -237,7 +237,7 @@ void MyTranlatorParser::toTS(const QString &inputDir, const QString &outputFile,
 
     if(2 < files_in_input_dir || 0 == files_in_input_dir || tsFile.isEmpty() || txtFile.isEmpty())
     {
-        mySetting->showMessageBox(QObject::tr("Check Input Folder").toLocal8Bit(), QString("%1!: %2").arg(tr("Input directory should contain only txt and ts file with same name"), tsFile).toLocal8Bit(), mySetting->Critical);
+        myLanguageModel->mySetting->showMessageBox(QObject::tr("Check Input Folder").toLocal8Bit(), QString("%1!: %2").arg(tr("Input directory should contain only txt and ts file with same name"), tsFile).toLocal8Bit(), myLanguageModel->mySetting->Critical);
         return;
         // FIXME Error
     }
@@ -250,7 +250,7 @@ void MyTranlatorParser::toTS(const QString &inputDir, const QString &outputFile,
     if(!parse_txt_file(txtFile, strings))
     {
         std::cout << "Parsing error: " << txtFile.toUtf8().constData() << " !" << std::endl;
-        mySetting->showMessageBox(QObject::tr("Parsing errorr").toLocal8Bit(), QString("%1: %2").arg(tr("Parsing errorr"), txtFile.toUtf8().constData()).toLocal8Bit(), mySetting->Critical);
+        myLanguageModel->mySetting->showMessageBox(QObject::tr("Parsing errorr").toLocal8Bit(), QString("%1: %2").arg(tr("Parsing errorr"), txtFile.toUtf8().constData()).toLocal8Bit(), myLanguageModel->mySetting->Critical);
         return;
         // FIXME Error
     }

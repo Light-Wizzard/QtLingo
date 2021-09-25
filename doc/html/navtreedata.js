@@ -148,6 +148,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", "globals_defs" ]
       ] ]
@@ -158,14 +159,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "MainWindow_8cpp.html",
-"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a726a020189392103a9404da070536e07",
-"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__MyDatatables_8cpp_source.html",
-"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__predefs_8h.html#a87b7ceac2198cab045e40c9a64b11679",
-"classMainWindow.html#a84a272c6f581b39d5eafd2e1387fabc6",
-"classMyOrgSettings.html#ab18f63a3d476d6dc3b61396e1ef42b80",
-"classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73dae21c39ffaaa746c98dc547318050afc8",
-"classUi__MainWindow.html#a950e631e76b8a84e50d5c9c122cd978d",
-"main_8cpp.html#ad068b8e95a5c93bd1df5f2e4d9ff0fdc"
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a6d75f715affd9a721ec81f333135073f",
+"build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp_source.html",
+"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__predefs_8h.html#a82a2c3ff271d1685b450975ffa68544a",
+"classMainWindow.html#a6059d411a7ddcd7a12c78999f0ebf69d",
+"classMyOrgSettings.html#a11e347aaabfcf6415eaad978c3761c82",
+"classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da4f5a179a0bd5cc24951eb365fe425dd2",
+"classUi__MainWindow.html#a48125aa29f7e2662766f2dbaa0c5f663",
+"functions_f.html",
+"structelement__node.html#a16d6be1dc38d008a62b3f6fa046461de"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

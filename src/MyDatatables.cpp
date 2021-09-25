@@ -4,9 +4,9 @@
  * @brief My Datatables Constructor.
  * MyDatatables
  ***********************************************/
-MyDatatables::MyDatatables(MyOrgSettings *thisSetting, MyConstants *thisConstant, QObject *parent) : QObject(parent), mySetting(thisSetting), myConstants(thisConstant)
+MyDatatables::MyDatatables(MyLanguageModel *thisLanguageModel, MyConstants *thisConstant, QObject *parent) : QObject(parent), myLanguageModel(thisLanguageModel), myConstants(thisConstant)
 {
-    mySqlModel = new MySqlDbtModel(thisSetting, thisConstant, this);
+    mySqlModel = new MySqlDbtModel(thisLanguageModel, thisConstant, this);
     // Create Variable Trackers and Set to Empty
     myProject = new MyProjectClass("", "", "", "", "", "", "", "", "");
 }
@@ -143,7 +143,7 @@ bool MyDatatables::checkDatabase()
             if (insertQtProjects())
             {
                 myProjectID = mySqlModel->getRecordID();
-                mySqlModel->mySetting->writeSettings(myConstants->MY_SQL_PROJECT_ID, myProjectID);
+                myLanguageModel->mySetting->writeSettings(myConstants->MY_SQL_PROJECT_ID, myProjectID);
             }
             else
             {
@@ -172,7 +172,7 @@ bool MyDatatables::insertQtProjects()
         qCritical() << "INSERT Projects error: " << theQuery;
         return false;
     }
-    myProjectID = mySqlModel->getRecordID();
+    setProjectID(mySqlModel->getRecordID());
     return true;
 }
 /************************************************
@@ -186,7 +186,7 @@ bool MyDatatables::addQtProject()
     // SELECT id, QtProjectName FROM Projects WHERE QtProject =
     if (isQtProjectNameQuery(myProject->getQtProjectName()))
     {
-        mySqlModel->mySetting->showMessageBox(QObject::tr("Record found!").toLocal8Bit(), QString("%1: %2").arg(tr("Not adding: Record found in database"), myProject->getQtProjectName()).toLocal8Bit(), mySqlModel->mySetting->Warning);
+        myLanguageModel->mySetting->showMessageBox(QObject::tr("Record found!").toLocal8Bit(), QString("%1: %2").arg(tr("Not adding: Record found in database"), myProject->getQtProjectName()).toLocal8Bit(), myLanguageModel->mySetting->Warning);
         return false;
     }
     return insertQtProjects();

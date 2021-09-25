@@ -5,6 +5,7 @@
 #include <QtDebug>
 #include "MyConstants.h"
 #include "MySqlDbtModel.h"
+#include "MyLanguageModel.h"
 /************************************************
  * @brief Project Class.
  * \class MyProjectClass
@@ -49,13 +50,13 @@ class MyDatatables : public QObject
 {
         Q_OBJECT
     public:
-        explicit MyDatatables(MyOrgSettings *thisSetting = nullptr, MyConstants *thisConstant = nullptr, QObject *parent = nullptr);
+        explicit MyDatatables(MyLanguageModel *thisLanguageModel = nullptr, MyConstants *thisConstant = nullptr, QObject *parent = nullptr);
         ~MyDatatables();
         //
-        MyProjectClass *myProject;                   //!< \c myProject  @brief My Project Variables
-        MySqlDbtModel  *mySqlModel;                  //!< \c mySqlModel @brief Pointer to DataTable
-        MyOrgSettings  *mySetting;                   //!< \c mySetting @brief Domain Settings
-        MyConstants    *myConstants;                 //!< \c myConstants @brief All Constants in one class
+        MyProjectClass  *myProject;                  //!< \c myProject       @brief My Project Variables
+        MySqlDbtModel   *mySqlModel;                 //!< \c mySqlModel      @brief Pointer to DataTable
+        MyLanguageModel *myLanguageModel;            //!< \c myLanguageModel @brief Localization Model.
+        MyConstants     *myConstants;                //!< \c myConstants     @brief All Constants in one class
         //
         bool checkDatabase();                        //!< check Database
         bool insertQtProjects();                     //!< insert Qt Project

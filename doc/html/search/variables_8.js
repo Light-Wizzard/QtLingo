@@ -38,8 +38,8 @@ var searchData=
   ['my_5flocale_5flang_5fcode_35',['MY_LOCALE_LANG_CODE',['../classMyConstants.html#a670417872e4050d1d501b87b876ed6a5',1,'MyConstants::MY_LOCALE_LANG_CODE()'],['../classMyLocalization.html#afa1609411bf1207ae91ed192f6aa21e5',1,'MyLocalization::MY_LOCALE_LANG_CODE()'],['../classMyOrgSettings.html#a01948c94cea54fc1998183939b04b49b',1,'MyOrgSettings::MY_LOCALE_LANG_CODE()']]],
   ['my_5flocale_5flang_5fname_36',['MY_LOCALE_LANG_NAME',['../classMyOrgSettings.html#a2a4d8087989cccb483d795cf807d79b1',1,'MyOrgSettings']]],
   ['my_5fmake_37',['MY_MAKE',['../classMyConstants.html#a4cc3a6e2ac80f2f54d24ae872262985d',1,'MyConstants']]],
-  ['my_5forg_5fdomain_38',['MY_ORG_DOMAIN',['../classMyOrgSettings.html#a08c3724c93bd0bc79d148c3406bab6c6',1,'MyOrgSettings::MY_ORG_DOMAIN()'],['../classMyConstants.html#ac91a7969548ce8b73b706f3ebe8df9f6',1,'MyConstants::MY_ORG_DOMAIN()']]],
-  ['my_5forg_5fname_39',['MY_ORG_NAME',['../classMyOrgSettings.html#a19b1c70cbe6ede23784e780b36893045',1,'MyOrgSettings::MY_ORG_NAME()'],['../classMyConstants.html#acb44217267545d5c475480226ccf7dbe',1,'MyConstants::MY_ORG_NAME()']]],
+  ['my_5forg_5fdomain_38',['MY_ORG_DOMAIN',['../classMyConstants.html#ac91a7969548ce8b73b706f3ebe8df9f6',1,'MyConstants::MY_ORG_DOMAIN()'],['../classMyOrgSettings.html#a08c3724c93bd0bc79d148c3406bab6c6',1,'MyOrgSettings::MY_ORG_DOMAIN()']]],
+  ['my_5forg_5fname_39',['MY_ORG_NAME',['../classMyConstants.html#acb44217267545d5c475480226ccf7dbe',1,'MyConstants::MY_ORG_NAME()'],['../classMyOrgSettings.html#a19b1c70cbe6ede23784e780b36893045',1,'MyOrgSettings::MY_ORG_NAME()']]],
   ['my_5forg_5fname_5fvalue_40',['MY_ORG_NAME_VALUE',['../classMyConstants.html#ab8f5c2e251961e912b18211cef1a6323',1,'MyConstants']]],
   ['my_5fproject_5fname_41',['MY_PROJECT_NAME',['../classMyOrgSettings.html#a11e347aaabfcf6415eaad978c3761c82',1,'MyOrgSettings']]],
   ['my_5fproject_5fstatus_42',['MY_PROJECT_STATUS',['../classMyOrgSettings.html#aebe22ab4e3090ac2792a3de19ff65cfd',1,'MyOrgSettings']]],
@@ -64,9 +64,11 @@ var searchData=
   ['my_5ftranslation_5ffolder_61',['MY_TRANSLATION_FOLDER',['../classMyConstants.html#af7e31605d92768b76fb56976404e7c5a',1,'MyConstants']]],
   ['my_5ftranslation_5fprefix_62',['MY_TRANSLATION_PREFIX',['../classMyConstants.html#a8f4ee93296ce7c15df089b99dd23e3b1',1,'MyConstants']]],
   ['my_5fwindow_5fstates_63',['MY_WINDOW_STATES',['../classMyOrgSettings.html#a2d4b3e7b30a4ab498150f2a9546dfca5',1,'MyOrgSettings']]],
-  ['myconstants_64',['myConstants',['../classMainWindow.html#a02dd9c95d1f49e437e26dfb2bf379d58',1,'MainWindow::myConstants()'],['../classMyDatatables.html#a6df3490efe41baa52c013b8617941389',1,'MyDatatables::myConstants()'],['../classMySqlDbtModel.html#a1b2e0738fcd4e2c150d731e4c8cbfadb',1,'MySqlDbtModel::myConstants()']]],
+  ['myconstants_64',['myConstants',['../classMainWindow.html#a02dd9c95d1f49e437e26dfb2bf379d58',1,'MainWindow::myConstants()'],['../classMySqlDbtModel.html#a1b2e0738fcd4e2c150d731e4c8cbfadb',1,'MySqlDbtModel::myConstants()'],['../classMyDatatables.html#a6df3490efe41baa52c013b8617941389',1,'MyDatatables::myConstants()']]],
   ['mycrypto_65',['myCrypto',['../classMyOrgSettings.html#a4fce6b725705c594dcc27712e49a3943',1,'MyOrgSettings']]],
-  ['myproject_66',['myProject',['../classMyDatatables.html#a3077b5e07e3b2bf897aae22bbcc64579',1,'MyDatatables']]],
-  ['mysetting_67',['mySetting',['../classMyDatatables.html#ac6d75d7e3e748913513b3d963f93f6a5',1,'MyDatatables::mySetting()'],['../classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe',1,'MyLocalization::mySetting()'],['../classMySqlDbtModel.html#ad56b6ae71a80657ad169af0e443d23f4',1,'MySqlDbtModel::mySetting()']]],
-  ['mysqlmodel_68',['mySqlModel',['../classMyDatatables.html#a6cb2fc2336744cb67f33bc98b477fb95',1,'MyDatatables']]]
+  ['mylanguagemodel_66',['myLanguageModel',['../classMyDatatables.html#ace610a7acdc2991dfbd805497d17c65e',1,'MyDatatables::myLanguageModel()'],['../classMySqlDbtModel.html#a216e93e08e507d4fb098058ea64f3f68',1,'MySqlDbtModel::myLanguageModel()']]],
+  ['mylogfile_67',['myLogFile',['../main_8cpp.html#a9db0a0d540b69b090bbf256ed0df6591',1,'main.cpp']]],
+  ['myproject_68',['myProject',['../classMyDatatables.html#a3077b5e07e3b2bf897aae22bbcc64579',1,'MyDatatables']]],
+  ['mysetting_69',['mySetting',['../classMyLanguageModel.html#a8c63aa4dc93f14fe6f511b0560de21ea',1,'MyLanguageModel::mySetting()'],['../classMyLocalization.html#a6cd30f3ce0d8a10c343002c34b7461fe',1,'MyLocalization::mySetting()']]],
+  ['mysqlmodel_70',['mySqlModel',['../classMyDatatables.html#a6cb2fc2336744cb67f33bc98b477fb95',1,'MyDatatables']]]
 ];

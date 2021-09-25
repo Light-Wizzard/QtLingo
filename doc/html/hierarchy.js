@@ -14,8 +14,12 @@ var hierarchy =
       ] ]
     ] ],
     [ "MyConstants", "classMyConstants.html", null ],
+    [ "MyLanguageData", "classMyLanguageData.html", null ],
     [ "MyLingoJobs", "classMyLingoJobs.html", null ],
     [ "MyProjectClass", "classMyProjectClass.html", null ],
+    [ "QAbstractListModel", null, [
+      [ "MyLanguageModel", "classMyLanguageModel.html", null ]
+    ] ],
     [ "QExample", "structQExample.html", null ],
     [ "QMainWindow", null, [
       [ "MainWindow", "classMainWindow.html", null ]
@@ -28,7 +32,8 @@ var hierarchy =
       [ "MyTranlatorParser", "classMyTranlatorParser.html", null ],
       [ "QOnlineTranslator", "classQOnlineTranslator.html", null ],
       [ "QOnlineTts", "classQOnlineTts.html", null ],
-      [ "QtLingoCase", "classQtLingoCase.html", null ]
+      [ "QtLingoCase", "classQtLingoCase.html", null ],
+      [ "Utils", "classUtils.html", null ]
     ] ],
     [ "QOption", "structQOption.html", null ],
     [ "qt_meta_stringdata_MainWindow_t", "structqt__meta__stringdata__MainWindow__t.html", null ],

@@ -10,7 +10,8 @@
 #include <QDir>
 //
 #include "MyConstants.h"
-#include "MyOrgSettings.h"
+//#include "MyOrgSettings.h"
+#include "MyLanguageModel.h"
 /************************************************
  * @brief SQL Database Table Model.
  * \class MySqlDbtModel
@@ -20,11 +21,11 @@ class MySqlDbtModel : public QObject
 {
         Q_OBJECT
     public:
-        MySqlDbtModel(MyOrgSettings *thisSetting = nullptr, MyConstants *thisConstant = nullptr, QObject *parent = 0); //!< MySqlDbtModel
+        MySqlDbtModel(MyLanguageModel *thisLanguageModel = nullptr, MyConstants *thisConstant = nullptr, QObject *parent = 0); //!< MySqlDbtModel
         ~MySqlDbtModel();                                           //!< ~MySqlDbtModel
         // Public
-        MyOrgSettings *mySetting;                                   //!< \c mySetting @brief Domain Settings
-        MyConstants   *myConstants;                                 //!< \c myConstants @brief All Constants in one class
+        MyLanguageModel *myLanguageModel;                           //!< \c myLanguageModel @brief Localization Model.
+        MyConstants     *myConstants;                               //!< \c myConstants     @brief All Constants in one class
         // DataBase Connection
         bool createDataBaseConnection();                            //!< create DataBase Connection
         bool isDbTable(const QString &thisTable);                   //!< isDbTable

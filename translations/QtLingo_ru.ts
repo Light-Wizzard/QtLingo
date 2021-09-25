@@ -6,31 +6,32 @@
     <message>
         <location filename="../src/MainWindow.ui" line="19"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1703"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1711"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1691"/>
         <source>MainWindow</source>
-        <translation type="unfinished">MainWindow</translation>
+        <translation>MainWindow</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="30"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1746"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1755"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1717"/>
         <source>Settings</source>
-        <translation type="unfinished">Settings</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1713"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1722"/>
-        <source>Projects</source>
-        <translation type="unfinished">Projects</translation>
+        <location filename="../src/MainWindow.ui" line="38"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1727"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1702"/>
+        <source>Change Language</source>
+        <translation>Изменить язык</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="124"/>
         <location filename="../src/MainWindow.ui" line="161"/>
-        <location filename="../src/MainWindow.ui" line="497"/>
-        <location filename="../src/MainWindow.ui" line="639"/>
-        <location filename="../src/MainWindow.ui" line="679"/>
-        <location filename="../src/MainWindow.ui" line="748"/>
-        <location filename="../src/MainWindow.ui" line="1766"/>
+        <location filename="../src/MainWindow.ui" line="350"/>
+        <location filename="../src/MainWindow.ui" line="563"/>
+        <location filename="../src/MainWindow.ui" line="603"/>
+        <location filename="../src/MainWindow.ui" line="672"/>
+        <location filename="../src/MainWindow.ui" line="1690"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1726"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1734"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1736"/>
@@ -38,1392 +39,1410 @@
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1758"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1769"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1909"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1735"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1743"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1709"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1711"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1719"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1731"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1742"/>
         <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1745"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1763"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1767"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1778"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1918"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1881"/>
         <source>Browse</source>
-        <translation type="unfinished">Browse</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="38"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1727"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1736"/>
-        <source>Change Language</source>
-        <translation type="unfinished">Change Language</translation>
+        <translation>Просматривать</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="133"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1735"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1744"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1710"/>
         <source>lrelease</source>
-        <translation type="unfinished">lrelease</translation>
+        <translation>lrelease</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="170"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1737"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1746"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1712"/>
         <source>UI Language</source>
-        <translation type="unfinished">UI Language</translation>
+        <translation>Язык пользовательского интерфейса</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="188"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1738"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1747"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1713"/>
         <source>Translation Engines</source>
-        <translation type="unfinished">Translation Engines</translation>
+        <translation>Системы перевода</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="248"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1739"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1748"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1714"/>
         <source>Delay in Seconds</source>
-        <translation type="unfinished">Delay in Seconds</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="310"/>
-        <location filename="../src/MainWindow.ui" line="451"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1740"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1752"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1749"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1761"/>
-        <source>Options</source>
-        <translation type="unfinished">Options</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="319"/>
-        <location filename="../src/MainWindow.ui" line="460"/>
-        <location filename="../src/MainWindow.ui" line="1939"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1710"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1741"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1753"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1718"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1750"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1762"/>
-        <source>Save</source>
-        <translation type="unfinished">Save</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="326"/>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="333"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1742"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1751"/>
-        <source>Add</source>
-        <translation type="unfinished">Add</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="340"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1743"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1752"/>
-        <source>Delete</source>
-        <translation type="unfinished">Delete</translation>
+        <translation>Задержка в секундах</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="279"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1744"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1753"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1715"/>
         <source>Logging</source>
-        <translation type="unfinished">Logging</translation>
+        <translation>логирование</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="288"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1745"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1754"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1716"/>
         <source>Debug Messages</source>
-        <translation type="unfinished">Debug Messages</translation>
+        <translation>Сообщения отладки</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="365"/>
+        <location filename="../src/MainWindow.ui" line="430"/>
+        <location filename="../src/MainWindow.ui" line="1699"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1740"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1752"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1724"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1882"/>
+        <source>Options</source>
+        <translation>Параметры</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="439"/>
+        <location filename="../src/MainWindow.ui" line="1708"/>
+        <location filename="../src/MainWindow.ui" line="1915"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1710"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1741"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1753"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1698"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1725"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1883"/>
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1715"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1884"/>
+        <source>Clear</source>
+        <translation>Прозрачный</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1722"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1742"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1885"/>
+        <source>Add</source>
+        <translation>Добавлять</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1729"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1743"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1886"/>
+        <source>Delete</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="313"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1756"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1765"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1726"/>
         <source>SQL</source>
-        <translation type="unfinished">SQL</translation>
+        <translation>SQL</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="373"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1713"/>
+        <source>Projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1747"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1756"/>
         <source>SQL Type</source>
-        <translation type="unfinished">SQL Type</translation>
+        <translation>Тип SQL</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="380"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1765"/>
+        <source>Destination</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="359"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1748"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1757"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1720"/>
         <source>Host Name</source>
-        <translation type="unfinished">Host Name</translation>
+        <translation>Имя хоста</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="400"/>
+        <location filename="../src/MainWindow.ui" line="379"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1749"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1758"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1721"/>
         <source>User Name</source>
-        <translation type="unfinished">User Name</translation>
+        <translation>Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="420"/>
+        <location filename="../src/MainWindow.ui" line="399"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1750"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1759"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1722"/>
         <source>Password</source>
-        <translation type="unfinished">Password</translation>
+        <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="442"/>
+        <location filename="../src/MainWindow.ui" line="421"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1751"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1760"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1723"/>
         <source>Show</source>
-        <translation type="unfinished">Show</translation>
+        <translation>Показать</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="506"/>
+        <location filename="../src/MainWindow.ui" line="321"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1755"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1764"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1718"/>
         <source>Database Name</source>
-        <translation type="unfinished">Database Name</translation>
+        <translation>Имя базы данных</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="540"/>
+        <location filename="../src/MainWindow.ui" line="464"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1910"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1919"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1887"/>
         <source>Translations</source>
-        <translation type="unfinished">Translations</translation>
+        <translation>Переводы</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="617"/>
+        <location filename="../src/MainWindow.ui" line="472"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1904"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1727"/>
+        <source>Project Folder</source>
+        <translation>Папка проекта</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="494"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1905"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1728"/>
+        <source>Browes</source>
+        <translation>Browes</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="503"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1907"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1729"/>
+        <source>Type make</source>
+        <translation>Тип сделать</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="541"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1757"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1766"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1730"/>
         <source>Source</source>
-        <translation type="unfinished">Source</translation>
+        <translation>Источник</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="648"/>
-        <location filename="../src/MainWindow.ui" line="651"/>
-        <location filename="../src/MainWindow.ui" line="663"/>
+        <location filename="../src/MainWindow.ui" line="572"/>
+        <location filename="../src/MainWindow.ui" line="575"/>
+        <location filename="../src/MainWindow.ui" line="587"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1760"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1763"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1767"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1769"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1772"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1776"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1733"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1736"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1740"/>
         <source>Tempoary Folder contents gets deleted</source>
-        <translation type="unfinished">Tempoary Folder contents gets deleted</translation>
+        <translation>Содержимое временной папки удаляется</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="654"/>
+        <location filename="../src/MainWindow.ui" line="578"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1738"/>
         <source>Doxyfile</source>
-        <translation type="unfinished">Doxyfile</translation>
+        <translation>Doxyfile</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="757"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1770"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1779"/>
-        <source>Country Codes</source>
-        <translation type="unfinished">Country Codes</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="781"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1771"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1780"/>
-        <source>Tongan - to</source>
-        <translation type="unfinished">Tongan - to</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="788"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1772"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1781"/>
-        <source>Frisian - fy</source>
-        <translation type="unfinished">Frisian - fy</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="795"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1773"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1782"/>
-        <source>Telugu - te</source>
-        <translation type="unfinished">Telugu - te</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="802"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1774"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1783"/>
-        <source>Tatar - tt</source>
-        <translation type="unfinished">Tatar - tt</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="809"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1775"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1784"/>
-        <source>Latvian - lv</source>
-        <translation type="unfinished">Latvian - lv</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="816"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1776"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1785"/>
-        <source>Czech - cs</source>
-        <translation type="unfinished">Czech - cs</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="823"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1777"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1786"/>
-        <source>Kyrgyz - ky</source>
-        <translation type="unfinished">Kyrgyz - ky</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="830"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1778"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1787"/>
-        <source>Zulu - zu</source>
-        <translation type="unfinished">Zulu - zu</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="837"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1779"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1788"/>
-        <source>Kinyarwanda - rw</source>
-        <translation type="unfinished">Kinyarwanda - rw</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="844"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1780"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1789"/>
-        <source>Hindi - hi</source>
-        <translation type="unfinished">Hindi - hi</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="851"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1781"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1790"/>
-        <source>KlingonPlqaD - tlh-Qaak</source>
-        <translation type="unfinished">KlingonPlqaD - tlh-Qaak</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="858"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1782"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1791"/>
-        <source>Luxembourgish - lb</source>
-        <translation type="unfinished">Luxembourgish - lb</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="865"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1783"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1792"/>
-        <source>Haitian - ht</source>
-        <translation type="unfinished">Haitian - ht</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="872"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1784"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1793"/>
-        <source>English - en</source>
-        <translation type="unfinished">English - en</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="879"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1785"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1794"/>
-        <source>Kannada - kn</source>
-        <translation type="unfinished">Kannada - kn</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="886"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1786"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1795"/>
-        <source>Polish - pl</source>
-        <translation type="unfinished">Polish - pl</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="893"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1787"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1796"/>
-        <source>Dutch - nl</source>
-        <translation type="unfinished">Dutch - nl</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="900"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1788"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1797"/>
-        <source>Samoan - sm</source>
-        <translation type="unfinished">Samoan - sm</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="907"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1789"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1798"/>
-        <source>Levantine Arabic - apc</source>
-        <translation type="unfinished">Levantine Arabic - apc</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="914"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1790"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1799"/>
-        <source>Thai - th</source>
-        <translation type="unfinished">Thai - th</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="921"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1791"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1800"/>
-        <source>Chichewa - ny</source>
-        <translation type="unfinished">Chichewa - ny</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="928"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1792"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1801"/>
-        <source>Malaysian - ms</source>
-        <translation type="unfinished">Malaysian - ms</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="935"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1793"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1802"/>
-        <source>Igbo - ig</source>
-        <translation type="unfinished">Igbo - ig</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="942"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1794"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1803"/>
-        <source>Vietnamese - vi</source>
-        <translation type="unfinished">Vietnamese - vi</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="949"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1795"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1804"/>
-        <source>Faeroese - fo</source>
-        <translation type="unfinished">Faeroese - fo</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="956"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1796"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1805"/>
-        <source>Amharic - am</source>
-        <translation type="unfinished">Amharic - am</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="963"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1797"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1806"/>
-        <source>Irish - ga</source>
-        <translation type="unfinished">Irish - ga</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="970"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1798"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1807"/>
-        <source>Albanian - sq</source>
-        <translation type="unfinished">Albanian - sq</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="977"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1799"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1808"/>
-        <source>Oriya - or</source>
-        <translation type="unfinished">Oriya - or</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="984"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1800"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1809"/>
-        <source>French - fr</source>
-        <translation type="unfinished">French - fr</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="991"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1801"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1810"/>
-        <source>Hungarian - hu</source>
-        <translation type="unfinished">Hungarian - hu</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="998"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1802"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1811"/>
-        <source>Filipino - fil</source>
-        <translation type="unfinished">Filipino - fil</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1005"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1803"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1812"/>
-        <source>Gaelic - gd</source>
-        <translation type="unfinished">Gaelic - gd</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1012"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1804"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1813"/>
-        <source>Indonesian - id</source>
-        <translation type="unfinished">Indonesian - id</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1019"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1805"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1814"/>
-        <source>Khmer - km</source>
-        <translation type="unfinished">Khmer - km</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1026"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1806"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1815"/>
-        <source>Russian - ru</source>
-        <translation type="unfinished">Russian - ru</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1033"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1807"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1816"/>
-        <source>Romanian - ro</source>
-        <translation type="unfinished">Romanian - ro</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1040"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1808"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1817"/>
-        <source>Malagasy - mg</source>
-        <translation type="unfinished">Malagasy - mg</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1047"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1809"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1818"/>
-        <source>Tagalog - tl</source>
-        <translation type="unfinished">Tagalog - tl</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1054"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1810"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1819"/>
-        <source>Mongolian - mn</source>
-        <translation type="unfinished">Mongolian - mn</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1061"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1811"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1820"/>
-        <source>Portuguese - pt</source>
-        <translation type="unfinished">Portuguese - pt</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1068"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1812"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1821"/>
-        <source>Bokmal - nb</source>
-        <translation type="unfinished">Bokmal - nb</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1075"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1813"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1822"/>
-        <source>Gujarati - gu</source>
-        <translation type="unfinished">Gujarati - gu</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1082"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1814"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1823"/>
-        <source>Nepali - ne</source>
-        <translation type="unfinished">Nepali - ne</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1089"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1815"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1824"/>
-        <source>Finnish - fi</source>
-        <translation type="unfinished">Finnish - fi</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1096"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1816"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1825"/>
-        <source>S. China - zh-CN</source>
-        <translation type="unfinished">S. China - zh-CN</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1103"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1817"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1826"/>
-        <source>Venda - ve</source>
-        <translation type="unfinished">Venda - ve</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1110"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1818"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1827"/>
-        <source>Arabic - ar</source>
-        <translation type="unfinished">Arabic - ar</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1117"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1819"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1828"/>
-        <source>Georgian - ka</source>
-        <translation type="unfinished">Georgian - ka</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1124"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1820"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1829"/>
-        <source>T. China - zh-TW</source>
-        <translation type="unfinished">T. China - zh-TW</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1131"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1821"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1830"/>
-        <source>Latin - la</source>
-        <translation type="unfinished">Latin - la</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1138"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1822"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1831"/>
-        <source>Fijian - fj</source>
-        <translation type="unfinished">Fijian - fj</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1145"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1823"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1832"/>
-        <source>Greek - el</source>
-        <translation type="unfinished">Greek - el</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1152"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1824"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1833"/>
-        <source>Lao - lo</source>
-        <translation type="unfinished">Lao - lo</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1159"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1825"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1834"/>
-        <source>Corsican - co</source>
-        <translation type="unfinished">Corsican - co</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1166"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1826"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1835"/>
-        <source>Klingon - tlh</source>
-        <translation type="unfinished">Klingon - tlh</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1173"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1827"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1836"/>
-        <source>Bengali - bn</source>
-        <translation type="unfinished">Bengali - bn</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1180"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1828"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1837"/>
-        <source>Tahitian - ty</source>
-        <translation type="unfinished">Tahitian - ty</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1187"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1829"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1838"/>
-        <source>Estonian - et</source>
-        <translation type="unfinished">Estonian - et</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1194"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1830"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1839"/>
-        <source>Papiamento - pap</source>
-        <translation type="unfinished">Papiamento - pap</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1201"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1831"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1840"/>
-        <source>Farsi - fa</source>
-        <translation type="unfinished">Farsi - fa</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1208"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1832"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1841"/>
-        <source>Danish - da</source>
-        <translation type="unfinished">Danish - da</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1215"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1833"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1842"/>
-        <source>Norwegian - no</source>
-        <translation type="unfinished">Norwegian - no</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1222"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1834"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1843"/>
-        <source>German - de</source>
-        <translation type="unfinished">German - de</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1229"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1835"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1844"/>
-        <source>Cebuano - ceb</source>
-        <translation type="unfinished">Cebuano - ceb</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1236"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1836"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1845"/>
-        <source>Tsonga - ts</source>
-        <translation type="unfinished">Tsonga - ts</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1256"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1837"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1846"/>
-        <source>Marathi - mr</source>
-        <translation type="unfinished">Marathi - mr</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1263"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1838"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1847"/>
-        <source>Welsh - cy</source>
-        <translation type="unfinished">Welsh - cy</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1270"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1839"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1848"/>
-        <source>Nynorsk - nn</source>
-        <translation type="unfinished">Nynorsk - nn</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1277"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1840"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1849"/>
-        <source>Korean - ko</source>
-        <translation type="unfinished">Korean - ko</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1284"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1841"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1850"/>
-        <source>Malayalam - ml</source>
-        <translation type="unfinished">Malayalam - ml</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1291"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1842"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1851"/>
-        <source>Xhosa - xh</source>
-        <translation type="unfinished">Xhosa - xh</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1298"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1843"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1852"/>
-        <source>Yoruba - yo</source>
-        <translation type="unfinished">Yoruba - yo</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1305"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1844"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1853"/>
-        <source>Punjabi - pa</source>
-        <translation type="unfinished">Punjabi - pa</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1312"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1845"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1854"/>
-        <source>Bosnian - bs</source>
-        <translation type="unfinished">Bosnian - bs</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1319"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1846"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1855"/>
-        <source>Hmong - hmn</source>
-        <translation type="unfinished">Hmong - hmn</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1326"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1847"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1856"/>
-        <source>Galician - gl</source>
-        <translation type="unfinished">Galician - gl</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1333"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1848"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1857"/>
-        <source>Hawaiian - haw</source>
-        <translation type="unfinished">Hawaiian - haw</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1340"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1849"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1858"/>
-        <source>Myanmar - my</source>
-        <translation type="unfinished">Myanmar - my</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1347"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1850"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1859"/>
-        <source>Afrikaans - af</source>
-        <translation type="unfinished">Afrikaans - af</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1354"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1851"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1860"/>
-        <source>Mari - mhr</source>
-        <translation type="unfinished">Mari - mhr</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1361"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1852"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1861"/>
-        <source>Bashkir - ba</source>
-        <translation type="unfinished">Bashkir - ba</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1368"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1853"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1862"/>
-        <source>Catalan - ca</source>
-        <translation type="unfinished">Catalan - ca</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1375"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1854"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1863"/>
-        <source>Yiddish - yi</source>
-        <translation type="unfinished">Yiddish - yi</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1382"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1855"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1864"/>
-        <source>Japanese - ja</source>
-        <translation type="unfinished">Japanese - ja</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1389"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1856"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1865"/>
-        <source>Javanese - jw</source>
-        <translation type="unfinished">Javanese - jw</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1396"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1857"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1866"/>
-        <source>Bulgarian - bg</source>
-        <translation type="unfinished">Bulgarian - bg</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1403"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1858"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1867"/>
-        <source>Serbian - sr</source>
-        <translation type="unfinished">Serbian - sr</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1410"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1859"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1868"/>
-        <source>Turkish - tr</source>
-        <translation type="unfinished">Turkish - tr</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1417"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1860"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1869"/>
-        <source>Tamil - ta</source>
-        <translation type="unfinished">Tamil - ta</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1424"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1861"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1870"/>
-        <source>Maori - mi</source>
-        <translation type="unfinished">Maori - mi</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1431"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1862"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1871"/>
-        <source>Croatian - hr</source>
-        <translation type="unfinished">Croatian - hr</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1438"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1863"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1872"/>
-        <source>Pashto - ps</source>
-        <translation type="unfinished">Pashto - ps</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1445"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1864"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1873"/>
-        <source>Armenian - hy</source>
-        <translation type="unfinished">Armenian - hy</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1452"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1865"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1874"/>
-        <source>Tswana - tn</source>
-        <translation type="unfinished">Tswana - tn</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1459"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1866"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1875"/>
-        <source>Kurdish - ku</source>
-        <translation type="unfinished">Kurdish - ku</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1466"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1867"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1876"/>
-        <source>Hebrew - he</source>
-        <translation type="unfinished">Hebrew - he</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1473"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1868"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1877"/>
-        <source>Maltese - mt</source>
-        <translation type="unfinished">Maltese - mt</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1480"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1869"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1878"/>
-        <source>Italian - it</source>
-        <translation type="unfinished">Italian - it</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1487"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1870"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1879"/>
-        <source>Basque - eu</source>
-        <translation type="unfinished">Basque - eu</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1494"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1871"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1880"/>
-        <source>Tajik - tg</source>
-        <translation type="unfinished">Tajik - tg</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1501"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1872"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1881"/>
-        <source>Azerbaijani - az</source>
-        <translation type="unfinished">Azerbaijani - az</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1508"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1873"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1882"/>
-        <source>Turkmen - tk</source>
-        <translation type="unfinished">Turkmen - tk</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1515"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1874"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1883"/>
-        <source>Hausa - ha</source>
-        <translation type="unfinished">Hausa - ha</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1522"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1875"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1884"/>
-        <source>Icelandic - is</source>
-        <translation type="unfinished">Icelandic - is</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1529"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1876"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1885"/>
-        <source>Cantonese - yue</source>
-        <translation type="unfinished">Cantonese - yue</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1536"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1877"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1886"/>
-        <source>Belarusian - be</source>
-        <translation type="unfinished">Belarusian - be</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1543"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1878"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1887"/>
-        <source>HillMari - mrj</source>
-        <translation type="unfinished">HillMari - mrj</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1550"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1879"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1888"/>
-        <source>Kazakh - kk</source>
-        <translation type="unfinished">Kazakh - kk</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1557"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1880"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1889"/>
-        <source>Rhaeto-Romanic - rm </source>
-        <translation type="unfinished">Rhaeto-Romanic - rm </translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1564"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1881"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1890"/>
-        <source>Macedonian - mk</source>
-        <translation type="unfinished">Macedonian - mk</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1571"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1882"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1891"/>
-        <source>Esperanto - eo</source>
-        <translation type="unfinished">Esperanto - eo</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1578"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1883"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1892"/>
-        <source>Lithuanian - lt</source>
-        <translation type="unfinished">Lithuanian - lt</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1585"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1884"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1893"/>
-        <source>Queretaro Otomi - otq</source>
-        <translation type="unfinished">Queretaro Otomi - otq</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1592"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1885"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1894"/>
-        <source>Swahili - sw</source>
-        <translation type="unfinished">Swahili - sw</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1599"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1886"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1895"/>
-        <source>Sundanese - su</source>
-        <translation type="unfinished">Sundanese - su</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1606"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1887"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1896"/>
-        <source>Somali - so</source>
-        <translation type="unfinished">Somali - so</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1613"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1888"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1897"/>
-        <source>Sinhala - si</source>
-        <translation type="unfinished">Sinhala - si</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1620"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1889"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1898"/>
-        <source>Sindhi - sd</source>
-        <translation type="unfinished">Sindhi - sd</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1627"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1890"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1899"/>
-        <source>Spanish - es</source>
-        <translation type="unfinished">Spanish - es</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1634"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1891"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1900"/>
-        <source>Sorbian - sb</source>
-        <translation type="unfinished">Sorbian - sb</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1641"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1892"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1901"/>
-        <source>Swedish - sv</source>
-        <translation type="unfinished">Swedish - sv</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1648"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1893"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1902"/>
-        <source>Shona - sn</source>
-        <translation type="unfinished">Shona - sn</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1655"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1894"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1903"/>
-        <source>Slovenian - sl</source>
-        <translation type="unfinished">Slovenian - sl</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1662"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1895"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1904"/>
-        <source>Slovak - sk</source>
-        <translation type="unfinished">Slovak - sk</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1669"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1896"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1905"/>
-        <source>Sesotho - st</source>
-        <translation type="unfinished">Sesotho - st</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1676"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1897"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1906"/>
-        <source>Serbian Latin -sr-Latin</source>
-        <translation type="unfinished">Serbian Latin -sr-Latin</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1683"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1898"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1907"/>
-        <source>Uzbek - uz</source>
-        <translation type="unfinished">Uzbek - uz</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1690"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1899"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1908"/>
-        <source>Urdu - ur</source>
-        <translation type="unfinished">Urdu - ur</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1697"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1900"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1909"/>
-        <source>Uighur - ug</source>
-        <translation type="unfinished">Uighur - ug</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1704"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1901"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1910"/>
-        <source>Ukrainian - uk</source>
-        <translation type="unfinished">Ukrainian - uk</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1711"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1902"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1911"/>
-        <source>Udmurt - udm</source>
-        <translation type="unfinished">Udmurt - udm</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1718"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1903"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1912"/>
-        <source>Yucatec Maya - yua</source>
-        <translation type="unfinished">Yucatec Maya - yua</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="548"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1904"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1913"/>
-        <source>Project Folder</source>
-        <translation type="unfinished">Project Folder</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="570"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1905"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1914"/>
-        <source>Browes</source>
-        <translation type="unfinished">Browes</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="688"/>
+        <location filename="../src/MainWindow.ui" line="612"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1906"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1915"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1743"/>
         <source>Source Language</source>
-        <translation type="unfinished">Source Language</translation>
+        <translation>Исходный язык</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="579"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1907"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1916"/>
-        <source>Type make</source>
-        <translation type="unfinished">Type make</translation>
+        <location filename="../src/MainWindow.ui" line="650"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1908"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1744"/>
+        <source>Help Folder</source>
+        <translation>Папка помощи</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="681"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1770"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1746"/>
+        <source>Country Codes</source>
+        <translation>Коды стран</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="705"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1771"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1747"/>
+        <source>Tongan - to</source>
+        <translation>Тонга - в</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="712"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1772"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1748"/>
+        <source>Frisian - fy</source>
+        <translation>Фризский - fy</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="719"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1773"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1749"/>
+        <source>Telugu - te</source>
+        <translation>Телугу - те</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="726"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1908"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1917"/>
-        <source>Help Folder</source>
-        <translation type="unfinished">Help Folder</translation>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1774"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1750"/>
+        <source>Tatar - tt</source>
+        <translation>Татарский - tt</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1731"/>
+        <location filename="../src/MainWindow.ui" line="733"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1775"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1751"/>
+        <source>Latvian - lv</source>
+        <translation>Латышский - lv</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="740"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1776"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1752"/>
+        <source>Czech - cs</source>
+        <translation>Чешский - cs</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="747"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1777"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1753"/>
+        <source>Kyrgyz - ky</source>
+        <translation>Киргизский - кы</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="754"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1778"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1754"/>
+        <source>Zulu - zu</source>
+        <translation>Зулусский - zu</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="761"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1779"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1755"/>
+        <source>Kinyarwanda - rw</source>
+        <translation>Киньяруанда - rw</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="768"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1780"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1756"/>
+        <source>Hindi - hi</source>
+        <translation>Хинди - привет</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="775"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1781"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1757"/>
+        <source>KlingonPlqaD - tlh-Qaak</source>
+        <translation>KlingonPlqaD - TLH-Qaak</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="782"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1782"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1758"/>
+        <source>Luxembourgish - lb</source>
+        <translation>Люксембургский - фунт</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="789"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1783"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1759"/>
+        <source>Haitian - ht</source>
+        <translation>Гаитянский - ht</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="796"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1784"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1760"/>
+        <source>English - en</source>
+        <translation>Английский - en</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="803"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1785"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1761"/>
+        <source>Kannada - kn</source>
+        <translation>Каннада - кн</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="810"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1786"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1762"/>
+        <source>Polish - pl</source>
+        <translation>Польский - pl</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="817"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1787"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1763"/>
+        <source>Dutch - nl</source>
+        <translation>Голландский - nl</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="824"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1788"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1764"/>
+        <source>Samoan - sm</source>
+        <translation>Самоанский - см</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="831"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1789"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1765"/>
+        <source>Levantine Arabic - apc</source>
+        <translation>Левантийский арабский - apc</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="838"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1790"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1766"/>
+        <source>Thai - th</source>
+        <translation>Тайский - й</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="845"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1791"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1767"/>
+        <source>Chichewa - ny</source>
+        <translation>Чичева - Нью-Йорк</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="852"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1792"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1768"/>
+        <source>Malaysian - ms</source>
+        <translation>Малазийский - ms</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="859"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1793"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1769"/>
+        <source>Igbo - ig</source>
+        <translation>Игбо - игбо</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="866"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1794"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1770"/>
+        <source>Vietnamese - vi</source>
+        <translation>Вьетнамский - vi</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="873"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1795"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1771"/>
+        <source>Faeroese - fo</source>
+        <translation>Фарерский - fo</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="880"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1796"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1772"/>
+        <source>Amharic - am</source>
+        <translation>Амхарский - am</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="887"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1797"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1773"/>
+        <source>Irish - ga</source>
+        <translation>Ирландский - га</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="894"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1798"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1774"/>
+        <source>Albanian - sq</source>
+        <translation>Албанский - sq</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="901"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1799"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1775"/>
+        <source>Oriya - or</source>
+        <translation>Ория - или</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="908"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1800"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1776"/>
+        <source>French - fr</source>
+        <translation>Французский - fr</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="915"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1801"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1777"/>
+        <source>Hungarian - hu</source>
+        <translation>Венгерский - hu</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="922"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1802"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1778"/>
+        <source>Filipino - fil</source>
+        <translation>Филиппинский - fil</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="929"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1803"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1779"/>
+        <source>Gaelic - gd</source>
+        <translation>Гэльский - gd</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="936"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1804"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1780"/>
+        <source>Indonesian - id</source>
+        <translation>Индонезийский - id</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="943"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1805"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1781"/>
+        <source>Khmer - km</source>
+        <translation>Кхмерский - км</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="950"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1806"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1782"/>
+        <source>Russian - ru</source>
+        <translation>Русский - ru</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="957"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1807"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1783"/>
+        <source>Romanian - ro</source>
+        <translation>Румынский - ro</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="964"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1808"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1784"/>
+        <source>Malagasy - mg</source>
+        <translation>Малагасийский - мг</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="971"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1809"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1785"/>
+        <source>Tagalog - tl</source>
+        <translation>Тагальский - tl</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="978"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1810"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1786"/>
+        <source>Mongolian - mn</source>
+        <translation>Монгольский - мин.</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="985"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1811"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1787"/>
+        <source>Portuguese - pt</source>
+        <translation>Португальский - pt</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="992"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1812"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1788"/>
+        <source>Bokmal - nb</source>
+        <translation>Бокмал - nb</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="999"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1813"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1789"/>
+        <source>Gujarati - gu</source>
+        <translation>Гуджарати - гу</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1006"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1814"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1790"/>
+        <source>Nepali - ne</source>
+        <translation>Непальский - ne</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1013"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1815"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1791"/>
+        <source>Finnish - fi</source>
+        <translation>Финский - fi</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1020"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1816"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1792"/>
+        <source>S. China - zh-CN</source>
+        <translation>Южный Китай - zh-CN</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1027"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1817"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1793"/>
+        <source>Venda - ve</source>
+        <translation>Венда - ве</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1034"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1818"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1794"/>
+        <source>Arabic - ar</source>
+        <translation>Арабский - ar</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1041"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1819"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1795"/>
+        <source>Georgian - ka</source>
+        <translation>Грузинский - ка</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1048"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1820"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1796"/>
+        <source>T. China - zh-TW</source>
+        <translation>Т. Китай - zh-TW</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1055"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1821"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1797"/>
+        <source>Latin - la</source>
+        <translation>Латинский - la</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1062"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1822"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1798"/>
+        <source>Fijian - fj</source>
+        <translation>Фиджийский - fj</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1069"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1823"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1799"/>
+        <source>Greek - el</source>
+        <translation>Греческий - el</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1076"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1824"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1800"/>
+        <source>Lao - lo</source>
+        <translation>Лао - ло</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1083"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1825"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1801"/>
+        <source>Corsican - co</source>
+        <translation>Корсиканский - co</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1090"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1826"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1802"/>
+        <source>Klingon - tlh</source>
+        <translation>Клингонский - tlh</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1097"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1827"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1803"/>
+        <source>Bengali - bn</source>
+        <translation>Бенгальский - млрд</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1104"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1828"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1804"/>
+        <source>Tahitian - ty</source>
+        <translation>Таитянский - ты</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1111"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1829"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1805"/>
+        <source>Estonian - et</source>
+        <translation>Эстонский - et</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1118"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1830"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1806"/>
+        <source>Papiamento - pap</source>
+        <translation>Папиаменто - пап</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1125"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1831"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1807"/>
+        <source>Farsi - fa</source>
+        <translation>Фарси - фа</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1132"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1832"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1808"/>
+        <source>Danish - da</source>
+        <translation>Датский - da</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1139"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1833"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1809"/>
+        <source>Norwegian - no</source>
+        <translation>Норвежский - нет</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1146"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1834"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1810"/>
+        <source>German - de</source>
+        <translation>Немецкий - de</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1153"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1835"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1811"/>
+        <source>Cebuano - ceb</source>
+        <translation>Себуано - ceb</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1160"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1836"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1812"/>
+        <source>Tsonga - ts</source>
+        <translation>Цонга - ц</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1180"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1837"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1813"/>
+        <source>Marathi - mr</source>
+        <translation>Маратхи - мистер</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1187"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1838"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1814"/>
+        <source>Welsh - cy</source>
+        <translation>Валлийский - cy</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1194"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1839"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1815"/>
+        <source>Nynorsk - nn</source>
+        <translation>Нюнорск - нн</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1201"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1840"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1816"/>
+        <source>Korean - ko</source>
+        <translation>Корейский - ко</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1208"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1841"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1817"/>
+        <source>Malayalam - ml</source>
+        <translation>Малаялам - мл</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1215"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1842"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1818"/>
+        <source>Xhosa - xh</source>
+        <translation>Коса - хх</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1222"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1843"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1819"/>
+        <source>Yoruba - yo</source>
+        <translation>Йоруба - йо</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1229"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1844"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1820"/>
+        <source>Punjabi - pa</source>
+        <translation>Панджаби - па</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1236"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1845"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1821"/>
+        <source>Bosnian - bs</source>
+        <translation>Боснийский - bs</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1243"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1846"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1822"/>
+        <source>Hmong - hmn</source>
+        <translation>Хмонг - хмн</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1250"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1847"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1823"/>
+        <source>Galician - gl</source>
+        <translation>Галицкий - gl</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1257"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1848"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1824"/>
+        <source>Hawaiian - haw</source>
+        <translation>Гавайский - haw</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1264"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1849"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1825"/>
+        <source>Myanmar - my</source>
+        <translation>Мьянма - моя</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1271"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1850"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1826"/>
+        <source>Afrikaans - af</source>
+        <translation>Африкаанс - af</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1278"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1851"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1827"/>
+        <source>Mari - mhr</source>
+        <translation>Мари - мхр</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1285"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1852"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1828"/>
+        <source>Bashkir - ba</source>
+        <translation>Башкирский - ба</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1292"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1853"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1829"/>
+        <source>Catalan - ca</source>
+        <translation>Каталонский - ca</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1299"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1854"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1830"/>
+        <source>Yiddish - yi</source>
+        <translation>Идиш - йи</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1306"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1855"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1831"/>
+        <source>Japanese - ja</source>
+        <translation>Японский - ja</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1313"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1856"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1832"/>
+        <source>Javanese - jw</source>
+        <translation>Яванский - jw</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1320"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1857"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1833"/>
+        <source>Bulgarian - bg</source>
+        <translation>Болгарский - bg</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1327"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1858"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1834"/>
+        <source>Serbian - sr</source>
+        <translation>Сербский - sr</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1334"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1859"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1835"/>
+        <source>Turkish - tr</source>
+        <translation>Турецкий - tr</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1341"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1860"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1836"/>
+        <source>Tamil - ta</source>
+        <translation>Тамильский - та</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1348"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1861"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1837"/>
+        <source>Maori - mi</source>
+        <translation>Маори - ми</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1355"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1862"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1838"/>
+        <source>Croatian - hr</source>
+        <translation>Хорватский - hr</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1362"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1863"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1839"/>
+        <source>Pashto - ps</source>
+        <translation>Пушту - пс</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1369"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1864"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1840"/>
+        <source>Armenian - hy</source>
+        <translation>Армянский - hy</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1376"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1865"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1841"/>
+        <source>Tswana - tn</source>
+        <translation>Тсвана - tn</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1383"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1866"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1842"/>
+        <source>Kurdish - ku</source>
+        <translation>Курдский - ку</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1390"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1867"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1843"/>
+        <source>Hebrew - he</source>
+        <translation>Иврит - он</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1397"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1868"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1844"/>
+        <source>Maltese - mt</source>
+        <translation>Мальтийский - mt</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1404"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1869"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1845"/>
+        <source>Italian - it</source>
+        <translation>Итальянский - it</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1411"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1870"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1846"/>
+        <source>Basque - eu</source>
+        <translation>Баскский - ес</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1418"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1871"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1847"/>
+        <source>Tajik - tg</source>
+        <translation>Таджикский - тг</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1425"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1872"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1848"/>
+        <source>Azerbaijani - az</source>
+        <translation>Азербайджанский - az</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1432"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1873"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1849"/>
+        <source>Turkmen - tk</source>
+        <translation>Туркменский - tk</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1439"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1874"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1850"/>
+        <source>Hausa - ha</source>
+        <translation>Хауса - ха</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1446"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1875"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1851"/>
+        <source>Icelandic - is</source>
+        <translation>Исландский - это</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1453"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1876"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1852"/>
+        <source>Cantonese - yue</source>
+        <translation>Кантонский диалект - юэ</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1460"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1877"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1853"/>
+        <source>Belarusian - be</source>
+        <translation>Белорусский - быть</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1467"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1878"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1854"/>
+        <source>HillMari - mrj</source>
+        <translation>HillMari - MRJ</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1474"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1879"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1855"/>
+        <source>Kazakh - kk</source>
+        <translation>Казахский - кк</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1481"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1880"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1856"/>
+        <source>Rhaeto-Romanic - rm </source>
+        <translation>Ретороманский - rm</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1488"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1881"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1857"/>
+        <source>Macedonian - mk</source>
+        <translation>Македонский - mk</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1495"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1882"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1858"/>
+        <source>Esperanto - eo</source>
+        <translation>Эсперанто - eo</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1502"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1883"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1859"/>
+        <source>Lithuanian - lt</source>
+        <translation>Литовский - lt</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1509"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1884"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1860"/>
+        <source>Queretaro Otomi - otq</source>
+        <translation>Керетаро Отоми - otq</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1516"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1885"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1861"/>
+        <source>Swahili - sw</source>
+        <translation>Суахили - sw</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1523"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1886"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1862"/>
+        <source>Sundanese - su</source>
+        <translation>Суданский - su</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1530"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1887"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1863"/>
+        <source>Somali - so</source>
+        <translation>Сомалийский - так</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1537"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1888"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1864"/>
+        <source>Sinhala - si</source>
+        <translation>Сингальский - си</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1544"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1889"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1865"/>
+        <source>Sindhi - sd</source>
+        <translation>Синдхи - сд</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1551"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1890"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1866"/>
+        <source>Spanish - es</source>
+        <translation>Испанский - es</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1558"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1891"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1867"/>
+        <source>Sorbian - sb</source>
+        <translation>Сербский - sb</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1565"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1892"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1868"/>
+        <source>Swedish - sv</source>
+        <translation>Шведский - sv</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1572"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1893"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1869"/>
+        <source>Shona - sn</source>
+        <translation>Шона - сн</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1579"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1894"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1870"/>
+        <source>Slovenian - sl</source>
+        <translation>Словенский - sl</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1586"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1895"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1871"/>
+        <source>Slovak - sk</source>
+        <translation>Словацкий - sk</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1593"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1896"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1872"/>
+        <source>Sesotho - st</source>
+        <translation>Сесото - ул.</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1600"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1897"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1873"/>
+        <source>Serbian Latin -sr-Latin</source>
+        <translation>Сербский Latin -sr-Latin</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1607"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1898"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1874"/>
+        <source>Uzbek - uz</source>
+        <translation>Узбекский - uz</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1614"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1899"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1875"/>
+        <source>Urdu - ur</source>
+        <translation>Урду - ур</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1621"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1900"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1876"/>
+        <source>Uighur - ug</source>
+        <translation>Уйгурский - уг</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1628"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1901"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1877"/>
+        <source>Ukrainian - uk</source>
+        <translation>Украинский - великобритания</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1635"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1902"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1878"/>
+        <source>Udmurt - udm</source>
+        <translation>Удмуртский - удм</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1642"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1903"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1879"/>
+        <source>Yucatec Maya - yua</source>
+        <translation>Юкатек Майя - юа</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1655"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1880"/>
         <source>Project Name</source>
-        <translation type="unfinished"></translation>
+        <translation>название проекта</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.ui" line="1754"/>
+        <location filename="../src/MainWindow.cpp" line="326"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1911"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1888"/>
+        <source>Project</source>
+        <translation>Проект</translation>
     </message>
     <message>
         <location filename="../src/MainWindow.ui" line="1778"/>
-        <location filename="../src/MainWindow.cpp" line="270"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1911"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1920"/>
-        <source>Project</source>
-        <translation type="unfinished">Project</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.ui" line="1802"/>
-        <location filename="../src/MainWindow.ui" line="1840"/>
-        <location filename="../src/MainWindow.ui" line="1903"/>
+        <location filename="../src/MainWindow.ui" line="1816"/>
+        <location filename="../src/MainWindow.ui" line="1879"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1706"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1912"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1914"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1714"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1921"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1923"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1694"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1889"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1891"/>
         <source>Help</source>
-        <translation type="unfinished">Help</translation>
+        <translation>Помощь</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1825"/>
+        <location filename="../src/MainWindow.ui" line="1801"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1913"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1922"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1890"/>
         <source>File</source>
-        <translation type="unfinished">File</translation>
+        <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1855"/>
+        <location filename="../src/MainWindow.ui" line="1831"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1915"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1924"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1892"/>
         <source>toolBar</source>
-        <translation type="unfinished">toolBar</translation>
+        <translation>toolBar</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1885"/>
+        <location filename="../src/MainWindow.ui" line="1861"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1704"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1712"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1692"/>
         <source>Exit</source>
-        <translation type="unfinished">Exit</translation>
+        <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1894"/>
+        <location filename="../src/MainWindow.ui" line="1870"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1705"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1713"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1693"/>
         <source>About</source>
-        <translation type="unfinished">About</translation>
+        <translation>О</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1912"/>
+        <location filename="../src/MainWindow.ui" line="1888"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1707"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1715"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1695"/>
         <source>Translate</source>
-        <translation type="unfinished">Translate</translation>
+        <translation>Перевести</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1921"/>
+        <location filename="../src/MainWindow.ui" line="1897"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1708"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1716"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1696"/>
         <source>Clipboard</source>
-        <translation type="unfinished">Clipboard</translation>
+        <translation>Буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1930"/>
+        <location filename="../src/MainWindow.ui" line="1906"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1709"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1717"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1697"/>
         <source>Author</source>
-        <translation type="unfinished">Author</translation>
+        <translation>Автор</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1948"/>
+        <location filename="../src/MainWindow.ui" line="1924"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1711"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1719"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1699"/>
         <source>Translate Help</source>
-        <translation type="unfinished">Translate Help</translation>
+        <translation>Перевести Справка</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1957"/>
+        <location filename="../src/MainWindow.ui" line="1933"/>
         <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1712"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1720"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1700"/>
         <source>Accept Translations</source>
-        <translation type="unfinished">Accept Translations</translation>
+        <translation>Принять перевод</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.ui" line="1966"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1721"/>
+        <location filename="../src/MainWindow.ui" line="1942"/>
+        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1701"/>
         <source>Translate ReadMe</source>
-        <translation type="unfinished">Translate ReadMe</translation>
+        <translation>Перевести ReadMe</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="135"/>
+        <location filename="../src/MainWindow.cpp" line="173"/>
         <source>Internet is down, trying to reconnect</source>
-        <translation type="unfinished">Internet is down, trying to reconnect</translation>
+        <translation>Интернет не работает, пытаюсь восстановить соединение</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="269"/>
+        <location filename="../src/MainWindow.cpp" line="325"/>
         <source>ID</source>
-        <translation type="unfinished">ID</translation>
+        <translation>Я БЫ</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="540"/>
+        <location filename="../src/MainWindow.cpp" line="615"/>
         <source>Translation Source Folder Location</source>
-        <translation type="unfinished">Translation Source Folder Location</translation>
+        <translation>Расположение исходной папки перевода</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="557"/>
+        <location filename="../src/MainWindow.cpp" line="632"/>
         <source>Translation Doxyfile Folder Location</source>
-        <translation type="unfinished">Translation Doxyfile Folder Location</translation>
+        <translation>Расположение папки Doxyfile перевода</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="573"/>
-        <location filename="../src/MainWindow.cpp" line="589"/>
+        <location filename="../src/MainWindow.cpp" line="648"/>
+        <location filename="../src/MainWindow.cpp" line="831"/>
         <source>Projects Folder Location</source>
-        <translation type="unfinished">Projects Folder Location</translation>
+        <translation>Расположение папки проектов</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="649"/>
+        <location filename="../src/MainWindow.cpp" line="707"/>
         <source>Sqlite Folder Location</source>
-        <translation type="unfinished">Sqlite Folder Location</translation>
+        <translation>Расположение папки sqlite</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="664"/>
+        <location filename="../src/MainWindow.cpp" line="722"/>
         <source>Failed to move Database</source>
-        <translation type="unfinished">Failed to move Database</translation>
+        <translation>Не удалось переместить базу данных</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="1606"/>
-        <source>Unable to find record in database</source>
-        <translation type="unfinished">Unable to find record in database</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.cpp" line="1606"/>
+        <location filename="../src/MainWindow.cpp" line="1691"/>
         <source>Could not read from the Database</source>
-        <translation type="unfinished">Could not read from the Database</translation>
+        <translation>Не удалось прочитать из базы данных</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2046"/>
+        <location filename="../src/MainWindow.cpp" line="1691"/>
+        <source>Unable to find record in database</source>
+        <translation>Невозможно найти запись в базе данных</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="2131"/>
         <source>Project file not found</source>
-        <translation type="unfinished">Project file not found</translation>
+        <translation>Файл проекта не найден</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2052"/>
+        <location filename="../src/MainWindow.cpp" line="2137"/>
         <source>Error running lupdate</source>
-        <translation type="unfinished">Error running lupdate</translation>
+        <translation>Ошибка при запуске lupdate</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2226"/>
+        <location filename="../src/MainWindow.cpp" line="2311"/>
         <source>Can not make directory</source>
-        <translation type="unfinished">Can not make directory</translation>
+        <translation>Не могу сделать каталог</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2231"/>
+        <location filename="../src/MainWindow.cpp" line="2316"/>
         <source>Can not remove all files</source>
-        <translation type="unfinished">Can not remove all files</translation>
+        <translation>Невозможно удалить все файлы</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2306"/>
+        <location filename="../src/MainWindow.cpp" line="2391"/>
         <source>Error running lrelease</source>
-        <translation type="unfinished">Error running lrelease</translation>
+        <translation>Ошибка при запуске lrelease</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2377"/>
+        <location filename="../src/MainWindow.cpp" line="2462"/>
         <source>Translation Error not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка перевода не найдена</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2393"/>
+        <location filename="../src/MainWindow.cpp" line="2478"/>
         <source>Translation TS File not found</source>
-        <translation type="unfinished">Translation TS File not found</translation>
+        <translation>Перевод TS Файл не найден</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2398"/>
+        <location filename="../src/MainWindow.cpp" line="2483"/>
         <source>Accepted all Translations</source>
-        <translation type="unfinished">Accepted all Translations</translation>
+        <translation>Все переводы приняты</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2587"/>
+        <location filename="../src/MainWindow.cpp" line="2672"/>
         <source>Help File not found</source>
-        <translation type="unfinished">Help File not found</translation>
+        <translation>Файл справки не найден</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2595"/>
+        <location filename="../src/MainWindow.cpp" line="2680"/>
         <source>Help File is Empty</source>
-        <translation type="unfinished">Help File is Empty</translation>
+        <translation>Файл справки пуст</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2619"/>
+        <location filename="../src/MainWindow.cpp" line="2704"/>
         <source>Help File could not be created</source>
-        <translation type="unfinished">Help File could not be created</translation>
+        <translation>Файл справки не может быть создан</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2820"/>
+        <location filename="../src/MainWindow.cpp" line="2905"/>
         <source>README File not found</source>
-        <translation type="unfinished">README File not found</translation>
+        <translation>README Файл не найден</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2826"/>
+        <location filename="../src/MainWindow.cpp" line="2911"/>
         <source>README File is Empty</source>
-        <translation type="unfinished">README File is Empty</translation>
+        <translation>Файл README пуст</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2848"/>
+        <location filename="../src/MainWindow.cpp" line="2933"/>
         <source>README File could not be created</source>
-        <translation type="unfinished">README File could not be created</translation>
+        <translation>Файл README не может быть создан</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2990"/>
+        <location filename="../src/MainWindow.cpp" line="3075"/>
         <source>Error in Translation phrase</source>
-        <translation type="unfinished">Error in Translation phrase</translation>
+        <translation>Ошибка в переводе фразы</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="3061"/>
+        <location filename="../src/MainWindow.cpp" line="3146"/>
         <source>Help Folder Location</source>
-        <translation type="unfinished">Help Folder Location</translation>
+        <translation>Расположение папки справки</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="3262"/>
+        <source>Remove Arguments that use Percent Sign x</source>
+        <translation>Удалить аргументы, использующие знак процента x</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="3275"/>
+        <source>Remove Args</source>
+        <translation>Удалить аргументы</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="3275"/>
+        <source>File: </source>
+        <translation>Файл:</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="3285"/>
+        <source>File not found</source>
+        <translation>Файл не найден</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="142"/>
         <source>English</source>
-        <translation type="unfinished">English</translation>
-    </message>
-    <message>
-        <location filename="../src/test/build-QtLingoTest-Desktop-Debug/ui_MainWindow.h" line="1765"/>
-        <location filename="../src/test/build-QtLingoTest-Desktop_Qt_5_15_2_GCC_64bit-Debug/ui_MainWindow.h" line="1774"/>
-        <source>Destination</source>
-        <translation type="unfinished"></translation>
+        <translation>английский</translation>
     </message>
 </context>
 <context>
@@ -1431,7 +1450,640 @@
     <message>
         <location filename="../src/MyDatatables.cpp" line="189"/>
         <source>Not adding: Record found in database</source>
-        <translation type="unfinished">Not adding: Record found in database</translation>
+        <translation>Не добавляется: запись найдена в базе данных</translation>
+    </message>
+</context>
+<context>
+    <name>MyLanguageModel</name>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="237"/>
+        <source>loadLanguage failed</source>
+        <translation type="unfinished">loadLanguage failed</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="943"/>
+        <source>Afrikaans</source>
+        <translation type="unfinished">африкаанс</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="944"/>
+        <source>Albanian</source>
+        <translation type="unfinished">албанский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="945"/>
+        <source>Amharic</source>
+        <translation type="unfinished">Амхарский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="946"/>
+        <source>Arabic</source>
+        <translation type="unfinished">арабский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="947"/>
+        <source>Armenian</source>
+        <translation type="unfinished">Армянский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="948"/>
+        <source>Azeerbaijani</source>
+        <translation type="unfinished">Азербайджанский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="949"/>
+        <source>Basque</source>
+        <translation type="unfinished">Баскский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="950"/>
+        <source>Bashkir</source>
+        <translation type="unfinished">Башкирский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="951"/>
+        <source>Belarusian</source>
+        <translation type="unfinished">Белорусский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="952"/>
+        <source>Bengali</source>
+        <translation type="unfinished">Бенгальский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="953"/>
+        <source>Bosnian</source>
+        <translation type="unfinished">Боснийский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="954"/>
+        <source>Bulgarian</source>
+        <translation type="unfinished">болгарский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="955"/>
+        <source>Catalan</source>
+        <translation type="unfinished">Каталонский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="956"/>
+        <source>Cantonese</source>
+        <translation type="unfinished">Кантонский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="957"/>
+        <source>Cebuano</source>
+        <translation type="unfinished">Себуано</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="958"/>
+        <source>SimplifiedChinese</source>
+        <translation type="unfinished">SimplifiedChinese</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="959"/>
+        <source>TraditionalChinese</source>
+        <translation type="unfinished">TraditionalChinese</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="960"/>
+        <source>Corsican</source>
+        <translation type="unfinished">Корсиканский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="961"/>
+        <source>Croatian</source>
+        <translation type="unfinished">хорватский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="962"/>
+        <source>Czech</source>
+        <translation type="unfinished">чешский язык</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="963"/>
+        <source>Danish</source>
+        <translation type="unfinished">Датский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="964"/>
+        <source>Dutch</source>
+        <translation type="unfinished">Голландский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="965"/>
+        <source>English</source>
+        <translation type="unfinished">английский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="966"/>
+        <source>Esperanto</source>
+        <translation type="unfinished">эсперанто</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="967"/>
+        <source>Estonian</source>
+        <translation type="unfinished">эстонский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="968"/>
+        <source>Fijian</source>
+        <translation type="unfinished">Фиджийский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="969"/>
+        <source>Filipino</source>
+        <translation type="unfinished">Филиппинский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="970"/>
+        <source>Finnish</source>
+        <translation type="unfinished">Финский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="971"/>
+        <source>French</source>
+        <translation type="unfinished">французкий язык</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="972"/>
+        <source>Frisian</source>
+        <translation type="unfinished">фризский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="973"/>
+        <source>Galician</source>
+        <translation type="unfinished">Галицкий</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="974"/>
+        <source>Georgian</source>
+        <translation type="unfinished">Грузинский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="975"/>
+        <source>German</source>
+        <translation type="unfinished">Немецкий</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="976"/>
+        <source>Greek</source>
+        <translation type="unfinished">Греческий</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="977"/>
+        <source>Gujarati</source>
+        <translation type="unfinished">Гуджарати</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="979"/>
+        <source>Hausa</source>
+        <translation type="unfinished">Хауса</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="980"/>
+        <source>Hawaiian</source>
+        <translation type="unfinished">Гавайский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="981"/>
+        <source>Hebrew</source>
+        <translation type="unfinished">иврит</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="983"/>
+        <source>Hindi</source>
+        <translation type="unfinished">хинди</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="985"/>
+        <source>Hungarian</source>
+        <translation type="unfinished">венгерский язык</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="986"/>
+        <source>Icelandic</source>
+        <translation type="unfinished">исландский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="987"/>
+        <source>Igbo</source>
+        <translation type="unfinished">Игбо</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="988"/>
+        <source>Indonesian</source>
+        <translation type="unfinished">индонезийский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="989"/>
+        <source>Irish</source>
+        <translation type="unfinished">Ирландский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="990"/>
+        <source>Italian</source>
+        <translation type="unfinished">Итальянский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="991"/>
+        <source>Japanese</source>
+        <translation type="unfinished">Японский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="992"/>
+        <source>Javanese</source>
+        <translation type="unfinished">Яванский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="993"/>
+        <source>Kannada</source>
+        <translation type="unfinished">Каннада</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="994"/>
+        <source>Kazakh</source>
+        <translation type="unfinished">Казахский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="995"/>
+        <source>Khmer</source>
+        <translation type="unfinished">Кхмерский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="996"/>
+        <source>Kinyarwanda</source>
+        <translation type="unfinished">Киньяруанда</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="999"/>
+        <source>Korean</source>
+        <translation type="unfinished">корейский язык</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1000"/>
+        <source>Kurdish</source>
+        <translation type="unfinished">Курдский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1002"/>
+        <source>Lao</source>
+        <translation type="unfinished">Лаосский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1003"/>
+        <source>Latin</source>
+        <translation type="unfinished">латинский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1004"/>
+        <source>Latvian</source>
+        <translation type="unfinished">Латышский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1006"/>
+        <source>Lithuanian</source>
+        <translation type="unfinished">Литовский язык</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1007"/>
+        <source>Luxembourgish</source>
+        <translation type="unfinished">Люксембургский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1008"/>
+        <source>Macedonian</source>
+        <translation type="unfinished">македонский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1009"/>
+        <source>Malagasy</source>
+        <translation type="unfinished">Малагасийский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1010"/>
+        <source>Malay</source>
+        <translation type="unfinished">малайский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1011"/>
+        <source>Malayalam</source>
+        <translation type="unfinished">Малаялам</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1012"/>
+        <source>Maltese</source>
+        <translation type="unfinished">Мальтийский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1013"/>
+        <source>Maori</source>
+        <translation type="unfinished">маори</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1014"/>
+        <source>Marathi</source>
+        <translation type="unfinished">Маратхи</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1016"/>
+        <source>Mongolian</source>
+        <translation type="unfinished">Монгольский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1018"/>
+        <source>Nepali</source>
+        <translation type="unfinished">Непальский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1019"/>
+        <source>Norwegian</source>
+        <translation type="unfinished">Норвежский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1020"/>
+        <source>Oriya</source>
+        <translation type="unfinished">Ория</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1022"/>
+        <source>Papiamento</source>
+        <translation type="unfinished">Папьяменто</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1023"/>
+        <source>Pashto</source>
+        <translation type="unfinished">Пушту</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1024"/>
+        <source>Persian</source>
+        <translation type="unfinished">Персидский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1025"/>
+        <source>Polish</source>
+        <translation type="unfinished">Польский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1026"/>
+        <source>Portuguese</source>
+        <translation type="unfinished">португальский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1027"/>
+        <source>Punjabi</source>
+        <translation type="unfinished">Пенджаби</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1029"/>
+        <source>Romanian</source>
+        <translation type="unfinished">румынский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1030"/>
+        <source>Russian</source>
+        <translation type="unfinished">русский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1031"/>
+        <source>Samoan</source>
+        <translation type="unfinished">Самоанский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1036"/>
+        <source>Shona</source>
+        <translation type="unfinished">Шона</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1037"/>
+        <source>Sindhi</source>
+        <translation type="unfinished">Синдхи</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1038"/>
+        <source>Sinhala</source>
+        <translation type="unfinished">Сингальский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1039"/>
+        <source>Slovak</source>
+        <translation type="unfinished">словацкий</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1040"/>
+        <source>Slovenian</source>
+        <translation type="unfinished">словенский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1041"/>
+        <source>Somali</source>
+        <translation type="unfinished">Сомалийский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1042"/>
+        <source>Spanish</source>
+        <translation type="unfinished">испанский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1043"/>
+        <source>Sundanese</source>
+        <translation type="unfinished">Суданский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1044"/>
+        <source>Swahili</source>
+        <translation type="unfinished">суахили</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1045"/>
+        <source>Swedish</source>
+        <translation type="unfinished">Шведский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1047"/>
+        <source>Tahitian</source>
+        <translation type="unfinished">Таитянский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1048"/>
+        <source>Tajik</source>
+        <translation type="unfinished">Таджикский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1049"/>
+        <source>Tamil</source>
+        <translation type="unfinished">Тамильский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1050"/>
+        <source>Tatar</source>
+        <translation type="unfinished">Татарский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1051"/>
+        <source>Telugu</source>
+        <translation type="unfinished">телугу</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1052"/>
+        <source>Thai</source>
+        <translation type="unfinished">Тайский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1053"/>
+        <source>Tongan</source>
+        <translation type="unfinished">Тонга</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1054"/>
+        <source>Turkish</source>
+        <translation type="unfinished">турецкий</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1055"/>
+        <source>Turkmen</source>
+        <translation type="unfinished">туркменский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1057"/>
+        <source>Uighur</source>
+        <translation type="unfinished">Уйгурский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1058"/>
+        <source>Ukrainian</source>
+        <translation type="unfinished">украинец</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1059"/>
+        <source>Urdu</source>
+        <translation type="unfinished">Урду</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1060"/>
+        <source>Uzbek</source>
+        <translation type="unfinished">Узбекский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1061"/>
+        <source>Vietnamese</source>
+        <translation type="unfinished">вьетнамский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1062"/>
+        <source>Welsh</source>
+        <translation type="unfinished">валлийский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1063"/>
+        <source>Xhosa</source>
+        <translation type="unfinished">Коса</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1064"/>
+        <source>Yiddish</source>
+        <translation type="unfinished">идиш</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1065"/>
+        <source>Yoruba</source>
+        <translation type="unfinished">Йоруба</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1067"/>
+        <source>Zulu</source>
+        <translation type="unfinished">Зулусский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1070"/>
+        <source>Haitian Creole</source>
+        <translation type="unfinished">Гаитянский креольский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1072"/>
+        <source>Hill Mari</source>
+        <translation type="unfinished">Холм мари</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1074"/>
+        <source>Hmong</source>
+        <translation type="unfinished">Хмонг</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1076"/>
+        <source>Klingon</source>
+        <translation type="unfinished">Клингон</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1078"/>
+        <source>Klingon (PlqaD)</source>
+        <translation type="unfinished">Клингонский (PlqaD)</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1080"/>
+        <source>Kyrgyz</source>
+        <translation type="unfinished">Киргизский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1082"/>
+        <source>Levantine Arabic</source>
+        <translation type="unfinished">Левантийский арабский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1084"/>
+        <source>Mari</source>
+        <translation type="unfinished">Мари</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1086"/>
+        <source>Myanmar</source>
+        <translation type="unfinished">Мьянма</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1088"/>
+        <source>Chichewa</source>
+        <translation type="unfinished">Чичева</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1090"/>
+        <source>Queretaro Otomi</source>
+        <translation type="unfinished">Керетаро Отоми</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1092"/>
+        <source>Scots Gaelic</source>
+        <translation type="unfinished">Шотландский гэльский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1094"/>
+        <source>Serbian (Cyrillic)</source>
+        <translation type="unfinished">Сербский (кириллица)</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1096"/>
+        <source>Serbian (Latin)</source>
+        <translation type="unfinished">Сербский (латиница)</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1098"/>
+        <source>Sesotho</source>
+        <translation type="unfinished">Сесото</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1100"/>
+        <source>Tagalog</source>
+        <translation type="unfinished">Тагальский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1102"/>
+        <source>Udmurt</source>
+        <translation type="unfinished">Удмуртский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLanguageModel.cpp" line="1104"/>
+        <source>Yucatec Maya</source>
+        <translation type="unfinished">Юкатек Майя</translation>
     </message>
 </context>
 <context>
@@ -1439,642 +2091,642 @@
     <message>
         <location filename="../src/MyLocalization.cpp" line="171"/>
         <source>Remove Arguments that use Percent Sign x</source>
-        <translation type="unfinished">Remove Arguments that use Percent Sign x</translation>
+        <translation>Удалить аргументы, использующие знак процента x</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="184"/>
         <source>Remove Args</source>
-        <translation type="unfinished">Remove Args</translation>
+        <translation>Удалить аргументы</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="184"/>
         <source>File: </source>
-        <translation type="unfinished">File: </translation>
+        <translation>Файл:</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="194"/>
         <source>File not found</source>
-        <translation type="unfinished">File not found</translation>
-    </message>
-    <message>
-        <location filename="../src/MyLocalization.cpp" line="823"/>
-        <source>Afrikaans</source>
-        <translation type="unfinished">Afrikaans</translation>
+        <translation>Файл не найден</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="824"/>
-        <source>Albanian</source>
-        <translation type="unfinished">Albanian</translation>
+        <source>Afrikaans</source>
+        <translation>африкаанс</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="825"/>
-        <source>Amharic</source>
-        <translation type="unfinished">Amharic</translation>
+        <source>Albanian</source>
+        <translation>албанский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="826"/>
-        <source>Arabic</source>
-        <translation type="unfinished">Arabic</translation>
+        <source>Amharic</source>
+        <translation>Амхарский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="827"/>
-        <source>Armenian</source>
-        <translation type="unfinished">Armenian</translation>
+        <source>Arabic</source>
+        <translation>арабский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="828"/>
-        <source>Azeerbaijani</source>
-        <translation type="unfinished">Azeerbaijani</translation>
+        <source>Armenian</source>
+        <translation>Армянский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="829"/>
-        <source>Basque</source>
-        <translation type="unfinished">Basque</translation>
+        <source>Azeerbaijani</source>
+        <translation>Азербайджанский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="830"/>
-        <source>Bashkir</source>
-        <translation type="unfinished">Bashkir</translation>
+        <source>Basque</source>
+        <translation>Баскский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="831"/>
-        <source>Belarusian</source>
-        <translation type="unfinished">Belarusian</translation>
+        <source>Bashkir</source>
+        <translation>Башкирский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="832"/>
-        <source>Bengali</source>
-        <translation type="unfinished">Bengali</translation>
+        <source>Belarusian</source>
+        <translation>Белорусский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="833"/>
-        <source>Bosnian</source>
-        <translation type="unfinished">Bosnian</translation>
+        <source>Bengali</source>
+        <translation>Бенгальский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="834"/>
-        <source>Bulgarian</source>
-        <translation type="unfinished">Bulgarian</translation>
+        <source>Bosnian</source>
+        <translation>Боснийский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="835"/>
-        <source>Catalan</source>
-        <translation type="unfinished">Catalan</translation>
+        <source>Bulgarian</source>
+        <translation>болгарский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="836"/>
-        <source>Cantonese</source>
-        <translation type="unfinished">Cantonese</translation>
+        <source>Catalan</source>
+        <translation>Каталонский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="837"/>
-        <source>Cebuano</source>
-        <translation type="unfinished">Cebuano</translation>
+        <source>Cantonese</source>
+        <translation>Кантонский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="838"/>
-        <source>Chinese (Simplified)</source>
-        <translation type="unfinished">Chinese (Simplified)</translation>
+        <source>Cebuano</source>
+        <translation>Себуано</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="839"/>
-        <source>Chinese (Traditional)</source>
-        <translation type="unfinished">Chinese (Traditional)</translation>
+        <source>Chinese (Simplified)</source>
+        <translation>Упрощенный китайский)</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="840"/>
-        <source>Corsican</source>
-        <translation type="unfinished">Corsican</translation>
+        <source>Chinese (Traditional)</source>
+        <translation>Китайский традиционный)</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="841"/>
-        <source>Croatian</source>
-        <translation type="unfinished">Croatian</translation>
+        <source>Corsican</source>
+        <translation>Корсиканский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="842"/>
-        <source>Czech</source>
-        <translation type="unfinished">Czech</translation>
+        <source>Croatian</source>
+        <translation>хорватский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="843"/>
-        <source>Danish</source>
-        <translation type="unfinished">Danish</translation>
+        <source>Czech</source>
+        <translation>чешский язык</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="844"/>
-        <source>Dutch</source>
-        <translation type="unfinished">Dutch</translation>
+        <source>Danish</source>
+        <translation>Датский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="845"/>
-        <source>English</source>
-        <translation type="unfinished">English</translation>
+        <source>Dutch</source>
+        <translation>Голландский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="846"/>
-        <source>Esperanto</source>
-        <translation type="unfinished">Esperanto</translation>
+        <source>English</source>
+        <translation>английский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="847"/>
-        <source>Estonian</source>
-        <translation type="unfinished">Estonian</translation>
+        <source>Esperanto</source>
+        <translation>эсперанто</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="848"/>
-        <source>Fijian</source>
-        <translation type="unfinished">Fijian</translation>
+        <source>Estonian</source>
+        <translation>эстонский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="849"/>
-        <source>Filipino</source>
-        <translation type="unfinished">Filipino</translation>
+        <source>Fijian</source>
+        <translation>Фиджийский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="850"/>
-        <source>Finnish</source>
-        <translation type="unfinished">Finnish</translation>
+        <source>Filipino</source>
+        <translation>Филиппинский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="851"/>
-        <source>French</source>
-        <translation type="unfinished">French</translation>
+        <source>Finnish</source>
+        <translation>Финский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="852"/>
-        <source>Frisian</source>
-        <translation type="unfinished">Frisian</translation>
+        <source>French</source>
+        <translation>французкий язык</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="853"/>
-        <source>Galician</source>
-        <translation type="unfinished">Galician</translation>
+        <source>Frisian</source>
+        <translation>фризский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="854"/>
-        <source>Georgian</source>
-        <translation type="unfinished">Georgian</translation>
+        <source>Galician</source>
+        <translation>Галицкий</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="855"/>
-        <source>German</source>
-        <translation type="unfinished">German</translation>
+        <source>Georgian</source>
+        <translation>Грузинский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="856"/>
-        <source>Greek</source>
-        <translation type="unfinished">Greek</translation>
+        <source>German</source>
+        <translation>Немецкий</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="857"/>
-        <source>Gujarati</source>
-        <translation type="unfinished">Gujarati</translation>
+        <source>Greek</source>
+        <translation>Греческий</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="859"/>
-        <source>Hausa</source>
-        <translation type="unfinished">Hausa</translation>
+        <location filename="../src/MyLocalization.cpp" line="858"/>
+        <source>Gujarati</source>
+        <translation>Гуджарати</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="860"/>
-        <source>Hawaiian</source>
-        <translation type="unfinished">Hawaiian</translation>
+        <source>Hausa</source>
+        <translation>Хауса</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="861"/>
+        <source>Hawaiian</source>
+        <translation>Гавайский</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLocalization.cpp" line="862"/>
         <source>Hebrew</source>
-        <translation type="unfinished">Hebrew</translation>
+        <translation>иврит</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="863"/>
+        <location filename="../src/MyLocalization.cpp" line="864"/>
         <source>Hindi</source>
-        <translation type="unfinished">Hindi</translation>
-    </message>
-    <message>
-        <location filename="../src/MyLocalization.cpp" line="865"/>
-        <source>Hungarian</source>
-        <translation type="unfinished">Hungarian</translation>
+        <translation>хинди</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="866"/>
-        <source>Icelandic</source>
-        <translation type="unfinished">Icelandic</translation>
+        <source>Hungarian</source>
+        <translation>венгерский язык</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="867"/>
-        <source>Igbo</source>
-        <translation type="unfinished">Igbo</translation>
+        <source>Icelandic</source>
+        <translation>исландский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="868"/>
-        <source>Indonesian</source>
-        <translation type="unfinished">Indonesian</translation>
+        <source>Igbo</source>
+        <translation>Игбо</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="869"/>
-        <source>Irish</source>
-        <translation type="unfinished">Irish</translation>
+        <source>Indonesian</source>
+        <translation>индонезийский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="870"/>
-        <source>Italian</source>
-        <translation type="unfinished">Italian</translation>
+        <source>Irish</source>
+        <translation>Ирландский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="871"/>
-        <source>Japanese</source>
-        <translation type="unfinished">Japanese</translation>
+        <source>Italian</source>
+        <translation>Итальянский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="872"/>
-        <source>Javanese</source>
-        <translation type="unfinished">Javanese</translation>
+        <source>Japanese</source>
+        <translation>Японский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="873"/>
-        <source>Kannada</source>
-        <translation type="unfinished">Kannada</translation>
+        <source>Javanese</source>
+        <translation>Яванский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="874"/>
-        <source>Kazakh</source>
-        <translation type="unfinished">Kazakh</translation>
+        <source>Kannada</source>
+        <translation>Каннада</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="875"/>
-        <source>Khmer</source>
-        <translation type="unfinished">Khmer</translation>
+        <source>Kazakh</source>
+        <translation>Казахский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="876"/>
-        <source>Kinyarwanda</source>
-        <translation type="unfinished">Kinyarwanda</translation>
+        <source>Khmer</source>
+        <translation>Кхмерский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="879"/>
-        <source>Korean</source>
-        <translation type="unfinished">Korean</translation>
+        <location filename="../src/MyLocalization.cpp" line="877"/>
+        <source>Kinyarwanda</source>
+        <translation>Киньяруанда</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="880"/>
-        <source>Kurdish</source>
-        <translation type="unfinished">Kurdish</translation>
+        <source>Korean</source>
+        <translation>корейский язык</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="882"/>
-        <source>Lao</source>
-        <translation type="unfinished">Lao</translation>
+        <location filename="../src/MyLocalization.cpp" line="881"/>
+        <source>Kurdish</source>
+        <translation>Курдский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="883"/>
-        <source>Latin</source>
-        <translation type="unfinished">Latin</translation>
+        <source>Lao</source>
+        <translation>Лаосский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="884"/>
-        <source>Latvian</source>
-        <translation type="unfinished">Latvian</translation>
+        <source>Latin</source>
+        <translation>латинский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="886"/>
-        <source>Lithuanian</source>
-        <translation type="unfinished">Lithuanian</translation>
+        <location filename="../src/MyLocalization.cpp" line="885"/>
+        <source>Latvian</source>
+        <translation>Латышский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="887"/>
-        <source>Luxembourgish</source>
-        <translation type="unfinished">Luxembourgish</translation>
+        <source>Lithuanian</source>
+        <translation>Литовский язык</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="888"/>
-        <source>Macedonian</source>
-        <translation type="unfinished">Macedonian</translation>
+        <source>Luxembourgish</source>
+        <translation>Люксембургский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="889"/>
-        <source>Malagasy</source>
-        <translation type="unfinished">Malagasy</translation>
+        <source>Macedonian</source>
+        <translation>македонский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="890"/>
-        <source>Malay</source>
-        <translation type="unfinished">Malay</translation>
+        <source>Malagasy</source>
+        <translation>Малагасийский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="891"/>
-        <source>Malayalam</source>
-        <translation type="unfinished">Malayalam</translation>
+        <source>Malay</source>
+        <translation>малайский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="892"/>
-        <source>Maltese</source>
-        <translation type="unfinished">Maltese</translation>
+        <source>Malayalam</source>
+        <translation>Малаялам</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="893"/>
-        <source>Maori</source>
-        <translation type="unfinished">Maori</translation>
+        <source>Maltese</source>
+        <translation>Мальтийский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="894"/>
+        <source>Maori</source>
+        <translation>маори</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLocalization.cpp" line="895"/>
         <source>Marathi</source>
-        <translation type="unfinished">Marathi</translation>
+        <translation>Маратхи</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="896"/>
+        <location filename="../src/MyLocalization.cpp" line="897"/>
         <source>Mongolian</source>
-        <translation type="unfinished">Mongolian</translation>
+        <translation>Монгольский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="898"/>
+        <location filename="../src/MyLocalization.cpp" line="899"/>
         <source>Nepali</source>
-        <translation type="unfinished">Nepali</translation>
+        <translation>Непальский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="900"/>
+        <location filename="../src/MyLocalization.cpp" line="901"/>
         <source>Oriya</source>
-        <translation type="unfinished">Oriya</translation>
-    </message>
-    <message>
-        <location filename="../src/MyLocalization.cpp" line="902"/>
-        <source>Papiamento</source>
-        <translation type="unfinished">Papiamento</translation>
+        <translation>Ория</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="903"/>
-        <source>Pashto</source>
-        <translation type="unfinished">Pashto</translation>
+        <source>Papiamento</source>
+        <translation>Папьяменто</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="904"/>
-        <source>Persian</source>
-        <translation type="unfinished">Persian</translation>
+        <source>Pashto</source>
+        <translation>Пушту</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="905"/>
-        <source>Polish</source>
-        <translation type="unfinished">Polish</translation>
+        <source>Persian</source>
+        <translation>Персидский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="906"/>
-        <source>Portuguese</source>
-        <translation type="unfinished">Portuguese</translation>
+        <source>Polish</source>
+        <translation>Польский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="907"/>
-        <source>Punjabi</source>
-        <translation type="unfinished">Punjabi</translation>
+        <source>Portuguese</source>
+        <translation>португальский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="909"/>
-        <source>Romanian</source>
-        <translation type="unfinished">Romanian</translation>
+        <location filename="../src/MyLocalization.cpp" line="908"/>
+        <source>Punjabi</source>
+        <translation>Пенджаби</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="910"/>
-        <source>Russian</source>
-        <translation type="unfinished">Russian</translation>
+        <source>Romanian</source>
+        <translation>румынский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="911"/>
-        <source>Samoan</source>
-        <translation type="unfinished">Samoan</translation>
+        <source>Russian</source>
+        <translation>русский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="916"/>
-        <source>Shona</source>
-        <translation type="unfinished">Shona</translation>
+        <location filename="../src/MyLocalization.cpp" line="912"/>
+        <source>Samoan</source>
+        <translation>Самоанский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="917"/>
-        <source>Sindhi</source>
-        <translation type="unfinished">Sindhi</translation>
+        <source>Shona</source>
+        <translation>Шона</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="918"/>
-        <source>Sinhala</source>
-        <translation type="unfinished">Sinhala</translation>
+        <source>Sindhi</source>
+        <translation>Синдхи</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="919"/>
-        <source>Slovak</source>
-        <translation type="unfinished">Slovak</translation>
+        <source>Sinhala</source>
+        <translation>Сингальский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="920"/>
-        <source>Slovenian</source>
-        <translation type="unfinished">Slovenian</translation>
+        <source>Slovak</source>
+        <translation>словацкий</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="921"/>
-        <source>Somali</source>
-        <translation type="unfinished">Somali</translation>
+        <source>Slovenian</source>
+        <translation>словенский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="922"/>
-        <source>Spanish</source>
-        <translation type="unfinished">Spanish</translation>
+        <source>Somali</source>
+        <translation>Сомалийский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="923"/>
-        <source>Sundanese</source>
-        <translation type="unfinished">Sundanese</translation>
+        <source>Spanish</source>
+        <translation>испанский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="924"/>
-        <source>Swahili</source>
-        <translation type="unfinished">Swahili</translation>
+        <source>Sundanese</source>
+        <translation>Суданский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="925"/>
-        <source>Swedish</source>
-        <translation type="unfinished">Swedish</translation>
+        <source>Swahili</source>
+        <translation>суахили</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="927"/>
-        <source>Tahitian</source>
-        <translation type="unfinished">Tahitian</translation>
+        <location filename="../src/MyLocalization.cpp" line="926"/>
+        <source>Swedish</source>
+        <translation>Шведский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="928"/>
-        <source>Tajik</source>
-        <translation type="unfinished">Tajik</translation>
+        <source>Tahitian</source>
+        <translation>Таитянский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="929"/>
-        <source>Tamil</source>
-        <translation type="unfinished">Tamil</translation>
+        <source>Tajik</source>
+        <translation>Таджикский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="930"/>
-        <source>Tatar</source>
-        <translation type="unfinished">Tatar</translation>
+        <source>Tamil</source>
+        <translation>Тамильский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="931"/>
-        <source>Telugu</source>
-        <translation type="unfinished">Telugu</translation>
+        <source>Tatar</source>
+        <translation>Татарский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="932"/>
-        <source>Thai</source>
-        <translation type="unfinished">Thai</translation>
+        <source>Telugu</source>
+        <translation>телугу</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="933"/>
-        <source>Tongan</source>
-        <translation type="unfinished">Tongan</translation>
+        <source>Thai</source>
+        <translation>Тайский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="934"/>
-        <source>Turkish</source>
-        <translation type="unfinished">Turkish</translation>
+        <source>Tongan</source>
+        <translation>Тонга</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="935"/>
-        <source>Turkmen</source>
-        <translation type="unfinished">Turkmen</translation>
+        <source>Turkish</source>
+        <translation>турецкий</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="937"/>
-        <source>Uighur</source>
-        <translation type="unfinished">Uighur</translation>
+        <location filename="../src/MyLocalization.cpp" line="936"/>
+        <source>Turkmen</source>
+        <translation>туркменский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="938"/>
-        <source>Ukrainian</source>
-        <translation type="unfinished">Ukrainian</translation>
+        <source>Uighur</source>
+        <translation>Уйгурский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="939"/>
-        <source>Urdu</source>
-        <translation type="unfinished">Urdu</translation>
+        <source>Ukrainian</source>
+        <translation>украинец</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="940"/>
-        <source>Uzbek</source>
-        <translation type="unfinished">Uzbek</translation>
+        <source>Urdu</source>
+        <translation>Урду</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="941"/>
-        <source>Vietnamese</source>
-        <translation type="unfinished">Vietnamese</translation>
+        <source>Uzbek</source>
+        <translation>Узбекский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="942"/>
-        <source>Welsh</source>
-        <translation type="unfinished">Welsh</translation>
+        <source>Vietnamese</source>
+        <translation>вьетнамский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="943"/>
-        <source>Xhosa</source>
-        <translation type="unfinished">Xhosa</translation>
+        <source>Welsh</source>
+        <translation>валлийский</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="944"/>
-        <source>Yiddish</source>
-        <translation type="unfinished">Yiddish</translation>
+        <source>Xhosa</source>
+        <translation>Коса</translation>
     </message>
     <message>
         <location filename="../src/MyLocalization.cpp" line="945"/>
+        <source>Yiddish</source>
+        <translation>идиш</translation>
+    </message>
+    <message>
+        <location filename="../src/MyLocalization.cpp" line="946"/>
         <source>Yoruba</source>
-        <translation type="unfinished">Yoruba</translation>
+        <translation>Йоруба</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="947"/>
+        <location filename="../src/MyLocalization.cpp" line="948"/>
         <source>Zulu</source>
-        <translation type="unfinished">Zulu</translation>
+        <translation>Зулусский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="950"/>
+        <location filename="../src/MyLocalization.cpp" line="951"/>
         <source>Haitian Creole</source>
-        <translation type="unfinished">Haitian Creole</translation>
+        <translation>Гаитянский креольский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="952"/>
+        <location filename="../src/MyLocalization.cpp" line="953"/>
         <source>Hill Mari</source>
-        <translation type="unfinished">Hill Mari</translation>
+        <translation>Холм мари</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="954"/>
+        <location filename="../src/MyLocalization.cpp" line="955"/>
         <source>Hmong</source>
-        <translation type="unfinished">Hmong</translation>
+        <translation>Хмонг</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="956"/>
+        <location filename="../src/MyLocalization.cpp" line="957"/>
         <source>Klingon</source>
-        <translation type="unfinished">Klingon</translation>
+        <translation>Клингон</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="958"/>
+        <location filename="../src/MyLocalization.cpp" line="959"/>
         <source>Klingon (PlqaD)</source>
-        <translation type="unfinished">Klingon (PlqaD)</translation>
+        <translation>Клингонский (PlqaD)</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="960"/>
+        <location filename="../src/MyLocalization.cpp" line="961"/>
         <source>Kyrgyz</source>
-        <translation type="unfinished">Kyrgyz</translation>
+        <translation>Киргизский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="962"/>
+        <location filename="../src/MyLocalization.cpp" line="963"/>
         <source>Levantine Arabic</source>
-        <translation type="unfinished">Levantine Arabic</translation>
+        <translation>Левантийский арабский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="964"/>
+        <location filename="../src/MyLocalization.cpp" line="965"/>
         <source>Mari</source>
-        <translation type="unfinished">Mari</translation>
+        <translation>Мари</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="966"/>
+        <location filename="../src/MyLocalization.cpp" line="967"/>
         <source>Myanmar</source>
-        <translation type="unfinished">Myanmar</translation>
+        <translation>Мьянма</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="968"/>
+        <location filename="../src/MyLocalization.cpp" line="969"/>
         <source>Chichewa</source>
-        <translation type="unfinished">Chichewa</translation>
+        <translation>Чичева</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="970"/>
+        <location filename="../src/MyLocalization.cpp" line="971"/>
         <source>Queretaro Otomi</source>
-        <translation type="unfinished">Queretaro Otomi</translation>
+        <translation>Керетаро Отоми</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="972"/>
+        <location filename="../src/MyLocalization.cpp" line="973"/>
         <source>Scots Gaelic</source>
-        <translation type="unfinished">Scots Gaelic</translation>
+        <translation>Шотландский гэльский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="974"/>
+        <location filename="../src/MyLocalization.cpp" line="975"/>
         <source>Serbian (Cyrillic)</source>
-        <translation type="unfinished">Serbian (Cyrillic)</translation>
+        <translation>Сербский (кириллица)</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="976"/>
+        <location filename="../src/MyLocalization.cpp" line="977"/>
         <source>Serbian (Latin)</source>
-        <translation type="unfinished">Serbian (Latin)</translation>
+        <translation>Сербский (латиница)</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="978"/>
+        <location filename="../src/MyLocalization.cpp" line="979"/>
         <source>Sesotho</source>
-        <translation type="unfinished">Sesotho</translation>
+        <translation>Сесото</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="980"/>
+        <location filename="../src/MyLocalization.cpp" line="981"/>
         <source>Tagalog</source>
-        <translation type="unfinished">Tagalog</translation>
+        <translation>Тагальский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="982"/>
+        <location filename="../src/MyLocalization.cpp" line="983"/>
         <source>Udmurt</source>
-        <translation type="unfinished">Udmurt</translation>
+        <translation>Удмуртский</translation>
     </message>
     <message>
-        <location filename="../src/MyLocalization.cpp" line="984"/>
+        <location filename="../src/MyLocalization.cpp" line="985"/>
         <source>Yucatec Maya</source>
-        <translation type="unfinished">Yucatec Maya</translation>
+        <translation>Юкатек Майя</translation>
     </message>
 </context>
 <context>
@@ -2082,17 +2734,17 @@
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="45"/>
         <source>Crypto Fail: MyOrgSettings::onRunOnStartup()</source>
-        <translation type="unfinished">Crypto Fail: MyOrgSettings::onRunOnStartup()</translation>
+        <translation>Ошибка шифрования: MyOrgSettings :: onRunOnStartup ()</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="175"/>
         <source>getLastApplicationPath not found</source>
-        <translation type="unfinished">getLastApplicationPath not found</translation>
+        <translation>getLastApplicationPath не найден</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="850"/>
         <source>Error: cannot create file</source>
-        <translation type="unfinished">Error: cannot create file</translation>
+        <translation>Ошибка: невозможно создать файл</translation>
     </message>
 </context>
 <context>
@@ -2100,32 +2752,32 @@
     <message>
         <location filename="../src/MySqlDbtModel.cpp" line="347"/>
         <source>Database SQL Driver is missing</source>
-        <translation type="unfinished">Database SQL Driver is missing</translation>
+        <translation>Драйвер базы данных SQL отсутствует</translation>
     </message>
     <message>
         <location filename="../src/MySqlDbtModel.cpp" line="347"/>
         <source>Install SQL</source>
-        <translation type="unfinished">Install SQL</translation>
+        <translation>Установить SQL</translation>
     </message>
     <message>
         <location filename="../src/MySqlDbtModel.cpp" line="352"/>
         <source>Cannot open database</source>
-        <translation type="unfinished">Cannot open database</translation>
+        <translation>Невозможно открыть базу данных</translation>
     </message>
     <message>
         <location filename="../src/MySqlDbtModel.cpp" line="352"/>
         <source>Unable to establish a database connection</source>
-        <translation type="unfinished">Unable to establish a database connection</translation>
+        <translation>Невозможно установить соединение с базой данных</translation>
     </message>
     <message>
         <location filename="../src/MySqlDbtModel.cpp" line="429"/>
         <source>runProcces cannot start process</source>
-        <translation type="unfinished">runProcces cannot start process</translation>
+        <translation>runProcces не может запустить процесс</translation>
     </message>
     <message>
         <location filename="../src/MySqlDbtModel.cpp" line="433"/>
         <source>runProcces timeout ..</source>
-        <translation type="unfinished">runProcces timeout ..</translation>
+        <translation>runProcces timeout ..</translation>
     </message>
 </context>
 <context>
@@ -2133,179 +2785,186 @@
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="157"/>
         <source>Unable to find Input file</source>
-        <translation type="unfinished">Unable to find Input file</translation>
+        <translation>Не удалось найти входной файл</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="175"/>
         <source>Can not create output directory OR directory is not empty</source>
-        <translation type="unfinished">Can not create output directory OR directory is not empty</translation>
+        <translation>Невозможно создать выходной каталог ИЛИ каталог не пуст</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="216"/>
         <source>Unable to find Input folder</source>
-        <translation type="unfinished">Unable to find Input folder</translation>
+        <translation>Не удалось найти входную папку</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="240"/>
         <source>Input directory should contain only txt and ts file with same name</source>
-        <translation type="unfinished">Input directory should contain only txt and ts file with same name</translation>
+        <translation>Входной каталог должен содержать только txt и ts файл с тем же именем</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="253"/>
         <source>Parsing errorr</source>
-        <translation type="unfinished">Parsing errorr</translation>
+        <translation>Ошибка синтаксического анализа</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="34"/>
+        <location filename="../src/main.cpp" line="46"/>
         <source>Failed to open log file</source>
-        <translation type="unfinished">Failed to open log file</translation>
+        <translation>Не удалось открыть файл журнала</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="55"/>
+        <location filename="../src/main.cpp" line="60"/>
+        <source>Could not open log file</source>
+        <translation>Не удалось открыть файл журнала</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="67"/>
         <source>Log File</source>
-        <translation type="unfinished">Log File</translation>
+        <translation>Лог-файл</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="664"/>
+        <location filename="../src/main.cpp" line="89"/>
+        <source>Log File failed to open</source>
+        <translation>Не удалось открыть файл журнала</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="722"/>
         <source>Database Move Failed</source>
-        <translation type="unfinished">Database Move Failed</translation>
+        <translation>Ошибка перемещения базы данных</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="698"/>
+        <location filename="../src/MainWindow.cpp" line="756"/>
         <source>Password Revieled</source>
-        <translation type="unfinished">Password Revieled</translation>
+        <translation>Пароль изменен</translation>
     </message>
     <message>
-        <source>Could not read from the Database</source>
-        <translation type="obsolete">Could not read from the Database</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.cpp" line="2046"/>
+        <location filename="../src/MainWindow.cpp" line="2131"/>
         <source>Project file not found</source>
-        <translation type="unfinished">Project file not found</translation>
+        <translation>Файл проекта не найден</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2052"/>
+        <location filename="../src/MainWindow.cpp" line="2137"/>
         <source>Error running lupdate</source>
-        <translation type="unfinished">Error running lupdate</translation>
+        <translation>Ошибка при запуске lupdate</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2226"/>
+        <location filename="../src/MainWindow.cpp" line="2311"/>
         <source>Error trying to make directory</source>
-        <translation type="unfinished">Error trying to make directory</translation>
+        <translation>Ошибка при создании каталога</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2231"/>
+        <location filename="../src/MainWindow.cpp" line="2316"/>
         <source>Error trying to remove all files</source>
-        <translation type="unfinished">Error trying to remove all files</translation>
+        <translation>Ошибка при попытке удалить все файлы</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="2306"/>
+        <location filename="../src/MainWindow.cpp" line="2391"/>
         <source>Error running lrelease</source>
-        <translation type="unfinished">Error running lrelease</translation>
+        <translation>Ошибка при запуске lrelease</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindow.cpp" line="3275"/>
+        <location filename="../src/MyLocalization.cpp" line="184"/>
+        <source>Remove Args file is created</source>
+        <translation>Файл Remove Args создан</translation>
     </message>
     <message>
         <location filename="../src/MyDatatables.cpp" line="189"/>
         <source>Record found!</source>
-        <translation type="unfinished">Record found!</translation>
-    </message>
-    <message>
-        <location filename="../src/MyLocalization.cpp" line="184"/>
-        <source>Remove Args file is created</source>
-        <translation type="unfinished">Remove Args file is created</translation>
+        <translation>Запись найдена!</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="45"/>
         <source>Crypto Fail</source>
-        <translation type="unfinished">Crypto Fail</translation>
+        <translation>Crypto Fail</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="75"/>
         <source>Failed to make File in getSettings</source>
-        <translation type="unfinished">Failed to make File in getSettings</translation>
+        <translation>Не удалось создать файл в getSettings</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="451"/>
         <source>Error opening file for reading</source>
-        <translation type="unfinished">Error opening file for reading</translation>
+        <translation>Ошибка при открытии файла для чтения</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="451"/>
         <source>Could not open file for reading</source>
-        <translation type="unfinished">Could not open file for reading</translation>
+        <translation>Не удалось открыть файл для чтения</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="472"/>
         <source>Error opening file for writing</source>
-        <translation type="unfinished">Error opening file for writing</translation>
+        <translation>Ошибка открытия файла для записи</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="472"/>
         <source>Could not open file for writing</source>
-        <translation type="unfinished">Could not open file for writing</translation>
+        <translation>Не удалось открыть файл для записи</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="747"/>
         <source>File not found</source>
-        <translation type="unfinished">File not found</translation>
+        <translation>Файл не найден</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="758"/>
         <source>Folder not found</source>
-        <translation type="unfinished">Folder not found</translation>
+        <translation>Папка не найдена</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="766"/>
         <source>Files could not be removed</source>
-        <translation type="unfinished">Files could not be removed</translation>
+        <translation>Файлы не могут быть удалены</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="829"/>
         <source>This file was created to test if this folder is writeable by</source>
-        <translation type="unfinished">This file was created to test if this folder is writeable by</translation>
+        <translation>Этот файл был создан, чтобы проверить, доступна ли эта папка для записи</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="850"/>
         <source>File System Error</source>
-        <translation type="unfinished">File System Error</translation>
+        <translation>Ошибка файловой системы</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="966"/>
         <source>Yes was clicked</source>
-        <translation type="unfinished">Yes was clicked</translation>
+        <translation>Да был нажат</translation>
     </message>
     <message>
         <location filename="../src/MyOrgSettings.cpp" line="971"/>
         <source>Yes was not clicked</source>
-        <translation type="unfinished">Yes was not clicked</translation>
+        <translation>Да не нажали</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="157"/>
         <source>Input does file not exist!</source>
-        <translation type="unfinished">Input does file not exist!</translation>
+        <translation>Входной файл не существует!</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="175"/>
         <source>Check output Folder</source>
-        <translation type="unfinished">Check output Folder</translation>
+        <translation>Проверить папку вывода</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="216"/>
         <source>Input directory not exist!</source>
-        <translation type="unfinished">Input directory not exist!</translation>
+        <translation>Входной каталог не существует!</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="240"/>
         <source>Check Input Folder</source>
-        <translation type="unfinished">Check Input Folder</translation>
+        <translation>Проверить папку ввода</translation>
     </message>
     <message>
         <location filename="../src/MyTranlatorParser.cpp" line="253"/>
         <source>Parsing errorr</source>
-        <translation type="unfinished">Parsing errorr</translation>
+        <translation>Ошибка синтаксического анализа</translation>
     </message>
 </context>
 <context>
@@ -2313,693 +2972,693 @@
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="214"/>
         <source>Selected source language</source>
-        <translation type="unfinished">Selected source language</translation>
+        <translation>Выбранный исходный язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="214"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="221"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="228"/>
         <source>is not supported for</source>
-        <translation type="unfinished">is not supported for</translation>
+        <translation>не поддерживается для</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="221"/>
         <source>Selected translation language</source>
-        <translation type="unfinished">Selected translation language</translation>
+        <translation>Выбранный язык перевода</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="228"/>
         <source>Selected ui language</source>
-        <translation type="unfinished">Selected ui language</translation>
+        <translation>Выбранный язык пользовательского интерфейса</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="515"/>
         <source>Automatically detect</source>
-        <translation type="unfinished">Automatically detect</translation>
+        <translation>Автоматически определять</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="516"/>
         <source>Afrikaans</source>
-        <translation type="unfinished">Afrikaans</translation>
+        <translation>африкаанс</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="517"/>
         <source>Albanian</source>
-        <translation type="unfinished">Albanian</translation>
+        <translation>албанский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="518"/>
         <source>Amharic</source>
-        <translation type="unfinished">Amharic</translation>
+        <translation>Амхарский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="519"/>
         <source>Arabic</source>
-        <translation type="unfinished">Arabic</translation>
+        <translation>арабский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="520"/>
         <source>Armenian</source>
-        <translation type="unfinished">Armenian</translation>
+        <translation>Армянский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="521"/>
         <source>Azeerbaijani</source>
-        <translation type="unfinished">Azeerbaijani</translation>
+        <translation>Азербайджанский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="522"/>
         <source>Basque</source>
-        <translation type="unfinished">Basque</translation>
+        <translation>Баскский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="523"/>
         <source>Bashkir</source>
-        <translation type="unfinished">Bashkir</translation>
+        <translation>Башкирский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="524"/>
         <source>Belarusian</source>
-        <translation type="unfinished">Belarusian</translation>
+        <translation>Белорусский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="525"/>
         <source>Bengali</source>
-        <translation type="unfinished">Bengali</translation>
+        <translation>Бенгальский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="526"/>
         <source>Bosnian</source>
-        <translation type="unfinished">Bosnian</translation>
+        <translation>Боснийский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="527"/>
         <source>Bulgarian</source>
-        <translation type="unfinished">Bulgarian</translation>
+        <translation>болгарский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="528"/>
         <source>Catalan</source>
-        <translation type="unfinished">Catalan</translation>
+        <translation>Каталонский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="529"/>
         <source>Cantonese</source>
-        <translation type="unfinished">Cantonese</translation>
+        <translation>Кантонский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="530"/>
         <source>Cebuano</source>
-        <translation type="unfinished">Cebuano</translation>
+        <translation>Себуано</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="531"/>
         <source>Chinese (Simplified)</source>
-        <translation type="unfinished">Chinese (Simplified)</translation>
+        <translation>Упрощенный китайский)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="532"/>
         <source>Chinese (Traditional)</source>
-        <translation type="unfinished">Chinese (Traditional)</translation>
+        <translation>Китайский традиционный)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="533"/>
         <source>Corsican</source>
-        <translation type="unfinished">Corsican</translation>
+        <translation>Корсиканский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="534"/>
         <source>Croatian</source>
-        <translation type="unfinished">Croatian</translation>
+        <translation>хорватский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="535"/>
         <source>Czech</source>
-        <translation type="unfinished">Czech</translation>
+        <translation>чешский язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="536"/>
         <source>Danish</source>
-        <translation type="unfinished">Danish</translation>
+        <translation>Датский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="537"/>
         <source>Dutch</source>
-        <translation type="unfinished">Dutch</translation>
+        <translation>Голландский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="538"/>
         <source>English</source>
-        <translation type="unfinished">English</translation>
+        <translation>английский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="539"/>
         <source>Esperanto</source>
-        <translation type="unfinished">Esperanto</translation>
+        <translation>эсперанто</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="540"/>
         <source>Estonian</source>
-        <translation type="unfinished">Estonian</translation>
+        <translation>эстонский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="541"/>
         <source>Fijian</source>
-        <translation type="unfinished">Fijian</translation>
+        <translation>Фиджийский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="542"/>
         <source>Filipino</source>
-        <translation type="unfinished">Filipino</translation>
+        <translation>Филиппинский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="543"/>
         <source>Finnish</source>
-        <translation type="unfinished">Finnish</translation>
+        <translation>Финский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="544"/>
         <source>French</source>
-        <translation type="unfinished">French</translation>
+        <translation>французкий язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="545"/>
         <source>Frisian</source>
-        <translation type="unfinished">Frisian</translation>
+        <translation>фризский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="546"/>
         <source>Galician</source>
-        <translation type="unfinished">Galician</translation>
+        <translation>Галицкий</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="547"/>
         <source>Georgian</source>
-        <translation type="unfinished">Georgian</translation>
+        <translation>Грузинский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="548"/>
         <source>German</source>
-        <translation type="unfinished">German</translation>
+        <translation>Немецкий</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="549"/>
         <source>Greek</source>
-        <translation type="unfinished">Greek</translation>
+        <translation>Греческий</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="550"/>
         <source>Gujarati</source>
-        <translation type="unfinished">Gujarati</translation>
+        <translation>Гуджарати</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="551"/>
         <source>Haitian Creole</source>
-        <translation type="unfinished">Haitian Creole</translation>
+        <translation>Гаитянский креольский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="552"/>
         <source>Hausa</source>
-        <translation type="unfinished">Hausa</translation>
+        <translation>Хауса</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="553"/>
         <source>Hawaiian</source>
-        <translation type="unfinished">Hawaiian</translation>
+        <translation>Гавайский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="554"/>
         <source>Hebrew</source>
-        <translation type="unfinished">Hebrew</translation>
+        <translation>иврит</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="555"/>
         <source>Hill Mari</source>
-        <translation type="unfinished">Hill Mari</translation>
+        <translation>Холм мари</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="556"/>
         <source>Hindi</source>
-        <translation type="unfinished">Hindi</translation>
+        <translation>хинди</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="557"/>
         <source>Hmong</source>
-        <translation type="unfinished">Hmong</translation>
+        <translation>Хмонг</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="558"/>
         <source>Hungarian</source>
-        <translation type="unfinished">Hungarian</translation>
+        <translation>венгерский язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="559"/>
         <source>Icelandic</source>
-        <translation type="unfinished">Icelandic</translation>
+        <translation>исландский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="560"/>
         <source>Igbo</source>
-        <translation type="unfinished">Igbo</translation>
+        <translation>Игбо</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="561"/>
         <source>Indonesian</source>
-        <translation type="unfinished">Indonesian</translation>
+        <translation>индонезийский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="562"/>
         <source>Irish</source>
-        <translation type="unfinished">Irish</translation>
+        <translation>Ирландский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="563"/>
         <source>Italian</source>
-        <translation type="unfinished">Italian</translation>
+        <translation>Итальянский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="564"/>
         <source>Japanese</source>
-        <translation type="unfinished">Japanese</translation>
+        <translation>Японский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="565"/>
         <source>Javanese</source>
-        <translation type="unfinished">Javanese</translation>
+        <translation>Яванский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="566"/>
         <source>Kannada</source>
-        <translation type="unfinished">Kannada</translation>
+        <translation>Каннада</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="567"/>
         <source>Kazakh</source>
-        <translation type="unfinished">Kazakh</translation>
+        <translation>Казахский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="568"/>
         <source>Khmer</source>
-        <translation type="unfinished">Khmer</translation>
+        <translation>Кхмерский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="569"/>
         <source>Kinyarwanda</source>
-        <translation type="unfinished">Kinyarwanda</translation>
+        <translation>Киньяруанда</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="570"/>
         <source>Klingon</source>
-        <translation type="unfinished">Klingon</translation>
+        <translation>Клингон</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="571"/>
         <source>Klingon (PlqaD)</source>
-        <translation type="unfinished">Klingon (PlqaD)</translation>
+        <translation>Клингонский (PlqaD)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="572"/>
         <source>Korean</source>
-        <translation type="unfinished">Korean</translation>
+        <translation>корейский язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="573"/>
         <source>Kurdish</source>
-        <translation type="unfinished">Kurdish</translation>
+        <translation>Курдский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="574"/>
         <source>Kyrgyz</source>
-        <translation type="unfinished">Kyrgyz</translation>
+        <translation>Киргизский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="575"/>
         <source>Lao</source>
-        <translation type="unfinished">Lao</translation>
+        <translation>Лаосский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="576"/>
         <source>Latin</source>
-        <translation type="unfinished">Latin</translation>
+        <translation>латинский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="577"/>
         <source>Latvian</source>
-        <translation type="unfinished">Latvian</translation>
+        <translation>Латышский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="578"/>
         <source>Levantine Arabic</source>
-        <translation type="unfinished">Levantine Arabic</translation>
+        <translation>Левантийский арабский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="579"/>
         <source>Lithuanian</source>
-        <translation type="unfinished">Lithuanian</translation>
+        <translation>Литовский язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="580"/>
         <source>Luxembourgish</source>
-        <translation type="unfinished">Luxembourgish</translation>
+        <translation>Люксембургский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="581"/>
         <source>Macedonian</source>
-        <translation type="unfinished">Macedonian</translation>
+        <translation>македонский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="582"/>
         <source>Malagasy</source>
-        <translation type="unfinished">Malagasy</translation>
+        <translation>Малагасийский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="583"/>
         <source>Malay</source>
-        <translation type="unfinished">Malay</translation>
+        <translation>малайский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="584"/>
         <source>Malayalam</source>
-        <translation type="unfinished">Malayalam</translation>
+        <translation>Малаялам</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="585"/>
         <source>Maltese</source>
-        <translation type="unfinished">Maltese</translation>
+        <translation>Мальтийский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="586"/>
         <source>Maori</source>
-        <translation type="unfinished">Maori</translation>
+        <translation>маори</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="587"/>
         <source>Marathi</source>
-        <translation type="unfinished">Marathi</translation>
+        <translation>Маратхи</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="588"/>
         <source>Mari</source>
-        <translation type="unfinished">Mari</translation>
+        <translation>Мари</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="589"/>
         <source>Mongolian</source>
-        <translation type="unfinished">Mongolian</translation>
+        <translation>Монгольский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="590"/>
         <source>Myanmar</source>
-        <translation type="unfinished">Myanmar</translation>
+        <translation>Мьянма</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="591"/>
         <source>Nepali</source>
-        <translation type="unfinished">Nepali</translation>
+        <translation>Непальский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="592"/>
         <source>Norwegian</source>
-        <translation type="unfinished">Norwegian</translation>
+        <translation>Норвежский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="593"/>
         <source>Oriya</source>
-        <translation type="unfinished">Oriya</translation>
+        <translation>Ория</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="594"/>
         <source>Chichewa</source>
-        <translation type="unfinished">Chichewa</translation>
+        <translation>Чичева</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="595"/>
         <source>Papiamento</source>
-        <translation type="unfinished">Papiamento</translation>
+        <translation>Папьяменто</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="596"/>
         <source>Pashto</source>
-        <translation type="unfinished">Pashto</translation>
+        <translation>Пушту</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="597"/>
         <source>Persian</source>
-        <translation type="unfinished">Persian</translation>
+        <translation>Персидский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="598"/>
         <source>Polish</source>
-        <translation type="unfinished">Polish</translation>
+        <translation>Польский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="599"/>
         <source>Portuguese</source>
-        <translation type="unfinished">Portuguese</translation>
+        <translation>португальский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="600"/>
         <source>Punjabi</source>
-        <translation type="unfinished">Punjabi</translation>
+        <translation>Пенджаби</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="601"/>
         <source>Queretaro Otomi</source>
-        <translation type="unfinished">Queretaro Otomi</translation>
+        <translation>Керетаро Отоми</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="602"/>
         <source>Romanian</source>
-        <translation type="unfinished">Romanian</translation>
+        <translation>румынский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="603"/>
         <source>Russian</source>
-        <translation type="unfinished">Russian</translation>
+        <translation>русский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="604"/>
         <source>Samoan</source>
-        <translation type="unfinished">Samoan</translation>
+        <translation>Самоанский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="605"/>
         <source>Scots Gaelic</source>
-        <translation type="unfinished">Scots Gaelic</translation>
+        <translation>Шотландский гэльский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="606"/>
         <source>Serbian (Cyrillic)</source>
-        <translation type="unfinished">Serbian (Cyrillic)</translation>
+        <translation>Сербский (кириллица)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="607"/>
         <source>Serbian (Latin)</source>
-        <translation type="unfinished">Serbian (Latin)</translation>
+        <translation>Сербский (латиница)</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="608"/>
         <source>Sesotho</source>
-        <translation type="unfinished">Sesotho</translation>
+        <translation>Сесото</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="609"/>
         <source>Shona</source>
-        <translation type="unfinished">Shona</translation>
+        <translation>Шона</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="610"/>
         <source>Sindhi</source>
-        <translation type="unfinished">Sindhi</translation>
+        <translation>Синдхи</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="611"/>
         <source>Sinhala</source>
-        <translation type="unfinished">Sinhala</translation>
+        <translation>Сингальский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="612"/>
         <source>Slovak</source>
-        <translation type="unfinished">Slovak</translation>
+        <translation>словацкий</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="613"/>
         <source>Slovenian</source>
-        <translation type="unfinished">Slovenian</translation>
+        <translation>словенский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="614"/>
         <source>Somali</source>
-        <translation type="unfinished">Somali</translation>
+        <translation>Сомалийский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="615"/>
         <source>Spanish</source>
-        <translation type="unfinished">Spanish</translation>
+        <translation>испанский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="616"/>
         <source>Sundanese</source>
-        <translation type="unfinished">Sundanese</translation>
+        <translation>Суданский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="617"/>
         <source>Swahili</source>
-        <translation type="unfinished">Swahili</translation>
+        <translation>суахили</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="618"/>
         <source>Swedish</source>
-        <translation type="unfinished">Swedish</translation>
+        <translation>Шведский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="619"/>
         <source>Tagalog</source>
-        <translation type="unfinished">Tagalog</translation>
+        <translation>Тагальский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="620"/>
         <source>Tahitian</source>
-        <translation type="unfinished">Tahitian</translation>
+        <translation>Таитянский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="621"/>
         <source>Tajik</source>
-        <translation type="unfinished">Tajik</translation>
+        <translation>Таджикский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="622"/>
         <source>Tamil</source>
-        <translation type="unfinished">Tamil</translation>
+        <translation>Тамильский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="623"/>
         <source>Tatar</source>
-        <translation type="unfinished">Tatar</translation>
+        <translation>Татарский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="624"/>
         <source>Telugu</source>
-        <translation type="unfinished">Telugu</translation>
+        <translation>телугу</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="625"/>
         <source>Thai</source>
-        <translation type="unfinished">Thai</translation>
+        <translation>Тайский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="626"/>
         <source>Tongan</source>
-        <translation type="unfinished">Tongan</translation>
+        <translation>Тонга</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="627"/>
         <source>Turkish</source>
-        <translation type="unfinished">Turkish</translation>
+        <translation>турецкий</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="628"/>
         <source>Turkmen</source>
-        <translation type="unfinished">Turkmen</translation>
+        <translation>туркменский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="629"/>
         <source>Udmurt</source>
-        <translation type="unfinished">Udmurt</translation>
+        <translation>Удмуртский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="630"/>
         <source>Uighur</source>
-        <translation type="unfinished">Uighur</translation>
+        <translation>Уйгурский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="631"/>
         <source>Ukrainian</source>
-        <translation type="unfinished">Ukrainian</translation>
+        <translation>украинец</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="632"/>
         <source>Urdu</source>
-        <translation type="unfinished">Urdu</translation>
+        <translation>Урду</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="633"/>
         <source>Uzbek</source>
-        <translation type="unfinished">Uzbek</translation>
+        <translation>Узбекский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="634"/>
         <source>Vietnamese</source>
-        <translation type="unfinished">Vietnamese</translation>
+        <translation>вьетнамский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="635"/>
         <source>Welsh</source>
-        <translation type="unfinished">Welsh</translation>
+        <translation>валлийский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="636"/>
         <source>Xhosa</source>
-        <translation type="unfinished">Xhosa</translation>
+        <translation>Коса</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="637"/>
         <source>Yiddish</source>
-        <translation type="unfinished">Yiddish</translation>
+        <translation>идиш</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="638"/>
         <source>Yoruba</source>
-        <translation type="unfinished">Yoruba</translation>
+        <translation>Йоруба</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="639"/>
         <source>Yucatec Maya</source>
-        <translation type="unfinished">Yucatec Maya</translation>
+        <translation>Юкатек Майя</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="640"/>
         <source>Zulu</source>
-        <translation type="unfinished">Zulu</translation>
+        <translation>Зулусский</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="963"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="973"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1072"/>
         <source>Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.</source>
-        <translation type="unfinished">Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later.</translation>
+        <translation>Ошибка: системы Engine обнаружили подозрительный трафик из вашей компьютерной сети. Повторите попытку позже.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="987"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1160"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1370"/>
         <source>Error: Unable to parse autodetected language</source>
-        <translation type="unfinished">Error: Unable to parse autodetected language</translation>
+        <translation>Ошибка: невозможно проанализировать автоматически определяемый язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1080"/>
         <source>Error: Unable to find Yandex SID in web version.</source>
-        <translation type="unfinished">Error: Unable to find Yandex SID in web version.</translation>
+        <translation>Ошибка: не удалось найти Яндекс SID в веб-версии.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1088"/>
         <source>Error: Unable to extract Yandex SID from web version.</source>
-        <translation type="unfinished">Error: Unable to extract Yandex SID from web version.</translation>
+        <translation>Ошибка: не удалось извлечь SID Яндекса из веб-версии.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1305"/>
         <source>Error: Unable to find Bing credentials in web version.</source>
-        <translation type="unfinished">Error: Unable to find Bing credentials in web version.</translation>
+        <translation>Ошибка: не удалось найти учетные данные Bing в веб-версии.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1313"/>
         <source>Error: Unable to extract Bing key from web version.</source>
-        <translation type="unfinished">Error: Unable to extract Bing key from web version.</translation>
+        <translation>Ошибка: невозможно извлечь ключ Bing из веб-версии.</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetranslator.cpp" line="1322"/>
         <source>Error: Unable to extract Bing token from web version.</source>
-        <translation type="unfinished">Error: Unable to extract Bing token from web version.</translation>
+        <translation>Ошибка: невозможно извлечь токен Bing из веб-версии.</translation>
     </message>
 </context>
 <context>
@@ -3008,44 +3667,44 @@
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="67"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="73"/>
         <source>Selected engine</source>
-        <translation type="unfinished">Selected engine</translation>
+        <translation>Выбранный двигатель</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="67"/>
         <source>does not support voice settings</source>
-        <translation type="unfinished">does not support voice settings</translation>
+        <translation>не поддерживает голосовые настройки</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="73"/>
         <source>does not support emotion settings</source>
-        <translation type="unfinished">does not support emotion settings</translation>
+        <translation>не поддерживает настройки эмоций</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="137"/>
         <source>engine does not support TTS</source>
-        <translation type="unfinished">engine does not support TTS</translation>
+        <translation>движок не поддерживает TTS</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="234"/>
         <source>Selected language</source>
-        <translation type="unfinished">Selected language</translation>
+        <translation>Выбранный язык</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="234"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="250"/>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="266"/>
         <source>is not supported for</source>
-        <translation type="unfinished">is not supported for</translation>
+        <translation>не поддерживается для</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="250"/>
         <source>Selected voice</source>
-        <translation type="unfinished">Selected voice</translation>
+        <translation>Выбранный голос</translation>
     </message>
     <message>
         <location filename="../src/third-party/qonlinetranslator/src/qonlinetts.cpp" line="266"/>
         <source>Selected emotion</source>
-        <translation type="unfinished">Selected emotion</translation>
+        <translation>Выбранная эмоция</translation>
     </message>
 </context>
 </TS>

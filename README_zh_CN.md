@@ -23,7 +23,7 @@ QtLingo 是一个使 Qt 翻译更容易的应用程序，
 - :office: [Windows x64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-Windows-Release-x64.zip)
 - :apple: [Apple x64 zip](https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
 
-Windows（在 7 和 10 上测试过，如果 8 有效，请告诉我）：下载 zip 并解压缩，
+Windows（在 7 和 10 上测试让我知道 8 是否有效）：下载 zip 并解压缩，
 并运行部署 AppDir 文件夹中的文件 QtLingo.exe。
 
 苹果没有测试，因为我没有。

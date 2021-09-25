@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a6d75f715affd9a721ec81f333135073f":[6,0,0,0,0,6,152],
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a6e1c7832e61ad4da9c2487d38fdb1773":[6,0,0,0,0,6,233],
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a6e4065bb57fe77e1d8635f8108bf3c64":[6,0,0,0,0,6,54],
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a6e947aa0a2cb4808d560339fef0d4793":[6,0,0,0,0,6,208],
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a6f2032bd7e6248b526a2c13e37c7b972":[6,0,0,0,0,6,272],
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a70ffee09638ac75a263b1a2e5a473c85":[6,0,0,0,0,6,119],
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a711d7b7f27671b10b11a74c37f653ad7":[6,0,0,0,0,6,78],
+"build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a7237ce09defceeebe3ba0afc528275ac":[6,0,0,0,0,6,227],
 "build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a726a020189392103a9404da070536e07":[6,0,0,0,0,6,329],
 "build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a72e3c30a05bd2bb63d76550e451a438e":[6,0,0,0,0,6,3],
 "build-QtLingoTest-Desktop-Debug_2moc__predefs_8h.html#a72f76585ea7d1131d4e9be0110fb0ec3":[6,0,0,0,0,6,252],
@@ -241,13 +249,5 @@ var NAVTREEINDEX1 =
 "build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp.html#a590f80ddb226779f6f432d80438ea190":[6,0,0,0,0,9,0],
 "build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp.html#ad4ff57a6545d43786e7c1090f8eb684d":[6,0,0,0,0,9,2],
 "build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp.html#ae11a6cdcdcffd15b35944f8da00698ea":[6,0,0,0,0,9,3],
-"build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp.html#afbfc3bb3cd2fa03dd0a3fc36563480d6":[6,0,0,0,0,9,1],
-"build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp_source.html":[6,0,0,0,0,9],
-"build-QtLingoTest-Desktop-Debug_2ui__MainWindow_8h.html":[6,0,0,0,0,10],
-"build-QtLingoTest-Desktop-Debug_2ui__MainWindow_8h_source.html":[6,0,0,0,0,10],
-"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__MainWindow_8cpp.html":[6,0,0,0,1,0],
-"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__MainWindow_8cpp.html#a75bb9482d242cde0a06c9dbdc6b83abe":[6,0,0,0,1,0,1],
-"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__MainWindow_8cpp_source.html":[6,0,0,0,1,0],
-"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__MyDatatables_8cpp.html":[6,0,0,0,1,1],
-"build-QtLingoTest-Desktop__Qt__5__15__2__GCC__64bit-Debug_2moc__MyDatatables_8cpp.html#a75bb9482d242cde0a06c9dbdc6b83abe":[6,0,0,0,1,1,1]
+"build-QtLingoTest-Desktop-Debug_2qrc__QtLingo_8cpp.html#afbfc3bb3cd2fa03dd0a3fc36563480d6":[6,0,0,0,0,9,1]
 };

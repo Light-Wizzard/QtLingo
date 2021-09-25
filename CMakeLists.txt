@@ -60,7 +60,8 @@ set(HEADERS
     src/MainWindow.h
     src/MyConstants.h
     src/MyDatatables.h
-    src/MyLocalization.h
+    src/MyLanguageData.h
+    src/MyLanguageModel.h
     src/MyOrgSettings.h
     src/MySqlDbtModel.h
     src/MyTranlatorParser.h
@@ -73,7 +74,8 @@ set(PROJECT_SOURCES
     src/main.cpp
     src/MainWindow.cpp
     src/MyDatatables.cpp
-    src/MyLocalization.cpp
+    src/MyLanguageData.cpp
+    src/MyLanguageModel.cpp
     src/MyOrgSettings.cpp
     src/MySqlDbtModel.cpp
     src/MyTranlatorParser.cpp

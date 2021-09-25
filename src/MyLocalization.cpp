@@ -257,7 +257,8 @@ QStringList MyLocalization::findTsFiles(const QString &thisFolder)
     for (QString &fileName : fileNames)
         { fileName = dir.filePath(fileName); }
     return fileNames;
-}/************************************************
+}
+/************************************************
  * @brief get Localizer Code.
  * getLocalizerCode
  ***********************************************/

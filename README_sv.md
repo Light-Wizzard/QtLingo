@@ -24,7 +24,7 @@ allt är gjort, inget mer att göra.
 -: apple: [Apple x64 zip] (https://github.com/Light-Wizzard/QtLingo/releases/download/continuous/QtLingo-MacOs-Release-x64.zip)
 
 Windows (Testad på 7 och 10 meddela mig om 8 fungerar): Ladda ner zip och extrahera det,
-och kör filen QtLingo.exe inuti mappen som distribuerar AppDir.
+och kör filen QtLingo.exe inuti mappen AppDir.
 
 Apple testar inte eftersom jag inte har en.
 
@@ -68,7 +68,7 @@ Jag har Doxygen Documents under docs.
 Hanterar att Internet -anslutningen går ner.
 
 ''
-Kritiskt: "Socket operation timeout" (../QtLingo/src/MainWindow.cpp:2280, MainWindow :: translateWithReturn (const QString &, QOnlineTranslator :: Engine, QOnlineTranslator :: Language, QOnlineTranslator :: Language, QOnlineTranslator :: :: <lambda ()>)
+Kritisk: "Socket operation timeout" (../QtLingo/src/MainWindow.cpp:2280, MainWindow :: translateWithReturn (const QString &, QOnlineTranslator :: Engine, QOnlineTranslator :: Language, QOnlineTranslator :: Language, QOnlineTranslator :: :: <lambda ()>)
 Kritiskt: "Host www.bing.com inte hittat" (../QtLingo/src/MainWindow.cpp:2280, MainWindow :: translateWithReturn (const QString &, QOnlineTranslator :: Engine, QOnlineTranslator :: Språk, QOnlineTranslator :: Språk, QOnlineTranslator :: Språk) :: <lambda ()>)
 Kritiskt: "Host translate.yandex.com hittades inte" (../QtLingo/src/MainWindow.cpp:2280, MainWindow :: translateWithReturn (const QString &, QOnlineTranslator :: Engine, QOnlineTranslator :: Language, QOnlineTranslator :: Language, QOnlineT :: Språk) :: <lambda ()>)
 Kritiskt: "Host translate.googleapis.com hittades inte" (../QtLingo/src/MainWindow.cpp:2280, MainWindow :: translateWithReturn (const QString &, QOnlineTranslator :: Engine, QOnlineTranslator :: Språk, QOnlineTranslator :: Språk, QOnl :: Språk) :: <lambda ()>)

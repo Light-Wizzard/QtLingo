@@ -13,6 +13,14 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "MyProjectClass", "classMyProjectClass.html", "classMyProjectClass" ],
       [ "MyDatatables", "classMyDatatables.html", "classMyDatatables" ]
     ] ],
+    [ "MyLanguageData.cpp", "MyLanguageData_8cpp.html", null ],
+    [ "MyLanguageData.h", "MyLanguageData_8h.html", [
+      [ "MyLanguageData", "classMyLanguageData.html", "classMyLanguageData" ]
+    ] ],
+    [ "MyLanguageModel.cpp", "MyLanguageModel_8cpp.html", null ],
+    [ "MyLanguageModel.h", "MyLanguageModel_8h.html", [
+      [ "MyLanguageModel", "classMyLanguageModel.html", "classMyLanguageModel" ]
+    ] ],
     [ "MyLocalization.cpp", "MyLocalization_8cpp.html", null ],
     [ "MyLocalization.h", "MyLocalization_8h.html", [
       [ "MyLocalization", "classMyLocalization.html", "classMyLocalization" ]

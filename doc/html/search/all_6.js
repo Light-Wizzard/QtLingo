@@ -4,17 +4,18 @@ var searchData=
   ['filename_1',['FileName',['../classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456aa5a73e5a5135ea7cb57e3ff75ed9b5abb',1,'MyOrgSettings']]],
   ['filenumberlines_2',['fileNumberLines',['../classMyOrgSettings.html#a976b789a103e2670459d270e5840b9f7',1,'MyOrgSettings']]],
   ['filepath_3',['FilePath',['../classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456aae15004205dbf482d1b55e026caa11809',1,'MyOrgSettings']]],
-  ['fileremoveargs_4',['fileRemoveArgs',['../classMyLocalization.html#a707ef0e94584626e94d6ad2493500b61',1,'MyLocalization']]],
+  ['fileremoveargs_4',['fileRemoveArgs',['../classMainWindow.html#a6b5eb5d81ea371c8315545b004e7c401',1,'MainWindow::fileRemoveArgs()'],['../classMyLocalization.html#a707ef0e94584626e94d6ad2493500b61',1,'MyLocalization::fileRemoveArgs()']]],
   ['filesize_5',['FileSize',['../classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456aadfe1a2874c573ede80326056e01ff73d',1,'MyOrgSettings']]],
   ['filipino_6',['Filipino',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73dae21c39ffaaa746c98dc547318050afc8',1,'QOnlineTranslator']]],
   ['fillforms_7',['fillForms',['../classMainWindow.html#adc7ab1f3f282e10eb0bb24fe04e5905f',1,'MainWindow']]],
   ['findtsfiles_8',['findTsFiles',['../classMyLocalization.html#ac2519ea073c86d87cbb3720ff39d848f',1,'MyLocalization']]],
   ['finished_9',['finished',['../classQOnlineTranslator.html#ad0affaf0812f078a2bce6ca737981e17',1,'QOnlineTranslator']]],
   ['finnish_10',['Finnish',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da9ea66303942591207a8be82a0a0933b3',1,'QOnlineTranslator']]],
-  ['fixtranslationfile_11',['fixTranslationFile',['../classMyLocalization.html#adcf184a8310923e14182f86737c3e9eb',1,'MyLocalization']]],
+  ['fixtranslationfile_11',['fixTranslationFile',['../classMainWindow.html#a6059d411a7ddcd7a12c78999f0ebf69d',1,'MainWindow::fixTranslationFile()'],['../classMyLocalization.html#adcf184a8310923e14182f86737c3e9eb',1,'MyLocalization::fixTranslationFile()']]],
   ['formlayoutsettings_12',['formLayoutSettings',['../classUi__MainWindow.html#a548933321bc2d580dd9087268b9d7f9a',1,'Ui_MainWindow']]],
   ['formlayoutsql_13',['formLayoutSql',['../classUi__MainWindow.html#a79e3a9c970d11332ec6af9ccde2f6238',1,'Ui_MainWindow']]],
   ['formlayouttranslations_14',['formLayoutTranslations',['../classUi__MainWindow.html#acdad8e4bd749ba925cfb96e093843482',1,'Ui_MainWindow']]],
   ['french_15',['French',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da3ff05cfc6b2ace469b17aad4e3288c07',1,'QOnlineTranslator']]],
-  ['frisian_16',['Frisian',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da1e682e2832b1040a9448a00427afcf13',1,'QOnlineTranslator']]]
+  ['frisian_16',['Frisian',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73da1e682e2832b1040a9448a00427afcf13',1,'QOnlineTranslator']]],
+  ['fromuserinput_17',['fromUserInput',['../classUtils.html#a004190266ec7a751ea1451f907c215d4',1,'Utils']]]
 ];

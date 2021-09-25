@@ -1,6 +1,6 @@
 var classMyTranlatorParser =
 [
-    [ "MyTranlatorParser", "classMyTranlatorParser.html#a5a7088900f13e26907ba7422ab42a137", null ],
+    [ "MyTranlatorParser", "classMyTranlatorParser.html#a50435f09b4465edfa4a1b369f2033ec4", null ],
     [ "getDebugMessage", "classMyTranlatorParser.html#a23cb694d7528f1bc66865d08df182a82", null ],
     [ "parse_ts_file", "classMyTranlatorParser.html#addda277ce2b1f695634c21d4f2980902", null ],
     [ "parse_txt_file", "classMyTranlatorParser.html#abc254aa24978b3ed365d9f131ecf51c5", null ],

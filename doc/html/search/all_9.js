@@ -29,5 +29,6 @@ var searchData=
   ['istranslationtranslitenabled_26',['isTranslationTranslitEnabled',['../classQOnlineTranslator.html#a1b448497bd595cde714b4a2f93f21347',1,'QOnlineTranslator']]],
   ['isword_27',['isWord',['../classMyOrgSettings.html#aa1aa66543e64626adddc6cdb561ffc38',1,'MyOrgSettings']]],
   ['iswritable_28',['IsWritable',['../classMyOrgSettings.html#ae15f93ab25f49cfe0f5fdf7ede15456aa4c9f7348d91192011fafdbb8cb2967ed',1,'MyOrgSettings']]],
-  ['italian_29',['Italian',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73dae28fbc1865772823b8812088390584d7',1,'QOnlineTranslator']]]
+  ['italian_29',['Italian',['../classQOnlineTranslator.html#aebb2566af08a68eb014fe0698a10f73dae28fbc1865772823b8812088390584d7',1,'QOnlineTranslator']]],
+  ['itemroles_30',['ItemRoles',['../classMyLanguageModel.html#acd3c0977c259c18de02c72ec23ef3bc4',1,'MyLanguageModel']]]
 ];

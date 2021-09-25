@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['_7emainwindow_0',['~MainWindow',['../classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
-  ['_7emydatatables_1',['~MyDatatables',['../classMyDatatables.html#afddeb9099481eb82a8eb91367f316eef',1,'MyDatatables']]],
-  ['_7emyorgsettings_2',['~MyOrgSettings',['../classMyOrgSettings.html#a3fe4c6e09f68342e242e86c754e0005c',1,'MyOrgSettings']]],
-  ['_7emysqldbtmodel_3',['~MySqlDbtModel',['../classMySqlDbtModel.html#a63dad1efad75e7acd44c0072f91be8b9',1,'MySqlDbtModel']]],
-  ['_7eqtlingocase_4',['~QtLingoCase',['../classQtLingoCase.html#ab0ac0b3c0598a28ad11a2119e95eddf5',1,'QtLingoCase']]]
+  ['writeallsettings_0',['writeAllSettings',['../classMainWindow.html#a178dad7b39117611cb0d9da56f9476e9',1,'MainWindow']]],
+  ['writefile_1',['writeFile',['../classMyOrgSettings.html#a83d81922b53ff7db6edaaa3eaf4f9c28',1,'MyOrgSettings']]],
+  ['writelanguage_2',['writeLanguage',['../classMyLanguageModel.html#aaf500796f35fb73ca33b209c39e96c16',1,'MyLanguageModel::writeLanguage()'],['../classMyLocalization.html#a0c698c62e65e31ad4de5b5cbc2c18018',1,'MyLocalization::writeLanguage()']]],
+  ['writesettings_3',['writeSettings',['../classMyOrgSettings.html#ac2b7c734e784998d2c8e470298395646',1,'MyOrgSettings']]],
+  ['writesqldatabaseinfo_4',['writeSqlDatabaseInfo',['../classMainWindow.html#ae81fdd40d2735e75581c5bf8ccc26380',1,'MainWindow']]],
+  ['writestatechanges_5',['writeStateChanges',['../classMainWindow.html#a4b19b2ca806d7674b2a4cf1ff307b9ea',1,'MainWindow']]]
 ];

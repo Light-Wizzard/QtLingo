@@ -33,10 +33,12 @@ INCLUDEPATH     += src
 INCLUDEPATH     += "${QT_INSTALL_LIBS}/qt"
 ##-------------------------------------------------------------------------------------
 #
-HEADERS += src/MainWindow.h \
+HEADERS +=  \
+    src/MainWindow.h \
     src/MyConstants.h \
     src/MyDatatables.h \
-    src/MyLocalization.h \
+    src/MyLanguageData.h \
+    src/MyLanguageModel.h \
     src/MyOrgSettings.h \
     src/MySqlDbtModel.h \
     src/MyTranlatorParser.h \
@@ -49,12 +51,17 @@ SOURCES += \
     src/main.cpp \
     src/MainWindow.cpp \
     src/MyDatatables.cpp \
-    src/MyLocalization.cpp \
+    src/MyLanguageData.cpp \
+    src/MyLanguageModel.cpp \
     src/MyOrgSettings.cpp \
     src/MySqlDbtModel.cpp \
     src/MyTranlatorParser.cpp \
     src/SimpleCrypt.cpp \
-    src/third-party/ts_tool/ts_model.cpp
+    src/third-party/ts_tool/ts_model.cpp \
+    src/third-party/qonlinetranslator/src/qonlinetranslator.cpp \
+    src/third-party/qonlinetranslator/src/qonlinetts.cpp \
+    src/third-party/qonlinetranslator/src/qexample.cpp \
+    src/third-party/qonlinetranslator/src/qoption.cpp
 #
 FORMS += src/MainWindow.ui
 #

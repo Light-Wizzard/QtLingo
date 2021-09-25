@@ -104,9 +104,9 @@ Inheritance diagram for MyTranlatorParser:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5a7088900f13e26907ba7422ab42a137"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyTranlatorParser.html#a5a7088900f13e26907ba7422ab42a137">MyTranlatorParser</a> (QObject *parent=nullptr, <a class="el" href="classMyOrgSettings.html">MyOrgSettings</a> *thisSetting=nullptr)</td></tr>
-<tr class="memdesc:a5a7088900f13e26907ba7422ab42a137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation Files Constructor. MyTranslationFiles.  <a href="classMyTranlatorParser.html#a5a7088900f13e26907ba7422ab42a137">More...</a><br /></td></tr>
-<tr class="separator:a5a7088900f13e26907ba7422ab42a137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50435f09b4465edfa4a1b369f2033ec4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyTranlatorParser.html#a50435f09b4465edfa4a1b369f2033ec4">MyTranlatorParser</a> (<a class="el" href="classMyLanguageModel.html">MyLanguageModel</a> *thisLanguageModel=nullptr, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a50435f09b4465edfa4a1b369f2033ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation Files Constructor. MyTranslationFiles.  <a href="classMyTranlatorParser.html#a50435f09b4465edfa4a1b369f2033ec4">More...</a><br /></td></tr>
+<tr class="separator:a50435f09b4465edfa4a1b369f2033ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addda277ce2b1f695634c21d4f2980902"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structbase__node.html#abb75a430c91d015bdc7307f6263717e0">base_node::base_node_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMyTranlatorParser.html#addda277ce2b1f695634c21d4f2980902">parse_ts_file</a> (const QString &amp;inputFile)</td></tr>
 <tr class="memdesc:addda277ce2b1f695634c21d4f2980902"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse_ts_file  <a href="classMyTranlatorParser.html#addda277ce2b1f695634c21d4f2980902">More...</a><br /></td></tr>
 <tr class="separator:addda277ce2b1f695634c21d4f2980902"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,8 +134,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MyTranlatorParser_8h_source.html#l00020">20</a> of file <a class="el" href="MyTranlatorParser_8h_source.html">MyTranlatorParser.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5a7088900f13e26907ba7422ab42a137" name="a5a7088900f13e26907ba7422ab42a137"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a7088900f13e26907ba7422ab42a137">&#9670;&nbsp;</a></span>MyTranlatorParser()</h2>
+<a id="a50435f09b4465edfa4a1b369f2033ec4" name="a50435f09b4465edfa4a1b369f2033ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50435f09b4465edfa4a1b369f2033ec4">&#9670;&nbsp;</a></span>MyTranlatorParser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,14 +146,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">MyTranlatorParser::MyTranlatorParser </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>nullptr</code>, </td>
+          <td class="paramtype"><a class="el" href="classMyLanguageModel.html">MyLanguageModel</a> *&#160;</td>
+          <td class="paramname"><em>thisLanguageModel</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classMyOrgSettings.html">MyOrgSettings</a> *&#160;</td>
-          <td class="paramname"><em>thisSetting</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -171,7 +171,7 @@ Public Member Functions</h2></td></tr>
 <p>Translation Files Constructor. MyTranslationFiles. </p>
 
 <p class="definition">Definition at line <a class="el" href="MyTranlatorParser_8cpp_source.html#l00007">7</a> of file <a class="el" href="MyTranlatorParser_8cpp_source.html">MyTranlatorParser.cpp</a>.</p>
-<div class="fragment"><div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>                                                                                : QObject(parent), mySetting(thisSetting)</div>
+<div class="fragment"><div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>                                                                                        : QObject(parent), myLanguageModel(thisLanguageModel)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
